@@ -1,0 +1,16 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/nguyendinhthien/hk1nam4/tieu_luan_chuyen_nganh/projectTL/hlshop/build/ios/Debug-production-iphonesimulator/open_file/open_file.framework/open_file'
+relocations:
+  - { offsetInCU: 0x33, offset: 0x3C58, size: 0x8, addend: 0x0, symName: _open_fileVersionString, symObjAddr: 0x0, symBinAddr: 0x2C70, symSize: 0x0 }
+  - { offsetInCU: 0x67, offset: 0x3C8C, size: 0x8, addend: 0x0, symName: _open_fileVersionNumber, symObjAddr: 0x28, symBinAddr: 0x2C98, symSize: 0x0 }
+  - { offsetInCU: 0x27, offset: 0x3CC8, size: 0x8, addend: 0x0, symName: '+[OpenFilePlugin registerWithRegistrar:]', symObjAddr: 0x0, symBinAddr: 0x1F2C, symSize: 0x118 }
+  - { offsetInCU: 0x105, offset: 0x3DA6, size: 0x8, addend: 0x0, symName: '+[OpenFilePlugin registerWithRegistrar:]', symObjAddr: 0x0, symBinAddr: 0x1F2C, symSize: 0x118 }
+  - { offsetInCU: 0x16D, offset: 0x3E0E, size: 0x8, addend: 0x0, symName: '-[OpenFilePlugin initWithViewController:]', symObjAddr: 0x118, symBinAddr: 0x2044, symSize: 0x78 }
+  - { offsetInCU: 0x1B0, offset: 0x3E51, size: 0x8, addend: 0x0, symName: '-[OpenFilePlugin handleMethodCall:result:]', symObjAddr: 0x190, symBinAddr: 0x20BC, symSize: 0x40C }
+  - { offsetInCU: 0x382, offset: 0x4023, size: 0x8, addend: 0x0, symName: '-[OpenFilePlugin documentInteractionControllerDidEndPreview:]', symObjAddr: 0x59C, symBinAddr: 0x24C8, symSize: 0x84 }
+  - { offsetInCU: 0x3FC, offset: 0x409D, size: 0x8, addend: 0x0, symName: '-[OpenFilePlugin documentInteractionControllerDidDismissOpenInMenu:]', symObjAddr: 0x620, symBinAddr: 0x254C, symSize: 0x84 }
+  - { offsetInCU: 0x476, offset: 0x4117, size: 0x8, addend: 0x0, symName: '-[OpenFilePlugin documentInteractionControllerViewControllerForPreview:]', symObjAddr: 0x6A4, symBinAddr: 0x25D0, symSize: 0x84 }
+  - { offsetInCU: 0x4B1, offset: 0x4152, size: 0x8, addend: 0x0, symName: '-[OpenFilePlugin isBlankString:]', symObjAddr: 0x728, symBinAddr: 0x2654, symSize: 0xAC }
+  - { offsetInCU: 0x4F0, offset: 0x4191, size: 0x8, addend: 0x0, symName: '-[OpenFilePlugin .cxx_destruct]', symObjAddr: 0x7D4, symBinAddr: 0x2700, symSize: 0x48 }
+...

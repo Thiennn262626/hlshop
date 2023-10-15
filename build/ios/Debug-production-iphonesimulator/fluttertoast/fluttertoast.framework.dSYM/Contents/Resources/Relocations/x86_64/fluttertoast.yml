@@ -1,0 +1,25 @@
+---
+triple:          'x86_64-apple-darwin'
+binary-path:     '/Users/nguyendinhthien/hk1nam4/tieu_luan_chuyen_nganh/projectTL/hlshop/build/ios/Debug-production-iphonesimulator/fluttertoast/fluttertoast.framework/fluttertoast'
+relocations:
+  - { offsetInCU: 0x34, offset: 0x58B51, size: 0x8, addend: 0x0, symName: _fluttertoastVersionString, symObjAddr: 0x0, symBinAddr: 0x2FC0, symSize: 0x0 }
+  - { offsetInCU: 0x69, offset: 0x58B86, size: 0x8, addend: 0x0, symName: _fluttertoastVersionNumber, symObjAddr: 0x30, symBinAddr: 0x2FF0, symSize: 0x0 }
+  - { offsetInCU: 0x27, offset: 0x58BC3, size: 0x8, addend: 0x0, symName: '+[FluttertoastPlugin registerWithRegistrar:]', symObjAddr: 0x0, symBinAddr: 0x205B, symSize: 0xC6 }
+  - { offsetInCU: 0xF6, offset: 0x58C92, size: 0x8, addend: 0x0, symName: '+[FluttertoastPlugin registerWithRegistrar:]', symObjAddr: 0x0, symBinAddr: 0x205B, symSize: 0xC6 }
+  - { offsetInCU: 0x204, offset: 0x58DA0, size: 0x8, addend: 0x0, symName: '-[FluttertoastPlugin init]', symObjAddr: 0xC6, symBinAddr: 0x2121, symSize: 0xE9 }
+  - { offsetInCU: 0x2BD, offset: 0x58E59, size: 0x8, addend: 0x0, symName: '-[FluttertoastPlugin dealloc]', symObjAddr: 0x1AF, symBinAddr: 0x220A, symSize: 0xCC }
+  - { offsetInCU: 0x372, offset: 0x58F0E, size: 0x8, addend: 0x0, symName: '-[FluttertoastPlugin keyboardWillShow]', symObjAddr: 0x27B, symBinAddr: 0x22D6, symSize: 0x17 }
+  - { offsetInCU: 0x3BE, offset: 0x58F5A, size: 0x8, addend: 0x0, symName: '-[FluttertoastPlugin keyboardWillHide]', symObjAddr: 0x292, symBinAddr: 0x22ED, symSize: 0x14 }
+  - { offsetInCU: 0x40A, offset: 0x58FA6, size: 0x8, addend: 0x0, symName: '-[FluttertoastPlugin colorWithHex:]', symObjAddr: 0x2A6, symBinAddr: 0x2301, symSize: 0x6E }
+  - { offsetInCU: 0x495, offset: 0x59031, size: 0x8, addend: 0x0, symName: '-[FluttertoastPlugin handleMethodCall:result:]', symObjAddr: 0x314, symBinAddr: 0x236F, symSize: 0x5F3 }
+  - { offsetInCU: 0xA32, offset: 0x595CE, size: 0x8, addend: 0x0, symName: '-[FluttertoastPlugin makeToast:duration:position:style:]', symObjAddr: 0x907, symBinAddr: 0x2962, symSize: 0x132 }
+  - { offsetInCU: 0xC0A, offset: 0x597A6, size: 0x8, addend: 0x0, symName: '___56-[FluttertoastPlugin makeToast:duration:position:style:]_block_invoke', symObjAddr: 0xA39, symBinAddr: 0x2A94, symSize: 0x73 }
+  - { offsetInCU: 0xCC5, offset: 0x59861, size: 0x8, addend: 0x0, symName: ___copy_helper_block_e8_32s40s48s56w, symObjAddr: 0xAAC, symBinAddr: 0x2B07, symSize: 0x49 }
+  - { offsetInCU: 0xD12, offset: 0x598AE, size: 0x8, addend: 0x0, symName: ___destroy_helper_block_e8_32s40s48s56w, symObjAddr: 0xAF5, symBinAddr: 0x2B50, symSize: 0x35 }
+  - { offsetInCU: 0xD55, offset: 0x598F1, size: 0x8, addend: 0x0, symName: '-[FluttertoastPlugin _readKeyWindow]', symObjAddr: 0xB2A, symBinAddr: 0x2B85, symSize: 0x1E6 }
+  - { offsetInCU: 0xEA7, offset: 0x59A43, size: 0x8, addend: 0x0, symName: '-[FluttertoastPlugin channel]', symObjAddr: 0xD10, symBinAddr: 0x2D6B, symSize: 0xA }
+  - { offsetInCU: 0xEDC, offset: 0x59A78, size: 0x8, addend: 0x0, symName: '-[FluttertoastPlugin setChannel:]', symObjAddr: 0xD1A, symBinAddr: 0x2D75, symSize: 0x11 }
+  - { offsetInCU: 0xF1B, offset: 0x59AB7, size: 0x8, addend: 0x0, symName: '-[FluttertoastPlugin isKeyboardVisible]', symObjAddr: 0xD2B, symBinAddr: 0x2D86, symSize: 0x9 }
+  - { offsetInCU: 0xF50, offset: 0x59AEC, size: 0x8, addend: 0x0, symName: '-[FluttertoastPlugin setIsKeyboardVisible:]', symObjAddr: 0xD34, symBinAddr: 0x2D8F, symSize: 0x9 }
+  - { offsetInCU: 0xF8D, offset: 0x59B29, size: 0x8, addend: 0x0, symName: '-[FluttertoastPlugin .cxx_destruct]', symObjAddr: 0xD3D, symBinAddr: 0x2D98, symSize: 0x28 }
+...

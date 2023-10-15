@@ -1,0 +1,16 @@
+bricks:
+  feature_brick:
+    path: ./bricks/feature_brick
+  feature_core_brick:
+    path: ./bricks/feature_core_brick
+
+# Note
+# Run "mason upgrade" when add new bricks
+
+# Feature Brick
+# Create:
+# mason make feature_brick --feature_name user_favorite_product --folder_name favorite_product --state_management cubit
+
+# Feature Core Brick
+# Create:
+# mason make feature_core_brick --feature_name promotion --state_management cubit

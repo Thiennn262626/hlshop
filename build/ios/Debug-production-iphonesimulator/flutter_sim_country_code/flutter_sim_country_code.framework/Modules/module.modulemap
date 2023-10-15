@@ -1,0 +1,6 @@
+framework module flutter_sim_country_code {
+  umbrella header "flutter_sim_country_code-umbrella.h"
+
+  export *
+  module * { export * }
+}

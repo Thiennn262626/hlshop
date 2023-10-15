@@ -1,0 +1,11 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/nguyendinhthien/hk1nam4/tieu_luan_chuyen_nganh/projectTL/hlshop/build/ios/Debug-production-iphonesimulator/device_info_plus/device_info_plus.framework/device_info_plus'
+relocations:
+  - { offsetInCU: 0x33, offset: 0x3C58, size: 0x8, addend: 0x0, symName: _device_info_plusVersionString, symObjAddr: 0x0, symBinAddr: 0x3200, symSize: 0x0 }
+  - { offsetInCU: 0x67, offset: 0x3C8C, size: 0x8, addend: 0x0, symName: _device_info_plusVersionNumber, symObjAddr: 0x30, symBinAddr: 0x3230, symSize: 0x0 }
+  - { offsetInCU: 0x27, offset: 0x3CC8, size: 0x8, addend: 0x0, symName: '+[FLTDeviceInfoPlusPlugin registerWithRegistrar:]', symObjAddr: 0x0, symBinAddr: 0x298C, symSize: 0xA0 }
+  - { offsetInCU: 0xB3, offset: 0x3D54, size: 0x8, addend: 0x0, symName: '+[FLTDeviceInfoPlusPlugin registerWithRegistrar:]', symObjAddr: 0x0, symBinAddr: 0x298C, symSize: 0xA0 }
+  - { offsetInCU: 0x10C, offset: 0x3DAD, size: 0x8, addend: 0x0, symName: '-[FLTDeviceInfoPlusPlugin handleMethodCall:result:]', symObjAddr: 0xA0, symBinAddr: 0x2A2C, symSize: 0x468 }
+  - { offsetInCU: 0x1E9, offset: 0x3E8A, size: 0x8, addend: 0x0, symName: '-[FLTDeviceInfoPlusPlugin isDevicePhysical]', symObjAddr: 0x508, symBinAddr: 0x2E94, symSize: 0xC }
+...

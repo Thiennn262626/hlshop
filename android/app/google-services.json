@@ -1,0 +1,39 @@
+{
+ "project_info": {
+  "project_number": "3205711259",
+  "project_id": "mulstore-ios",
+  "storage_bucket": "mulstore-ios.appspot.com"
+ },
+ "client": [
+  {
+   "client_info": {
+    "mobilesdk_app_id": "1:3205711259:android:8bd760ba05bced8cc7cd3e",
+    "android_client_info": {
+     "package_name": "mulstorebb.smatez.com"
+    }
+   },
+   "oauth_client": [
+    {
+     "client_id": "3205711259-8bmti15j9gjd3mmk8j1bhbdan5rsh5pi.apps.googleusercontent.com",
+     "client_type": 3
+    }
+   ],
+   "api_key": [
+    {
+     "current_key": "AIzaSyC3dKaRzzUMp2vZQLWpuCkEcc9_Utj7dLI"
+    }
+   ],
+   "services": {
+    "appinvite_service": {
+     "other_platform_oauth_client": [
+      {
+       "client_id": "3205711259-8bmti15j9gjd3mmk8j1bhbdan5rsh5pi.apps.googleusercontent.com",
+       "client_type": 3
+      }
+     ]
+    }
+   }
+  }
+ ],
+ "configuration_version": "1"
+}

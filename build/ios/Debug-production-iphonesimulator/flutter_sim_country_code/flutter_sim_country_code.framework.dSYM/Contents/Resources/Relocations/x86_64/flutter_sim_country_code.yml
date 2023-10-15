@@ -1,0 +1,11 @@
+---
+triple:          'x86_64-apple-darwin'
+binary-path:     '/Users/nguyendinhthien/hk1nam4/tieu_luan_chuyen_nganh/projectTL/hlshop/build/ios/Debug-production-iphonesimulator/flutter_sim_country_code/flutter_sim_country_code.framework/flutter_sim_country_code'
+relocations:
+  - { offsetInCU: 0x33, offset: 0x4300, size: 0x8, addend: 0x0, symName: _flutter_sim_country_codeVersionString, symObjAddr: 0x0, symBinAddr: 0x32B0, symSize: 0x0 }
+  - { offsetInCU: 0x67, offset: 0x4334, size: 0x8, addend: 0x0, symName: _flutter_sim_country_codeVersionNumber, symObjAddr: 0x38, symBinAddr: 0x32E8, symSize: 0x0 }
+  - { offsetInCU: 0x27, offset: 0x4370, size: 0x8, addend: 0x0, symName: '+[FlutterSimCountryCodePlugin registerWithRegistrar:]', symObjAddr: 0x0, symBinAddr: 0x2E29, symSize: 0xB6 }
+  - { offsetInCU: 0x60, offset: 0x43A9, size: 0x8, addend: 0x0, symName: '+[FlutterSimCountryCodePlugin registerWithRegistrar:]', symObjAddr: 0x0, symBinAddr: 0x2E29, symSize: 0xB6 }
+  - { offsetInCU: 0x13E, offset: 0x4487, size: 0x8, addend: 0x0, symName: '-[FlutterSimCountryCodePlugin handleMethodCall:result:]', symObjAddr: 0xB6, symBinAddr: 0x2EDF, symSize: 0xA3 }
+  - { offsetInCU: 0x203, offset: 0x454C, size: 0x8, addend: 0x0, symName: '-[FlutterSimCountryCodePlugin getSimCountryCode:]', symObjAddr: 0x159, symBinAddr: 0x2F82, symSize: 0x296 }
+...

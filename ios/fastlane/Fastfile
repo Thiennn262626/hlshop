@@ -1,0 +1,44 @@
+
+# Fastfile
+platform :ios do
+  desc "Build and distribute iOS app to TestFlight"
+  lane :build_and_deploy_ios do |options|
+    flavor = options[:flavor]
+
+    # Run Flutter build for iOS
+    sh("fvm flutter build ios --release --flavor #{flavor} -t lib/main_#{flavor}.dart")
+
+    api_key = app_store_connect_api_key(
+      key_id: "43XL62JT87",
+      issuer_id: "796bf7da-5517-4f13-b5f0-b1a9a4fec77c",
+      key_filepath: "AuthKey_43XL62JT87.p8",
+      duration: 1200, # optional (maximum 1200)
+      in_house: false # optional but may be required if using match/sigh
+    )
+
+    # Build the app
+    gym(
+      scheme: "#{flavor}",
+      export_method: 'app-store',
+      output_directory: "build",
+      clean: true,
+      output_name: "#{flavor}.ipa"
+    )
+
+    # Get changelog
+    changelog = changelog_from_git_commits(
+      merge_commit_filtering: "exclude_merges",
+    )
+
+    # Upload to TestFlight
+    upload_to_testflight(
+      api_key: api_key,
+      skip_waiting_for_build_processing: true,
+      changelog: changelog,
+      distribute_external: true,
+    )
+  end
+end
+
+# Run command
+# fastlane ios build_and_deploy_ios flavor:production

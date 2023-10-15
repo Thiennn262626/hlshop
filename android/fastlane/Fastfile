@@ -1,0 +1,168 @@
+default_platform(:android)
+
+platform :android do
+  lane :build_and_deploy_android do |options|
+    flavor = options[:flavor]
+
+    sh('flutter build apk --release --flavor #{flavor}')
+    firebase_app_distribution(
+      firebase_cli_token: ENV['FIREBASE_CLI_TOKEN'],
+      app: "1:298659097347:android:883cbc296191919472d736",
+      groups: 'dev',
+      release_notes: get_changelog,
+      android_artifact_type: 'APK',
+      android_artifact_path: '../build/app/outputs/flutter-apk/app-stag-release.apk',
+    )
+  end
+
+  lane :build_aab_and_deploy_android do
+    # sh('flutter build appbundle --release --flavor prod')
+    # upload_to_play_store(
+    #   track: 'internal',
+    #   aab: '../build/app/outputs/bundle/prodRelease/app-prod-release.aab'
+    # )
+    sh('flutter build appbundle --release --flavor prod')
+    firebase_app_distribution(
+      firebase_cli_token: ENV['FIREBASE_CLI_TOKEN'],
+      app: "1:298659097347:android:d91704304db4ff9a72d736",
+      groups: 'dev',
+      release_notes: get_changelog,
+      android_artifact_type: 'APK',
+      android_artifact_path: '../build/app/outputs/flutter-apk/app-prod-release.apk',
+    )
+  end
+
+  lane :build_and_deploy_android do |options|
+    flavor = options[:flavor]
+
+    # Build the app
+    gradle(
+      flags: "-Ptarget=lib/main_#{flavor}.dart",
+      task: "assemble",
+      build_type: "Release",
+      flavor: "#{flavor.capitalize}",
+      print_command: false,
+      properties: {
+        "android.injected.signing.store.file" => "keystore.jks",
+        "android.injected.signing.store.password" => "your_keystore_password",
+        "android.injected.signing.key.alias" => "your_key_alias",
+        "android.injected.signing.key.password" => "your_key_password",
+      }
+    )
+
+    # Upload to Firebase App Distribution
+    firebase_app_distribution(
+      app: "your_firebase_app_id",
+      groups: "your_distribution_group",
+      release_notes: "Release for #{flavor} flavor",
+      android_app_path: "app/build/outputs/apk/#{flavor}/release/app-#{flavor}-release.apk"
+    )
+  end
+
+end
+
+
+platform :android do
+
+  ########################################################
+  ############ ---------- Utils Lane -------- ############
+  ########################################################
+
+  private_lane :build do |options|
+    flavor = options[:flavor]
+
+    gradle(task: "clean")
+    gradle(
+      task: 'assemble',
+      flavor: flavor,
+      flags: "-Ptarget=lib/main_#{flavor}.dart",
+      build_type: 'Release',
+      properties: {
+        "android.injected.signing.store.file" => "/Users/kyo/Desktop/dev/tlm/bireal/android/bireal_key",
+        "android.injected.signing.store.password" => "Tech123@",
+        "android.injected.signing.key.alias" => "bireal",
+        "android.injected.signing.key.password" => "Tech123@",
+        "android.injected.version.code" => flutter_version()["version_code"],
+        "android.injected.version.name" => flutter_version()["version_name"],
+      }
+    )
+  end
+
+  private_lane :distribute do |options|
+    flavor = options[:flavor]
+    firebase_app_id = options[:firebase_app_id]
+
+    changelog = read_changelog(
+      changelog_path: './../CHANGELOG.md',	# Specify path to CHANGELOG.md
+      section_identifier: '[Latest]',	# Specify what section to read
+      excluded_markdown_elements: ['###']	# Specify which markdown elements should be excluded
+    )
+    firebase_app_distribution(
+      app: firebase_app_id,
+      groups: "Dev",
+      firebase_cli_path: "/opt/homebrew/bin/firebase",
+      android_artifact_path: "../build/app/outputs/apk/#{flavor}/release/app-#{flavor}-release.apk",
+      release_notes: changelog,
+    )
+  end
+
+  ########################################################
+  ############ ---------- Build Lane -------- ############
+  ########################################################
+
+  lane :dev do
+    build(
+      flavor: "development"
+    )
+    distribute(
+      flavor: "development",
+      firebase_app_id: "1:499593620652:android:25804c62f7336ac5ccc309"
+    )
+  end
+
+  lane :stag do
+    build(
+      flavor: "staging"
+    )
+    distribute(
+      flavor: "staging",
+      firebase_app_id: "1:499593620652:android:9c5e0c926438f043ccc309"
+    )
+  end
+
+  lane :prod do
+    build(
+      flavor: "production"
+    )
+    distribute(
+      flavor: "production",
+      firebase_app_id: "1:499593620652:android:4309edc495519020ccc309"
+    )
+  end
+
+  lane :all do
+    dev
+    stag
+    prod
+  end
+
+  lane :aab do
+    flavor = 'production'
+
+    gradle(task: "clean")
+    gradle(
+      task: 'bundle',
+      flavor: flavor,
+      flags: "-Ptarget=lib/main_#{flavor}.dart",
+      build_type: 'Release',
+      properties: {
+        "android.injected.signing.store.file" => "/Users/kyo/Desktop/dev/tlm/bireal/android/bireal_key",
+        "android.injected.signing.store.password" => "Tech123@",
+        "android.injected.signing.key.alias" => "bireal",
+        "android.injected.signing.key.password" => "Tech123@",
+        "android.injected.version.code" => flutter_version()["version_code"],
+        "android.injected.version.name" => flutter_version()["version_name"],
+      }
+    )
+  end
+end
