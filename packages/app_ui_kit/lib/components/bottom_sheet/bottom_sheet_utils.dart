@@ -1,4 +1,5 @@
 import 'package:app_ui_kit/all_file/app_ui_kit_all_file.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 class BottomSheetUtils {
   BottomSheetUtils._();
@@ -10,20 +11,16 @@ class BottomSheetUtils {
     bool? isScrollControlled,
     BoxConstraints? constraints,
   }) {
-    return showModalBottomSheet(
+    return showMaterialModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
-      isScrollControlled: isScrollControlled ?? true,
-      constraints: constraints,
-      // constraints: BoxConstraints(
-      //   maxHeight: MediaQuery.of(context).size.height - MediaQueryData.fromWindow(window).padding.top,
-      // ),
-      builder: (_) => ClipRRect(
-        borderRadius: const BorderRadius.vertical(
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
           top: Radius.circular(16),
         ),
-        child: Material(child: child),
       ),
+      clipBehavior: Clip.hardEdge,
+      builder: (_) => Material(child: child),
       enableDrag: enableDrag ?? true,
     );
   }

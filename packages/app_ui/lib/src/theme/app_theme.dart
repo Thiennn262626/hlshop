@@ -31,7 +31,9 @@ class AppTheme {
           color: colorScheme.primary,
           fontWeight: FontWeight.w700,
         ),
-        unselectedLabelStyle: textTheme.bodyLarge,
+        unselectedLabelStyle: textTheme.bodyLarge?.copyWith(
+          fontWeight: FontWeight.w700,
+        ),
       ),
       brightness: colorScheme.brightness,
       primaryColor: colorScheme.primary,
@@ -57,8 +59,6 @@ class AppTheme {
       ),
       inputDecorationTheme: InputDecorationTheme(
         // filled: true,
-        contentPadding:
-            const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
         isDense: true,
         // fillColor: appColor.divider,
         enabledBorder: OutlineInputBorder(

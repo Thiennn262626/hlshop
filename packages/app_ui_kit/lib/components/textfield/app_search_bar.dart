@@ -8,17 +8,20 @@ class AppSearchBar extends StatelessWidget {
     super.key,
     this.controller,
     this.onChanged,
+    this.decoration,
   });
 
   final TextEditingController? controller;
   final ValueChanged<String>? onChanged;
+
+  final InputDecoration? decoration;
 
   @override
   Widget build(BuildContext context) {
     return AppTextField(
       controller: controller,
       onChanged: onChanged,
-      decoration: AppTextFieldTheme.primary(context).copyWith(
+      decoration: (decoration ?? AppTextFieldTheme.primary(context)).copyWith(
         prefixIcon: const Icon(
           CupertinoIcons.search,
         ),

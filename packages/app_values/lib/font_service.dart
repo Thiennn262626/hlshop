@@ -14,9 +14,9 @@ class FontSizeService {
     this.baseFontSize = baseFontSize ?? 16;
   }
 
-  double baseFontSize = 16;
+  double baseFontSize = 17;
 
-  double get text_XS5 => baseFontSize - 6;
+  double get text_XS5 => baseFontSize - 5;
 
   double get text_XS4 => baseFontSize - 5;
 

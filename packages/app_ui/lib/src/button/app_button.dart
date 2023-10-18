@@ -90,28 +90,6 @@ class AppButtonTheme {
     ).merge(props);
   }
 
-  static ButtonStyle confirmAction(
-    BuildContext context, {
-    AppButtonStyle? props,
-  }) {
-    final styleFrom = AppButtonTheme.primary(context)
-        .copyWith(
-          padding: const MaterialStatePropertyAll(
-            EdgeInsets.symmetric(
-              horizontal: 42,
-              vertical: 14,
-            ),
-          ),
-          textStyle: const MaterialStatePropertyAll(
-            TextStyle(
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-        )
-        .merge(props);
-    return styleFrom;
-  }
-
   static ButtonStyle ghost(
     BuildContext context, {
     AppButtonStyle? props,
@@ -179,4 +157,22 @@ class AppButtonStyle extends ButtonStyle {
     super.padding,
     super.elevation,
   });
+}
+
+extension ButtonStyleX on ButtonStyle {
+  ButtonStyle big(BuildContext context) {
+    return copyWith(
+      padding: const MaterialStatePropertyAll(
+        EdgeInsets.symmetric(
+          horizontal: 42,
+          vertical: 14,
+        ),
+      ),
+      textStyle: const MaterialStatePropertyAll(
+        TextStyle(
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+    );
+  }
 }

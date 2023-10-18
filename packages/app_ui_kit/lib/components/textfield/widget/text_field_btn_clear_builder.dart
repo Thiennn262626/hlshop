@@ -15,11 +15,13 @@ class TextFieldBtnClearBuilder extends StatefulWidget {
   final bool enabled;
   final TextEditingController controller;
   final InputDecoration inputDecoration;
-  final Widget Function(BuildContext context, InputDecoration inputDecoration) builder;
+  final Widget Function(BuildContext context, InputDecoration inputDecoration)
+      builder;
   final VoidCallback? onClear;
 
   @override
-  State<TextFieldBtnClearBuilder> createState() => _TextFieldBtnClearBuilderState();
+  State<TextFieldBtnClearBuilder> createState() =>
+      _TextFieldBtnClearBuilderState();
 }
 
 class _TextFieldBtnClearBuilderState extends State<TextFieldBtnClearBuilder> {
@@ -61,6 +63,7 @@ class _TextFieldBtnClearBuilderState extends State<TextFieldBtnClearBuilder> {
                 icon: CupertinoIcons.clear_circled_solid,
                 iconColor: context.theme.hintColor,
                 iconSize: 20,
+                padding: EdgeInsets.zero,
                 onPressed: () {
                   widget.controller.clear();
                   widget.onClear?.call();

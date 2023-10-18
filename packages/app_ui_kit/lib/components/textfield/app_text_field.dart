@@ -14,6 +14,7 @@ class AppTextField extends StatefulWidget {
     this.textInputAction,
     this.onLostFocus,
     this.enableClearButton = false,
+    this.autoFocus = false,
   });
 
   final TextEditingController? controller;
@@ -25,6 +26,7 @@ class AppTextField extends StatefulWidget {
 
   final InputDecoration? decoration;
 
+  final bool autoFocus;
   final bool enableClearButton;
 
   final TextInputType? keyboardType;
@@ -41,9 +43,10 @@ class _AppTextFieldState extends State<AppTextField> {
 
   @override
   void initState() {
-    _controller = widget.controller ?? TextEditingController(
-      text: widget.initialValue ?? '',
-    );
+    _controller = widget.controller ??
+        TextEditingController(
+          text: widget.initialValue ?? '',
+        );
     _focusInit();
     super.initState();
   }
@@ -81,6 +84,7 @@ class _AppTextFieldState extends State<AppTextField> {
       enabled: widget.enableClearButton,
       inputDecoration: widget.decoration ?? AppTextFieldTheme.primary(context),
       builder: (context, inputDecoration) => TextFormField(
+        autofocus: widget.autoFocus,
         onChanged: (val) {
           _onTextChange();
         },

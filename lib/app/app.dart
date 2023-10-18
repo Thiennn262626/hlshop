@@ -7,7 +7,6 @@ import 'package:hlshop/app/common/presentation/widgets/exception/app_exception_h
 import 'package:hlshop/app/common/presentation/widgets/responsive/app_responsive_config.dart';
 import 'package:hlshop/app/features/auth/self.dart';
 import 'package:hlshop/app/features/shopping_cart/presentation/bloc/shopping_cart_bloc.dart';
-import 'package:hlshop/app/features/shopping_cart/presentation/widget/shopping_cart_listener.dart';
 import 'package:hlshop/app/features/user/presentation/bloc/user_bloc.dart';
 
 class App extends StatelessWidget {
@@ -28,7 +27,7 @@ class App extends StatelessWidget {
         localizationsDelegates: context.localizationDelegates,
         supportedLocales: context.supportedLocales,
         locale: context.locale,
-        title: 'HL Shop',
+        title: 'HLSHOP',
         builder: (context, child) {
           return AppResponsiveConfig(
             child: _flavorBanner(
@@ -77,23 +76,8 @@ class _AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider<AuthBloc>(
-          create: (context) => getIt()..add(AuthFirstLoadUserEvent()),
-        ),
-        BlocProvider<UserBloc>(
-          create: (context) => getIt()..add(const UserEvent.initial()),
-        ),
-        BlocProvider<ShoppingCartBloc>(
-          create: (context) => ShoppingCartBloc(),
-        ),
-      ],
-      child: _AppConfiguration(
-        child: _BlocListener(
-          child: child,
-        ),
-      ),
+    return _AppConfiguration(
+      child: BlocProviderGlobal(child: child),
     );
   }
 }
@@ -145,8 +129,8 @@ class _AppConfiguration extends StatelessWidget {
   }
 }
 
-class _BlocListener extends StatelessWidget {
-  const _BlocListener({
+class BlocProviderGlobal extends StatelessWidget {
+  const BlocProviderGlobal({
     super.key,
     required this.child,
   });
@@ -155,10 +139,19 @@ class _BlocListener extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AuthListener(
-      child: ShoppingCartListener(
-        child: child,
-      ),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<AuthBloc>(
+          create: (context) => getIt()..add(const AuthEvent.appStarted()),
+        ),
+        BlocProvider<UserBloc>(
+          create: (context) => getIt()..add(const UserEvent.initial()),
+        ),
+        BlocProvider<ShoppingCartBloc>(
+          create: (context) => ShoppingCartBloc(),
+        ),
+      ],
+      child: child,
     );
   }
 }
