@@ -17,7 +17,6 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$UserAccountState {
   ApiStatus get status => throw _privateConstructorUsedError;
-  UserEntity? get item => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $UserAccountStateCopyWith<UserAccountState> get copyWith =>
@@ -30,7 +29,7 @@ abstract class $UserAccountStateCopyWith<$Res> {
           UserAccountState value, $Res Function(UserAccountState) then) =
       _$UserAccountStateCopyWithImpl<$Res, UserAccountState>;
   @useResult
-  $Res call({ApiStatus status, UserEntity? item});
+  $Res call({ApiStatus status});
 
   $ApiStatusCopyWith<$Res> get status;
 }
@@ -49,17 +48,12 @@ class _$UserAccountStateCopyWithImpl<$Res, $Val extends UserAccountState>
   @override
   $Res call({
     Object? status = null,
-    Object? item = freezed,
   }) {
     return _then(_value.copyWith(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as ApiStatus,
-      item: freezed == item
-          ? _value.item
-          : item // ignore: cast_nullable_to_non_nullable
-              as UserEntity?,
     ) as $Val);
   }
 
@@ -80,7 +74,7 @@ abstract class _$$_UserAccountStateCopyWith<$Res>
       __$$_UserAccountStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ApiStatus status, UserEntity? item});
+  $Res call({ApiStatus status});
 
   @override
   $ApiStatusCopyWith<$Res> get status;
@@ -98,17 +92,12 @@ class __$$_UserAccountStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? status = null,
-    Object? item = freezed,
   }) {
     return _then(_$_UserAccountState(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as ApiStatus,
-      item: freezed == item
-          ? _value.item
-          : item // ignore: cast_nullable_to_non_nullable
-              as UserEntity?,
     ));
   }
 }
@@ -117,20 +106,16 @@ class __$$_UserAccountStateCopyWithImpl<$Res>
 
 class _$_UserAccountState extends _UserAccountState
     with DiagnosticableTreeMixin {
-  const _$_UserAccountState(
-      {this.status = const ApiStatus.initial(), this.item = null})
+  const _$_UserAccountState({this.status = const ApiStatus.initial()})
       : super._();
 
   @override
   @JsonKey()
   final ApiStatus status;
-  @override
-  @JsonKey()
-  final UserEntity? item;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'UserAccountState(status: $status, item: $item)';
+    return 'UserAccountState(status: $status)';
   }
 
   @override
@@ -138,8 +123,7 @@ class _$_UserAccountState extends _UserAccountState
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'UserAccountState'))
-      ..add(DiagnosticsProperty('status', status))
-      ..add(DiagnosticsProperty('item', item));
+      ..add(DiagnosticsProperty('status', status));
   }
 
   @override
@@ -147,12 +131,11 @@ class _$_UserAccountState extends _UserAccountState
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_UserAccountState &&
-            (identical(other.status, status) || other.status == status) &&
-            (identical(other.item, item) || other.item == item));
+            (identical(other.status, status) || other.status == status));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status, item);
+  int get hashCode => Object.hash(runtimeType, status);
 
   @JsonKey(ignore: true)
   @override
@@ -162,14 +145,12 @@ class _$_UserAccountState extends _UserAccountState
 }
 
 abstract class _UserAccountState extends UserAccountState {
-  const factory _UserAccountState(
-      {final ApiStatus status, final UserEntity? item}) = _$_UserAccountState;
+  const factory _UserAccountState({final ApiStatus status}) =
+      _$_UserAccountState;
   const _UserAccountState._() : super._();
 
   @override
   ApiStatus get status;
-  @override
-  UserEntity? get item;
   @override
   @JsonKey(ignore: true)
   _$$_UserAccountStateCopyWith<_$_UserAccountState> get copyWith =>

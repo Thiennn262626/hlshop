@@ -1,8 +1,8 @@
 import 'package:hlshop/all_file/all_file.dart';
 import 'package:hlshop/app/features/user/self.dart';
 
-part 'user_payment_info_cubit.freezed.dart';
 part 'user_payment_info_state.dart';
+part 'user_payment_info_cubit.freezed.dart';
 
 class UserPaymentInfoCubit extends Cubit<UserPaymentInfoState> {
   UserPaymentInfoCubit({

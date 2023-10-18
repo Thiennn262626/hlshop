@@ -6,6 +6,5 @@ class UserAccountState with _$UserAccountState {
 
   const factory UserAccountState({
     @Default(ApiStatus.initial()) ApiStatus status,
-    @Default(null) UserEntity? item,
   }) = _UserAccountState;
 }

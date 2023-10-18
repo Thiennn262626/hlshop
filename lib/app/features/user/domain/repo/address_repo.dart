@@ -13,5 +13,4 @@ abstract class AddressRepo {
     int? offset,
     int? limit,
   });
-
 }

@@ -4,7 +4,6 @@ import 'package:hlshop/all_file/all_file.dart';
 import 'package:hlshop/app/common/self.dart';
 import 'package:hlshop/app/features/auth/self.dart';
 import 'package:hlshop/app/features/checkout/self.dart';
-import 'package:hlshop/app/features/message/self.dart';
 import 'package:hlshop/app/features/product/self.dart';
 import 'package:hlshop/app/features/shopping_cart/seft.dart';
 import 'package:hlshop/app/features/user/data/repo/ms_payment_repo.dart';
@@ -103,7 +102,6 @@ void _initDataMSService() {
     ..registerLazySingleton<AuthRepo>(AuthRepoMS.new)
     ..registerLazySingleton<ProductRepo>(MsProductRepo.new)
     ..registerLazySingleton<ProductCategoryRepo>(MsProductCategoryRepo.new)
-    ..registerLazySingleton<MessageRepo>(MessageRepoImpl.new)
     ..registerLazySingleton<UserOrderRepo>(MsUserOrderRepo.new)
     ..registerLazySingleton<AppNavigationEventRepo>(AppNavigationEventRepo.new);
 }

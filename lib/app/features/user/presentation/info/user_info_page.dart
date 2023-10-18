@@ -1,4 +1,5 @@
 import 'package:hlshop/all_file/all_file.dart';
+import 'package:hlshop/app/features/auth/presentation/widget/auth_consumer.dart';
 import 'package:hlshop/app/features/user/presentation/info/cubit/user_info_cubit.dart';
 import 'package:hlshop/app/features/user/presentation/info/user_info_body.dart';
 import 'package:hlshop/app/features/user/self.dart';
@@ -17,7 +18,12 @@ class UserInfoPage extends StatelessWidget {
         appBar: AppAppBar(
           title: 'Tài khoản'.tr(),
         ),
-        body: const UserInfoBody(),
+        body: AuthConsumer(
+          onUnAuthenticated: () {
+            context.popRoute();
+          },
+          child: const UserInfoBody(),
+        ),
       ),
     );
   }

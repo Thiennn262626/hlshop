@@ -25,13 +25,13 @@ class CheckoutBottomBar extends StatelessWidget {
         ).expand(),
         BlocBuilder<CheckoutBloc, CheckoutState>(
           builder: (context, state) => AppButton(
-            style: AppButtonTheme.confirmAction(context),
+            style: AppButtonTheme.primary(context).big(context),
             label: isPay ? 'Thanh toán'.tr() : 'Đặt hàng'.tr(),
             onPressed: () async {
               if (state.userAddress.isNotNullOrEmpty) {
                 context.read<CheckoutBloc>().add(
-                      const CheckoutEvent.createOrder(),
-                    );
+                  const CheckoutEvent.createOrder(),
+                );
               } else {
                 await DialogUtils.showErrorDialog(
                     context: context,

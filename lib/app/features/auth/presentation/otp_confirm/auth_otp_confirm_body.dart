@@ -39,7 +39,7 @@ class AuthOtpConfirmBody extends StatelessWidget {
             builder: (context, state) {
               return AppButton(
                 isEnable: (state.otp?.length ?? 0) == otpLength,
-                style: AppButtonTheme.confirmAction(context),
+                style: AppButtonTheme.primary(context).big(context),
                 label: LocaleKeys.common_Confirm.tr(),
                 onPressed: () {
                   cubit.onConfirmOTP();

@@ -3,6 +3,7 @@ import 'package:hlshop/app/features/user/data/mulstore/model/update_contact_name
 import 'package:hlshop/app/features/user/self.dart';
 
 part 'detail_account_cubit.freezed.dart';
+
 part 'detail_account_state.dart';
 
 class DetailAccountCubit extends Cubit<DetailAccountState> {
@@ -15,13 +16,6 @@ class DetailAccountCubit extends Cubit<DetailAccountState> {
         );
 
   final UserRepo userRepo = getIt();
-
-  Future<List<UserPhoneEntity>> fetchListPhone(int offset, int limit) {
-    return userRepo.getListPhone(
-      limit: limit,
-      offset: offset,
-    );
-  }
 
   Future<void> changeName(String? name) async {
     emit(state.copyWith(name: name));

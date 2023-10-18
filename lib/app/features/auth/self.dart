@@ -5,5 +5,4 @@ export 'data/mulstore/auth_repo_ms.dart';
 export 'domain/entity/auth_entity.dart';
 export 'domain/repo/auth_repo.dart';
 export 'presentation/bloc/auth_bloc.dart';
-export 'presentation/widget/auth_listener.dart';
 export 'presentation/widget/index.dart';

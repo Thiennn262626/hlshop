@@ -16,27 +16,25 @@ class AuthConsumer extends StatelessWidget {
   final Widget? unAuthenticatedWidget;
 
   final ValueChanged<AuthState>? onAuthenticatedStatusChange;
-  final ValueChanged<UserEntity?>? onAuthenticated;
+  final VoidCallback? onAuthenticated;
   final VoidCallback? onUnAuthenticated;
 
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AuthBloc, AuthState>(
       listener: (context, state) {
+        state.status.maybeWhen(
+          authenticated: onAuthenticated,
+          notAuthenticated: onUnAuthenticated,
+          orElse: () => null,
+        );
         onAuthenticatedStatusChange?.call(state);
-
-        if (state is AuthenticatedState) {
-          onAuthenticated?.call(state.data.user);
-        }
-        if (state is UnAuthenticatedState) {
-          onUnAuthenticated?.call();
-        }
       },
       builder: (context, state) {
-        if (state is UnAuthenticatedState) {
-          return unAuthenticatedWidget ?? const UnAuthenticatedContent();
-        }
-        return child;
+        return state.status.maybeWhen(
+          authenticated: () => child,
+          orElse: () => unAuthenticatedWidget ?? const UnAuthenticatedContent(),
+        );
       },
     );
   }
@@ -49,13 +47,10 @@ class UnAuthenticatedContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Gaps.vGap50,
-        'Đăng nhập để sử dụng tính năng!'
+        Assets.icons.common.icAuthenRequired.svg(),
+        'Vui lòng đăng nhập/đăng ký để sử dụng tính năng này'
             .tr()
             .text
-            .headline4(context)
-            .semiBold
-            .black
             .center
             .make(),
         Column(

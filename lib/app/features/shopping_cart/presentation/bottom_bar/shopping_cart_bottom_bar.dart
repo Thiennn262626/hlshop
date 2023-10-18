@@ -77,7 +77,7 @@ class _TotalPriceSection extends StatelessWidget {
         BlocBuilder<ShoppingCartBloc, ShoppingCartState>(
           builder: (context, state) {
             return AppButton(
-              style: AppButtonTheme.confirmAction(context),
+              style: AppButtonTheme.primary(context).big(context),
               onPressed: context
                       .watch<ShoppingCartBloc>()
                       .state

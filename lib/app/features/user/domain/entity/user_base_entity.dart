@@ -18,6 +18,7 @@ class UserEntity {
     this.userCover,
   });
 
+  final Object? object;
   final String? id;
   final String? userName;
   final String? fullName;
@@ -26,6 +27,7 @@ class UserEntity {
   final List<UserEmailEntity>? emailList;
   final List<UserAddressEntity>? addressList;
   final String? userCover;
+  final List<UserAddressEntity>? receiveAddressList;
 
   static UserEntity demo() => const UserEntity(
         id: 'userID',
@@ -33,10 +35,6 @@ class UserEntity {
         fullName: 'fullName',
         avatar: 'avatar',
       );
-
-  final List<UserAddressEntity>? receiveAddressList;
-
-  final Object? object;
 
   String? get fullNameOrUserName => fullName ?? userName;
 
@@ -55,17 +53,25 @@ class UserEntity {
 @JsonSerializable()
 class UserPhoneEntity {
   UserPhoneEntity({
+    this.object,
+    this.id,
     this.phone,
     this.countryCode,
+    this.isDefault,
+    this.isVerify,
   });
+
+  final Object? object;
+  final String? id;
+  final String? phone;
+  final String? countryCode;
+  final int? isDefault;
+  final int? isVerify;
 
   static UserPhoneEntity demo() => UserPhoneEntity(
         phone: '4353467568',
-        countryCode: 'countryCode',
+        countryCode: '+84',
       );
-
-  String? phone;
-  String? countryCode;
 
   factory UserPhoneEntity.fromJson(Map<String, dynamic> json) =>
       _$UserPhoneEntityFromJson(json);

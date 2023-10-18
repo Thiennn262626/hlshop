@@ -6,25 +6,7 @@ part 'user_account_cubit.freezed.dart';
 part 'user_account_state.dart';
 
 class UserAccountCubit extends Cubit<UserAccountState> {
-  UserAccountCubit({UserEntity? item}) : super(UserAccountState(item: item));
+  UserAccountCubit() : super(const UserAccountState());
 
   final UserRepo userRepo = getIt();
-
-  FutureOr<void> fetchItem() async {
-    emit(state.copyWith(status: state.status.toPending()));
-    try {
-      final item = await userRepo.getUserInfo();
-      emit(state.copyWith(
-        status: const ApiStatus.done(),
-        item: item,
-      ));
-    } catch (e) {
-      log(e.toString(), error: e);
-      emit(
-        state.copyWith(
-          status: ApiStatus.error(e),
-        ),
-      );
-    }
-  }
 }

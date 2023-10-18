@@ -1,35 +1,12 @@
 part of 'auth_bloc.dart';
 
-@immutable
-abstract class AuthEvent {}
+@freezed
+class AuthEvent with _$AuthEvent {
+  const factory AuthEvent.appStarted() = _AppStarted;
 
-class AuthFirstLoadUserEvent extends AuthEvent {
-  AuthFirstLoadUserEvent();
-}
+  const factory AuthEvent.authenticated({
+    required String token,
+  }) = _SignIn;
 
-class AuthFetchUserEvent extends AuthEvent {
-  AuthFetchUserEvent();
-}
-
-class AuthenticatedEvent extends AuthEvent {
-  AuthenticatedEvent({
-    required this.token,
-    this.user,
-    this.isRefresh = false,
-    this.avatar,
-    this.firstTime = false,
-  });
-
-  final String token;
-  final UserEntity? user;
-  final String? avatar;
-  final bool firstTime;
-  final bool isRefresh;
-}
-
-class UnAuthenticatedEvent extends AuthEvent {
-  UnAuthenticatedEvent({this.showToast = false, this.openSignInPage = false});
-
-  final bool openSignInPage;
-  final bool showToast;
+  const factory AuthEvent.signOut() = _SignOut;
 }

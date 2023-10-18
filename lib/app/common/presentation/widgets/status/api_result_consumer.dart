@@ -55,8 +55,10 @@ class ApiItemConsumer<C extends StateStreamableSource<S>, S>
         final onErrorHandled = onError?.call(error) ?? false;
         if (!onErrorHandled) {
           if (error is Error) {
-            log(context.getAppErrorMsg(error) ?? '',
-                stackTrace: error.stackTrace);
+            log(
+              context.getAppErrorMsg(error) ?? '',
+              stackTrace: error.stackTrace,
+            );
           }
           //TODO: change to snackbar
           DialogUtils.showErrorDialog(

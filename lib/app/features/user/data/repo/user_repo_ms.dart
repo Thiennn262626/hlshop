@@ -2,6 +2,7 @@ import 'package:hlshop/all_file/all_file.dart';
 import 'package:hlshop/app/features/user/data/mulstore/api/user_api_ms.dart';
 import 'package:hlshop/app/features/user/data/mulstore/model/add_receiver_address_model.dart';
 import 'package:hlshop/app/features/user/data/mulstore/model/delete_receiver_address_model.dart';
+import 'package:hlshop/app/features/user/data/mulstore/model/ms_user_info.dart';
 import 'package:hlshop/app/features/user/data/mulstore/model/update_contact_name_model.dart';
 import 'package:hlshop/app/features/user/data/mulstore/model/update_receiver_address_model.dart';
 import 'package:hlshop/app/features/user/data/mulstore/model/user_receiver_address_model_ms.dart';
@@ -17,11 +18,16 @@ class UserRepoMS implements UserRepo {
 
   @override
   Future<UserEntity> getUserInfo() async {
-    final rs = await _userApiMS.getUserProfile();
-    if (rs == null) {
-      throw Exception('Không tìm thấy thông tin người dùng'.tr());
+    try {
+      final rs = await _userApiMS.getUserProfile();
+      if (rs == null) {
+        throw Exception('Không tìm thấy thông tin người dùng'.tr());
+      }
+      return rs.toEntity();
+    } catch (e) {
+      log(e.toString(), error: e);
+      return Future.error(e);
     }
-    return rs.toEntity();
   }
 
   @override
@@ -144,7 +150,7 @@ class UserRepoMS implements UserRepo {
   Future<Object> updateAvatar({File? avatar}) async {
     final rs = await _userApiMS.updateAvatarImage(file_avatar: avatar);
     if (rs == null) {
-      throw Exception('Cap nhat thong tin that bai'.tr());
+      throw Exception('Cập nhật thất bại'.tr());
     }
     return Future.value(true);
   }
@@ -153,8 +159,50 @@ class UserRepoMS implements UserRepo {
   Future<Object> updateCover({File? cover}) async {
     final rs = await _userApiMS.updateCoverImage(file_cover: cover);
     if (rs == null) {
-      throw Exception('Cap nhat thong tin that bai'.tr());
+      throw Exception('Cập nhật thất bại'.tr());
     }
     return Future.value(true);
+  }
+
+  @override
+  Future<Object> addPhone({required String phone}) async {
+    final rs = await _userApiMS.addPhone(
+      MsAddPhoneReq(
+        phoneLabel: 0,
+        phoneNo: phone,
+      ),
+    );
+    return Future.value(rs);
+  }
+
+  @override
+  Future<Object> verifyPhone({
+    required Object? addResultObject,
+    required String otp,
+  }) async {
+    if (addResultObject is MsAddPhoneResultWrapper) {
+      final rs = await _userApiMS.verifyPhone(
+        MsVerifyPhoneReq(
+          phoneID: addResultObject.result?.phoneID,
+          uuid: addResultObject.result?.uuid,
+          otp: otp,
+        ),
+      );
+      return Future.value(rs);
+    }
+    return Future.error('Không thể xác thực số điện thoại'.tr());
+  }
+
+  @override
+  Future<Object> resendOtp({required Object? addResultObject}) async {
+    if (addResultObject is MsAddPhoneResultWrapper) {
+      final rs = await _userApiMS.resendPhoneOtp(
+        MsResendPhoneReq(
+          phoneID: addResultObject.result?.phoneID,
+        ),
+      );
+      return Future.value(rs);
+    }
+    return Future.error('Không thể gửi lại mã OTP'.tr());
   }
 }

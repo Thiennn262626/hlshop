@@ -28,8 +28,7 @@ class MsCitiesResult {
     this.total,
   });
 
-  factory MsCitiesResult.fromJson(Map<String, dynamic> json) =>
-      _$MsCitiesResultFromJson(json);
+  factory MsCitiesResult.fromJson(Map<String, dynamic> json) => _$MsCitiesResultFromJson(json);
 
   final List<MsCity>? cities;
   final int? total;
@@ -41,8 +40,7 @@ class MsCitiesResult {
 class MsDistrict {
   const MsDistrict({this.cityID, this.districtID, this.name});
 
-  factory MsDistrict.fromJson(Map<String, dynamic> json) =>
-      _$MsDistrictFromJson(json);
+  factory MsDistrict.fromJson(Map<String, dynamic> json) => _$MsDistrictFromJson(json);
 
   final String? districtID;
   final String? name;
@@ -63,8 +61,7 @@ class MsDistrictsResult {
     this.total,
   });
 
-  factory MsDistrictsResult.fromJson(Map<String, dynamic> json) =>
-      _$MsDistrictsResultFromJson(json);
+  factory MsDistrictsResult.fromJson(Map<String, dynamic> json) => _$MsDistrictsResultFromJson(json);
 
   final List<MsDistrict>? districts;
   final int? total;

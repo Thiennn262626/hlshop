@@ -1,8 +1,9 @@
 import 'dart:async';
 
 import 'package:hlshop/all_file/all_file.dart';
+import 'package:hlshop/app/features/user/presentation/bloc/user_bloc.dart';
 
-import '../../../auth/presentation/bloc/auth_bloc.dart';
+
 
 class AppNavigationEventRepo {
   final _navBarController = StreamController<int>.broadcast();
@@ -13,7 +14,7 @@ class AppNavigationEventRepo {
 
   void checkLoginAction(BuildContext context, int index) {
     if (index == 1) {
-      context.read<AuthBloc>().checkLoginAction(
+      context.read<UserBloc>().checkLoginAction(
         context,
         onLogin: (user) {
           return context.pushRoute(

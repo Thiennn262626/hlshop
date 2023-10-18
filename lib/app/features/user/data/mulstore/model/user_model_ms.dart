@@ -18,6 +18,9 @@ class UserMS {
     this.userType,
     this.userAvatar,
     this.userCover,
+    this.emails,
+    this.phones,
+    this.urls,
   });
 
   final String? userID;
@@ -32,6 +35,9 @@ class UserMS {
   final dynamic userType;
   final String? userAvatar;
   final String? userCover;
+  final List<MsEmail>? emails;
+  final List<MsPhone>? phones;
+  final List<MsUrl>? urls;
 
   UserEntity toEntity() => UserEntity(
         id: userID,
@@ -39,10 +45,87 @@ class UserMS {
         fullName: contactFullName,
         avatar: userAvatar,
         userCover: userCover,
+        phoneList: phones?.map((e) => e.toEntity()).toList(),
         object: this,
       );
 
   factory UserMS.fromJson(Map<String, dynamic> json) => _$UserMSFromJson(json);
 
   Map<String, dynamic> toJson() => _$UserMSToJson(this);
+}
+
+@JsonSerializable()
+class MsPhone {
+  final String? phoneID;
+  final String? phoneNo;
+  final String? extendNumber;
+  final String? phoneArea;
+  final String? countryArea;
+  final int? phoneLabel;
+  final int? isDefault;
+  final int? isVerify;
+
+  const MsPhone({
+    this.phoneID,
+    this.phoneLabel,
+    this.isDefault,
+    this.isVerify,
+    this.phoneNo,
+    this.extendNumber,
+    this.phoneArea,
+    this.countryArea,
+  });
+
+  UserPhoneEntity toEntity() => UserPhoneEntity(
+        object: this,
+        id: phoneID,
+        phone: phoneNo,
+        countryCode: countryArea,
+        isDefault: isDefault,
+        isVerify: isVerify,
+      );
+
+  factory MsPhone.fromJson(Map<String, dynamic> json) =>
+      _$MsPhoneFromJson(json);
+
+  Map<String, dynamic> toJson() => _$MsPhoneToJson(this);
+}
+
+@JsonSerializable()
+class MsUrl {
+  final String? urlID;
+  final String? urlString;
+  final int? isDefault;
+
+  const MsUrl({
+    this.urlID,
+    this.urlString,
+    this.isDefault,
+  });
+
+  factory MsUrl.fromJson(Map<String, dynamic> json) => _$MsUrlFromJson(json);
+
+  Map<String, dynamic> toJson() => _$MsUrlToJson(this);
+}
+
+@JsonSerializable()
+class MsEmail {
+  final String? emailID;
+  final String? emailAddress;
+  final int? emailLabel;
+  final int? isDefault;
+  final int? isVerify;
+
+  const MsEmail({
+    this.emailID,
+    this.emailAddress,
+    this.emailLabel,
+    this.isDefault,
+    this.isVerify,
+  });
+
+  factory MsEmail.fromJson(Map<String, dynamic> json) =>
+      _$MsEmailFromJson(json);
+
+  Map<String, dynamic> toJson() => _$MsEmailToJson(this);
 }

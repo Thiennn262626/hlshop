@@ -3,6 +3,7 @@ import 'package:hlshop/all_file/all_file.dart';
 import 'package:hlshop/app/features/user/data/mulstore/model/add_receiver_address_model.dart';
 import 'package:hlshop/app/features/user/data/mulstore/model/delete_receiver_address_model.dart';
 import 'package:hlshop/app/features/user/data/mulstore/model/district_model_ms.dart';
+import 'package:hlshop/app/features/user/data/mulstore/model/ms_user_info.dart';
 import 'package:hlshop/app/features/user/data/mulstore/model/update_contact_name_model.dart';
 import 'package:hlshop/app/features/user/data/mulstore/model/update_receiver_address_model.dart';
 import 'package:hlshop/app/features/user/data/mulstore/model/user_city_model_ms.dart';
@@ -72,4 +73,19 @@ abstract class UserApiMS {
   Future<dynamic> updateAvatarImage({
     @Part() File? file_avatar,
   });
+
+  @POST('/api/mulstore/users/profile/phone-add')
+  Future<MsAddPhoneResultWrapper?> addPhone(
+    @Body() MsAddPhoneReq body,
+  );
+
+  @POST('/api/mulstore/users/profile/phone-verify')
+  Future<dynamic> verifyPhone(
+    @Body() MsVerifyPhoneReq body,
+  );
+
+  @POST('/api/mulstore/users/profile/phone-resend-otp')
+  Future<MsAddPhoneResultWrapper?> resendPhoneOtp(
+    @Body() MsResendPhoneReq body,
+  );
 }

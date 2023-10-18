@@ -8,6 +8,8 @@ class UserEvent with _$UserEvent {
 
   const factory UserEvent.fetch() = _UserFetchEvent;
 
+  const factory UserEvent.clear() = _UserClearEvent;
+
   const factory UserEvent.updateUserName({
     required String userName,
   }) = _UserUpdateUserNameEvent;

@@ -12,8 +12,10 @@ import 'dart:async' as _i34;
 
 import 'package:auto_route/auto_route.dart' as _i33;
 import 'package:hlshop/all_file/all_file.dart' as _i35;
+import 'package:hlshop/app/common/presentation/otp_confirm/otp_confirm_page.dart'
+    as _i32;
 import 'package:hlshop/app/features/about/presentation/main/about_page.dart'
-    as _i26;
+    as _i25;
 import 'package:hlshop/app/features/auth/presentation/forgot_password/change_password/change_password_page.dart'
     as _i4;
 import 'package:hlshop/app/features/auth/presentation/forgot_password/main/forgot_password_page.dart'
@@ -25,12 +27,10 @@ import 'package:hlshop/app/features/auth/presentation/otp_confirm/auth_otp_confi
 import 'package:hlshop/app/features/auth/presentation/sign_up/sign_up_page.dart'
     as _i6;
 import 'package:hlshop/app/features/checkout/presentation/main/checkout_page.dart'
-    as _i29;
+    as _i28;
 import 'package:hlshop/app/features/home/presentation/main/home_page.dart'
     as _i1;
-import 'package:hlshop/app/features/main/presentation/main_page.dart' as _i31;
-import 'package:hlshop/app/features/message/presentation/main/message_page.dart'
-    as _i13;
+import 'package:hlshop/app/features/main/presentation/main_page.dart' as _i30;
 import 'package:hlshop/app/features/notification/data/model/notification_model.dart'
     as _i36;
 import 'package:hlshop/app/features/notification/presentation/detail/notification_detail_page.dart'
@@ -40,42 +40,42 @@ import 'package:hlshop/app/features/notification/presentation/main/notification_
 import 'package:hlshop/app/features/product/domain/entity/product_entity.dart'
     as _i40;
 import 'package:hlshop/app/features/product/presentation/detail/product_detail_page.dart'
-    as _i28;
-import 'package:hlshop/app/features/product/presentation/product_search/product_search_page.dart'
     as _i27;
+import 'package:hlshop/app/features/product/presentation/product_search/product_search_page.dart'
+    as _i26;
 import 'package:hlshop/app/features/product_rating/presentation/main/product_rating_page.dart'
     as _i2;
 import 'package:hlshop/app/features/search/presentation/main/search_page.dart'
-    as _i30;
+    as _i29;
 import 'package:hlshop/app/features/shopping_cart/presentation/main/shopping_cart_page.dart'
-    as _i32;
+    as _i31;
 import 'package:hlshop/app/features/shopping_cart/seft.dart' as _i41;
 import 'package:hlshop/app/features/user/domain/entity/user_base_entity.dart'
     as _i39;
 import 'package:hlshop/app/features/user/presentation/account/user_account_page.dart'
-    as _i25;
-import 'package:hlshop/app/features/user/presentation/address/crud_address/crud_address_page.dart'
-    as _i23;
-import 'package:hlshop/app/features/user/presentation/address/receive_address/receive_address_page.dart'
     as _i24;
-import 'package:hlshop/app/features/user/presentation/detail_account/detail_account_page.dart'
-    as _i21;
-import 'package:hlshop/app/features/user/presentation/detail_account/user_account%20_info/user_account%20_info_page.dart'
-    as _i20;
-import 'package:hlshop/app/features/user/presentation/detail_account/user_email_info/user_email_info_page.dart'
-    as _i18;
-import 'package:hlshop/app/features/user/presentation/detail_account/user_phone_info/user_phone_info_page.dart'
-    as _i19;
-import 'package:hlshop/app/features/user/presentation/favorite_product/user_favorite_product_page.dart'
+import 'package:hlshop/app/features/user/presentation/address/crud_address/crud_address_page.dart'
     as _i22;
-import 'package:hlshop/app/features/user/presentation/info/user_info_page.dart'
+import 'package:hlshop/app/features/user/presentation/address/receive_address/receive_address_page.dart'
+    as _i23;
+import 'package:hlshop/app/features/user/presentation/detail_account/detail_account_page.dart'
+    as _i20;
+import 'package:hlshop/app/features/user/presentation/detail_account/user_account%20_info/user_account%20_info_page.dart'
+    as _i19;
+import 'package:hlshop/app/features/user/presentation/detail_account/user_email_info/user_email_info_page.dart'
     as _i17;
-import 'package:hlshop/app/features/user/presentation/payment_method/crud_payment/bank_account/crud_bank_account_page.dart'
+import 'package:hlshop/app/features/user/presentation/detail_account/user_phone_info/user_phone_info_page.dart'
+    as _i18;
+import 'package:hlshop/app/features/user/presentation/favorite_product/user_favorite_product_page.dart'
+    as _i21;
+import 'package:hlshop/app/features/user/presentation/info/user_info_page.dart'
     as _i16;
-import 'package:hlshop/app/features/user/presentation/payment_method/crud_payment/credit_card/credit_card_page.dart'
+import 'package:hlshop/app/features/user/presentation/payment_method/crud_payment/bank_account/crud_bank_account_page.dart'
     as _i15;
-import 'package:hlshop/app/features/user/presentation/payment_method/user_payment_info/user_payment_info_page.dart'
+import 'package:hlshop/app/features/user/presentation/payment_method/crud_payment/credit_card/credit_card_page.dart'
     as _i14;
+import 'package:hlshop/app/features/user/presentation/payment_method/user_payment_info/user_payment_info_page.dart'
+    as _i13;
 import 'package:hlshop/app/features/user/self.dart' as _i38;
 import 'package:hlshop/app/features/user_order/domain/entities/order_entities.dart'
     as _i37;
@@ -188,16 +188,10 @@ abstract class $AppAutoRoute extends _i33.RootStackRouter {
         child: const _i12.UserOrderPage(),
       );
     },
-    MessageRoute.name: (routeData) {
-      return _i33.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i13.MessagePage(),
-      );
-    },
     UserPaymentInfoRoute.name: (routeData) {
       return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i14.UserPaymentInfoPage(),
+        child: const _i13.UserPaymentInfoPage(),
       );
     },
     CrudCreditCardRoute.name: (routeData) {
@@ -205,7 +199,7 @@ abstract class $AppAutoRoute extends _i33.RootStackRouter {
           orElse: () => const CrudCreditCardRouteArgs());
       return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i15.CrudCreditCardPage(
+        child: _i14.CrudCreditCardPage(
           key: args.key,
           initialCreditCard: args.initialCreditCard,
           type: args.type,
@@ -217,7 +211,7 @@ abstract class $AppAutoRoute extends _i33.RootStackRouter {
           orElse: () => const CrudBankAccountRouteArgs());
       return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i16.CrudBankAccountPage(
+        child: _i15.CrudBankAccountPage(
           key: args.key,
           initialBankAccount: args.initialBankAccount,
           type: args.type,
@@ -228,7 +222,7 @@ abstract class $AppAutoRoute extends _i33.RootStackRouter {
       final args = routeData.argsAs<UserInfoRouteArgs>();
       return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i17.UserInfoPage(
+        child: _i16.UserInfoPage(
           key: args.key,
           user: args.user,
         ),
@@ -237,20 +231,20 @@ abstract class $AppAutoRoute extends _i33.RootStackRouter {
     UserEmailInfoRoute.name: (routeData) {
       return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i18.UserEmailInfoPage(),
+        child: const _i17.UserEmailInfoPage(),
       );
     },
     UserPhoneInfoRoute.name: (routeData) {
       return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i19.UserPhoneInfoPage(),
+        child: const _i18.UserPhoneInfoPage(),
       );
     },
     UserAccountInfoRoute.name: (routeData) {
       final args = routeData.argsAs<UserAccountInfoRouteArgs>();
       return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i20.UserAccountInfoPage(
+        child: _i19.UserAccountInfoPage(
           key: args.key,
           user: args.user,
         ),
@@ -260,7 +254,7 @@ abstract class $AppAutoRoute extends _i33.RootStackRouter {
       final args = routeData.argsAs<ReceiveDetailAccountRouteArgs>();
       return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i21.ReceiveDetailAccountPage(
+        child: _i20.ReceiveDetailAccountPage(
           key: args.key,
           user: args.user,
         ),
@@ -269,7 +263,7 @@ abstract class $AppAutoRoute extends _i33.RootStackRouter {
     UserFavoriteProductRoute.name: (routeData) {
       return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i22.UserFavoriteProductPage(),
+        child: const _i21.UserFavoriteProductPage(),
       );
     },
     CrudAddressRoute.name: (routeData) {
@@ -277,7 +271,7 @@ abstract class $AppAutoRoute extends _i33.RootStackRouter {
           orElse: () => const CrudAddressRouteArgs());
       return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i23.CrudAddressPage(
+        child: _i22.CrudAddressPage(
           key: args.key,
           initialAddress: args.initialAddress,
           type: args.type,
@@ -288,7 +282,7 @@ abstract class $AppAutoRoute extends _i33.RootStackRouter {
       final args = routeData.argsAs<ReceiveAddressRouteArgs>();
       return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i24.ReceiveAddressPage(
+        child: _i23.ReceiveAddressPage(
           key: args.key,
           user: args.user,
           canSelectPrimary: args.canSelectPrimary,
@@ -299,13 +293,13 @@ abstract class $AppAutoRoute extends _i33.RootStackRouter {
     UserAccountRoute.name: (routeData) {
       return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i25.UserAccountPage(),
+        child: const _i24.UserAccountPage(),
       );
     },
     AboutRoute.name: (routeData) {
       return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i26.AboutPage(),
+        child: const _i25.AboutPage(),
       );
     },
     ProductSearchRoute.name: (routeData) {
@@ -313,7 +307,7 @@ abstract class $AppAutoRoute extends _i33.RootStackRouter {
           orElse: () => const ProductSearchRouteArgs());
       return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i27.ProductSearchPage(
+        child: _i26.ProductSearchPage(
           key: args.key,
           filterData: args.filterData,
           searchHint: args.searchHint,
@@ -324,7 +318,7 @@ abstract class $AppAutoRoute extends _i33.RootStackRouter {
       final args = routeData.argsAs<ProductDetailRouteArgs>();
       return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i28.ProductDetailPage(
+        child: _i27.ProductDetailPage(
           key: args.key,
           product: args.product,
         ),
@@ -335,7 +329,7 @@ abstract class $AppAutoRoute extends _i33.RootStackRouter {
           orElse: () => const CheckoutRouteArgs());
       return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i29.CheckoutPage(
+        child: _i28.CheckoutPage(
           key: args.key,
           cartItems: args.cartItems,
           selectedCartItemIds: args.selectedCartItemIds,
@@ -345,19 +339,34 @@ abstract class $AppAutoRoute extends _i33.RootStackRouter {
     SearchRoute.name: (routeData) {
       return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i30.SearchPage(),
+        child: const _i29.SearchPage(),
       );
     },
     MainRoute.name: (routeData) {
       return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i31.MainPage(),
+        child: const _i30.MainPage(),
       );
     },
     ShoppingCartRoute.name: (routeData) {
       return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i32.ShoppingCartPage(),
+        child: const _i31.ShoppingCartPage(),
+      );
+    },
+    OtpConfirmRoute.name: (routeData) {
+      final args = routeData.argsAs<OtpConfirmRouteArgs>();
+      return _i33.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: _i32.OtpConfirmPage(
+          requestOtpResult: args.requestOtpResult,
+          confirmOTPFunc: args.confirmOTPFunc,
+          onResendOTP: args.onResendOTP,
+          otpLength: args.otpLength,
+          otpMessage: args.otpMessage,
+          key: args.key,
+          successMessage: args.successMessage,
+        ),
       );
     },
   };
@@ -680,21 +689,7 @@ class UserOrderRoute extends _i33.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i13.MessagePage]
-class MessageRoute extends _i33.PageRouteInfo<void> {
-  const MessageRoute({List<_i33.PageRouteInfo>? children})
-      : super(
-          MessageRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'MessageRoute';
-
-  static const _i33.PageInfo<void> page = _i33.PageInfo<void>(name);
-}
-
-/// generated route for
-/// [_i14.UserPaymentInfoPage]
+/// [_i13.UserPaymentInfoPage]
 class UserPaymentInfoRoute extends _i33.PageRouteInfo<void> {
   const UserPaymentInfoRoute({List<_i33.PageRouteInfo>? children})
       : super(
@@ -708,12 +703,12 @@ class UserPaymentInfoRoute extends _i33.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i15.CrudCreditCardPage]
+/// [_i14.CrudCreditCardPage]
 class CrudCreditCardRoute extends _i33.PageRouteInfo<CrudCreditCardRouteArgs> {
   CrudCreditCardRoute({
     _i35.Key? key,
     _i38.CreditCardEntity? initialCreditCard,
-    _i15.CrudCardType type = _i15.CrudCardType.add,
+    _i14.CrudCardType type = _i14.CrudCardType.add,
     List<_i33.PageRouteInfo>? children,
   }) : super(
           CrudCreditCardRoute.name,
@@ -735,14 +730,14 @@ class CrudCreditCardRouteArgs {
   const CrudCreditCardRouteArgs({
     this.key,
     this.initialCreditCard,
-    this.type = _i15.CrudCardType.add,
+    this.type = _i14.CrudCardType.add,
   });
 
   final _i35.Key? key;
 
   final _i38.CreditCardEntity? initialCreditCard;
 
-  final _i15.CrudCardType type;
+  final _i14.CrudCardType type;
 
   @override
   String toString() {
@@ -751,13 +746,13 @@ class CrudCreditCardRouteArgs {
 }
 
 /// generated route for
-/// [_i16.CrudBankAccountPage]
+/// [_i15.CrudBankAccountPage]
 class CrudBankAccountRoute
     extends _i33.PageRouteInfo<CrudBankAccountRouteArgs> {
   CrudBankAccountRoute({
     _i35.Key? key,
     _i38.BankAccountEntity? initialBankAccount,
-    _i16.CrudBankAccountType type = _i16.CrudBankAccountType.add,
+    _i15.CrudBankAccountType type = _i15.CrudBankAccountType.add,
     List<_i33.PageRouteInfo>? children,
   }) : super(
           CrudBankAccountRoute.name,
@@ -779,14 +774,14 @@ class CrudBankAccountRouteArgs {
   const CrudBankAccountRouteArgs({
     this.key,
     this.initialBankAccount,
-    this.type = _i16.CrudBankAccountType.add,
+    this.type = _i15.CrudBankAccountType.add,
   });
 
   final _i35.Key? key;
 
   final _i38.BankAccountEntity? initialBankAccount;
 
-  final _i16.CrudBankAccountType type;
+  final _i15.CrudBankAccountType type;
 
   @override
   String toString() {
@@ -795,7 +790,7 @@ class CrudBankAccountRouteArgs {
 }
 
 /// generated route for
-/// [_i17.UserInfoPage]
+/// [_i16.UserInfoPage]
 class UserInfoRoute extends _i33.PageRouteInfo<UserInfoRouteArgs> {
   UserInfoRoute({
     _i35.Key? key,
@@ -833,7 +828,7 @@ class UserInfoRouteArgs {
 }
 
 /// generated route for
-/// [_i18.UserEmailInfoPage]
+/// [_i17.UserEmailInfoPage]
 class UserEmailInfoRoute extends _i33.PageRouteInfo<void> {
   const UserEmailInfoRoute({List<_i33.PageRouteInfo>? children})
       : super(
@@ -847,7 +842,7 @@ class UserEmailInfoRoute extends _i33.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i19.UserPhoneInfoPage]
+/// [_i18.UserPhoneInfoPage]
 class UserPhoneInfoRoute extends _i33.PageRouteInfo<void> {
   const UserPhoneInfoRoute({List<_i33.PageRouteInfo>? children})
       : super(
@@ -861,7 +856,7 @@ class UserPhoneInfoRoute extends _i33.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i20.UserAccountInfoPage]
+/// [_i19.UserAccountInfoPage]
 class UserAccountInfoRoute
     extends _i33.PageRouteInfo<UserAccountInfoRouteArgs> {
   UserAccountInfoRoute({
@@ -900,7 +895,7 @@ class UserAccountInfoRouteArgs {
 }
 
 /// generated route for
-/// [_i21.ReceiveDetailAccountPage]
+/// [_i20.ReceiveDetailAccountPage]
 class ReceiveDetailAccountRoute
     extends _i33.PageRouteInfo<ReceiveDetailAccountRouteArgs> {
   ReceiveDetailAccountRoute({
@@ -939,7 +934,7 @@ class ReceiveDetailAccountRouteArgs {
 }
 
 /// generated route for
-/// [_i22.UserFavoriteProductPage]
+/// [_i21.UserFavoriteProductPage]
 class UserFavoriteProductRoute extends _i33.PageRouteInfo<void> {
   const UserFavoriteProductRoute({List<_i33.PageRouteInfo>? children})
       : super(
@@ -953,12 +948,12 @@ class UserFavoriteProductRoute extends _i33.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i23.CrudAddressPage]
+/// [_i22.CrudAddressPage]
 class CrudAddressRoute extends _i33.PageRouteInfo<CrudAddressRouteArgs> {
   CrudAddressRoute({
     _i35.Key? key,
     _i38.UserAddressEntity? initialAddress,
-    _i23.CrudAddressType type = _i23.CrudAddressType.add,
+    _i22.CrudAddressType type = _i22.CrudAddressType.add,
     List<_i33.PageRouteInfo>? children,
   }) : super(
           CrudAddressRoute.name,
@@ -980,14 +975,14 @@ class CrudAddressRouteArgs {
   const CrudAddressRouteArgs({
     this.key,
     this.initialAddress,
-    this.type = _i23.CrudAddressType.add,
+    this.type = _i22.CrudAddressType.add,
   });
 
   final _i35.Key? key;
 
   final _i38.UserAddressEntity? initialAddress;
 
-  final _i23.CrudAddressType type;
+  final _i22.CrudAddressType type;
 
   @override
   String toString() {
@@ -996,7 +991,7 @@ class CrudAddressRouteArgs {
 }
 
 /// generated route for
-/// [_i24.ReceiveAddressPage]
+/// [_i23.ReceiveAddressPage]
 class ReceiveAddressRoute extends _i33.PageRouteInfo<ReceiveAddressRouteArgs> {
   ReceiveAddressRoute({
     _i35.Key? key,
@@ -1044,7 +1039,7 @@ class ReceiveAddressRouteArgs {
 }
 
 /// generated route for
-/// [_i25.UserAccountPage]
+/// [_i24.UserAccountPage]
 class UserAccountRoute extends _i33.PageRouteInfo<void> {
   const UserAccountRoute({List<_i33.PageRouteInfo>? children})
       : super(
@@ -1058,7 +1053,7 @@ class UserAccountRoute extends _i33.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i26.AboutPage]
+/// [_i25.AboutPage]
 class AboutRoute extends _i33.PageRouteInfo<void> {
   const AboutRoute({List<_i33.PageRouteInfo>? children})
       : super(
@@ -1072,7 +1067,7 @@ class AboutRoute extends _i33.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i27.ProductSearchPage]
+/// [_i26.ProductSearchPage]
 class ProductSearchRoute extends _i33.PageRouteInfo<ProductSearchRouteArgs> {
   ProductSearchRoute({
     _i35.Key? key,
@@ -1115,7 +1110,7 @@ class ProductSearchRouteArgs {
 }
 
 /// generated route for
-/// [_i28.ProductDetailPage]
+/// [_i27.ProductDetailPage]
 class ProductDetailRoute extends _i33.PageRouteInfo<ProductDetailRouteArgs> {
   ProductDetailRoute({
     _i35.Key? key,
@@ -1153,7 +1148,7 @@ class ProductDetailRouteArgs {
 }
 
 /// generated route for
-/// [_i29.CheckoutPage]
+/// [_i28.CheckoutPage]
 class CheckoutRoute extends _i33.PageRouteInfo<CheckoutRouteArgs> {
   CheckoutRoute({
     _i35.Key? key,
@@ -1196,7 +1191,7 @@ class CheckoutRouteArgs {
 }
 
 /// generated route for
-/// [_i30.SearchPage]
+/// [_i29.SearchPage]
 class SearchRoute extends _i33.PageRouteInfo<void> {
   const SearchRoute({List<_i33.PageRouteInfo>? children})
       : super(
@@ -1210,7 +1205,7 @@ class SearchRoute extends _i33.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i31.MainPage]
+/// [_i30.MainPage]
 class MainRoute extends _i33.PageRouteInfo<void> {
   const MainRoute({List<_i33.PageRouteInfo>? children})
       : super(
@@ -1224,7 +1219,7 @@ class MainRoute extends _i33.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i32.ShoppingCartPage]
+/// [_i31.ShoppingCartPage]
 class ShoppingCartRoute extends _i33.PageRouteInfo<void> {
   const ShoppingCartRoute({List<_i33.PageRouteInfo>? children})
       : super(
@@ -1235,4 +1230,73 @@ class ShoppingCartRoute extends _i33.PageRouteInfo<void> {
   static const String name = 'ShoppingCartRoute';
 
   static const _i33.PageInfo<void> page = _i33.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i32.OtpConfirmPage]
+class OtpConfirmRoute extends _i33.PageRouteInfo<OtpConfirmRouteArgs> {
+  OtpConfirmRoute({
+    required Object? requestOtpResult,
+    required _i34.Future<bool> Function(
+      String,
+      Object?,
+    ) confirmOTPFunc,
+    required _i34.Future<Object?> Function(Object?) onResendOTP,
+    int otpLength = 4,
+    String? otpMessage,
+    _i35.Key? key,
+    String? successMessage,
+    List<_i33.PageRouteInfo>? children,
+  }) : super(
+          OtpConfirmRoute.name,
+          args: OtpConfirmRouteArgs(
+            requestOtpResult: requestOtpResult,
+            confirmOTPFunc: confirmOTPFunc,
+            onResendOTP: onResendOTP,
+            otpLength: otpLength,
+            otpMessage: otpMessage,
+            key: key,
+            successMessage: successMessage,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'OtpConfirmRoute';
+
+  static const _i33.PageInfo<OtpConfirmRouteArgs> page =
+      _i33.PageInfo<OtpConfirmRouteArgs>(name);
+}
+
+class OtpConfirmRouteArgs {
+  const OtpConfirmRouteArgs({
+    required this.requestOtpResult,
+    required this.confirmOTPFunc,
+    required this.onResendOTP,
+    this.otpLength = 4,
+    this.otpMessage,
+    this.key,
+    this.successMessage,
+  });
+
+  final Object? requestOtpResult;
+
+  final _i34.Future<bool> Function(
+    String,
+    Object?,
+  ) confirmOTPFunc;
+
+  final _i34.Future<Object?> Function(Object?) onResendOTP;
+
+  final int otpLength;
+
+  final String? otpMessage;
+
+  final _i35.Key? key;
+
+  final String? successMessage;
+
+  @override
+  String toString() {
+    return 'OtpConfirmRouteArgs{requestOtpResult: $requestOtpResult, confirmOTPFunc: $confirmOTPFunc, onResendOTP: $onResendOTP, otpLength: $otpLength, otpMessage: $otpMessage, key: $key, successMessage: $successMessage}';
+  }
 }

@@ -1,5 +1,5 @@
-import 'package:hlshop/app/features/user/domain/entity/user_base_entity.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:hlshop/app/features/user/domain/entity/user_base_entity.dart';
 
 part 'address_entity.g.dart';
 
@@ -13,8 +13,7 @@ class CityEntity extends AddressData {
     super.object,
   });
 
-  factory CityEntity.fromJson(Map<String, dynamic> json) =>
-      _$CityEntityFromJson(json);
+  factory CityEntity.fromJson(Map<String, dynamic> json) => _$CityEntityFromJson(json);
 
   Map<String, dynamic> toJson() => _$CityEntityToJson(this);
 }
@@ -32,8 +31,7 @@ class DistrictEntity extends AddressData {
 
   final String? cityId;
 
-  factory DistrictEntity.fromJson(Map<String, dynamic> json) =>
-      _$DistrictEntityFromJson(json);
+  factory DistrictEntity.fromJson(Map<String, dynamic> json) => _$DistrictEntityFromJson(json);
 
   Map<String, dynamic> toJson() => _$DistrictEntityToJson(this);
 }

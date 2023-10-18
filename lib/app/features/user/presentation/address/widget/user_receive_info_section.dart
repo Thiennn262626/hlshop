@@ -117,14 +117,6 @@ class _UserAddressItemState extends State<UserAddressItem> {
 
   @override
   Widget build(BuildContext context) {
-    // bool isLogin = true;
-    // if (!isLogin) {
-    //   return LocaleKeys.user_AddUserReceiveInfo
-    //       .tr()
-    //       .text
-    //       .colorLight(context)
-    //       .make();
-    // }
     return Column(
       children: [
         Row(
@@ -133,10 +125,12 @@ class _UserAddressItemState extends State<UserAddressItem> {
             Row(
               children: [
                 if (widget.canSelectPrimary == true)
-                  Radio<String?>(
-                    value: widget.address.id,
-                    groupValue: widget.defaultAddress,
-                    onChanged: (value) {},
+                  AbsorbPointer(
+                    child: Radio<String?>(
+                      value: widget.address.id,
+                      groupValue: widget.defaultAddress,
+                      onChanged: (value) {},
+                    ),
                   ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

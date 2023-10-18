@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hlshop/all_file/all_file.dart';
-
 part 'user_city_model_ms.g.dart';
 
 @JsonSerializable()
@@ -25,5 +24,5 @@ class CitiesMS {
   factory CitiesMS.fromJson(Map<String, dynamic> json) =>
       _$CitiesMSFromJson(json);
 
-  Map<String, dynamic> toJson() => _$CitiesMSToJson(this);
+  Map<String, dynamic> toJson() =>_$CitiesMSToJson(this);
 }

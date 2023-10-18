@@ -51,7 +51,10 @@ class UserInfoBody extends StatelessWidget {
               const AppDivider(),
               BlocBuilder<UserBloc, UserState>(
                 builder: (context, state) {
-                  final user = state.userEntity!;
+                  final user = state.userEntity;
+                  if (user == null) {
+                    return const SizedBox.shrink();
+                  }
                   return Column(
                     children: [
                       AppTileText(
@@ -147,9 +150,7 @@ class UserInfoBody extends StatelessWidget {
               ].withDivider(Gaps.hGap8),
             ),
             onPressed: () {
-              context
-                  .read<AuthBloc>()
-                  .add(UnAuthenticatedEvent(showToast: true));
+              context.read<AuthBloc>().add(const AuthEvent.signOut());
             },
           ),
         ],

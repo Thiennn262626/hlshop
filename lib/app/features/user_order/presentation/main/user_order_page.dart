@@ -18,6 +18,7 @@ class UserOrderPage extends StatelessWidget {
           return ApiItemConsumer<UserOrderCubit, UserOrderState>(
             getStatus: (state) => state.orderCountStatus,
             showLoadingIndicator: false,
+            onError: (error) => true,
             child: Scaffold(
               appBar: AppAppBar(
                 title: 'Đơn hàng'.tr(),
@@ -40,7 +41,7 @@ class UserOrderPage extends StatelessWidget {
                 ),
               ),
               body: AuthConsumer(
-                onAuthenticated: (user) {
+                onAuthenticated: () {
                   context.read<UserOrderCubit>().fetchItemList();
                 },
                 onUnAuthenticated: () {

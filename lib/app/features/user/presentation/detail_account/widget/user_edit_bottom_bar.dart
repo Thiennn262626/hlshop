@@ -5,7 +5,12 @@ import 'package:hlshop/app/features/user/presentation/detail_account/cubit/detai
 class UserEditBottomBar extends StatelessWidget {
   const UserEditBottomBar({
     super.key,
+    this.onCancel,
+    this.onConfirm,
   });
+
+  final VoidCallback? onCancel;
+  final VoidCallback? onConfirm;
 
   @override
   Widget build(BuildContext context) {
@@ -13,23 +18,17 @@ class UserEditBottomBar extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         AppButton(
-          style: AppButtonTheme.grey(context),
+          style: AppButtonTheme.grey(context).big(context),
           label: 'Hủy'.tr(),
-          onPressed: () {
-            context.router.pop();
-          },
+          onPressed: onCancel ??
+              () {
+                context.router.pop();
+              },
         ).expand(),
         AppButton(
-          style: AppButtonTheme.confirmAction(context),
-          child: 'Lưu thay đổi'.tr().textAuto.maxLines(1).make(),
-          onPressed: () {
-            context.read<UserBloc>().add(
-                  UserEvent.updateUserName(
-                    userName:
-                        context.read<DetailAccountCubit>().state.name ?? '',
-                  ),
-                );
-          },
+          style: AppButtonTheme.primary(context).big(context),
+          onPressed: onConfirm,
+          child: 'Lưu thay đổi'.tr().textAuto.center.maxLines(1).make(),
         ).expand(),
       ].withDivider(Gaps.hGap10),
     );

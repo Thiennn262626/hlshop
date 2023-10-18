@@ -1,4 +1,5 @@
 import 'package:hlshop/all_file/all_file.dart';
+import 'package:hlshop/app/features/auth/self.dart';
 import 'package:hlshop/app/features/user/self.dart';
 import 'package:hlshop/services/user_secure_storage_service.dart';
 
@@ -16,6 +17,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     on<_UserUpdateUserNameEvent>(_onUserUpdateUserNameEvent);
     on<_UserUpdateCoverEvent>(_onUserUpdateCoverEvent);
     on<_UserUpdateAvatarEvent>(_onUserUpdateAvatarEvent);
+    on<_UserClearEvent>(_onClearEvent);
   }
 
   late final UserSecureStorage _userSecureStorage;
@@ -26,9 +28,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
   Future<FutureOr<void>> _onUserInitialEvent(
     _UserInitialEvent event,
     Emitter<UserState> emit,
-  ) async {
-    add(const UserEvent.fetch());
-  }
+  ) async {}
 
   FutureOr<void> _onUserFetchEvent(
     _UserFetchEvent event,
@@ -61,11 +61,11 @@ class UserBloc extends Bloc<UserEvent, UserState> {
   FutureOr<void> _onUserUpdateUserNameEvent(
     _UserUpdateUserNameEvent event,
     Emitter<UserState> emit,
-  ) {
+  ) async {
     emit(state.copyWith(updateStatus: state.updateStatus.toPending()));
     try {
       final userEntity =
-          userRepo.updateContactName(contactFullName: event.userName);
+          await userRepo.updateContactName(contactFullName: event.userName);
       emit(
         state.copyWith(
           updateStatus: const ApiStatus.done(),
@@ -127,4 +127,57 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       );
     }
   }
+
+  FutureOr<void> checkLoginAction(
+    BuildContext context, {
+    required FutureOr<void> Function(UserEntity? user) onLogin,
+    FutureOr<void> Function()? onDismiss,
+  }) async {
+    final isLogin = context.read<AuthBloc>().isLogin;
+
+    if (isLogin) {
+      return onLogin.call(user);
+    } else {
+      return AppActionSheet(
+        message: 'Vui lòng đăng nhập để tiếp tục'.tr(),
+        showCancelButton: true,
+        cancelText: 'Thoát'.tr(),
+        actions: [
+          ActionSheetActionData(
+            text: 'Đăng nhập'.tr(),
+            onPressed: () async {
+              context.router.pop();
+              await context.router.push(const LoginRoute());
+              if (user != null) {
+                return onLogin.call(user);
+              } else {
+                return onDismiss?.call();
+              }
+            },
+          ),
+          ActionSheetActionData(
+            text: 'Đăng ký'.tr(),
+            onPressed: () async {
+              context.router.pop();
+              await context.router.push(const SignUpRoute());
+              if (user != null) {
+                return onLogin.call(user);
+              } else {
+                return onDismiss?.call();
+              }
+            },
+          ),
+        ],
+      ).show(context);
+    }
+  }
+
+  FutureOr<void> _onClearEvent(
+    _UserClearEvent event,
+    Emitter<UserState> emit,
+  ) {
+    emit(const UserState());
+  }
+
+  UserEntity? get user => state.userEntity;
 }

@@ -17,27 +17,41 @@ class UserAccountInfoPage extends StatelessWidget {
       create: (context) => DetailAccountCubit(
         item: context.read<UserBloc>().state.userEntity,
       ),
-      child: ApiItemConsumer<UserBloc, UserState>(
-        getStatus: (state) => state.updateStatus,
-        onDone: (value) async {
-          await DialogUtils.showSuccessDialog(
-            context: context,
-            content: 'Cập nhật thành công'.tr(),
-            onAutoDismiss: () {
-              context.router.pop(true);
+      child: Builder(
+        builder: (context) {
+          return ApiItemConsumer<UserBloc, UserState>(
+            getStatus: (state) => state.updateStatus,
+            onDone: (value) async {
+              await DialogUtils.showSuccessDialog(
+                context: context,
+                content: 'Cập nhật thành công'.tr(),
+                onAutoDismiss: () {
+                  context.router.pop(true);
+                },
+                barrierDismissible: false,
+              );
             },
-            barrierDismissible: false,
+            child: Scaffold(
+              bottomNavigationBar: AppBottomBar(
+                child: UserEditBottomBar(
+                  onConfirm: () {
+                    context.read<UserBloc>().add(
+                          UserEvent.updateUserName(
+                            userName:
+                                context.read<DetailAccountCubit>().state.name ??
+                                    '',
+                          ),
+                        );
+                  },
+                ),
+              ),
+              appBar: AppAppBar(
+                title: 'Tên người dùng'.tr(),
+              ),
+              body: const UserAccountInfoBody(),
+            ),
           );
         },
-        child: Scaffold(
-          bottomNavigationBar: const AppBottomBar(
-            child: UserEditBottomBar(),
-          ),
-          appBar: AppAppBar(
-            title: 'Tên người dùng'.tr(),
-          ),
-          body: const UserAccountInfoBody(),
-        ),
       ),
     );
   }

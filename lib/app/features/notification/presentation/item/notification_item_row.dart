@@ -3,6 +3,7 @@ import 'package:hlshop/app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:hlshop/app/features/notification/core/service/notification_utils.dart';
 import 'package:hlshop/app/features/notification/data/model/notification_model.dart';
 import 'package:hlshop/app/features/notification/presentation/detail/cubit/notification_detail_cubit.dart';
+import 'package:hlshop/app/features/user/presentation/bloc/user_bloc.dart';
 
 class NotificationItemRow extends StatelessWidget {
   const NotificationItemRow({super.key, required this.item});
@@ -92,7 +93,7 @@ class NotificationItemRow extends StatelessWidget {
       final navigateToPage = await NotificationUtils.navigateToPage(
         router: context.router,
         data: item,
-        currentUser: context.read<AuthBloc>().user,
+        currentUser: context.read<UserBloc>().user,
       );
       if (navigateToPage == true) {
         return;

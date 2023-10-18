@@ -37,6 +37,7 @@ class UpdateReceiverAddressMS {
 
 @JsonSerializable()
 class ReponseUpdateReceiverAddressMS {
+
   ReponseUpdateReceiverAddressMS({this.status, this.message});
 
   factory ReponseUpdateReceiverAddressMS.fromJson(Map<String, dynamic> json) =>

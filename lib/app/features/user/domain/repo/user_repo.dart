@@ -44,4 +44,17 @@ abstract class UserRepo {
   Future<Object> updateAvatar({
     File? avatar,
   });
+
+  Future<Object> addPhone({
+    required String phone,
+  });
+
+  Future<Object> verifyPhone({
+    required Object? addResultObject,
+    required String otp,
+  });
+
+  Future<Object> resendOtp({
+    required Object? addResultObject,
+  });
 }

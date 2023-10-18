@@ -28,7 +28,7 @@ class SignUpBody extends StatelessWidget {
             ),
             Gaps.vGap32,
             AppButton(
-              style: AppButtonTheme.confirmAction(context),
+              style: AppButtonTheme.primary(context).big(context),
               isSubmitButton: true,
               label: LocaleKeys.common_Next.tr(),
               onPressed: () {

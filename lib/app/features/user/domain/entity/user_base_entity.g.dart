@@ -29,6 +29,7 @@ UserEntity _$UserEntityFromJson(Map<String, dynamic> json) => UserEntity(
 
 Map<String, dynamic> _$UserEntityToJson(UserEntity instance) =>
     <String, dynamic>{
+      'object': instance.object,
       'id': instance.id,
       'userName': instance.userName,
       'fullName': instance.fullName,
@@ -38,19 +39,26 @@ Map<String, dynamic> _$UserEntityToJson(UserEntity instance) =>
       'addressList': instance.addressList,
       'userCover': instance.userCover,
       'receiveAddressList': instance.receiveAddressList,
-      'object': instance.object,
     };
 
 UserPhoneEntity _$UserPhoneEntityFromJson(Map<String, dynamic> json) =>
     UserPhoneEntity(
+      object: json['object'],
+      id: json['id'] as String?,
       phone: json['phone'] as String?,
       countryCode: json['countryCode'] as String?,
+      isDefault: json['isDefault'] as int?,
+      isVerify: json['isVerify'] as int?,
     );
 
 Map<String, dynamic> _$UserPhoneEntityToJson(UserPhoneEntity instance) =>
     <String, dynamic>{
+      'object': instance.object,
+      'id': instance.id,
       'phone': instance.phone,
       'countryCode': instance.countryCode,
+      'isDefault': instance.isDefault,
+      'isVerify': instance.isVerify,
     };
 
 UserEmailEntity _$UserEmailEntityFromJson(Map<String, dynamic> json) =>

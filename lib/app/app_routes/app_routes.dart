@@ -23,7 +23,6 @@ class AppAutoRoute extends $AppAutoRoute {
         AutoRoute(path: 'home', page: HomeRoute.page),
         AutoRoute(path: 'user-order', page: UserOrderRoute.page),
         AutoRoute(path: 'user-account', page: UserAccountRoute.page),
-        AutoRoute(path: 'message', page: MessageRoute.page),
       ],
     ),
     ...notificationRoutes,

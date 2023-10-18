@@ -14,11 +14,7 @@ class ForgotPasswordBody extends StatelessWidget {
           Gaps.vGap32,
           LocaleKeys.authen_ForgotPasswordOTPMsg
               .tr(
-                args: [
-                  RegisterType.values
-                      .mapAsList((item) => item.enumTranslate())
-                      .join('/')
-                ],
+                args: [RegisterType.values.mapAsList((item) => item.enumTranslate()).join('/')],
               )
               .text
               .titleMedium(context)

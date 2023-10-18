@@ -20,6 +20,7 @@ mixin _$UserEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() fetch,
+    required TResult Function() clear,
     required TResult Function(String userName) updateUserName,
     required TResult Function(File file) updateCover,
     required TResult Function(File file) updateAvatar,
@@ -29,6 +30,7 @@ mixin _$UserEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? fetch,
+    TResult? Function()? clear,
     TResult? Function(String userName)? updateUserName,
     TResult? Function(File file)? updateCover,
     TResult? Function(File file)? updateAvatar,
@@ -38,6 +40,7 @@ mixin _$UserEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? fetch,
+    TResult Function()? clear,
     TResult Function(String userName)? updateUserName,
     TResult Function(File file)? updateCover,
     TResult Function(File file)? updateAvatar,
@@ -48,6 +51,7 @@ mixin _$UserEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_UserInitialEvent value) initial,
     required TResult Function(_UserFetchEvent value) fetch,
+    required TResult Function(_UserClearEvent value) clear,
     required TResult Function(_UserUpdateUserNameEvent value) updateUserName,
     required TResult Function(_UserUpdateCoverEvent value) updateCover,
     required TResult Function(_UserUpdateAvatarEvent value) updateAvatar,
@@ -57,6 +61,7 @@ mixin _$UserEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_UserInitialEvent value)? initial,
     TResult? Function(_UserFetchEvent value)? fetch,
+    TResult? Function(_UserClearEvent value)? clear,
     TResult? Function(_UserUpdateUserNameEvent value)? updateUserName,
     TResult? Function(_UserUpdateCoverEvent value)? updateCover,
     TResult? Function(_UserUpdateAvatarEvent value)? updateAvatar,
@@ -66,6 +71,7 @@ mixin _$UserEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_UserInitialEvent value)? initial,
     TResult Function(_UserFetchEvent value)? fetch,
+    TResult Function(_UserClearEvent value)? clear,
     TResult Function(_UserUpdateUserNameEvent value)? updateUserName,
     TResult Function(_UserUpdateCoverEvent value)? updateCover,
     TResult Function(_UserUpdateAvatarEvent value)? updateAvatar,
@@ -138,6 +144,7 @@ class _$_UserInitialEvent extends _UserInitialEvent
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() fetch,
+    required TResult Function() clear,
     required TResult Function(String userName) updateUserName,
     required TResult Function(File file) updateCover,
     required TResult Function(File file) updateAvatar,
@@ -150,6 +157,7 @@ class _$_UserInitialEvent extends _UserInitialEvent
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? fetch,
+    TResult? Function()? clear,
     TResult? Function(String userName)? updateUserName,
     TResult? Function(File file)? updateCover,
     TResult? Function(File file)? updateAvatar,
@@ -162,6 +170,7 @@ class _$_UserInitialEvent extends _UserInitialEvent
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? fetch,
+    TResult Function()? clear,
     TResult Function(String userName)? updateUserName,
     TResult Function(File file)? updateCover,
     TResult Function(File file)? updateAvatar,
@@ -178,6 +187,7 @@ class _$_UserInitialEvent extends _UserInitialEvent
   TResult map<TResult extends Object?>({
     required TResult Function(_UserInitialEvent value) initial,
     required TResult Function(_UserFetchEvent value) fetch,
+    required TResult Function(_UserClearEvent value) clear,
     required TResult Function(_UserUpdateUserNameEvent value) updateUserName,
     required TResult Function(_UserUpdateCoverEvent value) updateCover,
     required TResult Function(_UserUpdateAvatarEvent value) updateAvatar,
@@ -190,6 +200,7 @@ class _$_UserInitialEvent extends _UserInitialEvent
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_UserInitialEvent value)? initial,
     TResult? Function(_UserFetchEvent value)? fetch,
+    TResult? Function(_UserClearEvent value)? clear,
     TResult? Function(_UserUpdateUserNameEvent value)? updateUserName,
     TResult? Function(_UserUpdateCoverEvent value)? updateCover,
     TResult? Function(_UserUpdateAvatarEvent value)? updateAvatar,
@@ -202,6 +213,7 @@ class _$_UserInitialEvent extends _UserInitialEvent
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_UserInitialEvent value)? initial,
     TResult Function(_UserFetchEvent value)? fetch,
+    TResult Function(_UserClearEvent value)? clear,
     TResult Function(_UserUpdateUserNameEvent value)? updateUserName,
     TResult Function(_UserUpdateCoverEvent value)? updateCover,
     TResult Function(_UserUpdateAvatarEvent value)? updateAvatar,
@@ -265,6 +277,7 @@ class _$_UserFetchEvent extends _UserFetchEvent with DiagnosticableTreeMixin {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() fetch,
+    required TResult Function() clear,
     required TResult Function(String userName) updateUserName,
     required TResult Function(File file) updateCover,
     required TResult Function(File file) updateAvatar,
@@ -277,6 +290,7 @@ class _$_UserFetchEvent extends _UserFetchEvent with DiagnosticableTreeMixin {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? fetch,
+    TResult? Function()? clear,
     TResult? Function(String userName)? updateUserName,
     TResult? Function(File file)? updateCover,
     TResult? Function(File file)? updateAvatar,
@@ -289,6 +303,7 @@ class _$_UserFetchEvent extends _UserFetchEvent with DiagnosticableTreeMixin {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? fetch,
+    TResult Function()? clear,
     TResult Function(String userName)? updateUserName,
     TResult Function(File file)? updateCover,
     TResult Function(File file)? updateAvatar,
@@ -305,6 +320,7 @@ class _$_UserFetchEvent extends _UserFetchEvent with DiagnosticableTreeMixin {
   TResult map<TResult extends Object?>({
     required TResult Function(_UserInitialEvent value) initial,
     required TResult Function(_UserFetchEvent value) fetch,
+    required TResult Function(_UserClearEvent value) clear,
     required TResult Function(_UserUpdateUserNameEvent value) updateUserName,
     required TResult Function(_UserUpdateCoverEvent value) updateCover,
     required TResult Function(_UserUpdateAvatarEvent value) updateAvatar,
@@ -317,6 +333,7 @@ class _$_UserFetchEvent extends _UserFetchEvent with DiagnosticableTreeMixin {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_UserInitialEvent value)? initial,
     TResult? Function(_UserFetchEvent value)? fetch,
+    TResult? Function(_UserClearEvent value)? clear,
     TResult? Function(_UserUpdateUserNameEvent value)? updateUserName,
     TResult? Function(_UserUpdateCoverEvent value)? updateCover,
     TResult? Function(_UserUpdateAvatarEvent value)? updateAvatar,
@@ -329,6 +346,7 @@ class _$_UserFetchEvent extends _UserFetchEvent with DiagnosticableTreeMixin {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_UserInitialEvent value)? initial,
     TResult Function(_UserFetchEvent value)? fetch,
+    TResult Function(_UserClearEvent value)? clear,
     TResult Function(_UserUpdateUserNameEvent value)? updateUserName,
     TResult Function(_UserUpdateCoverEvent value)? updateCover,
     TResult Function(_UserUpdateAvatarEvent value)? updateAvatar,
@@ -344,6 +362,139 @@ class _$_UserFetchEvent extends _UserFetchEvent with DiagnosticableTreeMixin {
 abstract class _UserFetchEvent extends UserEvent {
   const factory _UserFetchEvent() = _$_UserFetchEvent;
   const _UserFetchEvent._() : super._();
+}
+
+/// @nodoc
+abstract class _$$_UserClearEventCopyWith<$Res> {
+  factory _$$_UserClearEventCopyWith(
+          _$_UserClearEvent value, $Res Function(_$_UserClearEvent) then) =
+      __$$_UserClearEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_UserClearEventCopyWithImpl<$Res>
+    extends _$UserEventCopyWithImpl<$Res, _$_UserClearEvent>
+    implements _$$_UserClearEventCopyWith<$Res> {
+  __$$_UserClearEventCopyWithImpl(
+      _$_UserClearEvent _value, $Res Function(_$_UserClearEvent) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_UserClearEvent extends _UserClearEvent with DiagnosticableTreeMixin {
+  const _$_UserClearEvent() : super._();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'UserEvent.clear()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'UserEvent.clear'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_UserClearEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() fetch,
+    required TResult Function() clear,
+    required TResult Function(String userName) updateUserName,
+    required TResult Function(File file) updateCover,
+    required TResult Function(File file) updateAvatar,
+  }) {
+    return clear();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? fetch,
+    TResult? Function()? clear,
+    TResult? Function(String userName)? updateUserName,
+    TResult? Function(File file)? updateCover,
+    TResult? Function(File file)? updateAvatar,
+  }) {
+    return clear?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? fetch,
+    TResult Function()? clear,
+    TResult Function(String userName)? updateUserName,
+    TResult Function(File file)? updateCover,
+    TResult Function(File file)? updateAvatar,
+    required TResult orElse(),
+  }) {
+    if (clear != null) {
+      return clear();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UserInitialEvent value) initial,
+    required TResult Function(_UserFetchEvent value) fetch,
+    required TResult Function(_UserClearEvent value) clear,
+    required TResult Function(_UserUpdateUserNameEvent value) updateUserName,
+    required TResult Function(_UserUpdateCoverEvent value) updateCover,
+    required TResult Function(_UserUpdateAvatarEvent value) updateAvatar,
+  }) {
+    return clear(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UserInitialEvent value)? initial,
+    TResult? Function(_UserFetchEvent value)? fetch,
+    TResult? Function(_UserClearEvent value)? clear,
+    TResult? Function(_UserUpdateUserNameEvent value)? updateUserName,
+    TResult? Function(_UserUpdateCoverEvent value)? updateCover,
+    TResult? Function(_UserUpdateAvatarEvent value)? updateAvatar,
+  }) {
+    return clear?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UserInitialEvent value)? initial,
+    TResult Function(_UserFetchEvent value)? fetch,
+    TResult Function(_UserClearEvent value)? clear,
+    TResult Function(_UserUpdateUserNameEvent value)? updateUserName,
+    TResult Function(_UserUpdateCoverEvent value)? updateCover,
+    TResult Function(_UserUpdateAvatarEvent value)? updateAvatar,
+    required TResult orElse(),
+  }) {
+    if (clear != null) {
+      return clear(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UserClearEvent extends UserEvent {
+  const factory _UserClearEvent() = _$_UserClearEvent;
+  const _UserClearEvent._() : super._();
 }
 
 /// @nodoc
@@ -424,6 +575,7 @@ class _$_UserUpdateUserNameEvent extends _UserUpdateUserNameEvent
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() fetch,
+    required TResult Function() clear,
     required TResult Function(String userName) updateUserName,
     required TResult Function(File file) updateCover,
     required TResult Function(File file) updateAvatar,
@@ -436,6 +588,7 @@ class _$_UserUpdateUserNameEvent extends _UserUpdateUserNameEvent
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? fetch,
+    TResult? Function()? clear,
     TResult? Function(String userName)? updateUserName,
     TResult? Function(File file)? updateCover,
     TResult? Function(File file)? updateAvatar,
@@ -448,6 +601,7 @@ class _$_UserUpdateUserNameEvent extends _UserUpdateUserNameEvent
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? fetch,
+    TResult Function()? clear,
     TResult Function(String userName)? updateUserName,
     TResult Function(File file)? updateCover,
     TResult Function(File file)? updateAvatar,
@@ -464,6 +618,7 @@ class _$_UserUpdateUserNameEvent extends _UserUpdateUserNameEvent
   TResult map<TResult extends Object?>({
     required TResult Function(_UserInitialEvent value) initial,
     required TResult Function(_UserFetchEvent value) fetch,
+    required TResult Function(_UserClearEvent value) clear,
     required TResult Function(_UserUpdateUserNameEvent value) updateUserName,
     required TResult Function(_UserUpdateCoverEvent value) updateCover,
     required TResult Function(_UserUpdateAvatarEvent value) updateAvatar,
@@ -476,6 +631,7 @@ class _$_UserUpdateUserNameEvent extends _UserUpdateUserNameEvent
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_UserInitialEvent value)? initial,
     TResult? Function(_UserFetchEvent value)? fetch,
+    TResult? Function(_UserClearEvent value)? clear,
     TResult? Function(_UserUpdateUserNameEvent value)? updateUserName,
     TResult? Function(_UserUpdateCoverEvent value)? updateCover,
     TResult? Function(_UserUpdateAvatarEvent value)? updateAvatar,
@@ -488,6 +644,7 @@ class _$_UserUpdateUserNameEvent extends _UserUpdateUserNameEvent
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_UserInitialEvent value)? initial,
     TResult Function(_UserFetchEvent value)? fetch,
+    TResult Function(_UserClearEvent value)? clear,
     TResult Function(_UserUpdateUserNameEvent value)? updateUserName,
     TResult Function(_UserUpdateCoverEvent value)? updateCover,
     TResult Function(_UserUpdateAvatarEvent value)? updateAvatar,
@@ -587,6 +744,7 @@ class _$_UserUpdateCoverEvent extends _UserUpdateCoverEvent
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() fetch,
+    required TResult Function() clear,
     required TResult Function(String userName) updateUserName,
     required TResult Function(File file) updateCover,
     required TResult Function(File file) updateAvatar,
@@ -599,6 +757,7 @@ class _$_UserUpdateCoverEvent extends _UserUpdateCoverEvent
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? fetch,
+    TResult? Function()? clear,
     TResult? Function(String userName)? updateUserName,
     TResult? Function(File file)? updateCover,
     TResult? Function(File file)? updateAvatar,
@@ -611,6 +770,7 @@ class _$_UserUpdateCoverEvent extends _UserUpdateCoverEvent
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? fetch,
+    TResult Function()? clear,
     TResult Function(String userName)? updateUserName,
     TResult Function(File file)? updateCover,
     TResult Function(File file)? updateAvatar,
@@ -627,6 +787,7 @@ class _$_UserUpdateCoverEvent extends _UserUpdateCoverEvent
   TResult map<TResult extends Object?>({
     required TResult Function(_UserInitialEvent value) initial,
     required TResult Function(_UserFetchEvent value) fetch,
+    required TResult Function(_UserClearEvent value) clear,
     required TResult Function(_UserUpdateUserNameEvent value) updateUserName,
     required TResult Function(_UserUpdateCoverEvent value) updateCover,
     required TResult Function(_UserUpdateAvatarEvent value) updateAvatar,
@@ -639,6 +800,7 @@ class _$_UserUpdateCoverEvent extends _UserUpdateCoverEvent
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_UserInitialEvent value)? initial,
     TResult? Function(_UserFetchEvent value)? fetch,
+    TResult? Function(_UserClearEvent value)? clear,
     TResult? Function(_UserUpdateUserNameEvent value)? updateUserName,
     TResult? Function(_UserUpdateCoverEvent value)? updateCover,
     TResult? Function(_UserUpdateAvatarEvent value)? updateAvatar,
@@ -651,6 +813,7 @@ class _$_UserUpdateCoverEvent extends _UserUpdateCoverEvent
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_UserInitialEvent value)? initial,
     TResult Function(_UserFetchEvent value)? fetch,
+    TResult Function(_UserClearEvent value)? clear,
     TResult Function(_UserUpdateUserNameEvent value)? updateUserName,
     TResult Function(_UserUpdateCoverEvent value)? updateCover,
     TResult Function(_UserUpdateAvatarEvent value)? updateAvatar,
@@ -750,6 +913,7 @@ class _$_UserUpdateAvatarEvent extends _UserUpdateAvatarEvent
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() fetch,
+    required TResult Function() clear,
     required TResult Function(String userName) updateUserName,
     required TResult Function(File file) updateCover,
     required TResult Function(File file) updateAvatar,
@@ -762,6 +926,7 @@ class _$_UserUpdateAvatarEvent extends _UserUpdateAvatarEvent
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? fetch,
+    TResult? Function()? clear,
     TResult? Function(String userName)? updateUserName,
     TResult? Function(File file)? updateCover,
     TResult? Function(File file)? updateAvatar,
@@ -774,6 +939,7 @@ class _$_UserUpdateAvatarEvent extends _UserUpdateAvatarEvent
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? fetch,
+    TResult Function()? clear,
     TResult Function(String userName)? updateUserName,
     TResult Function(File file)? updateCover,
     TResult Function(File file)? updateAvatar,
@@ -790,6 +956,7 @@ class _$_UserUpdateAvatarEvent extends _UserUpdateAvatarEvent
   TResult map<TResult extends Object?>({
     required TResult Function(_UserInitialEvent value) initial,
     required TResult Function(_UserFetchEvent value) fetch,
+    required TResult Function(_UserClearEvent value) clear,
     required TResult Function(_UserUpdateUserNameEvent value) updateUserName,
     required TResult Function(_UserUpdateCoverEvent value) updateCover,
     required TResult Function(_UserUpdateAvatarEvent value) updateAvatar,
@@ -802,6 +969,7 @@ class _$_UserUpdateAvatarEvent extends _UserUpdateAvatarEvent
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_UserInitialEvent value)? initial,
     TResult? Function(_UserFetchEvent value)? fetch,
+    TResult? Function(_UserClearEvent value)? clear,
     TResult? Function(_UserUpdateUserNameEvent value)? updateUserName,
     TResult? Function(_UserUpdateCoverEvent value)? updateCover,
     TResult? Function(_UserUpdateAvatarEvent value)? updateAvatar,
@@ -814,6 +982,7 @@ class _$_UserUpdateAvatarEvent extends _UserUpdateAvatarEvent
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_UserInitialEvent value)? initial,
     TResult Function(_UserFetchEvent value)? fetch,
+    TResult Function(_UserClearEvent value)? clear,
     TResult Function(_UserUpdateUserNameEvent value)? updateUserName,
     TResult Function(_UserUpdateCoverEvent value)? updateCover,
     TResult Function(_UserUpdateAvatarEvent value)? updateAvatar,

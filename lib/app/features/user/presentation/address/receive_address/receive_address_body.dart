@@ -18,9 +18,6 @@ class ReceiveAddressBody extends StatelessWidget {
       padding: Dimens.edge,
       separatorBuilder: (context, index) => const AppDivider.thin().py12(),
       itemBuilder: (context, item, index) {
-        if (item == null) {
-          return const SizedBox.shrink();
-        }
         return CardCupertinoEffect(
           onPressed: () async {
             if (canSelectPrimary == false) {

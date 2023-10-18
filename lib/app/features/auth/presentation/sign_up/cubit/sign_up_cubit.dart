@@ -148,7 +148,7 @@ class SignUpCubit extends RequestCubit<SignUpState> {
     );
     if (rs.token.isNotNullOrEmpty) {
       authBloc.add(
-        AuthenticatedEvent(
+        AuthEvent.authenticated(
           token: rs.token!,
         ),
       );

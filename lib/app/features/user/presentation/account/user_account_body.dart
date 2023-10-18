@@ -12,9 +12,9 @@ class UserAccountBody extends StatelessWidget {
     return AppScrollBody.withSpacing(
       child: Column(
         children: [
-          BlocBuilder<AuthBloc, AuthState>(
+          BlocBuilder<UserBloc, UserState>(
             builder: (context, state) {
-              if (state is AuthenticatedState) {
+              if (state.userEntity != null) {
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
@@ -41,7 +41,7 @@ class UserAccountBody extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   UserSimpleInfo(
-                    user: state.data.user,
+                    user: state.userEntity,
                     onPressed: () {
                       context.router.push(const LoginRoute());
                     },

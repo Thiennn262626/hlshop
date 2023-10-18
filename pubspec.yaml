@@ -269,8 +269,3 @@ targets:
             - lib/**/**_cubit.dart
       mockito:mockBuilder:
         enabled: false
-#      auto_route_generator|autoRouteGenerator:
-#        enabled: true
-#        generate_for:
-#          include:
-#            - lib/features/routes/app_auto_route.dart

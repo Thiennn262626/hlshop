@@ -1,5 +1,9 @@
 import 'package:hlshop/all_file/all_file.dart';
+import 'package:hlshop/app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:hlshop/app/features/checkout/domain/repo/app_global_event.dart';
+import 'package:hlshop/app/features/shopping_cart/presentation/bloc/shopping_cart_bloc.dart';
+import 'package:hlshop/app/features/shopping_cart/presentation/widget/shopping_cart_listener.dart';
+import 'package:hlshop/app/features/user/presentation/bloc/user_bloc.dart';
 
 @RoutePage()
 class MainPage extends StatelessWidget {
@@ -7,18 +11,19 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AutoTabsScaffold(
-      routes: const [
-        HomeRoute(),
-        UserOrderRoute(),
-        MessageRoute(),
-        UserAccountRoute(),
-      ],
-      bottomNavigationBuilder: (_, tabsRouter) {
-        return _HomeBottomBar(
-          tabsRouter: tabsRouter,
-        );
-      },
+    return _BlocListener(
+      child: AutoTabsScaffold(
+        routes: const [
+          HomeRoute(),
+          UserOrderRoute(),
+          UserAccountRoute(),
+        ],
+        bottomNavigationBuilder: (_, tabsRouter) {
+          return _HomeBottomBar(
+            tabsRouter: tabsRouter,
+          );
+        },
+      ),
     );
   }
 }
@@ -27,11 +32,12 @@ class _HomeBottomBar extends StatelessWidget {
   const _HomeBottomBar({
     super.key,
     required this.tabsRouter,
-    this.iconSize = Dimens.ic,
+    this.iconSize = Dimens.ic_S,
   });
 
   final TabsRouter tabsRouter;
   final double iconSize;
+
   @override
   Widget build(BuildContext context) {
     return StreamListener<int>(
@@ -55,12 +61,6 @@ class _HomeBottomBar extends StatelessWidget {
             icon: AppIcon.order,
             activeIcon: AppIcon.order_fill,
             label: 'Đơn hàng'.tr(),
-          ),
-          _buildBottomBarItem(
-            context: context,
-            icon: PhosphorIcons.chat_circle_text,
-            activeIcon: PhosphorIcons.chat_circle_text_fill,
-            label: 'Tin nhắn'.tr(),
           ),
           _buildBottomBarItem(
             context: context,
@@ -109,27 +109,27 @@ class _HomeBottomBar extends StatelessWidget {
   }
 
   Widget getIconData(
-    BuildContext context,
-    IconData data, {
-    bool isActive = false,
-  }) =>
+      BuildContext context,
+      IconData data, {
+        bool isActive = false,
+      }) =>
       Icon(
         data,
         size: iconSize * 1.3,
       );
 
   Image _getAssetImage(
-    BuildContext context,
-    AssetGenImage asset, {
-    bool isActive = false,
-  }) =>
+      BuildContext context,
+      AssetGenImage asset, {
+        bool isActive = false,
+      }) =>
       asset.image(height: iconSize, width: iconSize);
 
   SvgPicture _getAssetSvg(
-    BuildContext context,
-    SvgGenImage asset, {
-    bool isActive = false,
-  }) =>
+      BuildContext context,
+      SvgGenImage asset, {
+        bool isActive = false,
+      }) =>
       asset.svg(
         height: iconSize,
         width: iconSize,
@@ -153,5 +153,53 @@ class _TopIndicatorBox extends BoxPainter {
       ..isAntiAlias = true;
 
     canvas.drawLine(offset, Offset(cfg.size!.width + offset.dx, 0), paint);
+  }
+}
+
+class _BlocListener extends StatelessWidget {
+  const _BlocListener({
+    super.key,
+    required this.child,
+  });
+
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return _AuthListener(
+      child: ShoppingCartListener(
+        child: child,
+      ),
+    );
+  }
+}
+
+class _AuthListener extends StatelessWidget {
+  const _AuthListener({
+    required this.child,
+    super.key,
+  });
+
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocConsumer<AuthBloc, AuthState>(
+      listener: _onAuthStateChange,
+      builder: (context, state) {
+        return child;
+      },
+    );
+  }
+
+  void _onAuthStateChange(BuildContext context, AuthState state) {
+    state.status.map(
+      notDetermined: (value) => null,
+      authenticated: (value) => getIt<UserBloc>().add(const UserEvent.fetch()),
+      notAuthenticated: (value) {
+        getIt<UserBloc>().add(const UserEvent.clear());
+        context.read<ShoppingCartBloc>().add(const ShoppingCartEvent.refresh());
+      },
+    );
   }
 }

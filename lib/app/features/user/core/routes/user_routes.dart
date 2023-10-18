@@ -33,4 +33,12 @@ final userRoutes = [
     path: '/user-account-info',
     page: UserAccountInfoRoute.page,
   ),
+  AutoRoute(
+    path: '/user-phone-info',
+    page: UserPhoneInfoRoute.page,
+  ),
+  AutoRoute(
+    path: '/user-email-info',
+    page: UserEmailInfoRoute.page,
+  ),
 ];

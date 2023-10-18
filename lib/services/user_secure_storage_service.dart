@@ -9,30 +9,20 @@ class UserSecureStorage {
       return;
     }
     _box = await Hive.openBox(
-      'secureStorage HIVE_VER_1',
+      'secureStorage 1}',
     );
     _isInitialized = true;
-  }
-
-  void dispose() {
-    _unAuthorizedController.close();
   }
 
   late Box _box;
 
   UserEntity? userData;
-  final StreamController<bool> _unAuthorizedController =
-      StreamController<bool>.broadcast();
-
-  Stream<bool> get unAuthorizedStream => _unAuthorizedController.stream;
 
   String? _token;
   String? _socialAvatar;
-  bool? _unAuthorizedState;
   bool? _developerMode;
   final tokenKey = 'tokenKey';
   final socialAvatarKey = 'socialAvatarKey';
-  final unAuthorizeKey = 'unAuthorizeKey';
 
   String? get userId => user?.id;
 
@@ -42,30 +32,8 @@ class UserSecureStorage {
     _token = null;
     _socialAvatar = null;
     userData = null;
-    _unAuthorizedState = null;
     await _box.put(tokenKey, null);
     await _box.put(socialAvatarKey, null);
-    await _box.put(unAuthorizeKey, null);
-  }
-
-  Future<void> notifyUnAuthorized() async {
-    _unAuthorizedState = _box.get(unAuthorizeKey, defaultValue: null) as bool?;
-    if (_unAuthorizedState == true) {
-      return;
-    }
-
-    _unAuthorizedController.add(true);
-    await _box.put(unAuthorizeKey, true);
-  }
-
-  Future<void> notifyAuthorized() async {
-    _unAuthorizedState = _box.get(unAuthorizeKey, defaultValue: null) as bool?;
-    if (_unAuthorizedState == false) {
-      return;
-    }
-
-    _unAuthorizedController.add(false);
-    await _box.put(unAuthorizeKey, false);
   }
 
   Future<void> setUserModel(UserEntity user) async {

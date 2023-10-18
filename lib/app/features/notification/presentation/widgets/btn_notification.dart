@@ -1,5 +1,5 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:hlshop/app/features/user/presentation/bloc/user_bloc.dart';
 
 class NotificationBtn extends StatelessWidget {
   const NotificationBtn({super.key, this.padding, this.badgeBorderColor});
@@ -9,12 +9,10 @@ class NotificationBtn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<AuthBloc, AuthState>(
+    return BlocConsumer<UserBloc, UserState>(
       listenWhen: (previous, current) =>
-          previous.data.user?.id != current.data.user?.id,
-      listener: (context, state) {
-        if (state is AuthenticatedState) {}
-      },
+          previous.userEntity?.id != current.userEntity?.id,
+      listener: (context, state) {},
       builder: (context, state) {
         final notiCount = 0;
         return BadgedCount(
@@ -26,7 +24,7 @@ class NotificationBtn extends StatelessWidget {
           padding: padding,
           count: notiCount,
           onPressed: () {
-            context.read<AuthBloc>().checkLoginAction(
+            context.read<UserBloc>().checkLoginAction(
               context,
               onLogin: (user) {
                 return context.pushRoute(const NotificationMainRoute());
