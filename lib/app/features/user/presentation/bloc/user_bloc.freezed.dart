@@ -98,26 +98,26 @@ class _$UserEventCopyWithImpl<$Res, $Val extends UserEvent>
 }
 
 /// @nodoc
-abstract class _$$_UserInitialEventCopyWith<$Res> {
-  factory _$$_UserInitialEventCopyWith(
-          _$_UserInitialEvent value, $Res Function(_$_UserInitialEvent) then) =
-      __$$_UserInitialEventCopyWithImpl<$Res>;
+abstract class _$$UserInitialEventImplCopyWith<$Res> {
+  factory _$$UserInitialEventImplCopyWith(_$UserInitialEventImpl value,
+          $Res Function(_$UserInitialEventImpl) then) =
+      __$$UserInitialEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_UserInitialEventCopyWithImpl<$Res>
-    extends _$UserEventCopyWithImpl<$Res, _$_UserInitialEvent>
-    implements _$$_UserInitialEventCopyWith<$Res> {
-  __$$_UserInitialEventCopyWithImpl(
-      _$_UserInitialEvent _value, $Res Function(_$_UserInitialEvent) _then)
+class __$$UserInitialEventImplCopyWithImpl<$Res>
+    extends _$UserEventCopyWithImpl<$Res, _$UserInitialEventImpl>
+    implements _$$UserInitialEventImplCopyWith<$Res> {
+  __$$UserInitialEventImplCopyWithImpl(_$UserInitialEventImpl _value,
+      $Res Function(_$UserInitialEventImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_UserInitialEvent extends _UserInitialEvent
+class _$UserInitialEventImpl extends _UserInitialEvent
     with DiagnosticableTreeMixin {
-  const _$_UserInitialEvent() : super._();
+  const _$UserInitialEventImpl() : super._();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -133,7 +133,7 @@ class _$_UserInitialEvent extends _UserInitialEvent
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_UserInitialEvent);
+        (other.runtimeType == runtimeType && other is _$UserInitialEventImpl);
   }
 
   @override
@@ -227,30 +227,31 @@ class _$_UserInitialEvent extends _UserInitialEvent
 }
 
 abstract class _UserInitialEvent extends UserEvent {
-  const factory _UserInitialEvent() = _$_UserInitialEvent;
+  const factory _UserInitialEvent() = _$UserInitialEventImpl;
   const _UserInitialEvent._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_UserFetchEventCopyWith<$Res> {
-  factory _$$_UserFetchEventCopyWith(
-          _$_UserFetchEvent value, $Res Function(_$_UserFetchEvent) then) =
-      __$$_UserFetchEventCopyWithImpl<$Res>;
+abstract class _$$UserFetchEventImplCopyWith<$Res> {
+  factory _$$UserFetchEventImplCopyWith(_$UserFetchEventImpl value,
+          $Res Function(_$UserFetchEventImpl) then) =
+      __$$UserFetchEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_UserFetchEventCopyWithImpl<$Res>
-    extends _$UserEventCopyWithImpl<$Res, _$_UserFetchEvent>
-    implements _$$_UserFetchEventCopyWith<$Res> {
-  __$$_UserFetchEventCopyWithImpl(
-      _$_UserFetchEvent _value, $Res Function(_$_UserFetchEvent) _then)
+class __$$UserFetchEventImplCopyWithImpl<$Res>
+    extends _$UserEventCopyWithImpl<$Res, _$UserFetchEventImpl>
+    implements _$$UserFetchEventImplCopyWith<$Res> {
+  __$$UserFetchEventImplCopyWithImpl(
+      _$UserFetchEventImpl _value, $Res Function(_$UserFetchEventImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_UserFetchEvent extends _UserFetchEvent with DiagnosticableTreeMixin {
-  const _$_UserFetchEvent() : super._();
+class _$UserFetchEventImpl extends _UserFetchEvent
+    with DiagnosticableTreeMixin {
+  const _$UserFetchEventImpl() : super._();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -266,7 +267,7 @@ class _$_UserFetchEvent extends _UserFetchEvent with DiagnosticableTreeMixin {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_UserFetchEvent);
+        (other.runtimeType == runtimeType && other is _$UserFetchEventImpl);
   }
 
   @override
@@ -360,30 +361,31 @@ class _$_UserFetchEvent extends _UserFetchEvent with DiagnosticableTreeMixin {
 }
 
 abstract class _UserFetchEvent extends UserEvent {
-  const factory _UserFetchEvent() = _$_UserFetchEvent;
+  const factory _UserFetchEvent() = _$UserFetchEventImpl;
   const _UserFetchEvent._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_UserClearEventCopyWith<$Res> {
-  factory _$$_UserClearEventCopyWith(
-          _$_UserClearEvent value, $Res Function(_$_UserClearEvent) then) =
-      __$$_UserClearEventCopyWithImpl<$Res>;
+abstract class _$$UserClearEventImplCopyWith<$Res> {
+  factory _$$UserClearEventImplCopyWith(_$UserClearEventImpl value,
+          $Res Function(_$UserClearEventImpl) then) =
+      __$$UserClearEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_UserClearEventCopyWithImpl<$Res>
-    extends _$UserEventCopyWithImpl<$Res, _$_UserClearEvent>
-    implements _$$_UserClearEventCopyWith<$Res> {
-  __$$_UserClearEventCopyWithImpl(
-      _$_UserClearEvent _value, $Res Function(_$_UserClearEvent) _then)
+class __$$UserClearEventImplCopyWithImpl<$Res>
+    extends _$UserEventCopyWithImpl<$Res, _$UserClearEventImpl>
+    implements _$$UserClearEventImplCopyWith<$Res> {
+  __$$UserClearEventImplCopyWithImpl(
+      _$UserClearEventImpl _value, $Res Function(_$UserClearEventImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_UserClearEvent extends _UserClearEvent with DiagnosticableTreeMixin {
-  const _$_UserClearEvent() : super._();
+class _$UserClearEventImpl extends _UserClearEvent
+    with DiagnosticableTreeMixin {
+  const _$UserClearEventImpl() : super._();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -399,7 +401,7 @@ class _$_UserClearEvent extends _UserClearEvent with DiagnosticableTreeMixin {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_UserClearEvent);
+        (other.runtimeType == runtimeType && other is _$UserClearEventImpl);
   }
 
   @override
@@ -493,25 +495,27 @@ class _$_UserClearEvent extends _UserClearEvent with DiagnosticableTreeMixin {
 }
 
 abstract class _UserClearEvent extends UserEvent {
-  const factory _UserClearEvent() = _$_UserClearEvent;
+  const factory _UserClearEvent() = _$UserClearEventImpl;
   const _UserClearEvent._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_UserUpdateUserNameEventCopyWith<$Res> {
-  factory _$$_UserUpdateUserNameEventCopyWith(_$_UserUpdateUserNameEvent value,
-          $Res Function(_$_UserUpdateUserNameEvent) then) =
-      __$$_UserUpdateUserNameEventCopyWithImpl<$Res>;
+abstract class _$$UserUpdateUserNameEventImplCopyWith<$Res> {
+  factory _$$UserUpdateUserNameEventImplCopyWith(
+          _$UserUpdateUserNameEventImpl value,
+          $Res Function(_$UserUpdateUserNameEventImpl) then) =
+      __$$UserUpdateUserNameEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String userName});
 }
 
 /// @nodoc
-class __$$_UserUpdateUserNameEventCopyWithImpl<$Res>
-    extends _$UserEventCopyWithImpl<$Res, _$_UserUpdateUserNameEvent>
-    implements _$$_UserUpdateUserNameEventCopyWith<$Res> {
-  __$$_UserUpdateUserNameEventCopyWithImpl(_$_UserUpdateUserNameEvent _value,
-      $Res Function(_$_UserUpdateUserNameEvent) _then)
+class __$$UserUpdateUserNameEventImplCopyWithImpl<$Res>
+    extends _$UserEventCopyWithImpl<$Res, _$UserUpdateUserNameEventImpl>
+    implements _$$UserUpdateUserNameEventImplCopyWith<$Res> {
+  __$$UserUpdateUserNameEventImplCopyWithImpl(
+      _$UserUpdateUserNameEventImpl _value,
+      $Res Function(_$UserUpdateUserNameEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -519,7 +523,7 @@ class __$$_UserUpdateUserNameEventCopyWithImpl<$Res>
   $Res call({
     Object? userName = null,
   }) {
-    return _then(_$_UserUpdateUserNameEvent(
+    return _then(_$UserUpdateUserNameEventImpl(
       userName: null == userName
           ? _value.userName
           : userName // ignore: cast_nullable_to_non_nullable
@@ -530,9 +534,9 @@ class __$$_UserUpdateUserNameEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_UserUpdateUserNameEvent extends _UserUpdateUserNameEvent
+class _$UserUpdateUserNameEventImpl extends _UserUpdateUserNameEvent
     with DiagnosticableTreeMixin {
-  const _$_UserUpdateUserNameEvent({required this.userName}) : super._();
+  const _$UserUpdateUserNameEventImpl({required this.userName}) : super._();
 
   @override
   final String userName;
@@ -554,7 +558,7 @@ class _$_UserUpdateUserNameEvent extends _UserUpdateUserNameEvent
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserUpdateUserNameEvent &&
+            other is _$UserUpdateUserNameEventImpl &&
             (identical(other.userName, userName) ||
                 other.userName == userName));
   }
@@ -565,10 +569,9 @@ class _$_UserUpdateUserNameEvent extends _UserUpdateUserNameEvent
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserUpdateUserNameEventCopyWith<_$_UserUpdateUserNameEvent>
-      get copyWith =>
-          __$$_UserUpdateUserNameEventCopyWithImpl<_$_UserUpdateUserNameEvent>(
-              this, _$identity);
+  _$$UserUpdateUserNameEventImplCopyWith<_$UserUpdateUserNameEventImpl>
+      get copyWith => __$$UserUpdateUserNameEventImplCopyWithImpl<
+          _$UserUpdateUserNameEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -659,30 +662,30 @@ class _$_UserUpdateUserNameEvent extends _UserUpdateUserNameEvent
 
 abstract class _UserUpdateUserNameEvent extends UserEvent {
   const factory _UserUpdateUserNameEvent({required final String userName}) =
-      _$_UserUpdateUserNameEvent;
+      _$UserUpdateUserNameEventImpl;
   const _UserUpdateUserNameEvent._() : super._();
 
   String get userName;
   @JsonKey(ignore: true)
-  _$$_UserUpdateUserNameEventCopyWith<_$_UserUpdateUserNameEvent>
+  _$$UserUpdateUserNameEventImplCopyWith<_$UserUpdateUserNameEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_UserUpdateCoverEventCopyWith<$Res> {
-  factory _$$_UserUpdateCoverEventCopyWith(_$_UserUpdateCoverEvent value,
-          $Res Function(_$_UserUpdateCoverEvent) then) =
-      __$$_UserUpdateCoverEventCopyWithImpl<$Res>;
+abstract class _$$UserUpdateCoverEventImplCopyWith<$Res> {
+  factory _$$UserUpdateCoverEventImplCopyWith(_$UserUpdateCoverEventImpl value,
+          $Res Function(_$UserUpdateCoverEventImpl) then) =
+      __$$UserUpdateCoverEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({File file});
 }
 
 /// @nodoc
-class __$$_UserUpdateCoverEventCopyWithImpl<$Res>
-    extends _$UserEventCopyWithImpl<$Res, _$_UserUpdateCoverEvent>
-    implements _$$_UserUpdateCoverEventCopyWith<$Res> {
-  __$$_UserUpdateCoverEventCopyWithImpl(_$_UserUpdateCoverEvent _value,
-      $Res Function(_$_UserUpdateCoverEvent) _then)
+class __$$UserUpdateCoverEventImplCopyWithImpl<$Res>
+    extends _$UserEventCopyWithImpl<$Res, _$UserUpdateCoverEventImpl>
+    implements _$$UserUpdateCoverEventImplCopyWith<$Res> {
+  __$$UserUpdateCoverEventImplCopyWithImpl(_$UserUpdateCoverEventImpl _value,
+      $Res Function(_$UserUpdateCoverEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -690,7 +693,7 @@ class __$$_UserUpdateCoverEventCopyWithImpl<$Res>
   $Res call({
     Object? file = null,
   }) {
-    return _then(_$_UserUpdateCoverEvent(
+    return _then(_$UserUpdateCoverEventImpl(
       file: null == file
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
@@ -701,9 +704,9 @@ class __$$_UserUpdateCoverEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_UserUpdateCoverEvent extends _UserUpdateCoverEvent
+class _$UserUpdateCoverEventImpl extends _UserUpdateCoverEvent
     with DiagnosticableTreeMixin {
-  const _$_UserUpdateCoverEvent({required this.file}) : super._();
+  const _$UserUpdateCoverEventImpl({required this.file}) : super._();
 
   @override
   final File file;
@@ -725,7 +728,7 @@ class _$_UserUpdateCoverEvent extends _UserUpdateCoverEvent
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserUpdateCoverEvent &&
+            other is _$UserUpdateCoverEventImpl &&
             (identical(other.file, file) || other.file == file));
   }
 
@@ -735,9 +738,10 @@ class _$_UserUpdateCoverEvent extends _UserUpdateCoverEvent
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserUpdateCoverEventCopyWith<_$_UserUpdateCoverEvent> get copyWith =>
-      __$$_UserUpdateCoverEventCopyWithImpl<_$_UserUpdateCoverEvent>(
-          this, _$identity);
+  _$$UserUpdateCoverEventImplCopyWith<_$UserUpdateCoverEventImpl>
+      get copyWith =>
+          __$$UserUpdateCoverEventImplCopyWithImpl<_$UserUpdateCoverEventImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -828,30 +832,31 @@ class _$_UserUpdateCoverEvent extends _UserUpdateCoverEvent
 
 abstract class _UserUpdateCoverEvent extends UserEvent {
   const factory _UserUpdateCoverEvent({required final File file}) =
-      _$_UserUpdateCoverEvent;
+      _$UserUpdateCoverEventImpl;
   const _UserUpdateCoverEvent._() : super._();
 
   File get file;
   @JsonKey(ignore: true)
-  _$$_UserUpdateCoverEventCopyWith<_$_UserUpdateCoverEvent> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UserUpdateCoverEventImplCopyWith<_$UserUpdateCoverEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_UserUpdateAvatarEventCopyWith<$Res> {
-  factory _$$_UserUpdateAvatarEventCopyWith(_$_UserUpdateAvatarEvent value,
-          $Res Function(_$_UserUpdateAvatarEvent) then) =
-      __$$_UserUpdateAvatarEventCopyWithImpl<$Res>;
+abstract class _$$UserUpdateAvatarEventImplCopyWith<$Res> {
+  factory _$$UserUpdateAvatarEventImplCopyWith(
+          _$UserUpdateAvatarEventImpl value,
+          $Res Function(_$UserUpdateAvatarEventImpl) then) =
+      __$$UserUpdateAvatarEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({File file});
 }
 
 /// @nodoc
-class __$$_UserUpdateAvatarEventCopyWithImpl<$Res>
-    extends _$UserEventCopyWithImpl<$Res, _$_UserUpdateAvatarEvent>
-    implements _$$_UserUpdateAvatarEventCopyWith<$Res> {
-  __$$_UserUpdateAvatarEventCopyWithImpl(_$_UserUpdateAvatarEvent _value,
-      $Res Function(_$_UserUpdateAvatarEvent) _then)
+class __$$UserUpdateAvatarEventImplCopyWithImpl<$Res>
+    extends _$UserEventCopyWithImpl<$Res, _$UserUpdateAvatarEventImpl>
+    implements _$$UserUpdateAvatarEventImplCopyWith<$Res> {
+  __$$UserUpdateAvatarEventImplCopyWithImpl(_$UserUpdateAvatarEventImpl _value,
+      $Res Function(_$UserUpdateAvatarEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -859,7 +864,7 @@ class __$$_UserUpdateAvatarEventCopyWithImpl<$Res>
   $Res call({
     Object? file = null,
   }) {
-    return _then(_$_UserUpdateAvatarEvent(
+    return _then(_$UserUpdateAvatarEventImpl(
       file: null == file
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
@@ -870,9 +875,9 @@ class __$$_UserUpdateAvatarEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_UserUpdateAvatarEvent extends _UserUpdateAvatarEvent
+class _$UserUpdateAvatarEventImpl extends _UserUpdateAvatarEvent
     with DiagnosticableTreeMixin {
-  const _$_UserUpdateAvatarEvent({required this.file}) : super._();
+  const _$UserUpdateAvatarEventImpl({required this.file}) : super._();
 
   @override
   final File file;
@@ -894,7 +899,7 @@ class _$_UserUpdateAvatarEvent extends _UserUpdateAvatarEvent
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserUpdateAvatarEvent &&
+            other is _$UserUpdateAvatarEventImpl &&
             (identical(other.file, file) || other.file == file));
   }
 
@@ -904,9 +909,9 @@ class _$_UserUpdateAvatarEvent extends _UserUpdateAvatarEvent
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserUpdateAvatarEventCopyWith<_$_UserUpdateAvatarEvent> get copyWith =>
-      __$$_UserUpdateAvatarEventCopyWithImpl<_$_UserUpdateAvatarEvent>(
-          this, _$identity);
+  _$$UserUpdateAvatarEventImplCopyWith<_$UserUpdateAvatarEventImpl>
+      get copyWith => __$$UserUpdateAvatarEventImplCopyWithImpl<
+          _$UserUpdateAvatarEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -997,13 +1002,13 @@ class _$_UserUpdateAvatarEvent extends _UserUpdateAvatarEvent
 
 abstract class _UserUpdateAvatarEvent extends UserEvent {
   const factory _UserUpdateAvatarEvent({required final File file}) =
-      _$_UserUpdateAvatarEvent;
+      _$UserUpdateAvatarEventImpl;
   const _UserUpdateAvatarEvent._() : super._();
 
   File get file;
   @JsonKey(ignore: true)
-  _$$_UserUpdateAvatarEventCopyWith<_$_UserUpdateAvatarEvent> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UserUpdateAvatarEventImplCopyWith<_$UserUpdateAvatarEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1079,10 +1084,11 @@ class _$UserStateCopyWithImpl<$Res, $Val extends UserState>
 }
 
 /// @nodoc
-abstract class _$$_UserStateCopyWith<$Res> implements $UserStateCopyWith<$Res> {
-  factory _$$_UserStateCopyWith(
-          _$_UserState value, $Res Function(_$_UserState) then) =
-      __$$_UserStateCopyWithImpl<$Res>;
+abstract class _$$UserStateImplCopyWith<$Res>
+    implements $UserStateCopyWith<$Res> {
+  factory _$$UserStateImplCopyWith(
+          _$UserStateImpl value, $Res Function(_$UserStateImpl) then) =
+      __$$UserStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({ApiStatus status, ApiStatus updateStatus, UserEntity? userEntity});
@@ -1094,11 +1100,11 @@ abstract class _$$_UserStateCopyWith<$Res> implements $UserStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_UserStateCopyWithImpl<$Res>
-    extends _$UserStateCopyWithImpl<$Res, _$_UserState>
-    implements _$$_UserStateCopyWith<$Res> {
-  __$$_UserStateCopyWithImpl(
-      _$_UserState _value, $Res Function(_$_UserState) _then)
+class __$$UserStateImplCopyWithImpl<$Res>
+    extends _$UserStateCopyWithImpl<$Res, _$UserStateImpl>
+    implements _$$UserStateImplCopyWith<$Res> {
+  __$$UserStateImplCopyWithImpl(
+      _$UserStateImpl _value, $Res Function(_$UserStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1108,7 +1114,7 @@ class __$$_UserStateCopyWithImpl<$Res>
     Object? updateStatus = null,
     Object? userEntity = freezed,
   }) {
-    return _then(_$_UserState(
+    return _then(_$UserStateImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -1127,8 +1133,8 @@ class __$$_UserStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_UserState extends _UserState with DiagnosticableTreeMixin {
-  const _$_UserState(
+class _$UserStateImpl extends _UserState with DiagnosticableTreeMixin {
+  const _$UserStateImpl(
       {this.status = const ApiStatus.initial(),
       this.updateStatus = const ApiStatus.initial(),
       this.userEntity = null})
@@ -1163,7 +1169,7 @@ class _$_UserState extends _UserState with DiagnosticableTreeMixin {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserState &&
+            other is _$UserStateImpl &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.updateStatus, updateStatus) ||
                 other.updateStatus == updateStatus) &&
@@ -1178,15 +1184,15 @@ class _$_UserState extends _UserState with DiagnosticableTreeMixin {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserStateCopyWith<_$_UserState> get copyWith =>
-      __$$_UserStateCopyWithImpl<_$_UserState>(this, _$identity);
+  _$$UserStateImplCopyWith<_$UserStateImpl> get copyWith =>
+      __$$UserStateImplCopyWithImpl<_$UserStateImpl>(this, _$identity);
 }
 
 abstract class _UserState extends UserState {
   const factory _UserState(
       {final ApiStatus status,
       final ApiStatus updateStatus,
-      final UserEntity? userEntity}) = _$_UserState;
+      final UserEntity? userEntity}) = _$UserStateImpl;
   const _UserState._() : super._();
 
   @override
@@ -1197,6 +1203,6 @@ abstract class _UserState extends UserState {
   UserEntity? get userEntity;
   @override
   @JsonKey(ignore: true)
-  _$$_UserStateCopyWith<_$_UserState> get copyWith =>
+  _$$UserStateImplCopyWith<_$UserStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

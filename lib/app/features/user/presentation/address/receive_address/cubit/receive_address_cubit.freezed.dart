@@ -67,11 +67,11 @@ class _$ReceiveAddressStateCopyWithImpl<$Res, $Val extends ReceiveAddressState>
 }
 
 /// @nodoc
-abstract class _$$_ReceiveAddressStateCopyWith<$Res>
+abstract class _$$ReceiveAddressStateImplCopyWith<$Res>
     implements $ReceiveAddressStateCopyWith<$Res> {
-  factory _$$_ReceiveAddressStateCopyWith(_$_ReceiveAddressState value,
-          $Res Function(_$_ReceiveAddressState) then) =
-      __$$_ReceiveAddressStateCopyWithImpl<$Res>;
+  factory _$$ReceiveAddressStateImplCopyWith(_$ReceiveAddressStateImpl value,
+          $Res Function(_$ReceiveAddressStateImpl) then) =
+      __$$ReceiveAddressStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({ApiStatus status});
@@ -81,11 +81,11 @@ abstract class _$$_ReceiveAddressStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ReceiveAddressStateCopyWithImpl<$Res>
-    extends _$ReceiveAddressStateCopyWithImpl<$Res, _$_ReceiveAddressState>
-    implements _$$_ReceiveAddressStateCopyWith<$Res> {
-  __$$_ReceiveAddressStateCopyWithImpl(_$_ReceiveAddressState _value,
-      $Res Function(_$_ReceiveAddressState) _then)
+class __$$ReceiveAddressStateImplCopyWithImpl<$Res>
+    extends _$ReceiveAddressStateCopyWithImpl<$Res, _$ReceiveAddressStateImpl>
+    implements _$$ReceiveAddressStateImplCopyWith<$Res> {
+  __$$ReceiveAddressStateImplCopyWithImpl(_$ReceiveAddressStateImpl _value,
+      $Res Function(_$ReceiveAddressStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -93,7 +93,7 @@ class __$$_ReceiveAddressStateCopyWithImpl<$Res>
   $Res call({
     Object? status = null,
   }) {
-    return _then(_$_ReceiveAddressState(
+    return _then(_$ReceiveAddressStateImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -104,9 +104,9 @@ class __$$_ReceiveAddressStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ReceiveAddressState extends _ReceiveAddressState
+class _$ReceiveAddressStateImpl extends _ReceiveAddressState
     with DiagnosticableTreeMixin {
-  const _$_ReceiveAddressState({this.status = const ApiStatus.initial()})
+  const _$ReceiveAddressStateImpl({this.status = const ApiStatus.initial()})
       : super._();
 
   @override
@@ -130,7 +130,7 @@ class _$_ReceiveAddressState extends _ReceiveAddressState
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ReceiveAddressState &&
+            other is _$ReceiveAddressStateImpl &&
             (identical(other.status, status) || other.status == status));
   }
 
@@ -140,20 +140,20 @@ class _$_ReceiveAddressState extends _ReceiveAddressState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ReceiveAddressStateCopyWith<_$_ReceiveAddressState> get copyWith =>
-      __$$_ReceiveAddressStateCopyWithImpl<_$_ReceiveAddressState>(
+  _$$ReceiveAddressStateImplCopyWith<_$ReceiveAddressStateImpl> get copyWith =>
+      __$$ReceiveAddressStateImplCopyWithImpl<_$ReceiveAddressStateImpl>(
           this, _$identity);
 }
 
 abstract class _ReceiveAddressState extends ReceiveAddressState {
   const factory _ReceiveAddressState({final ApiStatus status}) =
-      _$_ReceiveAddressState;
+      _$ReceiveAddressStateImpl;
   const _ReceiveAddressState._() : super._();
 
   @override
   ApiStatus get status;
   @override
   @JsonKey(ignore: true)
-  _$$_ReceiveAddressStateCopyWith<_$_ReceiveAddressState> get copyWith =>
+  _$$ReceiveAddressStateImplCopyWith<_$ReceiveAddressStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

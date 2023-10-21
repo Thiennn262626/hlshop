@@ -33,7 +33,7 @@ class _AuthApiMS implements AuthApiMS {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/auth/signup-phone',
+              '/api/hlshop/auth/signup-phone',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -58,7 +58,7 @@ class _AuthApiMS implements AuthApiMS {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/auth/signup-phone',
+              '/api/hlshop/auth/signup-phone',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -83,7 +83,7 @@ class _AuthApiMS implements AuthApiMS {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/auth/resend-otp-phone',
+              '/api/hlshop/auth/resend-otp-phone',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -108,7 +108,7 @@ class _AuthApiMS implements AuthApiMS {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/auth/resend-otp-email',
+              '/api/hlshop/auth/resend-otp-email',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -133,7 +133,7 @@ class _AuthApiMS implements AuthApiMS {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/auth/verify-otp',
+              '/api/hlshop/auth/verify-otp',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -158,7 +158,7 @@ class _AuthApiMS implements AuthApiMS {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/auth/signin-phone',
+              '/api/hlshop/auth/signin-phone',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -184,7 +184,7 @@ class _AuthApiMS implements AuthApiMS {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/auth/signin-email',
+              '/api/hlshop/auth/signin-email',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -211,7 +211,7 @@ class _AuthApiMS implements AuthApiMS {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/auth/forgot-password/send-otp-phone',
+              '/api/hlshop/auth/forgot-password/send-otp-phone',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -238,7 +238,7 @@ class _AuthApiMS implements AuthApiMS {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/auth/forgot-password/send-otp-email',
+              '/api/hlshop/auth/forgot-password/send-otp-email',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -265,7 +265,7 @@ class _AuthApiMS implements AuthApiMS {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/auth/forgot-password/verify-otp',
+              '/api/hlshop/auth/forgot-password/verify-otp',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -292,7 +292,7 @@ class _AuthApiMS implements AuthApiMS {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/auth/forgot-password/create-password',
+              '/api/hlshop/auth/forgot-password/create-password',
               queryParameters: queryParameters,
               data: _data,
             )

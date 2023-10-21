@@ -82,25 +82,27 @@ class _$AuthenticationStatusCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_NotDeterminedCopyWith<$Res> {
-  factory _$$_NotDeterminedCopyWith(
-          _$_NotDetermined value, $Res Function(_$_NotDetermined) then) =
-      __$$_NotDeterminedCopyWithImpl<$Res>;
+abstract class _$$NotDeterminedImplCopyWith<$Res> {
+  factory _$$NotDeterminedImplCopyWith(
+          _$NotDeterminedImpl value, $Res Function(_$NotDeterminedImpl) then) =
+      __$$NotDeterminedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_NotDeterminedCopyWithImpl<$Res>
-    extends _$AuthenticationStatusCopyWithImpl<$Res, _$_NotDetermined>
-    implements _$$_NotDeterminedCopyWith<$Res> {
-  __$$_NotDeterminedCopyWithImpl(
-      _$_NotDetermined _value, $Res Function(_$_NotDetermined) _then)
+class __$$NotDeterminedImplCopyWithImpl<$Res>
+    extends _$AuthenticationStatusCopyWithImpl<$Res, _$NotDeterminedImpl>
+    implements _$$NotDeterminedImplCopyWith<$Res> {
+  __$$NotDeterminedImplCopyWithImpl(
+      _$NotDeterminedImpl _value, $Res Function(_$NotDeterminedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_NotDetermined with DiagnosticableTreeMixin implements _NotDetermined {
-  const _$_NotDetermined();
+class _$NotDeterminedImpl
+    with DiagnosticableTreeMixin
+    implements _NotDetermined {
+  const _$NotDeterminedImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -117,7 +119,7 @@ class _$_NotDetermined with DiagnosticableTreeMixin implements _NotDetermined {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_NotDetermined);
+        (other.runtimeType == runtimeType && other is _$NotDeterminedImpl);
   }
 
   @override
@@ -193,29 +195,31 @@ class _$_NotDetermined with DiagnosticableTreeMixin implements _NotDetermined {
 }
 
 abstract class _NotDetermined implements AuthenticationStatus {
-  const factory _NotDetermined() = _$_NotDetermined;
+  const factory _NotDetermined() = _$NotDeterminedImpl;
 }
 
 /// @nodoc
-abstract class _$$_AuthenticatedCopyWith<$Res> {
-  factory _$$_AuthenticatedCopyWith(
-          _$_Authenticated value, $Res Function(_$_Authenticated) then) =
-      __$$_AuthenticatedCopyWithImpl<$Res>;
+abstract class _$$AuthenticatedImplCopyWith<$Res> {
+  factory _$$AuthenticatedImplCopyWith(
+          _$AuthenticatedImpl value, $Res Function(_$AuthenticatedImpl) then) =
+      __$$AuthenticatedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_AuthenticatedCopyWithImpl<$Res>
-    extends _$AuthenticationStatusCopyWithImpl<$Res, _$_Authenticated>
-    implements _$$_AuthenticatedCopyWith<$Res> {
-  __$$_AuthenticatedCopyWithImpl(
-      _$_Authenticated _value, $Res Function(_$_Authenticated) _then)
+class __$$AuthenticatedImplCopyWithImpl<$Res>
+    extends _$AuthenticationStatusCopyWithImpl<$Res, _$AuthenticatedImpl>
+    implements _$$AuthenticatedImplCopyWith<$Res> {
+  __$$AuthenticatedImplCopyWithImpl(
+      _$AuthenticatedImpl _value, $Res Function(_$AuthenticatedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Authenticated with DiagnosticableTreeMixin implements _Authenticated {
-  const _$_Authenticated();
+class _$AuthenticatedImpl
+    with DiagnosticableTreeMixin
+    implements _Authenticated {
+  const _$AuthenticatedImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -232,7 +236,7 @@ class _$_Authenticated with DiagnosticableTreeMixin implements _Authenticated {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Authenticated);
+        (other.runtimeType == runtimeType && other is _$AuthenticatedImpl);
   }
 
   @override
@@ -308,31 +312,31 @@ class _$_Authenticated with DiagnosticableTreeMixin implements _Authenticated {
 }
 
 abstract class _Authenticated implements AuthenticationStatus {
-  const factory _Authenticated() = _$_Authenticated;
+  const factory _Authenticated() = _$AuthenticatedImpl;
 }
 
 /// @nodoc
-abstract class _$$_NotAuthenticatedCopyWith<$Res> {
-  factory _$$_NotAuthenticatedCopyWith(
-          _$_NotAuthenticated value, $Res Function(_$_NotAuthenticated) then) =
-      __$$_NotAuthenticatedCopyWithImpl<$Res>;
+abstract class _$$NotAuthenticatedImplCopyWith<$Res> {
+  factory _$$NotAuthenticatedImplCopyWith(_$NotAuthenticatedImpl value,
+          $Res Function(_$NotAuthenticatedImpl) then) =
+      __$$NotAuthenticatedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_NotAuthenticatedCopyWithImpl<$Res>
-    extends _$AuthenticationStatusCopyWithImpl<$Res, _$_NotAuthenticated>
-    implements _$$_NotAuthenticatedCopyWith<$Res> {
-  __$$_NotAuthenticatedCopyWithImpl(
-      _$_NotAuthenticated _value, $Res Function(_$_NotAuthenticated) _then)
+class __$$NotAuthenticatedImplCopyWithImpl<$Res>
+    extends _$AuthenticationStatusCopyWithImpl<$Res, _$NotAuthenticatedImpl>
+    implements _$$NotAuthenticatedImplCopyWith<$Res> {
+  __$$NotAuthenticatedImplCopyWithImpl(_$NotAuthenticatedImpl _value,
+      $Res Function(_$NotAuthenticatedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_NotAuthenticated
+class _$NotAuthenticatedImpl
     with DiagnosticableTreeMixin
     implements _NotAuthenticated {
-  const _$_NotAuthenticated();
+  const _$NotAuthenticatedImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -349,7 +353,7 @@ class _$_NotAuthenticated
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_NotAuthenticated);
+        (other.runtimeType == runtimeType && other is _$NotAuthenticatedImpl);
   }
 
   @override
@@ -425,5 +429,5 @@ class _$_NotAuthenticated
 }
 
 abstract class _NotAuthenticated implements AuthenticationStatus {
-  const factory _NotAuthenticated() = _$_NotAuthenticated;
+  const factory _NotAuthenticated() = _$NotAuthenticatedImpl;
 }

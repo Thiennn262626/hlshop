@@ -75,11 +75,11 @@ class _$UserPaymentInfoStateCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_UserPaymentInfoStateCopyWith<$Res>
+abstract class _$$UserPaymentInfoStateImplCopyWith<$Res>
     implements $UserPaymentInfoStateCopyWith<$Res> {
-  factory _$$_UserPaymentInfoStateCopyWith(_$_UserPaymentInfoState value,
-          $Res Function(_$_UserPaymentInfoState) then) =
-      __$$_UserPaymentInfoStateCopyWithImpl<$Res>;
+  factory _$$UserPaymentInfoStateImplCopyWith(_$UserPaymentInfoStateImpl value,
+          $Res Function(_$UserPaymentInfoStateImpl) then) =
+      __$$UserPaymentInfoStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({ApiStatus status, List<PaymentMethodEntity> bankAccountList});
@@ -89,11 +89,11 @@ abstract class _$$_UserPaymentInfoStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UserPaymentInfoStateCopyWithImpl<$Res>
-    extends _$UserPaymentInfoStateCopyWithImpl<$Res, _$_UserPaymentInfoState>
-    implements _$$_UserPaymentInfoStateCopyWith<$Res> {
-  __$$_UserPaymentInfoStateCopyWithImpl(_$_UserPaymentInfoState _value,
-      $Res Function(_$_UserPaymentInfoState) _then)
+class __$$UserPaymentInfoStateImplCopyWithImpl<$Res>
+    extends _$UserPaymentInfoStateCopyWithImpl<$Res, _$UserPaymentInfoStateImpl>
+    implements _$$UserPaymentInfoStateImplCopyWith<$Res> {
+  __$$UserPaymentInfoStateImplCopyWithImpl(_$UserPaymentInfoStateImpl _value,
+      $Res Function(_$UserPaymentInfoStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -102,7 +102,7 @@ class __$$_UserPaymentInfoStateCopyWithImpl<$Res>
     Object? status = null,
     Object? bankAccountList = null,
   }) {
-    return _then(_$_UserPaymentInfoState(
+    return _then(_$UserPaymentInfoStateImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -117,9 +117,9 @@ class __$$_UserPaymentInfoStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_UserPaymentInfoState extends _UserPaymentInfoState
+class _$UserPaymentInfoStateImpl extends _UserPaymentInfoState
     with DiagnosticableTreeMixin {
-  const _$_UserPaymentInfoState(
+  const _$UserPaymentInfoStateImpl(
       {this.status = const ApiStatus.initial(),
       final List<PaymentMethodEntity> bankAccountList = const []})
       : _bankAccountList = bankAccountList,
@@ -155,7 +155,7 @@ class _$_UserPaymentInfoState extends _UserPaymentInfoState
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserPaymentInfoState &&
+            other is _$UserPaymentInfoStateImpl &&
             (identical(other.status, status) || other.status == status) &&
             const DeepCollectionEquality()
                 .equals(other._bankAccountList, _bankAccountList));
@@ -168,16 +168,17 @@ class _$_UserPaymentInfoState extends _UserPaymentInfoState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserPaymentInfoStateCopyWith<_$_UserPaymentInfoState> get copyWith =>
-      __$$_UserPaymentInfoStateCopyWithImpl<_$_UserPaymentInfoState>(
-          this, _$identity);
+  _$$UserPaymentInfoStateImplCopyWith<_$UserPaymentInfoStateImpl>
+      get copyWith =>
+          __$$UserPaymentInfoStateImplCopyWithImpl<_$UserPaymentInfoStateImpl>(
+              this, _$identity);
 }
 
 abstract class _UserPaymentInfoState extends UserPaymentInfoState {
   const factory _UserPaymentInfoState(
           {final ApiStatus status,
           final List<PaymentMethodEntity> bankAccountList}) =
-      _$_UserPaymentInfoState;
+      _$UserPaymentInfoStateImpl;
   const _UserPaymentInfoState._() : super._();
 
   @override
@@ -186,6 +187,6 @@ abstract class _UserPaymentInfoState extends UserPaymentInfoState {
   List<PaymentMethodEntity> get bankAccountList;
   @override
   @JsonKey(ignore: true)
-  _$$_UserPaymentInfoStateCopyWith<_$_UserPaymentInfoState> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UserPaymentInfoStateImplCopyWith<_$UserPaymentInfoStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

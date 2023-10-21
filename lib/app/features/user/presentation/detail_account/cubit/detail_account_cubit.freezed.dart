@@ -79,11 +79,11 @@ class _$DetailAccountStateCopyWithImpl<$Res, $Val extends DetailAccountState>
 }
 
 /// @nodoc
-abstract class _$$_DetailAccountStateCopyWith<$Res>
+abstract class _$$DetailAccountStateImplCopyWith<$Res>
     implements $DetailAccountStateCopyWith<$Res> {
-  factory _$$_DetailAccountStateCopyWith(_$_DetailAccountState value,
-          $Res Function(_$_DetailAccountState) then) =
-      __$$_DetailAccountStateCopyWithImpl<$Res>;
+  factory _$$DetailAccountStateImplCopyWith(_$DetailAccountStateImpl value,
+          $Res Function(_$DetailAccountStateImpl) then) =
+      __$$DetailAccountStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({ApiStatus status, UserEntity? userEntity, String? name});
@@ -93,11 +93,11 @@ abstract class _$$_DetailAccountStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_DetailAccountStateCopyWithImpl<$Res>
-    extends _$DetailAccountStateCopyWithImpl<$Res, _$_DetailAccountState>
-    implements _$$_DetailAccountStateCopyWith<$Res> {
-  __$$_DetailAccountStateCopyWithImpl(
-      _$_DetailAccountState _value, $Res Function(_$_DetailAccountState) _then)
+class __$$DetailAccountStateImplCopyWithImpl<$Res>
+    extends _$DetailAccountStateCopyWithImpl<$Res, _$DetailAccountStateImpl>
+    implements _$$DetailAccountStateImplCopyWith<$Res> {
+  __$$DetailAccountStateImplCopyWithImpl(_$DetailAccountStateImpl _value,
+      $Res Function(_$DetailAccountStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -107,7 +107,7 @@ class __$$_DetailAccountStateCopyWithImpl<$Res>
     Object? userEntity = freezed,
     Object? name = freezed,
   }) {
-    return _then(_$_DetailAccountState(
+    return _then(_$DetailAccountStateImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -126,9 +126,9 @@ class __$$_DetailAccountStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_DetailAccountState extends _DetailAccountState
+class _$DetailAccountStateImpl extends _DetailAccountState
     with DiagnosticableTreeMixin {
-  const _$_DetailAccountState(
+  const _$DetailAccountStateImpl(
       {this.status = const ApiStatus.initial(),
       this.userEntity = null,
       this.name = null})
@@ -163,7 +163,7 @@ class _$_DetailAccountState extends _DetailAccountState
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DetailAccountState &&
+            other is _$DetailAccountStateImpl &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.userEntity, userEntity) ||
                 other.userEntity == userEntity) &&
@@ -176,8 +176,8 @@ class _$_DetailAccountState extends _DetailAccountState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DetailAccountStateCopyWith<_$_DetailAccountState> get copyWith =>
-      __$$_DetailAccountStateCopyWithImpl<_$_DetailAccountState>(
+  _$$DetailAccountStateImplCopyWith<_$DetailAccountStateImpl> get copyWith =>
+      __$$DetailAccountStateImplCopyWithImpl<_$DetailAccountStateImpl>(
           this, _$identity);
 }
 
@@ -185,7 +185,7 @@ abstract class _DetailAccountState extends DetailAccountState {
   const factory _DetailAccountState(
       {final ApiStatus status,
       final UserEntity? userEntity,
-      final String? name}) = _$_DetailAccountState;
+      final String? name}) = _$DetailAccountStateImpl;
   const _DetailAccountState._() : super._();
 
   @override
@@ -196,6 +196,6 @@ abstract class _DetailAccountState extends DetailAccountState {
   String? get name;
   @override
   @JsonKey(ignore: true)
-  _$$_DetailAccountStateCopyWith<_$_DetailAccountState> get copyWith =>
+  _$$DetailAccountStateImplCopyWith<_$DetailAccountStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

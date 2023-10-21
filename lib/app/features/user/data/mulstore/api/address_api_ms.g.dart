@@ -41,7 +41,7 @@ class _AddressApiMS implements AddressApiMS {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/cities/get-list',
+              '/api/hlshop/cities/get-list',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -72,7 +72,7 @@ class _AddressApiMS implements AddressApiMS {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/district/get-list-by-city-id',
+              '/api/hlshop/district/get-list-by-city-id',
               queryParameters: queryParameters,
               data: _data,
             )

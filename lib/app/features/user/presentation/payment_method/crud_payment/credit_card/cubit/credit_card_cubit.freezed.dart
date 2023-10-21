@@ -67,11 +67,11 @@ class _$CrudCreditCardStateCopyWithImpl<$Res, $Val extends CrudCreditCardState>
 }
 
 /// @nodoc
-abstract class _$$_CrudCreditCardStateCopyWith<$Res>
+abstract class _$$CrudCreditCardStateImplCopyWith<$Res>
     implements $CrudCreditCardStateCopyWith<$Res> {
-  factory _$$_CrudCreditCardStateCopyWith(_$_CrudCreditCardState value,
-          $Res Function(_$_CrudCreditCardState) then) =
-      __$$_CrudCreditCardStateCopyWithImpl<$Res>;
+  factory _$$CrudCreditCardStateImplCopyWith(_$CrudCreditCardStateImpl value,
+          $Res Function(_$CrudCreditCardStateImpl) then) =
+      __$$CrudCreditCardStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({ApiStatus status});
@@ -81,11 +81,11 @@ abstract class _$$_CrudCreditCardStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_CrudCreditCardStateCopyWithImpl<$Res>
-    extends _$CrudCreditCardStateCopyWithImpl<$Res, _$_CrudCreditCardState>
-    implements _$$_CrudCreditCardStateCopyWith<$Res> {
-  __$$_CrudCreditCardStateCopyWithImpl(_$_CrudCreditCardState _value,
-      $Res Function(_$_CrudCreditCardState) _then)
+class __$$CrudCreditCardStateImplCopyWithImpl<$Res>
+    extends _$CrudCreditCardStateCopyWithImpl<$Res, _$CrudCreditCardStateImpl>
+    implements _$$CrudCreditCardStateImplCopyWith<$Res> {
+  __$$CrudCreditCardStateImplCopyWithImpl(_$CrudCreditCardStateImpl _value,
+      $Res Function(_$CrudCreditCardStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -93,7 +93,7 @@ class __$$_CrudCreditCardStateCopyWithImpl<$Res>
   $Res call({
     Object? status = null,
   }) {
-    return _then(_$_CrudCreditCardState(
+    return _then(_$CrudCreditCardStateImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -104,9 +104,9 @@ class __$$_CrudCreditCardStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CrudCreditCardState extends _CrudCreditCardState
+class _$CrudCreditCardStateImpl extends _CrudCreditCardState
     with DiagnosticableTreeMixin {
-  const _$_CrudCreditCardState({this.status = const ApiStatus.initial()})
+  const _$CrudCreditCardStateImpl({this.status = const ApiStatus.initial()})
       : super._();
 
   @override
@@ -130,7 +130,7 @@ class _$_CrudCreditCardState extends _CrudCreditCardState
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CrudCreditCardState &&
+            other is _$CrudCreditCardStateImpl &&
             (identical(other.status, status) || other.status == status));
   }
 
@@ -140,20 +140,20 @@ class _$_CrudCreditCardState extends _CrudCreditCardState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CrudCreditCardStateCopyWith<_$_CrudCreditCardState> get copyWith =>
-      __$$_CrudCreditCardStateCopyWithImpl<_$_CrudCreditCardState>(
+  _$$CrudCreditCardStateImplCopyWith<_$CrudCreditCardStateImpl> get copyWith =>
+      __$$CrudCreditCardStateImplCopyWithImpl<_$CrudCreditCardStateImpl>(
           this, _$identity);
 }
 
 abstract class _CrudCreditCardState extends CrudCreditCardState {
   const factory _CrudCreditCardState({final ApiStatus status}) =
-      _$_CrudCreditCardState;
+      _$CrudCreditCardStateImpl;
   const _CrudCreditCardState._() : super._();
 
   @override
   ApiStatus get status;
   @override
   @JsonKey(ignore: true)
-  _$$_CrudCreditCardStateCopyWith<_$_CrudCreditCardState> get copyWith =>
+  _$$CrudCreditCardStateImplCopyWith<_$CrudCreditCardStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

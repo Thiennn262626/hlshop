@@ -37,6 +37,10 @@ dependencies:
   synchronized: ^3.0.0
   retry: ^3.1.0
   socket_io_client: ^2.0.0-beta.4-nullsafety.0
+  network_logger:
+    git:
+      url: https://github.com/chihuy105/net_logger.git
+      ref: develop
 
   ## Data format & Json format
   json_serializable: ^6.6.1

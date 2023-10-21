@@ -28,7 +28,6 @@ export 'package:font_awesome_flutter/font_awesome_flutter.dart';
 export 'package:get_it/get_it.dart';
 export 'package:hive_flutter/hive_flutter.dart';
 export 'package:hlshop/generated/locale_keys.g.dart';
-export 'package:hlshop/services/socket_io_service.dart';
 export 'package:image_cropper/image_cropper.dart';
 export 'package:image_picker/image_picker.dart';
 export 'package:json_annotation/json_annotation.dart';
@@ -37,7 +36,6 @@ export 'package:loader_overlay/loader_overlay.dart';
 export 'package:package_info_plus/package_info_plus.dart';
 export 'package:reactive_forms/reactive_forms.dart';
 export 'package:retrofit/http.dart';
-export 'package:url_launcher/url_launcher.dart';
 export 'package:velocity_x/velocity_x.dart'
     show
         CenterExtension,

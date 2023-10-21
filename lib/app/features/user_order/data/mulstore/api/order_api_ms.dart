@@ -8,20 +8,20 @@ part 'order_api_ms.g.dart';
 abstract class MsOrderApi {
   factory MsOrderApi(Dio dio) = _MsOrderApi;
 
-  @GET('/api/mulstore/order/get-list')
+  @GET('/api/hlshop/order/get-list')
   Future<List<MsOderGroupData>> getListOrder({
     @Query('orderStatus') int? orderStatus,
   });
 
-  @GET('/api/mulstore/order/get-count-list')
+  @GET('/api/hlshop/order/get-count-list')
   Future<UserOrderCountModel?> getCountListOrder();
 
-  @GET('/api/mulstore/order/get-detail')
+  @GET('/api/hlshop/order/get-detail')
   Future<MsOderGroupData?> getOrderDetail({
     @Query('orderID') String? orderID,
   });
 
-  @GET('/api/mulstore/order/get-order-status-tracking')
+  @GET('/api/hlshop/order/get-order-status-tracking')
   Future<List<MsOrderTracking>> getListTrackingOrder({
     @Query('orderID') String? orderID,
   });

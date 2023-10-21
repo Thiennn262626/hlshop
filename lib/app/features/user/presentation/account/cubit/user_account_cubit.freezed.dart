@@ -67,11 +67,11 @@ class _$UserAccountStateCopyWithImpl<$Res, $Val extends UserAccountState>
 }
 
 /// @nodoc
-abstract class _$$_UserAccountStateCopyWith<$Res>
+abstract class _$$UserAccountStateImplCopyWith<$Res>
     implements $UserAccountStateCopyWith<$Res> {
-  factory _$$_UserAccountStateCopyWith(
-          _$_UserAccountState value, $Res Function(_$_UserAccountState) then) =
-      __$$_UserAccountStateCopyWithImpl<$Res>;
+  factory _$$UserAccountStateImplCopyWith(_$UserAccountStateImpl value,
+          $Res Function(_$UserAccountStateImpl) then) =
+      __$$UserAccountStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({ApiStatus status});
@@ -81,11 +81,11 @@ abstract class _$$_UserAccountStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UserAccountStateCopyWithImpl<$Res>
-    extends _$UserAccountStateCopyWithImpl<$Res, _$_UserAccountState>
-    implements _$$_UserAccountStateCopyWith<$Res> {
-  __$$_UserAccountStateCopyWithImpl(
-      _$_UserAccountState _value, $Res Function(_$_UserAccountState) _then)
+class __$$UserAccountStateImplCopyWithImpl<$Res>
+    extends _$UserAccountStateCopyWithImpl<$Res, _$UserAccountStateImpl>
+    implements _$$UserAccountStateImplCopyWith<$Res> {
+  __$$UserAccountStateImplCopyWithImpl(_$UserAccountStateImpl _value,
+      $Res Function(_$UserAccountStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -93,7 +93,7 @@ class __$$_UserAccountStateCopyWithImpl<$Res>
   $Res call({
     Object? status = null,
   }) {
-    return _then(_$_UserAccountState(
+    return _then(_$UserAccountStateImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -104,9 +104,9 @@ class __$$_UserAccountStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_UserAccountState extends _UserAccountState
+class _$UserAccountStateImpl extends _UserAccountState
     with DiagnosticableTreeMixin {
-  const _$_UserAccountState({this.status = const ApiStatus.initial()})
+  const _$UserAccountStateImpl({this.status = const ApiStatus.initial()})
       : super._();
 
   @override
@@ -130,7 +130,7 @@ class _$_UserAccountState extends _UserAccountState
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserAccountState &&
+            other is _$UserAccountStateImpl &&
             (identical(other.status, status) || other.status == status));
   }
 
@@ -140,19 +140,20 @@ class _$_UserAccountState extends _UserAccountState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserAccountStateCopyWith<_$_UserAccountState> get copyWith =>
-      __$$_UserAccountStateCopyWithImpl<_$_UserAccountState>(this, _$identity);
+  _$$UserAccountStateImplCopyWith<_$UserAccountStateImpl> get copyWith =>
+      __$$UserAccountStateImplCopyWithImpl<_$UserAccountStateImpl>(
+          this, _$identity);
 }
 
 abstract class _UserAccountState extends UserAccountState {
   const factory _UserAccountState({final ApiStatus status}) =
-      _$_UserAccountState;
+      _$UserAccountStateImpl;
   const _UserAccountState._() : super._();
 
   @override
   ApiStatus get status;
   @override
   @JsonKey(ignore: true)
-  _$$_UserAccountStateCopyWith<_$_UserAccountState> get copyWith =>
+  _$$UserAccountStateImplCopyWith<_$UserAccountStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

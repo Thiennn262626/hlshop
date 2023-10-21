@@ -83,11 +83,11 @@ class _$UserOrderStateCopyWithImpl<$Res, $Val extends UserOrderState>
 }
 
 /// @nodoc
-abstract class _$$_UserOrderStateCopyWith<$Res>
+abstract class _$$UserOrderStateImplCopyWith<$Res>
     implements $UserOrderStateCopyWith<$Res> {
-  factory _$$_UserOrderStateCopyWith(
-          _$_UserOrderState value, $Res Function(_$_UserOrderState) then) =
-      __$$_UserOrderStateCopyWithImpl<$Res>;
+  factory _$$UserOrderStateImplCopyWith(_$UserOrderStateImpl value,
+          $Res Function(_$UserOrderStateImpl) then) =
+      __$$UserOrderStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -100,11 +100,11 @@ abstract class _$$_UserOrderStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UserOrderStateCopyWithImpl<$Res>
-    extends _$UserOrderStateCopyWithImpl<$Res, _$_UserOrderState>
-    implements _$$_UserOrderStateCopyWith<$Res> {
-  __$$_UserOrderStateCopyWithImpl(
-      _$_UserOrderState _value, $Res Function(_$_UserOrderState) _then)
+class __$$UserOrderStateImplCopyWithImpl<$Res>
+    extends _$UserOrderStateCopyWithImpl<$Res, _$UserOrderStateImpl>
+    implements _$$UserOrderStateImplCopyWith<$Res> {
+  __$$UserOrderStateImplCopyWithImpl(
+      _$UserOrderStateImpl _value, $Res Function(_$UserOrderStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -114,7 +114,7 @@ class __$$_UserOrderStateCopyWithImpl<$Res>
     Object? orderStatusCountMap = freezed,
     Object? userOrderCountList = freezed,
   }) {
-    return _then(_$_UserOrderState(
+    return _then(_$UserOrderStateImpl(
       orderCountStatus: null == orderCountStatus
           ? _value.orderCountStatus
           : orderCountStatus // ignore: cast_nullable_to_non_nullable
@@ -133,8 +133,9 @@ class __$$_UserOrderStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_UserOrderState extends _UserOrderState with DiagnosticableTreeMixin {
-  const _$_UserOrderState(
+class _$UserOrderStateImpl extends _UserOrderState
+    with DiagnosticableTreeMixin {
+  const _$UserOrderStateImpl(
       {this.orderCountStatus = const ApiStatus.initial(),
       final Map<OrderStatus, int?>? orderStatusCountMap = null,
       final List<int?>? userOrderCountList = null})
@@ -188,7 +189,7 @@ class _$_UserOrderState extends _UserOrderState with DiagnosticableTreeMixin {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserOrderState &&
+            other is _$UserOrderStateImpl &&
             (identical(other.orderCountStatus, orderCountStatus) ||
                 other.orderCountStatus == orderCountStatus) &&
             const DeepCollectionEquality()
@@ -207,15 +208,16 @@ class _$_UserOrderState extends _UserOrderState with DiagnosticableTreeMixin {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserOrderStateCopyWith<_$_UserOrderState> get copyWith =>
-      __$$_UserOrderStateCopyWithImpl<_$_UserOrderState>(this, _$identity);
+  _$$UserOrderStateImplCopyWith<_$UserOrderStateImpl> get copyWith =>
+      __$$UserOrderStateImplCopyWithImpl<_$UserOrderStateImpl>(
+          this, _$identity);
 }
 
 abstract class _UserOrderState extends UserOrderState {
   const factory _UserOrderState(
       {final ApiStatus orderCountStatus,
       final Map<OrderStatus, int?>? orderStatusCountMap,
-      final List<int?>? userOrderCountList}) = _$_UserOrderState;
+      final List<int?>? userOrderCountList}) = _$UserOrderStateImpl;
   const _UserOrderState._() : super._();
 
   @override
@@ -226,6 +228,6 @@ abstract class _UserOrderState extends UserOrderState {
   List<int?>? get userOrderCountList;
   @override
   @JsonKey(ignore: true)
-  _$$_UserOrderStateCopyWith<_$_UserOrderState> get copyWith =>
+  _$$UserOrderStateImplCopyWith<_$UserOrderStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

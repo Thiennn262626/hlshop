@@ -33,7 +33,7 @@ class _MsCheckoutApi implements MsCheckoutApi {
     )
         .compose(
           _dio.options,
-          '/api/mulstore/order/create',
+          '/api/hlshop/order/create',
           queryParameters: queryParameters,
           data: _data,
         )

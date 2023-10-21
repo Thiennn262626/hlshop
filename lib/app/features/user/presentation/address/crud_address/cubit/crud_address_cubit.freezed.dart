@@ -67,11 +67,11 @@ class _$CrudAddressStateCopyWithImpl<$Res, $Val extends CrudAddressState>
 }
 
 /// @nodoc
-abstract class _$$_CrudAddressStateCopyWith<$Res>
+abstract class _$$CrudAddressStateImplCopyWith<$Res>
     implements $CrudAddressStateCopyWith<$Res> {
-  factory _$$_CrudAddressStateCopyWith(
-          _$_CrudAddressState value, $Res Function(_$_CrudAddressState) then) =
-      __$$_CrudAddressStateCopyWithImpl<$Res>;
+  factory _$$CrudAddressStateImplCopyWith(_$CrudAddressStateImpl value,
+          $Res Function(_$CrudAddressStateImpl) then) =
+      __$$CrudAddressStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({ApiStatus status});
@@ -81,11 +81,11 @@ abstract class _$$_CrudAddressStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_CrudAddressStateCopyWithImpl<$Res>
-    extends _$CrudAddressStateCopyWithImpl<$Res, _$_CrudAddressState>
-    implements _$$_CrudAddressStateCopyWith<$Res> {
-  __$$_CrudAddressStateCopyWithImpl(
-      _$_CrudAddressState _value, $Res Function(_$_CrudAddressState) _then)
+class __$$CrudAddressStateImplCopyWithImpl<$Res>
+    extends _$CrudAddressStateCopyWithImpl<$Res, _$CrudAddressStateImpl>
+    implements _$$CrudAddressStateImplCopyWith<$Res> {
+  __$$CrudAddressStateImplCopyWithImpl(_$CrudAddressStateImpl _value,
+      $Res Function(_$CrudAddressStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -93,7 +93,7 @@ class __$$_CrudAddressStateCopyWithImpl<$Res>
   $Res call({
     Object? status = null,
   }) {
-    return _then(_$_CrudAddressState(
+    return _then(_$CrudAddressStateImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -104,9 +104,9 @@ class __$$_CrudAddressStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CrudAddressState extends _CrudAddressState
+class _$CrudAddressStateImpl extends _CrudAddressState
     with DiagnosticableTreeMixin {
-  const _$_CrudAddressState({this.status = const ApiStatus.initial()})
+  const _$CrudAddressStateImpl({this.status = const ApiStatus.initial()})
       : super._();
 
   @override
@@ -130,7 +130,7 @@ class _$_CrudAddressState extends _CrudAddressState
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CrudAddressState &&
+            other is _$CrudAddressStateImpl &&
             (identical(other.status, status) || other.status == status));
   }
 
@@ -140,19 +140,20 @@ class _$_CrudAddressState extends _CrudAddressState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CrudAddressStateCopyWith<_$_CrudAddressState> get copyWith =>
-      __$$_CrudAddressStateCopyWithImpl<_$_CrudAddressState>(this, _$identity);
+  _$$CrudAddressStateImplCopyWith<_$CrudAddressStateImpl> get copyWith =>
+      __$$CrudAddressStateImplCopyWithImpl<_$CrudAddressStateImpl>(
+          this, _$identity);
 }
 
 abstract class _CrudAddressState extends CrudAddressState {
   const factory _CrudAddressState({final ApiStatus status}) =
-      _$_CrudAddressState;
+      _$CrudAddressStateImpl;
   const _CrudAddressState._() : super._();
 
   @override
   ApiStatus get status;
   @override
   @JsonKey(ignore: true)
-  _$$_CrudAddressStateCopyWith<_$_CrudAddressState> get copyWith =>
+  _$$CrudAddressStateImplCopyWith<_$CrudAddressStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

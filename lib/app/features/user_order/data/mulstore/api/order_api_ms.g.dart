@@ -33,7 +33,7 @@ class _MsOrderApi implements MsOrderApi {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/order/get-list',
+              '/api/hlshop/order/get-list',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -58,7 +58,7 @@ class _MsOrderApi implements MsOrderApi {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/order/get-count-list',
+              '/api/hlshop/order/get-count-list',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -84,7 +84,7 @@ class _MsOrderApi implements MsOrderApi {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/order/get-detail',
+              '/api/hlshop/order/get-detail',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -109,7 +109,7 @@ class _MsOrderApi implements MsOrderApi {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/order/get-order-status-tracking',
+              '/api/hlshop/order/get-order-status-tracking',
               queryParameters: queryParameters,
               data: _data,
             )

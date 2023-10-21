@@ -39,7 +39,7 @@ class _MsProductApi implements MsProductApi {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/product/get-list-hot',
+              '/api/hlshop/product/get-list-hot',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -74,7 +74,7 @@ class _MsProductApi implements MsProductApi {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/product/get-list-best-seller',
+              '/api/hlshop/product/get-list-best-seller',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -109,7 +109,7 @@ class _MsProductApi implements MsProductApi {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/product/get-list-good-price-today',
+              '/api/hlshop/product/get-list-good-price-today',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -144,7 +144,7 @@ class _MsProductApi implements MsProductApi {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/product/get-list-new',
+              '/api/hlshop/product/get-list-new',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -173,7 +173,7 @@ class _MsProductApi implements MsProductApi {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/product/get-detail',
+              '/api/hlshop/product/get-detail',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -208,7 +208,7 @@ class _MsProductApi implements MsProductApi {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/product/get-list-same-category',
+              '/api/hlshop/product/get-list-same-category',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -247,7 +247,7 @@ class _MsProductApi implements MsProductApi {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/product/get-list-same-seller',
+              '/api/hlshop/product/get-list-same-seller',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -277,7 +277,7 @@ class _MsProductApi implements MsProductApi {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/product/get-product-attribute',
+              '/api/hlshop/product/get-product-attribute',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -304,7 +304,7 @@ class _MsProductApi implements MsProductApi {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/product/get-product-sku-by-product-id',
+              '/api/hlshop/product/get-product-sku-by-product-id',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -340,7 +340,7 @@ class _MsProductApi implements MsProductApi {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/product-category/detail',
+              '/api/hlshop/product-category/detail',
               queryParameters: queryParameters,
               data: _data,
             )

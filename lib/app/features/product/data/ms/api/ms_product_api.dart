@@ -9,36 +9,36 @@ part 'ms_product_api.g.dart';
 abstract class MsProductApi {
   factory MsProductApi(Dio dio) = _MsProductApi;
 
-  @GET('/api/mulstore/product/get-list-hot')
+  @GET('/api/hlshop/product/get-list-hot')
   Future<MsPagingResult<MsProduct>?> getListHot({
     @Query('offset') int? offset,
     @Query('limit') int? limit,
   });
 
-  @GET('/api/mulstore/product/get-list-best-seller')
+  @GET('/api/hlshop/product/get-list-best-seller')
   Future<MsPagingResult<MsProduct>?> getListBestSell({
     @Query('offset') int? offset,
     @Query('limit') int? limit,
   });
 
-  @GET('/api/mulstore/product/get-list-good-price-today')
+  @GET('/api/hlshop/product/get-list-good-price-today')
   Future<MsPagingResult<MsProduct>?> getListGoodPrice({
     @Query('offset') int? offset,
     @Query('limit') int? limit,
   });
 
-  @GET('/api/mulstore/product/get-list-new')
+  @GET('/api/hlshop/product/get-list-new')
   Future<MsPagingResult<MsProduct>?> getListNew({
     @Query('offset') int? offset,
     @Query('limit') int? limit,
   });
 
-  @GET('/api/mulstore/product/get-detail')
+  @GET('/api/hlshop/product/get-detail')
   Future<MsProduct?> getProductDetail({
     @Query('productID') String? productID,
   });
 
-  @GET('/api/mulstore/product/get-list-same-category')
+  @GET('/api/hlshop/product/get-list-same-category')
   Future<MsPagingResult<MsProduct>?> getProductSameCategory({
     @Query('productID') String? productID,
     @Query('productCategoryID') String? productCategoryID,
@@ -46,7 +46,7 @@ abstract class MsProductApi {
     @Query('limit') int? limit,
   });
 
-  @GET('/api/mulstore/product/get-list-same-seller')
+  @GET('/api/hlshop/product/get-list-same-seller')
   Future<MsPagingResult<MsProduct>?> getProductSameSeller({
     @Query('productID') String? productID,
     @Query('sellerID') String? sellerID,
@@ -54,17 +54,17 @@ abstract class MsProductApi {
     @Query('limit') int? limit,
   });
 
-  @GET('/api/mulstore/product/get-product-attribute')
+  @GET('/api/hlshop/product/get-product-attribute')
   Future<List<MsProductAttribute>?> getProductAttributeList({
     @Query('productID') String? productID,
   });
 
-  @GET('/api/mulstore/product/get-product-sku-by-product-id')
+  @GET('/api/hlshop/product/get-product-sku-by-product-id')
   Future<MsProductSkuResult?> getProductSKUList({
     @Query('productID') String? productID,
   });
 
-  @GET('/api/mulstore/product-category/detail')
+  @GET('/api/hlshop/product-category/detail')
   Future<MsPagingResult<MsProduct>?> getCategoryDetail({
     @Query('productCategoryID') String? productCategoryID,
     @Query('offset') int? offset,

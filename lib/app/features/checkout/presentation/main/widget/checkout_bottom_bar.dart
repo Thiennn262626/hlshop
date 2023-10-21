@@ -30,8 +30,8 @@ class CheckoutBottomBar extends StatelessWidget {
             onPressed: () async {
               if (state.userAddress.isNotNullOrEmpty) {
                 context.read<CheckoutBloc>().add(
-                  const CheckoutEvent.createOrder(),
-                );
+                      const CheckoutEvent.createOrder(),
+                    );
               } else {
                 await DialogUtils.showErrorDialog(
                     context: context,

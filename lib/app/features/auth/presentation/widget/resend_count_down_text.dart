@@ -26,7 +26,8 @@ class _ResendCountdownTextState extends State<ResendCountdownText> {
 
   void _startTimer() {
     _controller?.disposeTimer();
-    final endTime = TimeService().getTimeFormNow(duration: widget.countdownTime);
+    final endTime =
+        TimeService().getTimeFormNow(duration: widget.countdownTime);
 
     if (endTime != null) {
       _controller = CountdownTimerController(
@@ -57,7 +58,9 @@ class _ResendCountdownTextState extends State<ResendCountdownText> {
               ),
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
-                  _controller?.endTime = TimeService().getTimeFormNow(duration: widget.countdownTime) ?? 0;
+                  _controller?.endTime = TimeService()
+                          .getTimeFormNow(duration: widget.countdownTime) ??
+                      0;
                   _controller?.start();
                   widget.onResend();
                 },

@@ -19,8 +19,7 @@ class AuthBuilder extends StatelessWidget {
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, state) {
         return state.status.maybeWhen(
-          authenticated: () =>
-              child ?? builder?.call(state) ?? const SizedBox.shrink(),
+          authenticated: () => child ?? builder?.call(state) ?? const SizedBox.shrink(),
           orElse: () => unAuthenticatedWidget ?? const UnAuthenticatedContent(),
         );
       },

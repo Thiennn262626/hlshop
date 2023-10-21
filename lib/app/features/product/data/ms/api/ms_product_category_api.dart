@@ -7,13 +7,13 @@ part 'ms_product_category_api.g.dart';
 abstract class MsProductCategoryApi {
   factory MsProductCategoryApi(Dio dio) = _MsProductCategoryApi;
 
-  @GET('/api/mulstore/product-category/get-list')
+  @GET('/api/hlshop/product-category/get-list')
   Future<MsPagingResult<MsProductCategory>?> getCategoryList({
     @Query('offset') int? offset,
     @Query('limit') int? limit,
   });
 
-  @GET('/api/mulstore/product-category/detail')
+  @GET('/api/hlshop/product-category/detail')
   Future<MsPagingResult<MsProductCategory>?> getCategoryDetail({
     @Query('productCategoryID') String? productCategoryID,
     @Query('offset') int? offset,

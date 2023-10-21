@@ -127,27 +127,29 @@ class _$ShoppingCartEventCopyWithImpl<$Res, $Val extends ShoppingCartEvent>
 }
 
 /// @nodoc
-abstract class _$$_ShoppingCartInitialEventCopyWith<$Res> {
-  factory _$$_ShoppingCartInitialEventCopyWith(
-          _$_ShoppingCartInitialEvent value,
-          $Res Function(_$_ShoppingCartInitialEvent) then) =
-      __$$_ShoppingCartInitialEventCopyWithImpl<$Res>;
+abstract class _$$ShoppingCartInitialEventImplCopyWith<$Res> {
+  factory _$$ShoppingCartInitialEventImplCopyWith(
+          _$ShoppingCartInitialEventImpl value,
+          $Res Function(_$ShoppingCartInitialEventImpl) then) =
+      __$$ShoppingCartInitialEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ShoppingCartInitialEventCopyWithImpl<$Res>
-    extends _$ShoppingCartEventCopyWithImpl<$Res, _$_ShoppingCartInitialEvent>
-    implements _$$_ShoppingCartInitialEventCopyWith<$Res> {
-  __$$_ShoppingCartInitialEventCopyWithImpl(_$_ShoppingCartInitialEvent _value,
-      $Res Function(_$_ShoppingCartInitialEvent) _then)
+class __$$ShoppingCartInitialEventImplCopyWithImpl<$Res>
+    extends _$ShoppingCartEventCopyWithImpl<$Res,
+        _$ShoppingCartInitialEventImpl>
+    implements _$$ShoppingCartInitialEventImplCopyWith<$Res> {
+  __$$ShoppingCartInitialEventImplCopyWithImpl(
+      _$ShoppingCartInitialEventImpl _value,
+      $Res Function(_$ShoppingCartInitialEventImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_ShoppingCartInitialEvent extends _ShoppingCartInitialEvent
+class _$ShoppingCartInitialEventImpl extends _ShoppingCartInitialEvent
     with DiagnosticableTreeMixin {
-  const _$_ShoppingCartInitialEvent() : super._();
+  const _$ShoppingCartInitialEventImpl() : super._();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -164,7 +166,7 @@ class _$_ShoppingCartInitialEvent extends _ShoppingCartInitialEvent
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ShoppingCartInitialEvent);
+            other is _$ShoppingCartInitialEventImpl);
   }
 
   @override
@@ -286,31 +288,33 @@ class _$_ShoppingCartInitialEvent extends _ShoppingCartInitialEvent
 }
 
 abstract class _ShoppingCartInitialEvent extends ShoppingCartEvent {
-  const factory _ShoppingCartInitialEvent() = _$_ShoppingCartInitialEvent;
+  const factory _ShoppingCartInitialEvent() = _$ShoppingCartInitialEventImpl;
   const _ShoppingCartInitialEvent._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_ShoppingCartFetchEventCopyWith<$Res> {
-  factory _$$_ShoppingCartFetchEventCopyWith(_$_ShoppingCartFetchEvent value,
-          $Res Function(_$_ShoppingCartFetchEvent) then) =
-      __$$_ShoppingCartFetchEventCopyWithImpl<$Res>;
+abstract class _$$ShoppingCartFetchEventImplCopyWith<$Res> {
+  factory _$$ShoppingCartFetchEventImplCopyWith(
+          _$ShoppingCartFetchEventImpl value,
+          $Res Function(_$ShoppingCartFetchEventImpl) then) =
+      __$$ShoppingCartFetchEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ShoppingCartFetchEventCopyWithImpl<$Res>
-    extends _$ShoppingCartEventCopyWithImpl<$Res, _$_ShoppingCartFetchEvent>
-    implements _$$_ShoppingCartFetchEventCopyWith<$Res> {
-  __$$_ShoppingCartFetchEventCopyWithImpl(_$_ShoppingCartFetchEvent _value,
-      $Res Function(_$_ShoppingCartFetchEvent) _then)
+class __$$ShoppingCartFetchEventImplCopyWithImpl<$Res>
+    extends _$ShoppingCartEventCopyWithImpl<$Res, _$ShoppingCartFetchEventImpl>
+    implements _$$ShoppingCartFetchEventImplCopyWith<$Res> {
+  __$$ShoppingCartFetchEventImplCopyWithImpl(
+      _$ShoppingCartFetchEventImpl _value,
+      $Res Function(_$ShoppingCartFetchEventImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_ShoppingCartFetchEvent extends _ShoppingCartFetchEvent
+class _$ShoppingCartFetchEventImpl extends _ShoppingCartFetchEvent
     with DiagnosticableTreeMixin {
-  const _$_ShoppingCartFetchEvent() : super._();
+  const _$ShoppingCartFetchEventImpl() : super._();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -327,7 +331,7 @@ class _$_ShoppingCartFetchEvent extends _ShoppingCartFetchEvent
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ShoppingCartFetchEvent);
+            other is _$ShoppingCartFetchEventImpl);
   }
 
   @override
@@ -449,31 +453,33 @@ class _$_ShoppingCartFetchEvent extends _ShoppingCartFetchEvent
 }
 
 abstract class _ShoppingCartFetchEvent extends ShoppingCartEvent {
-  const factory _ShoppingCartFetchEvent() = _$_ShoppingCartFetchEvent;
+  const factory _ShoppingCartFetchEvent() = _$ShoppingCartFetchEventImpl;
   const _ShoppingCartFetchEvent._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_ShoppingCartRefeshEventCopyWith<$Res> {
-  factory _$$_ShoppingCartRefeshEventCopyWith(_$_ShoppingCartRefeshEvent value,
-          $Res Function(_$_ShoppingCartRefeshEvent) then) =
-      __$$_ShoppingCartRefeshEventCopyWithImpl<$Res>;
+abstract class _$$ShoppingCartRefeshEventImplCopyWith<$Res> {
+  factory _$$ShoppingCartRefeshEventImplCopyWith(
+          _$ShoppingCartRefeshEventImpl value,
+          $Res Function(_$ShoppingCartRefeshEventImpl) then) =
+      __$$ShoppingCartRefeshEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ShoppingCartRefeshEventCopyWithImpl<$Res>
-    extends _$ShoppingCartEventCopyWithImpl<$Res, _$_ShoppingCartRefeshEvent>
-    implements _$$_ShoppingCartRefeshEventCopyWith<$Res> {
-  __$$_ShoppingCartRefeshEventCopyWithImpl(_$_ShoppingCartRefeshEvent _value,
-      $Res Function(_$_ShoppingCartRefeshEvent) _then)
+class __$$ShoppingCartRefeshEventImplCopyWithImpl<$Res>
+    extends _$ShoppingCartEventCopyWithImpl<$Res, _$ShoppingCartRefeshEventImpl>
+    implements _$$ShoppingCartRefeshEventImplCopyWith<$Res> {
+  __$$ShoppingCartRefeshEventImplCopyWithImpl(
+      _$ShoppingCartRefeshEventImpl _value,
+      $Res Function(_$ShoppingCartRefeshEventImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_ShoppingCartRefeshEvent extends _ShoppingCartRefeshEvent
+class _$ShoppingCartRefeshEventImpl extends _ShoppingCartRefeshEvent
     with DiagnosticableTreeMixin {
-  const _$_ShoppingCartRefeshEvent() : super._();
+  const _$ShoppingCartRefeshEventImpl() : super._();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -490,7 +496,7 @@ class _$_ShoppingCartRefeshEvent extends _ShoppingCartRefeshEvent
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ShoppingCartRefeshEvent);
+            other is _$ShoppingCartRefeshEventImpl);
   }
 
   @override
@@ -612,16 +618,16 @@ class _$_ShoppingCartRefeshEvent extends _ShoppingCartRefeshEvent
 }
 
 abstract class _ShoppingCartRefeshEvent extends ShoppingCartEvent {
-  const factory _ShoppingCartRefeshEvent() = _$_ShoppingCartRefeshEvent;
+  const factory _ShoppingCartRefeshEvent() = _$ShoppingCartRefeshEventImpl;
   const _ShoppingCartRefeshEvent._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_ShoppingCartAddItemEventCopyWith<$Res> {
-  factory _$$_ShoppingCartAddItemEventCopyWith(
-          _$_ShoppingCartAddItemEvent value,
-          $Res Function(_$_ShoppingCartAddItemEvent) then) =
-      __$$_ShoppingCartAddItemEventCopyWithImpl<$Res>;
+abstract class _$$ShoppingCartAddItemEventImplCopyWith<$Res> {
+  factory _$$ShoppingCartAddItemEventImplCopyWith(
+          _$ShoppingCartAddItemEventImpl value,
+          $Res Function(_$ShoppingCartAddItemEventImpl) then) =
+      __$$ShoppingCartAddItemEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {ProductEntity item,
@@ -630,11 +636,13 @@ abstract class _$$_ShoppingCartAddItemEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ShoppingCartAddItemEventCopyWithImpl<$Res>
-    extends _$ShoppingCartEventCopyWithImpl<$Res, _$_ShoppingCartAddItemEvent>
-    implements _$$_ShoppingCartAddItemEventCopyWith<$Res> {
-  __$$_ShoppingCartAddItemEventCopyWithImpl(_$_ShoppingCartAddItemEvent _value,
-      $Res Function(_$_ShoppingCartAddItemEvent) _then)
+class __$$ShoppingCartAddItemEventImplCopyWithImpl<$Res>
+    extends _$ShoppingCartEventCopyWithImpl<$Res,
+        _$ShoppingCartAddItemEventImpl>
+    implements _$$ShoppingCartAddItemEventImplCopyWith<$Res> {
+  __$$ShoppingCartAddItemEventImplCopyWithImpl(
+      _$ShoppingCartAddItemEventImpl _value,
+      $Res Function(_$ShoppingCartAddItemEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -644,7 +652,7 @@ class __$$_ShoppingCartAddItemEventCopyWithImpl<$Res>
     Object? quantity = null,
     Object? selectedVariant = freezed,
   }) {
-    return _then(_$_ShoppingCartAddItemEvent(
+    return _then(_$ShoppingCartAddItemEventImpl(
       item: null == item
           ? _value.item
           : item // ignore: cast_nullable_to_non_nullable
@@ -663,9 +671,9 @@ class __$$_ShoppingCartAddItemEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ShoppingCartAddItemEvent extends _ShoppingCartAddItemEvent
+class _$ShoppingCartAddItemEventImpl extends _ShoppingCartAddItemEvent
     with DiagnosticableTreeMixin {
-  const _$_ShoppingCartAddItemEvent(
+  const _$ShoppingCartAddItemEventImpl(
       {required this.item, required this.quantity, this.selectedVariant})
       : super._();
 
@@ -695,7 +703,7 @@ class _$_ShoppingCartAddItemEvent extends _ShoppingCartAddItemEvent
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ShoppingCartAddItemEvent &&
+            other is _$ShoppingCartAddItemEventImpl &&
             (identical(other.item, item) || other.item == item) &&
             (identical(other.quantity, quantity) ||
                 other.quantity == quantity) &&
@@ -709,9 +717,9 @@ class _$_ShoppingCartAddItemEvent extends _ShoppingCartAddItemEvent
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ShoppingCartAddItemEventCopyWith<_$_ShoppingCartAddItemEvent>
-      get copyWith => __$$_ShoppingCartAddItemEventCopyWithImpl<
-          _$_ShoppingCartAddItemEvent>(this, _$identity);
+  _$$ShoppingCartAddItemEventImplCopyWith<_$ShoppingCartAddItemEventImpl>
+      get copyWith => __$$ShoppingCartAddItemEventImplCopyWithImpl<
+          _$ShoppingCartAddItemEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -833,35 +841,35 @@ abstract class _ShoppingCartAddItemEvent extends ShoppingCartEvent {
           {required final ProductEntity item,
           required final int quantity,
           final ProductVariantEntity? selectedVariant}) =
-      _$_ShoppingCartAddItemEvent;
+      _$ShoppingCartAddItemEventImpl;
   const _ShoppingCartAddItemEvent._() : super._();
 
   ProductEntity get item;
   int get quantity;
   ProductVariantEntity? get selectedVariant;
   @JsonKey(ignore: true)
-  _$$_ShoppingCartAddItemEventCopyWith<_$_ShoppingCartAddItemEvent>
+  _$$ShoppingCartAddItemEventImplCopyWith<_$ShoppingCartAddItemEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_ShoppingCartUpdateItemEventCopyWith<$Res> {
-  factory _$$_ShoppingCartUpdateItemEventCopyWith(
-          _$_ShoppingCartUpdateItemEvent value,
-          $Res Function(_$_ShoppingCartUpdateItemEvent) then) =
-      __$$_ShoppingCartUpdateItemEventCopyWithImpl<$Res>;
+abstract class _$$ShoppingCartUpdateItemEventImplCopyWith<$Res> {
+  factory _$$ShoppingCartUpdateItemEventImplCopyWith(
+          _$ShoppingCartUpdateItemEventImpl value,
+          $Res Function(_$ShoppingCartUpdateItemEventImpl) then) =
+      __$$ShoppingCartUpdateItemEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({ShoppingCartItemEntity cartItem, int quantity});
 }
 
 /// @nodoc
-class __$$_ShoppingCartUpdateItemEventCopyWithImpl<$Res>
+class __$$ShoppingCartUpdateItemEventImplCopyWithImpl<$Res>
     extends _$ShoppingCartEventCopyWithImpl<$Res,
-        _$_ShoppingCartUpdateItemEvent>
-    implements _$$_ShoppingCartUpdateItemEventCopyWith<$Res> {
-  __$$_ShoppingCartUpdateItemEventCopyWithImpl(
-      _$_ShoppingCartUpdateItemEvent _value,
-      $Res Function(_$_ShoppingCartUpdateItemEvent) _then)
+        _$ShoppingCartUpdateItemEventImpl>
+    implements _$$ShoppingCartUpdateItemEventImplCopyWith<$Res> {
+  __$$ShoppingCartUpdateItemEventImplCopyWithImpl(
+      _$ShoppingCartUpdateItemEventImpl _value,
+      $Res Function(_$ShoppingCartUpdateItemEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -870,7 +878,7 @@ class __$$_ShoppingCartUpdateItemEventCopyWithImpl<$Res>
     Object? cartItem = null,
     Object? quantity = null,
   }) {
-    return _then(_$_ShoppingCartUpdateItemEvent(
+    return _then(_$ShoppingCartUpdateItemEventImpl(
       cartItem: null == cartItem
           ? _value.cartItem
           : cartItem // ignore: cast_nullable_to_non_nullable
@@ -885,9 +893,9 @@ class __$$_ShoppingCartUpdateItemEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ShoppingCartUpdateItemEvent extends _ShoppingCartUpdateItemEvent
+class _$ShoppingCartUpdateItemEventImpl extends _ShoppingCartUpdateItemEvent
     with DiagnosticableTreeMixin {
-  const _$_ShoppingCartUpdateItemEvent(
+  const _$ShoppingCartUpdateItemEventImpl(
       {required this.cartItem, required this.quantity})
       : super._();
 
@@ -914,7 +922,7 @@ class _$_ShoppingCartUpdateItemEvent extends _ShoppingCartUpdateItemEvent
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ShoppingCartUpdateItemEvent &&
+            other is _$ShoppingCartUpdateItemEventImpl &&
             (identical(other.cartItem, cartItem) ||
                 other.cartItem == cartItem) &&
             (identical(other.quantity, quantity) ||
@@ -927,9 +935,9 @@ class _$_ShoppingCartUpdateItemEvent extends _ShoppingCartUpdateItemEvent
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ShoppingCartUpdateItemEventCopyWith<_$_ShoppingCartUpdateItemEvent>
-      get copyWith => __$$_ShoppingCartUpdateItemEventCopyWithImpl<
-          _$_ShoppingCartUpdateItemEvent>(this, _$identity);
+  _$$ShoppingCartUpdateItemEventImplCopyWith<_$ShoppingCartUpdateItemEventImpl>
+      get copyWith => __$$ShoppingCartUpdateItemEventImplCopyWithImpl<
+          _$ShoppingCartUpdateItemEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1049,34 +1057,34 @@ class _$_ShoppingCartUpdateItemEvent extends _ShoppingCartUpdateItemEvent
 abstract class _ShoppingCartUpdateItemEvent extends ShoppingCartEvent {
   const factory _ShoppingCartUpdateItemEvent(
       {required final ShoppingCartItemEntity cartItem,
-      required final int quantity}) = _$_ShoppingCartUpdateItemEvent;
+      required final int quantity}) = _$ShoppingCartUpdateItemEventImpl;
   const _ShoppingCartUpdateItemEvent._() : super._();
 
   ShoppingCartItemEntity get cartItem;
   int get quantity;
   @JsonKey(ignore: true)
-  _$$_ShoppingCartUpdateItemEventCopyWith<_$_ShoppingCartUpdateItemEvent>
+  _$$ShoppingCartUpdateItemEventImplCopyWith<_$ShoppingCartUpdateItemEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_ShoppingCartRemoveItemEventCopyWith<$Res> {
-  factory _$$_ShoppingCartRemoveItemEventCopyWith(
-          _$_ShoppingCartRemoveItemEvent value,
-          $Res Function(_$_ShoppingCartRemoveItemEvent) then) =
-      __$$_ShoppingCartRemoveItemEventCopyWithImpl<$Res>;
+abstract class _$$ShoppingCartRemoveItemEventImplCopyWith<$Res> {
+  factory _$$ShoppingCartRemoveItemEventImplCopyWith(
+          _$ShoppingCartRemoveItemEventImpl value,
+          $Res Function(_$ShoppingCartRemoveItemEventImpl) then) =
+      __$$ShoppingCartRemoveItemEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({ShoppingCartItemEntity cartItem});
 }
 
 /// @nodoc
-class __$$_ShoppingCartRemoveItemEventCopyWithImpl<$Res>
+class __$$ShoppingCartRemoveItemEventImplCopyWithImpl<$Res>
     extends _$ShoppingCartEventCopyWithImpl<$Res,
-        _$_ShoppingCartRemoveItemEvent>
-    implements _$$_ShoppingCartRemoveItemEventCopyWith<$Res> {
-  __$$_ShoppingCartRemoveItemEventCopyWithImpl(
-      _$_ShoppingCartRemoveItemEvent _value,
-      $Res Function(_$_ShoppingCartRemoveItemEvent) _then)
+        _$ShoppingCartRemoveItemEventImpl>
+    implements _$$ShoppingCartRemoveItemEventImplCopyWith<$Res> {
+  __$$ShoppingCartRemoveItemEventImplCopyWithImpl(
+      _$ShoppingCartRemoveItemEventImpl _value,
+      $Res Function(_$ShoppingCartRemoveItemEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1084,7 +1092,7 @@ class __$$_ShoppingCartRemoveItemEventCopyWithImpl<$Res>
   $Res call({
     Object? cartItem = null,
   }) {
-    return _then(_$_ShoppingCartRemoveItemEvent(
+    return _then(_$ShoppingCartRemoveItemEventImpl(
       cartItem: null == cartItem
           ? _value.cartItem
           : cartItem // ignore: cast_nullable_to_non_nullable
@@ -1095,9 +1103,9 @@ class __$$_ShoppingCartRemoveItemEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ShoppingCartRemoveItemEvent extends _ShoppingCartRemoveItemEvent
+class _$ShoppingCartRemoveItemEventImpl extends _ShoppingCartRemoveItemEvent
     with DiagnosticableTreeMixin {
-  const _$_ShoppingCartRemoveItemEvent({required this.cartItem}) : super._();
+  const _$ShoppingCartRemoveItemEventImpl({required this.cartItem}) : super._();
 
   @override
   final ShoppingCartItemEntity cartItem;
@@ -1119,7 +1127,7 @@ class _$_ShoppingCartRemoveItemEvent extends _ShoppingCartRemoveItemEvent
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ShoppingCartRemoveItemEvent &&
+            other is _$ShoppingCartRemoveItemEventImpl &&
             (identical(other.cartItem, cartItem) ||
                 other.cartItem == cartItem));
   }
@@ -1130,9 +1138,9 @@ class _$_ShoppingCartRemoveItemEvent extends _ShoppingCartRemoveItemEvent
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ShoppingCartRemoveItemEventCopyWith<_$_ShoppingCartRemoveItemEvent>
-      get copyWith => __$$_ShoppingCartRemoveItemEventCopyWithImpl<
-          _$_ShoppingCartRemoveItemEvent>(this, _$identity);
+  _$$ShoppingCartRemoveItemEventImplCopyWith<_$ShoppingCartRemoveItemEventImpl>
+      get copyWith => __$$ShoppingCartRemoveItemEventImplCopyWithImpl<
+          _$ShoppingCartRemoveItemEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1252,33 +1260,33 @@ class _$_ShoppingCartRemoveItemEvent extends _ShoppingCartRemoveItemEvent
 abstract class _ShoppingCartRemoveItemEvent extends ShoppingCartEvent {
   const factory _ShoppingCartRemoveItemEvent(
           {required final ShoppingCartItemEntity cartItem}) =
-      _$_ShoppingCartRemoveItemEvent;
+      _$ShoppingCartRemoveItemEventImpl;
   const _ShoppingCartRemoveItemEvent._() : super._();
 
   ShoppingCartItemEntity get cartItem;
   @JsonKey(ignore: true)
-  _$$_ShoppingCartRemoveItemEventCopyWith<_$_ShoppingCartRemoveItemEvent>
+  _$$ShoppingCartRemoveItemEventImplCopyWith<_$ShoppingCartRemoveItemEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_ShoppingCartToggleItemEventCopyWith<$Res> {
-  factory _$$_ShoppingCartToggleItemEventCopyWith(
-          _$_ShoppingCartToggleItemEvent value,
-          $Res Function(_$_ShoppingCartToggleItemEvent) then) =
-      __$$_ShoppingCartToggleItemEventCopyWithImpl<$Res>;
+abstract class _$$ShoppingCartToggleItemEventImplCopyWith<$Res> {
+  factory _$$ShoppingCartToggleItemEventImplCopyWith(
+          _$ShoppingCartToggleItemEventImpl value,
+          $Res Function(_$ShoppingCartToggleItemEventImpl) then) =
+      __$$ShoppingCartToggleItemEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({ShoppingCartItemEntity cartItem, bool? selected});
 }
 
 /// @nodoc
-class __$$_ShoppingCartToggleItemEventCopyWithImpl<$Res>
+class __$$ShoppingCartToggleItemEventImplCopyWithImpl<$Res>
     extends _$ShoppingCartEventCopyWithImpl<$Res,
-        _$_ShoppingCartToggleItemEvent>
-    implements _$$_ShoppingCartToggleItemEventCopyWith<$Res> {
-  __$$_ShoppingCartToggleItemEventCopyWithImpl(
-      _$_ShoppingCartToggleItemEvent _value,
-      $Res Function(_$_ShoppingCartToggleItemEvent) _then)
+        _$ShoppingCartToggleItemEventImpl>
+    implements _$$ShoppingCartToggleItemEventImplCopyWith<$Res> {
+  __$$ShoppingCartToggleItemEventImplCopyWithImpl(
+      _$ShoppingCartToggleItemEventImpl _value,
+      $Res Function(_$ShoppingCartToggleItemEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1287,7 +1295,7 @@ class __$$_ShoppingCartToggleItemEventCopyWithImpl<$Res>
     Object? cartItem = null,
     Object? selected = freezed,
   }) {
-    return _then(_$_ShoppingCartToggleItemEvent(
+    return _then(_$ShoppingCartToggleItemEventImpl(
       cartItem: null == cartItem
           ? _value.cartItem
           : cartItem // ignore: cast_nullable_to_non_nullable
@@ -1302,9 +1310,10 @@ class __$$_ShoppingCartToggleItemEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ShoppingCartToggleItemEvent extends _ShoppingCartToggleItemEvent
+class _$ShoppingCartToggleItemEventImpl extends _ShoppingCartToggleItemEvent
     with DiagnosticableTreeMixin {
-  const _$_ShoppingCartToggleItemEvent({required this.cartItem, this.selected})
+  const _$ShoppingCartToggleItemEventImpl(
+      {required this.cartItem, this.selected})
       : super._();
 
   @override
@@ -1330,7 +1339,7 @@ class _$_ShoppingCartToggleItemEvent extends _ShoppingCartToggleItemEvent
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ShoppingCartToggleItemEvent &&
+            other is _$ShoppingCartToggleItemEventImpl &&
             (identical(other.cartItem, cartItem) ||
                 other.cartItem == cartItem) &&
             (identical(other.selected, selected) ||
@@ -1343,9 +1352,9 @@ class _$_ShoppingCartToggleItemEvent extends _ShoppingCartToggleItemEvent
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ShoppingCartToggleItemEventCopyWith<_$_ShoppingCartToggleItemEvent>
-      get copyWith => __$$_ShoppingCartToggleItemEventCopyWithImpl<
-          _$_ShoppingCartToggleItemEvent>(this, _$identity);
+  _$$ShoppingCartToggleItemEventImplCopyWith<_$ShoppingCartToggleItemEventImpl>
+      get copyWith => __$$ShoppingCartToggleItemEventImplCopyWithImpl<
+          _$ShoppingCartToggleItemEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1465,34 +1474,34 @@ class _$_ShoppingCartToggleItemEvent extends _ShoppingCartToggleItemEvent
 abstract class _ShoppingCartToggleItemEvent extends ShoppingCartEvent {
   const factory _ShoppingCartToggleItemEvent(
       {required final ShoppingCartItemEntity cartItem,
-      final bool? selected}) = _$_ShoppingCartToggleItemEvent;
+      final bool? selected}) = _$ShoppingCartToggleItemEventImpl;
   const _ShoppingCartToggleItemEvent._() : super._();
 
   ShoppingCartItemEntity get cartItem;
   bool? get selected;
   @JsonKey(ignore: true)
-  _$$_ShoppingCartToggleItemEventCopyWith<_$_ShoppingCartToggleItemEvent>
+  _$$ShoppingCartToggleItemEventImplCopyWith<_$ShoppingCartToggleItemEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_ShoppingCartToggleSellerEventCopyWith<$Res> {
-  factory _$$_ShoppingCartToggleSellerEventCopyWith(
-          _$_ShoppingCartToggleSellerEvent value,
-          $Res Function(_$_ShoppingCartToggleSellerEvent) then) =
-      __$$_ShoppingCartToggleSellerEventCopyWithImpl<$Res>;
+abstract class _$$ShoppingCartToggleSellerEventImplCopyWith<$Res> {
+  factory _$$ShoppingCartToggleSellerEventImplCopyWith(
+          _$ShoppingCartToggleSellerEventImpl value,
+          $Res Function(_$ShoppingCartToggleSellerEventImpl) then) =
+      __$$ShoppingCartToggleSellerEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({DistributorEntity distributorEntity, bool? selected});
 }
 
 /// @nodoc
-class __$$_ShoppingCartToggleSellerEventCopyWithImpl<$Res>
+class __$$ShoppingCartToggleSellerEventImplCopyWithImpl<$Res>
     extends _$ShoppingCartEventCopyWithImpl<$Res,
-        _$_ShoppingCartToggleSellerEvent>
-    implements _$$_ShoppingCartToggleSellerEventCopyWith<$Res> {
-  __$$_ShoppingCartToggleSellerEventCopyWithImpl(
-      _$_ShoppingCartToggleSellerEvent _value,
-      $Res Function(_$_ShoppingCartToggleSellerEvent) _then)
+        _$ShoppingCartToggleSellerEventImpl>
+    implements _$$ShoppingCartToggleSellerEventImplCopyWith<$Res> {
+  __$$ShoppingCartToggleSellerEventImplCopyWithImpl(
+      _$ShoppingCartToggleSellerEventImpl _value,
+      $Res Function(_$ShoppingCartToggleSellerEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1501,7 +1510,7 @@ class __$$_ShoppingCartToggleSellerEventCopyWithImpl<$Res>
     Object? distributorEntity = null,
     Object? selected = freezed,
   }) {
-    return _then(_$_ShoppingCartToggleSellerEvent(
+    return _then(_$ShoppingCartToggleSellerEventImpl(
       distributorEntity: null == distributorEntity
           ? _value.distributorEntity
           : distributorEntity // ignore: cast_nullable_to_non_nullable
@@ -1516,9 +1525,9 @@ class __$$_ShoppingCartToggleSellerEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ShoppingCartToggleSellerEvent extends _ShoppingCartToggleSellerEvent
+class _$ShoppingCartToggleSellerEventImpl extends _ShoppingCartToggleSellerEvent
     with DiagnosticableTreeMixin {
-  const _$_ShoppingCartToggleSellerEvent(
+  const _$ShoppingCartToggleSellerEventImpl(
       {required this.distributorEntity, this.selected})
       : super._();
 
@@ -1545,7 +1554,7 @@ class _$_ShoppingCartToggleSellerEvent extends _ShoppingCartToggleSellerEvent
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ShoppingCartToggleSellerEvent &&
+            other is _$ShoppingCartToggleSellerEventImpl &&
             (identical(other.distributorEntity, distributorEntity) ||
                 other.distributorEntity == distributorEntity) &&
             (identical(other.selected, selected) ||
@@ -1558,9 +1567,10 @@ class _$_ShoppingCartToggleSellerEvent extends _ShoppingCartToggleSellerEvent
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ShoppingCartToggleSellerEventCopyWith<_$_ShoppingCartToggleSellerEvent>
-      get copyWith => __$$_ShoppingCartToggleSellerEventCopyWithImpl<
-          _$_ShoppingCartToggleSellerEvent>(this, _$identity);
+  _$$ShoppingCartToggleSellerEventImplCopyWith<
+          _$ShoppingCartToggleSellerEventImpl>
+      get copyWith => __$$ShoppingCartToggleSellerEventImplCopyWithImpl<
+          _$ShoppingCartToggleSellerEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1680,13 +1690,14 @@ class _$_ShoppingCartToggleSellerEvent extends _ShoppingCartToggleSellerEvent
 abstract class _ShoppingCartToggleSellerEvent extends ShoppingCartEvent {
   const factory _ShoppingCartToggleSellerEvent(
       {required final DistributorEntity distributorEntity,
-      final bool? selected}) = _$_ShoppingCartToggleSellerEvent;
+      final bool? selected}) = _$ShoppingCartToggleSellerEventImpl;
   const _ShoppingCartToggleSellerEvent._() : super._();
 
   DistributorEntity get distributorEntity;
   bool? get selected;
   @JsonKey(ignore: true)
-  _$$_ShoppingCartToggleSellerEventCopyWith<_$_ShoppingCartToggleSellerEvent>
+  _$$ShoppingCartToggleSellerEventImplCopyWith<
+          _$ShoppingCartToggleSellerEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1775,11 +1786,11 @@ class _$ShoppingCartStateCopyWithImpl<$Res, $Val extends ShoppingCartState>
 }
 
 /// @nodoc
-abstract class _$$_ShoppingCartStateCopyWith<$Res>
+abstract class _$$ShoppingCartStateImplCopyWith<$Res>
     implements $ShoppingCartStateCopyWith<$Res> {
-  factory _$$_ShoppingCartStateCopyWith(_$_ShoppingCartState value,
-          $Res Function(_$_ShoppingCartState) then) =
-      __$$_ShoppingCartStateCopyWithImpl<$Res>;
+  factory _$$ShoppingCartStateImplCopyWith(_$ShoppingCartStateImpl value,
+          $Res Function(_$ShoppingCartStateImpl) then) =
+      __$$ShoppingCartStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1795,11 +1806,11 @@ abstract class _$$_ShoppingCartStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ShoppingCartStateCopyWithImpl<$Res>
-    extends _$ShoppingCartStateCopyWithImpl<$Res, _$_ShoppingCartState>
-    implements _$$_ShoppingCartStateCopyWith<$Res> {
-  __$$_ShoppingCartStateCopyWithImpl(
-      _$_ShoppingCartState _value, $Res Function(_$_ShoppingCartState) _then)
+class __$$ShoppingCartStateImplCopyWithImpl<$Res>
+    extends _$ShoppingCartStateCopyWithImpl<$Res, _$ShoppingCartStateImpl>
+    implements _$$ShoppingCartStateImplCopyWith<$Res> {
+  __$$ShoppingCartStateImplCopyWithImpl(_$ShoppingCartStateImpl _value,
+      $Res Function(_$ShoppingCartStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1810,7 +1821,7 @@ class __$$_ShoppingCartStateCopyWithImpl<$Res>
     Object? itemGroups = null,
     Object? selectedCartItemIds = null,
   }) {
-    return _then(_$_ShoppingCartState(
+    return _then(_$ShoppingCartStateImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -1833,9 +1844,9 @@ class __$$_ShoppingCartStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ShoppingCartState extends _ShoppingCartState
+class _$ShoppingCartStateImpl extends _ShoppingCartState
     with DiagnosticableTreeMixin {
-  const _$_ShoppingCartState(
+  const _$ShoppingCartStateImpl(
       {this.status = const ApiStatus.initial(),
       this.itemStatus = const ApiStatus.initial(),
       final List<ShoppingCartItemGroupEntity> itemGroups = const [],
@@ -1889,7 +1900,7 @@ class _$_ShoppingCartState extends _ShoppingCartState
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ShoppingCartState &&
+            other is _$ShoppingCartStateImpl &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.itemStatus, itemStatus) ||
                 other.itemStatus == itemStatus) &&
@@ -1910,8 +1921,8 @@ class _$_ShoppingCartState extends _ShoppingCartState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ShoppingCartStateCopyWith<_$_ShoppingCartState> get copyWith =>
-      __$$_ShoppingCartStateCopyWithImpl<_$_ShoppingCartState>(
+  _$$ShoppingCartStateImplCopyWith<_$ShoppingCartStateImpl> get copyWith =>
+      __$$ShoppingCartStateImplCopyWithImpl<_$ShoppingCartStateImpl>(
           this, _$identity);
 }
 
@@ -1920,7 +1931,7 @@ abstract class _ShoppingCartState extends ShoppingCartState {
       {final ApiStatus status,
       final ApiStatus itemStatus,
       final List<ShoppingCartItemGroupEntity> itemGroups,
-      final Set<String> selectedCartItemIds}) = _$_ShoppingCartState;
+      final Set<String> selectedCartItemIds}) = _$ShoppingCartStateImpl;
   const _ShoppingCartState._() : super._();
 
   @override
@@ -1933,6 +1944,6 @@ abstract class _ShoppingCartState extends ShoppingCartState {
   Set<String> get selectedCartItemIds;
   @override
   @JsonKey(ignore: true)
-  _$$_ShoppingCartStateCopyWith<_$_ShoppingCartState> get copyWith =>
+  _$$ShoppingCartStateImplCopyWith<_$ShoppingCartStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -36,25 +36,25 @@ class _$UserInfoStateCopyWithImpl<$Res, $Val extends UserInfoState>
 }
 
 /// @nodoc
-abstract class _$$_UserInfoStateCopyWith<$Res> {
-  factory _$$_UserInfoStateCopyWith(
-          _$_UserInfoState value, $Res Function(_$_UserInfoState) then) =
-      __$$_UserInfoStateCopyWithImpl<$Res>;
+abstract class _$$UserInfoStateImplCopyWith<$Res> {
+  factory _$$UserInfoStateImplCopyWith(
+          _$UserInfoStateImpl value, $Res Function(_$UserInfoStateImpl) then) =
+      __$$UserInfoStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_UserInfoStateCopyWithImpl<$Res>
-    extends _$UserInfoStateCopyWithImpl<$Res, _$_UserInfoState>
-    implements _$$_UserInfoStateCopyWith<$Res> {
-  __$$_UserInfoStateCopyWithImpl(
-      _$_UserInfoState _value, $Res Function(_$_UserInfoState) _then)
+class __$$UserInfoStateImplCopyWithImpl<$Res>
+    extends _$UserInfoStateCopyWithImpl<$Res, _$UserInfoStateImpl>
+    implements _$$UserInfoStateImplCopyWith<$Res> {
+  __$$UserInfoStateImplCopyWithImpl(
+      _$UserInfoStateImpl _value, $Res Function(_$UserInfoStateImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_UserInfoState extends _UserInfoState with DiagnosticableTreeMixin {
-  const _$_UserInfoState() : super._();
+class _$UserInfoStateImpl extends _UserInfoState with DiagnosticableTreeMixin {
+  const _$UserInfoStateImpl() : super._();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -70,7 +70,7 @@ class _$_UserInfoState extends _UserInfoState with DiagnosticableTreeMixin {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_UserInfoState);
+        (other.runtimeType == runtimeType && other is _$UserInfoStateImpl);
   }
 
   @override
@@ -78,6 +78,6 @@ class _$_UserInfoState extends _UserInfoState with DiagnosticableTreeMixin {
 }
 
 abstract class _UserInfoState extends UserInfoState {
-  const factory _UserInfoState() = _$_UserInfoState;
+  const factory _UserInfoState() = _$UserInfoStateImpl;
   const _UserInfoState._() : super._();
 }

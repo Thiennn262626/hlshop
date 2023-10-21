@@ -92,24 +92,25 @@ class _$ApiStatusCopyWithImpl<$Res, $Val extends ApiStatus>
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+abstract class _$$InitialImplCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$ApiStatusCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$ApiStatusCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Initial extends _Initial {
-  const _$_Initial() : super._();
+class _$InitialImpl extends _Initial {
+  const _$InitialImpl() : super._();
 
   @override
   String toString() {
@@ -119,7 +120,7 @@ class _$_Initial extends _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType && other is _$InitialImpl);
   }
 
   @override
@@ -207,29 +208,30 @@ class _$_Initial extends _Initial {
 }
 
 abstract class _Initial extends ApiStatus {
-  const factory _Initial() = _$_Initial;
+  const factory _Initial() = _$InitialImpl;
   const _Initial._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_LoadingCopyWith<$Res> {
-  factory _$$_LoadingCopyWith(
-          _$_Loading value, $Res Function(_$_Loading) then) =
-      __$$_LoadingCopyWithImpl<$Res>;
+abstract class _$$LoadingImplCopyWith<$Res> {
+  factory _$$LoadingImplCopyWith(
+          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
+      __$$LoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_LoadingCopyWithImpl<$Res>
-    extends _$ApiStatusCopyWithImpl<$Res, _$_Loading>
-    implements _$$_LoadingCopyWith<$Res> {
-  __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
+class __$$LoadingImplCopyWithImpl<$Res>
+    extends _$ApiStatusCopyWithImpl<$Res, _$LoadingImpl>
+    implements _$$LoadingImplCopyWith<$Res> {
+  __$$LoadingImplCopyWithImpl(
+      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Loading extends _Loading {
-  const _$_Loading() : super._();
+class _$LoadingImpl extends _Loading {
+  const _$LoadingImpl() : super._();
 
   @override
   String toString() {
@@ -239,7 +241,7 @@ class _$_Loading extends _Loading {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Loading);
+        (other.runtimeType == runtimeType && other is _$LoadingImpl);
   }
 
   @override
@@ -327,30 +329,30 @@ class _$_Loading extends _Loading {
 }
 
 abstract class _Loading extends ApiStatus {
-  const factory _Loading() = _$_Loading;
+  const factory _Loading() = _$LoadingImpl;
   const _Loading._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_RefreshingCopyWith<$Res> {
-  factory _$$_RefreshingCopyWith(
-          _$_Refreshing value, $Res Function(_$_Refreshing) then) =
-      __$$_RefreshingCopyWithImpl<$Res>;
+abstract class _$$RefreshingImplCopyWith<$Res> {
+  factory _$$RefreshingImplCopyWith(
+          _$RefreshingImpl value, $Res Function(_$RefreshingImpl) then) =
+      __$$RefreshingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_RefreshingCopyWithImpl<$Res>
-    extends _$ApiStatusCopyWithImpl<$Res, _$_Refreshing>
-    implements _$$_RefreshingCopyWith<$Res> {
-  __$$_RefreshingCopyWithImpl(
-      _$_Refreshing _value, $Res Function(_$_Refreshing) _then)
+class __$$RefreshingImplCopyWithImpl<$Res>
+    extends _$ApiStatusCopyWithImpl<$Res, _$RefreshingImpl>
+    implements _$$RefreshingImplCopyWith<$Res> {
+  __$$RefreshingImplCopyWithImpl(
+      _$RefreshingImpl _value, $Res Function(_$RefreshingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Refreshing extends _Refreshing {
-  const _$_Refreshing() : super._();
+class _$RefreshingImpl extends _Refreshing {
+  const _$RefreshingImpl() : super._();
 
   @override
   String toString() {
@@ -360,7 +362,7 @@ class _$_Refreshing extends _Refreshing {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Refreshing);
+        (other.runtimeType == runtimeType && other is _$RefreshingImpl);
   }
 
   @override
@@ -448,27 +450,29 @@ class _$_Refreshing extends _Refreshing {
 }
 
 abstract class _Refreshing extends ApiStatus {
-  const factory _Refreshing() = _$_Refreshing;
+  const factory _Refreshing() = _$RefreshingImpl;
   const _Refreshing._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_DoneCopyWith<$Res> {
-  factory _$$_DoneCopyWith(_$_Done value, $Res Function(_$_Done) then) =
-      __$$_DoneCopyWithImpl<$Res>;
+abstract class _$$DoneImplCopyWith<$Res> {
+  factory _$$DoneImplCopyWith(
+          _$DoneImpl value, $Res Function(_$DoneImpl) then) =
+      __$$DoneImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_DoneCopyWithImpl<$Res> extends _$ApiStatusCopyWithImpl<$Res, _$_Done>
-    implements _$$_DoneCopyWith<$Res> {
-  __$$_DoneCopyWithImpl(_$_Done _value, $Res Function(_$_Done) _then)
+class __$$DoneImplCopyWithImpl<$Res>
+    extends _$ApiStatusCopyWithImpl<$Res, _$DoneImpl>
+    implements _$$DoneImplCopyWith<$Res> {
+  __$$DoneImplCopyWithImpl(_$DoneImpl _value, $Res Function(_$DoneImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Done extends _Done {
-  const _$_Done() : super._();
+class _$DoneImpl extends _Done {
+  const _$DoneImpl() : super._();
 
   @override
   String toString() {
@@ -478,7 +482,7 @@ class _$_Done extends _Done {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Done);
+        (other.runtimeType == runtimeType && other is _$DoneImpl);
   }
 
   @override
@@ -566,23 +570,25 @@ class _$_Done extends _Done {
 }
 
 abstract class _Done extends ApiStatus {
-  const factory _Done() = _$_Done;
+  const factory _Done() = _$DoneImpl;
   const _Done._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_ErrorCopyWith<$Res> {
-  factory _$$_ErrorCopyWith(_$_Error value, $Res Function(_$_Error) then) =
-      __$$_ErrorCopyWithImpl<$Res>;
+abstract class _$$ErrorImplCopyWith<$Res> {
+  factory _$$ErrorImplCopyWith(
+          _$ErrorImpl value, $Res Function(_$ErrorImpl) then) =
+      __$$ErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object? error});
 }
 
 /// @nodoc
-class __$$_ErrorCopyWithImpl<$Res>
-    extends _$ApiStatusCopyWithImpl<$Res, _$_Error>
-    implements _$$_ErrorCopyWith<$Res> {
-  __$$_ErrorCopyWithImpl(_$_Error _value, $Res Function(_$_Error) _then)
+class __$$ErrorImplCopyWithImpl<$Res>
+    extends _$ApiStatusCopyWithImpl<$Res, _$ErrorImpl>
+    implements _$$ErrorImplCopyWith<$Res> {
+  __$$ErrorImplCopyWithImpl(
+      _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -590,7 +596,7 @@ class __$$_ErrorCopyWithImpl<$Res>
   $Res call({
     Object? error = freezed,
   }) {
-    return _then(_$_Error(
+    return _then(_$ErrorImpl(
       freezed == error ? _value.error : error,
     ));
   }
@@ -598,8 +604,8 @@ class __$$_ErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Error extends _Error {
-  const _$_Error(this.error) : super._();
+class _$ErrorImpl extends _Error {
+  const _$ErrorImpl(this.error) : super._();
 
   @override
   final Object? error;
@@ -613,7 +619,7 @@ class _$_Error extends _Error {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Error &&
+            other is _$ErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error));
   }
 
@@ -624,8 +630,8 @@ class _$_Error extends _Error {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ErrorCopyWith<_$_Error> get copyWith =>
-      __$$_ErrorCopyWithImpl<_$_Error>(this, _$identity);
+  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
+      __$$ErrorImplCopyWithImpl<_$ErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -709,11 +715,11 @@ class _$_Error extends _Error {
 }
 
 abstract class _Error extends ApiStatus {
-  const factory _Error(final Object? error) = _$_Error;
+  const factory _Error(final Object? error) = _$ErrorImpl;
   const _Error._() : super._();
 
   Object? get error;
   @JsonKey(ignore: true)
-  _$$_ErrorCopyWith<_$_Error> get copyWith =>
+  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -7,16 +7,16 @@ part 'ms_shopping_cart_api.g.dart';
 abstract class MsShoppingCartApi {
   factory MsShoppingCartApi(Dio dio) = _MsShoppingCartApi;
 
-  @POST('/api/mulstore/cart/add-cart')
+  @POST('/api/hlshop/cart/add-cart')
   Future<void> addCart({
     @Body() MsShoppingCartAddReq? body,
   });
 
-  @POST('/api/mulstore/cart/update-quantity-cart')
+  @POST('/api/hlshop/cart/update-quantity-cart')
   Future<void> updateQuantity({
     @Body() MsShoppingCartUpdateReq? body,
   });
 
-  @GET('/api/mulstore/cart/get-list-cart')
+  @GET('/api/hlshop/cart/get-list-cart')
   Future<List<MsShoppingCart>> getCartList();
 }

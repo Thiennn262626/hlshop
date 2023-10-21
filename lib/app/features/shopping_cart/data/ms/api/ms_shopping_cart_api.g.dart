@@ -33,7 +33,7 @@ class _MsShoppingCartApi implements MsShoppingCartApi {
     )
         .compose(
           _dio.options,
-          '/api/mulstore/cart/add-cart',
+          '/api/hlshop/cart/add-cart',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -55,7 +55,7 @@ class _MsShoppingCartApi implements MsShoppingCartApi {
     )
         .compose(
           _dio.options,
-          '/api/mulstore/cart/update-quantity-cart',
+          '/api/hlshop/cart/update-quantity-cart',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -76,7 +76,7 @@ class _MsShoppingCartApi implements MsShoppingCartApi {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/cart/get-list-cart',
+              '/api/hlshop/cart/get-list-cart',
               queryParameters: queryParameters,
               data: _data,
             )

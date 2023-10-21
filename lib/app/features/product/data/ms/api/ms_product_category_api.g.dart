@@ -39,7 +39,7 @@ class _MsProductCategoryApi implements MsProductCategoryApi {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/product-category/get-list',
+              '/api/hlshop/product-category/get-list',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -76,7 +76,7 @@ class _MsProductCategoryApi implements MsProductCategoryApi {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/product-category/detail',
+              '/api/hlshop/product-category/detail',
               queryParameters: queryParameters,
               data: _data,
             )

@@ -86,12 +86,12 @@ class _$UserOrderTrackingDetailStateCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_UserOrderTrackingDetailStateCopyWith<$Res>
+abstract class _$$UserOrderTrackingDetailStateImplCopyWith<$Res>
     implements $UserOrderTrackingDetailStateCopyWith<$Res> {
-  factory _$$_UserOrderTrackingDetailStateCopyWith(
-          _$_UserOrderTrackingDetailState value,
-          $Res Function(_$_UserOrderTrackingDetailState) then) =
-      __$$_UserOrderTrackingDetailStateCopyWithImpl<$Res>;
+  factory _$$UserOrderTrackingDetailStateImplCopyWith(
+          _$UserOrderTrackingDetailStateImpl value,
+          $Res Function(_$UserOrderTrackingDetailStateImpl) then) =
+      __$$UserOrderTrackingDetailStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -104,13 +104,13 @@ abstract class _$$_UserOrderTrackingDetailStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UserOrderTrackingDetailStateCopyWithImpl<$Res>
+class __$$UserOrderTrackingDetailStateImplCopyWithImpl<$Res>
     extends _$UserOrderTrackingDetailStateCopyWithImpl<$Res,
-        _$_UserOrderTrackingDetailState>
-    implements _$$_UserOrderTrackingDetailStateCopyWith<$Res> {
-  __$$_UserOrderTrackingDetailStateCopyWithImpl(
-      _$_UserOrderTrackingDetailState _value,
-      $Res Function(_$_UserOrderTrackingDetailState) _then)
+        _$UserOrderTrackingDetailStateImpl>
+    implements _$$UserOrderTrackingDetailStateImplCopyWith<$Res> {
+  __$$UserOrderTrackingDetailStateImplCopyWithImpl(
+      _$UserOrderTrackingDetailStateImpl _value,
+      $Res Function(_$UserOrderTrackingDetailStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -120,7 +120,7 @@ class __$$_UserOrderTrackingDetailStateCopyWithImpl<$Res>
     Object? orderId = freezed,
     Object? listOrderStatus = null,
   }) {
-    return _then(_$_UserOrderTrackingDetailState(
+    return _then(_$UserOrderTrackingDetailStateImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -139,9 +139,9 @@ class __$$_UserOrderTrackingDetailStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_UserOrderTrackingDetailState extends _UserOrderTrackingDetailState
+class _$UserOrderTrackingDetailStateImpl extends _UserOrderTrackingDetailState
     with DiagnosticableTreeMixin {
-  const _$_UserOrderTrackingDetailState(
+  const _$UserOrderTrackingDetailStateImpl(
       {this.status = const ApiStatus.initial(),
       this.orderId = '',
       final List<OrderStatusTrackingEntity> listOrderStatus = const []})
@@ -182,7 +182,7 @@ class _$_UserOrderTrackingDetailState extends _UserOrderTrackingDetailState
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserOrderTrackingDetailState &&
+            other is _$UserOrderTrackingDetailStateImpl &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.orderId, orderId) || other.orderId == orderId) &&
             const DeepCollectionEquality()
@@ -196,9 +196,10 @@ class _$_UserOrderTrackingDetailState extends _UserOrderTrackingDetailState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserOrderTrackingDetailStateCopyWith<_$_UserOrderTrackingDetailState>
-      get copyWith => __$$_UserOrderTrackingDetailStateCopyWithImpl<
-          _$_UserOrderTrackingDetailState>(this, _$identity);
+  _$$UserOrderTrackingDetailStateImplCopyWith<
+          _$UserOrderTrackingDetailStateImpl>
+      get copyWith => __$$UserOrderTrackingDetailStateImplCopyWithImpl<
+          _$UserOrderTrackingDetailStateImpl>(this, _$identity);
 }
 
 abstract class _UserOrderTrackingDetailState
@@ -207,7 +208,7 @@ abstract class _UserOrderTrackingDetailState
           {final ApiStatus status,
           final String? orderId,
           final List<OrderStatusTrackingEntity> listOrderStatus}) =
-      _$_UserOrderTrackingDetailState;
+      _$UserOrderTrackingDetailStateImpl;
   const _UserOrderTrackingDetailState._() : super._();
 
   @override
@@ -218,6 +219,7 @@ abstract class _UserOrderTrackingDetailState
   List<OrderStatusTrackingEntity> get listOrderStatus;
   @override
   @JsonKey(ignore: true)
-  _$$_UserOrderTrackingDetailStateCopyWith<_$_UserOrderTrackingDetailState>
+  _$$UserOrderTrackingDetailStateImplCopyWith<
+          _$UserOrderTrackingDetailStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -84,11 +84,11 @@ class _$UserOrderDetailStateCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_UserOrderDetailStateCopyWith<$Res>
+abstract class _$$UserOrderDetailStateImplCopyWith<$Res>
     implements $UserOrderDetailStateCopyWith<$Res> {
-  factory _$$_UserOrderDetailStateCopyWith(_$_UserOrderDetailState value,
-          $Res Function(_$_UserOrderDetailState) then) =
-      __$$_UserOrderDetailStateCopyWithImpl<$Res>;
+  factory _$$UserOrderDetailStateImplCopyWith(_$UserOrderDetailStateImpl value,
+          $Res Function(_$UserOrderDetailStateImpl) then) =
+      __$$UserOrderDetailStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -101,11 +101,11 @@ abstract class _$$_UserOrderDetailStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UserOrderDetailStateCopyWithImpl<$Res>
-    extends _$UserOrderDetailStateCopyWithImpl<$Res, _$_UserOrderDetailState>
-    implements _$$_UserOrderDetailStateCopyWith<$Res> {
-  __$$_UserOrderDetailStateCopyWithImpl(_$_UserOrderDetailState _value,
-      $Res Function(_$_UserOrderDetailState) _then)
+class __$$UserOrderDetailStateImplCopyWithImpl<$Res>
+    extends _$UserOrderDetailStateCopyWithImpl<$Res, _$UserOrderDetailStateImpl>
+    implements _$$UserOrderDetailStateImplCopyWith<$Res> {
+  __$$UserOrderDetailStateImplCopyWithImpl(_$UserOrderDetailStateImpl _value,
+      $Res Function(_$UserOrderDetailStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -115,7 +115,7 @@ class __$$_UserOrderDetailStateCopyWithImpl<$Res>
     Object? order = freezed,
     Object? orderTrackingStatus = freezed,
   }) {
-    return _then(_$_UserOrderDetailState(
+    return _then(_$UserOrderDetailStateImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -134,9 +134,9 @@ class __$$_UserOrderDetailStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_UserOrderDetailState extends _UserOrderDetailState
+class _$UserOrderDetailStateImpl extends _UserOrderDetailState
     with DiagnosticableTreeMixin {
-  const _$_UserOrderDetailState(
+  const _$UserOrderDetailStateImpl(
       {this.status = const ApiStatus.initial(),
       this.order = null,
       this.orderTrackingStatus = null})
@@ -171,7 +171,7 @@ class _$_UserOrderDetailState extends _UserOrderDetailState
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserOrderDetailState &&
+            other is _$UserOrderDetailStateImpl &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.order, order) || other.order == order) &&
             (identical(other.orderTrackingStatus, orderTrackingStatus) ||
@@ -185,9 +185,10 @@ class _$_UserOrderDetailState extends _UserOrderDetailState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserOrderDetailStateCopyWith<_$_UserOrderDetailState> get copyWith =>
-      __$$_UserOrderDetailStateCopyWithImpl<_$_UserOrderDetailState>(
-          this, _$identity);
+  _$$UserOrderDetailStateImplCopyWith<_$UserOrderDetailStateImpl>
+      get copyWith =>
+          __$$UserOrderDetailStateImplCopyWithImpl<_$UserOrderDetailStateImpl>(
+              this, _$identity);
 }
 
 abstract class _UserOrderDetailState extends UserOrderDetailState {
@@ -195,7 +196,7 @@ abstract class _UserOrderDetailState extends UserOrderDetailState {
           {final ApiStatus status,
           final OrderDataEntity? order,
           final OrderStatusTrackingEntity? orderTrackingStatus}) =
-      _$_UserOrderDetailState;
+      _$UserOrderDetailStateImpl;
   const _UserOrderDetailState._() : super._();
 
   @override
@@ -206,6 +207,6 @@ abstract class _UserOrderDetailState extends UserOrderDetailState {
   OrderStatusTrackingEntity? get orderTrackingStatus;
   @override
   @JsonKey(ignore: true)
-  _$$_UserOrderDetailStateCopyWith<_$_UserOrderDetailState> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UserOrderDetailStateImplCopyWith<_$UserOrderDetailStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

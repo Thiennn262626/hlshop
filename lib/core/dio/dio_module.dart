@@ -1,5 +1,7 @@
 import 'package:hlshop/all_file/all_file.dart';
+import 'package:hlshop/app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:hlshop/services/user_secure_storage_service.dart';
+import 'package:network_logger/network_logger.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class DioModule {
@@ -15,22 +17,21 @@ class DioModule {
     log('**** Dio create');
     final options = BaseOptions(
       baseUrl: 'https://hl-shop.azurewebsites.net/',
-      connectTimeout: const Duration(seconds: 12),
-      receiveTimeout: const Duration(seconds: 12),
-      sendTimeout: const Duration(seconds: 12),
+      connectTimeout: const Duration(seconds: 20),
+      receiveTimeout: const Duration(seconds: 20),
+      sendTimeout: const Duration(seconds: 20),
     );
-    // Get Data for mobile on server
-    options.headers['device'] = 'mobile';
 
     _dio = Dio(options);
 
     if (AppConfig.SHOW_LOG) {
-      _dio!.interceptors.add(PrettyDioLogger(
-        request: false,
-        requestHeader: false,
-        requestBody: true,
-        responseBody: true,
-      ));
+      _dio!.interceptors.add(
+        PrettyDioLogger(
+          request: true,
+          responseBody: true,
+        ),
+      );
+      dio.interceptors.add(DioNetworkLogger());
     }
 
     // Check token
@@ -51,8 +52,7 @@ class DioModule {
           if (error.response?.statusCode == 401) {
             log('interceptor 401');
 
-            final storage = getIt<UserSecureStorage>();
-            await storage.notifyUnAuthorized();
+            getIt<AuthBloc>().add(const AuthEvent.signOut());
           }
 
           return handler.next(error);
@@ -76,6 +76,10 @@ class DioModule {
     log('DioModule.removeToken =>');
     dio.options.headers['Authorization'] = null;
     dio.options.headers['token'] = null;
+  }
+
+  String? getToken() {
+    return dio.options.headers['Authorization'].toString();
   }
 
   @override

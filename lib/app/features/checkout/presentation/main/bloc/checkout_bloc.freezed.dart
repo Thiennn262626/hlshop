@@ -88,26 +88,26 @@ class _$CheckoutEventCopyWithImpl<$Res, $Val extends CheckoutEvent>
 }
 
 /// @nodoc
-abstract class _$$_CheckoutInitialEventCopyWith<$Res> {
-  factory _$$_CheckoutInitialEventCopyWith(_$_CheckoutInitialEvent value,
-          $Res Function(_$_CheckoutInitialEvent) then) =
-      __$$_CheckoutInitialEventCopyWithImpl<$Res>;
+abstract class _$$CheckoutInitialEventImplCopyWith<$Res> {
+  factory _$$CheckoutInitialEventImplCopyWith(_$CheckoutInitialEventImpl value,
+          $Res Function(_$CheckoutInitialEventImpl) then) =
+      __$$CheckoutInitialEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_CheckoutInitialEventCopyWithImpl<$Res>
-    extends _$CheckoutEventCopyWithImpl<$Res, _$_CheckoutInitialEvent>
-    implements _$$_CheckoutInitialEventCopyWith<$Res> {
-  __$$_CheckoutInitialEventCopyWithImpl(_$_CheckoutInitialEvent _value,
-      $Res Function(_$_CheckoutInitialEvent) _then)
+class __$$CheckoutInitialEventImplCopyWithImpl<$Res>
+    extends _$CheckoutEventCopyWithImpl<$Res, _$CheckoutInitialEventImpl>
+    implements _$$CheckoutInitialEventImplCopyWith<$Res> {
+  __$$CheckoutInitialEventImplCopyWithImpl(_$CheckoutInitialEventImpl _value,
+      $Res Function(_$CheckoutInitialEventImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_CheckoutInitialEvent extends _CheckoutInitialEvent
+class _$CheckoutInitialEventImpl extends _CheckoutInitialEvent
     with DiagnosticableTreeMixin {
-  const _$_CheckoutInitialEvent() : super._();
+  const _$CheckoutInitialEventImpl() : super._();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -123,7 +123,8 @@ class _$_CheckoutInitialEvent extends _CheckoutInitialEvent
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_CheckoutInitialEvent);
+        (other.runtimeType == runtimeType &&
+            other is _$CheckoutInitialEventImpl);
   }
 
   @override
@@ -206,31 +207,32 @@ class _$_CheckoutInitialEvent extends _CheckoutInitialEvent
 }
 
 abstract class _CheckoutInitialEvent extends CheckoutEvent {
-  const factory _CheckoutInitialEvent() = _$_CheckoutInitialEvent;
+  const factory _CheckoutInitialEvent() = _$CheckoutInitialEventImpl;
   const _CheckoutInitialEvent._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_LoadCheckoutDataEventCopyWith<$Res> {
-  factory _$$_LoadCheckoutDataEventCopyWith(_$_LoadCheckoutDataEvent value,
-          $Res Function(_$_LoadCheckoutDataEvent) then) =
-      __$$_LoadCheckoutDataEventCopyWithImpl<$Res>;
+abstract class _$$LoadCheckoutDataEventImplCopyWith<$Res> {
+  factory _$$LoadCheckoutDataEventImplCopyWith(
+          _$LoadCheckoutDataEventImpl value,
+          $Res Function(_$LoadCheckoutDataEventImpl) then) =
+      __$$LoadCheckoutDataEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_LoadCheckoutDataEventCopyWithImpl<$Res>
-    extends _$CheckoutEventCopyWithImpl<$Res, _$_LoadCheckoutDataEvent>
-    implements _$$_LoadCheckoutDataEventCopyWith<$Res> {
-  __$$_LoadCheckoutDataEventCopyWithImpl(_$_LoadCheckoutDataEvent _value,
-      $Res Function(_$_LoadCheckoutDataEvent) _then)
+class __$$LoadCheckoutDataEventImplCopyWithImpl<$Res>
+    extends _$CheckoutEventCopyWithImpl<$Res, _$LoadCheckoutDataEventImpl>
+    implements _$$LoadCheckoutDataEventImplCopyWith<$Res> {
+  __$$LoadCheckoutDataEventImplCopyWithImpl(_$LoadCheckoutDataEventImpl _value,
+      $Res Function(_$LoadCheckoutDataEventImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_LoadCheckoutDataEvent extends _LoadCheckoutDataEvent
+class _$LoadCheckoutDataEventImpl extends _LoadCheckoutDataEvent
     with DiagnosticableTreeMixin {
-  const _$_LoadCheckoutDataEvent() : super._();
+  const _$LoadCheckoutDataEventImpl() : super._();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -247,7 +249,8 @@ class _$_LoadCheckoutDataEvent extends _LoadCheckoutDataEvent
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_LoadCheckoutDataEvent);
+        (other.runtimeType == runtimeType &&
+            other is _$LoadCheckoutDataEventImpl);
   }
 
   @override
@@ -330,31 +333,33 @@ class _$_LoadCheckoutDataEvent extends _LoadCheckoutDataEvent
 }
 
 abstract class _LoadCheckoutDataEvent extends CheckoutEvent {
-  const factory _LoadCheckoutDataEvent() = _$_LoadCheckoutDataEvent;
+  const factory _LoadCheckoutDataEvent() = _$LoadCheckoutDataEventImpl;
   const _LoadCheckoutDataEvent._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_LoadDefaultAddressEventCopyWith<$Res> {
-  factory _$$_LoadDefaultAddressEventCopyWith(_$_LoadDefaultAddressEvent value,
-          $Res Function(_$_LoadDefaultAddressEvent) then) =
-      __$$_LoadDefaultAddressEventCopyWithImpl<$Res>;
+abstract class _$$LoadDefaultAddressEventImplCopyWith<$Res> {
+  factory _$$LoadDefaultAddressEventImplCopyWith(
+          _$LoadDefaultAddressEventImpl value,
+          $Res Function(_$LoadDefaultAddressEventImpl) then) =
+      __$$LoadDefaultAddressEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_LoadDefaultAddressEventCopyWithImpl<$Res>
-    extends _$CheckoutEventCopyWithImpl<$Res, _$_LoadDefaultAddressEvent>
-    implements _$$_LoadDefaultAddressEventCopyWith<$Res> {
-  __$$_LoadDefaultAddressEventCopyWithImpl(_$_LoadDefaultAddressEvent _value,
-      $Res Function(_$_LoadDefaultAddressEvent) _then)
+class __$$LoadDefaultAddressEventImplCopyWithImpl<$Res>
+    extends _$CheckoutEventCopyWithImpl<$Res, _$LoadDefaultAddressEventImpl>
+    implements _$$LoadDefaultAddressEventImplCopyWith<$Res> {
+  __$$LoadDefaultAddressEventImplCopyWithImpl(
+      _$LoadDefaultAddressEventImpl _value,
+      $Res Function(_$LoadDefaultAddressEventImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_LoadDefaultAddressEvent extends _LoadDefaultAddressEvent
+class _$LoadDefaultAddressEventImpl extends _LoadDefaultAddressEvent
     with DiagnosticableTreeMixin {
-  const _$_LoadDefaultAddressEvent() : super._();
+  const _$LoadDefaultAddressEventImpl() : super._();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -372,7 +377,7 @@ class _$_LoadDefaultAddressEvent extends _LoadDefaultAddressEvent
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_LoadDefaultAddressEvent);
+            other is _$LoadDefaultAddressEventImpl);
   }
 
   @override
@@ -455,31 +460,31 @@ class _$_LoadDefaultAddressEvent extends _LoadDefaultAddressEvent
 }
 
 abstract class _LoadDefaultAddressEvent extends CheckoutEvent {
-  const factory _LoadDefaultAddressEvent() = _$_LoadDefaultAddressEvent;
+  const factory _LoadDefaultAddressEvent() = _$LoadDefaultAddressEventImpl;
   const _LoadDefaultAddressEvent._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_CreateOrderEventCopyWith<$Res> {
-  factory _$$_CreateOrderEventCopyWith(
-          _$_CreateOrderEvent value, $Res Function(_$_CreateOrderEvent) then) =
-      __$$_CreateOrderEventCopyWithImpl<$Res>;
+abstract class _$$CreateOrderEventImplCopyWith<$Res> {
+  factory _$$CreateOrderEventImplCopyWith(_$CreateOrderEventImpl value,
+          $Res Function(_$CreateOrderEventImpl) then) =
+      __$$CreateOrderEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_CreateOrderEventCopyWithImpl<$Res>
-    extends _$CheckoutEventCopyWithImpl<$Res, _$_CreateOrderEvent>
-    implements _$$_CreateOrderEventCopyWith<$Res> {
-  __$$_CreateOrderEventCopyWithImpl(
-      _$_CreateOrderEvent _value, $Res Function(_$_CreateOrderEvent) _then)
+class __$$CreateOrderEventImplCopyWithImpl<$Res>
+    extends _$CheckoutEventCopyWithImpl<$Res, _$CreateOrderEventImpl>
+    implements _$$CreateOrderEventImplCopyWith<$Res> {
+  __$$CreateOrderEventImplCopyWithImpl(_$CreateOrderEventImpl _value,
+      $Res Function(_$CreateOrderEventImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_CreateOrderEvent extends _CreateOrderEvent
+class _$CreateOrderEventImpl extends _CreateOrderEvent
     with DiagnosticableTreeMixin {
-  const _$_CreateOrderEvent() : super._();
+  const _$CreateOrderEventImpl() : super._();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -495,7 +500,7 @@ class _$_CreateOrderEvent extends _CreateOrderEvent
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_CreateOrderEvent);
+        (other.runtimeType == runtimeType && other is _$CreateOrderEventImpl);
   }
 
   @override
@@ -578,7 +583,7 @@ class _$_CreateOrderEvent extends _CreateOrderEvent
 }
 
 abstract class _CreateOrderEvent extends CheckoutEvent {
-  const factory _CreateOrderEvent() = _$_CreateOrderEvent;
+  const factory _CreateOrderEvent() = _$CreateOrderEventImpl;
   const _CreateOrderEvent._() : super._();
 }
 
@@ -700,11 +705,11 @@ class _$CheckoutStateCopyWithImpl<$Res, $Val extends CheckoutState>
 }
 
 /// @nodoc
-abstract class _$$_CheckoutStateCopyWith<$Res>
+abstract class _$$CheckoutStateImplCopyWith<$Res>
     implements $CheckoutStateCopyWith<$Res> {
-  factory _$$_CheckoutStateCopyWith(
-          _$_CheckoutState value, $Res Function(_$_CheckoutState) then) =
-      __$$_CheckoutStateCopyWithImpl<$Res>;
+  factory _$$CheckoutStateImplCopyWith(
+          _$CheckoutStateImpl value, $Res Function(_$CheckoutStateImpl) then) =
+      __$$CheckoutStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -725,11 +730,11 @@ abstract class _$$_CheckoutStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_CheckoutStateCopyWithImpl<$Res>
-    extends _$CheckoutStateCopyWithImpl<$Res, _$_CheckoutState>
-    implements _$$_CheckoutStateCopyWith<$Res> {
-  __$$_CheckoutStateCopyWithImpl(
-      _$_CheckoutState _value, $Res Function(_$_CheckoutState) _then)
+class __$$CheckoutStateImplCopyWithImpl<$Res>
+    extends _$CheckoutStateCopyWithImpl<$Res, _$CheckoutStateImpl>
+    implements _$$CheckoutStateImplCopyWith<$Res> {
+  __$$CheckoutStateImplCopyWithImpl(
+      _$CheckoutStateImpl _value, $Res Function(_$CheckoutStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -743,7 +748,7 @@ class __$$_CheckoutStateCopyWithImpl<$Res>
     Object? paymentMethod = freezed,
     Object? createOrderStatus = null,
   }) {
-    return _then(_$_CheckoutState(
+    return _then(_$CheckoutStateImpl(
       loadCartStatus: null == loadCartStatus
           ? _value.loadCartStatus
           : loadCartStatus // ignore: cast_nullable_to_non_nullable
@@ -778,8 +783,8 @@ class __$$_CheckoutStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CheckoutState extends _CheckoutState with DiagnosticableTreeMixin {
-  const _$_CheckoutState(
+class _$CheckoutStateImpl extends _CheckoutState with DiagnosticableTreeMixin {
+  const _$CheckoutStateImpl(
       {this.loadCartStatus = const ApiStatus.initial(),
       final List<ShoppingCartItemGroupEntity> cartItemGroups = const [],
       final Set<String> selectedCartItemIds = const {},
@@ -848,7 +853,7 @@ class _$_CheckoutState extends _CheckoutState with DiagnosticableTreeMixin {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CheckoutState &&
+            other is _$CheckoutStateImpl &&
             (identical(other.loadCartStatus, loadCartStatus) ||
                 other.loadCartStatus == loadCartStatus) &&
             const DeepCollectionEquality()
@@ -881,8 +886,8 @@ class _$_CheckoutState extends _CheckoutState with DiagnosticableTreeMixin {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CheckoutStateCopyWith<_$_CheckoutState> get copyWith =>
-      __$$_CheckoutStateCopyWithImpl<_$_CheckoutState>(this, _$identity);
+  _$$CheckoutStateImplCopyWith<_$CheckoutStateImpl> get copyWith =>
+      __$$CheckoutStateImplCopyWithImpl<_$CheckoutStateImpl>(this, _$identity);
 }
 
 abstract class _CheckoutState extends CheckoutState {
@@ -893,7 +898,7 @@ abstract class _CheckoutState extends CheckoutState {
       final ApiStatus loadUserDefaultAddressStatus,
       final UserAddressEntity? userAddress,
       final PaymentMethodEntity? paymentMethod,
-      final ApiStatus createOrderStatus}) = _$_CheckoutState;
+      final ApiStatus createOrderStatus}) = _$CheckoutStateImpl;
   const _CheckoutState._() : super._();
 
   @override
@@ -912,6 +917,6 @@ abstract class _CheckoutState extends CheckoutState {
   ApiStatus get createOrderStatus;
   @override
   @JsonKey(ignore: true)
-  _$$_CheckoutStateCopyWith<_$_CheckoutState> get copyWith =>
+  _$$CheckoutStateImplCopyWith<_$CheckoutStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

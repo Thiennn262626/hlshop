@@ -28,7 +28,8 @@ class LoginCubit extends RequestCubit<LoginState> {
     emit(state.copyWith(status: ItemStatus.loading));
     try {
       final userName = form.getValue<String>(AuthIdInput.idKey) ?? '';
-      final password = form.getValue<String>(AuthPasswordInput.passwordKey) ?? '';
+      final password =
+          form.getValue<String>(AuthPasswordInput.passwordKey) ?? '';
 
       if (userName.isEmpty || password.isEmpty) {
         throw Exception('Không nhập đủ thông tin'.tr());

@@ -74,11 +74,11 @@ class _$CrudBankAccountStateCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_CrudBankAccountStateCopyWith<$Res>
+abstract class _$$CrudBankAccountStateImplCopyWith<$Res>
     implements $CrudBankAccountStateCopyWith<$Res> {
-  factory _$$_CrudBankAccountStateCopyWith(_$_CrudBankAccountState value,
-          $Res Function(_$_CrudBankAccountState) then) =
-      __$$_CrudBankAccountStateCopyWithImpl<$Res>;
+  factory _$$CrudBankAccountStateImplCopyWith(_$CrudBankAccountStateImpl value,
+          $Res Function(_$CrudBankAccountStateImpl) then) =
+      __$$CrudBankAccountStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({ApiStatus apiStatus, BankAccountEntity? payment});
@@ -88,11 +88,11 @@ abstract class _$$_CrudBankAccountStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_CrudBankAccountStateCopyWithImpl<$Res>
-    extends _$CrudBankAccountStateCopyWithImpl<$Res, _$_CrudBankAccountState>
-    implements _$$_CrudBankAccountStateCopyWith<$Res> {
-  __$$_CrudBankAccountStateCopyWithImpl(_$_CrudBankAccountState _value,
-      $Res Function(_$_CrudBankAccountState) _then)
+class __$$CrudBankAccountStateImplCopyWithImpl<$Res>
+    extends _$CrudBankAccountStateCopyWithImpl<$Res, _$CrudBankAccountStateImpl>
+    implements _$$CrudBankAccountStateImplCopyWith<$Res> {
+  __$$CrudBankAccountStateImplCopyWithImpl(_$CrudBankAccountStateImpl _value,
+      $Res Function(_$CrudBankAccountStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -101,7 +101,7 @@ class __$$_CrudBankAccountStateCopyWithImpl<$Res>
     Object? apiStatus = null,
     Object? payment = freezed,
   }) {
-    return _then(_$_CrudBankAccountState(
+    return _then(_$CrudBankAccountStateImpl(
       apiStatus: null == apiStatus
           ? _value.apiStatus
           : apiStatus // ignore: cast_nullable_to_non_nullable
@@ -116,9 +116,9 @@ class __$$_CrudBankAccountStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CrudBankAccountState extends _CrudBankAccountState
+class _$CrudBankAccountStateImpl extends _CrudBankAccountState
     with DiagnosticableTreeMixin {
-  const _$_CrudBankAccountState(
+  const _$CrudBankAccountStateImpl(
       {this.apiStatus = const ApiStatus.initial(), this.payment = null})
       : super._();
 
@@ -147,7 +147,7 @@ class _$_CrudBankAccountState extends _CrudBankAccountState
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CrudBankAccountState &&
+            other is _$CrudBankAccountStateImpl &&
             (identical(other.apiStatus, apiStatus) ||
                 other.apiStatus == apiStatus) &&
             (identical(other.payment, payment) || other.payment == payment));
@@ -159,15 +159,16 @@ class _$_CrudBankAccountState extends _CrudBankAccountState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CrudBankAccountStateCopyWith<_$_CrudBankAccountState> get copyWith =>
-      __$$_CrudBankAccountStateCopyWithImpl<_$_CrudBankAccountState>(
-          this, _$identity);
+  _$$CrudBankAccountStateImplCopyWith<_$CrudBankAccountStateImpl>
+      get copyWith =>
+          __$$CrudBankAccountStateImplCopyWithImpl<_$CrudBankAccountStateImpl>(
+              this, _$identity);
 }
 
 abstract class _CrudBankAccountState extends CrudBankAccountState {
   const factory _CrudBankAccountState(
       {final ApiStatus apiStatus,
-      final BankAccountEntity? payment}) = _$_CrudBankAccountState;
+      final BankAccountEntity? payment}) = _$CrudBankAccountStateImpl;
   const _CrudBankAccountState._() : super._();
 
   @override
@@ -176,6 +177,6 @@ abstract class _CrudBankAccountState extends CrudBankAccountState {
   BankAccountEntity? get payment;
   @override
   @JsonKey(ignore: true)
-  _$$_CrudBankAccountStateCopyWith<_$_CrudBankAccountState> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CrudBankAccountStateImplCopyWith<_$CrudBankAccountStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

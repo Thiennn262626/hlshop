@@ -32,7 +32,7 @@ class _UserApiMS implements UserApiMS {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/users/get-profile',
+              '/api/hlshop/users/get-profile',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -62,7 +62,7 @@ class _UserApiMS implements UserApiMS {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/receiver-address/get-list',
+              '/api/hlshop/receiver-address/get-list',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -96,7 +96,7 @@ class _UserApiMS implements UserApiMS {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/cities/get-list',
+              '/api/hlshop/cities/get-list',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -127,7 +127,7 @@ class _UserApiMS implements UserApiMS {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/district/get-list-by-city-id',
+              '/api/hlshop/district/get-list-by-city-id',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -153,7 +153,7 @@ class _UserApiMS implements UserApiMS {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/receiver-address/add',
+              '/api/hlshop/receiver-address/add',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -180,7 +180,7 @@ class _UserApiMS implements UserApiMS {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/receiver-address/update',
+              '/api/hlshop/receiver-address/update',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -207,7 +207,7 @@ class _UserApiMS implements UserApiMS {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/receiver-address/delete',
+              '/api/hlshop/receiver-address/delete',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -234,7 +234,7 @@ class _UserApiMS implements UserApiMS {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/receiver-address/add-default',
+              '/api/hlshop/receiver-address/add-default',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -259,7 +259,7 @@ class _UserApiMS implements UserApiMS {
     )
         .compose(
           _dio.options,
-          '/api/mulstore/users/profile/update-contact-name',
+          '/api/hlshop/users/profile/update-contact-name',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -291,7 +291,7 @@ class _UserApiMS implements UserApiMS {
     )
         .compose(
           _dio.options,
-          '/api/mulstore/users/profile/update-cover',
+          '/api/hlshop/users/profile/update-cover',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -323,7 +323,7 @@ class _UserApiMS implements UserApiMS {
     )
         .compose(
           _dio.options,
-          '/api/mulstore/users/profile/update-avatar',
+          '/api/hlshop/users/profile/update-avatar',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -347,7 +347,7 @@ class _UserApiMS implements UserApiMS {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/users/profile/phone-add',
+              '/api/hlshop/users/profile/phone-add',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -372,7 +372,7 @@ class _UserApiMS implements UserApiMS {
     )
         .compose(
           _dio.options,
-          '/api/mulstore/users/profile/phone-verify',
+          '/api/hlshop/users/profile/phone-verify',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -396,7 +396,7 @@ class _UserApiMS implements UserApiMS {
     )
             .compose(
               _dio.options,
-              '/api/mulstore/users/profile/phone-resend-otp',
+              '/api/hlshop/users/profile/phone-resend-otp',
               queryParameters: queryParameters,
               data: _data,
             )

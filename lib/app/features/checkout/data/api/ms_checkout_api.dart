@@ -7,7 +7,7 @@ part 'ms_checkout_api.g.dart';
 abstract class MsCheckoutApi {
   factory MsCheckoutApi(Dio dio) = _MsCheckoutApi;
 
-  @POST('/api/mulstore/order/create')
+  @POST('/api/hlshop/order/create')
   Future<void> createOrder({
     @Body() MsCreateOrderRq? body,
   });

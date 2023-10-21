@@ -22,8 +22,7 @@ class ChangePasswordPage extends StatelessWidget {
       ),
       child: Builder(
         builder: (context) {
-          return DefaultStatusConsumer<ChangePasswordCubit,
-              ChangePasswordState>(
+          return DefaultStatusConsumer<ChangePasswordCubit, ChangePasswordState>(
             onSuccess: (state) {
               DialogUtils.showSuccessDialog(
                 context: context,

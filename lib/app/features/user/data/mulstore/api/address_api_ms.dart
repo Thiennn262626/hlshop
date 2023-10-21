@@ -7,14 +7,14 @@ part 'address_api_ms.g.dart';
 abstract class AddressApiMS {
   factory AddressApiMS(Dio dio) = _AddressApiMS;
 
-  @GET('/api/mulstore/cities/get-list')
+  @GET('/api/hlshop/cities/get-list')
   Future<MsCitiesResult?> getCityInfo({
     @Query('offset') int? offset,
     @Query('limit') int? limit,
     @Query('search') String? search,
   });
 
-  @GET('/api/mulstore/district/get-list-by-city-id')
+  @GET('/api/hlshop/district/get-list-by-city-id')
   Future<MsDistrictsResult?> getDistrictsInfo({
     @Query('cityID') String? cityID,
     @Query('search') String? search,

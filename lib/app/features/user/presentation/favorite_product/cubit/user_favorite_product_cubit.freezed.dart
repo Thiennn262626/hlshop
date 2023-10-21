@@ -71,11 +71,11 @@ class _$UserFavoriteProductStateCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_ProductDetailStateCopyWith<$Res>
+abstract class _$$ProductDetailStateImplCopyWith<$Res>
     implements $UserFavoriteProductStateCopyWith<$Res> {
-  factory _$$_ProductDetailStateCopyWith(_$_ProductDetailState value,
-          $Res Function(_$_ProductDetailState) then) =
-      __$$_ProductDetailStateCopyWithImpl<$Res>;
+  factory _$$ProductDetailStateImplCopyWith(_$ProductDetailStateImpl value,
+          $Res Function(_$ProductDetailStateImpl) then) =
+      __$$ProductDetailStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({ApiStatus status, Object? item});
@@ -85,11 +85,12 @@ abstract class _$$_ProductDetailStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ProductDetailStateCopyWithImpl<$Res>
-    extends _$UserFavoriteProductStateCopyWithImpl<$Res, _$_ProductDetailState>
-    implements _$$_ProductDetailStateCopyWith<$Res> {
-  __$$_ProductDetailStateCopyWithImpl(
-      _$_ProductDetailState _value, $Res Function(_$_ProductDetailState) _then)
+class __$$ProductDetailStateImplCopyWithImpl<$Res>
+    extends _$UserFavoriteProductStateCopyWithImpl<$Res,
+        _$ProductDetailStateImpl>
+    implements _$$ProductDetailStateImplCopyWith<$Res> {
+  __$$ProductDetailStateImplCopyWithImpl(_$ProductDetailStateImpl _value,
+      $Res Function(_$ProductDetailStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -98,7 +99,7 @@ class __$$_ProductDetailStateCopyWithImpl<$Res>
     Object? status = null,
     Object? item = freezed,
   }) {
-    return _then(_$_ProductDetailState(
+    return _then(_$ProductDetailStateImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -110,9 +111,9 @@ class __$$_ProductDetailStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ProductDetailState extends _ProductDetailState
+class _$ProductDetailStateImpl extends _ProductDetailState
     with DiagnosticableTreeMixin {
-  const _$_ProductDetailState(
+  const _$ProductDetailStateImpl(
       {this.status = const ApiStatus.initial(), this.item = null})
       : super._();
 
@@ -141,7 +142,7 @@ class _$_ProductDetailState extends _ProductDetailState
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ProductDetailState &&
+            other is _$ProductDetailStateImpl &&
             (identical(other.status, status) || other.status == status) &&
             const DeepCollectionEquality().equals(other.item, item));
   }
@@ -153,14 +154,14 @@ class _$_ProductDetailState extends _ProductDetailState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ProductDetailStateCopyWith<_$_ProductDetailState> get copyWith =>
-      __$$_ProductDetailStateCopyWithImpl<_$_ProductDetailState>(
+  _$$ProductDetailStateImplCopyWith<_$ProductDetailStateImpl> get copyWith =>
+      __$$ProductDetailStateImplCopyWithImpl<_$ProductDetailStateImpl>(
           this, _$identity);
 }
 
 abstract class _ProductDetailState extends UserFavoriteProductState {
   const factory _ProductDetailState(
-      {final ApiStatus status, final Object? item}) = _$_ProductDetailState;
+      {final ApiStatus status, final Object? item}) = _$ProductDetailStateImpl;
   const _ProductDetailState._() : super._();
 
   @override
@@ -169,6 +170,6 @@ abstract class _ProductDetailState extends UserFavoriteProductState {
   Object? get item;
   @override
   @JsonKey(ignore: true)
-  _$$_ProductDetailStateCopyWith<_$_ProductDetailState> get copyWith =>
+  _$$ProductDetailStateImplCopyWith<_$ProductDetailStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
