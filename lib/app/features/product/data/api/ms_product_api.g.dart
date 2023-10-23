@@ -327,7 +327,6 @@ class _MsProductApi implements MsProductApi {
       r'productCategoryID': productCategoryID,
       r'offset': offset,
       r'limit': limit,
-      r'languageCode': languageCode,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};

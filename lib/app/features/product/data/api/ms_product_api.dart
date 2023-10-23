@@ -65,10 +65,8 @@ abstract class MsProductApi {
   });
 
   @GET('/api/hlshop/product-category/detail')
-  Future<MsPagingResult<MsProduct>?> getCategoryDetail({
-    @Query('productCategoryID') String? productCategoryID,
-    @Query('offset') int? offset,
-    @Query('limit') int? limit,
-    @Query('languageCode') String? languageCode,
-  });
+  Future<MsPagingResult<MsProduct>?> getCategoryDetail(
+      {@Query('productCategoryID') String? productCategoryID,
+      @Query('offset') int? offset,
+      @Query('limit') int? limit});
 }
