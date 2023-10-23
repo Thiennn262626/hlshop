@@ -1,5 +1,5 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/auth/data/mulstore/model/auth_model_ms.dart';
+import 'package:hlshop/app/features/auth/data/model/auth_model_ms.dart';
 
 part 'auth_api_ms.g.dart';
 

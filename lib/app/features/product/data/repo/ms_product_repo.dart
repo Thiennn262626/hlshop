@@ -1,14 +1,12 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/common/data/ms/repo/ms_app_setting_repo.dart';
-import 'package:hlshop/app/features/product/data/ms/api/ms_product_api.dart';
-import 'package:hlshop/app/features/product/data/ms/model/ms_product_attribute.dart';
-import 'package:hlshop/app/features/product/data/ms/model/ms_product_model.dart';
+import 'package:hlshop/app/features/product/data/api/ms_product_api.dart';
+import 'package:hlshop/app/features/product/data/model/ms_product_attribute.dart';
+import 'package:hlshop/app/features/product/data/model/ms_product_model.dart';
 import 'package:hlshop/app/features/product/domain/entity/product_entity.dart';
 import 'package:hlshop/app/features/product/domain/repo/product_repo.dart';
 
 class MsProductRepo extends ProductRepo {
   final MsProductApi _api = getIt();
-  final MsAppSettingRepo _settingRepo = getIt();
 
   ProductEntity _convertProduct(MsProduct product) {
     return product.toEntity();
@@ -28,12 +26,9 @@ class MsProductRepo extends ProductRepo {
     switch (type) {
       case ProductListType.hot:
         if (showType == ProductListShowType.homePage) {
-          final setting = await _settingRepo.getAppSetting();
-          if (setting?.maxHotProductsShowing != null) {
-            final nextOffset = (offset ?? 0) + (limit ?? 0);
-            if (nextOffset > setting!.maxHotProductsShowing!) {
-              limit = (offset ?? 0) + setting.maxHotProductsShowing!;
-            }
+          final nextOffset = (offset ?? 0) + (limit ?? 0);
+          if (nextOffset > 10) {
+            limit = (offset ?? 0) + 10;
           }
         }
 

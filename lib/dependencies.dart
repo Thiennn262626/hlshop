@@ -1,7 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/common/self.dart';
 import 'package:hlshop/app/features/auth/self.dart';
 import 'package:hlshop/app/features/checkout/self.dart';
 import 'package:hlshop/app/features/product/self.dart';
@@ -84,14 +83,9 @@ void _initDataMSService() {
     ..registerLazySingleton<MsProductApi>(() => MsProductApi(dio))
     ..registerLazySingleton<MsProductCategoryApi>(
         () => MsProductCategoryApi(dio))
-    ..registerLazySingleton<MsAppSettingApi>(() => MsAppSettingApi(dio))
     ..registerLazySingleton<MsShoppingCartApi>(() => MsShoppingCartApi(dio))
     ..registerLazySingleton<MsOrderApi>(() => MsOrderApi(dio))
     ..registerLazySingleton<MsCheckoutApi>(() => MsCheckoutApi(dio))
-    // Repo
-    ..registerLazySingleton<MsAppSettingRepo>(
-      () => MsAppSettingRepo()..getAppSetting(),
-    )
     ..registerLazySingleton<ShoppingCartRepo>(MsShoppingCartRepo.new)
     ..registerLazySingleton<UserRepo>(UserRepoMS.new)
     ..registerLazySingleton<AddressRepo>(
