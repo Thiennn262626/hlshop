@@ -1,11 +1,7 @@
 import 'package:hlshop/all_file/all_file.dart';
 import 'package:hlshop/app/features/user/data/mulstore/api/address_api_ms.dart';
 import 'package:hlshop/app/features/user/data/mulstore/model/address_model_ms.dart';
-import 'package:hlshop/app/features/user/domain/entity/address_entity.dart';
-import 'package:hlshop/app/features/user/domain/entity/user_base_entity.dart';
-import 'package:hlshop/app/features/user/domain/repo/address_repo.dart';
-
-class AddressRepoMs implements AddressRepo {
+import 'package:hlshop/app/features/user/domain/entity/addressdressRepoMs implements AddressRepo {
   AddressRepoMs({AddressApiMS? addressApiMS}) {
     _addressApiMS = addressApiMS ?? getIt<AddressApiMS>();
   }
@@ -56,5 +52,4 @@ class AddressRepoMs implements AddressRepo {
     }
     throw Exception('không tìm thấy quận');
   }
-
 }

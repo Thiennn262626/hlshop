@@ -1,8 +1,6 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/user/data/mulstore/model/user_model_ms.dart';
 
 part 'district_model_ms.g.dart';
-
 
 @JsonSerializable()
 class ListDistrictMS {
@@ -27,5 +25,5 @@ class DistrictsMS {
   factory DistrictsMS.fromJson(Map<String, dynamic> json) =>
       _$DistrictsMSFromJson(json);
 
-  Map<String, dynamic> toJson()=> _$DistrictsMSToJson(this);
+  Map<String, dynamic> toJson() => _$DistrictsMSToJson(this);
 }

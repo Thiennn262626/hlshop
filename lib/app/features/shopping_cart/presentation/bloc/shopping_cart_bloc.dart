@@ -1,4 +1,5 @@
 import 'package:hlshop/all_file/all_file.dart';
+import 'package:hlshop/app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:hlshop/app/features/distributor/domain/entity/distributor_entity.dart';
 import 'package:hlshop/app/features/product/domain/entity/product_entity.dart';
 import 'package:hlshop/app/features/shopping_cart/seft.dart';
@@ -20,6 +21,7 @@ class ShoppingCartBloc extends Bloc<ShoppingCartEvent, ShoppingCartState> {
   }
 
   final ShoppingCartRepo _repo = getIt();
+  final AuthBloc _authBloc = getIt();
 
   FutureOr<void> _onRefresh(
     _ShoppingCartRefeshEvent event,
@@ -29,6 +31,16 @@ class ShoppingCartBloc extends Bloc<ShoppingCartEvent, ShoppingCartState> {
   }
 
   Future<void> _refreshData(Emitter<ShoppingCartState> emit) async {
+    if (!_authBloc.isLogin) {
+      emit(
+        state.copyWith(
+          status: const ApiStatus.done(),
+          itemGroups: [],
+          selectedCartItemIds: {},
+        ),
+      );
+      return;
+    }
     final shoppingCartList = await _repo.getShoppingCartList();
     emit(
       state.copyWith(

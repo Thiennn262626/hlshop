@@ -1,6 +1,5 @@
 import 'package:hlshop/all_file/all_file.dart';
 import 'package:hlshop/app/features/product/self.dart';
-import 'package:hlshop/app/features/shopping_cart/data/ms/model/base_shopping_cart_model.dart';
 import 'package:hlshop/app/features/shopping_cart/seft.dart';
 
 class MsShoppingCartRepo extends ShoppingCartRepo {

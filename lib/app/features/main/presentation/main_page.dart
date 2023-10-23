@@ -109,27 +109,27 @@ class _HomeBottomBar extends StatelessWidget {
   }
 
   Widget getIconData(
-      BuildContext context,
-      IconData data, {
-        bool isActive = false,
-      }) =>
+    BuildContext context,
+    IconData data, {
+    bool isActive = false,
+  }) =>
       Icon(
         data,
         size: iconSize * 1.3,
       );
 
   Image _getAssetImage(
-      BuildContext context,
-      AssetGenImage asset, {
-        bool isActive = false,
-      }) =>
+    BuildContext context,
+    AssetGenImage asset, {
+    bool isActive = false,
+  }) =>
       asset.image(height: iconSize, width: iconSize);
 
   SvgPicture _getAssetSvg(
-      BuildContext context,
-      SvgGenImage asset, {
-        bool isActive = false,
-      }) =>
+    BuildContext context,
+    SvgGenImage asset, {
+    bool isActive = false,
+  }) =>
       asset.svg(
         height: iconSize,
         width: iconSize,

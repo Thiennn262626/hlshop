@@ -1,7 +1,7 @@
 import 'package:hlshop/all_file/all_file.dart';
 import 'package:hlshop/app/features/distributor/domain/entity/distributor_entity.dart';
 import 'package:hlshop/app/features/product/domain/entity/product_entity.dart';
-import 'package:hlshop/app/features/shopping_cart/data/ms/model/base_shopping_cart_model.dart';
+import 'package:hlshop/app/features/shopping_cart/data/model/base_shopping_cart_model.dart';
 import 'package:hlshop/app/features/user/domain/entity/address_entity.dart';
 import 'package:hlshop/app/features/user/domain/entity/user_base_entity.dart';
 import 'package:hlshop/app/features/user_order/domain/entities/order_entities.dart';

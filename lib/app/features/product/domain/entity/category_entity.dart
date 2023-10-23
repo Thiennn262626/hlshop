@@ -14,22 +14,6 @@ class ProductCategoryEntity {
     this.description,
   });
 
-  static ProductCategoryEntity demo() {
-    return ProductCategoryEntity(
-      id: '1',
-      name: 'Demo',
-      slug: 'demo',
-      parent: '0',
-      description: 'Demo',
-      display: 'default',
-      imgList: [
-        ImageEntity.demo(),
-      ],
-      menuOrder: 0,
-      count: 0,
-    );
-  }
-
   final String? id;
   final String? name;
   final String? slug;

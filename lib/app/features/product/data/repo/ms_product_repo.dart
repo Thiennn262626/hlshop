@@ -117,7 +117,6 @@ class MsProductRepo extends ProductRepo {
             productCategoryID: productCategoryID.id,
             offset: offset,
             limit: limit,
-            languageCode: 'vn',
           )
           .then(_convertListProduct);
     }

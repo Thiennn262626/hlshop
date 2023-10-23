@@ -1,6 +1,6 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/user_order/data/mulstore/model/user_order_base_model.dart';
-import 'package:hlshop/app/features/user_order/data/mulstore/model/user_order_count_model.dart';
+import 'package:hlshop/app/features/user_order/data/model/user_order_base_model.dart';
+import 'package:hlshop/app/features/user_order/data/model/user_order_count_model.dart';
 
 part 'order_api_ms.g.dart';
 
