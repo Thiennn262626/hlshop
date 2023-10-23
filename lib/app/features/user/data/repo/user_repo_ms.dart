@@ -1,11 +1,11 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/user/data/mulstore/api/user_api_ms.dart';
-import 'package:hlshop/app/features/user/data/mulstore/model/add_receiver_address_model.dart';
-import 'package:hlshop/app/features/user/data/mulstore/model/delete_receiver_address_model.dart';
-import 'package:hlshop/app/features/user/data/mulstore/model/ms_user_info.dart';
-import 'package:hlshop/app/features/user/data/mulstore/model/update_contact_name_model.dart';
-import 'package:hlshop/app/features/user/data/mulstore/model/update_receiver_address_model.dart';
-import 'package:hlshop/app/features/user/data/mulstore/model/user_receiver_address_model_ms.dart';
+import 'package:hlshop/app/features/user/data/api/user_api_ms.dart';
+import 'package:hlshop/app/features/user/data/model/add_receiver_address_model.dart';
+import 'package:hlshop/app/features/user/data/model/delete_receiver_address_model.dart';
+import 'package:hlshop/app/features/user/data/model/ms_user_info.dart';
+import 'package:hlshop/app/features/user/data/model/update_contact_name_model.dart';
+import 'package:hlshop/app/features/user/data/model/update_receiver_address_model.dart';
+import 'package:hlshop/app/features/user/data/model/user_receiver_address_model_ms.dart';
 import 'package:hlshop/app/features/user/domain/entity/user_base_entity.dart';
 import 'package:hlshop/app/features/user/domain/repo/user_repo.dart';
 

@@ -1,9 +1,9 @@
 export 'package:hlshop/app/features/user/domain/entity/user_base_entity.dart';
 export 'package:hlshop/app/features/user/domain/repo/user_repo.dart';
 
-export 'data/mulstore/api/address_api_ms.dart';
-export 'data/mulstore/api/user_api_ms.dart';
-export 'data/mulstore/model/address_model_ms.dart';
+export 'data/api/address_api_ms.dart';
+export 'data/api/user_api_ms.dart';
+export 'data/model/address_model_ms.dart';
 export 'data/repo/address_repo_ms.dart';
 export 'data/repo/user_repo_ms.dart';
 export 'domain/entity/address_entity.dart';
