@@ -17,9 +17,9 @@ class DioModule {
     log('**** Dio create');
     final options = BaseOptions(
       baseUrl: 'https://hl-shop.azurewebsites.net/',
-      connectTimeout: const Duration(seconds: 12),
-      receiveTimeout: const Duration(seconds: 12),
-      sendTimeout: const Duration(seconds: 12),
+      connectTimeout: const Duration(seconds: 30),
+      receiveTimeout: const Duration(seconds: 30),
+      sendTimeout: const Duration(seconds: 30),
     );
 
     _dio = Dio(options);

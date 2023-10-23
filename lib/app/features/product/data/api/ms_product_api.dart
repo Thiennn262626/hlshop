@@ -35,7 +35,7 @@ abstract class MsProductApi {
 
   @GET('/api/hlshop/product/get-detail')
   Future<MsProduct?> getProductDetail({
-    @Query('productID') String? productID,
+    @Query('ProductID') String? productID,
   });
 
   @GET('/api/hlshop/product/get-list-same-category')
