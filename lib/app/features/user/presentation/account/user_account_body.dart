@@ -1,6 +1,5 @@
 import 'package:hlshop/all_file/all_file.dart';
 import 'package:hlshop/app/features/about/self.dart';
-import 'package:hlshop/app/features/auth/self.dart';
 import 'package:hlshop/app/features/user/presentation/bloc/user_bloc.dart';
 import 'package:hlshop/app/features/user/self.dart';
 
@@ -24,7 +23,7 @@ class UserAccountBody extends StatelessWidget {
                           user: state.userEntity,
                           subTitle: 'Xem trang cá nhân'.tr(),
                           onPressed: () async {
-                            await context.router.push(
+                            await context.pushRoute(
                               UserInfoRoute(
                                 user: state.userEntity!,
                               ),

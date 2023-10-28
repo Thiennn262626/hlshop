@@ -26,19 +26,6 @@ abstract class UserApiMS {
     @Query('limit') int? limit,
   });
 
-  @GET('/api/hlshop/cities/get-list')
-  Future<ListCityMS?> getListCity({
-    @Query('offset') int? offset,
-    @Query('limit') int? limit,
-    @Query('search') String? search,
-  });
-
-  @GET('/api/hlshop/district/get-list-by-city-id')
-  Future<ListDistrictMS?> getDistrict({
-    @Query('cityID') String? city,
-    @Query('search') String? search,
-  });
-
   @POST('/api/hlshop/receiver-address/add')
   Future<ResponseAddReceiverAddressMS?> addReceiverAddres(
     @Body() AddReceiverAddressMS addReceiverAddressMS,

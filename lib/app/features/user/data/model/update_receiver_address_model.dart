@@ -10,9 +10,9 @@ class UpdateReceiverAddressMS {
     this.receiverContactName,
     this.receiverPhone,
     this.receiverEmail,
-    this.cityID,
-    this.districtID,
-    this.addressString,
+    this.cityName,
+    this.districtName,
+    this.addressDetail,
     this.addressLabel,
   });
 
@@ -23,9 +23,9 @@ class UpdateReceiverAddressMS {
   String? receiverContactName;
   String? receiverPhone;
   String? receiverEmail;
-  String? cityID;
-  String? districtID;
-  String? addressString;
+  String? cityName;
+  String? districtName;
+  String? addressDetail;
   int? addressLabel;
 
   Map<String, dynamic> toJson() => _$UpdateReceiverAddressMSToJson(this);
@@ -37,7 +37,6 @@ class UpdateReceiverAddressMS {
 
 @JsonSerializable()
 class ReponseUpdateReceiverAddressMS {
-
   ReponseUpdateReceiverAddressMS({this.status, this.message});
 
   factory ReponseUpdateReceiverAddressMS.fromJson(Map<String, dynamic> json) =>

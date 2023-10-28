@@ -1,7 +1,6 @@
 import 'package:hlshop/all_file/all_file.dart';
 import 'package:hlshop/app/features/home/presentation/main/cubit/home_cubit.dart';
 import 'package:hlshop/app/features/home/presentation/main/home_body.dart';
-import 'package:hlshop/app/features/notification/presentation/widgets/btn_notification.dart';
 import 'package:hlshop/app/features/shopping_cart/presentation/widget/shopping_cart_btn.dart';
 
 @RoutePage()
@@ -23,7 +22,6 @@ class HomePage extends StatelessWidget {
                     title: 'Trang chủ'.tr(),
                     args: AppBarArgs(
                       actions: [
-                        const NotificationBtn(),
                         const ShoppingCartBtn(),
                         Gaps.hGap4,
                       ].withDivider(Gaps.hGap4, showLast: true),

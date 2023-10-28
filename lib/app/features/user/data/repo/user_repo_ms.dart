@@ -57,9 +57,10 @@ class UserRepoMS implements UserRepo {
       AddReceiverAddressMS(
         receiverContactName: address.fullName,
         receiverPhone: address.phone,
-        cityID: address.city?.id,
-        districtID: address.district?.id,
-        addressString: address.fullAddress,
+        receiverEmail: '',
+        cityName: address.city?.name,
+        districtName: address.district?.name,
+        addressDetail: address.fullAddress,
         addressLabel: address.addressType?.toModel().rawValue,
       ),
     );
@@ -78,9 +79,10 @@ class UserRepoMS implements UserRepo {
         receiverAddressID: addressId,
         receiverContactName: address.fullName,
         receiverPhone: address.phone,
-        cityID: address.city?.id,
-        districtID: address.district?.id,
-        addressString: address.fullAddress,
+        receiverEmail: '',
+        cityName: address.city?.name,
+        districtName: address.district?.name,
+        addressDetail: address.fullAddress,
         addressLabel: address.addressType?.toModel().rawValue,
       ),
     );

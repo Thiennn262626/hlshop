@@ -21,18 +21,18 @@ class AddReceiverAddressMS {
     this.receiverContactName,
     this.receiverPhone,
     this.receiverEmail,
-    this.cityID,
-    this.districtID,
-    this.addressString,
+    this.cityName,
+    this.districtName,
+    this.addressDetail,
     this.addressLabel,
   });
 
   String? receiverContactName;
   String? receiverPhone;
   String? receiverEmail;
-  String? cityID;
-  String? districtID;
-  String? addressString;
+  String? cityName;
+  String? districtName;
+  String? addressDetail;
   int? addressLabel;
 
   factory AddReceiverAddressMS.fromJson(Map<String, dynamic> json) =>
