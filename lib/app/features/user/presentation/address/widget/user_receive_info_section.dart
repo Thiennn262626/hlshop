@@ -117,6 +117,8 @@ class _UserAddressItemState extends State<UserAddressItem> {
 
   @override
   Widget build(BuildContext context) {
+    print(widget.address.addressType);
+    print(widget.address.fullAddress);
     return Column(
       children: [
         Row(
@@ -140,7 +142,7 @@ class _UserAddressItemState extends State<UserAddressItem> {
                           .colorDark(context)
                           .make(),
                     if (widget.address.fullAddress.isNotNullOrBlank)
-                      widget.address.fullAddress!.text
+                      widget.address.addressDetail!.text
                           .colorDark(context)
                           .make(),
                     if (widget.address.addressType != null)

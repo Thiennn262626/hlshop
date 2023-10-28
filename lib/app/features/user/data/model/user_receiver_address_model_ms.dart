@@ -21,7 +21,8 @@ class ListReceiverAddressesMS {
       city: receiverAddresses?.first.toEntity().city,
       district: receiverAddresses?.first.toEntity().district,
       fullName: receiverAddresses?.first.receiverContactName,
-      fullAddress: receiverAddresses?.first.addressString,
+      fullAddress: receiverAddresses?.first.addressDetail,
+      phone: receiverAddresses?.first.receiverPhone,
     );
   }
 }
@@ -32,10 +33,13 @@ class ReceiverAddressesMS {
     this.receiverAddressID,
     this.districtID,
     this.cityID,
+    this.districtName,
+    this.cityName,
     this.addressLabel,
     this.userID,
     this.isDefault,
     this.addressString,
+    this.addressDetail,
     this.receiverContactName,
     this.receiverPhone,
     this.receiverEmail,
@@ -44,10 +48,13 @@ class ReceiverAddressesMS {
   String? receiverAddressID;
   String? districtID;
   String? cityID;
+  String? districtName;
+  String? cityName;
   AddressType? addressLabel;
   String? userID;
   int? isDefault;
   String? addressString;
+  String? addressDetail;
   String? receiverContactName;
   String? receiverPhone;
   String? receiverEmail;

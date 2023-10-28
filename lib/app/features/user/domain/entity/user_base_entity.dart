@@ -185,6 +185,9 @@ class UserAddressEntity {
   String? get addressAndPhone =>
       [fullName, phone].joinWithoutNullEmpty('  |  ');
 
+  String? get addressDetail =>
+      [fullAddress, district?.name, city?.name].joinWithoutNullEmpty(', ');
+
   factory UserAddressEntity.fromJson(Map<String, dynamic> json) =>
       _$UserAddressEntityFromJson(json);
 

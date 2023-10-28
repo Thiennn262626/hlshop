@@ -4,20 +4,20 @@ extension MsUserAddressMapper on ReceiverAddressesMS {
   UserAddressEntity toEntity() {
     return UserAddressEntity(
       object: this,
-      fullAddress: addressString,
+      fullAddress: addressDetail,
       phone: receiverPhone,
-      addressType: AddressType.home,
+      addressType: addressLabel,
       fullName: receiverContactName,
       id: receiverAddressID,
       district: DistrictEntity(
         object: this,
         id: districtID,
-        // Thíu feild name cho district
+        name: districtName,
       ),
       city: CityEntity(
         object: this,
         id: cityID,
-        // Thíu feild name cho city
+        name: cityName,
       ),
     );
   }
