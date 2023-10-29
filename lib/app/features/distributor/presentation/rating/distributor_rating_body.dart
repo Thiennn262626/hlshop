@@ -13,7 +13,7 @@ class DistributorRatingSimpleLayout1 extends StatelessWidget {
         return Column(
           children: [
             AppTile(
-              title: LocaleKeys.distributor_Rating
+              title: 'Đánh giá sản phẩm'
                   .tr()
                   .text
                   .titleMedium(context)
@@ -23,7 +23,7 @@ class DistributorRatingSimpleLayout1 extends StatelessWidget {
               subtitle: Row(
                 children: [
                   RatingBar.builder(
-                    initialRating: 4,
+                    initialRating: 4.5,
                     itemSize: 20,
                     minRating: 1,
                     allowHalfRating: true,
@@ -37,7 +37,7 @@ class DistributorRatingSimpleLayout1 extends StatelessWidget {
                       print(rating);
                     },
                   ),
-                  '4.0/3,1k'.text.colorDark(context).make(),
+                  '4.5'.text.colorDark(context).make(),
                 ].withDivider(Gaps.hGap8),
               ).pt2(),
               onPressed: () {},

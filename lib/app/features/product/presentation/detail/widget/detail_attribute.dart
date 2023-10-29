@@ -22,8 +22,6 @@ class ProductDetailAttribute extends StatelessWidget {
       valueList: <String?>[
         'Danh mục'.tr(),
         item?.category?.name,
-        'Quy cách'.tr(),
-        'Demo quy cách',
         'Xuất xứ thương hiệu'.tr(),
         item?.madeIn,
         'Công dụng'.tr(),
