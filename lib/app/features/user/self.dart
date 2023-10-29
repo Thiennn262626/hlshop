@@ -15,5 +15,4 @@ export 'presentation/address/crud_address/cubit/crud_address_cubit.dart';
 export 'presentation/address/receive_address/receive_address_page.dart';
 export 'presentation/address/widget/address_select_field.dart';
 export 'presentation/address/widget/user_receive_info_section.dart';
-export 'presentation/payment_method/payment_method.dart';
 export 'presentation/widget/user_simple_info.dart';

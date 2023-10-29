@@ -86,18 +86,6 @@ class UserInfoBody extends StatelessWidget {
                           );
                         },
                       ),
-                      // AppTileText(
-                      //   leading: const Icon(
-                      //     PhosphorIcons.bank,
-                      //     color: Colors.purple,
-                      //   ),
-                      //   title: 'Tài khoản / Thẻ ngân hàng'.tr(),
-                      //   onPressed: () {
-                      //     context.pushRoute(
-                      //       const UserPaymentInfoRoute(),
-                      //     );
-                      //   },
-                      // ),
                     ]
                         .mapAsList((item) => item.minHeight(52))
                         .withDivider(const AppDivider.thin()),
@@ -123,14 +111,6 @@ class UserInfoBody extends StatelessWidget {
                     title: 'Đánh giá, bình luận'.tr(),
                     onPressed: () {},
                   ),
-                  // AppTileText(
-                  //   leading: const Icon(
-                  //     PhosphorIcons.clock_counter_clockwise,
-                  //     color: Color(0xFF02BEA8),
-                  //   ),
-                  //   title: 'Lịch sử giao dịch'.tr(),
-                  //   onPressed: () {},
-                  // ),
                 ]
                     .mapAsList((item) => item.minHeight(52))
                     .withDivider(const AppDivider.thin()),
