@@ -13,7 +13,9 @@ AddReceiverAddressMS _$AddReceiverAddressMSFromJson(
       receiverPhone: json['receiverPhone'] as String?,
       receiverEmail: json['receiverEmail'] as String?,
       cityName: json['cityName'] as String?,
+      cityID: json['cityID'] as String?,
       districtName: json['districtName'] as String?,
+      districtID: json['districtID'] as String?,
       addressDetail: json['addressDetail'] as String?,
       addressLabel: json['addressLabel'] as int?,
     );
@@ -25,7 +27,9 @@ Map<String, dynamic> _$AddReceiverAddressMSToJson(
       'receiverPhone': instance.receiverPhone,
       'receiverEmail': instance.receiverEmail,
       'cityName': instance.cityName,
+      'cityID': instance.cityID,
       'districtName': instance.districtName,
+      'districtID': instance.districtID,
       'addressDetail': instance.addressDetail,
       'addressLabel': instance.addressLabel,
     };

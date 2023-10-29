@@ -117,8 +117,6 @@ class _UserAddressItemState extends State<UserAddressItem> {
 
   @override
   Widget build(BuildContext context) {
-    print(widget.address.addressType);
-    print(widget.address.fullAddress);
     return Column(
       children: [
         Row(

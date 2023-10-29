@@ -22,7 +22,9 @@ class AddReceiverAddressMS {
     this.receiverPhone,
     this.receiverEmail,
     this.cityName,
+    this.cityID,
     this.districtName,
+    this.districtID,
     this.addressDetail,
     this.addressLabel,
   });
@@ -31,7 +33,9 @@ class AddReceiverAddressMS {
   String? receiverPhone;
   String? receiverEmail;
   String? cityName;
+  String? cityID;
   String? districtName;
+  String? districtID;
   String? addressDetail;
   int? addressLabel;
 
