@@ -2,14 +2,11 @@ import 'package:dio/dio.dart';
 import 'package:hlshop/all_file/all_file.dart';
 import 'package:hlshop/app/features/user/data/model/add_receiver_address_model.dart';
 import 'package:hlshop/app/features/user/data/model/delete_receiver_address_model.dart';
-import 'package:hlshop/app/features/user/data/model/district_model_ms.dart';
 import 'package:hlshop/app/features/user/data/model/ms_user_info.dart';
 import 'package:hlshop/app/features/user/data/model/update_contact_name_model.dart';
 import 'package:hlshop/app/features/user/data/model/update_receiver_address_model.dart';
-import 'package:hlshop/app/features/user/data/model/user_city_model_ms.dart';
 import 'package:hlshop/app/features/user/data/model/user_model_ms.dart';
-
-import '../model/user_receiver_address_model_ms.dart';
+import 'package:hlshop/app/features/user/data/model/user_receiver_address_model_ms.dart';
 
 part 'user_api_ms.g.dart';
 
@@ -66,6 +63,11 @@ abstract class UserApiMS {
     @Body() MsAddPhoneReq body,
   );
 
+  @POST('/api/hlshop/users/profile/phone-update')
+  Future<MsAddPhoneResultWrapper> updatePhone(
+    @Body() MsPhone deletePhoneReq,
+  );
+
   @POST('/api/hlshop/users/profile/phone-verify')
   Future<dynamic> verifyPhone(
     @Body() MsVerifyPhoneReq body,
@@ -74,5 +76,35 @@ abstract class UserApiMS {
   @POST('/api/hlshop/users/profile/phone-resend-otp')
   Future<MsAddPhoneResultWrapper?> resendPhoneOtp(
     @Body() MsResendPhoneReq body,
+  );
+
+  @POST('/api/hlshop/users/profile/phone-delete')
+  Future<dynamic> deletePhone(
+    @Body() MsPhone deletePhoneReq,
+  );
+
+  @POST('/api/hlshop/users/profile/email-add')
+  Future<MsAddEmailResultWrapper?> addEmail(
+    @Body() MsAddEmailReq body,
+  );
+
+  @POST('/api/hlshop/users/profile/email-update')
+  Future<MsAddEmailResultWrapper> updateEmail(
+    @Body() MsEmail deleteEmailReq,
+  );
+
+  @POST('/api/hlshop/users/profile/email-verify')
+  Future<dynamic> verifyEmail(
+    @Body() MsVerifyEmailReq body,
+  );
+
+  @POST('/api/hlshop/users/profile/email-resend-otp')
+  Future<MsAddEmailResultWrapper?> resendEmailOtp(
+    @Body() MsResendEmailReq body,
+  );
+
+  @POST('/api/hlshop/users/profile/email-delete')
+  Future<dynamic> deleteEmail(
+    @Body() MsEmail deleteEmailReq,
   );
 }

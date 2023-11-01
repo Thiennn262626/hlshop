@@ -34,20 +34,22 @@ class ImageEntity {
 }
 
 enum OrderByType {
-  priceLowToHigh(
-    displayValue: 'Giá thấp đến cao',
-  ),
-  priceHighToLow(
-    displayValue: 'Giá cao đến thấp',
-  ),
-  newest(
-    displayValue: 'Mới nhất',
-  ),
-  oldest(
-    displayValue: 'Cũ nhất',
-  );
+  priceLowToHigh,
+  priceHighToLow,
+  newest,
+  oldest,
+  common,
+  selling,
+  ;
 
-  const OrderByType({required this.displayValue});
+  const OrderByType();
 
-  final String displayValue;
+  String get displayValue => switch (this) {
+        OrderByType.priceLowToHigh => 'Giá thấp đến cao'.tr(),
+        OrderByType.priceHighToLow => 'Giá cao đến thấp'.tr(),
+        OrderByType.newest => 'Mới nhất'.tr(),
+        OrderByType.oldest => 'Cũ nhất'.tr(),
+        OrderByType.common => 'Phổ biến'.tr(),
+        OrderByType.selling => 'Bán chạy'.tr(),
+      };
 }

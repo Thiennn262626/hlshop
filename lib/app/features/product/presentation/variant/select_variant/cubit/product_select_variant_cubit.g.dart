@@ -23,6 +23,9 @@ abstract class _$ProductSelectVariantStateCWProxy {
 
   ProductSelectVariantState quantity(int quantity);
 
+  ProductSelectVariantState idAttributeDisalbeList(
+      List<String> idAttributeDisalbeList);
+
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ProductSelectVariantState(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -37,6 +40,7 @@ abstract class _$ProductSelectVariantStateCWProxy {
     List<ProductVariantEntity>? variantList,
     ProductVariantEntity? selectedVariant,
     int? quantity,
+    List<String>? idAttributeDisalbeList,
   });
 }
 
@@ -76,6 +80,11 @@ class _$ProductSelectVariantStateCWProxyImpl
   ProductSelectVariantState quantity(int quantity) => this(quantity: quantity);
 
   @override
+  ProductSelectVariantState idAttributeDisalbeList(
+          List<String> idAttributeDisalbeList) =>
+      this(idAttributeDisalbeList: idAttributeDisalbeList);
+
+  @override
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ProductSelectVariantState(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -91,6 +100,7 @@ class _$ProductSelectVariantStateCWProxyImpl
     Object? variantList = const $CopyWithPlaceholder(),
     Object? selectedVariant = const $CopyWithPlaceholder(),
     Object? quantity = const $CopyWithPlaceholder(),
+    Object? idAttributeDisalbeList = const $CopyWithPlaceholder(),
   }) {
     return ProductSelectVariantState(
       status: status == const $CopyWithPlaceholder() || status == null
@@ -123,6 +133,12 @@ class _$ProductSelectVariantStateCWProxyImpl
           ? _value.quantity
           // ignore: cast_nullable_to_non_nullable
           : quantity as int,
+      idAttributeDisalbeList:
+          idAttributeDisalbeList == const $CopyWithPlaceholder() ||
+                  idAttributeDisalbeList == null
+              ? _value.idAttributeDisalbeList
+              // ignore: cast_nullable_to_non_nullable
+              : idAttributeDisalbeList as List<String>,
     );
   }
 }
@@ -152,6 +168,7 @@ extension $ProductSelectVariantStateCopyWith on ProductSelectVariantState {
       variantList: variantList,
       selectedVariant: selectedVariant == true ? null : this.selectedVariant,
       quantity: quantity,
+      idAttributeDisalbeList: idAttributeDisalbeList,
     );
   }
 }

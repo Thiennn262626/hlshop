@@ -51,8 +51,8 @@ Map<String, dynamic> _$UserMSToJson(UserMS instance) => <String, dynamic>{
 MsPhone _$MsPhoneFromJson(Map<String, dynamic> json) => MsPhone(
       phoneID: json['phoneID'] as String?,
       phoneLabel: json['phoneLabel'] as int?,
-      isDefault: json['isDefault'] as int?,
-      isVerify: json['isVerify'] as int?,
+      isDefault: boolFromAny(json['isDefault']),
+      isVerify: boolFromAny(json['isVerify']),
       phoneNo: json['phoneNo'] as String?,
       extendNumber: json['extendNumber'] as String?,
       phoneArea: json['phoneArea'] as String?,
@@ -66,34 +66,70 @@ Map<String, dynamic> _$MsPhoneToJson(MsPhone instance) => <String, dynamic>{
       'phoneArea': instance.phoneArea,
       'countryArea': instance.countryArea,
       'phoneLabel': instance.phoneLabel,
-      'isDefault': instance.isDefault,
-      'isVerify': instance.isVerify,
+      'isDefault': boolToNum(instance.isDefault),
+      'isVerify': boolToNum(instance.isVerify),
     };
 
 MsUrl _$MsUrlFromJson(Map<String, dynamic> json) => MsUrl(
       urlID: json['urlID'] as String?,
       urlString: json['urlString'] as String?,
-      isDefault: json['isDefault'] as int?,
+      isDefault: boolFromAny(json['isDefault']),
     );
 
 Map<String, dynamic> _$MsUrlToJson(MsUrl instance) => <String, dynamic>{
       'urlID': instance.urlID,
       'urlString': instance.urlString,
-      'isDefault': instance.isDefault,
+      'isDefault': boolToNum(instance.isDefault),
     };
 
 MsEmail _$MsEmailFromJson(Map<String, dynamic> json) => MsEmail(
       emailID: json['emailID'] as String?,
       emailAddress: json['emailAddress'] as String?,
       emailLabel: json['emailLabel'] as int?,
-      isDefault: json['isDefault'] as int?,
-      isVerify: json['isVerify'] as int?,
+      isDefault: boolFromAny(json['isDefault']),
+      isVerify: boolFromAny(json['isVerify']),
     );
 
 Map<String, dynamic> _$MsEmailToJson(MsEmail instance) => <String, dynamic>{
       'emailID': instance.emailID,
       'emailAddress': instance.emailAddress,
       'emailLabel': instance.emailLabel,
+      'isDefault': boolToNum(instance.isDefault),
+      'isVerify': boolToNum(instance.isVerify),
+    };
+
+ResponseUserMS _$ResponseUserMSFromJson(Map<String, dynamic> json) =>
+    ResponseUserMS(
+      status: json['status'] as int?,
+      message: json['message'] as String?,
+    );
+
+Map<String, dynamic> _$ResponseUserMSToJson(ResponseUserMS instance) =>
+    <String, dynamic>{
+      'status': instance.status,
+      'message': instance.message,
+    };
+
+AddEmailAddressMS _$AddEmailAddressMSFromJson(Map<String, dynamic> json) =>
+    AddEmailAddressMS(
+      emailAddress: json['emailAddress'] as String?,
+      emailLabel: json['emailLabel'] as int?,
+      isDefault: json['isDefault'] as int?,
+    );
+
+Map<String, dynamic> _$AddEmailAddressMSToJson(AddEmailAddressMS instance) =>
+    <String, dynamic>{
+      'emailAddress': instance.emailAddress,
+      'emailLabel': instance.emailLabel,
       'isDefault': instance.isDefault,
-      'isVerify': instance.isVerify,
+    };
+
+EmailResendOtpMS _$EmailResendOtpMSFromJson(Map<String, dynamic> json) =>
+    EmailResendOtpMS(
+      emailID: json['emailID'] as String?,
+    );
+
+Map<String, dynamic> _$EmailResendOtpMSToJson(EmailResendOtpMS instance) =>
+    <String, dynamic>{
+      'emailID': instance.emailID,
     };

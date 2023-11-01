@@ -54,7 +54,36 @@ abstract class UserRepo {
     required String otp,
   });
 
-  Future<Object> resendOtp({
+  Future<Object> resendPhoneOtp({
     required Object? addResultObject,
+  });
+
+  Future<Object?> deletePhone({
+    required UserPhoneEntity phone,
+  });
+
+  Future<Object?> updatePhone({
+    required UserPhoneEntity phone,
+  });
+
+  Future<Object> addEmail({
+    required String email,
+  });
+
+  Future<Object> verifyEmail({
+    required Object? addResultObject,
+    required String otp,
+  });
+
+  Future<Object> resendEmailOtp({
+    required Object? addResultObject,
+  });
+
+  Future<Object?> deleteEmail({
+    required UserEmailEntity email,
+  });
+
+  Future<Object?> updateEmail({
+    required UserEmailEntity email,
   });
 }

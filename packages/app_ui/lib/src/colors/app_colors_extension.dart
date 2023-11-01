@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 extension AppThemeContextExtend on BuildContext {
-  AppColorExtension get themeColor => Theme.of(this).extension<AppColorExtension>() ?? AppColorExtension.light;
+  AppColorExtension get themeColor =>
+      Theme.of(this).extension<AppColorExtension>() ?? AppColorExtension.light;
 }
 
 @immutable
@@ -22,6 +23,7 @@ class AppColorExtension extends ThemeExtension<AppColorExtension> {
     required this.textLink,
     required this.lightPrimary,
     required this.divider,
+    required this.dividerThick,
     required this.rating,
     required this.sharedLink,
     required this.successColor,
@@ -47,6 +49,7 @@ class AppColorExtension extends ThemeExtension<AppColorExtension> {
 
   final Color lightPrimary;
   final Color divider;
+  final Color dividerThick;
 
   final Color rating;
   final Color sharedLink;
@@ -86,7 +89,8 @@ class AppColorExtension extends ThemeExtension<AppColorExtension> {
   static const AppColorExtension dark = AppColorExtension(
     text: Color(0xFF5F5F5F),
     textLink: Color(0xFF1890ff),
-    divider: Color(0xFFF4F4F4),
+    divider: Color(0xFFF1F1F1),
+    dividerThick: Color(0xFFF4F4F4),
     lightPrimary: Color(0xffb3daff),
     rating: Color(0xFFFD8205),
     sharedLink: Color(0xFF4A9B60),
@@ -122,7 +126,8 @@ class AppColorExtension extends ThemeExtension<AppColorExtension> {
   static const AppColorExtension light = AppColorExtension(
     text: Color(0xff5F5F5F),
     textLink: Color(0xFF1890ff),
-    divider: Color(0xFFF4F4F4),
+    divider: Color(0xFFF1F1F1),
+    dividerThick: Color(0xFFF4F4F4),
     lightPrimary: Color(0xffb3daff),
     rating: Color(0xFFFD8205),
     sharedLink: Color(0xFF4A9B60),
@@ -161,6 +166,7 @@ class AppColorExtension extends ThemeExtension<AppColorExtension> {
       text: text,
       textLink: textLink,
       divider: divider,
+      dividerThick: dividerThick,
       lightPrimary: lightPrimary,
       rating: rating,
       sharedLink: sharedLink,
@@ -203,16 +209,25 @@ class AppColorExtension extends ThemeExtension<AppColorExtension> {
       text: Color.lerp(text, other.text, t) ?? text,
       textLink: Color.lerp(textLink, other.textLink, t) ?? textLink,
       divider: Color.lerp(divider, other.divider, t) ?? divider,
-      lightPrimary: Color.lerp(lightPrimary, other.lightPrimary, t) ?? lightPrimary,
+      dividerThick:
+          Color.lerp(dividerThick, other.dividerThick, t) ?? dividerThick,
+      lightPrimary:
+          Color.lerp(lightPrimary, other.lightPrimary, t) ?? lightPrimary,
       rating: Color.lerp(rating, other.rating, t) ?? rating,
       sharedLink: Color.lerp(sharedLink, other.sharedLink, t) ?? sharedLink,
-      successColor: Color.lerp(successColor, other.successColor, t) ?? successColor,
-      successDarkColor: Color.lerp(successDarkColor, other.successDarkColor, t) ?? successDarkColor,
-      warningColor: Color.lerp(warningColor, other.warningColor, t) ?? warningColor,
+      successColor:
+          Color.lerp(successColor, other.successColor, t) ?? successColor,
+      successDarkColor:
+          Color.lerp(successDarkColor, other.successDarkColor, t) ??
+              successDarkColor,
+      warningColor:
+          Color.lerp(warningColor, other.warningColor, t) ?? warningColor,
       error: Color.lerp(error, other.error, t) ?? error,
       infoColor: Color.lerp(infoColor, other.infoColor, t) ?? infoColor,
       actionColor: Color.lerp(actionColor, other.actionColor, t) ?? actionColor,
-      actionColorInactive: Color.lerp(actionColorInactive, other.actionColorInactive, t) ?? actionColorInactive,
+      actionColorInactive:
+          Color.lerp(actionColorInactive, other.actionColorInactive, t) ??
+              actionColorInactive,
       blue: Color.lerp(blue, other.blue, t) ?? blue,
       cyan: Color.lerp(cyan, other.cyan, t) ?? cyan,
       red: Color.lerp(red, other.red, t) ?? red,
@@ -229,10 +244,14 @@ class AppColorExtension extends ThemeExtension<AppColorExtension> {
       greyLighter: Color.lerp(greyLighter, other.greyLighter, t) ?? greyLighter,
       primary: Color.lerp(primary, other.primary, t) ?? primary,
       primaryDark: Color.lerp(primaryDark, other.primaryDark, t) ?? primaryDark,
-      primaryDarkest: Color.lerp(primaryDarkest, other.primaryDarkest, t) ?? primaryDarkest,
-      primaryLight: Color.lerp(primaryLight, other.primaryLight, t) ?? primaryLight,
-      primaryNeutral: Color.lerp(primaryNeutral, other.primaryNeutral, t) ?? primaryNeutral,
-      primaryLighter: Color.lerp(primaryLighter, other.primaryLighter, t) ?? primaryLighter,
+      primaryDarkest:
+          Color.lerp(primaryDarkest, other.primaryDarkest, t) ?? primaryDarkest,
+      primaryLight:
+          Color.lerp(primaryLight, other.primaryLight, t) ?? primaryLight,
+      primaryNeutral:
+          Color.lerp(primaryNeutral, other.primaryNeutral, t) ?? primaryNeutral,
+      primaryLighter:
+          Color.lerp(primaryLighter, other.primaryLighter, t) ?? primaryLighter,
     );
   }
 

@@ -7,9 +7,11 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
     super.key,
     this.title,
     this.args,
+    this.height,
   });
 
   final Object? title;
+  final double? height;
 
   final AppBarArgs? args;
 
@@ -47,7 +49,7 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => Size.fromHeight(height ?? kToolbarHeight);
 }
 
 class AppAppBarTitleText extends StatelessWidget {

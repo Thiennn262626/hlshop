@@ -47,8 +47,8 @@ UserPhoneEntity _$UserPhoneEntityFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String?,
       phone: json['phone'] as String?,
       countryCode: json['countryCode'] as String?,
-      isDefault: json['isDefault'] as int?,
-      isVerify: json['isVerify'] as int?,
+      isDefault: boolFromAny(json['isDefault']),
+      isVerify: boolFromAny(json['isVerify']),
     );
 
 Map<String, dynamic> _$UserPhoneEntityToJson(UserPhoneEntity instance) =>
@@ -57,18 +57,38 @@ Map<String, dynamic> _$UserPhoneEntityToJson(UserPhoneEntity instance) =>
       'id': instance.id,
       'phone': instance.phone,
       'countryCode': instance.countryCode,
-      'isDefault': instance.isDefault,
-      'isVerify': instance.isVerify,
+      'isDefault': boolToNum(instance.isDefault),
+      'isVerify': boolToNum(instance.isVerify),
     };
 
 UserEmailEntity _$UserEmailEntityFromJson(Map<String, dynamic> json) =>
     UserEmailEntity(
-      email: json['email'] as String,
+      id: json['id'] as String?,
+      emailAddress: json['emailAddress'] as String?,
+      emailLabel: json['emailLabel'] as int?,
+      isDefault: boolFromAny(json['isDefault']),
+      isVerify: boolFromAny(json['isVerify']),
     );
 
 Map<String, dynamic> _$UserEmailEntityToJson(UserEmailEntity instance) =>
     <String, dynamic>{
-      'email': instance.email,
+      'id': instance.id,
+      'emailAddress': instance.emailAddress,
+      'emailLabel': instance.emailLabel,
+      'isDefault': boolToNum(instance.isDefault),
+      'isVerify': boolToNum(instance.isVerify),
+    };
+
+UserEmailResendOtpEntity _$UserEmailResendOtpEntityFromJson(
+        Map<String, dynamic> json) =>
+    UserEmailResendOtpEntity(
+      emailID: json['emailID'] as String?,
+    );
+
+Map<String, dynamic> _$UserEmailResendOtpEntityToJson(
+        UserEmailResendOtpEntity instance) =>
+    <String, dynamic>{
+      'emailID': instance.emailID,
     };
 
 UserAddressEntity _$UserAddressEntityFromJson(Map<String, dynamic> json) =>

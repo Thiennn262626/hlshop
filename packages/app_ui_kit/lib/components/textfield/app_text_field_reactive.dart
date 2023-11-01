@@ -21,7 +21,9 @@ class AppTextFieldReactive extends StatefulWidget {
     this.onLostFocus,
     this.enableClearButton = false,
     this.validationMessages,
-  }) : assert((formControlName != null && formControl == null) || (formControlName == null && formControl != null),
+  }) : assert(
+            (formControlName != null && formControl == null) ||
+                (formControlName == null && formControl != null),
             'Must provide a formControlName or a formControl, but not both at the same time.');
 
   final TextEditingController? controller;
@@ -93,7 +95,8 @@ class _AppTextFieldState extends State<AppTextFieldReactive> {
       controller: _controller,
       enabled: widget.enableClearButton,
       onClear: _onClearCLick,
-      inputDecoration: (widget.decoration ?? AppTextFieldTheme.primaryActiveHint(context)).copyWith(
+      inputDecoration:
+          (widget.decoration ?? AppTextFieldTheme.primary(context)).copyWith(
         hintText: widget.hintText,
       ),
       builder: (context, inputDecoration) => ReactiveTextField<String>(
@@ -103,7 +106,8 @@ class _AppTextFieldState extends State<AppTextFieldReactive> {
         obscureText: widget.obscureText,
         validationMessages: widget.validationMessages ??
             {
-              ValidationMessage.required: (value) => context.tr('Vui lòng nhập thông tin'),
+              ValidationMessage.required: (value) =>
+                  context.tr('Vui lòng nhập thông tin'),
             },
         onChanged: (val) {
           _onTextChange();

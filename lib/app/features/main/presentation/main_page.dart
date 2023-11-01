@@ -46,8 +46,8 @@ class _HomeBottomBar extends StatelessWidget {
       child: BottomNavigationBar(
         currentIndex: tabsRouter.activeIndex,
         onTap: tabsRouter.setActiveIndex,
-        // inactiveColor: context.themeColor.greyNeutral,
-        // height: kToolbarHeight,
+        selectedFontSize: FontSizeService().text,
+        unselectedFontSize: FontSizeService().text,
         backgroundColor: context.theme.colorScheme.surface,
         items: [
           _buildBottomBarItem(
@@ -115,7 +115,7 @@ class _HomeBottomBar extends StatelessWidget {
   }) =>
       Icon(
         data,
-        size: iconSize * 1.3,
+        size: iconSize * 1.2,
       );
 
   Image _getAssetImage(
@@ -195,7 +195,10 @@ class _AuthListener extends StatelessWidget {
   void _onAuthStateChange(BuildContext context, AuthState state) {
     state.status.map(
       notDetermined: (value) => null,
-      authenticated: (value) => getIt<UserBloc>().add(const UserEvent.fetch()),
+      authenticated: (value) {
+        getIt<UserBloc>().add(const UserEvent.fetch());
+        context.read<ShoppingCartBloc>().add(const ShoppingCartEvent.refresh());
+      },
       notAuthenticated: (value) {
         getIt<UserBloc>().add(const UserEvent.clear());
         context.read<ShoppingCartBloc>().add(const ShoppingCartEvent.refresh());

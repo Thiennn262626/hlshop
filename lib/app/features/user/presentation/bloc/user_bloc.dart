@@ -18,6 +18,8 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     on<_UserUpdateCoverEvent>(_onUserUpdateCoverEvent);
     on<_UserUpdateAvatarEvent>(_onUserUpdateAvatarEvent);
     on<_UserClearEvent>(_onClearEvent);
+    on<_UserDeletePhoneEvent>(_onUserDeletePhoneEvent);
+    on<_UserDeleteEmailEvent>(_onUserDeleteEmailEvent);
   }
 
   late final UserSecureStorage _userSecureStorage;
@@ -169,6 +171,38 @@ class UserBloc extends Bloc<UserEvent, UserState> {
           ),
         ],
       ).show(context);
+    }
+  }
+
+  FutureOr<void> _onUserDeletePhoneEvent(
+    _UserDeletePhoneEvent event,
+    Emitter<UserState> emit,
+  ) async {
+    try {
+      await userRepo.deletePhone(phone: event.phone);
+      add(const UserEvent.fetch());
+    } catch (e) {
+      emit(
+        state.copyWith(
+          updateStatus: ApiStatus.error(e),
+        ),
+      );
+    }
+  }
+
+  FutureOr<void> _onUserDeleteEmailEvent(
+    _UserDeleteEmailEvent event,
+    Emitter<UserState> emit,
+  ) async {
+    try {
+      await userRepo.deleteEmail(email: event.email);
+      add(const UserEvent.fetch());
+    } catch (e) {
+      emit(
+        state.copyWith(
+          updateStatus: ApiStatus.error(e),
+        ),
+      );
     }
   }
 

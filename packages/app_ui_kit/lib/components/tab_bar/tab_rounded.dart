@@ -34,7 +34,9 @@ class _TabRoundedState extends State<TabRounded> {
       ),
       child: widget.label?.text
               .color(
-                widget.isSelected ? context.theme.onPrimary() : gray,
+                widget.isSelected
+                    ? context.theme.textTheme.bodySmall?.color
+                    : gray,
               )
               .bold
               .textS

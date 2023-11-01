@@ -5,6 +5,7 @@ import 'package:hlshop/app/features/user/data/model/delete_receiver_address_mode
 import 'package:hlshop/app/features/user/data/model/ms_user_info.dart';
 import 'package:hlshop/app/features/user/data/model/update_contact_name_model.dart';
 import 'package:hlshop/app/features/user/data/model/update_receiver_address_model.dart';
+import 'package:hlshop/app/features/user/data/model/user_model_ms.dart';
 import 'package:hlshop/app/features/user/data/model/user_receiver_address_model_ms.dart';
 import 'package:hlshop/app/features/user/domain/entity/user_base_entity.dart';
 import 'package:hlshop/app/features/user/domain/repo/user_repo.dart';
@@ -182,6 +183,19 @@ class UserRepoMS implements UserRepo {
   }
 
   @override
+  Future<Object> updatePhone({required UserPhoneEntity phone}) async {
+    final rs = await _userApiMS.updatePhone(
+      MsPhone(
+        phoneID: phone.id,
+        phoneNo: phone.phone,
+        phoneLabel: 0, // TODO: change later
+        isDefault: phone.isDefault,
+      ),
+    );
+    return Future.value(rs);
+  }
+
+  @override
   Future<Object> verifyPhone({
     required Object? addResultObject,
     required String otp,
@@ -200,7 +214,7 @@ class UserRepoMS implements UserRepo {
   }
 
   @override
-  Future<Object> resendOtp({required Object? addResultObject}) async {
+  Future<Object> resendPhoneOtp({required Object? addResultObject}) async {
     if (addResultObject is MsAddPhoneResultWrapper) {
       final rs = await _userApiMS.resendPhoneOtp(
         MsResendPhoneReq(
@@ -210,5 +224,80 @@ class UserRepoMS implements UserRepo {
       return Future.value(rs);
     }
     return Future.error('Không thể gửi lại mã OTP'.tr());
+  }
+
+  @override
+  Future<Object?> deletePhone({required UserPhoneEntity phone}) async {
+    final rs = await _userApiMS.deletePhone(
+      MsPhone(
+        phoneID: phone.id,
+      ),
+    );
+    return Future.value(true);
+  }
+
+  @override
+  Future<Object> addEmail({required String email}) async {
+    final rs = await _userApiMS.addEmail(
+      MsAddEmailReq(
+        emailLabel: 0,
+        emailAddress: email,
+      ),
+    );
+    return Future.value(rs);
+  }
+
+  @override
+  Future<Object> updateEmail({required UserEmailEntity email}) async {
+    final rs = await _userApiMS.updateEmail(
+      MsEmail(
+        emailID: email.id,
+        emailAddress: email.emailAddress,
+        emailLabel: 0, // TODO: change later
+        isDefault: email.isDefault,
+      ),
+    );
+    return Future.value(rs);
+  }
+
+  @override
+  Future<Object> verifyEmail({
+    required Object? addResultObject,
+    required String otp,
+  }) async {
+    if (addResultObject is MsAddEmailResultWrapper) {
+      final rs = await _userApiMS.verifyEmail(
+        MsVerifyEmailReq(
+          emailID: addResultObject.result?.emailID,
+          uuid: addResultObject.result?.uuid,
+          otp: otp,
+        ),
+      );
+      return Future.value(rs);
+    }
+    return Future.error('Không thể xác thực số điện thoại'.tr());
+  }
+
+  @override
+  Future<Object> resendEmailOtp({required Object? addResultObject}) async {
+    if (addResultObject is MsAddEmailResultWrapper) {
+      final rs = await _userApiMS.resendEmailOtp(
+        MsResendEmailReq(
+          emailID: addResultObject.result?.emailID,
+        ),
+      );
+      return Future.value(rs);
+    }
+    return Future.error('Không thể gửi lại mã OTP'.tr());
+  }
+
+  @override
+  Future<Object?> deleteEmail({required UserEmailEntity email}) async {
+    final rs = await _userApiMS.deleteEmail(
+      MsEmail(
+        emailID: email.id,
+      ),
+    );
+    return Future.value(true);
   }
 }

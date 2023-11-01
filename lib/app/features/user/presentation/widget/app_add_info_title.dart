@@ -1,8 +1,8 @@
 import 'package:app_ui_kit/all_file/app_ui_kit_all_file.dart';
-import 'package:app_ui_kit/components/card/card_cupertino_effect.dart';
+import 'package:app_ui_kit/app_ui_kit.dart';
 
-class AppTileText extends StatelessWidget {
-  const AppTileText({
+class AppAddInfoTile extends StatelessWidget {
+  const AppAddInfoTile({
     super.key,
     this.leading,
     this.title,
@@ -10,10 +10,9 @@ class AppTileText extends StatelessWidget {
     this.subtitle,
     this.onPressed,
     this.padding,
-    this.amount,
   });
 
-  const AppTileText.semiBold({
+  const AppAddInfoTile.semiBold({
     super.key,
     this.leading,
     this.title,
@@ -21,18 +20,6 @@ class AppTileText extends StatelessWidget {
     this.subtitle,
     this.onPressed,
     this.padding,
-    this.amount,
-  });
-
-  const AppTileText.medium({
-    super.key,
-    this.leading,
-    this.title,
-    this.titleFontWeight = FontWeight.w500,
-    this.subtitle,
-    this.onPressed,
-    this.padding,
-    this.amount,
   });
 
   final Widget? leading;
@@ -41,16 +28,13 @@ class AppTileText extends StatelessWidget {
   final String? subtitle;
   final VoidCallback? onPressed;
   final EdgeInsetsGeometry? padding;
-  final String? amount;
 
   @override
   Widget build(BuildContext context) {
-    final nameTitle = '$title' ' ${amount.isEmptyOrNull ? '' : '($amount)'}';
-    return CardCupertinoEffect(
-      onPressed: onPressed,
-      child: Padding(
-        padding:
-            padding ?? const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      child: CardCupertinoEffect(
+        onPressed: onPressed,
         child: IntrinsicHeight(
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -60,10 +44,9 @@ class AppTileText extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  nameTitle.text
+                  title?.text
                       .titleMedium(context)
                       .fontWeight(titleFontWeight ?? FontWeight.w400)
-                      .heightLoose
                       .maxLines(2)
                       .ellipsis
                       .make()
@@ -71,14 +54,14 @@ class AppTileText extends StatelessWidget {
                   subtitle?.text.caption(context).maxLines(2).ellipsis.make(),
                 ].withDivider(Gaps.vGap4),
               ).expand(),
-              if (onPressed != null)
-                const Icon(
-                  PhosphorIcons.caret_right,
-                ),
+              const Icon(
+                PhosphorIcons.plus,
+                color: Colors.blue,
+              ),
             ].withDivider(Gaps.hGap12),
           ),
         ),
-      ),
+      ).minHeight(54),
     );
   }
 }

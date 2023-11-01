@@ -32,7 +32,7 @@ class ShoppingCartBtn extends StatelessWidget {
     return BadgedCount(
       icon: Icon(
         PhosphorIcons.shopping_cart,
-        color: context.theme.iconTheme.color,
+        color: iconColor ?? context.theme.iconTheme.color,
       ),
       count: quantity,
       onPressed: () {

@@ -46,6 +46,7 @@ class UserMS {
         avatar: userAvatar,
         userCover: userCover,
         phoneList: phones?.map((e) => e.toEntity()).toList(),
+        emailList: emails?.map((e) => e.toEntity()).toList(),
         object: this,
       );
 
@@ -62,8 +63,10 @@ class MsPhone {
   final String? phoneArea;
   final String? countryArea;
   final int? phoneLabel;
-  final int? isDefault;
-  final int? isVerify;
+  @JsonKey(fromJson: boolFromAny, toJson: boolToNum)
+  final bool? isDefault;
+  @JsonKey(fromJson: boolFromAny, toJson: boolToNum)
+  final bool? isVerify;
 
   const MsPhone({
     this.phoneID,
@@ -95,7 +98,8 @@ class MsPhone {
 class MsUrl {
   final String? urlID;
   final String? urlString;
-  final int? isDefault;
+  @JsonKey(fromJson: boolFromAny, toJson: boolToNum)
+  final bool? isDefault;
 
   const MsUrl({
     this.urlID,
@@ -113,8 +117,10 @@ class MsEmail {
   final String? emailID;
   final String? emailAddress;
   final int? emailLabel;
-  final int? isDefault;
-  final int? isVerify;
+  @JsonKey(fromJson: boolFromAny, toJson: boolToNum)
+  final bool? isDefault;
+  @JsonKey(fromJson: boolFromAny, toJson: boolToNum)
+  final bool? isVerify;
 
   const MsEmail({
     this.emailID,
@@ -124,8 +130,73 @@ class MsEmail {
     this.isVerify,
   });
 
+  UserEmailEntity toEntity() => UserEmailEntity(
+        id: emailID,
+        emailAddress: emailAddress,
+        emailLabel: emailLabel,
+        isDefault: isDefault,
+        isVerify: isVerify,
+      );
+
   factory MsEmail.fromJson(Map<String, dynamic> json) =>
       _$MsEmailFromJson(json);
 
   Map<String, dynamic> toJson() => _$MsEmailToJson(this);
+}
+
+@JsonSerializable()
+class ResponseUserMS {
+  ResponseUserMS({this.status, this.message});
+
+  int? status;
+  String? message;
+
+  FutureOr<AddReceiverAddressEntity>? toEntity() {
+    return null;
+  }
+
+  factory ResponseUserMS.fromJson(Map<String, dynamic> json) =>
+      _$ResponseUserMSFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ResponseUserMSToJson(this);
+}
+
+@JsonSerializable()
+class AddEmailAddressMS {
+  AddEmailAddressMS({
+    this.emailAddress,
+    this.emailLabel,
+    this.isDefault,
+  });
+
+  String? emailAddress;
+  int? emailLabel;
+  int? isDefault;
+
+  factory AddEmailAddressMS.fromJson(Map<String, dynamic> json) =>
+      _$AddEmailAddressMSFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AddEmailAddressMSToJson(this);
+
+  FutureOr<UserAddressEntity>? toEntity() {
+    return null;
+  }
+}
+
+@JsonSerializable()
+class EmailResendOtpMS {
+  EmailResendOtpMS({
+    this.emailID,
+  });
+
+  String? emailID;
+
+  factory EmailResendOtpMS.fromJson(Map<String, dynamic> json) =>
+      _$EmailResendOtpMSFromJson(json);
+
+  Map<String, dynamic> toJson() => _$EmailResendOtpMSToJson(this);
+
+  FutureOr<UserAddressEntity>? toEntity() {
+    return null;
+  }
 }

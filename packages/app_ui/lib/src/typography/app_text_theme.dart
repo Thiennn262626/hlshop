@@ -4,7 +4,9 @@ import 'package:app_ui/src/colors/app_colors_extension.dart';
 import 'package:flutter/material.dart';
 
 extension AppThemeTextContextExtend on BuildContext {
-  AppTextThemeExtension get themeText => Theme.of(this).extension<AppTextThemeExtension>() ?? AppTextThemeExtension.light;
+  AppTextThemeExtension get themeText =>
+      Theme.of(this).extension<AppTextThemeExtension>() ??
+      AppTextThemeExtension.light;
 }
 
 @immutable
@@ -105,7 +107,15 @@ class AppTextThemeExtension extends ThemeExtension<AppTextThemeExtension> {
   );
 
   @override
-  AppTextThemeExtension copyWith({TextStyle? text, TextStyle? body, TextStyle? textHint, TextStyle? titleLarge, TextStyle? headlineSmall, TextStyle? titleMedium, TextStyle? bodySmall, TextStyle? labelLarge}) {
+  AppTextThemeExtension copyWith(
+      {TextStyle? text,
+      TextStyle? body,
+      TextStyle? textHint,
+      TextStyle? titleLarge,
+      TextStyle? headlineSmall,
+      TextStyle? titleMedium,
+      TextStyle? bodySmall,
+      TextStyle? labelLarge}) {
     return AppTextThemeExtension(
       text: text ?? this.text,
       body: body ?? this.body,
@@ -119,7 +129,8 @@ class AppTextThemeExtension extends ThemeExtension<AppTextThemeExtension> {
   }
 
   @override
-  AppTextThemeExtension lerp(ThemeExtension<AppTextThemeExtension>? other, double t) {
+  AppTextThemeExtension lerp(
+      ThemeExtension<AppTextThemeExtension>? other, double t) {
     if (other is! AppTextThemeExtension) {
       return this;
     }
@@ -127,8 +138,10 @@ class AppTextThemeExtension extends ThemeExtension<AppTextThemeExtension> {
       text: TextStyle.lerp(text, other.text, t) ?? text,
       textHint: TextStyle.lerp(textHint, other.textHint, t) ?? textHint,
       titleLarge: TextStyle.lerp(titleLarge, other.titleLarge, t) ?? titleLarge,
-      headlineSmall: TextStyle.lerp(headlineSmall, other.headlineSmall, t) ?? headlineSmall,
-      titleMedium: TextStyle.lerp(titleMedium, other.titleMedium, t) ?? titleMedium,
+      headlineSmall: TextStyle.lerp(headlineSmall, other.headlineSmall, t) ??
+          headlineSmall,
+      titleMedium:
+          TextStyle.lerp(titleMedium, other.titleMedium, t) ?? titleMedium,
       bodySmall: TextStyle.lerp(bodySmall, other.bodySmall, t) ?? bodySmall,
       body: TextStyle.lerp(body, other.body, t) ?? body,
       labelLarge: TextStyle.lerp(labelLarge, other.labelLarge, t) ?? labelLarge,

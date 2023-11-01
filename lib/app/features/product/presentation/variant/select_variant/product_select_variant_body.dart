@@ -18,7 +18,20 @@ class ProductSelectVariantBody extends StatelessWidget {
           builder: (context, state) {
             final selectVariant =
                 context.read<ProductSelectVariantCubit>().getSelectVariant();
-
+            final item = context.read<ProductSelectVariantCubit>().product;
+            if (selectVariant == null) {
+              return ProductItem(
+                item:
+                    context.read<ProductSelectVariantCubit>().product.copyWith(
+                          listedPrice: selectVariant?.listedPrice,
+                          salePrice: selectVariant?.price,
+                          imgList: [
+                            item.imgList?.first,
+                          ].filterNotNull().toList(),
+                        ),
+                layoutType: ProductItemLayoutType.layoutTile2,
+              );
+            }
             return ProductItem(
               item: context.read<ProductSelectVariantCubit>().product.copyWith(
                     listedPrice: selectVariant?.listedPrice,
@@ -87,22 +100,29 @@ class ProductAttribute extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       child: BlocBuilder<ProductSelectVariantCubit, ProductSelectVariantState>(
         builder: (context, state) {
+          final variantCubit = context.read<ProductSelectVariantCubit>();
           return Wrap(
             spacing: 8,
             runSpacing: 12,
             children: attribute.values.mapAsListIndexed(
               (item, index) {
-                final variantCubit = context.read<ProductSelectVariantCubit>();
-                return ProductAttributeValue(
-                  item: item,
-                  layoutType: ProductVariantItemLayoutType.layoutTile1,
-                  args: ProductAttributeValueArgs(
-                    isSelected: variantCubit.isSelected(item),
-                    onPressed: () {
-                      variantCubit.selectValue(item);
-                    },
-                  ),
-                );
+                if (variantCubit.checkDisableAttribute(item)) {
+                  return ProductAttributeValue(
+                    item: item,
+                    layoutType: ProductVariantItemLayoutType.layoutTileDisable,
+                  );
+                } else {
+                  return ProductAttributeValue(
+                    item: item,
+                    layoutType: ProductVariantItemLayoutType.layoutTile1,
+                    args: ProductAttributeValueArgs(
+                      isSelected: variantCubit.isSelected(item),
+                      onPressed: () {
+                        variantCubit.selectValue(item);
+                      },
+                    ),
+                  );
+                }
               },
             ),
           );

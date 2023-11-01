@@ -22,7 +22,7 @@ class AppImg extends StatelessWidget {
     this.memCacheHeight = 700,
   });
 
-  final dynamic? src;
+  final dynamic src;
   final BoxFit fit;
   final int? memCacheHeight;
   final ProgressIndicatorBuilder? progressIndicatorBuilder;
@@ -51,7 +51,7 @@ class AppImg extends StatelessWidget {
     Widget? imageWidget;
 
     if (srcStr.startsWith('http')) {
-      var url = srcStr.startsWith('http://')
+      final url = srcStr.startsWith('http://')
           ? srcStr.replaceFirst('http://', 'https://')
           : srcStr;
 
@@ -64,7 +64,7 @@ class AppImg extends StatelessWidget {
         fit: fit,
         progressIndicatorBuilder: progressIndicatorBuilder ??
             (context, url, downloadProgress) => const AppShimmer(),
-        memCacheHeight: 500,
+        // memCacheHeight: 500,
         errorWidget: errorUrlWidget ?? (context, url, error) => errorWidget,
       );
 

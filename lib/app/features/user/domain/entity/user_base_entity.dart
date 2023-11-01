@@ -65,8 +65,10 @@ class UserPhoneEntity {
   final String? id;
   final String? phone;
   final String? countryCode;
-  final int? isDefault;
-  final int? isVerify;
+  @JsonKey(fromJson: boolFromAny, toJson: boolToNum)
+  final bool? isDefault;
+  @JsonKey(fromJson: boolFromAny, toJson: boolToNum)
+  final bool? isVerify;
 
   static UserPhoneEntity demo() => UserPhoneEntity(
         phone: '4353467568',
@@ -81,18 +83,42 @@ class UserPhoneEntity {
 
 @JsonSerializable()
 class UserEmailEntity {
-  UserEmailEntity({required this.email});
+  UserEmailEntity({
+    this.id,
+    this.emailAddress,
+    this.emailLabel,
+    this.isDefault,
+    this.isVerify,
+  });
+
+  String? id;
+  String? emailAddress;
+  int? emailLabel;
+  @JsonKey(fromJson: boolFromAny, toJson: boolToNum)
+  bool? isDefault;
+  @JsonKey(fromJson: boolFromAny, toJson: boolToNum)
+  bool? isVerify;
 
   static UserEmailEntity demo() => UserEmailEntity(
-        email: 'nguyenphucthanh@gmail.com',
+        emailAddress: 'nguyenphucthanh@gmail.com',
       );
-
-  String email;
 
   factory UserEmailEntity.fromJson(Map<String, dynamic> json) =>
       _$UserEmailEntityFromJson(json);
 
   Map<String, dynamic> toJson() => _$UserEmailEntityToJson(this);
+}
+
+@JsonSerializable()
+class UserEmailResendOtpEntity {
+  UserEmailResendOtpEntity({this.emailID});
+
+  String? emailID;
+
+  factory UserEmailResendOtpEntity.fromJson(Map<String, dynamic> json) =>
+      _$UserEmailResendOtpEntityFromJson(json);
+
+  Map<String, dynamic> toJson() => _$UserEmailResendOtpEntityToJson(this);
 }
 
 enum AddressForType { receive, office, other }

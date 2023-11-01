@@ -6,7 +6,11 @@ import 'package:app_utils/all_file/app_utils_all_file.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class SliverListExtend {
-  static SliverList separator({required Widget Function(int index) delegateBuilder, required int childCount, required Widget separator, Widget? tail}) {
+  static SliverList separator(
+      {required Widget Function(int index) delegateBuilder,
+      required int childCount,
+      required Widget separator,
+      Widget? tail}) {
     final tailCount = tail != null ? 1 : 0;
 
     return SliverList(
@@ -35,7 +39,7 @@ class SliverListExtend {
 // ignore: unnecessary_this
 extension ThemeExtend on ThemeData {
   Color onPrimary() {
-    return primaryTextTheme.bodyMedium!.color!;
+    return colorScheme.onPrimary;
   }
 
   Color actionColor() {
@@ -52,7 +56,8 @@ extension ThemeExtend on ThemeData {
 }
 
 extension ListWidgetExtend<T extends Widget?> on List<T> {
-  List<Widget> withDivider(Widget divider, {bool showLast = false, bool showFirst = false}) {
+  List<Widget> withDivider(Widget divider,
+      {bool showLast = false, bool showFirst = false}) {
     if (isEmpty || length == 0) return [];
 
     List<Widget> rs = [];

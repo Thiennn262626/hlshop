@@ -30,7 +30,7 @@ class DioModule {
         PrettyDioLogger(
           request: true,
           requestBody: true,
-          responseBody: true,
+          responseBody: false,
         ),
       );
       dio.interceptors.add(DioNetworkLogger());
@@ -91,7 +91,7 @@ class DioModule {
   }
 }
 
-bool? boolFormAny(dynamic source) {
+bool? boolFromAny(dynamic source) {
   if (source == null) {
     return null;
   }
@@ -103,4 +103,11 @@ bool? boolFormAny(dynamic source) {
     return source == 1;
   }
   return false;
+}
+
+num boolToNum(bool? source) {
+  if (source == true) {
+    return 1;
+  }
+  return 0;
 }

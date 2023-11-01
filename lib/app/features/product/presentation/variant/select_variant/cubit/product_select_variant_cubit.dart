@@ -24,6 +24,7 @@ class ProductSelectVariantCubit extends RequestItemCubit<
     ProductVariantEntity? selectedVariant,
     int? quantity,
     Object? error,
+    List<String>? idAttributeDisalbeList,
   }) {
     emit(
       state.copyWith(
@@ -34,6 +35,8 @@ class ProductSelectVariantCubit extends RequestItemCubit<
         selectedVariant: selectedVariant ?? state.selectedVariant,
         quantity: quantity ?? state.quantity,
         error: error,
+        idAttributeDisalbeList:
+            idAttributeDisalbeList ?? state.idAttributeDisalbeList,
       ),
     );
   }
@@ -46,6 +49,42 @@ class ProductSelectVariantCubit extends RequestItemCubit<
     emitState(variantList: productVariantList);
 
     return _repo.getProductAttribute(productId: product.id);
+  }
+
+  bool checkDisableAttribute(ProductAttributeValueEntity value) {
+    return state.idAttributeDisalbeList
+        .filter((item) => item == value.id)
+        .isNotNullOrEmpty;
+  }
+
+  void getIdAttributeDisalbeList(
+      ProductAttributeEntity? attribute, ProductAttributeValueEntity value) {
+    final variantList = state.variantList;
+    final idAttributeDisalbeList = [...state.idAttributeDisalbeList];
+    final affectedVariants = <ProductVariantEntity>[];
+    variantList.forEach((variant) {
+      variant.variantValueList?.forEach((variantValue) {
+        if (variantValue.attributeValue?.id == value.id) {
+          affectedVariants.add(variant);
+        }
+      });
+    });
+    attribute?.values?.forEach((attributeValue) {
+      if (attributeValue.id != value.id) {
+        var isDisable = true;
+        affectedVariants.forEach((variant) {
+          variant.variantValueList?.forEach((variantValue) {
+            if (variantValue.attributeValue?.id == attributeValue.id) {
+              isDisable = false;
+            }
+          });
+        });
+        if (isDisable) {
+          idAttributeDisalbeList.add(attributeValue.id ?? '');
+        }
+      }
+    });
+    emitState(idAttributeDisalbeList: idAttributeDisalbeList);
   }
 
   void selectValue(ProductAttributeValueEntity value) {
@@ -66,6 +105,12 @@ class ProductSelectVariantCubit extends RequestItemCubit<
         value
       ];
     }
+    emitState(idAttributeDisalbeList: []);
+    result.forEach((attributeValue) {
+      getIdAttributeDisalbeList(
+          getOppositeAttributeByValue(attributeValue), attributeValue);
+    });
+
     emitState(
       selectedValueList: result,
     );
@@ -82,6 +127,13 @@ class ProductSelectVariantCubit extends RequestItemCubit<
     return state.item?.firstWhere((item) {
       return item.values.filter((item) => item.id == value.id).isNotEmpty;
     });
+  }
+
+  ProductAttributeEntity? getOppositeAttributeByValue(
+      ProductAttributeValueEntity value) {
+    return state.item.filterAsList((item) {
+      return item.values.filter((item) => item.id == value.id).isEmpty;
+    }).firstOrNull;
   }
 
   bool isSelected(ProductAttributeValueEntity value) {

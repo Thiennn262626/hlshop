@@ -21,4 +21,12 @@ class UserEvent with _$UserEvent {
   const factory UserEvent.updateAvatar({
     required File file,
   }) = _UserUpdateAvatarEvent;
+
+  const factory UserEvent.deletePhone({
+    required UserPhoneEntity phone,
+  }) = _UserDeletePhoneEvent;
+
+  const factory UserEvent.deleteEmail({
+    required UserEmailEntity email,
+  }) = _UserDeleteEmailEvent;
 }
