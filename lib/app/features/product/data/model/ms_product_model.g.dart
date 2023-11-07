@@ -28,7 +28,6 @@ MsProduct _$MsProductFromJson(Map<String, dynamic> json) => MsProduct(
       productSKU: (json['productSKU'] as List<dynamic>?)
           ?.map((e) => MsProductSku.fromJson(e as Map<String, dynamic>))
           .toList(),
-      productVersionID: json['productVersionID'] as String?,
       localizedProductVersionID: json['localizedProductVersionID'] as String?,
     );
 
@@ -45,6 +44,5 @@ Map<String, dynamic> _$MsProductToJson(MsProduct instance) => <String, dynamic>{
       'productCategory': instance.productCategory,
       'seller': instance.seller,
       'productSKU': instance.productSKU,
-      'productVersionID': instance.productVersionID,
       'localizedProductVersionID': instance.localizedProductVersionID,
     };

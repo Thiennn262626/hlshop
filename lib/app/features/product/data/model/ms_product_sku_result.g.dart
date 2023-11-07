@@ -8,7 +8,6 @@ part of 'ms_product_sku_result.dart';
 
 MsProductSkuResult _$MsProductSkuResultFromJson(Map<String, dynamic> json) =>
     MsProductSkuResult(
-      productVersionID: json['productVersionID'] as String?,
       productID: json['productID'] as String?,
       productSKU: (json['productSKU'] as List<dynamic>?)
           ?.map((e) => MsProductSku.fromJson(e as Map<String, dynamic>))
@@ -17,14 +16,12 @@ MsProductSkuResult _$MsProductSkuResultFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$MsProductSkuResultToJson(MsProductSkuResult instance) =>
     <String, dynamic>{
-      'productVersionID': instance.productVersionID,
       'productID': instance.productID,
       'productSKU': instance.productSKU,
     };
 
 MsProductSku _$MsProductSkuFromJson(Map<String, dynamic> json) => MsProductSku(
       productSKUID: json['productSKUID'] as String?,
-      productVersionID: json['productVersionID'] as String?,
       linkString: json['linkString'] as String?,
       price: priceUnitFromAny(json['price']),
       priceBefore: priceUnitFromAny(json['priceBefore']),
@@ -48,7 +45,6 @@ MsProductSku _$MsProductSkuFromJson(Map<String, dynamic> json) => MsProductSku(
 Map<String, dynamic> _$MsProductSkuToJson(MsProductSku instance) =>
     <String, dynamic>{
       'productSKUID': instance.productSKUID,
-      'productVersionID': instance.productVersionID,
       'linkString': instance.linkString,
       'price': priceUnitToJson(instance.price),
       'priceBefore': priceUnitToJson(instance.priceBefore),
@@ -61,7 +57,6 @@ Map<String, dynamic> _$MsProductSkuToJson(MsProductSku instance) =>
 
 MsProductSkuValue _$MsProductSkuValueFromJson(Map<String, dynamic> json) =>
     MsProductSkuValue(
-      productSKUConditionID: json['productSKUConditionID'] as String?,
       productSKUID: json['productSKUID'] as String?,
       attributeID: json['attributeID'] as String?,
       locAttributeName: json['locAttributeName'] as String?,
@@ -74,7 +69,6 @@ MsProductSkuValue _$MsProductSkuValueFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$MsProductSkuValueToJson(MsProductSkuValue instance) =>
     <String, dynamic>{
-      'productSKUConditionID': instance.productSKUConditionID,
       'productSKUID': instance.productSKUID,
       'attributeID': instance.attributeID,
       'locAttributeName': instance.locAttributeName,

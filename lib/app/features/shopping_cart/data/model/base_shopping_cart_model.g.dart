@@ -9,7 +9,6 @@ part of 'base_shopping_cart_model.dart';
 MsShoppingCartAddReq _$MsShoppingCartAddReqFromJson(
         Map<String, dynamic> json) =>
     MsShoppingCartAddReq(
-      productVersionID: json['productVersionID'] as String?,
       productSKUID: json['productSKUID'] as String?,
       quantity: json['quantity'] as int?,
     );
@@ -17,7 +16,6 @@ MsShoppingCartAddReq _$MsShoppingCartAddReqFromJson(
 Map<String, dynamic> _$MsShoppingCartAddReqToJson(
         MsShoppingCartAddReq instance) =>
     <String, dynamic>{
-      'productVersionID': instance.productVersionID,
       'productSKUID': instance.productSKUID,
       'quantity': instance.quantity,
     };

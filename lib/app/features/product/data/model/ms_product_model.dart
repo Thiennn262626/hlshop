@@ -22,7 +22,6 @@ class MsProduct {
   final MsProductCategory? productCategory;
   final MsSellerModel? seller;
   final List<MsProductSku>? productSKU;
-  final String? productVersionID;
   final String? localizedProductVersionID;
 
   const MsProduct({
@@ -38,7 +37,6 @@ class MsProduct {
     this.productCategory,
     this.seller,
     this.productSKU,
-    this.productVersionID,
     this.localizedProductVersionID,
   });
 

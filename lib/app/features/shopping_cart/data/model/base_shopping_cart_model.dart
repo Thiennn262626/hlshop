@@ -1,5 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/common/core/unit/price_unit.dart';
 import 'package:hlshop/app/features/distributor/domain/entity/distributor_entity.dart';
 import 'package:hlshop/app/features/product/self.dart';
 import 'package:hlshop/app/features/shopping_cart/seft.dart';
@@ -9,12 +8,10 @@ part 'base_shopping_cart_model.g.dart';
 
 @JsonSerializable()
 class MsShoppingCartAddReq {
-  final String? productVersionID;
   final String? productSKUID;
   final int? quantity;
 
   const MsShoppingCartAddReq({
-    this.productVersionID,
     this.productSKUID,
     this.quantity,
   });

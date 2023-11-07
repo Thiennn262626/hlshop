@@ -15,7 +15,6 @@ class MsShoppingCartRepo extends ShoppingCartRepo {
     if (msProduct is MsProduct) {
       return _api.addCart(
         body: MsShoppingCartAddReq(
-          productVersionID: msProduct.productVersionID,
           productSKUID: selectedVariant?.id,
           quantity: quantity,
         ),

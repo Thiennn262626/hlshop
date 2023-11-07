@@ -1,16 +1,14 @@
-import 'package:json_annotation/json_annotation.dart';
 import 'package:hlshop/app/common/core/unit/price_unit.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'ms_product_sku_result.g.dart';
 
 @JsonSerializable()
 class MsProductSkuResult {
-  final String? productVersionID;
   final String? productID;
   final List<MsProductSku>? productSKU;
 
   const MsProductSkuResult({
-    this.productVersionID,
     this.productID,
     this.productSKU,
   });
@@ -24,7 +22,6 @@ class MsProductSkuResult {
 @JsonSerializable()
 class MsProductSku {
   final String? productSKUID;
-  final String? productVersionID;
   final String? linkString;
   @JsonKey(fromJson: priceUnitFromAny, toJson: priceUnitToJson)
   final PriceUnit? price;
@@ -39,7 +36,6 @@ class MsProductSku {
 
   const MsProductSku({
     this.productSKUID,
-    this.productVersionID,
     this.linkString,
     this.price,
     this.priceBefore,
@@ -58,7 +54,6 @@ class MsProductSku {
 
 @JsonSerializable()
 class MsProductSkuValue {
-  final String? productSKUConditionID;
   final String? productSKUID;
   final String? attributeID;
   final String? locAttributeName;
@@ -68,7 +63,6 @@ class MsProductSkuValue {
   final String? locAttributeValueDescription;
 
   const MsProductSkuValue({
-    this.productSKUConditionID,
     this.productSKUID,
     this.attributeID,
     this.locAttributeName,

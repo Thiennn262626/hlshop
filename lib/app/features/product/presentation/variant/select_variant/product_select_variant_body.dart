@@ -23,8 +23,6 @@ class ProductSelectVariantBody extends StatelessWidget {
               return ProductItem(
                 item:
                     context.read<ProductSelectVariantCubit>().product.copyWith(
-                          listedPrice: selectVariant?.listedPrice,
-                          salePrice: selectVariant?.price,
                           imgList: [
                             item.imgList?.first,
                           ].filterNotNull().toList(),
@@ -34,10 +32,10 @@ class ProductSelectVariantBody extends StatelessWidget {
             }
             return ProductItem(
               item: context.read<ProductSelectVariantCubit>().product.copyWith(
-                    listedPrice: selectVariant?.listedPrice,
-                    salePrice: selectVariant?.price,
+                    listedPrice: selectVariant.listedPrice,
+                    price: selectVariant.price,
                     imgList: [
-                      selectVariant?.img,
+                      selectVariant.img,
                     ].filterNotNull().toList(),
                   ),
               layoutType: ProductItemLayoutType.layoutTile2,
