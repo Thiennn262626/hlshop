@@ -7,7 +7,7 @@ class ShoppingCartState with _$ShoppingCartState {
   const factory ShoppingCartState({
     @Default(ApiStatus.initial()) ApiStatus status,
     @Default(ApiStatus.initial()) ApiStatus itemStatus,
-    @Default([]) List<ShoppingCartItemGroupEntity> itemGroups,
+    @Default([]) List<ShoppingCartItemEntity> itemGroups,
     @Default({}) Set<String> selectedCartItemIds,
   }) = _ShoppingCartState;
 }

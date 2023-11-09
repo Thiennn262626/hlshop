@@ -1,37 +1,5 @@
 part of 'base_shopping_cart_model.dart';
 
-extension MsShoppingCartExtend on MsShoppingCart {
-  ShoppingCartItemGroupEntity toEntity() {
-    return ShoppingCartItemGroupEntity(
-      id: sellerID,
-      distributor: getDistributor(),
-      productCartList: dataCart?.mapAsList(
-            (item) => ShoppingCartItemEntity(
-              id: item.cartID,
-              product: item.toEntity().copyWith(
-                    price: item.price,
-                    listedPrice: item.priceBefore,
-                  ),
-              quantity: item.quantity ?? 0,
-              variant: item.getVariant(),
-              object: item,
-            ),
-          ) ??
-          [],
-      object: this,
-    );
-  }
-
-  DistributorEntity getDistributor() {
-    return DistributorEntity(
-      id: sellerID,
-      name: sellerBusinessName ?? sellerContactFullName,
-      type: 'Distributor',
-      object: this,
-    );
-  }
-}
-
 extension MsProductCartExt on MsProductCart {
   ProductVariantEntity getVariant() {
     return ProductVariantEntity(
@@ -44,6 +12,16 @@ extension MsProductCartExt on MsProductCart {
             ),
           ) ??
           [],
+      object: this,
+    );
+  }
+
+  ShoppingCartItemEntity getProductCartItem() {
+    return ShoppingCartItemEntity(
+      id: cartID,
+      product: toEntity(),
+      quantity: quantity ?? 0,
+      variant: getVariant(),
       object: this,
     );
   }

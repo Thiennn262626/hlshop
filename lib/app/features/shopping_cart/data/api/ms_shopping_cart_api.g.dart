@@ -63,13 +63,13 @@ class _MsShoppingCartApi implements MsShoppingCartApi {
   }
 
   @override
-  Future<List<MsShoppingCart>> getCartList() async {
+  Future<List<MsProductCart>> getCartList() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio
-        .fetch<List<dynamic>>(_setStreamType<List<MsShoppingCart>>(Options(
+        .fetch<List<dynamic>>(_setStreamType<List<MsProductCart>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -82,7 +82,7 @@ class _MsShoppingCartApi implements MsShoppingCartApi {
             )
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     var value = _result.data!
-        .map((dynamic i) => MsShoppingCart.fromJson(i as Map<String, dynamic>))
+        .map((dynamic i) => MsProductCart.fromJson(i as Map<String, dynamic>))
         .toList();
     return value;
   }

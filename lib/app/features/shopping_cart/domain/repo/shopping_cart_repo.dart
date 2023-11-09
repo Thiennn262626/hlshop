@@ -4,7 +4,7 @@ import 'package:hlshop/app/features/shopping_cart/seft.dart';
 
 // Create abstract Shopping Cart Repo
 abstract class ShoppingCartRepo {
-  Future<List<ShoppingCartItemGroupEntity>> getShoppingCartList();
+  Future<List<ShoppingCartItemEntity>> getShoppingCartList();
 
   Future<void> addShoppingCartItem({
     required ProductEntity item,

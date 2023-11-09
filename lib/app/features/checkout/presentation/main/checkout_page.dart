@@ -13,14 +13,14 @@ class CheckoutPage extends StatelessWidget {
     this.selectedCartItemIds,
   });
 
-  final List<ShoppingCartItemGroupEntity>? cartItems;
+  final List<ShoppingCartItemEntity>? cartItems;
   final Set<String>? selectedCartItemIds;
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => CheckoutBloc(
-        cartItemGroups: cartItems,
+        cartItems: cartItems,
         selectedCartItemIds: selectedCartItemIds,
       )..add(
           const CheckoutEvent.initial(),

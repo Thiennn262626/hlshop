@@ -119,11 +119,12 @@ class ShoppingCartBloc extends Bloc<ShoppingCartEvent, ShoppingCartState> {
   }
 
   int get totalQuantity {
-    return state.itemGroups.fold<int>(
-      0,
-      (previousValue, element) =>
-          previousValue + element.productCartList.length,
-    );
+    return state.itemGroups.length;
+    // return state.itemGroups.fold<int>(
+    //   0,
+    //   (previousValue, element) =>
+    //       previousValue + element.productCartList.length,
+    // );
   }
 
   FutureOr<void> _onToggleCartItem(
@@ -159,19 +160,19 @@ class ShoppingCartBloc extends Bloc<ShoppingCartEvent, ShoppingCartState> {
       return null;
     }
 
-    final sellerItemIds = getSellerGroupCartItemsId(distributorId);
-    if (sellerItemIds.isEmpty) {
-      return null;
-    }
+    // final sellerItemIds = getSellerGroupCartItemsId(distributorId);
+    // if (sellerItemIds.isEmpty) {
+    //   return null;
+    // }
 
     final selectedCartItemIdsRs = {...state.selectedCartItemIds};
-    final isSelected =
-        event.selected ?? isSellerSelected(sellerId: distributorId);
-    if (isSelected) {
-      selectedCartItemIdsRs.removeAll(sellerItemIds);
-    } else {
-      selectedCartItemIdsRs.addAll(sellerItemIds);
-    }
+    // final isSelected =
+    //     event.selected ?? isSellerSelected(sellerId: distributorId);
+    // if (isSelected) {
+    //   selectedCartItemIdsRs.removeAll(sellerItemIds);
+    // } else {
+    //   selectedCartItemIdsRs.addAll(sellerItemIds);
+    // }
     emit(
       state.copyWith(
         selectedCartItemIds: selectedCartItemIdsRs,
@@ -185,32 +186,26 @@ class ShoppingCartBloc extends Bloc<ShoppingCartEvent, ShoppingCartState> {
       PriceUnit.zero,
       (previousValue, element) {
         return previousValue +
-            element.productCartList.fold<PriceUnit>(
-              PriceUnit.zero,
-              (previousValue, element) {
-                return previousValue +
-                    (element.variant
-                            ?.getPrice()
-                            .timesQuantity(element.quantity) ??
-                        PriceUnit.zero);
-              },
-            );
+            (element.variant?.getPrice().timesQuantity(element.quantity) ??
+                PriceUnit.zero);
       },
     );
-
     return totalPrice;
   }
 
-  List<ShoppingCartItemGroupEntity> getSelectedItemsList() {
+  List<ShoppingCartItemEntity> getSelectedItemsList() {
     return state.itemGroups
-        .map(
-          (item) => item.copyWith(
-            productCartList: item.productCartList
-                .where((element) => isCartItemIdSelected(element.id))
-                .toList(),
-          ),
-        )
+        .where((element) => isCartItemIdSelected(element.id))
         .toList();
+    // return state.itemGroups
+    //     .map(
+    //       (item) => item.copyWith(
+    //         productCartList: item.productCartList
+    //             .where((element) => isCartItemIdSelected(element.id))
+    //             .toList(),
+    //       ),
+    //     )
+    //     .toList();
   }
 
   bool isCartItemSelected(ShoppingCartItemEntity item) {
@@ -224,37 +219,39 @@ class ShoppingCartBloc extends Bloc<ShoppingCartEvent, ShoppingCartState> {
     return state.selectedCartItemIds.contains(id);
   }
 
-  bool isSellerSelected({String? sellerId}) {
-    if (sellerId == null) {
-      return false;
-    }
-    final sellerGroupCartItems = getSellerGroupCartItems(sellerId);
-    return sellerGroupCartItems?.productCartList.every((element) {
-          return isCartItemIdSelected(element.id);
-        }) ??
-        false;
-  }
-
-  ShoppingCartItemGroupEntity? getSellerGroupCartItems(String sellerId) {
-    return state.itemGroups.find(
-      (item) => item.distributor.id == sellerId,
-    );
-  }
-
-  List<String> getSellerGroupCartItemsId(String sellerId) {
-    return getSellerGroupCartItems(sellerId)
-            ?.productCartList
-            .map((item) => item.id)
-            .filterNotNull()
-            .toList() ??
-        [];
-  }
+  // bool isSellerSelected({String? sellerId}) {
+  //   if (sellerId == null) {
+  //     return false;
+  //   }
+  //   final sellerGroupCartItems = getSellerGroupCartItems(sellerId);
+  //   return sellerGroupCartItems?.productCartList.every((element) {
+  //         return isCartItemIdSelected(element.id);
+  //       }) ??
+  //       false;
+  // }
+  //
+  // ShoppingCartItemGroupEntity? getSellerGroupCartItems(String sellerId) {
+  //   return state.itemGroups.find(
+  //     (item) => item.distributor.id == sellerId,
+  //   );
+  // }
+  //
+  // List<String> getSellerGroupCartItemsId(String sellerId) {
+  //   return getSellerGroupCartItems(sellerId)
+  //           ?.productCartList
+  //           .map((item) => item.id)
+  //           .filterNotNull()
+  //           .toList() ??
+  //       [];
+  // }
 
   int? getTotalItems() {
-    return state.itemGroups.fold(
-      0,
-      (previousValue, element) => element.productCartList.length,
-    );
+    print('20110263 - getTotalItems ${state.itemGroups.length}');
+    return state.itemGroups.length;
+    // return state.itemGroups.fold(
+    //   0,
+    //   (previousValue, element) => element.productCartList.length,
+    // );
   }
 
   int get selectedItemTotal => state.selectedCartItemIds.length;

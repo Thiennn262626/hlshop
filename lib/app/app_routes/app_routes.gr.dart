@@ -940,7 +940,7 @@ class ProductDetailRouteArgs {
 class CheckoutRoute extends _i28.PageRouteInfo<CheckoutRouteArgs> {
   CheckoutRoute({
     _i30.Key? key,
-    List<_i35.ShoppingCartItemGroupEntity>? cartItems,
+    List<_i35.ShoppingCartItemEntity>? cartItems,
     Set<String>? selectedCartItemIds,
     List<_i28.PageRouteInfo>? children,
   }) : super(
@@ -968,7 +968,7 @@ class CheckoutRouteArgs {
 
   final _i30.Key? key;
 
-  final List<_i35.ShoppingCartItemGroupEntity>? cartItems;
+  final List<_i35.ShoppingCartItemEntity>? cartItems;
 
   final Set<String>? selectedCartItemIds;
 

@@ -5,20 +5,6 @@ import 'package:hlshop/app/features/product/self.dart';
 part 'shopping_cart_base_entity.g.dart';
 
 @CopyWith()
-class ShoppingCartItemGroupEntity {
-  ShoppingCartItemGroupEntity({
-    required this.id,
-    required this.distributor,
-    required this.productCartList,
-    this.object,
-  });
-
-  final String? id;
-  final DistributorEntity distributor;
-  final List<ShoppingCartItemEntity> productCartList;
-  final Object? object;
-}
-
 class ShoppingCartItemEntity {
   ShoppingCartItemEntity({
     required this.id,

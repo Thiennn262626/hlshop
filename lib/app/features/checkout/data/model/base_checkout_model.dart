@@ -6,12 +6,12 @@ part 'base_checkout_model.g.dart';
 class MsCreateOrderRq {
   final String? receiverAddressID;
   final int? paymentMethod;
-  final List<Sellers>? sellers;
+  final List<Carts>? carts;
 
   const MsCreateOrderRq({
     this.receiverAddressID,
     this.paymentMethod,
-    this.sellers,
+    this.carts,
   });
 
   factory MsCreateOrderRq.fromJson(Map<String, dynamic> json) =>
@@ -20,21 +20,21 @@ class MsCreateOrderRq {
   Map<String, dynamic> toJson() => _$MsCreateOrderRqToJson(this);
 }
 
-@JsonSerializable()
-class Sellers {
-  final String? sellerID;
-  final List<Carts>? carts;
-
-  const Sellers({
-    this.sellerID,
-    this.carts,
-  });
-
-  factory Sellers.fromJson(Map<String, dynamic> json) =>
-      _$SellersFromJson(json);
-
-  Map<String, dynamic> toJson() => _$SellersToJson(this);
-}
+// @JsonSerializable()
+// class Sellers {
+//   final String? sellerID;
+//   final List<Carts>? carts;
+//
+//   const Sellers({
+//     this.sellerID,
+//     this.carts,
+//   });
+//
+//   factory Sellers.fromJson(Map<String, dynamic> json) =>
+//       _$SellersFromJson(json);
+//
+//   Map<String, dynamic> toJson() => _$SellersToJson(this);
+// }
 
 @JsonSerializable()
 class Carts {

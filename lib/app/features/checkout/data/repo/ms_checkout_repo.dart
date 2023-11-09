@@ -7,15 +7,18 @@ class MsCheckoutRepo extends CheckoutRepo {
 
   @override
   Future<void> createOrder({
-    required List<ShoppingCartItemGroupEntity>? sellers,
+    required List<ShoppingCartItemEntity>? carts,
     required String receiverAddressID,
     required int paymentMethod,
   }) async {
     return _api.createOrder(
       body: MsCreateOrderRq(
-        sellers: sellers.mapAsList(
+        carts: carts.mapAsList(
           (item) => item.toEntity(),
         ),
+        // sellcaers: sellers.mapAsList(
+        //   (item) => item.toEntity(),
+        // ),
         receiverAddressID: receiverAddressID,
         paymentMethod: paymentMethod,
       ),

@@ -9,11 +9,11 @@ part 'checkout_state.dart';
 
 class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
   CheckoutBloc({
-    List<ShoppingCartItemGroupEntity>? cartItemGroups,
+    List<ShoppingCartItemEntity>? cartItems,
     Set<String>? selectedCartItemIds,
   }) : super(
           CheckoutState(
-            cartItemGroups: cartItemGroups ?? [],
+            cartItems: cartItems ?? [],
             selectedCartItemIds: selectedCartItemIds ?? {},
           ),
         ) {
@@ -44,7 +44,7 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
       ),
     );
     await _checkoutRepo.createOrder(
-      sellers: state.cartItemGroups,
+      carts: state.cartItems,
       receiverAddressID: state.userAddress?.id ?? '',
       paymentMethod: 0,
     );
@@ -91,30 +91,19 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
   }
 
   PriceUnit getTotalPrice() {
-    final totalPrice = state.cartItemGroups.fold<PriceUnit>(
+    final totalPrice = state.cartItems.fold<PriceUnit>(
       PriceUnit.zero,
       (previousValue, element) {
         return previousValue +
-            element.productCartList.fold<PriceUnit>(
-              PriceUnit.zero,
-              (previousValue, element) {
-                return previousValue +
-                    (element.variant
-                            ?.getPrice()
-                            .timesQuantity(element.quantity) ??
-                        PriceUnit.zero);
-              },
-            );
+            (element.variant?.getPrice().timesQuantity(element.quantity) ??
+                PriceUnit.zero);
       },
     );
-
     return totalPrice;
   }
 
-  PriceUnit? getSellerTotalPrice(String? sellerId) {
-    final cartItemGroup = state.cartItemGroups
-        .find((element) => element.distributor.id == sellerId);
-    final price = cartItemGroup?.productCartList.fold<PriceUnit>(
+  PriceUnit? getSellerTotalPrice() {
+    final price = state.cartItems.fold<PriceUnit>(
       PriceUnit.zero,
       (previousValue, element) {
         return previousValue +
@@ -125,12 +114,8 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
     return price;
   }
 
-  int? getSellerTotalSelectedCartItems(String? sellerId) {
-    final cartItemGroup = state.cartItemGroups
-        .find((element) => element.distributor.id == sellerId);
-
-    final totalItems =
-        cartItemGroup?.productCartList.where(isCartItemSelected).toList();
+  int? getSellerTotalSelectedCartItems() {
+    final totalItems = state.cartItems.where(isCartItemSelected).toList();
     return totalItems?.length;
   }
 

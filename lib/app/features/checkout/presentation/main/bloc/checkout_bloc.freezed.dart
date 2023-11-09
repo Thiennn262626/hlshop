@@ -590,7 +590,7 @@ abstract class _CreateOrderEvent extends CheckoutEvent {
 /// @nodoc
 mixin _$CheckoutState {
   ApiStatus get loadCartStatus => throw _privateConstructorUsedError;
-  List<ShoppingCartItemGroupEntity> get cartItemGroups =>
+  List<ShoppingCartItemEntity> get cartItems =>
       throw _privateConstructorUsedError;
   Set<String> get selectedCartItemIds => throw _privateConstructorUsedError;
   ApiStatus get loadUserDefaultAddressStatus =>
@@ -612,7 +612,7 @@ abstract class $CheckoutStateCopyWith<$Res> {
   @useResult
   $Res call(
       {ApiStatus loadCartStatus,
-      List<ShoppingCartItemGroupEntity> cartItemGroups,
+      List<ShoppingCartItemEntity> cartItems,
       Set<String> selectedCartItemIds,
       ApiStatus loadUserDefaultAddressStatus,
       UserAddressEntity? userAddress,
@@ -638,7 +638,7 @@ class _$CheckoutStateCopyWithImpl<$Res, $Val extends CheckoutState>
   @override
   $Res call({
     Object? loadCartStatus = null,
-    Object? cartItemGroups = null,
+    Object? cartItems = null,
     Object? selectedCartItemIds = null,
     Object? loadUserDefaultAddressStatus = null,
     Object? userAddress = freezed,
@@ -650,10 +650,10 @@ class _$CheckoutStateCopyWithImpl<$Res, $Val extends CheckoutState>
           ? _value.loadCartStatus
           : loadCartStatus // ignore: cast_nullable_to_non_nullable
               as ApiStatus,
-      cartItemGroups: null == cartItemGroups
-          ? _value.cartItemGroups
-          : cartItemGroups // ignore: cast_nullable_to_non_nullable
-              as List<ShoppingCartItemGroupEntity>,
+      cartItems: null == cartItems
+          ? _value.cartItems
+          : cartItems // ignore: cast_nullable_to_non_nullable
+              as List<ShoppingCartItemEntity>,
       selectedCartItemIds: null == selectedCartItemIds
           ? _value.selectedCartItemIds
           : selectedCartItemIds // ignore: cast_nullable_to_non_nullable
@@ -714,7 +714,7 @@ abstract class _$$CheckoutStateImplCopyWith<$Res>
   @useResult
   $Res call(
       {ApiStatus loadCartStatus,
-      List<ShoppingCartItemGroupEntity> cartItemGroups,
+      List<ShoppingCartItemEntity> cartItems,
       Set<String> selectedCartItemIds,
       ApiStatus loadUserDefaultAddressStatus,
       UserAddressEntity? userAddress,
@@ -741,7 +741,7 @@ class __$$CheckoutStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? loadCartStatus = null,
-    Object? cartItemGroups = null,
+    Object? cartItems = null,
     Object? selectedCartItemIds = null,
     Object? loadUserDefaultAddressStatus = null,
     Object? userAddress = freezed,
@@ -753,10 +753,10 @@ class __$$CheckoutStateImplCopyWithImpl<$Res>
           ? _value.loadCartStatus
           : loadCartStatus // ignore: cast_nullable_to_non_nullable
               as ApiStatus,
-      cartItemGroups: null == cartItemGroups
-          ? _value._cartItemGroups
-          : cartItemGroups // ignore: cast_nullable_to_non_nullable
-              as List<ShoppingCartItemGroupEntity>,
+      cartItems: null == cartItems
+          ? _value._cartItems
+          : cartItems // ignore: cast_nullable_to_non_nullable
+              as List<ShoppingCartItemEntity>,
       selectedCartItemIds: null == selectedCartItemIds
           ? _value._selectedCartItemIds
           : selectedCartItemIds // ignore: cast_nullable_to_non_nullable
@@ -786,26 +786,26 @@ class __$$CheckoutStateImplCopyWithImpl<$Res>
 class _$CheckoutStateImpl extends _CheckoutState with DiagnosticableTreeMixin {
   const _$CheckoutStateImpl(
       {this.loadCartStatus = const ApiStatus.initial(),
-      final List<ShoppingCartItemGroupEntity> cartItemGroups = const [],
+      final List<ShoppingCartItemEntity> cartItems = const [],
       final Set<String> selectedCartItemIds = const {},
       this.loadUserDefaultAddressStatus = const ApiStatus.initial(),
       this.userAddress,
       this.paymentMethod,
       this.createOrderStatus = const ApiStatus.initial()})
-      : _cartItemGroups = cartItemGroups,
+      : _cartItems = cartItems,
         _selectedCartItemIds = selectedCartItemIds,
         super._();
 
   @override
   @JsonKey()
   final ApiStatus loadCartStatus;
-  final List<ShoppingCartItemGroupEntity> _cartItemGroups;
+  final List<ShoppingCartItemEntity> _cartItems;
   @override
   @JsonKey()
-  List<ShoppingCartItemGroupEntity> get cartItemGroups {
-    if (_cartItemGroups is EqualUnmodifiableListView) return _cartItemGroups;
+  List<ShoppingCartItemEntity> get cartItems {
+    if (_cartItems is EqualUnmodifiableListView) return _cartItems;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_cartItemGroups);
+    return EqualUnmodifiableListView(_cartItems);
   }
 
   final Set<String> _selectedCartItemIds;
@@ -831,7 +831,7 @@ class _$CheckoutStateImpl extends _CheckoutState with DiagnosticableTreeMixin {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CheckoutState(loadCartStatus: $loadCartStatus, cartItemGroups: $cartItemGroups, selectedCartItemIds: $selectedCartItemIds, loadUserDefaultAddressStatus: $loadUserDefaultAddressStatus, userAddress: $userAddress, paymentMethod: $paymentMethod, createOrderStatus: $createOrderStatus)';
+    return 'CheckoutState(loadCartStatus: $loadCartStatus, cartItems: $cartItems, selectedCartItemIds: $selectedCartItemIds, loadUserDefaultAddressStatus: $loadUserDefaultAddressStatus, userAddress: $userAddress, paymentMethod: $paymentMethod, createOrderStatus: $createOrderStatus)';
   }
 
   @override
@@ -840,7 +840,7 @@ class _$CheckoutStateImpl extends _CheckoutState with DiagnosticableTreeMixin {
     properties
       ..add(DiagnosticsProperty('type', 'CheckoutState'))
       ..add(DiagnosticsProperty('loadCartStatus', loadCartStatus))
-      ..add(DiagnosticsProperty('cartItemGroups', cartItemGroups))
+      ..add(DiagnosticsProperty('cartItems', cartItems))
       ..add(DiagnosticsProperty('selectedCartItemIds', selectedCartItemIds))
       ..add(DiagnosticsProperty(
           'loadUserDefaultAddressStatus', loadUserDefaultAddressStatus))
@@ -857,7 +857,7 @@ class _$CheckoutStateImpl extends _CheckoutState with DiagnosticableTreeMixin {
             (identical(other.loadCartStatus, loadCartStatus) ||
                 other.loadCartStatus == loadCartStatus) &&
             const DeepCollectionEquality()
-                .equals(other._cartItemGroups, _cartItemGroups) &&
+                .equals(other._cartItems, _cartItems) &&
             const DeepCollectionEquality()
                 .equals(other._selectedCartItemIds, _selectedCartItemIds) &&
             (identical(other.loadUserDefaultAddressStatus,
@@ -876,7 +876,7 @@ class _$CheckoutStateImpl extends _CheckoutState with DiagnosticableTreeMixin {
   int get hashCode => Object.hash(
       runtimeType,
       loadCartStatus,
-      const DeepCollectionEquality().hash(_cartItemGroups),
+      const DeepCollectionEquality().hash(_cartItems),
       const DeepCollectionEquality().hash(_selectedCartItemIds),
       loadUserDefaultAddressStatus,
       userAddress,
@@ -893,7 +893,7 @@ class _$CheckoutStateImpl extends _CheckoutState with DiagnosticableTreeMixin {
 abstract class _CheckoutState extends CheckoutState {
   const factory _CheckoutState(
       {final ApiStatus loadCartStatus,
-      final List<ShoppingCartItemGroupEntity> cartItemGroups,
+      final List<ShoppingCartItemEntity> cartItems,
       final Set<String> selectedCartItemIds,
       final ApiStatus loadUserDefaultAddressStatus,
       final UserAddressEntity? userAddress,
@@ -904,7 +904,7 @@ abstract class _CheckoutState extends CheckoutState {
   @override
   ApiStatus get loadCartStatus;
   @override
-  List<ShoppingCartItemGroupEntity> get cartItemGroups;
+  List<ShoppingCartItemEntity> get cartItems;
   @override
   Set<String> get selectedCartItemIds;
   @override

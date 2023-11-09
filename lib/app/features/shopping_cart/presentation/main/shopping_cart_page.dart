@@ -19,10 +19,23 @@ class ShoppingCartPage extends StatelessWidget {
         ),
       ),
       body: BlocBuilder<ShoppingCartBloc, ShoppingCartState>(
-        builder: (context, state) => AppLoading(
-          isLoading: state.status.isLoading,
-          child: const ShoppingCartBody(),
-        ),
+        builder: (context, state) {
+          final items = state.itemGroups;
+          if (items.isEmpty) {
+            return 'Không có sản phẩm nào trong giỏ hàng'
+                .tr()
+                .text
+                .center
+                .makeCentered()
+                .p16();
+          }
+          return AppLoading(
+            isLoading: state.status.isLoading,
+            child: ShoppingCartBody(
+              listItem: items,
+            ),
+          );
+        },
       ),
       bottomNavigationBar: const ShoppingCartBottomBar(),
     );

@@ -10,8 +10,8 @@ MsCreateOrderRq _$MsCreateOrderRqFromJson(Map<String, dynamic> json) =>
     MsCreateOrderRq(
       receiverAddressID: json['receiverAddressID'] as String?,
       paymentMethod: json['paymentMethod'] as int?,
-      sellers: (json['sellers'] as List<dynamic>?)
-          ?.map((e) => Sellers.fromJson(e as Map<String, dynamic>))
+      carts: (json['carts'] as List<dynamic>?)
+          ?.map((e) => Carts.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -19,18 +19,6 @@ Map<String, dynamic> _$MsCreateOrderRqToJson(MsCreateOrderRq instance) =>
     <String, dynamic>{
       'receiverAddressID': instance.receiverAddressID,
       'paymentMethod': instance.paymentMethod,
-      'sellers': instance.sellers,
-    };
-
-Sellers _$SellersFromJson(Map<String, dynamic> json) => Sellers(
-      sellerID: json['sellerID'] as String?,
-      carts: (json['carts'] as List<dynamic>?)
-          ?.map((e) => Carts.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$SellersToJson(Sellers instance) => <String, dynamic>{
-      'sellerID': instance.sellerID,
       'carts': instance.carts,
     };
 

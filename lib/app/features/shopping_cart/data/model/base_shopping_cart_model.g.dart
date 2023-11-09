@@ -34,26 +34,6 @@ Map<String, dynamic> _$MsShoppingCartUpdateReqToJson(
       'quantity': instance.quantity,
     };
 
-MsShoppingCart _$MsShoppingCartFromJson(Map<String, dynamic> json) =>
-    MsShoppingCart(
-      sellerID: json['sellerID'] as String?,
-      sellerContactFullName: json['sellerContactFullName'] as String?,
-      sellerBusinessName: json['sellerBusinessName'] as String?,
-      dataCart: (json['dataCart'] as List<dynamic>?)
-          ?.map((e) => MsProductCart.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      countCart: json['countCart'] as int?,
-    );
-
-Map<String, dynamic> _$MsShoppingCartToJson(MsShoppingCart instance) =>
-    <String, dynamic>{
-      'sellerID': instance.sellerID,
-      'sellerContactFullName': instance.sellerContactFullName,
-      'sellerBusinessName': instance.sellerBusinessName,
-      'dataCart': instance.dataCart,
-      'countCart': instance.countCart,
-    };
-
 MsProductCart _$MsProductCartFromJson(Map<String, dynamic> json) =>
     MsProductCart(
       cartID: json['cartID'] as String?,

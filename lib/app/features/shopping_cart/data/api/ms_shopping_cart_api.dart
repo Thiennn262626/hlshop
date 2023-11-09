@@ -18,5 +18,5 @@ abstract class MsShoppingCartApi {
   });
 
   @GET('/api/hlshop/cart/get-list-cart')
-  Future<List<MsShoppingCart>> getCartList();
+  Future<List<MsProductCart>> getCartList();
 }

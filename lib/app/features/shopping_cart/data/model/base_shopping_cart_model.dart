@@ -39,28 +39,6 @@ class MsShoppingCartUpdateReq {
 }
 
 @JsonSerializable()
-class MsShoppingCart {
-  final String? sellerID;
-  final String? sellerContactFullName;
-  final String? sellerBusinessName;
-  final List<MsProductCart>? dataCart;
-  final int? countCart;
-
-  const MsShoppingCart({
-    this.sellerID,
-    this.sellerContactFullName,
-    this.sellerBusinessName,
-    this.dataCart,
-    this.countCart,
-  });
-
-  factory MsShoppingCart.fromJson(Map<String, dynamic> json) =>
-      _$MsShoppingCartFromJson(json);
-
-  Map<String, dynamic> toJson() => _$MsShoppingCartToJson(this);
-}
-
-@JsonSerializable()
 class MsProductCart extends MsProduct {
   final String? cartID;
   final String? productSKUID;

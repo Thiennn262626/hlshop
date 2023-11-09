@@ -1705,7 +1705,7 @@ abstract class _ShoppingCartToggleSellerEvent extends ShoppingCartEvent {
 mixin _$ShoppingCartState {
   ApiStatus get status => throw _privateConstructorUsedError;
   ApiStatus get itemStatus => throw _privateConstructorUsedError;
-  List<ShoppingCartItemGroupEntity> get itemGroups =>
+  List<ShoppingCartItemEntity> get itemGroups =>
       throw _privateConstructorUsedError;
   Set<String> get selectedCartItemIds => throw _privateConstructorUsedError;
 
@@ -1723,7 +1723,7 @@ abstract class $ShoppingCartStateCopyWith<$Res> {
   $Res call(
       {ApiStatus status,
       ApiStatus itemStatus,
-      List<ShoppingCartItemGroupEntity> itemGroups,
+      List<ShoppingCartItemEntity> itemGroups,
       Set<String> selectedCartItemIds});
 
   $ApiStatusCopyWith<$Res> get status;
@@ -1760,7 +1760,7 @@ class _$ShoppingCartStateCopyWithImpl<$Res, $Val extends ShoppingCartState>
       itemGroups: null == itemGroups
           ? _value.itemGroups
           : itemGroups // ignore: cast_nullable_to_non_nullable
-              as List<ShoppingCartItemGroupEntity>,
+              as List<ShoppingCartItemEntity>,
       selectedCartItemIds: null == selectedCartItemIds
           ? _value.selectedCartItemIds
           : selectedCartItemIds // ignore: cast_nullable_to_non_nullable
@@ -1796,7 +1796,7 @@ abstract class _$$ShoppingCartStateImplCopyWith<$Res>
   $Res call(
       {ApiStatus status,
       ApiStatus itemStatus,
-      List<ShoppingCartItemGroupEntity> itemGroups,
+      List<ShoppingCartItemEntity> itemGroups,
       Set<String> selectedCartItemIds});
 
   @override
@@ -1833,7 +1833,7 @@ class __$$ShoppingCartStateImplCopyWithImpl<$Res>
       itemGroups: null == itemGroups
           ? _value._itemGroups
           : itemGroups // ignore: cast_nullable_to_non_nullable
-              as List<ShoppingCartItemGroupEntity>,
+              as List<ShoppingCartItemEntity>,
       selectedCartItemIds: null == selectedCartItemIds
           ? _value._selectedCartItemIds
           : selectedCartItemIds // ignore: cast_nullable_to_non_nullable
@@ -1849,7 +1849,7 @@ class _$ShoppingCartStateImpl extends _ShoppingCartState
   const _$ShoppingCartStateImpl(
       {this.status = const ApiStatus.initial(),
       this.itemStatus = const ApiStatus.initial(),
-      final List<ShoppingCartItemGroupEntity> itemGroups = const [],
+      final List<ShoppingCartItemEntity> itemGroups = const [],
       final Set<String> selectedCartItemIds = const {}})
       : _itemGroups = itemGroups,
         _selectedCartItemIds = selectedCartItemIds,
@@ -1861,10 +1861,10 @@ class _$ShoppingCartStateImpl extends _ShoppingCartState
   @override
   @JsonKey()
   final ApiStatus itemStatus;
-  final List<ShoppingCartItemGroupEntity> _itemGroups;
+  final List<ShoppingCartItemEntity> _itemGroups;
   @override
   @JsonKey()
-  List<ShoppingCartItemGroupEntity> get itemGroups {
+  List<ShoppingCartItemEntity> get itemGroups {
     if (_itemGroups is EqualUnmodifiableListView) return _itemGroups;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_itemGroups);
@@ -1930,7 +1930,7 @@ abstract class _ShoppingCartState extends ShoppingCartState {
   const factory _ShoppingCartState(
       {final ApiStatus status,
       final ApiStatus itemStatus,
-      final List<ShoppingCartItemGroupEntity> itemGroups,
+      final List<ShoppingCartItemEntity> itemGroups,
       final Set<String> selectedCartItemIds}) = _$ShoppingCartStateImpl;
   const _ShoppingCartState._() : super._();
 
@@ -1939,7 +1939,7 @@ abstract class _ShoppingCartState extends ShoppingCartState {
   @override
   ApiStatus get itemStatus;
   @override
-  List<ShoppingCartItemGroupEntity> get itemGroups;
+  List<ShoppingCartItemEntity> get itemGroups;
   @override
   Set<String> get selectedCartItemIds;
   @override

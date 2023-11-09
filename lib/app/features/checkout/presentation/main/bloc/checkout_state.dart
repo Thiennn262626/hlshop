@@ -12,7 +12,7 @@ class CheckoutState with _$CheckoutState {
 
   const factory CheckoutState({
     @Default(ApiStatus.initial()) ApiStatus loadCartStatus,
-    @Default([]) List<ShoppingCartItemGroupEntity> cartItemGroups,
+    @Default([]) List<ShoppingCartItemEntity> cartItems,
     @Default({}) Set<String> selectedCartItemIds,
     @Default(ApiStatus.initial()) ApiStatus loadUserDefaultAddressStatus,
     UserAddressEntity? userAddress,

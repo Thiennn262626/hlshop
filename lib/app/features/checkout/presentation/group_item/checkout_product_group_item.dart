@@ -4,26 +4,22 @@ import 'package:hlshop/app/features/checkout/presentation/main/bloc/checkout_blo
 import 'package:hlshop/app/features/shopping_cart/seft.dart';
 
 class CheckoutProductGroupItem extends StatelessWidget {
-  const CheckoutProductGroupItem({super.key, this.cartItemGroup});
+  const CheckoutProductGroupItem({super.key, this.cartItems});
 
-  final ShoppingCartItemGroupEntity? cartItemGroup;
+  final List<ShoppingCartItemEntity>? cartItems;
 
   @override
   Widget build(BuildContext context) {
     final bloc = context.read<CheckoutBloc>();
+    print('20110263 - cartItems: ${cartItems?.length}}');
     return Column(
       children: [
-        Row(
-          children: [
-            const Icon(PhosphorIcons.storefront),
-            '${cartItemGroup?.distributor.name}'
-                .text
-                .titleMedium(context)
-                .semiBold
-                .make()
-                .expand(),
-          ].withDivider(Gaps.hGap8),
-        ).pDefault(),
+        // Row(
+        //   children: [
+        //     const Icon(PhosphorIcons.storefront),
+        //     'Long chau'.text.titleMedium(context).semiBold.make().expand(),
+        //   ].withDivider(Gaps.hGap8),
+        // ).pDefault(),
         const Divider(
           thickness: 1,
           height: 1,
@@ -31,10 +27,10 @@ class CheckoutProductGroupItem extends StatelessWidget {
         ListView.separated(
           shrinkWrap: true,
           padding: const EdgeInsets.symmetric(vertical: 16),
-          itemCount: cartItemGroup?.productCartList.length ?? 0,
+          itemCount: cartItems?.length ?? 0,
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context, index) {
-            final cartItem = cartItemGroup?.productCartList.getOrNull(index);
+            final cartItem = cartItems?.getOrNull(index);
             return CheckoutProductItem(
               productItem: cartItem?.product,
               quantity: cartItem?.quantity,
@@ -67,12 +63,7 @@ class CheckoutProductGroupItem extends StatelessWidget {
             'Tổng tiền ({} sản phẩm):'
                 .tr(
                   args: [
-                    bloc
-                            .getSellerTotalSelectedCartItems(
-                              cartItemGroup?.distributor.id,
-                            )
-                            ?.toString() ??
-                        '0',
+                    bloc.getSellerTotalSelectedCartItems()?.toString() ?? '0',
                   ],
                 )
                 .text
@@ -81,7 +72,7 @@ class CheckoutProductGroupItem extends StatelessWidget {
                 .make()
                 .expand(),
             AppPrice(
-              price: bloc.getSellerTotalPrice(cartItemGroup?.distributor.id),
+              price: bloc.getSellerTotalPrice(),
               style: TextStyle(
                 fontWeight: FontWeight.w600,
                 fontSize: context.textS,

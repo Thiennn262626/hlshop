@@ -69,9 +69,9 @@ class MsShoppingCartRepo extends ShoppingCartRepo {
   }
 
   @override
-  Future<List<ShoppingCartItemGroupEntity>> getShoppingCartList() {
+  Future<List<ShoppingCartItemEntity>> getShoppingCartList() {
     return _api.getCartList().then((rs) {
-      return rs.mapAsList((item) => item.toEntity());
+      return rs.mapAsList((item) => item.getProductCartItem());
     });
   }
 
