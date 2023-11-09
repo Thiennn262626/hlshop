@@ -246,7 +246,6 @@ class ShoppingCartBloc extends Bloc<ShoppingCartEvent, ShoppingCartState> {
   // }
 
   int? getTotalItems() {
-    print('20110263 - getTotalItems ${state.itemGroups.length}');
     return state.itemGroups.length;
     // return state.itemGroups.fold(
     //   0,

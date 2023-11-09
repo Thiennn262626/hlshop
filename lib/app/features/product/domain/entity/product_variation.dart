@@ -34,7 +34,6 @@ class ProductVariantEntity {
   final Object? object;
 
   PriceUnit getPrice() {
-    print('20110263 - price: $price');
     return price ?? PriceUnit.notFound;
   }
 }

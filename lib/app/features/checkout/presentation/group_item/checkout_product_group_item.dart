@@ -1,17 +1,16 @@
 import 'package:hlshop/all_file/all_file.dart';
 import 'package:hlshop/app/features/checkout/presentation/item/checkout_product_item.dart';
 import 'package:hlshop/app/features/checkout/presentation/main/bloc/checkout_bloc.dart';
-import 'package:hlshop/app/features/shopping_cart/seft.dart';
 
 class CheckoutProductGroupItem extends StatelessWidget {
-  const CheckoutProductGroupItem({super.key, this.cartItems});
+  const CheckoutProductGroupItem({super.key});
 
-  final List<ShoppingCartItemEntity>? cartItems;
+  //final List<ShoppingCartItemEntity>? cartItems;
 
   @override
   Widget build(BuildContext context) {
     final bloc = context.read<CheckoutBloc>();
-    print('20110263 - cartItems: ${cartItems?.length}}');
+    final cartItems = bloc.state.cartItems;
     return Column(
       children: [
         // Row(
