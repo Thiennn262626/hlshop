@@ -17,6 +17,10 @@ abstract class _$ShoppingCartItemEntityCWProxy {
 
   ShoppingCartItemEntity object(Object? object);
 
+  ShoppingCartItemEntity price(PriceUnit price);
+
+  ShoppingCartItemEntity priceBefore(PriceUnit priceBefore);
+
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ShoppingCartItemEntity(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -29,6 +33,8 @@ abstract class _$ShoppingCartItemEntityCWProxy {
     int? quantity,
     ProductVariantEntity? variant,
     Object? object,
+    PriceUnit? price,
+    PriceUnit? priceBefore,
   });
 }
 
@@ -57,6 +63,13 @@ class _$ShoppingCartItemEntityCWProxyImpl
   ShoppingCartItemEntity object(Object? object) => this(object: object);
 
   @override
+  ShoppingCartItemEntity price(PriceUnit price) => this(price: price);
+
+  @override
+  ShoppingCartItemEntity priceBefore(PriceUnit priceBefore) =>
+      this(priceBefore: priceBefore);
+
+  @override
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ShoppingCartItemEntity(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -70,6 +83,8 @@ class _$ShoppingCartItemEntityCWProxyImpl
     Object? quantity = const $CopyWithPlaceholder(),
     Object? variant = const $CopyWithPlaceholder(),
     Object? object = const $CopyWithPlaceholder(),
+    Object? price = const $CopyWithPlaceholder(),
+    Object? priceBefore = const $CopyWithPlaceholder(),
   }) {
     return ShoppingCartItemEntity(
       id: id == const $CopyWithPlaceholder()
@@ -92,6 +107,15 @@ class _$ShoppingCartItemEntityCWProxyImpl
           ? _value.object
           // ignore: cast_nullable_to_non_nullable
           : object as Object?,
+      price: price == const $CopyWithPlaceholder() || price == null
+          ? _value.price
+          // ignore: cast_nullable_to_non_nullable
+          : price as PriceUnit,
+      priceBefore:
+          priceBefore == const $CopyWithPlaceholder() || priceBefore == null
+              ? _value.priceBefore
+              // ignore: cast_nullable_to_non_nullable
+              : priceBefore as PriceUnit,
     );
   }
 }

@@ -1,8 +1,6 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/checkout/presentation/item/checkout_product_item.dart';
 import 'package:hlshop/app/features/distributor/presentation/widgets/distributer_name.dart';
 import 'package:hlshop/app/features/user_order/domain/entities/order_entities.dart';
-import 'package:hlshop/app/features/user_order/presentation/main/cubit/user_order_cubit.dart';
 
 class UserOrderGroupItem extends StatelessWidget {
   const UserOrderGroupItem({
@@ -49,10 +47,10 @@ class UserOrderGroupItem extends StatelessWidget {
                 itemBuilder: (context, index) {
                   final orderProduct =
                       orderData?.orderProductList.getOrNull(index);
-                  return CheckoutProductItem(
-                    productItem: orderProduct?.productEntity,
-                    quantity: orderProduct?.quantity ?? 1,
-                  );
+                  // return CheckoutProductItem(
+                  //   productItem: orderProduct?.productEntity,
+                  //   quantity: orderProduct?.quantity ?? 1,
+                  // );
                 },
                 separatorBuilder: (context, index) {
                   return const SizedBox(height: 20);

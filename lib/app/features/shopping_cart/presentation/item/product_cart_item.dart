@@ -1,39 +1,10 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/product/presentation/item/layout/product_item_layout.dart';
 import 'package:hlshop/app/features/product/presentation/item/product_item_args.dart';
 import 'package:hlshop/app/features/product/presentation/widget/product_price_with_type.dart';
 import 'package:hlshop/app/features/shopping_cart/domain/model/shopping_cart_base_entity.dart';
 
-class CheckoutProductItemLayout1 extends StatelessWidget {
-  const CheckoutProductItemLayout1({
-    super.key,
-    required this.cartItem,
-    this.quantity,
-  });
-  final ShoppingCartItemEntity cartItem;
-  final int? quantity;
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        CheckoutProductItem(
-          cartItem: cartItem,
-          args: ProductItemArgs(
-            action: Row(
-              children: [
-                'x '.text.make(),
-                '$quantity'.text.semiBold.size(15).make(),
-              ],
-            ),
-          ),
-        ).expand(),
-      ],
-    );
-  }
-}
-
-class CheckoutProductItem extends StatelessWidget {
-  const CheckoutProductItem({
+class ProductCartItem extends StatelessWidget {
+  const ProductCartItem({
     super.key,
     required this.cartItem,
     this.onAddToCart,
@@ -52,7 +23,7 @@ class CheckoutProductItem extends StatelessWidget {
     return CardCupertinoEffect(
       onPressed: onPressed,
       child: SizedBox(
-        height: ProductItemLayoutType.layoutTile3.size.height,
+        height: 120,
         child: Row(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -70,7 +41,7 @@ class CheckoutProductItem extends StatelessWidget {
               ),
             ).aspectRatio(1),
             Gaps.hGap12,
-            _buildContent(context).py8().expand(),
+            _buildContent(context).expand(),
           ],
         ),
       ),
@@ -83,29 +54,28 @@ class CheckoutProductItem extends StatelessWidget {
       children: [
         cartItem.product.name?.textAuto
             .titleMedium(context)
-            .medium
+            .semiBold
             .maxLines(2)
             .ellipsis
             .make()
             .pb2()
             .minHeight(22),
-        const Spacer(),
-        Row(
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
             ProductPriceWithType(
               price: cartItem.variant?.price,
-              priceStyle: context.bodyMedium?.copyWith(
-                fontWeight: FontWeight.w500,
-                fontSize: context.textS,
-              ),
               type: cartItem.product.type,
-              typeStyle: context.bodySmall?.copyWith(
-                color: context.themeColor.grey,
-              ),
-            ).expand(),
-            args.action,
-          ].withDivider(Gaps.hGap8),
+            ),
+            Gaps.vGap2,
+            AppListedPrice(
+              price: cartItem.variant?.listedPrice,
+            ),
+          ],
         ),
+        const Spacer(),
+        args.action ?? const SizedBox.shrink(),
       ].filterNotNullList(),
     );
   }

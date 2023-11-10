@@ -19,10 +19,12 @@ extension MsProductCartExt on MsProductCart {
   ShoppingCartItemEntity getProductCartItem() {
     return ShoppingCartItemEntity(
       id: cartID,
-      product: toEntity(),
+      product: this.toEntity(),
       quantity: quantity ?? 0,
       variant: getVariant(),
       object: this,
+      price: price.toPriceUnit,
+      priceBefore: priceBefore.toPriceUnit,
     );
   }
 }

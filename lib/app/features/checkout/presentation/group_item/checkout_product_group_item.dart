@@ -1,11 +1,10 @@
 import 'package:hlshop/all_file/all_file.dart';
 import 'package:hlshop/app/features/checkout/presentation/item/checkout_product_item.dart';
 import 'package:hlshop/app/features/checkout/presentation/main/bloc/checkout_bloc.dart';
+import 'package:hlshop/app/features/shopping_cart/domain/model/shopping_cart_base_entity.dart';
 
 class CheckoutProductGroupItem extends StatelessWidget {
   const CheckoutProductGroupItem({super.key});
-
-  //final List<ShoppingCartItemEntity>? cartItems;
 
   @override
   Widget build(BuildContext context) {
@@ -13,12 +12,6 @@ class CheckoutProductGroupItem extends StatelessWidget {
     final cartItems = bloc.state.cartItems;
     return Column(
       children: [
-        // Row(
-        //   children: [
-        //     const Icon(PhosphorIcons.storefront),
-        //     'Long chau'.text.titleMedium(context).semiBold.make().expand(),
-        //   ].withDivider(Gaps.hGap8),
-        // ).pDefault(),
         const Divider(
           thickness: 1,
           height: 1,
@@ -29,9 +22,9 @@ class CheckoutProductGroupItem extends StatelessWidget {
           itemCount: cartItems?.length ?? 0,
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context, index) {
-            final cartItem = cartItems?.getOrNull(index);
+            final cartItem = cartItems.getOrNull(index);
             return CheckoutProductItem(
-              productItem: cartItem?.product,
+              cartItem: cartItem ?? ShoppingCartItemEntity.demo(),
               quantity: cartItem?.quantity,
             );
           },

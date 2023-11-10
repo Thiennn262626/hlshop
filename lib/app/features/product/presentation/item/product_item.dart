@@ -55,6 +55,7 @@ class ProductItem extends StatelessWidget {
               onPressed: () => _onItemClick(context),
               onAddToCart: () => _onAddToCart(context),
             );
+
           case null:
             break;
         }
