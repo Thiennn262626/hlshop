@@ -27,11 +27,6 @@ class ReceiveDetailAccountBody extends StatelessWidget {
                 },
               ),
               AppDetailAccountTile(
-                title: 'Địa chỉ'.tr(),
-                num: user?.addressList?.length,
-                onPressed: () {},
-              ),
-              AppDetailAccountTile(
                 title: 'Số điện thoại'.tr(),
                 num: user?.phoneList?.length,
                 onPressed: () {

@@ -138,10 +138,14 @@ class _UserAddressItemState extends State<UserAddressItem> {
                     if (widget.address.addressAndPhone.isNotNullOrBlank)
                       widget.address.addressAndPhone!.text
                           .colorDark(context)
+                          .maxLines(1)
+                          .ellipsis
                           .make(),
                     if (widget.address.fullAddress.isNotNullOrBlank)
                       widget.address.addressDetail!.text
                           .colorDark(context)
+                          .maxLines(1)
+                          .ellipsis
                           .make(),
                     if (widget.address.addressType != null)
                       widget.address.addressType?.displayValue
@@ -155,9 +159,9 @@ class _UserAddressItemState extends State<UserAddressItem> {
                           .cornerRadius(Dimens.rad_XL4)
                           .pt4(),
                   ].withDivider(Gaps.vGap4),
-                ),
+                ).expand(),
               ],
-            ),
+            ).expand(),
             if (widget.canSelectPrimary == true)
               Row(
                 children: [
@@ -173,7 +177,7 @@ class _UserAddressItemState extends State<UserAddressItem> {
                     child: 'Sửa'.text.make(),
                   ),
                 ],
-              )
+              ),
           ],
         ),
       ],
