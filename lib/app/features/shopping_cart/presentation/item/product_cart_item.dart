@@ -60,6 +60,15 @@ class ProductCartItem extends StatelessWidget {
             .make()
             .pb2()
             .minHeight(22),
+        'Phân loại: {}'
+            .tr(
+              args: [cartItem.variant?.variantValueName ?? ''],
+            )
+            .text
+            .textXS3
+            .colorDark(context)
+            .make()
+            .expand(),
         Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.end,

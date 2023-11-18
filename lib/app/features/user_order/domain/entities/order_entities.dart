@@ -1,5 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/common/domain/domain.dart';
 import 'package:hlshop/app/features/distributor/domain/entity/distributor_entity.dart';
 import 'package:hlshop/app/features/product/self.dart';
 import 'package:hlshop/app/features/user/domain/entity/user_base_entity.dart';
@@ -87,21 +86,31 @@ class OrderDataEntity {
 class OrderProductEntity {
   OrderProductEntity({
     this.orderItemID,
-    this.images,
     this.quantity,
     this.price,
     this.priceBefore,
-    this.productCartAttribute,
+    this.variant,
     this.productEntity,
     this.object,
   });
 
   final String? orderItemID;
   final ProductEntity? productEntity;
-  final List<ImageEntity>? images;
   final int? quantity;
   final PriceUnit? price;
   final PriceUnit? priceBefore;
-  final List<ProductAttributeEntity?>? productCartAttribute;
+
+  final ProductVariantEntity? variant;
   final Object? object;
+
+  static OrderProductEntity demo() {
+    return OrderProductEntity(
+      orderItemID: 'orderItemID',
+      productEntity: ProductEntity.demo(),
+      quantity: 1,
+      price: PriceUnit(),
+      priceBefore: PriceUnit(),
+      variant: ProductVariantEntity.demo(),
+    );
+  }
 }

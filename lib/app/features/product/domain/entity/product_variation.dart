@@ -36,6 +36,9 @@ class ProductVariantEntity {
   PriceUnit getPrice() {
     return price ?? PriceUnit.notFound;
   }
+
+  String? get variantValueName =>
+      variantValueList?.map((e) => e.attributeValue?.name).join(' - ');
 }
 
 class ProductVariantAttributeEntity {

@@ -56,7 +56,25 @@ extension MsListOderConvert on MsOrder {
 }
 
 extension MsOderGroupDataConvert on MsOderGroupData {
+  ProductVariantEntity getVariant(List<MsProductCartAttribute>? attribute) {
+    return ProductVariantEntity(
+      variantValueList: attribute?.mapAsList(
+            (item) => ProductVariantAttributeEntity(
+              attribute: item.getAttribute(),
+              attributeValue: item.getAttributeValue(),
+            ),
+          ) ??
+          [],
+      object: this,
+    );
+  }
+
   OrderDataEntity toEntity() {
+    print('201102630 - e.orderItemID');
+    dataOrderItem?.mapAsList((e) {
+      print('20110263 - e.orderItemID');
+      print(e.attribute?.mapAsList((e) => e.attributeID));
+    });
     return OrderDataEntity(
       object: this,
       id: orderID,
@@ -71,18 +89,10 @@ extension MsOderGroupDataConvert on MsOderGroupData {
               object: this,
               orderItemID: item.orderItemID,
               productEntity: item.toProductEntity(),
-              images: item.medias?.mapAsList((e) => e.toEntity()) ?? [],
               quantity: item.quantity,
               price: item.price,
               priceBefore: item.priceBefore,
-              productCartAttribute: item.attribute?.mapAsList(
-                    (e) => ProductAttributeEntity(
-                      id: e.attributeID,
-                      name: e.locAttributeName,
-                      object: e,
-                    ),
-                  ) ??
-                  [],
+              variant: getVariant(item.attribute),
             ),
           ) ??
           [],

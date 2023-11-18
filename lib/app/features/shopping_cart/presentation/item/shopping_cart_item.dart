@@ -36,6 +36,13 @@ class ShoppingCartItem extends StatelessWidget {
           ),
           ProductCartItem(
             cartItem: cartItem,
+            onPressed: () {
+              context.pushRoute(
+                ProductDetailRoute(
+                  product: cartItem.product,
+                ),
+              );
+            },
             args: ProductItemArgs(
               action: GestureDetector(
                 onTap: () {

@@ -1,6 +1,7 @@
 import 'package:hlshop/all_file/all_file.dart';
 import 'package:hlshop/app/features/distributor/presentation/widgets/distributer_name.dart';
 import 'package:hlshop/app/features/user_order/domain/entities/order_entities.dart';
+import 'package:hlshop/app/features/user_order/presentation/item/user_order_item.dart';
 
 class UserOrderGroupItem extends StatelessWidget {
   const UserOrderGroupItem({
@@ -47,10 +48,10 @@ class UserOrderGroupItem extends StatelessWidget {
                 itemBuilder: (context, index) {
                   final orderProduct =
                       orderData?.orderProductList.getOrNull(index);
-                  // return CheckoutProductItem(
-                  //   productItem: orderProduct?.productEntity,
-                  //   quantity: orderProduct?.quantity ?? 1,
-                  // );
+                  return OrderProductItem(
+                    orderItem: orderProduct ?? OrderProductEntity.demo(),
+                    quantity: orderProduct?.quantity,
+                  );
                 },
                 separatorBuilder: (context, index) {
                   return const SizedBox(height: 20);
@@ -72,7 +73,9 @@ class UserOrderGroupItem extends StatelessWidget {
             children: [
               'Tổng thanh toán ({} sản phẩm):'
                   .tr(
-                    args: ['3'],
+                    args: [
+                      orderData?.orderProductList?.length.toString() ?? ''
+                    ],
                   )
                   .text
                   .textS
