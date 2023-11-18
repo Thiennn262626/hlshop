@@ -1,5 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/distributor/domain/entity/distributor_entity.dart';
 import 'package:hlshop/app/features/product/self.dart';
 import 'package:hlshop/app/features/user/domain/entity/user_base_entity.dart';
 
@@ -57,14 +56,11 @@ class OrderEntity {
 class OrderDataEntity {
   OrderDataEntity({
     this.orderProductList,
-    this.distributorEntity,
     this.object,
     this.userAddressEntity,
     this.id,
     this.orderCode,
   });
-
-  final DistributorEntity? distributorEntity;
   final List<OrderProductEntity>? orderProductList;
   final Object? object;
   final UserAddressEntity? userAddressEntity;

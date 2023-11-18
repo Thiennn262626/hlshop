@@ -1,7 +1,7 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/distributor/presentation/widgets/distributer_name.dart';
 import 'package:hlshop/app/features/user_order/domain/entities/order_entities.dart';
 import 'package:hlshop/app/features/user_order/presentation/item/user_order_item.dart';
+import 'package:hlshop/app/features/user_order/presentation/widgets/distributer_name.dart';
 
 class UserOrderGroupItem extends StatelessWidget {
   const UserOrderGroupItem({
@@ -18,7 +18,9 @@ class UserOrderGroupItem extends StatelessWidget {
   final int? limitItemShow;
 
   void _onItemClick(BuildContext context) {
-    context.pushRoute(UserOrderDetailRoute(order: orderData));
+    if (limitItemShow != null) {
+      context.pushRoute(UserOrderDetailRoute(order: orderData));
+    }
   }
 
   @override
@@ -35,8 +37,8 @@ class UserOrderGroupItem extends StatelessWidget {
       },
       child: Column(
         children: [
-          DistributorName(
-            distributorEntity: orderData?.distributorEntity,
+          OrderCodeGroup(
+            orderCode: orderData?.orderCode ?? '',
           ).pDefault(),
           Column(
             children: [

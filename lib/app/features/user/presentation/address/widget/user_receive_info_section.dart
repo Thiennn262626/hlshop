@@ -141,7 +141,7 @@ class _UserAddressItemState extends State<UserAddressItem> {
                           .maxLines(1)
                           .ellipsis
                           .make(),
-                    if (widget.address.fullAddress.isNotNullOrBlank)
+                    if (widget.address.addressDetail.isNotNullOrBlank)
                       widget.address.addressDetail!.text
                           .colorDark(context)
                           .maxLines(1)

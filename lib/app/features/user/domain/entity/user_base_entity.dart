@@ -100,7 +100,7 @@ class UserEmailEntity {
   bool? isVerify;
 
   static UserEmailEntity demo() => UserEmailEntity(
-        emailAddress: 'nguyenphucthanh@gmail.com',
+        emailAddress: 'nguyendinhthien@gmail.com',
       );
 
   factory UserEmailEntity.fromJson(Map<String, dynamic> json) =>

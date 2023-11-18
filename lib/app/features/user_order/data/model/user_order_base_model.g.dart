@@ -21,24 +21,18 @@ MsOderGroupData _$MsOderGroupDataFromJson(Map<String, dynamic> json) =>
       (json['dataOrderItem'] as List<dynamic>?)
           ?.map((e) => MsOrderProduct.fromJson(e as Map<String, dynamic>))
           .toList(),
-      json['sellerID'] as String?,
-      json['sellerContactFullName'] as String?,
-      json['sellerBusinessName'] as String?,
       json['orderCode'] as String?,
       json['orderID'] as String?,
       json['paymentMethod'] as int?,
       $enumDecodeNullable(_$MsOrderStatusEnumMap, json['orderStatus']),
       json['receiverAddresse'] == null
           ? null
-          : ReceiverAddresse.fromJson(
+          : ReceiverAddressesMS.fromJson(
               json['receiverAddresse'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$MsOderGroupDataToJson(MsOderGroupData instance) =>
     <String, dynamic>{
-      'sellerID': instance.sellerID,
-      'sellerContactFullName': instance.sellerContactFullName,
-      'sellerBusinessName': instance.sellerBusinessName,
       'dataOrderItem': instance.dataOrderItem,
       'orderCode': instance.orderCode,
       'orderID': instance.orderID,
@@ -89,38 +83,6 @@ Map<String, dynamic> _$MsOrderProductToJson(MsOrderProduct instance) =>
       'price': priceUnitToJson(instance.price),
       'priceBefore': priceUnitToJson(instance.priceBefore),
       'attribute': instance.attribute,
-    };
-
-ReceiverAddresse _$ReceiverAddresseFromJson(Map<String, dynamic> json) =>
-    ReceiverAddresse(
-      json['receiverAddressID'] as String?,
-      json['receiverContactName'] as String?,
-      json['receiverPhone'] as String?,
-      json['receiverEmail'] as String?,
-      json['districtID'] as String?,
-      json['cityID'] as String?,
-      json['addressLabel'] as int?,
-      json['userID'] as String?,
-      json['addressString'] as String?,
-      json['isDefault'] as int?,
-      json['cityName'] as String?,
-      json['districtName'] as String?,
-    );
-
-Map<String, dynamic> _$ReceiverAddresseToJson(ReceiverAddresse instance) =>
-    <String, dynamic>{
-      'receiverAddressID': instance.receiverAddressID,
-      'receiverContactName': instance.receiverContactName,
-      'receiverPhone': instance.receiverPhone,
-      'receiverEmail': instance.receiverEmail,
-      'districtID': instance.districtID,
-      'cityID': instance.cityID,
-      'addressLabel': instance.addressLabel,
-      'userID': instance.userID,
-      'addressString': instance.addressString,
-      'isDefault': instance.isDefault,
-      'cityName': instance.cityName,
-      'districtName': instance.districtName,
     };
 
 MsOrderTracking _$MsOrderTrackingFromJson(Map<String, dynamic> json) =>

@@ -1,7 +1,7 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/distributor/domain/entity/distributor_entity.dart';
 import 'package:hlshop/app/features/product/domain/entity/product_entity.dart';
 import 'package:hlshop/app/features/shopping_cart/data/model/base_shopping_cart_model.dart';
+import 'package:hlshop/app/features/user/data/model/user_receiver_address_model_ms.dart';
 import 'package:hlshop/app/features/user/domain/entity/address_entity.dart';
 import 'package:hlshop/app/features/user/domain/entity/user_base_entity.dart';
 import 'package:hlshop/app/features/user_order/domain/entities/order_entities.dart';
@@ -55,9 +55,6 @@ class MsOrder {
 class MsOderGroupData {
   MsOderGroupData(
     this.dataOrderItem,
-    this.sellerID,
-    this.sellerContactFullName,
-    this.sellerBusinessName,
     this.orderCode,
     this.orderID,
     this.paymentMethod,
@@ -65,15 +62,12 @@ class MsOderGroupData {
     this.receiverAddresse,
   );
 
-  final String? sellerID;
-  final String? sellerContactFullName;
-  final String? sellerBusinessName;
   final List<MsOrderProduct>? dataOrderItem;
   final String? orderCode;
   final String? orderID;
   final int? paymentMethod;
   final MsOrderStatus? orderStatus;
-  final ReceiverAddresse? receiverAddresse;
+  final ReceiverAddressesMS? receiverAddresse;
 
   factory MsOderGroupData.fromJson(Map<String, dynamic> json) =>
       _$MsOderGroupDataFromJson(json);
@@ -113,42 +107,6 @@ class MsOrderProduct {
       _$MsOrderProductFromJson(json);
 
   Map<String, dynamic> toJson() => _$MsOrderProductToJson(this);
-}
-
-@JsonSerializable()
-class ReceiverAddresse {
-  ReceiverAddresse(
-    this.receiverAddressID,
-    this.receiverContactName,
-    this.receiverPhone,
-    this.receiverEmail,
-    this.districtID,
-    this.cityID,
-    this.addressLabel,
-    this.userID,
-    this.addressString,
-    this.isDefault,
-    this.cityName,
-    this.districtName,
-  );
-
-  final String? receiverAddressID;
-  final String? receiverContactName;
-  final String? receiverPhone;
-  final String? receiverEmail;
-  final String? districtID;
-  final String? cityID;
-  final int? addressLabel;
-  final String? userID;
-  final String? addressString;
-  final int? isDefault;
-  final String? cityName;
-  final String? districtName;
-
-  factory ReceiverAddresse.fromJson(Map<String, dynamic> json) =>
-      _$ReceiverAddresseFromJson(json);
-
-  Map<String, dynamic> toJson() => _$ReceiverAddresseToJson(this);
 }
 
 @JsonSerializable()
