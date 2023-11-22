@@ -60,12 +60,14 @@ class OrderDataEntity {
     this.userAddressEntity,
     this.id,
     this.orderCode,
+    this.paymentMethod,
   });
   final List<OrderProductEntity>? orderProductList;
   final Object? object;
   final UserAddressEntity? userAddressEntity;
   final String? id;
   final String? orderCode;
+  final int? paymentMethod;
 
   PriceUnit get totalPrice {
     return orderProductList?.fold(

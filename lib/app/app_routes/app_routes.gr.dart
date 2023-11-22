@@ -8,10 +8,10 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i29;
+import 'dart:async' as _i30;
 
-import 'package:auto_route/auto_route.dart' as _i28;
-import 'package:hlshop/all_file/all_file.dart' as _i30;
+import 'package:auto_route/auto_route.dart' as _i29;
+import 'package:hlshop/all_file/all_file.dart' as _i31;
 import 'package:hlshop/app/common/presentation/otp_confirm/otp_confirm_page.dart'
     as _i27;
 import 'package:hlshop/app/features/about/presentation/main/about_page.dart'
@@ -26,13 +26,15 @@ import 'package:hlshop/app/features/auth/presentation/otp_confirm/auth_otp_confi
     as _i3;
 import 'package:hlshop/app/features/auth/presentation/sign_up/sign_up_page.dart'
     as _i6;
+import 'package:hlshop/app/features/checkout/presentation/checkout_payment/checkout_payment_page.dart'
+    as _i28;
 import 'package:hlshop/app/features/checkout/presentation/main/checkout_page.dart'
     as _i23;
 import 'package:hlshop/app/features/home/presentation/main/home_page.dart'
     as _i1;
 import 'package:hlshop/app/features/main/presentation/main_page.dart' as _i25;
 import 'package:hlshop/app/features/product/domain/entity/product_entity.dart'
-    as _i34;
+    as _i35;
 import 'package:hlshop/app/features/product/presentation/detail/product_detail_page.dart'
     as _i22;
 import 'package:hlshop/app/features/product/presentation/product_search/product_search_page.dart'
@@ -43,9 +45,9 @@ import 'package:hlshop/app/features/search/presentation/main/search_page.dart'
     as _i24;
 import 'package:hlshop/app/features/shopping_cart/presentation/main/shopping_cart_page.dart'
     as _i26;
-import 'package:hlshop/app/features/shopping_cart/seft.dart' as _i35;
+import 'package:hlshop/app/features/shopping_cart/seft.dart' as _i36;
 import 'package:hlshop/app/features/user/domain/entity/user_base_entity.dart'
-    as _i33;
+    as _i34;
 import 'package:hlshop/app/features/user/presentation/account/user_account_page.dart'
     as _i19;
 import 'package:hlshop/app/features/user/presentation/address/crud_address/crud_address_page.dart'
@@ -64,9 +66,9 @@ import 'package:hlshop/app/features/user/presentation/favorite_product/user_favo
     as _i16;
 import 'package:hlshop/app/features/user/presentation/info/user_info_page.dart'
     as _i11;
-import 'package:hlshop/app/features/user/self.dart' as _i32;
+import 'package:hlshop/app/features/user/self.dart' as _i33;
 import 'package:hlshop/app/features/user_order/domain/entities/order_entities.dart'
-    as _i31;
+    as _i32;
 import 'package:hlshop/app/features/user_order/presentation/detail/user_order_detail_page.dart'
     as _i9;
 import 'package:hlshop/app/features/user_order/presentation/main/user_order_page.dart'
@@ -74,26 +76,26 @@ import 'package:hlshop/app/features/user_order/presentation/main/user_order_page
 import 'package:hlshop/app/features/user_order/presentation/order_tracking_detail/user_order_tracking_detail_page.dart'
     as _i8;
 
-abstract class $AppAutoRoute extends _i28.RootStackRouter {
+abstract class $AppAutoRoute extends _i29.RootStackRouter {
   $AppAutoRoute({super.navigatorKey});
 
   @override
-  final Map<String, _i28.PageFactory> pagesMap = {
+  final Map<String, _i29.PageFactory> pagesMap = {
     HomeRoute.name: (routeData) {
-      return _i28.AutoRoutePage<dynamic>(
+      return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i1.HomePage(),
       );
     },
     ProductRatingRoute.name: (routeData) {
-      return _i28.AutoRoutePage<dynamic>(
+      return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i2.ProductRatingPage(),
       );
     },
     AuthOtpConfirmRoute.name: (routeData) {
       final args = routeData.argsAs<AuthOtpConfirmRouteArgs>();
-      return _i28.AutoRoutePage<dynamic>(
+      return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i3.AuthOtpConfirmPage(
           confirmOTPFunc: args.confirmOTPFunc,
@@ -107,7 +109,7 @@ abstract class $AppAutoRoute extends _i28.RootStackRouter {
     },
     ChangePasswordRoute.name: (routeData) {
       final args = routeData.argsAs<ChangePasswordRouteArgs>();
-      return _i28.AutoRoutePage<dynamic>(
+      return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i4.ChangePasswordPage(
           key: args.key,
@@ -117,26 +119,26 @@ abstract class $AppAutoRoute extends _i28.RootStackRouter {
       );
     },
     ForgotPasswordRoute.name: (routeData) {
-      return _i28.AutoRoutePage<dynamic>(
+      return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i5.ForgotPasswordPage(),
       );
     },
     SignUpRoute.name: (routeData) {
-      return _i28.AutoRoutePage<dynamic>(
+      return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i6.SignUpPage(),
       );
     },
     LoginRoute.name: (routeData) {
-      return _i28.AutoRoutePage<dynamic>(
+      return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i7.LoginPage(),
       );
     },
     UserOrderTrackingDetailRoute.name: (routeData) {
       final args = routeData.argsAs<UserOrderTrackingDetailRouteArgs>();
-      return _i28.AutoRoutePage<dynamic>(
+      return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i8.UserOrderTrackingDetailPage(
           key: args.key,
@@ -146,7 +148,7 @@ abstract class $AppAutoRoute extends _i28.RootStackRouter {
     },
     UserOrderDetailRoute.name: (routeData) {
       final args = routeData.argsAs<UserOrderDetailRouteArgs>();
-      return _i28.AutoRoutePage<dynamic>(
+      return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i9.UserOrderDetailPage(
           key: args.key,
@@ -155,14 +157,14 @@ abstract class $AppAutoRoute extends _i28.RootStackRouter {
       );
     },
     UserOrderRoute.name: (routeData) {
-      return _i28.AutoRoutePage<dynamic>(
+      return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i10.UserOrderPage(),
       );
     },
     UserInfoRoute.name: (routeData) {
       final args = routeData.argsAs<UserInfoRouteArgs>();
-      return _i28.AutoRoutePage<dynamic>(
+      return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i11.UserInfoPage(
           key: args.key,
@@ -171,20 +173,20 @@ abstract class $AppAutoRoute extends _i28.RootStackRouter {
       );
     },
     UserEmailInfoRoute.name: (routeData) {
-      return _i28.AutoRoutePage<dynamic>(
+      return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i12.UserEmailInfoPage(),
       );
     },
     UserPhoneInfoRoute.name: (routeData) {
-      return _i28.AutoRoutePage<dynamic>(
+      return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i13.UserPhoneInfoPage(),
       );
     },
     UserAccountInfoRoute.name: (routeData) {
       final args = routeData.argsAs<UserAccountInfoRouteArgs>();
-      return _i28.AutoRoutePage<dynamic>(
+      return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i14.UserAccountInfoPage(
           key: args.key,
@@ -194,7 +196,7 @@ abstract class $AppAutoRoute extends _i28.RootStackRouter {
     },
     ReceiveDetailAccountRoute.name: (routeData) {
       final args = routeData.argsAs<ReceiveDetailAccountRouteArgs>();
-      return _i28.AutoRoutePage<dynamic>(
+      return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i15.ReceiveDetailAccountPage(
           key: args.key,
@@ -203,7 +205,7 @@ abstract class $AppAutoRoute extends _i28.RootStackRouter {
       );
     },
     UserFavoriteProductRoute.name: (routeData) {
-      return _i28.AutoRoutePage<dynamic>(
+      return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i16.UserFavoriteProductPage(),
       );
@@ -211,7 +213,7 @@ abstract class $AppAutoRoute extends _i28.RootStackRouter {
     CrudAddressRoute.name: (routeData) {
       final args = routeData.argsAs<CrudAddressRouteArgs>(
           orElse: () => const CrudAddressRouteArgs());
-      return _i28.AutoRoutePage<dynamic>(
+      return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i17.CrudAddressPage(
           key: args.key,
@@ -222,7 +224,7 @@ abstract class $AppAutoRoute extends _i28.RootStackRouter {
     },
     ReceiveAddressRoute.name: (routeData) {
       final args = routeData.argsAs<ReceiveAddressRouteArgs>();
-      return _i28.AutoRoutePage<dynamic>(
+      return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i18.ReceiveAddressPage(
           key: args.key,
@@ -233,13 +235,13 @@ abstract class $AppAutoRoute extends _i28.RootStackRouter {
       );
     },
     UserAccountRoute.name: (routeData) {
-      return _i28.AutoRoutePage<dynamic>(
+      return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i19.UserAccountPage(),
       );
     },
     AboutRoute.name: (routeData) {
-      return _i28.AutoRoutePage<dynamic>(
+      return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i20.AboutPage(),
       );
@@ -247,7 +249,7 @@ abstract class $AppAutoRoute extends _i28.RootStackRouter {
     ProductSearchRoute.name: (routeData) {
       final args = routeData.argsAs<ProductSearchRouteArgs>(
           orElse: () => const ProductSearchRouteArgs());
-      return _i28.AutoRoutePage<dynamic>(
+      return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i21.ProductSearchPage(
           key: args.key,
@@ -258,7 +260,7 @@ abstract class $AppAutoRoute extends _i28.RootStackRouter {
     },
     ProductDetailRoute.name: (routeData) {
       final args = routeData.argsAs<ProductDetailRouteArgs>();
-      return _i28.AutoRoutePage<dynamic>(
+      return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i22.ProductDetailPage(
           key: args.key,
@@ -269,7 +271,7 @@ abstract class $AppAutoRoute extends _i28.RootStackRouter {
     CheckoutRoute.name: (routeData) {
       final args = routeData.argsAs<CheckoutRouteArgs>(
           orElse: () => const CheckoutRouteArgs());
-      return _i28.AutoRoutePage<dynamic>(
+      return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i23.CheckoutPage(
           key: args.key,
@@ -279,26 +281,26 @@ abstract class $AppAutoRoute extends _i28.RootStackRouter {
       );
     },
     SearchRoute.name: (routeData) {
-      return _i28.AutoRoutePage<dynamic>(
+      return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i24.SearchPage(),
       );
     },
     MainRoute.name: (routeData) {
-      return _i28.AutoRoutePage<dynamic>(
+      return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i25.MainPage(),
       );
     },
     ShoppingCartRoute.name: (routeData) {
-      return _i28.AutoRoutePage<dynamic>(
+      return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i26.ShoppingCartPage(),
       );
     },
     OtpConfirmRoute.name: (routeData) {
       final args = routeData.argsAs<OtpConfirmRouteArgs>();
-      return _i28.AutoRoutePage<dynamic>(
+      return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i27.OtpConfirmPage(
           requestOtpResult: args.requestOtpResult,
@@ -311,13 +313,23 @@ abstract class $AppAutoRoute extends _i28.RootStackRouter {
         ),
       );
     },
+    CheckoutPaymentRoute.name: (routeData) {
+      final args = routeData.argsAs<CheckoutPaymentRouteArgs>();
+      return _i29.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: _i28.CheckoutPaymentPage(
+          key: args.key,
+          paymentMethod: args.paymentMethod,
+        ),
+      );
+    },
   };
 }
 
 /// generated route for
 /// [_i1.HomePage]
-class HomeRoute extends _i28.PageRouteInfo<void> {
-  const HomeRoute({List<_i28.PageRouteInfo>? children})
+class HomeRoute extends _i29.PageRouteInfo<void> {
+  const HomeRoute({List<_i29.PageRouteInfo>? children})
       : super(
           HomeRoute.name,
           initialChildren: children,
@@ -325,13 +337,13 @@ class HomeRoute extends _i28.PageRouteInfo<void> {
 
   static const String name = 'HomeRoute';
 
-  static const _i28.PageInfo<void> page = _i28.PageInfo<void>(name);
+  static const _i29.PageInfo<void> page = _i29.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i2.ProductRatingPage]
-class ProductRatingRoute extends _i28.PageRouteInfo<void> {
-  const ProductRatingRoute({List<_i28.PageRouteInfo>? children})
+class ProductRatingRoute extends _i29.PageRouteInfo<void> {
+  const ProductRatingRoute({List<_i29.PageRouteInfo>? children})
       : super(
           ProductRatingRoute.name,
           initialChildren: children,
@@ -339,20 +351,20 @@ class ProductRatingRoute extends _i28.PageRouteInfo<void> {
 
   static const String name = 'ProductRatingRoute';
 
-  static const _i28.PageInfo<void> page = _i28.PageInfo<void>(name);
+  static const _i29.PageInfo<void> page = _i29.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i3.AuthOtpConfirmPage]
-class AuthOtpConfirmRoute extends _i28.PageRouteInfo<AuthOtpConfirmRouteArgs> {
+class AuthOtpConfirmRoute extends _i29.PageRouteInfo<AuthOtpConfirmRouteArgs> {
   AuthOtpConfirmRoute({
-    required _i29.Future<bool> Function(String) confirmOTPFunc,
-    required _i29.Future<Object?> Function() onResendOTP,
+    required _i30.Future<bool> Function(String) confirmOTPFunc,
+    required _i30.Future<Object?> Function() onResendOTP,
     int otpLength = 4,
     String? otpMessage,
-    _i30.Key? key,
+    _i31.Key? key,
     String? successMessage,
-    List<_i28.PageRouteInfo>? children,
+    List<_i29.PageRouteInfo>? children,
   }) : super(
           AuthOtpConfirmRoute.name,
           args: AuthOtpConfirmRouteArgs(
@@ -368,8 +380,8 @@ class AuthOtpConfirmRoute extends _i28.PageRouteInfo<AuthOtpConfirmRouteArgs> {
 
   static const String name = 'AuthOtpConfirmRoute';
 
-  static const _i28.PageInfo<AuthOtpConfirmRouteArgs> page =
-      _i28.PageInfo<AuthOtpConfirmRouteArgs>(name);
+  static const _i29.PageInfo<AuthOtpConfirmRouteArgs> page =
+      _i29.PageInfo<AuthOtpConfirmRouteArgs>(name);
 }
 
 class AuthOtpConfirmRouteArgs {
@@ -382,15 +394,15 @@ class AuthOtpConfirmRouteArgs {
     this.successMessage,
   });
 
-  final _i29.Future<bool> Function(String) confirmOTPFunc;
+  final _i30.Future<bool> Function(String) confirmOTPFunc;
 
-  final _i29.Future<Object?> Function() onResendOTP;
+  final _i30.Future<Object?> Function() onResendOTP;
 
   final int otpLength;
 
   final String? otpMessage;
 
-  final _i30.Key? key;
+  final _i31.Key? key;
 
   final String? successMessage;
 
@@ -402,12 +414,12 @@ class AuthOtpConfirmRouteArgs {
 
 /// generated route for
 /// [_i4.ChangePasswordPage]
-class ChangePasswordRoute extends _i28.PageRouteInfo<ChangePasswordRouteArgs> {
+class ChangePasswordRoute extends _i29.PageRouteInfo<ChangePasswordRouteArgs> {
   ChangePasswordRoute({
-    _i30.Key? key,
+    _i31.Key? key,
     required String userID,
     required String uuid,
-    List<_i28.PageRouteInfo>? children,
+    List<_i29.PageRouteInfo>? children,
   }) : super(
           ChangePasswordRoute.name,
           args: ChangePasswordRouteArgs(
@@ -420,8 +432,8 @@ class ChangePasswordRoute extends _i28.PageRouteInfo<ChangePasswordRouteArgs> {
 
   static const String name = 'ChangePasswordRoute';
 
-  static const _i28.PageInfo<ChangePasswordRouteArgs> page =
-      _i28.PageInfo<ChangePasswordRouteArgs>(name);
+  static const _i29.PageInfo<ChangePasswordRouteArgs> page =
+      _i29.PageInfo<ChangePasswordRouteArgs>(name);
 }
 
 class ChangePasswordRouteArgs {
@@ -431,7 +443,7 @@ class ChangePasswordRouteArgs {
     required this.uuid,
   });
 
-  final _i30.Key? key;
+  final _i31.Key? key;
 
   final String userID;
 
@@ -445,8 +457,8 @@ class ChangePasswordRouteArgs {
 
 /// generated route for
 /// [_i5.ForgotPasswordPage]
-class ForgotPasswordRoute extends _i28.PageRouteInfo<void> {
-  const ForgotPasswordRoute({List<_i28.PageRouteInfo>? children})
+class ForgotPasswordRoute extends _i29.PageRouteInfo<void> {
+  const ForgotPasswordRoute({List<_i29.PageRouteInfo>? children})
       : super(
           ForgotPasswordRoute.name,
           initialChildren: children,
@@ -454,13 +466,13 @@ class ForgotPasswordRoute extends _i28.PageRouteInfo<void> {
 
   static const String name = 'ForgotPasswordRoute';
 
-  static const _i28.PageInfo<void> page = _i28.PageInfo<void>(name);
+  static const _i29.PageInfo<void> page = _i29.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i6.SignUpPage]
-class SignUpRoute extends _i28.PageRouteInfo<void> {
-  const SignUpRoute({List<_i28.PageRouteInfo>? children})
+class SignUpRoute extends _i29.PageRouteInfo<void> {
+  const SignUpRoute({List<_i29.PageRouteInfo>? children})
       : super(
           SignUpRoute.name,
           initialChildren: children,
@@ -468,13 +480,13 @@ class SignUpRoute extends _i28.PageRouteInfo<void> {
 
   static const String name = 'SignUpRoute';
 
-  static const _i28.PageInfo<void> page = _i28.PageInfo<void>(name);
+  static const _i29.PageInfo<void> page = _i29.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i7.LoginPage]
-class LoginRoute extends _i28.PageRouteInfo<void> {
-  const LoginRoute({List<_i28.PageRouteInfo>? children})
+class LoginRoute extends _i29.PageRouteInfo<void> {
+  const LoginRoute({List<_i29.PageRouteInfo>? children})
       : super(
           LoginRoute.name,
           initialChildren: children,
@@ -482,17 +494,17 @@ class LoginRoute extends _i28.PageRouteInfo<void> {
 
   static const String name = 'LoginRoute';
 
-  static const _i28.PageInfo<void> page = _i28.PageInfo<void>(name);
+  static const _i29.PageInfo<void> page = _i29.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i8.UserOrderTrackingDetailPage]
 class UserOrderTrackingDetailRoute
-    extends _i28.PageRouteInfo<UserOrderTrackingDetailRouteArgs> {
+    extends _i29.PageRouteInfo<UserOrderTrackingDetailRouteArgs> {
   UserOrderTrackingDetailRoute({
-    _i30.Key? key,
-    required _i31.OrderDataEntity? order,
-    List<_i28.PageRouteInfo>? children,
+    _i31.Key? key,
+    required _i32.OrderDataEntity? order,
+    List<_i29.PageRouteInfo>? children,
   }) : super(
           UserOrderTrackingDetailRoute.name,
           args: UserOrderTrackingDetailRouteArgs(
@@ -504,8 +516,8 @@ class UserOrderTrackingDetailRoute
 
   static const String name = 'UserOrderTrackingDetailRoute';
 
-  static const _i28.PageInfo<UserOrderTrackingDetailRouteArgs> page =
-      _i28.PageInfo<UserOrderTrackingDetailRouteArgs>(name);
+  static const _i29.PageInfo<UserOrderTrackingDetailRouteArgs> page =
+      _i29.PageInfo<UserOrderTrackingDetailRouteArgs>(name);
 }
 
 class UserOrderTrackingDetailRouteArgs {
@@ -514,9 +526,9 @@ class UserOrderTrackingDetailRouteArgs {
     required this.order,
   });
 
-  final _i30.Key? key;
+  final _i31.Key? key;
 
-  final _i31.OrderDataEntity? order;
+  final _i32.OrderDataEntity? order;
 
   @override
   String toString() {
@@ -527,11 +539,11 @@ class UserOrderTrackingDetailRouteArgs {
 /// generated route for
 /// [_i9.UserOrderDetailPage]
 class UserOrderDetailRoute
-    extends _i28.PageRouteInfo<UserOrderDetailRouteArgs> {
+    extends _i29.PageRouteInfo<UserOrderDetailRouteArgs> {
   UserOrderDetailRoute({
-    _i30.Key? key,
-    required _i31.OrderDataEntity? order,
-    List<_i28.PageRouteInfo>? children,
+    _i31.Key? key,
+    required _i32.OrderDataEntity? order,
+    List<_i29.PageRouteInfo>? children,
   }) : super(
           UserOrderDetailRoute.name,
           args: UserOrderDetailRouteArgs(
@@ -543,8 +555,8 @@ class UserOrderDetailRoute
 
   static const String name = 'UserOrderDetailRoute';
 
-  static const _i28.PageInfo<UserOrderDetailRouteArgs> page =
-      _i28.PageInfo<UserOrderDetailRouteArgs>(name);
+  static const _i29.PageInfo<UserOrderDetailRouteArgs> page =
+      _i29.PageInfo<UserOrderDetailRouteArgs>(name);
 }
 
 class UserOrderDetailRouteArgs {
@@ -553,9 +565,9 @@ class UserOrderDetailRouteArgs {
     required this.order,
   });
 
-  final _i30.Key? key;
+  final _i31.Key? key;
 
-  final _i31.OrderDataEntity? order;
+  final _i32.OrderDataEntity? order;
 
   @override
   String toString() {
@@ -565,8 +577,8 @@ class UserOrderDetailRouteArgs {
 
 /// generated route for
 /// [_i10.UserOrderPage]
-class UserOrderRoute extends _i28.PageRouteInfo<void> {
-  const UserOrderRoute({List<_i28.PageRouteInfo>? children})
+class UserOrderRoute extends _i29.PageRouteInfo<void> {
+  const UserOrderRoute({List<_i29.PageRouteInfo>? children})
       : super(
           UserOrderRoute.name,
           initialChildren: children,
@@ -574,16 +586,16 @@ class UserOrderRoute extends _i28.PageRouteInfo<void> {
 
   static const String name = 'UserOrderRoute';
 
-  static const _i28.PageInfo<void> page = _i28.PageInfo<void>(name);
+  static const _i29.PageInfo<void> page = _i29.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i11.UserInfoPage]
-class UserInfoRoute extends _i28.PageRouteInfo<UserInfoRouteArgs> {
+class UserInfoRoute extends _i29.PageRouteInfo<UserInfoRouteArgs> {
   UserInfoRoute({
-    _i30.Key? key,
-    required _i32.UserEntity user,
-    List<_i28.PageRouteInfo>? children,
+    _i31.Key? key,
+    required _i33.UserEntity user,
+    List<_i29.PageRouteInfo>? children,
   }) : super(
           UserInfoRoute.name,
           args: UserInfoRouteArgs(
@@ -595,8 +607,8 @@ class UserInfoRoute extends _i28.PageRouteInfo<UserInfoRouteArgs> {
 
   static const String name = 'UserInfoRoute';
 
-  static const _i28.PageInfo<UserInfoRouteArgs> page =
-      _i28.PageInfo<UserInfoRouteArgs>(name);
+  static const _i29.PageInfo<UserInfoRouteArgs> page =
+      _i29.PageInfo<UserInfoRouteArgs>(name);
 }
 
 class UserInfoRouteArgs {
@@ -605,9 +617,9 @@ class UserInfoRouteArgs {
     required this.user,
   });
 
-  final _i30.Key? key;
+  final _i31.Key? key;
 
-  final _i32.UserEntity user;
+  final _i33.UserEntity user;
 
   @override
   String toString() {
@@ -617,8 +629,8 @@ class UserInfoRouteArgs {
 
 /// generated route for
 /// [_i12.UserEmailInfoPage]
-class UserEmailInfoRoute extends _i28.PageRouteInfo<void> {
-  const UserEmailInfoRoute({List<_i28.PageRouteInfo>? children})
+class UserEmailInfoRoute extends _i29.PageRouteInfo<void> {
+  const UserEmailInfoRoute({List<_i29.PageRouteInfo>? children})
       : super(
           UserEmailInfoRoute.name,
           initialChildren: children,
@@ -626,13 +638,13 @@ class UserEmailInfoRoute extends _i28.PageRouteInfo<void> {
 
   static const String name = 'UserEmailInfoRoute';
 
-  static const _i28.PageInfo<void> page = _i28.PageInfo<void>(name);
+  static const _i29.PageInfo<void> page = _i29.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i13.UserPhoneInfoPage]
-class UserPhoneInfoRoute extends _i28.PageRouteInfo<void> {
-  const UserPhoneInfoRoute({List<_i28.PageRouteInfo>? children})
+class UserPhoneInfoRoute extends _i29.PageRouteInfo<void> {
+  const UserPhoneInfoRoute({List<_i29.PageRouteInfo>? children})
       : super(
           UserPhoneInfoRoute.name,
           initialChildren: children,
@@ -640,17 +652,17 @@ class UserPhoneInfoRoute extends _i28.PageRouteInfo<void> {
 
   static const String name = 'UserPhoneInfoRoute';
 
-  static const _i28.PageInfo<void> page = _i28.PageInfo<void>(name);
+  static const _i29.PageInfo<void> page = _i29.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i14.UserAccountInfoPage]
 class UserAccountInfoRoute
-    extends _i28.PageRouteInfo<UserAccountInfoRouteArgs> {
+    extends _i29.PageRouteInfo<UserAccountInfoRouteArgs> {
   UserAccountInfoRoute({
-    _i30.Key? key,
-    required _i33.UserEntity user,
-    List<_i28.PageRouteInfo>? children,
+    _i31.Key? key,
+    required _i34.UserEntity user,
+    List<_i29.PageRouteInfo>? children,
   }) : super(
           UserAccountInfoRoute.name,
           args: UserAccountInfoRouteArgs(
@@ -662,8 +674,8 @@ class UserAccountInfoRoute
 
   static const String name = 'UserAccountInfoRoute';
 
-  static const _i28.PageInfo<UserAccountInfoRouteArgs> page =
-      _i28.PageInfo<UserAccountInfoRouteArgs>(name);
+  static const _i29.PageInfo<UserAccountInfoRouteArgs> page =
+      _i29.PageInfo<UserAccountInfoRouteArgs>(name);
 }
 
 class UserAccountInfoRouteArgs {
@@ -672,9 +684,9 @@ class UserAccountInfoRouteArgs {
     required this.user,
   });
 
-  final _i30.Key? key;
+  final _i31.Key? key;
 
-  final _i33.UserEntity user;
+  final _i34.UserEntity user;
 
   @override
   String toString() {
@@ -685,11 +697,11 @@ class UserAccountInfoRouteArgs {
 /// generated route for
 /// [_i15.ReceiveDetailAccountPage]
 class ReceiveDetailAccountRoute
-    extends _i28.PageRouteInfo<ReceiveDetailAccountRouteArgs> {
+    extends _i29.PageRouteInfo<ReceiveDetailAccountRouteArgs> {
   ReceiveDetailAccountRoute({
-    _i30.Key? key,
-    required _i33.UserEntity user,
-    List<_i28.PageRouteInfo>? children,
+    _i31.Key? key,
+    required _i34.UserEntity user,
+    List<_i29.PageRouteInfo>? children,
   }) : super(
           ReceiveDetailAccountRoute.name,
           args: ReceiveDetailAccountRouteArgs(
@@ -701,8 +713,8 @@ class ReceiveDetailAccountRoute
 
   static const String name = 'ReceiveDetailAccountRoute';
 
-  static const _i28.PageInfo<ReceiveDetailAccountRouteArgs> page =
-      _i28.PageInfo<ReceiveDetailAccountRouteArgs>(name);
+  static const _i29.PageInfo<ReceiveDetailAccountRouteArgs> page =
+      _i29.PageInfo<ReceiveDetailAccountRouteArgs>(name);
 }
 
 class ReceiveDetailAccountRouteArgs {
@@ -711,9 +723,9 @@ class ReceiveDetailAccountRouteArgs {
     required this.user,
   });
 
-  final _i30.Key? key;
+  final _i31.Key? key;
 
-  final _i33.UserEntity user;
+  final _i34.UserEntity user;
 
   @override
   String toString() {
@@ -723,8 +735,8 @@ class ReceiveDetailAccountRouteArgs {
 
 /// generated route for
 /// [_i16.UserFavoriteProductPage]
-class UserFavoriteProductRoute extends _i28.PageRouteInfo<void> {
-  const UserFavoriteProductRoute({List<_i28.PageRouteInfo>? children})
+class UserFavoriteProductRoute extends _i29.PageRouteInfo<void> {
+  const UserFavoriteProductRoute({List<_i29.PageRouteInfo>? children})
       : super(
           UserFavoriteProductRoute.name,
           initialChildren: children,
@@ -732,17 +744,17 @@ class UserFavoriteProductRoute extends _i28.PageRouteInfo<void> {
 
   static const String name = 'UserFavoriteProductRoute';
 
-  static const _i28.PageInfo<void> page = _i28.PageInfo<void>(name);
+  static const _i29.PageInfo<void> page = _i29.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i17.CrudAddressPage]
-class CrudAddressRoute extends _i28.PageRouteInfo<CrudAddressRouteArgs> {
+class CrudAddressRoute extends _i29.PageRouteInfo<CrudAddressRouteArgs> {
   CrudAddressRoute({
-    _i30.Key? key,
-    _i32.UserAddressEntity? initialAddress,
+    _i31.Key? key,
+    _i33.UserAddressEntity? initialAddress,
     _i17.CrudAddressType type = _i17.CrudAddressType.add,
-    List<_i28.PageRouteInfo>? children,
+    List<_i29.PageRouteInfo>? children,
   }) : super(
           CrudAddressRoute.name,
           args: CrudAddressRouteArgs(
@@ -755,8 +767,8 @@ class CrudAddressRoute extends _i28.PageRouteInfo<CrudAddressRouteArgs> {
 
   static const String name = 'CrudAddressRoute';
 
-  static const _i28.PageInfo<CrudAddressRouteArgs> page =
-      _i28.PageInfo<CrudAddressRouteArgs>(name);
+  static const _i29.PageInfo<CrudAddressRouteArgs> page =
+      _i29.PageInfo<CrudAddressRouteArgs>(name);
 }
 
 class CrudAddressRouteArgs {
@@ -766,9 +778,9 @@ class CrudAddressRouteArgs {
     this.type = _i17.CrudAddressType.add,
   });
 
-  final _i30.Key? key;
+  final _i31.Key? key;
 
-  final _i32.UserAddressEntity? initialAddress;
+  final _i33.UserAddressEntity? initialAddress;
 
   final _i17.CrudAddressType type;
 
@@ -780,13 +792,13 @@ class CrudAddressRouteArgs {
 
 /// generated route for
 /// [_i18.ReceiveAddressPage]
-class ReceiveAddressRoute extends _i28.PageRouteInfo<ReceiveAddressRouteArgs> {
+class ReceiveAddressRoute extends _i29.PageRouteInfo<ReceiveAddressRouteArgs> {
   ReceiveAddressRoute({
-    _i30.Key? key,
-    required _i33.UserEntity user,
+    _i31.Key? key,
+    required _i34.UserEntity user,
     required bool canSelectPrimary,
     String? defaultAddress,
-    List<_i28.PageRouteInfo>? children,
+    List<_i29.PageRouteInfo>? children,
   }) : super(
           ReceiveAddressRoute.name,
           args: ReceiveAddressRouteArgs(
@@ -800,8 +812,8 @@ class ReceiveAddressRoute extends _i28.PageRouteInfo<ReceiveAddressRouteArgs> {
 
   static const String name = 'ReceiveAddressRoute';
 
-  static const _i28.PageInfo<ReceiveAddressRouteArgs> page =
-      _i28.PageInfo<ReceiveAddressRouteArgs>(name);
+  static const _i29.PageInfo<ReceiveAddressRouteArgs> page =
+      _i29.PageInfo<ReceiveAddressRouteArgs>(name);
 }
 
 class ReceiveAddressRouteArgs {
@@ -812,9 +824,9 @@ class ReceiveAddressRouteArgs {
     this.defaultAddress,
   });
 
-  final _i30.Key? key;
+  final _i31.Key? key;
 
-  final _i33.UserEntity user;
+  final _i34.UserEntity user;
 
   final bool canSelectPrimary;
 
@@ -828,8 +840,8 @@ class ReceiveAddressRouteArgs {
 
 /// generated route for
 /// [_i19.UserAccountPage]
-class UserAccountRoute extends _i28.PageRouteInfo<void> {
-  const UserAccountRoute({List<_i28.PageRouteInfo>? children})
+class UserAccountRoute extends _i29.PageRouteInfo<void> {
+  const UserAccountRoute({List<_i29.PageRouteInfo>? children})
       : super(
           UserAccountRoute.name,
           initialChildren: children,
@@ -837,13 +849,13 @@ class UserAccountRoute extends _i28.PageRouteInfo<void> {
 
   static const String name = 'UserAccountRoute';
 
-  static const _i28.PageInfo<void> page = _i28.PageInfo<void>(name);
+  static const _i29.PageInfo<void> page = _i29.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i20.AboutPage]
-class AboutRoute extends _i28.PageRouteInfo<void> {
-  const AboutRoute({List<_i28.PageRouteInfo>? children})
+class AboutRoute extends _i29.PageRouteInfo<void> {
+  const AboutRoute({List<_i29.PageRouteInfo>? children})
       : super(
           AboutRoute.name,
           initialChildren: children,
@@ -851,17 +863,17 @@ class AboutRoute extends _i28.PageRouteInfo<void> {
 
   static const String name = 'AboutRoute';
 
-  static const _i28.PageInfo<void> page = _i28.PageInfo<void>(name);
+  static const _i29.PageInfo<void> page = _i29.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i21.ProductSearchPage]
-class ProductSearchRoute extends _i28.PageRouteInfo<ProductSearchRouteArgs> {
+class ProductSearchRoute extends _i29.PageRouteInfo<ProductSearchRouteArgs> {
   ProductSearchRoute({
-    _i30.Key? key,
-    _i34.ProductFilterData? filterData,
+    _i31.Key? key,
+    _i35.ProductFilterData? filterData,
     String? searchHint,
-    List<_i28.PageRouteInfo>? children,
+    List<_i29.PageRouteInfo>? children,
   }) : super(
           ProductSearchRoute.name,
           args: ProductSearchRouteArgs(
@@ -874,8 +886,8 @@ class ProductSearchRoute extends _i28.PageRouteInfo<ProductSearchRouteArgs> {
 
   static const String name = 'ProductSearchRoute';
 
-  static const _i28.PageInfo<ProductSearchRouteArgs> page =
-      _i28.PageInfo<ProductSearchRouteArgs>(name);
+  static const _i29.PageInfo<ProductSearchRouteArgs> page =
+      _i29.PageInfo<ProductSearchRouteArgs>(name);
 }
 
 class ProductSearchRouteArgs {
@@ -885,9 +897,9 @@ class ProductSearchRouteArgs {
     this.searchHint,
   });
 
-  final _i30.Key? key;
+  final _i31.Key? key;
 
-  final _i34.ProductFilterData? filterData;
+  final _i35.ProductFilterData? filterData;
 
   final String? searchHint;
 
@@ -899,11 +911,11 @@ class ProductSearchRouteArgs {
 
 /// generated route for
 /// [_i22.ProductDetailPage]
-class ProductDetailRoute extends _i28.PageRouteInfo<ProductDetailRouteArgs> {
+class ProductDetailRoute extends _i29.PageRouteInfo<ProductDetailRouteArgs> {
   ProductDetailRoute({
-    _i30.Key? key,
-    required _i34.ProductEntity product,
-    List<_i28.PageRouteInfo>? children,
+    _i31.Key? key,
+    required _i35.ProductEntity product,
+    List<_i29.PageRouteInfo>? children,
   }) : super(
           ProductDetailRoute.name,
           args: ProductDetailRouteArgs(
@@ -915,8 +927,8 @@ class ProductDetailRoute extends _i28.PageRouteInfo<ProductDetailRouteArgs> {
 
   static const String name = 'ProductDetailRoute';
 
-  static const _i28.PageInfo<ProductDetailRouteArgs> page =
-      _i28.PageInfo<ProductDetailRouteArgs>(name);
+  static const _i29.PageInfo<ProductDetailRouteArgs> page =
+      _i29.PageInfo<ProductDetailRouteArgs>(name);
 }
 
 class ProductDetailRouteArgs {
@@ -925,9 +937,9 @@ class ProductDetailRouteArgs {
     required this.product,
   });
 
-  final _i30.Key? key;
+  final _i31.Key? key;
 
-  final _i34.ProductEntity product;
+  final _i35.ProductEntity product;
 
   @override
   String toString() {
@@ -937,12 +949,12 @@ class ProductDetailRouteArgs {
 
 /// generated route for
 /// [_i23.CheckoutPage]
-class CheckoutRoute extends _i28.PageRouteInfo<CheckoutRouteArgs> {
+class CheckoutRoute extends _i29.PageRouteInfo<CheckoutRouteArgs> {
   CheckoutRoute({
-    _i30.Key? key,
-    List<_i35.ShoppingCartItemEntity>? cartItems,
+    _i31.Key? key,
+    List<_i36.ShoppingCartItemEntity>? cartItems,
     Set<String>? selectedCartItemIds,
-    List<_i28.PageRouteInfo>? children,
+    List<_i29.PageRouteInfo>? children,
   }) : super(
           CheckoutRoute.name,
           args: CheckoutRouteArgs(
@@ -955,8 +967,8 @@ class CheckoutRoute extends _i28.PageRouteInfo<CheckoutRouteArgs> {
 
   static const String name = 'CheckoutRoute';
 
-  static const _i28.PageInfo<CheckoutRouteArgs> page =
-      _i28.PageInfo<CheckoutRouteArgs>(name);
+  static const _i29.PageInfo<CheckoutRouteArgs> page =
+      _i29.PageInfo<CheckoutRouteArgs>(name);
 }
 
 class CheckoutRouteArgs {
@@ -966,9 +978,9 @@ class CheckoutRouteArgs {
     this.selectedCartItemIds,
   });
 
-  final _i30.Key? key;
+  final _i31.Key? key;
 
-  final List<_i35.ShoppingCartItemEntity>? cartItems;
+  final List<_i36.ShoppingCartItemEntity>? cartItems;
 
   final Set<String>? selectedCartItemIds;
 
@@ -980,8 +992,8 @@ class CheckoutRouteArgs {
 
 /// generated route for
 /// [_i24.SearchPage]
-class SearchRoute extends _i28.PageRouteInfo<void> {
-  const SearchRoute({List<_i28.PageRouteInfo>? children})
+class SearchRoute extends _i29.PageRouteInfo<void> {
+  const SearchRoute({List<_i29.PageRouteInfo>? children})
       : super(
           SearchRoute.name,
           initialChildren: children,
@@ -989,13 +1001,13 @@ class SearchRoute extends _i28.PageRouteInfo<void> {
 
   static const String name = 'SearchRoute';
 
-  static const _i28.PageInfo<void> page = _i28.PageInfo<void>(name);
+  static const _i29.PageInfo<void> page = _i29.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i25.MainPage]
-class MainRoute extends _i28.PageRouteInfo<void> {
-  const MainRoute({List<_i28.PageRouteInfo>? children})
+class MainRoute extends _i29.PageRouteInfo<void> {
+  const MainRoute({List<_i29.PageRouteInfo>? children})
       : super(
           MainRoute.name,
           initialChildren: children,
@@ -1003,13 +1015,13 @@ class MainRoute extends _i28.PageRouteInfo<void> {
 
   static const String name = 'MainRoute';
 
-  static const _i28.PageInfo<void> page = _i28.PageInfo<void>(name);
+  static const _i29.PageInfo<void> page = _i29.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i26.ShoppingCartPage]
-class ShoppingCartRoute extends _i28.PageRouteInfo<void> {
-  const ShoppingCartRoute({List<_i28.PageRouteInfo>? children})
+class ShoppingCartRoute extends _i29.PageRouteInfo<void> {
+  const ShoppingCartRoute({List<_i29.PageRouteInfo>? children})
       : super(
           ShoppingCartRoute.name,
           initialChildren: children,
@@ -1017,24 +1029,24 @@ class ShoppingCartRoute extends _i28.PageRouteInfo<void> {
 
   static const String name = 'ShoppingCartRoute';
 
-  static const _i28.PageInfo<void> page = _i28.PageInfo<void>(name);
+  static const _i29.PageInfo<void> page = _i29.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i27.OtpConfirmPage]
-class OtpConfirmRoute extends _i28.PageRouteInfo<OtpConfirmRouteArgs> {
+class OtpConfirmRoute extends _i29.PageRouteInfo<OtpConfirmRouteArgs> {
   OtpConfirmRoute({
     required Object? requestOtpResult,
-    required _i29.Future<bool> Function(
+    required _i30.Future<bool> Function(
       String,
       Object?,
     ) confirmOTPFunc,
-    required _i29.Future<Object?> Function(Object?) onResendOTP,
+    required _i30.Future<Object?> Function(Object?) onResendOTP,
     int otpLength = 4,
     String? otpMessage,
-    _i30.Key? key,
+    _i31.Key? key,
     String? successMessage,
-    List<_i28.PageRouteInfo>? children,
+    List<_i29.PageRouteInfo>? children,
   }) : super(
           OtpConfirmRoute.name,
           args: OtpConfirmRouteArgs(
@@ -1051,8 +1063,8 @@ class OtpConfirmRoute extends _i28.PageRouteInfo<OtpConfirmRouteArgs> {
 
   static const String name = 'OtpConfirmRoute';
 
-  static const _i28.PageInfo<OtpConfirmRouteArgs> page =
-      _i28.PageInfo<OtpConfirmRouteArgs>(name);
+  static const _i29.PageInfo<OtpConfirmRouteArgs> page =
+      _i29.PageInfo<OtpConfirmRouteArgs>(name);
 }
 
 class OtpConfirmRouteArgs {
@@ -1068,23 +1080,62 @@ class OtpConfirmRouteArgs {
 
   final Object? requestOtpResult;
 
-  final _i29.Future<bool> Function(
+  final _i30.Future<bool> Function(
     String,
     Object?,
   ) confirmOTPFunc;
 
-  final _i29.Future<Object?> Function(Object?) onResendOTP;
+  final _i30.Future<Object?> Function(Object?) onResendOTP;
 
   final int otpLength;
 
   final String? otpMessage;
 
-  final _i30.Key? key;
+  final _i31.Key? key;
 
   final String? successMessage;
 
   @override
   String toString() {
     return 'OtpConfirmRouteArgs{requestOtpResult: $requestOtpResult, confirmOTPFunc: $confirmOTPFunc, onResendOTP: $onResendOTP, otpLength: $otpLength, otpMessage: $otpMessage, key: $key, successMessage: $successMessage}';
+  }
+}
+
+/// generated route for
+/// [_i28.CheckoutPaymentPage]
+class CheckoutPaymentRoute
+    extends _i29.PageRouteInfo<CheckoutPaymentRouteArgs> {
+  CheckoutPaymentRoute({
+    _i31.Key? key,
+    required int paymentMethod,
+    List<_i29.PageRouteInfo>? children,
+  }) : super(
+          CheckoutPaymentRoute.name,
+          args: CheckoutPaymentRouteArgs(
+            key: key,
+            paymentMethod: paymentMethod,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'CheckoutPaymentRoute';
+
+  static const _i29.PageInfo<CheckoutPaymentRouteArgs> page =
+      _i29.PageInfo<CheckoutPaymentRouteArgs>(name);
+}
+
+class CheckoutPaymentRouteArgs {
+  const CheckoutPaymentRouteArgs({
+    this.key,
+    required this.paymentMethod,
+  });
+
+  final _i31.Key? key;
+
+  final int paymentMethod;
+
+  @override
+  String toString() {
+    return 'CheckoutPaymentRouteArgs{key: $key, paymentMethod: $paymentMethod}';
   }
 }

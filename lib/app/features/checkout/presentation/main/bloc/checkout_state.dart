@@ -16,7 +16,8 @@ class CheckoutState with _$CheckoutState {
     @Default({}) Set<String> selectedCartItemIds,
     @Default(ApiStatus.initial()) ApiStatus loadUserDefaultAddressStatus,
     UserAddressEntity? userAddress,
-    PaymentMethodEntity? paymentMethod,
+    //PaymentMethodEntity? paymentMethod,
+    @Default(0) int paymentMethod,
     @Default(ApiStatus.initial()) ApiStatus createOrderStatus,
   }) = _CheckoutState;
 }

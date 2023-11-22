@@ -20,6 +20,7 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
     on<_CheckoutInitialEvent>(_onInitial);
     on<_LoadCheckoutDataEvent>(_loadCheckoutData);
     on<_LoadDefaultAddressEvent>(_loadDefaultAddress);
+    on<_UpdatePaymentMethodEvent>(_updatePaymentMethod);
     on<_CreateOrderEvent>(_createOrder);
   }
 
@@ -38,21 +39,29 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
     _CreateOrderEvent event,
     Emitter<CheckoutState> emit,
   ) async {
-    emit(
-      state.copyWith(
-        createOrderStatus: state.createOrderStatus.toPending(),
-      ),
-    );
-    await _checkoutRepo.createOrder(
-      carts: state.cartItems,
-      receiverAddressID: state.userAddress?.id ?? '',
-      paymentMethod: 0,
-    );
-    emit(
-      state.copyWith(
-        createOrderStatus: const ApiStatus.done(),
-      ),
-    );
+    try {
+      emit(
+        state.copyWith(
+          createOrderStatus: state.createOrderStatus.toPending(),
+        ),
+      );
+      await _checkoutRepo.createOrder(
+        carts: state.cartItems,
+        receiverAddressID: state.userAddress?.id ?? '',
+        paymentMethod: state.paymentMethod,
+      );
+      emit(
+        state.copyWith(
+          createOrderStatus: const ApiStatus.done(),
+        ),
+      );
+    } catch (e) {
+      emit(
+        state.copyWith(
+          createOrderStatus: ApiStatus.error(e.toString()),
+        ),
+      );
+    }
   }
 
   FutureOr<void> _loadCheckoutData(
@@ -116,7 +125,7 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
 
   int? getSellerTotalSelectedCartItems() {
     final totalItems = state.cartItems.where(isCartItemSelected).toList();
-    return totalItems?.length;
+    return totalItems.length;
   }
 
   bool isCartItemSelected(ShoppingCartItemEntity item) {
@@ -128,5 +137,14 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
       return false;
     }
     return state.selectedCartItemIds.contains(id);
+  }
+
+  FutureOr<void> _updatePaymentMethod(
+      _UpdatePaymentMethodEvent event, Emitter<CheckoutState> emit) {
+    emit(
+      state.copyWith(
+        paymentMethod: event.paymentMethod ?? 0,
+      ),
+    );
   }
 }

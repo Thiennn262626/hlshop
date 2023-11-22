@@ -76,9 +76,16 @@ class $AssetsIconsCommonGen {
   SvgGenImage get icAuthenRequired =>
       const SvgGenImage('assets/icons/common/ic_authen_required.svg');
 
+  /// File path: assets/icons/common/momo.svg
+  SvgGenImage get momo => const SvgGenImage('assets/icons/common/momo.svg');
+
+  /// File path: assets/icons/common/ship_cod.svg
+  SvgGenImage get shipCod =>
+      const SvgGenImage('assets/icons/common/ship_cod.svg');
+
   /// List of all assets
   List<SvgGenImage> get values =>
-      [apple, emptyBox, facebook, google, icAuthenRequired];
+      [apple, emptyBox, facebook, google, icAuthenRequired, momo, shipCod];
 }
 
 class $AssetsIconsProductGen {

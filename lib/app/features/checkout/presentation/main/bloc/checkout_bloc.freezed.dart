@@ -21,6 +21,7 @@ mixin _$CheckoutEvent {
     required TResult Function() initial,
     required TResult Function() loadCheckoutData,
     required TResult Function() loadDefaultAddress,
+    required TResult Function(int? paymentMethod) updatePaymentMethod,
     required TResult Function() createOrder,
   }) =>
       throw _privateConstructorUsedError;
@@ -29,6 +30,7 @@ mixin _$CheckoutEvent {
     TResult? Function()? initial,
     TResult? Function()? loadCheckoutData,
     TResult? Function()? loadDefaultAddress,
+    TResult? Function(int? paymentMethod)? updatePaymentMethod,
     TResult? Function()? createOrder,
   }) =>
       throw _privateConstructorUsedError;
@@ -37,6 +39,7 @@ mixin _$CheckoutEvent {
     TResult Function()? initial,
     TResult Function()? loadCheckoutData,
     TResult Function()? loadDefaultAddress,
+    TResult Function(int? paymentMethod)? updatePaymentMethod,
     TResult Function()? createOrder,
     required TResult orElse(),
   }) =>
@@ -47,6 +50,8 @@ mixin _$CheckoutEvent {
     required TResult Function(_LoadCheckoutDataEvent value) loadCheckoutData,
     required TResult Function(_LoadDefaultAddressEvent value)
         loadDefaultAddress,
+    required TResult Function(_UpdatePaymentMethodEvent value)
+        updatePaymentMethod,
     required TResult Function(_CreateOrderEvent value) createOrder,
   }) =>
       throw _privateConstructorUsedError;
@@ -55,6 +60,7 @@ mixin _$CheckoutEvent {
     TResult? Function(_CheckoutInitialEvent value)? initial,
     TResult? Function(_LoadCheckoutDataEvent value)? loadCheckoutData,
     TResult? Function(_LoadDefaultAddressEvent value)? loadDefaultAddress,
+    TResult? Function(_UpdatePaymentMethodEvent value)? updatePaymentMethod,
     TResult? Function(_CreateOrderEvent value)? createOrder,
   }) =>
       throw _privateConstructorUsedError;
@@ -63,6 +69,7 @@ mixin _$CheckoutEvent {
     TResult Function(_CheckoutInitialEvent value)? initial,
     TResult Function(_LoadCheckoutDataEvent value)? loadCheckoutData,
     TResult Function(_LoadDefaultAddressEvent value)? loadDefaultAddress,
+    TResult Function(_UpdatePaymentMethodEvent value)? updatePaymentMethod,
     TResult Function(_CreateOrderEvent value)? createOrder,
     required TResult orElse(),
   }) =>
@@ -136,6 +143,7 @@ class _$CheckoutInitialEventImpl extends _CheckoutInitialEvent
     required TResult Function() initial,
     required TResult Function() loadCheckoutData,
     required TResult Function() loadDefaultAddress,
+    required TResult Function(int? paymentMethod) updatePaymentMethod,
     required TResult Function() createOrder,
   }) {
     return initial();
@@ -147,6 +155,7 @@ class _$CheckoutInitialEventImpl extends _CheckoutInitialEvent
     TResult? Function()? initial,
     TResult? Function()? loadCheckoutData,
     TResult? Function()? loadDefaultAddress,
+    TResult? Function(int? paymentMethod)? updatePaymentMethod,
     TResult? Function()? createOrder,
   }) {
     return initial?.call();
@@ -158,6 +167,7 @@ class _$CheckoutInitialEventImpl extends _CheckoutInitialEvent
     TResult Function()? initial,
     TResult Function()? loadCheckoutData,
     TResult Function()? loadDefaultAddress,
+    TResult Function(int? paymentMethod)? updatePaymentMethod,
     TResult Function()? createOrder,
     required TResult orElse(),
   }) {
@@ -174,6 +184,8 @@ class _$CheckoutInitialEventImpl extends _CheckoutInitialEvent
     required TResult Function(_LoadCheckoutDataEvent value) loadCheckoutData,
     required TResult Function(_LoadDefaultAddressEvent value)
         loadDefaultAddress,
+    required TResult Function(_UpdatePaymentMethodEvent value)
+        updatePaymentMethod,
     required TResult Function(_CreateOrderEvent value) createOrder,
   }) {
     return initial(this);
@@ -185,6 +197,7 @@ class _$CheckoutInitialEventImpl extends _CheckoutInitialEvent
     TResult? Function(_CheckoutInitialEvent value)? initial,
     TResult? Function(_LoadCheckoutDataEvent value)? loadCheckoutData,
     TResult? Function(_LoadDefaultAddressEvent value)? loadDefaultAddress,
+    TResult? Function(_UpdatePaymentMethodEvent value)? updatePaymentMethod,
     TResult? Function(_CreateOrderEvent value)? createOrder,
   }) {
     return initial?.call(this);
@@ -196,6 +209,7 @@ class _$CheckoutInitialEventImpl extends _CheckoutInitialEvent
     TResult Function(_CheckoutInitialEvent value)? initial,
     TResult Function(_LoadCheckoutDataEvent value)? loadCheckoutData,
     TResult Function(_LoadDefaultAddressEvent value)? loadDefaultAddress,
+    TResult Function(_UpdatePaymentMethodEvent value)? updatePaymentMethod,
     TResult Function(_CreateOrderEvent value)? createOrder,
     required TResult orElse(),
   }) {
@@ -262,6 +276,7 @@ class _$LoadCheckoutDataEventImpl extends _LoadCheckoutDataEvent
     required TResult Function() initial,
     required TResult Function() loadCheckoutData,
     required TResult Function() loadDefaultAddress,
+    required TResult Function(int? paymentMethod) updatePaymentMethod,
     required TResult Function() createOrder,
   }) {
     return loadCheckoutData();
@@ -273,6 +288,7 @@ class _$LoadCheckoutDataEventImpl extends _LoadCheckoutDataEvent
     TResult? Function()? initial,
     TResult? Function()? loadCheckoutData,
     TResult? Function()? loadDefaultAddress,
+    TResult? Function(int? paymentMethod)? updatePaymentMethod,
     TResult? Function()? createOrder,
   }) {
     return loadCheckoutData?.call();
@@ -284,6 +300,7 @@ class _$LoadCheckoutDataEventImpl extends _LoadCheckoutDataEvent
     TResult Function()? initial,
     TResult Function()? loadCheckoutData,
     TResult Function()? loadDefaultAddress,
+    TResult Function(int? paymentMethod)? updatePaymentMethod,
     TResult Function()? createOrder,
     required TResult orElse(),
   }) {
@@ -300,6 +317,8 @@ class _$LoadCheckoutDataEventImpl extends _LoadCheckoutDataEvent
     required TResult Function(_LoadCheckoutDataEvent value) loadCheckoutData,
     required TResult Function(_LoadDefaultAddressEvent value)
         loadDefaultAddress,
+    required TResult Function(_UpdatePaymentMethodEvent value)
+        updatePaymentMethod,
     required TResult Function(_CreateOrderEvent value) createOrder,
   }) {
     return loadCheckoutData(this);
@@ -311,6 +330,7 @@ class _$LoadCheckoutDataEventImpl extends _LoadCheckoutDataEvent
     TResult? Function(_CheckoutInitialEvent value)? initial,
     TResult? Function(_LoadCheckoutDataEvent value)? loadCheckoutData,
     TResult? Function(_LoadDefaultAddressEvent value)? loadDefaultAddress,
+    TResult? Function(_UpdatePaymentMethodEvent value)? updatePaymentMethod,
     TResult? Function(_CreateOrderEvent value)? createOrder,
   }) {
     return loadCheckoutData?.call(this);
@@ -322,6 +342,7 @@ class _$LoadCheckoutDataEventImpl extends _LoadCheckoutDataEvent
     TResult Function(_CheckoutInitialEvent value)? initial,
     TResult Function(_LoadCheckoutDataEvent value)? loadCheckoutData,
     TResult Function(_LoadDefaultAddressEvent value)? loadDefaultAddress,
+    TResult Function(_UpdatePaymentMethodEvent value)? updatePaymentMethod,
     TResult Function(_CreateOrderEvent value)? createOrder,
     required TResult orElse(),
   }) {
@@ -389,6 +410,7 @@ class _$LoadDefaultAddressEventImpl extends _LoadDefaultAddressEvent
     required TResult Function() initial,
     required TResult Function() loadCheckoutData,
     required TResult Function() loadDefaultAddress,
+    required TResult Function(int? paymentMethod) updatePaymentMethod,
     required TResult Function() createOrder,
   }) {
     return loadDefaultAddress();
@@ -400,6 +422,7 @@ class _$LoadDefaultAddressEventImpl extends _LoadDefaultAddressEvent
     TResult? Function()? initial,
     TResult? Function()? loadCheckoutData,
     TResult? Function()? loadDefaultAddress,
+    TResult? Function(int? paymentMethod)? updatePaymentMethod,
     TResult? Function()? createOrder,
   }) {
     return loadDefaultAddress?.call();
@@ -411,6 +434,7 @@ class _$LoadDefaultAddressEventImpl extends _LoadDefaultAddressEvent
     TResult Function()? initial,
     TResult Function()? loadCheckoutData,
     TResult Function()? loadDefaultAddress,
+    TResult Function(int? paymentMethod)? updatePaymentMethod,
     TResult Function()? createOrder,
     required TResult orElse(),
   }) {
@@ -427,6 +451,8 @@ class _$LoadDefaultAddressEventImpl extends _LoadDefaultAddressEvent
     required TResult Function(_LoadCheckoutDataEvent value) loadCheckoutData,
     required TResult Function(_LoadDefaultAddressEvent value)
         loadDefaultAddress,
+    required TResult Function(_UpdatePaymentMethodEvent value)
+        updatePaymentMethod,
     required TResult Function(_CreateOrderEvent value) createOrder,
   }) {
     return loadDefaultAddress(this);
@@ -438,6 +464,7 @@ class _$LoadDefaultAddressEventImpl extends _LoadDefaultAddressEvent
     TResult? Function(_CheckoutInitialEvent value)? initial,
     TResult? Function(_LoadCheckoutDataEvent value)? loadCheckoutData,
     TResult? Function(_LoadDefaultAddressEvent value)? loadDefaultAddress,
+    TResult? Function(_UpdatePaymentMethodEvent value)? updatePaymentMethod,
     TResult? Function(_CreateOrderEvent value)? createOrder,
   }) {
     return loadDefaultAddress?.call(this);
@@ -449,6 +476,7 @@ class _$LoadDefaultAddressEventImpl extends _LoadDefaultAddressEvent
     TResult Function(_CheckoutInitialEvent value)? initial,
     TResult Function(_LoadCheckoutDataEvent value)? loadCheckoutData,
     TResult Function(_LoadDefaultAddressEvent value)? loadDefaultAddress,
+    TResult Function(_UpdatePaymentMethodEvent value)? updatePaymentMethod,
     TResult Function(_CreateOrderEvent value)? createOrder,
     required TResult orElse(),
   }) {
@@ -462,6 +490,174 @@ class _$LoadDefaultAddressEventImpl extends _LoadDefaultAddressEvent
 abstract class _LoadDefaultAddressEvent extends CheckoutEvent {
   const factory _LoadDefaultAddressEvent() = _$LoadDefaultAddressEventImpl;
   const _LoadDefaultAddressEvent._() : super._();
+}
+
+/// @nodoc
+abstract class _$$UpdatePaymentMethodEventImplCopyWith<$Res> {
+  factory _$$UpdatePaymentMethodEventImplCopyWith(
+          _$UpdatePaymentMethodEventImpl value,
+          $Res Function(_$UpdatePaymentMethodEventImpl) then) =
+      __$$UpdatePaymentMethodEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int? paymentMethod});
+}
+
+/// @nodoc
+class __$$UpdatePaymentMethodEventImplCopyWithImpl<$Res>
+    extends _$CheckoutEventCopyWithImpl<$Res, _$UpdatePaymentMethodEventImpl>
+    implements _$$UpdatePaymentMethodEventImplCopyWith<$Res> {
+  __$$UpdatePaymentMethodEventImplCopyWithImpl(
+      _$UpdatePaymentMethodEventImpl _value,
+      $Res Function(_$UpdatePaymentMethodEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? paymentMethod = freezed,
+  }) {
+    return _then(_$UpdatePaymentMethodEventImpl(
+      freezed == paymentMethod
+          ? _value.paymentMethod
+          : paymentMethod // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdatePaymentMethodEventImpl extends _UpdatePaymentMethodEvent
+    with DiagnosticableTreeMixin {
+  const _$UpdatePaymentMethodEventImpl(this.paymentMethod) : super._();
+
+  @override
+  final int? paymentMethod;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'CheckoutEvent.updatePaymentMethod(paymentMethod: $paymentMethod)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'CheckoutEvent.updatePaymentMethod'))
+      ..add(DiagnosticsProperty('paymentMethod', paymentMethod));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdatePaymentMethodEventImpl &&
+            (identical(other.paymentMethod, paymentMethod) ||
+                other.paymentMethod == paymentMethod));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, paymentMethod);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdatePaymentMethodEventImplCopyWith<_$UpdatePaymentMethodEventImpl>
+      get copyWith => __$$UpdatePaymentMethodEventImplCopyWithImpl<
+          _$UpdatePaymentMethodEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadCheckoutData,
+    required TResult Function() loadDefaultAddress,
+    required TResult Function(int? paymentMethod) updatePaymentMethod,
+    required TResult Function() createOrder,
+  }) {
+    return updatePaymentMethod(paymentMethod);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadCheckoutData,
+    TResult? Function()? loadDefaultAddress,
+    TResult? Function(int? paymentMethod)? updatePaymentMethod,
+    TResult? Function()? createOrder,
+  }) {
+    return updatePaymentMethod?.call(paymentMethod);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadCheckoutData,
+    TResult Function()? loadDefaultAddress,
+    TResult Function(int? paymentMethod)? updatePaymentMethod,
+    TResult Function()? createOrder,
+    required TResult orElse(),
+  }) {
+    if (updatePaymentMethod != null) {
+      return updatePaymentMethod(paymentMethod);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CheckoutInitialEvent value) initial,
+    required TResult Function(_LoadCheckoutDataEvent value) loadCheckoutData,
+    required TResult Function(_LoadDefaultAddressEvent value)
+        loadDefaultAddress,
+    required TResult Function(_UpdatePaymentMethodEvent value)
+        updatePaymentMethod,
+    required TResult Function(_CreateOrderEvent value) createOrder,
+  }) {
+    return updatePaymentMethod(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_CheckoutInitialEvent value)? initial,
+    TResult? Function(_LoadCheckoutDataEvent value)? loadCheckoutData,
+    TResult? Function(_LoadDefaultAddressEvent value)? loadDefaultAddress,
+    TResult? Function(_UpdatePaymentMethodEvent value)? updatePaymentMethod,
+    TResult? Function(_CreateOrderEvent value)? createOrder,
+  }) {
+    return updatePaymentMethod?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CheckoutInitialEvent value)? initial,
+    TResult Function(_LoadCheckoutDataEvent value)? loadCheckoutData,
+    TResult Function(_LoadDefaultAddressEvent value)? loadDefaultAddress,
+    TResult Function(_UpdatePaymentMethodEvent value)? updatePaymentMethod,
+    TResult Function(_CreateOrderEvent value)? createOrder,
+    required TResult orElse(),
+  }) {
+    if (updatePaymentMethod != null) {
+      return updatePaymentMethod(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdatePaymentMethodEvent extends CheckoutEvent {
+  const factory _UpdatePaymentMethodEvent(final int? paymentMethod) =
+      _$UpdatePaymentMethodEventImpl;
+  const _UpdatePaymentMethodEvent._() : super._();
+
+  int? get paymentMethod;
+  @JsonKey(ignore: true)
+  _$$UpdatePaymentMethodEventImplCopyWith<_$UpdatePaymentMethodEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -512,6 +708,7 @@ class _$CreateOrderEventImpl extends _CreateOrderEvent
     required TResult Function() initial,
     required TResult Function() loadCheckoutData,
     required TResult Function() loadDefaultAddress,
+    required TResult Function(int? paymentMethod) updatePaymentMethod,
     required TResult Function() createOrder,
   }) {
     return createOrder();
@@ -523,6 +720,7 @@ class _$CreateOrderEventImpl extends _CreateOrderEvent
     TResult? Function()? initial,
     TResult? Function()? loadCheckoutData,
     TResult? Function()? loadDefaultAddress,
+    TResult? Function(int? paymentMethod)? updatePaymentMethod,
     TResult? Function()? createOrder,
   }) {
     return createOrder?.call();
@@ -534,6 +732,7 @@ class _$CreateOrderEventImpl extends _CreateOrderEvent
     TResult Function()? initial,
     TResult Function()? loadCheckoutData,
     TResult Function()? loadDefaultAddress,
+    TResult Function(int? paymentMethod)? updatePaymentMethod,
     TResult Function()? createOrder,
     required TResult orElse(),
   }) {
@@ -550,6 +749,8 @@ class _$CreateOrderEventImpl extends _CreateOrderEvent
     required TResult Function(_LoadCheckoutDataEvent value) loadCheckoutData,
     required TResult Function(_LoadDefaultAddressEvent value)
         loadDefaultAddress,
+    required TResult Function(_UpdatePaymentMethodEvent value)
+        updatePaymentMethod,
     required TResult Function(_CreateOrderEvent value) createOrder,
   }) {
     return createOrder(this);
@@ -561,6 +762,7 @@ class _$CreateOrderEventImpl extends _CreateOrderEvent
     TResult? Function(_CheckoutInitialEvent value)? initial,
     TResult? Function(_LoadCheckoutDataEvent value)? loadCheckoutData,
     TResult? Function(_LoadDefaultAddressEvent value)? loadDefaultAddress,
+    TResult? Function(_UpdatePaymentMethodEvent value)? updatePaymentMethod,
     TResult? Function(_CreateOrderEvent value)? createOrder,
   }) {
     return createOrder?.call(this);
@@ -572,6 +774,7 @@ class _$CreateOrderEventImpl extends _CreateOrderEvent
     TResult Function(_CheckoutInitialEvent value)? initial,
     TResult Function(_LoadCheckoutDataEvent value)? loadCheckoutData,
     TResult Function(_LoadDefaultAddressEvent value)? loadDefaultAddress,
+    TResult Function(_UpdatePaymentMethodEvent value)? updatePaymentMethod,
     TResult Function(_CreateOrderEvent value)? createOrder,
     required TResult orElse(),
   }) {
@@ -595,8 +798,9 @@ mixin _$CheckoutState {
   Set<String> get selectedCartItemIds => throw _privateConstructorUsedError;
   ApiStatus get loadUserDefaultAddressStatus =>
       throw _privateConstructorUsedError;
-  UserAddressEntity? get userAddress => throw _privateConstructorUsedError;
-  PaymentMethodEntity? get paymentMethod => throw _privateConstructorUsedError;
+  UserAddressEntity? get userAddress =>
+      throw _privateConstructorUsedError; //PaymentMethodEntity? paymentMethod,
+  int get paymentMethod => throw _privateConstructorUsedError;
   ApiStatus get createOrderStatus => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -616,7 +820,7 @@ abstract class $CheckoutStateCopyWith<$Res> {
       Set<String> selectedCartItemIds,
       ApiStatus loadUserDefaultAddressStatus,
       UserAddressEntity? userAddress,
-      PaymentMethodEntity? paymentMethod,
+      int paymentMethod,
       ApiStatus createOrderStatus});
 
   $ApiStatusCopyWith<$Res> get loadCartStatus;
@@ -642,7 +846,7 @@ class _$CheckoutStateCopyWithImpl<$Res, $Val extends CheckoutState>
     Object? selectedCartItemIds = null,
     Object? loadUserDefaultAddressStatus = null,
     Object? userAddress = freezed,
-    Object? paymentMethod = freezed,
+    Object? paymentMethod = null,
     Object? createOrderStatus = null,
   }) {
     return _then(_value.copyWith(
@@ -666,10 +870,10 @@ class _$CheckoutStateCopyWithImpl<$Res, $Val extends CheckoutState>
           ? _value.userAddress
           : userAddress // ignore: cast_nullable_to_non_nullable
               as UserAddressEntity?,
-      paymentMethod: freezed == paymentMethod
+      paymentMethod: null == paymentMethod
           ? _value.paymentMethod
           : paymentMethod // ignore: cast_nullable_to_non_nullable
-              as PaymentMethodEntity?,
+              as int,
       createOrderStatus: null == createOrderStatus
           ? _value.createOrderStatus
           : createOrderStatus // ignore: cast_nullable_to_non_nullable
@@ -718,7 +922,7 @@ abstract class _$$CheckoutStateImplCopyWith<$Res>
       Set<String> selectedCartItemIds,
       ApiStatus loadUserDefaultAddressStatus,
       UserAddressEntity? userAddress,
-      PaymentMethodEntity? paymentMethod,
+      int paymentMethod,
       ApiStatus createOrderStatus});
 
   @override
@@ -745,7 +949,7 @@ class __$$CheckoutStateImplCopyWithImpl<$Res>
     Object? selectedCartItemIds = null,
     Object? loadUserDefaultAddressStatus = null,
     Object? userAddress = freezed,
-    Object? paymentMethod = freezed,
+    Object? paymentMethod = null,
     Object? createOrderStatus = null,
   }) {
     return _then(_$CheckoutStateImpl(
@@ -769,10 +973,10 @@ class __$$CheckoutStateImplCopyWithImpl<$Res>
           ? _value.userAddress
           : userAddress // ignore: cast_nullable_to_non_nullable
               as UserAddressEntity?,
-      paymentMethod: freezed == paymentMethod
+      paymentMethod: null == paymentMethod
           ? _value.paymentMethod
           : paymentMethod // ignore: cast_nullable_to_non_nullable
-              as PaymentMethodEntity?,
+              as int,
       createOrderStatus: null == createOrderStatus
           ? _value.createOrderStatus
           : createOrderStatus // ignore: cast_nullable_to_non_nullable
@@ -790,7 +994,7 @@ class _$CheckoutStateImpl extends _CheckoutState with DiagnosticableTreeMixin {
       final Set<String> selectedCartItemIds = const {},
       this.loadUserDefaultAddressStatus = const ApiStatus.initial(),
       this.userAddress,
-      this.paymentMethod,
+      this.paymentMethod = 0,
       this.createOrderStatus = const ApiStatus.initial()})
       : _cartItems = cartItems,
         _selectedCartItemIds = selectedCartItemIds,
@@ -823,8 +1027,10 @@ class _$CheckoutStateImpl extends _CheckoutState with DiagnosticableTreeMixin {
   final ApiStatus loadUserDefaultAddressStatus;
   @override
   final UserAddressEntity? userAddress;
+//PaymentMethodEntity? paymentMethod,
   @override
-  final PaymentMethodEntity? paymentMethod;
+  @JsonKey()
+  final int paymentMethod;
   @override
   @JsonKey()
   final ApiStatus createOrderStatus;
@@ -897,7 +1103,7 @@ abstract class _CheckoutState extends CheckoutState {
       final Set<String> selectedCartItemIds,
       final ApiStatus loadUserDefaultAddressStatus,
       final UserAddressEntity? userAddress,
-      final PaymentMethodEntity? paymentMethod,
+      final int paymentMethod,
       final ApiStatus createOrderStatus}) = _$CheckoutStateImpl;
   const _CheckoutState._() : super._();
 
@@ -911,8 +1117,8 @@ abstract class _CheckoutState extends CheckoutState {
   ApiStatus get loadUserDefaultAddressStatus;
   @override
   UserAddressEntity? get userAddress;
-  @override
-  PaymentMethodEntity? get paymentMethod;
+  @override //PaymentMethodEntity? paymentMethod,
+  int get paymentMethod;
   @override
   ApiStatus get createOrderStatus;
   @override

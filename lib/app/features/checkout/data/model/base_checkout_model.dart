@@ -20,22 +20,6 @@ class MsCreateOrderRq {
   Map<String, dynamic> toJson() => _$MsCreateOrderRqToJson(this);
 }
 
-// @JsonSerializable()
-// class Sellers {
-//   final String? sellerID;
-//   final List<Carts>? carts;
-//
-//   const Sellers({
-//     this.sellerID,
-//     this.carts,
-//   });
-//
-//   factory Sellers.fromJson(Map<String, dynamic> json) =>
-//       _$SellersFromJson(json);
-//
-//   Map<String, dynamic> toJson() => _$SellersToJson(this);
-// }
-
 @JsonSerializable()
 class Carts {
   final String? cartID;

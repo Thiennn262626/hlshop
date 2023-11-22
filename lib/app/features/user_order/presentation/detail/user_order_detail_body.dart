@@ -46,7 +46,7 @@ class UserOrderDetailBody extends StatelessWidget {
               AppTileText.semiBold(
                 padding: Dimens.edge,
                 title: LocaleKeys.payment_PaymentMethod.tr(),
-                subtitle: 'Thanh toán khi nhận hàng',
+                subtitle: _getPaymentMethodText(item?.paymentMethod ?? 0).tr(),
               ),
               OrderPaymentDetail(order: item).pyDefault(),
             ].withDivider(const AppDivider()),
@@ -54,5 +54,16 @@ class UserOrderDetailBody extends StatelessWidget {
         );
       },
     );
+  }
+}
+
+String _getPaymentMethodText(int paymentMethod) {
+  switch (paymentMethod) {
+    case 0:
+      return 'Thanh toán khi nhận hàng'.tr();
+    case 1:
+      return 'Thanh toán qua momo'.tr();
+    default:
+      return '';
   }
 }
