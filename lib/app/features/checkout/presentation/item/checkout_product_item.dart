@@ -66,6 +66,7 @@ class CheckoutProductItem1 extends StatelessWidget {
               clipBehavior: Clip.hardEdge,
               child: AppImg(
                 cartItem.product.img,
+                fit: BoxFit.cover,
               ),
             ).aspectRatio(1),
             Gaps.hGap12,
@@ -83,7 +84,7 @@ class CheckoutProductItem1 extends StatelessWidget {
         cartItem.product.name?.textAuto
             .titleMedium(context)
             .medium
-            .maxLines(2)
+            .maxLines(1)
             .ellipsis
             .make()
             .pb2()
@@ -91,15 +92,16 @@ class CheckoutProductItem1 extends StatelessWidget {
         const Spacer(),
         Row(
           children: [
-            'Phân loại: {}'
-                .tr(
-                  args: [cartItem.variant?.variantValueName ?? ''],
-                )
-                .text
-                .textXS3
-                .colorDark(context)
-                .make()
-                .expand(),
+            if (cartItem.variant?.variantValueName != null)
+              'Phân loại: {}'
+                  .tr(
+                    args: [cartItem.variant?.variantValueName ?? ''],
+                  )
+                  .text
+                  .textXS3
+                  .colorDark(context)
+                  .make()
+                  .expand(),
             ProductPriceWithType(
               price: cartItem.variant?.price,
               priceStyle: context.bodyMedium?.copyWith(

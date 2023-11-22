@@ -30,7 +30,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   ) async {
     final AuthenticationStatus status;
 
-    if (_userSecureStorage.token != null) {
+    final token = _userSecureStorage.token;
+    if (token != null) {
+      getIt<DioModule>().addToken(token);
       status = const AuthenticationStatus.authenticated();
     } else {
       status = const AuthenticationStatus.notAuthenticated();

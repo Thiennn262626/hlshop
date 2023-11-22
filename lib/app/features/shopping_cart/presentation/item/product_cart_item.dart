@@ -38,6 +38,7 @@ class ProductCartItem extends StatelessWidget {
               clipBehavior: Clip.hardEdge,
               child: AppImg(
                 cartItem.product.img,
+                fit: BoxFit.cover,
               ),
             ).aspectRatio(1),
             Gaps.hGap12,
@@ -60,15 +61,16 @@ class ProductCartItem extends StatelessWidget {
             .make()
             .pb2()
             .minHeight(22),
-        'Phân loại: {}'
-            .tr(
-              args: [cartItem.variant?.variantValueName ?? ''],
-            )
-            .text
-            .textXS3
-            .colorDark(context)
-            .make()
-            .expand(),
+        if (cartItem.variant?.variantValueName != null)
+          'Phân loại: {}'
+              .tr(
+                args: [cartItem.variant?.variantValueName ?? ''],
+              )
+              .text
+              .textXS3
+              .colorDark(context)
+              .make()
+              .expand(),
         Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.end,

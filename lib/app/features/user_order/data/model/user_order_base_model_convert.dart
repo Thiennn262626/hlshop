@@ -95,10 +95,12 @@ extension MsOderGroupDataConvert on MsOderGroupData {
           id: receiverAddresse?.receiverAddressID,
           district: DistrictEntity(
             object: this,
+            id: receiverAddresse?.districtID,
             name: receiverAddresse?.districtName,
           ),
           city: CityEntity(
             object: this,
+            id: receiverAddresse?.cityID,
             name: receiverAddresse?.cityName,
           ),
         ));

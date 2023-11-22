@@ -100,7 +100,7 @@ class OrderProductItem1 extends StatelessWidget {
     return CardCupertinoEffect(
       onPressed: onPressed,
       child: SizedBox(
-        height: 70,
+        height: 85,
         child: Row(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -115,6 +115,7 @@ class OrderProductItem1 extends StatelessWidget {
               clipBehavior: Clip.hardEdge,
               child: AppImg(
                 orderItem.productEntity?.img,
+                fit: BoxFit.cover,
               ),
             ).aspectRatio(1),
             Gaps.hGap12,
@@ -143,15 +144,16 @@ class OrderProductItem1 extends StatelessWidget {
         const Spacer(),
         Row(
           children: [
-            'Phân loại: {}'
-                .tr(
-                  args: [orderItem.variant?.variantValueName ?? ''],
-                )
-                .text
-                .textXS3
-                .colorDark(context)
-                .make()
-                .expand(),
+            if (orderItem.variant?.variantValueName != null)
+              'Phân loại: {}'
+                  .tr(
+                    args: [orderItem.variant?.variantValueName ?? ''],
+                  )
+                  .text
+                  .textXS3
+                  .colorDark(context)
+                  .make()
+                  .expand(),
             ProductPriceWithType(
               price: orderItem.price,
               priceStyle: context.bodyMedium?.copyWith(
@@ -165,7 +167,7 @@ class OrderProductItem1 extends StatelessWidget {
             ).expand(),
             args.action,
           ].withDivider(Gaps.hGap8),
-        ),
+        ).expand(),
       ].filterNotNullList(),
     );
   }
