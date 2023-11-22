@@ -19,4 +19,10 @@ abstract class AddressApiMS {
     @Query('cityID') String? cityID,
     @Query('search') String? search,
   });
+
+  @GET('/api/hlshop/ward/get-list-by-district-id')
+  Future<MsWardsResult?> getWardsInfo({
+    @Query('districtID') String? districtID,
+    @Query('search') String? search,
+  });
 }

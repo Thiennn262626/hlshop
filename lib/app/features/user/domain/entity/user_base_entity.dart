@@ -158,6 +158,7 @@ class UserAddressEntity {
     this.addressType,
     this.city,
     this.district,
+    this.ward,
   });
 
   UserAddressEntity demo() {
@@ -169,6 +170,9 @@ class UserAddressEntity {
       ),
       city: const CityEntity(
         id: '9',
+      ),
+      ward: const WardEntity(
+        districtId: '9',
       ),
       phone: phone,
     );
@@ -194,7 +198,7 @@ class UserAddressEntity {
   final String? fullAddress;
   final CityEntity? city;
   final DistrictEntity? district;
-
+  final WardEntity? ward;
   final AddressType? addressType;
 
   final Object? object;
@@ -211,8 +215,12 @@ class UserAddressEntity {
   String? get addressAndPhone =>
       [fullName, phone].joinWithoutNullEmpty('  |  ');
 
-  String? get addressDetail =>
-      [fullAddress, district?.name, city?.name].joinWithoutNullEmpty(', ');
+  String? get addressDetail => [
+        fullAddress,
+        ward?.name,
+        district?.name,
+        city?.name
+      ].joinWithoutNullEmpty(', ');
 
   factory UserAddressEntity.fromJson(Map<String, dynamic> json) =>
       _$UserAddressEntityFromJson(json);

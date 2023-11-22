@@ -27,6 +27,8 @@ ReceiverAddressesMS _$ReceiverAddressesMSFromJson(Map<String, dynamic> json) =>
       cityID: json['cityID'] as String?,
       districtName: json['districtName'] as String?,
       cityName: json['cityName'] as String?,
+      wardID: json['wardID'] as String?,
+      wardName: json['wardName'] as String?,
       addressLabel:
           $enumDecodeNullable(_$AddressTypeEnumMap, json['addressLabel']),
       userID: json['userID'] as String?,
@@ -46,6 +48,8 @@ Map<String, dynamic> _$ReceiverAddressesMSToJson(
       'cityID': instance.cityID,
       'districtName': instance.districtName,
       'cityName': instance.cityName,
+      'wardID': instance.wardID,
+      'wardName': instance.wardName,
       'addressLabel': _$AddressTypeEnumMap[instance.addressLabel],
       'userID': instance.userID,
       'isDefault': instance.isDefault,

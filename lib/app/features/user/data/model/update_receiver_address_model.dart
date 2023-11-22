@@ -14,6 +14,8 @@ class UpdateReceiverAddressMS {
     this.cityID,
     this.districtName,
     this.districtID,
+    this.wardName,
+    this.wardID,
     this.addressDetail,
     this.addressLabel,
   });
@@ -29,6 +31,8 @@ class UpdateReceiverAddressMS {
   String? cityID;
   String? districtName;
   String? districtID;
+  String? wardName;
+  String? wardID;
   String? addressDetail;
   int? addressLabel;
 

@@ -32,6 +32,10 @@ class CrudAddressCubit extends Cubit<CrudAddressState> {
         validators: [Validators.required],
         value: initAddress?.district,
       ),
+      UserAddressEntity.wardKey: FormControl<WardEntity>(
+        validators: [Validators.required],
+        value: initAddress?.ward,
+      ),
       UserAddressEntity.addressTypeKey: FormControl<AddressType>(
         validators: [Validators.required],
         value: initAddress?.addressType ?? AddressType.home,
@@ -52,6 +56,7 @@ class CrudAddressCubit extends Cubit<CrudAddressState> {
     final city = form.getValue<CityEntity>(UserAddressEntity.cityKey);
     final district =
         form.getValue<DistrictEntity>(UserAddressEntity.districtKey);
+    final ward = form.getValue<WardEntity>(UserAddressEntity.wardKey);
     final fullAddress = form.getValue<String>(UserAddressEntity.fullAddressKey);
     final name = form.getValue<String>(UserAddressEntity.fullNameKey);
     final phone = form.getValue<String>(UserAddressEntity.phoneKey);
@@ -61,6 +66,7 @@ class CrudAddressCubit extends Cubit<CrudAddressState> {
     return UserAddressEntity(
       city: city,
       district: district,
+      ward: ward,
       fullAddress: fullAddress,
       fullName: name,
       phone: phone,

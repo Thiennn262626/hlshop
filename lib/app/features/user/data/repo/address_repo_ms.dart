@@ -27,6 +27,14 @@ class AddressRepoMs implements AddressRepo {
     return rs?.districts?.map(_convertDistrict).toList() ?? [];
   }
 
+  WardEntity _convertWard(MsWard ward) {
+    return ward.toEntity();
+  }
+
+  List<WardEntity> _convertListWard(MsWardsResult? rs) {
+    return rs?.wards?.map(_convertWard).toList() ?? [];
+  }
+
   @override
   Future<List<CityEntity>> getCityInfo(
       {String? search, int? offset, int? limit}) async {
@@ -54,5 +62,22 @@ class AddressRepoMs implements AddressRepo {
       return _convertListDistrict(districts);
     }
     throw Exception('không tìm thấy quận');
+  }
+
+  @override
+  Future<List<WardEntity>> getWardInfo({
+    required String districtID,
+    String? search,
+    int? offset,
+    int? limit,
+  }) async {
+    final wards = await _addressApiMS.getWardsInfo(
+      districtID: districtID,
+      search: search,
+    );
+    if (wards != null) {
+      return _convertListWard(wards);
+    }
+    throw Exception('không tìm thấy phường');
   }
 }

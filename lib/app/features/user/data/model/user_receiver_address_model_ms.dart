@@ -20,6 +20,7 @@ class ListReceiverAddressesMS {
       addressType: receiverAddresses?.first.addressLabel,
       city: receiverAddresses?.first.toEntity().city,
       district: receiverAddresses?.first.toEntity().district,
+      ward: receiverAddresses?.first.toEntity().ward,
       fullName: receiverAddresses?.first.receiverContactName,
       fullAddress: receiverAddresses?.first.addressDetail,
       phone: receiverAddresses?.first.receiverPhone,
@@ -35,6 +36,8 @@ class ReceiverAddressesMS {
     this.cityID,
     this.districtName,
     this.cityName,
+    this.wardID,
+    this.wardName,
     this.addressLabel,
     this.userID,
     this.isDefault,
@@ -50,6 +53,8 @@ class ReceiverAddressesMS {
   String? cityID;
   String? districtName;
   String? cityName;
+  String? wardID;
+  String? wardName;
   AddressType? addressLabel;
   String? userID;
   int? isDefault;

@@ -56,3 +56,29 @@ Map<String, dynamic> _$MsDistrictsResultToJson(MsDistrictsResult instance) =>
       'districts': instance.districts,
       'total': instance.total,
     };
+
+MsWard _$MsWardFromJson(Map<String, dynamic> json) => MsWard(
+      districtID: json['districtID'] as String?,
+      wardID: json['wardID'] as String?,
+      name: json['name'] as String?,
+    );
+
+Map<String, dynamic> _$MsWardToJson(MsWard instance) => <String, dynamic>{
+      'districtID': instance.districtID,
+      'wardID': instance.wardID,
+      'name': instance.name,
+    };
+
+MsWardsResult _$MsWardsResultFromJson(Map<String, dynamic> json) =>
+    MsWardsResult(
+      wards: (json['wards'] as List<dynamic>?)
+          ?.map((e) => MsWard.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      total: json['total'] as int?,
+    );
+
+Map<String, dynamic> _$MsWardsResultToJson(MsWardsResult instance) =>
+    <String, dynamic>{
+      'wards': instance.wards,
+      'total': instance.total,
+    };

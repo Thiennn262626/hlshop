@@ -42,3 +42,22 @@ Map<String, dynamic> _$DistrictEntityToJson(DistrictEntity instance) =>
       'object': instance.object,
       'cityId': instance.cityId,
     };
+
+WardEntity _$WardEntityFromJson(Map<String, dynamic> json) => WardEntity(
+      id: json['id'] as String?,
+      name: json['name'] as String?,
+      lat: json['lat'] as String?,
+      lng: json['lng'] as String?,
+      object: json['object'],
+      districtId: json['districtId'] as String?,
+    );
+
+Map<String, dynamic> _$WardEntityToJson(WardEntity instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'lat': instance.lat,
+      'lng': instance.lng,
+      'object': instance.object,
+      'districtId': instance.districtId,
+    };

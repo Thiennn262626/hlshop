@@ -13,4 +13,11 @@ abstract class AddressRepo {
     int? offset,
     int? limit,
   });
+
+  Future<List<WardEntity>> getWardInfo({
+    required String districtID,
+    String? search,
+    int? offset,
+    int? limit,
+  });
 }

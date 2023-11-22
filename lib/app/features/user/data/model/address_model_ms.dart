@@ -28,7 +28,8 @@ class MsCitiesResult {
     this.total,
   });
 
-  factory MsCitiesResult.fromJson(Map<String, dynamic> json) => _$MsCitiesResultFromJson(json);
+  factory MsCitiesResult.fromJson(Map<String, dynamic> json) =>
+      _$MsCitiesResultFromJson(json);
 
   final List<MsCity>? cities;
   final int? total;
@@ -40,7 +41,8 @@ class MsCitiesResult {
 class MsDistrict {
   const MsDistrict({this.cityID, this.districtID, this.name});
 
-  factory MsDistrict.fromJson(Map<String, dynamic> json) => _$MsDistrictFromJson(json);
+  factory MsDistrict.fromJson(Map<String, dynamic> json) =>
+      _$MsDistrictFromJson(json);
 
   final String? districtID;
   final String? name;
@@ -61,10 +63,45 @@ class MsDistrictsResult {
     this.total,
   });
 
-  factory MsDistrictsResult.fromJson(Map<String, dynamic> json) => _$MsDistrictsResultFromJson(json);
+  factory MsDistrictsResult.fromJson(Map<String, dynamic> json) =>
+      _$MsDistrictsResultFromJson(json);
 
   final List<MsDistrict>? districts;
   final int? total;
 
   Map<String, dynamic> toJson() => _$MsDistrictsResultToJson(this);
+}
+
+@JsonSerializable()
+class MsWard {
+  const MsWard({this.districtID, this.wardID, this.name});
+
+  factory MsWard.fromJson(Map<String, dynamic> json) => _$MsWardFromJson(json);
+
+  final String? districtID;
+  final String? wardID;
+  final String? name;
+
+  WardEntity toEntity() => WardEntity(
+        id: wardID,
+        name: name,
+      );
+
+  Map<String, dynamic> toJson() => _$MsWardToJson(this);
+}
+
+@JsonSerializable()
+class MsWardsResult {
+  const MsWardsResult({
+    this.wards,
+    this.total,
+  });
+
+  factory MsWardsResult.fromJson(Map<String, dynamic> json) =>
+      _$MsWardsResultFromJson(json);
+
+  final List<MsWard>? wards;
+  final int? total;
+
+  Map<String, dynamic> toJson() => _$MsWardsResultToJson(this);
 }

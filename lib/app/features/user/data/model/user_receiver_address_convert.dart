@@ -19,6 +19,11 @@ extension MsUserAddressMapper on ReceiverAddressesMS {
         id: cityID,
         name: cityName,
       ),
+      ward: WardEntity(
+        object: this,
+        id: wardID,
+        name: wardName,
+      ),
     );
   }
 }

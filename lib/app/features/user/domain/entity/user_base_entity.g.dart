@@ -106,6 +106,9 @@ UserAddressEntity _$UserAddressEntityFromJson(Map<String, dynamic> json) =>
       district: json['district'] == null
           ? null
           : DistrictEntity.fromJson(json['district'] as Map<String, dynamic>),
+      ward: json['ward'] == null
+          ? null
+          : WardEntity.fromJson(json['ward'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$UserAddressEntityToJson(UserAddressEntity instance) =>
@@ -116,6 +119,7 @@ Map<String, dynamic> _$UserAddressEntityToJson(UserAddressEntity instance) =>
       'fullAddress': instance.fullAddress,
       'city': instance.city,
       'district': instance.district,
+      'ward': instance.ward,
       'addressType': _$AddressTypeEnumMap[instance.addressType],
       'object': instance.object,
     };

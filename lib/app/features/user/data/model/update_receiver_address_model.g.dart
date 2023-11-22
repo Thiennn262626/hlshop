@@ -17,6 +17,8 @@ UpdateReceiverAddressMS _$UpdateReceiverAddressMSFromJson(
       cityID: json['cityID'] as String?,
       districtName: json['districtName'] as String?,
       districtID: json['districtID'] as String?,
+      wardName: json['wardName'] as String?,
+      wardID: json['wardID'] as String?,
       addressDetail: json['addressDetail'] as String?,
       addressLabel: json['addressLabel'] as int?,
     );
@@ -32,6 +34,8 @@ Map<String, dynamic> _$UpdateReceiverAddressMSToJson(
       'cityID': instance.cityID,
       'districtName': instance.districtName,
       'districtID': instance.districtID,
+      'wardName': instance.wardName,
+      'wardID': instance.wardID,
       'addressDetail': instance.addressDetail,
       'addressLabel': instance.addressLabel,
     };

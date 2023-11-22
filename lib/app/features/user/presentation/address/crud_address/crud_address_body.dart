@@ -26,7 +26,7 @@ class CrudAddressBody extends StatelessWidget {
           ),
           AddressSelectField<CityEntity>(
             formControlName: UserAddressEntity.cityKey,
-            title: 'Chọn thành phố'.tr(),
+            title: 'Chọn tỉnh/thành phố'.tr(),
             itemToString: (city) => city?.name ?? '',
             searchListData: (offset, limit, search) =>
                 getIt<AddressRepo>().getCityInfo(
@@ -44,11 +44,33 @@ class CrudAddressBody extends StatelessWidget {
               return AddressSelectField<DistrictEntity>(
                 isDisable: city == null,
                 formControlName: UserAddressEntity.districtKey,
-                title: 'Chọn thành tỉnh/quận'.tr(),
+                title: 'Chọn quận/huyện'.tr(),
                 itemToString: (district) => district?.name ?? '',
                 searchListData: (offset, limit, search) {
                   return getIt<AddressRepo>().getDistrictInfo(
                     cityID: city?.id ?? '',
+                    offset: offset,
+                    limit: limit,
+                    search: search,
+                  );
+                },
+              );
+            },
+          ),
+          ReactiveStatusListenableBuilder(
+            formControlName: UserAddressEntity.districtKey,
+            builder: (context, control, child) {
+              final district = addressCubit.form.getValue<DistrictEntity>(
+                UserAddressEntity.districtKey,
+              );
+              return AddressSelectField<WardEntity>(
+                isDisable: district == null,
+                formControlName: UserAddressEntity.wardKey,
+                title: 'Chọn phường/xã'.tr(),
+                itemToString: (ward) => ward?.name ?? '',
+                searchListData: (offset, limit, search) {
+                  return getIt<AddressRepo>().getWardInfo(
+                    districtID: district?.id ?? '',
                     offset: offset,
                     limit: limit,
                     search: search,
