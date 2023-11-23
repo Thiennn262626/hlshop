@@ -21,6 +21,7 @@ mixin _$CheckoutEvent {
     required TResult Function() initial,
     required TResult Function() loadCheckoutData,
     required TResult Function() loadDefaultAddress,
+    required TResult Function() loadOrderShippingFee,
     required TResult Function(int? paymentMethod) updatePaymentMethod,
     required TResult Function() createOrder,
   }) =>
@@ -30,6 +31,7 @@ mixin _$CheckoutEvent {
     TResult? Function()? initial,
     TResult? Function()? loadCheckoutData,
     TResult? Function()? loadDefaultAddress,
+    TResult? Function()? loadOrderShippingFee,
     TResult? Function(int? paymentMethod)? updatePaymentMethod,
     TResult? Function()? createOrder,
   }) =>
@@ -39,6 +41,7 @@ mixin _$CheckoutEvent {
     TResult Function()? initial,
     TResult Function()? loadCheckoutData,
     TResult Function()? loadDefaultAddress,
+    TResult Function()? loadOrderShippingFee,
     TResult Function(int? paymentMethod)? updatePaymentMethod,
     TResult Function()? createOrder,
     required TResult orElse(),
@@ -50,6 +53,8 @@ mixin _$CheckoutEvent {
     required TResult Function(_LoadCheckoutDataEvent value) loadCheckoutData,
     required TResult Function(_LoadDefaultAddressEvent value)
         loadDefaultAddress,
+    required TResult Function(_LoadOrderShippingFeeEvent value)
+        loadOrderShippingFee,
     required TResult Function(_UpdatePaymentMethodEvent value)
         updatePaymentMethod,
     required TResult Function(_CreateOrderEvent value) createOrder,
@@ -60,6 +65,7 @@ mixin _$CheckoutEvent {
     TResult? Function(_CheckoutInitialEvent value)? initial,
     TResult? Function(_LoadCheckoutDataEvent value)? loadCheckoutData,
     TResult? Function(_LoadDefaultAddressEvent value)? loadDefaultAddress,
+    TResult? Function(_LoadOrderShippingFeeEvent value)? loadOrderShippingFee,
     TResult? Function(_UpdatePaymentMethodEvent value)? updatePaymentMethod,
     TResult? Function(_CreateOrderEvent value)? createOrder,
   }) =>
@@ -69,6 +75,7 @@ mixin _$CheckoutEvent {
     TResult Function(_CheckoutInitialEvent value)? initial,
     TResult Function(_LoadCheckoutDataEvent value)? loadCheckoutData,
     TResult Function(_LoadDefaultAddressEvent value)? loadDefaultAddress,
+    TResult Function(_LoadOrderShippingFeeEvent value)? loadOrderShippingFee,
     TResult Function(_UpdatePaymentMethodEvent value)? updatePaymentMethod,
     TResult Function(_CreateOrderEvent value)? createOrder,
     required TResult orElse(),
@@ -143,6 +150,7 @@ class _$CheckoutInitialEventImpl extends _CheckoutInitialEvent
     required TResult Function() initial,
     required TResult Function() loadCheckoutData,
     required TResult Function() loadDefaultAddress,
+    required TResult Function() loadOrderShippingFee,
     required TResult Function(int? paymentMethod) updatePaymentMethod,
     required TResult Function() createOrder,
   }) {
@@ -155,6 +163,7 @@ class _$CheckoutInitialEventImpl extends _CheckoutInitialEvent
     TResult? Function()? initial,
     TResult? Function()? loadCheckoutData,
     TResult? Function()? loadDefaultAddress,
+    TResult? Function()? loadOrderShippingFee,
     TResult? Function(int? paymentMethod)? updatePaymentMethod,
     TResult? Function()? createOrder,
   }) {
@@ -167,6 +176,7 @@ class _$CheckoutInitialEventImpl extends _CheckoutInitialEvent
     TResult Function()? initial,
     TResult Function()? loadCheckoutData,
     TResult Function()? loadDefaultAddress,
+    TResult Function()? loadOrderShippingFee,
     TResult Function(int? paymentMethod)? updatePaymentMethod,
     TResult Function()? createOrder,
     required TResult orElse(),
@@ -184,6 +194,8 @@ class _$CheckoutInitialEventImpl extends _CheckoutInitialEvent
     required TResult Function(_LoadCheckoutDataEvent value) loadCheckoutData,
     required TResult Function(_LoadDefaultAddressEvent value)
         loadDefaultAddress,
+    required TResult Function(_LoadOrderShippingFeeEvent value)
+        loadOrderShippingFee,
     required TResult Function(_UpdatePaymentMethodEvent value)
         updatePaymentMethod,
     required TResult Function(_CreateOrderEvent value) createOrder,
@@ -197,6 +209,7 @@ class _$CheckoutInitialEventImpl extends _CheckoutInitialEvent
     TResult? Function(_CheckoutInitialEvent value)? initial,
     TResult? Function(_LoadCheckoutDataEvent value)? loadCheckoutData,
     TResult? Function(_LoadDefaultAddressEvent value)? loadDefaultAddress,
+    TResult? Function(_LoadOrderShippingFeeEvent value)? loadOrderShippingFee,
     TResult? Function(_UpdatePaymentMethodEvent value)? updatePaymentMethod,
     TResult? Function(_CreateOrderEvent value)? createOrder,
   }) {
@@ -209,6 +222,7 @@ class _$CheckoutInitialEventImpl extends _CheckoutInitialEvent
     TResult Function(_CheckoutInitialEvent value)? initial,
     TResult Function(_LoadCheckoutDataEvent value)? loadCheckoutData,
     TResult Function(_LoadDefaultAddressEvent value)? loadDefaultAddress,
+    TResult Function(_LoadOrderShippingFeeEvent value)? loadOrderShippingFee,
     TResult Function(_UpdatePaymentMethodEvent value)? updatePaymentMethod,
     TResult Function(_CreateOrderEvent value)? createOrder,
     required TResult orElse(),
@@ -276,6 +290,7 @@ class _$LoadCheckoutDataEventImpl extends _LoadCheckoutDataEvent
     required TResult Function() initial,
     required TResult Function() loadCheckoutData,
     required TResult Function() loadDefaultAddress,
+    required TResult Function() loadOrderShippingFee,
     required TResult Function(int? paymentMethod) updatePaymentMethod,
     required TResult Function() createOrder,
   }) {
@@ -288,6 +303,7 @@ class _$LoadCheckoutDataEventImpl extends _LoadCheckoutDataEvent
     TResult? Function()? initial,
     TResult? Function()? loadCheckoutData,
     TResult? Function()? loadDefaultAddress,
+    TResult? Function()? loadOrderShippingFee,
     TResult? Function(int? paymentMethod)? updatePaymentMethod,
     TResult? Function()? createOrder,
   }) {
@@ -300,6 +316,7 @@ class _$LoadCheckoutDataEventImpl extends _LoadCheckoutDataEvent
     TResult Function()? initial,
     TResult Function()? loadCheckoutData,
     TResult Function()? loadDefaultAddress,
+    TResult Function()? loadOrderShippingFee,
     TResult Function(int? paymentMethod)? updatePaymentMethod,
     TResult Function()? createOrder,
     required TResult orElse(),
@@ -317,6 +334,8 @@ class _$LoadCheckoutDataEventImpl extends _LoadCheckoutDataEvent
     required TResult Function(_LoadCheckoutDataEvent value) loadCheckoutData,
     required TResult Function(_LoadDefaultAddressEvent value)
         loadDefaultAddress,
+    required TResult Function(_LoadOrderShippingFeeEvent value)
+        loadOrderShippingFee,
     required TResult Function(_UpdatePaymentMethodEvent value)
         updatePaymentMethod,
     required TResult Function(_CreateOrderEvent value) createOrder,
@@ -330,6 +349,7 @@ class _$LoadCheckoutDataEventImpl extends _LoadCheckoutDataEvent
     TResult? Function(_CheckoutInitialEvent value)? initial,
     TResult? Function(_LoadCheckoutDataEvent value)? loadCheckoutData,
     TResult? Function(_LoadDefaultAddressEvent value)? loadDefaultAddress,
+    TResult? Function(_LoadOrderShippingFeeEvent value)? loadOrderShippingFee,
     TResult? Function(_UpdatePaymentMethodEvent value)? updatePaymentMethod,
     TResult? Function(_CreateOrderEvent value)? createOrder,
   }) {
@@ -342,6 +362,7 @@ class _$LoadCheckoutDataEventImpl extends _LoadCheckoutDataEvent
     TResult Function(_CheckoutInitialEvent value)? initial,
     TResult Function(_LoadCheckoutDataEvent value)? loadCheckoutData,
     TResult Function(_LoadDefaultAddressEvent value)? loadDefaultAddress,
+    TResult Function(_LoadOrderShippingFeeEvent value)? loadOrderShippingFee,
     TResult Function(_UpdatePaymentMethodEvent value)? updatePaymentMethod,
     TResult Function(_CreateOrderEvent value)? createOrder,
     required TResult orElse(),
@@ -410,6 +431,7 @@ class _$LoadDefaultAddressEventImpl extends _LoadDefaultAddressEvent
     required TResult Function() initial,
     required TResult Function() loadCheckoutData,
     required TResult Function() loadDefaultAddress,
+    required TResult Function() loadOrderShippingFee,
     required TResult Function(int? paymentMethod) updatePaymentMethod,
     required TResult Function() createOrder,
   }) {
@@ -422,6 +444,7 @@ class _$LoadDefaultAddressEventImpl extends _LoadDefaultAddressEvent
     TResult? Function()? initial,
     TResult? Function()? loadCheckoutData,
     TResult? Function()? loadDefaultAddress,
+    TResult? Function()? loadOrderShippingFee,
     TResult? Function(int? paymentMethod)? updatePaymentMethod,
     TResult? Function()? createOrder,
   }) {
@@ -434,6 +457,7 @@ class _$LoadDefaultAddressEventImpl extends _LoadDefaultAddressEvent
     TResult Function()? initial,
     TResult Function()? loadCheckoutData,
     TResult Function()? loadDefaultAddress,
+    TResult Function()? loadOrderShippingFee,
     TResult Function(int? paymentMethod)? updatePaymentMethod,
     TResult Function()? createOrder,
     required TResult orElse(),
@@ -451,6 +475,8 @@ class _$LoadDefaultAddressEventImpl extends _LoadDefaultAddressEvent
     required TResult Function(_LoadCheckoutDataEvent value) loadCheckoutData,
     required TResult Function(_LoadDefaultAddressEvent value)
         loadDefaultAddress,
+    required TResult Function(_LoadOrderShippingFeeEvent value)
+        loadOrderShippingFee,
     required TResult Function(_UpdatePaymentMethodEvent value)
         updatePaymentMethod,
     required TResult Function(_CreateOrderEvent value) createOrder,
@@ -464,6 +490,7 @@ class _$LoadDefaultAddressEventImpl extends _LoadDefaultAddressEvent
     TResult? Function(_CheckoutInitialEvent value)? initial,
     TResult? Function(_LoadCheckoutDataEvent value)? loadCheckoutData,
     TResult? Function(_LoadDefaultAddressEvent value)? loadDefaultAddress,
+    TResult? Function(_LoadOrderShippingFeeEvent value)? loadOrderShippingFee,
     TResult? Function(_UpdatePaymentMethodEvent value)? updatePaymentMethod,
     TResult? Function(_CreateOrderEvent value)? createOrder,
   }) {
@@ -476,6 +503,7 @@ class _$LoadDefaultAddressEventImpl extends _LoadDefaultAddressEvent
     TResult Function(_CheckoutInitialEvent value)? initial,
     TResult Function(_LoadCheckoutDataEvent value)? loadCheckoutData,
     TResult Function(_LoadDefaultAddressEvent value)? loadDefaultAddress,
+    TResult Function(_LoadOrderShippingFeeEvent value)? loadOrderShippingFee,
     TResult Function(_UpdatePaymentMethodEvent value)? updatePaymentMethod,
     TResult Function(_CreateOrderEvent value)? createOrder,
     required TResult orElse(),
@@ -490,6 +518,147 @@ class _$LoadDefaultAddressEventImpl extends _LoadDefaultAddressEvent
 abstract class _LoadDefaultAddressEvent extends CheckoutEvent {
   const factory _LoadDefaultAddressEvent() = _$LoadDefaultAddressEventImpl;
   const _LoadDefaultAddressEvent._() : super._();
+}
+
+/// @nodoc
+abstract class _$$LoadOrderShippingFeeEventImplCopyWith<$Res> {
+  factory _$$LoadOrderShippingFeeEventImplCopyWith(
+          _$LoadOrderShippingFeeEventImpl value,
+          $Res Function(_$LoadOrderShippingFeeEventImpl) then) =
+      __$$LoadOrderShippingFeeEventImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadOrderShippingFeeEventImplCopyWithImpl<$Res>
+    extends _$CheckoutEventCopyWithImpl<$Res, _$LoadOrderShippingFeeEventImpl>
+    implements _$$LoadOrderShippingFeeEventImplCopyWith<$Res> {
+  __$$LoadOrderShippingFeeEventImplCopyWithImpl(
+      _$LoadOrderShippingFeeEventImpl _value,
+      $Res Function(_$LoadOrderShippingFeeEventImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LoadOrderShippingFeeEventImpl extends _LoadOrderShippingFeeEvent
+    with DiagnosticableTreeMixin {
+  const _$LoadOrderShippingFeeEventImpl() : super._();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'CheckoutEvent.loadOrderShippingFee()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+        .add(DiagnosticsProperty('type', 'CheckoutEvent.loadOrderShippingFee'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadOrderShippingFeeEventImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadCheckoutData,
+    required TResult Function() loadDefaultAddress,
+    required TResult Function() loadOrderShippingFee,
+    required TResult Function(int? paymentMethod) updatePaymentMethod,
+    required TResult Function() createOrder,
+  }) {
+    return loadOrderShippingFee();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadCheckoutData,
+    TResult? Function()? loadDefaultAddress,
+    TResult? Function()? loadOrderShippingFee,
+    TResult? Function(int? paymentMethod)? updatePaymentMethod,
+    TResult? Function()? createOrder,
+  }) {
+    return loadOrderShippingFee?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadCheckoutData,
+    TResult Function()? loadDefaultAddress,
+    TResult Function()? loadOrderShippingFee,
+    TResult Function(int? paymentMethod)? updatePaymentMethod,
+    TResult Function()? createOrder,
+    required TResult orElse(),
+  }) {
+    if (loadOrderShippingFee != null) {
+      return loadOrderShippingFee();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CheckoutInitialEvent value) initial,
+    required TResult Function(_LoadCheckoutDataEvent value) loadCheckoutData,
+    required TResult Function(_LoadDefaultAddressEvent value)
+        loadDefaultAddress,
+    required TResult Function(_LoadOrderShippingFeeEvent value)
+        loadOrderShippingFee,
+    required TResult Function(_UpdatePaymentMethodEvent value)
+        updatePaymentMethod,
+    required TResult Function(_CreateOrderEvent value) createOrder,
+  }) {
+    return loadOrderShippingFee(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_CheckoutInitialEvent value)? initial,
+    TResult? Function(_LoadCheckoutDataEvent value)? loadCheckoutData,
+    TResult? Function(_LoadDefaultAddressEvent value)? loadDefaultAddress,
+    TResult? Function(_LoadOrderShippingFeeEvent value)? loadOrderShippingFee,
+    TResult? Function(_UpdatePaymentMethodEvent value)? updatePaymentMethod,
+    TResult? Function(_CreateOrderEvent value)? createOrder,
+  }) {
+    return loadOrderShippingFee?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CheckoutInitialEvent value)? initial,
+    TResult Function(_LoadCheckoutDataEvent value)? loadCheckoutData,
+    TResult Function(_LoadDefaultAddressEvent value)? loadDefaultAddress,
+    TResult Function(_LoadOrderShippingFeeEvent value)? loadOrderShippingFee,
+    TResult Function(_UpdatePaymentMethodEvent value)? updatePaymentMethod,
+    TResult Function(_CreateOrderEvent value)? createOrder,
+    required TResult orElse(),
+  }) {
+    if (loadOrderShippingFee != null) {
+      return loadOrderShippingFee(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadOrderShippingFeeEvent extends CheckoutEvent {
+  const factory _LoadOrderShippingFeeEvent() = _$LoadOrderShippingFeeEventImpl;
+  const _LoadOrderShippingFeeEvent._() : super._();
 }
 
 /// @nodoc
@@ -572,6 +741,7 @@ class _$UpdatePaymentMethodEventImpl extends _UpdatePaymentMethodEvent
     required TResult Function() initial,
     required TResult Function() loadCheckoutData,
     required TResult Function() loadDefaultAddress,
+    required TResult Function() loadOrderShippingFee,
     required TResult Function(int? paymentMethod) updatePaymentMethod,
     required TResult Function() createOrder,
   }) {
@@ -584,6 +754,7 @@ class _$UpdatePaymentMethodEventImpl extends _UpdatePaymentMethodEvent
     TResult? Function()? initial,
     TResult? Function()? loadCheckoutData,
     TResult? Function()? loadDefaultAddress,
+    TResult? Function()? loadOrderShippingFee,
     TResult? Function(int? paymentMethod)? updatePaymentMethod,
     TResult? Function()? createOrder,
   }) {
@@ -596,6 +767,7 @@ class _$UpdatePaymentMethodEventImpl extends _UpdatePaymentMethodEvent
     TResult Function()? initial,
     TResult Function()? loadCheckoutData,
     TResult Function()? loadDefaultAddress,
+    TResult Function()? loadOrderShippingFee,
     TResult Function(int? paymentMethod)? updatePaymentMethod,
     TResult Function()? createOrder,
     required TResult orElse(),
@@ -613,6 +785,8 @@ class _$UpdatePaymentMethodEventImpl extends _UpdatePaymentMethodEvent
     required TResult Function(_LoadCheckoutDataEvent value) loadCheckoutData,
     required TResult Function(_LoadDefaultAddressEvent value)
         loadDefaultAddress,
+    required TResult Function(_LoadOrderShippingFeeEvent value)
+        loadOrderShippingFee,
     required TResult Function(_UpdatePaymentMethodEvent value)
         updatePaymentMethod,
     required TResult Function(_CreateOrderEvent value) createOrder,
@@ -626,6 +800,7 @@ class _$UpdatePaymentMethodEventImpl extends _UpdatePaymentMethodEvent
     TResult? Function(_CheckoutInitialEvent value)? initial,
     TResult? Function(_LoadCheckoutDataEvent value)? loadCheckoutData,
     TResult? Function(_LoadDefaultAddressEvent value)? loadDefaultAddress,
+    TResult? Function(_LoadOrderShippingFeeEvent value)? loadOrderShippingFee,
     TResult? Function(_UpdatePaymentMethodEvent value)? updatePaymentMethod,
     TResult? Function(_CreateOrderEvent value)? createOrder,
   }) {
@@ -638,6 +813,7 @@ class _$UpdatePaymentMethodEventImpl extends _UpdatePaymentMethodEvent
     TResult Function(_CheckoutInitialEvent value)? initial,
     TResult Function(_LoadCheckoutDataEvent value)? loadCheckoutData,
     TResult Function(_LoadDefaultAddressEvent value)? loadDefaultAddress,
+    TResult Function(_LoadOrderShippingFeeEvent value)? loadOrderShippingFee,
     TResult Function(_UpdatePaymentMethodEvent value)? updatePaymentMethod,
     TResult Function(_CreateOrderEvent value)? createOrder,
     required TResult orElse(),
@@ -708,6 +884,7 @@ class _$CreateOrderEventImpl extends _CreateOrderEvent
     required TResult Function() initial,
     required TResult Function() loadCheckoutData,
     required TResult Function() loadDefaultAddress,
+    required TResult Function() loadOrderShippingFee,
     required TResult Function(int? paymentMethod) updatePaymentMethod,
     required TResult Function() createOrder,
   }) {
@@ -720,6 +897,7 @@ class _$CreateOrderEventImpl extends _CreateOrderEvent
     TResult? Function()? initial,
     TResult? Function()? loadCheckoutData,
     TResult? Function()? loadDefaultAddress,
+    TResult? Function()? loadOrderShippingFee,
     TResult? Function(int? paymentMethod)? updatePaymentMethod,
     TResult? Function()? createOrder,
   }) {
@@ -732,6 +910,7 @@ class _$CreateOrderEventImpl extends _CreateOrderEvent
     TResult Function()? initial,
     TResult Function()? loadCheckoutData,
     TResult Function()? loadDefaultAddress,
+    TResult Function()? loadOrderShippingFee,
     TResult Function(int? paymentMethod)? updatePaymentMethod,
     TResult Function()? createOrder,
     required TResult orElse(),
@@ -749,6 +928,8 @@ class _$CreateOrderEventImpl extends _CreateOrderEvent
     required TResult Function(_LoadCheckoutDataEvent value) loadCheckoutData,
     required TResult Function(_LoadDefaultAddressEvent value)
         loadDefaultAddress,
+    required TResult Function(_LoadOrderShippingFeeEvent value)
+        loadOrderShippingFee,
     required TResult Function(_UpdatePaymentMethodEvent value)
         updatePaymentMethod,
     required TResult Function(_CreateOrderEvent value) createOrder,
@@ -762,6 +943,7 @@ class _$CreateOrderEventImpl extends _CreateOrderEvent
     TResult? Function(_CheckoutInitialEvent value)? initial,
     TResult? Function(_LoadCheckoutDataEvent value)? loadCheckoutData,
     TResult? Function(_LoadDefaultAddressEvent value)? loadDefaultAddress,
+    TResult? Function(_LoadOrderShippingFeeEvent value)? loadOrderShippingFee,
     TResult? Function(_UpdatePaymentMethodEvent value)? updatePaymentMethod,
     TResult? Function(_CreateOrderEvent value)? createOrder,
   }) {
@@ -774,6 +956,7 @@ class _$CreateOrderEventImpl extends _CreateOrderEvent
     TResult Function(_CheckoutInitialEvent value)? initial,
     TResult Function(_LoadCheckoutDataEvent value)? loadCheckoutData,
     TResult Function(_LoadDefaultAddressEvent value)? loadDefaultAddress,
+    TResult Function(_LoadOrderShippingFeeEvent value)? loadOrderShippingFee,
     TResult Function(_UpdatePaymentMethodEvent value)? updatePaymentMethod,
     TResult Function(_CreateOrderEvent value)? createOrder,
     required TResult orElse(),
@@ -798,7 +981,10 @@ mixin _$CheckoutState {
   Set<String> get selectedCartItemIds => throw _privateConstructorUsedError;
   ApiStatus get loadUserDefaultAddressStatus =>
       throw _privateConstructorUsedError;
-  UserAddressEntity? get userAddress =>
+  ApiStatus get loadOrderShippingFeeStatus =>
+      throw _privateConstructorUsedError;
+  UserAddressEntity? get userAddress => throw _privateConstructorUsedError;
+  PriceUnit get orderShippingFee =>
       throw _privateConstructorUsedError; //PaymentMethodEntity? paymentMethod,
   int get paymentMethod => throw _privateConstructorUsedError;
   ApiStatus get createOrderStatus => throw _privateConstructorUsedError;
@@ -819,12 +1005,15 @@ abstract class $CheckoutStateCopyWith<$Res> {
       List<ShoppingCartItemEntity> cartItems,
       Set<String> selectedCartItemIds,
       ApiStatus loadUserDefaultAddressStatus,
+      ApiStatus loadOrderShippingFeeStatus,
       UserAddressEntity? userAddress,
+      PriceUnit orderShippingFee,
       int paymentMethod,
       ApiStatus createOrderStatus});
 
   $ApiStatusCopyWith<$Res> get loadCartStatus;
   $ApiStatusCopyWith<$Res> get loadUserDefaultAddressStatus;
+  $ApiStatusCopyWith<$Res> get loadOrderShippingFeeStatus;
   $ApiStatusCopyWith<$Res> get createOrderStatus;
 }
 
@@ -845,7 +1034,9 @@ class _$CheckoutStateCopyWithImpl<$Res, $Val extends CheckoutState>
     Object? cartItems = null,
     Object? selectedCartItemIds = null,
     Object? loadUserDefaultAddressStatus = null,
+    Object? loadOrderShippingFeeStatus = null,
     Object? userAddress = freezed,
+    Object? orderShippingFee = null,
     Object? paymentMethod = null,
     Object? createOrderStatus = null,
   }) {
@@ -866,10 +1057,18 @@ class _$CheckoutStateCopyWithImpl<$Res, $Val extends CheckoutState>
           ? _value.loadUserDefaultAddressStatus
           : loadUserDefaultAddressStatus // ignore: cast_nullable_to_non_nullable
               as ApiStatus,
+      loadOrderShippingFeeStatus: null == loadOrderShippingFeeStatus
+          ? _value.loadOrderShippingFeeStatus
+          : loadOrderShippingFeeStatus // ignore: cast_nullable_to_non_nullable
+              as ApiStatus,
       userAddress: freezed == userAddress
           ? _value.userAddress
           : userAddress // ignore: cast_nullable_to_non_nullable
               as UserAddressEntity?,
+      orderShippingFee: null == orderShippingFee
+          ? _value.orderShippingFee
+          : orderShippingFee // ignore: cast_nullable_to_non_nullable
+              as PriceUnit,
       paymentMethod: null == paymentMethod
           ? _value.paymentMethod
           : paymentMethod // ignore: cast_nullable_to_non_nullable
@@ -901,6 +1100,14 @@ class _$CheckoutStateCopyWithImpl<$Res, $Val extends CheckoutState>
 
   @override
   @pragma('vm:prefer-inline')
+  $ApiStatusCopyWith<$Res> get loadOrderShippingFeeStatus {
+    return $ApiStatusCopyWith<$Res>(_value.loadOrderShippingFeeStatus, (value) {
+      return _then(_value.copyWith(loadOrderShippingFeeStatus: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
   $ApiStatusCopyWith<$Res> get createOrderStatus {
     return $ApiStatusCopyWith<$Res>(_value.createOrderStatus, (value) {
       return _then(_value.copyWith(createOrderStatus: value) as $Val);
@@ -921,7 +1128,9 @@ abstract class _$$CheckoutStateImplCopyWith<$Res>
       List<ShoppingCartItemEntity> cartItems,
       Set<String> selectedCartItemIds,
       ApiStatus loadUserDefaultAddressStatus,
+      ApiStatus loadOrderShippingFeeStatus,
       UserAddressEntity? userAddress,
+      PriceUnit orderShippingFee,
       int paymentMethod,
       ApiStatus createOrderStatus});
 
@@ -929,6 +1138,8 @@ abstract class _$$CheckoutStateImplCopyWith<$Res>
   $ApiStatusCopyWith<$Res> get loadCartStatus;
   @override
   $ApiStatusCopyWith<$Res> get loadUserDefaultAddressStatus;
+  @override
+  $ApiStatusCopyWith<$Res> get loadOrderShippingFeeStatus;
   @override
   $ApiStatusCopyWith<$Res> get createOrderStatus;
 }
@@ -948,7 +1159,9 @@ class __$$CheckoutStateImplCopyWithImpl<$Res>
     Object? cartItems = null,
     Object? selectedCartItemIds = null,
     Object? loadUserDefaultAddressStatus = null,
+    Object? loadOrderShippingFeeStatus = null,
     Object? userAddress = freezed,
+    Object? orderShippingFee = null,
     Object? paymentMethod = null,
     Object? createOrderStatus = null,
   }) {
@@ -969,10 +1182,18 @@ class __$$CheckoutStateImplCopyWithImpl<$Res>
           ? _value.loadUserDefaultAddressStatus
           : loadUserDefaultAddressStatus // ignore: cast_nullable_to_non_nullable
               as ApiStatus,
+      loadOrderShippingFeeStatus: null == loadOrderShippingFeeStatus
+          ? _value.loadOrderShippingFeeStatus
+          : loadOrderShippingFeeStatus // ignore: cast_nullable_to_non_nullable
+              as ApiStatus,
       userAddress: freezed == userAddress
           ? _value.userAddress
           : userAddress // ignore: cast_nullable_to_non_nullable
               as UserAddressEntity?,
+      orderShippingFee: null == orderShippingFee
+          ? _value.orderShippingFee
+          : orderShippingFee // ignore: cast_nullable_to_non_nullable
+              as PriceUnit,
       paymentMethod: null == paymentMethod
           ? _value.paymentMethod
           : paymentMethod // ignore: cast_nullable_to_non_nullable
@@ -993,7 +1214,9 @@ class _$CheckoutStateImpl extends _CheckoutState with DiagnosticableTreeMixin {
       final List<ShoppingCartItemEntity> cartItems = const [],
       final Set<String> selectedCartItemIds = const {},
       this.loadUserDefaultAddressStatus = const ApiStatus.initial(),
+      this.loadOrderShippingFeeStatus = const ApiStatus.initial(),
       this.userAddress,
+      this.orderShippingFee = PriceUnit.zero,
       this.paymentMethod = 0,
       this.createOrderStatus = const ApiStatus.initial()})
       : _cartItems = cartItems,
@@ -1026,7 +1249,13 @@ class _$CheckoutStateImpl extends _CheckoutState with DiagnosticableTreeMixin {
   @JsonKey()
   final ApiStatus loadUserDefaultAddressStatus;
   @override
+  @JsonKey()
+  final ApiStatus loadOrderShippingFeeStatus;
+  @override
   final UserAddressEntity? userAddress;
+  @override
+  @JsonKey()
+  final PriceUnit orderShippingFee;
 //PaymentMethodEntity? paymentMethod,
   @override
   @JsonKey()
@@ -1037,7 +1266,7 @@ class _$CheckoutStateImpl extends _CheckoutState with DiagnosticableTreeMixin {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CheckoutState(loadCartStatus: $loadCartStatus, cartItems: $cartItems, selectedCartItemIds: $selectedCartItemIds, loadUserDefaultAddressStatus: $loadUserDefaultAddressStatus, userAddress: $userAddress, paymentMethod: $paymentMethod, createOrderStatus: $createOrderStatus)';
+    return 'CheckoutState(loadCartStatus: $loadCartStatus, cartItems: $cartItems, selectedCartItemIds: $selectedCartItemIds, loadUserDefaultAddressStatus: $loadUserDefaultAddressStatus, loadOrderShippingFeeStatus: $loadOrderShippingFeeStatus, userAddress: $userAddress, orderShippingFee: $orderShippingFee, paymentMethod: $paymentMethod, createOrderStatus: $createOrderStatus)';
   }
 
   @override
@@ -1050,7 +1279,10 @@ class _$CheckoutStateImpl extends _CheckoutState with DiagnosticableTreeMixin {
       ..add(DiagnosticsProperty('selectedCartItemIds', selectedCartItemIds))
       ..add(DiagnosticsProperty(
           'loadUserDefaultAddressStatus', loadUserDefaultAddressStatus))
+      ..add(DiagnosticsProperty(
+          'loadOrderShippingFeeStatus', loadOrderShippingFeeStatus))
       ..add(DiagnosticsProperty('userAddress', userAddress))
+      ..add(DiagnosticsProperty('orderShippingFee', orderShippingFee))
       ..add(DiagnosticsProperty('paymentMethod', paymentMethod))
       ..add(DiagnosticsProperty('createOrderStatus', createOrderStatus));
   }
@@ -1070,8 +1302,14 @@ class _$CheckoutStateImpl extends _CheckoutState with DiagnosticableTreeMixin {
                     loadUserDefaultAddressStatus) ||
                 other.loadUserDefaultAddressStatus ==
                     loadUserDefaultAddressStatus) &&
+            (identical(other.loadOrderShippingFeeStatus,
+                    loadOrderShippingFeeStatus) ||
+                other.loadOrderShippingFeeStatus ==
+                    loadOrderShippingFeeStatus) &&
             (identical(other.userAddress, userAddress) ||
                 other.userAddress == userAddress) &&
+            (identical(other.orderShippingFee, orderShippingFee) ||
+                other.orderShippingFee == orderShippingFee) &&
             (identical(other.paymentMethod, paymentMethod) ||
                 other.paymentMethod == paymentMethod) &&
             (identical(other.createOrderStatus, createOrderStatus) ||
@@ -1085,7 +1323,9 @@ class _$CheckoutStateImpl extends _CheckoutState with DiagnosticableTreeMixin {
       const DeepCollectionEquality().hash(_cartItems),
       const DeepCollectionEquality().hash(_selectedCartItemIds),
       loadUserDefaultAddressStatus,
+      loadOrderShippingFeeStatus,
       userAddress,
+      orderShippingFee,
       paymentMethod,
       createOrderStatus);
 
@@ -1102,7 +1342,9 @@ abstract class _CheckoutState extends CheckoutState {
       final List<ShoppingCartItemEntity> cartItems,
       final Set<String> selectedCartItemIds,
       final ApiStatus loadUserDefaultAddressStatus,
+      final ApiStatus loadOrderShippingFeeStatus,
       final UserAddressEntity? userAddress,
+      final PriceUnit orderShippingFee,
       final int paymentMethod,
       final ApiStatus createOrderStatus}) = _$CheckoutStateImpl;
   const _CheckoutState._() : super._();
@@ -1116,7 +1358,11 @@ abstract class _CheckoutState extends CheckoutState {
   @override
   ApiStatus get loadUserDefaultAddressStatus;
   @override
+  ApiStatus get loadOrderShippingFeeStatus;
+  @override
   UserAddressEntity? get userAddress;
+  @override
+  PriceUnit get orderShippingFee;
   @override //PaymentMethodEntity? paymentMethod,
   int get paymentMethod;
   @override

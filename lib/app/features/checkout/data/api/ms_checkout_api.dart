@@ -11,4 +11,9 @@ abstract class MsCheckoutApi {
   Future<void> createOrder({
     @Body() MsCreateOrderRq? body,
   });
+
+  @GET('/api/hlshop/feeship/get-shipping-order-fee')
+  Future<OrderShippingFee?> getOrderShippingFee({
+    @Body() GetOrderShippingFeeRq? body,
+  });
 }

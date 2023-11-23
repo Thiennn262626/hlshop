@@ -20,6 +20,7 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
     on<_CheckoutInitialEvent>(_onInitial);
     on<_LoadCheckoutDataEvent>(_loadCheckoutData);
     on<_LoadDefaultAddressEvent>(_loadDefaultAddress);
+    on<_LoadOrderShippingFeeEvent>(_loadOrderShippingFee);
     on<_UpdatePaymentMethodEvent>(_updatePaymentMethod);
     on<_CreateOrderEvent>(_createOrder);
   }
@@ -89,6 +90,7 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
           userAddress: defaultAddress,
         ),
       );
+      add(const CheckoutEvent.loadOrderShippingFee());
     } catch (e) {
       log(e.toString(), error: e);
       emit(
@@ -99,9 +101,50 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
     }
   }
 
-  PriceUnit getTotalPrice() {
+  Future<FutureOr<void>> _loadOrderShippingFee(
+      _LoadOrderShippingFeeEvent event, Emitter<CheckoutState> emit) async {
+    emit(
+      state.copyWith(
+        loadOrderShippingFeeStatus:
+            state.loadOrderShippingFeeStatus.toPending(),
+      ),
+    );
+    try {
+      final feeShip = await _checkoutRepo.getOrderShippingFee(
+        receiverAddressID: state.userAddress?.id ?? '',
+        insuranceValue: getTotalPriceItem().value.toString(),
+      );
+      emit(
+        state.copyWith(
+            loadOrderShippingFeeStatus: const ApiStatus.done(),
+            orderShippingFee:
+                feeShip?.shippingFee?.value.toPriceUnit ?? PriceUnit.zero),
+      );
+    } catch (e) {
+      emit(
+        state.copyWith(
+          loadOrderShippingFeeStatus: ApiStatus.error(e.toString()),
+        ),
+      );
+    }
+  }
+
+  PriceUnit getTotalPriceItem() {
     final totalPrice = state.cartItems.fold<PriceUnit>(
       PriceUnit.zero,
+      (previousValue, element) {
+        return previousValue +
+            (element.variant?.getPrice().timesQuantity(element.quantity) ??
+                PriceUnit.zero);
+      },
+    );
+    return totalPrice;
+  }
+
+  PriceUnit getTotalPrice() {
+    print('getTotalPrice ${state.orderShippingFee.value}');
+    final totalPrice = state.cartItems.fold<PriceUnit>(
+      state.orderShippingFee ?? PriceUnit.zero,
       (previousValue, element) {
         return previousValue +
             (element.variant?.getPrice().timesQuantity(element.quantity) ??

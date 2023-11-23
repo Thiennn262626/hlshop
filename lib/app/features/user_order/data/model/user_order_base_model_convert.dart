@@ -104,6 +104,11 @@ extension MsOderGroupDataConvert on MsOderGroupData {
             id: receiverAddresse?.cityID,
             name: receiverAddresse?.cityName,
           ),
+          ward: WardEntity(
+            object: this,
+            id: receiverAddresse?.wardID,
+            name: receiverAddresse?.wardName,
+          ),
         ));
   }
 }

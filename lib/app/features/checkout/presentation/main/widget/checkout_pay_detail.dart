@@ -21,8 +21,8 @@ class CheckoutPaymentDetail extends StatelessWidget {
               valueTextBuilder: (context, item) =>
                   item.text.textS.colorDarkest(context).make(),
               children: [
-                'Tổng tiền'.tr(),
-                context.read<CheckoutBloc>().getTotalPrice().toPrice,
+                'Phí vận chuyển'.tr(),
+                state.orderShippingFee.toPrice,
                 'Giảm giá'.tr(),
                 PriceUnit.zero.toPrice,
                 'Tổng thanh toán'.tr(),

@@ -1,4 +1,5 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:hlshop/all_file/all_file.dart';
+import 'package:hlshop/app/features/checkout/domain/entity/OrderShippingFeeEntity.dart';
 
 part 'base_checkout_model.g.dart';
 
@@ -31,4 +32,41 @@ class Carts {
   factory Carts.fromJson(Map<String, dynamic> json) => _$CartsFromJson(json);
 
   Map<String, dynamic> toJson() => _$CartsToJson(this);
+}
+
+@JsonSerializable()
+class GetOrderShippingFeeRq {
+  final String? receiverAddressID;
+  final String? insuranceValue;
+
+  const GetOrderShippingFeeRq({
+    this.receiverAddressID,
+    this.insuranceValue,
+  });
+
+  factory GetOrderShippingFeeRq.fromJson(Map<String, dynamic> json) =>
+      _$GetOrderShippingFeeRqFromJson(json);
+
+  Map<String, dynamic> toJson() => _$GetOrderShippingFeeRqToJson(this);
+}
+
+@JsonSerializable()
+class OrderShippingFee {
+  @JsonKey(fromJson: priceUnitFromAny, toJson: priceUnitToJson)
+  final PriceUnit? shippingFee;
+
+  const OrderShippingFee({
+    this.shippingFee,
+  });
+
+  factory OrderShippingFee.fromJson(Map<String, dynamic> json) =>
+      _$OrderShippingFeeFromJson(json);
+
+  Map<String, dynamic> toJson() => _$OrderShippingFeeToJson(this);
+
+  OrderShippingFeeEntity toEntity() {
+    return OrderShippingFeeEntity(
+      shippingFee: shippingFee?.value.toPriceUnit,
+    );
+  }
 }
