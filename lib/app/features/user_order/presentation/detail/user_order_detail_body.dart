@@ -41,6 +41,7 @@ class UserOrderDetailBody extends StatelessWidget {
                 child: UserOrderGroupItem(
                   showStatus: false,
                   orderData: item,
+                  isDetail: true,
                 ),
               ),
               AppTileText.semiBold(

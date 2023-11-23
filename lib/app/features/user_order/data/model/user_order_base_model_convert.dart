@@ -71,45 +71,47 @@ extension MsOderGroupDataConvert on MsOderGroupData {
 
   OrderDataEntity toEntity() {
     return OrderDataEntity(
+      object: this,
+      id: orderID,
+      orderCode: orderCode,
+      paymentMethod: paymentMethod,
+      orderProductList: dataOrderItem?.mapAsList(
+            (item) => OrderProductEntity(
+              object: this,
+              orderItemID: item.orderItemID,
+              productEntity: item.toProductEntity(),
+              quantity: item.quantity,
+              price: item.price,
+              priceBefore: item.priceBefore,
+              variant: getVariant(item.attribute),
+            ),
+          ) ??
+          [],
+      userAddressEntity: UserAddressEntity(
         object: this,
-        id: orderID,
-        orderCode: orderCode,
-        paymentMethod: paymentMethod,
-        orderProductList: dataOrderItem?.mapAsList(
-              (item) => OrderProductEntity(
-                object: this,
-                orderItemID: item.orderItemID,
-                productEntity: item.toProductEntity(),
-                quantity: item.quantity,
-                price: item.price,
-                priceBefore: item.priceBefore,
-                variant: getVariant(item.attribute),
-              ),
-            ) ??
-            [],
-        userAddressEntity: UserAddressEntity(
+        fullAddress: receiverAddresse?.addressDetail,
+        phone: receiverAddresse?.receiverPhone,
+        addressType: receiverAddresse?.addressLabel,
+        fullName: receiverAddresse?.receiverContactName,
+        id: receiverAddresse?.receiverAddressID,
+        district: DistrictEntity(
           object: this,
-          fullAddress: receiverAddresse?.addressDetail,
-          phone: receiverAddresse?.receiverPhone,
-          addressType: receiverAddresse?.addressLabel,
-          fullName: receiverAddresse?.receiverContactName,
-          id: receiverAddresse?.receiverAddressID,
-          district: DistrictEntity(
-            object: this,
-            id: receiverAddresse?.districtID,
-            name: receiverAddresse?.districtName,
-          ),
-          city: CityEntity(
-            object: this,
-            id: receiverAddresse?.cityID,
-            name: receiverAddresse?.cityName,
-          ),
-          ward: WardEntity(
-            object: this,
-            id: receiverAddresse?.wardID,
-            name: receiverAddresse?.wardName,
-          ),
-        ));
+          id: receiverAddresse?.districtID,
+          name: receiverAddresse?.districtName,
+        ),
+        city: CityEntity(
+          object: this,
+          id: receiverAddresse?.cityID,
+          name: receiverAddresse?.cityName,
+        ),
+        ward: WardEntity(
+          object: this,
+          id: receiverAddresse?.wardID,
+          name: receiverAddresse?.wardName,
+        ),
+      ),
+      orderShippingFee: orderShippingFee?.toEntity(),
+    );
   }
 }
 

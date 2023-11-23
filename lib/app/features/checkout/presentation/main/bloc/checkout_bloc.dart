@@ -142,9 +142,8 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
   }
 
   PriceUnit getTotalPrice() {
-    print('getTotalPrice ${state.orderShippingFee.value}');
     final totalPrice = state.cartItems.fold<PriceUnit>(
-      state.orderShippingFee ?? PriceUnit.zero,
+      state.orderShippingFee,
       (previousValue, element) {
         return previousValue +
             (element.variant?.getPrice().timesQuantity(element.quantity) ??

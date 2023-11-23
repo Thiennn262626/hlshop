@@ -10,12 +10,14 @@ class UserOrderGroupItem extends StatelessWidget {
     required this.orderData,
     this.showStatus = true,
     this.limitItemShow,
+    this.isDetail = false,
   });
 
   final OrderEntity? order;
   final OrderDataEntity? orderData;
   final bool showStatus;
   final int? limitItemShow;
+  final bool isDetail;
 
   void _onItemClick(BuildContext context) {
     if (limitItemShow != null) {
@@ -85,7 +87,9 @@ class UserOrderGroupItem extends StatelessWidget {
                   .make()
                   .expand(),
               AppPrice(
-                price: orderData?.totalPrice,
+                price: isDetail
+                    ? orderData?.totalPriceItem
+                    : orderData?.totalPriceOrder,
                 style: TextStyle(
                   fontWeight: FontWeight.w600,
                   fontSize: context.textS,

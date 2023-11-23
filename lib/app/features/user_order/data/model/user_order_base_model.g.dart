@@ -29,6 +29,10 @@ MsOderGroupData _$MsOderGroupDataFromJson(Map<String, dynamic> json) =>
           ? null
           : ReceiverAddressesMS.fromJson(
               json['receiverAddresse'] as Map<String, dynamic>),
+      json['orderShippingFee'] == null
+          ? null
+          : OrderShippingFee.fromJson(
+              json['orderShippingFee'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$MsOderGroupDataToJson(MsOderGroupData instance) =>
@@ -39,6 +43,7 @@ Map<String, dynamic> _$MsOderGroupDataToJson(MsOderGroupData instance) =>
       'paymentMethod': instance.paymentMethod,
       'orderStatus': _$MsOrderStatusEnumMap[instance.orderStatus],
       'receiverAddresse': instance.receiverAddresse,
+      'orderShippingFee': instance.orderShippingFee,
     };
 
 const _$MsOrderStatusEnumMap = {

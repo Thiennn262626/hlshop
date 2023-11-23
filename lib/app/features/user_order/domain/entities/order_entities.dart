@@ -1,4 +1,5 @@
 import 'package:hlshop/all_file/all_file.dart';
+import 'package:hlshop/app/features/checkout/domain/entity/OrderShippingFeeEntity.dart';
 import 'package:hlshop/app/features/product/self.dart';
 import 'package:hlshop/app/features/user/domain/entity/user_base_entity.dart';
 
@@ -61,6 +62,7 @@ class OrderDataEntity {
     this.id,
     this.orderCode,
     this.paymentMethod,
+    this.orderShippingFee,
   });
   final List<OrderProductEntity>? orderProductList;
   final Object? object;
@@ -68,10 +70,21 @@ class OrderDataEntity {
   final String? id;
   final String? orderCode;
   final int? paymentMethod;
-
-  PriceUnit get totalPrice {
+  final OrderShippingFeeEntity? orderShippingFee;
+  PriceUnit get totalPriceItem {
     return orderProductList?.fold(
           PriceUnit.zero,
+          (previousValue, element) =>
+              (previousValue ?? PriceUnit.zero) +
+              (element.price ?? PriceUnit.zero) *
+                  (element.quantity.toPriceUnit),
+        ) ??
+        PriceUnit.zero;
+  }
+
+  PriceUnit get totalPriceOrder {
+    return orderProductList?.fold(
+          orderShippingFee?.shippingFee ?? PriceUnit.zero,
           (previousValue, element) =>
               (previousValue ?? PriceUnit.zero) +
               (element.price ?? PriceUnit.zero) *

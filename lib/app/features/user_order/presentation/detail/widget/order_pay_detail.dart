@@ -20,12 +20,13 @@ class OrderPaymentDetail extends StatelessWidget {
           valueTextBuilder: (context, item) =>
               item.text.textS.colorDarkest(context).make(),
           children: [
-            LocaleKeys.checkout_TotalPrice.tr(),
-            order?.totalPrice.toPrice ?? '0'.toPrice,
+            'Phí vận chuyển'.tr(),
+            order?.orderShippingFee?.shippingFee?.toPrice ?? '0'.toPrice,
+            //order?.totalPrice.toPrice ?? '0'.toPrice,
             LocaleKeys.checkout_Discount.tr(),
             '0'.toPrice,
             LocaleKeys.checkout_TotalPay.tr(),
-            order?.totalPrice.toPrice.text.textS
+            order?.totalPriceOrder.toPrice.text.textS
                 .colorDarkest(context)
                 .medium
                 .make(),

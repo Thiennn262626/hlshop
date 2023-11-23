@@ -1,4 +1,5 @@
 import 'package:hlshop/all_file/all_file.dart';
+import 'package:hlshop/app/features/checkout/data/model/base_checkout_model.dart';
 import 'package:hlshop/app/features/product/domain/entity/product_entity.dart';
 import 'package:hlshop/app/features/shopping_cart/data/model/base_shopping_cart_model.dart';
 import 'package:hlshop/app/features/user/data/model/user_receiver_address_model_ms.dart';
@@ -60,6 +61,7 @@ class MsOderGroupData {
     this.paymentMethod,
     this.orderStatus,
     this.receiverAddresse,
+    this.orderShippingFee,
   );
 
   final List<MsOrderProduct>? dataOrderItem;
@@ -68,7 +70,7 @@ class MsOderGroupData {
   final int? paymentMethod;
   final MsOrderStatus? orderStatus;
   final ReceiverAddressesMS? receiverAddresse;
-
+  final OrderShippingFee? orderShippingFee;
   factory MsOderGroupData.fromJson(Map<String, dynamic> json) =>
       _$MsOderGroupDataFromJson(json);
 

@@ -65,6 +65,7 @@ class OrderShippingFee {
   Map<String, dynamic> toJson() => _$OrderShippingFeeToJson(this);
 
   OrderShippingFeeEntity toEntity() {
+    print('shippingFee: ${shippingFee?.value}');
     return OrderShippingFeeEntity(
       shippingFee: shippingFee?.value.toPriceUnit,
     );
