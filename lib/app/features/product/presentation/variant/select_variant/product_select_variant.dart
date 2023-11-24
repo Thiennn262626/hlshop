@@ -57,13 +57,13 @@ class ProductSelectVariantPopup extends StatelessWidget {
                     ),
                   ],
                 ),
-                AppButtonIcon(
-                  padding: Dimens.edge,
-                  icon: Icons.close_rounded,
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                ),
+                // AppButtonIcon(
+                //   padding: Dimens.edge,
+                //   icon: Icons.close_rounded,
+                //   onPressed: () {
+                //     context.popRoute();
+                //   },
+                // ),
               ],
             ),
           ),

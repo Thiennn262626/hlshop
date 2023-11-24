@@ -174,4 +174,10 @@ class ProductSelectVariantCubit extends RequestItemCubit<
   void updateQuantity(int quantity) {
     emitState(quantity: quantity);
   }
+
+  void checkAndSetVariant(List<ProductAttributeEntity> i) {
+    if (i.isEmpty && state.variantList.isNotEmpty) {
+      emitState(selectedVariant: state.variantList.first);
+    }
+  }
 }
