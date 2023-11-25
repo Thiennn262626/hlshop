@@ -7,20 +7,22 @@ class MsCheckoutRepo extends CheckoutRepo {
   final MsCheckoutApi _api = getIt();
 
   @override
-  Future<void> createOrder({
+  Future<CreateOrderResEntity?> createOrder({
     required List<ShoppingCartItemEntity>? carts,
     required String receiverAddressID,
     required int paymentMethod,
   }) async {
-    return _api.createOrder(
-      body: MsCreateOrderRq(
-        carts: carts.mapAsList(
-          (item) => item.toEntity(),
-        ),
-        receiverAddressID: receiverAddressID,
-        paymentMethod: paymentMethod,
-      ),
-    );
+    return _api
+        .createOrder(
+          body: MsCreateOrderRq(
+            carts: carts.mapAsList(
+              (item) => item.toEntity(),
+            ),
+            receiverAddressID: receiverAddressID,
+            paymentMethod: paymentMethod,
+          ),
+        )
+        .then(_convertCreateOrderRes);
   }
 
   @override
@@ -46,5 +48,30 @@ class MsCheckoutRepo extends CheckoutRepo {
     return OrderShippingFeeEntity(
       shippingFee: value.shippingFee,
     );
+  }
+
+  FutureOr<CreateOrderResEntity?> _convertCreateOrderRes(
+      MsCreateOrderRes? value) {
+    if (value == null) {
+      return null;
+    }
+    return CreateOrderResEntity(
+      orderID: value.result?.orderIDs,
+    );
+  }
+
+  Future<QRMoMoEntity?> createOrderMomo(String? orderID) async {
+    return _api
+        .createOrderQrPaymentMomo(
+          orderID: orderID,
+        )
+        .then(_convertCreateOrderMomoRes);
+  }
+
+  FutureOr<QRMoMoEntity?> _convertCreateOrderMomoRes(MSCreaQRMoMoRes? value) {
+    if (value == null) {
+      return null;
+    }
+    return value.toEntity();
   }
 }

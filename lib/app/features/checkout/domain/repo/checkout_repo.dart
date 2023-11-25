@@ -3,7 +3,7 @@ import 'package:hlshop/app/features/checkout/domain/entity/OrderShippingFeeEntit
 import 'package:hlshop/app/features/shopping_cart/domain/domain.dart';
 
 abstract class CheckoutRepo {
-  Future<void> createOrder({
+  Future<CreateOrderResEntity?> createOrder({
     required List<ShoppingCartItemEntity>? carts, //sellers
     required String receiverAddressID,
     required int paymentMethod,
@@ -13,4 +13,6 @@ abstract class CheckoutRepo {
     required String? receiverAddressID,
     required String? insuranceValue,
   });
+
+  Future<QRMoMoEntity?> createOrderMomo(String? orderID);
 }

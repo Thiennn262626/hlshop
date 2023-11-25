@@ -19,25 +19,54 @@ class _MsCheckoutApi implements MsCheckoutApi {
   String? baseUrl;
 
   @override
-  Future<void> createOrder({MsCreateOrderRq? body}) async {
+  Future<MsCreateOrderRes?> createOrder({MsCreateOrderRq? body}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(body?.toJson() ?? <String, dynamic>{});
-    await _dio.fetch<void>(_setStreamType<void>(Options(
+    final _result = await _dio
+        .fetch<Map<String, dynamic>?>(_setStreamType<MsCreateOrderRes>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
-        .compose(
-          _dio.options,
-          '/api/hlshop/order/create',
-          queryParameters: queryParameters,
-          data: _data,
-        )
-        .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+            .compose(
+              _dio.options,
+              '/api/hlshop/order/create',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value =
+        _result.data == null ? null : MsCreateOrderRes.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<MSCreaQRMoMoRes?> createOrderQrPaymentMomo({String? orderID}) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'orderID': orderID};
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>?>(_setStreamType<MSCreaQRMoMoRes>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/api/hlshop/order/create-order-qr-payment-momo',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value =
+        _result.data == null ? null : MSCreaQRMoMoRes.fromJson(_result.data!);
+    return value;
   }
 
   @override

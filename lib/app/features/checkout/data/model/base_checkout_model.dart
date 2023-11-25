@@ -65,9 +65,68 @@ class OrderShippingFee {
   Map<String, dynamic> toJson() => _$OrderShippingFeeToJson(this);
 
   OrderShippingFeeEntity toEntity() {
-    print('shippingFee: ${shippingFee?.value}');
     return OrderShippingFeeEntity(
       shippingFee: shippingFee?.value.toPriceUnit,
+    );
+  }
+}
+
+@JsonSerializable()
+class MsCreateOrderRes {
+  final String? message;
+  final MsCreateOrderResResult? result;
+  final int? status;
+  const MsCreateOrderRes({
+    this.message,
+    this.result,
+    this.status,
+  });
+  factory MsCreateOrderRes.fromJson(Map<String, dynamic> json) =>
+      _$MsCreateOrderResFromJson(json);
+
+  Map<String, dynamic> toJson() => _$MsCreateOrderResToJson(this);
+
+  CreateOrderResEntity toEntity() {
+    return CreateOrderResEntity(
+      orderID: result?.orderIDs,
+    );
+  }
+}
+
+@JsonSerializable()
+class MsCreateOrderResResult {
+  final String? orderIDs;
+  const MsCreateOrderResResult({
+    this.orderIDs,
+  });
+
+  factory MsCreateOrderResResult.fromJson(Map<String, dynamic> json) =>
+      _$MsCreateOrderResResultFromJson(json);
+
+  Map<String, dynamic> toJson() => _$MsCreateOrderResResultToJson(this);
+}
+
+@JsonSerializable()
+class MSCreaQRMoMoRes {
+  final String? orderId;
+  final String? createdLink;
+  final String? deeplink;
+  const MSCreaQRMoMoRes({
+    this.orderId,
+    this.createdLink,
+    this.deeplink,
+  });
+
+  factory MSCreaQRMoMoRes.fromJson(Map<String, dynamic> json) =>
+      _$MSCreaQRMoMoResFromJson(json);
+
+  Map<String, dynamic> toJson() => _$MSCreaQRMoMoResToJson(this);
+
+  QRMoMoEntity toEntity() {
+    return QRMoMoEntity(
+      qrMoMo: deeplink,
+      orderID: orderId,
+      createdDate: createdLink,
     );
   }
 }

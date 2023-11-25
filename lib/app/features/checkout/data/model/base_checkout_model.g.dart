@@ -53,3 +53,46 @@ Map<String, dynamic> _$OrderShippingFeeToJson(OrderShippingFee instance) =>
     <String, dynamic>{
       'shippingFee': priceUnitToJson(instance.shippingFee),
     };
+
+MsCreateOrderRes _$MsCreateOrderResFromJson(Map<String, dynamic> json) =>
+    MsCreateOrderRes(
+      message: json['message'] as String?,
+      result: json['result'] == null
+          ? null
+          : MsCreateOrderResResult.fromJson(
+              json['result'] as Map<String, dynamic>),
+      status: json['status'] as int?,
+    );
+
+Map<String, dynamic> _$MsCreateOrderResToJson(MsCreateOrderRes instance) =>
+    <String, dynamic>{
+      'message': instance.message,
+      'result': instance.result,
+      'status': instance.status,
+    };
+
+MsCreateOrderResResult _$MsCreateOrderResResultFromJson(
+        Map<String, dynamic> json) =>
+    MsCreateOrderResResult(
+      orderIDs: json['orderIDs'] as String?,
+    );
+
+Map<String, dynamic> _$MsCreateOrderResResultToJson(
+        MsCreateOrderResResult instance) =>
+    <String, dynamic>{
+      'orderIDs': instance.orderIDs,
+    };
+
+MSCreaQRMoMoRes _$MSCreaQRMoMoResFromJson(Map<String, dynamic> json) =>
+    MSCreaQRMoMoRes(
+      orderId: json['orderId'] as String?,
+      createdLink: json['createdLink'] as String?,
+      deeplink: json['deeplink'] as String?,
+    );
+
+Map<String, dynamic> _$MSCreaQRMoMoResToJson(MSCreaQRMoMoRes instance) =>
+    <String, dynamic>{
+      'orderId': instance.orderId,
+      'createdLink': instance.createdLink,
+      'deeplink': instance.deeplink,
+    };

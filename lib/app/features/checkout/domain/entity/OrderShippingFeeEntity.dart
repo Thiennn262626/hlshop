@@ -16,3 +16,23 @@ class OrderShippingFeeEntity {
 
   final PriceUnit? shippingFee;
 }
+
+class CreateOrderResEntity {
+  const CreateOrderResEntity({
+    this.orderID,
+  });
+
+  final String? orderID;
+}
+
+class QRMoMoEntity {
+  const QRMoMoEntity({
+    this.qrMoMo,
+    this.orderID,
+    this.createdDate,
+  });
+
+  final String? qrMoMo;
+  final String? orderID;
+  final String? createdDate;
+}

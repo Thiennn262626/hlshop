@@ -8,8 +8,13 @@ abstract class MsCheckoutApi {
   factory MsCheckoutApi(Dio dio) = _MsCheckoutApi;
 
   @POST('/api/hlshop/order/create')
-  Future<void> createOrder({
+  Future<MsCreateOrderRes?> createOrder({
     @Body() MsCreateOrderRq? body,
+  });
+
+  @POST('/api/hlshop/order/create-order-qr-payment-momo')
+  Future<MSCreaQRMoMoRes?> createOrderQrPaymentMomo({
+    @Query('orderID') String? orderID,
   });
 
   @GET('/api/hlshop/feeship/get-shipping-order-fee')

@@ -2,6 +2,7 @@ import 'package:hlshop/all_file/all_file.dart';
 import 'package:hlshop/app/features/checkout/self.dart';
 import 'package:hlshop/app/features/shopping_cart/domain/model/shopping_cart_base_entity.dart';
 import 'package:hlshop/app/features/user/self.dart';
+import 'package:hlshop/core/utils/launch_url.dart';
 
 part 'checkout_bloc.freezed.dart';
 part 'checkout_event.dart';
@@ -46,11 +47,18 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
           createOrderStatus: state.createOrderStatus.toPending(),
         ),
       );
-      await _checkoutRepo.createOrder(
+      final result = await _checkoutRepo.createOrder(
         carts: state.cartItems,
         receiverAddressID: state.userAddress?.id ?? '',
         paymentMethod: state.paymentMethod,
       );
+      if (state.paymentMethod == 1) {
+        final resultMomo = await _checkoutRepo.createOrderMomo(result?.orderID);
+        print('resultMomo?.qrMoMo ${resultMomo?.qrMoMo}');
+        print('resultMomo?.qrMoMo ${Uri.parse(resultMomo?.qrMoMo ?? '')}');
+        await LaunchUrl.openUrl(Uri.parse(resultMomo?.qrMoMo ?? ''));
+        // await _launchUrl(Uri.parse(resultMomo?.qrMoMo ?? ''));
+      }
       emit(
         state.copyWith(
           createOrderStatus: const ApiStatus.done(),
