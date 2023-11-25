@@ -92,10 +92,10 @@ class CheckoutProductItem1 extends StatelessWidget {
         const Spacer(),
         Row(
           children: [
-            if (cartItem.variant?.variantValueName != null)
+            if (cartItem.variant!.variantValueName.isNotNullOrBlank)
               'Phân loại: {}'
                   .tr(
-                    args: [cartItem.variant?.variantValueName ?? ''],
+                    args: [cartItem.variant!.variantValueName!],
                   )
                   .text
                   .textXS3

@@ -61,10 +61,10 @@ class ProductCartItem extends StatelessWidget {
             .make()
             .pb2()
             .minHeight(22),
-        if (cartItem.variant?.variantValueName != null)
+        if (cartItem.variant!.variantValueName.isNotNullOrBlank)
           'Phân loại: {}'
               .tr(
-                args: [cartItem.variant?.variantValueName ?? ''],
+                args: [cartItem.variant!.variantValueName!],
               )
               .text
               .textXS3

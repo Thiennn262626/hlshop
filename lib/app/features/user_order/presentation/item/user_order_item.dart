@@ -144,10 +144,10 @@ class OrderProductItem1 extends StatelessWidget {
         const Spacer(),
         Row(
           children: [
-            if (orderItem.variant?.variantValueName != null)
+            if (orderItem.variant!.variantValueName.isNotNullOrBlank)
               'Phân loại: {}'
                   .tr(
-                    args: [orderItem.variant?.variantValueName ?? ''],
+                    args: [orderItem.variant!.variantValueName!],
                   )
                   .text
                   .textXS3
