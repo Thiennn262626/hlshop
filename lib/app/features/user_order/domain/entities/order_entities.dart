@@ -63,6 +63,7 @@ class OrderDataEntity {
     this.orderCode,
     this.paymentMethod,
     this.orderShippingFee,
+    this.finishPay,
   });
   final List<OrderProductEntity>? orderProductList;
   final Object? object;
@@ -70,6 +71,7 @@ class OrderDataEntity {
   final String? id;
   final String? orderCode;
   final int? paymentMethod;
+  final bool? finishPay;
   final OrderShippingFeeEntity? orderShippingFee;
   PriceUnit get totalPriceItem {
     return orderProductList?.fold(

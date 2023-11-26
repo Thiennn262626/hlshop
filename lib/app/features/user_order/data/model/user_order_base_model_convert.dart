@@ -111,6 +111,7 @@ extension MsOderGroupDataConvert on MsOderGroupData {
         ),
       ),
       orderShippingFee: orderShippingFee?.toEntity(),
+      finishPay: finishPay,
     );
   }
 }

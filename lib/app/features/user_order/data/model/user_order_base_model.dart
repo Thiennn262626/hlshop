@@ -62,6 +62,7 @@ class MsOderGroupData {
     this.orderStatus,
     this.receiverAddresse,
     this.orderShippingFee,
+    this.finishPay,
   );
 
   final List<MsOrderProduct>? dataOrderItem;
@@ -69,6 +70,7 @@ class MsOderGroupData {
   final String? orderID;
   final int? paymentMethod;
   final MsOrderStatus? orderStatus;
+  final bool? finishPay;
   final ReceiverAddressesMS? receiverAddresse;
   final OrderShippingFee? orderShippingFee;
   factory MsOderGroupData.fromJson(Map<String, dynamic> json) =>

@@ -35,7 +35,7 @@ class UserOrderDetailBody extends StatelessWidget {
                   ).pxDefault().pb16(),
                 ],
               ),
-              OrderShippingStatusFirst(),
+              const OrderShippingStatusFirst(),
               BlocProvider<UserOrderCubit>(
                 create: (context) => UserOrderCubit()..fetchItemList(),
                 child: UserOrderGroupItem(

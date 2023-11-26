@@ -54,8 +54,6 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
       );
       if (state.paymentMethod == 1) {
         final resultMomo = await _checkoutRepo.createOrderMomo(result?.orderID);
-        print('resultMomo?.qrMoMo ${resultMomo?.qrMoMo}');
-        print('resultMomo?.qrMoMo ${Uri.parse(resultMomo?.qrMoMo ?? '')}');
         await LaunchUrl.openUrl(Uri.parse(resultMomo?.qrMoMo ?? ''));
         // await _launchUrl(Uri.parse(resultMomo?.qrMoMo ?? ''));
       }

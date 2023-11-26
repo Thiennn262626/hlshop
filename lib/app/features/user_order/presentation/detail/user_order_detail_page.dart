@@ -2,6 +2,8 @@ import 'package:hlshop/all_file/all_file.dart';
 import 'package:hlshop/app/features/user_order/domain/entities/order_entities.dart';
 import 'package:hlshop/app/features/user_order/presentation/detail/cubit/user_order_detail_cubit.dart';
 import 'package:hlshop/app/features/user_order/presentation/detail/user_order_detail_body.dart';
+import 'package:hlshop/app/features/user_order/presentation/widgets/order-detail_pull_refresh.dart';
+import 'package:hlshop/app/features/user_order/presentation/widgets/order_detail_bottom_bar.dart';
 
 @RoutePage()
 class UserOrderDetailPage extends StatelessWidget {
@@ -18,11 +20,18 @@ class UserOrderDetailPage extends StatelessWidget {
         builder: (context) {
           return ApiItemConsumer<UserOrderDetailCubit, UserOrderDetailState>(
             getStatus: (state) => state.status,
-            child: const Scaffold(
-              appBar: AppAppBar(
-                title: 'Chi tiết đơn hàng',
+            child: OrderDetailPullRefresh(
+              child: Scaffold(
+                appBar: const AppAppBar(
+                  title: 'Chi tiết đơn hàng',
+                ),
+                body: const UserOrderDetailBody(),
+                bottomNavigationBar: order?.paymentMethod == 0
+                    ? null
+                    : const AppBottomBar(
+                        child: OrderDetailBottomBar(),
+                      ),
               ),
-              body: UserOrderDetailBody(),
             ),
           );
         },

@@ -41,6 +41,8 @@ class UserOrderGroupItem extends StatelessWidget {
         children: [
           OrderCodeGroup(
             orderCode: orderData?.orderCode ?? '',
+            finishPay: orderData?.finishPay ?? false,
+            paymentMethod: orderData?.paymentMethod ?? 0,
           ).pDefault(),
           Column(
             children: [
