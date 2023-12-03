@@ -76,7 +76,6 @@ class CrudAddressCubit extends Cubit<CrudAddressState> {
 
   Future<void> addAddress() async {
     emit(state.copyWith(status: state.status.toPending()));
-
     try {
       await userRepo.addAddress(
         address: getUserAddressFormValue(),
@@ -125,4 +124,23 @@ class CrudAddressCubit extends Cubit<CrudAddressState> {
   }
 
   bool get isEdit => type == CrudAddressType.edit;
+
+  void changeCity() {
+    final city = form.getValue<CityEntity>(UserAddressEntity.cityKey);
+    final district =
+        form.getValue<DistrictEntity>(UserAddressEntity.districtKey);
+    if (city?.id != district?.cityId) {
+      form.control(UserAddressEntity.districtKey).value = null;
+      form.control(UserAddressEntity.wardKey).value = null;
+    } else {}
+  }
+
+  void changeDistrict() {
+    final district =
+        form.getValue<DistrictEntity>(UserAddressEntity.districtKey);
+    final ward = form.getValue<WardEntity>(UserAddressEntity.wardKey);
+    if (district?.id != ward?.districtId) {
+      form.control(UserAddressEntity.wardKey).value = null;
+    } else {}
+  }
 }

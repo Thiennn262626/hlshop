@@ -51,6 +51,8 @@ class MsDistrict {
   DistrictEntity toEntity() => DistrictEntity(
         id: districtID,
         name: name,
+        cityId: cityID,
+        object: this,
       );
 
   Map<String, dynamic> toJson() => _$MsDistrictToJson(this);
@@ -85,6 +87,8 @@ class MsWard {
   WardEntity toEntity() => WardEntity(
         id: wardID,
         name: name,
+        districtId: districtID,
+        object: this,
       );
 
   Map<String, dynamic> toJson() => _$MsWardToJson(this);

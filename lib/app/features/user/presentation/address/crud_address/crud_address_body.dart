@@ -41,6 +41,7 @@ class CrudAddressBody extends StatelessWidget {
               final city = addressCubit.form.getValue<CityEntity>(
                 UserAddressEntity.cityKey,
               );
+              addressCubit.changeCity();
               return AddressSelectField<DistrictEntity>(
                 isDisable: city == null,
                 formControlName: UserAddressEntity.districtKey,
@@ -63,6 +64,7 @@ class CrudAddressBody extends StatelessWidget {
               final district = addressCubit.form.getValue<DistrictEntity>(
                 UserAddressEntity.districtKey,
               );
+              addressCubit.changeDistrict();
               return AddressSelectField<WardEntity>(
                 isDisable: district == null,
                 formControlName: UserAddressEntity.wardKey,

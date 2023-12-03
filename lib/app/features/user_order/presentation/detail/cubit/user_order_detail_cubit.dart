@@ -25,7 +25,6 @@ class UserOrderDetailCubit extends Cubit<UserOrderDetailState> {
       );
       final listOrderStatus =
           await orderRepo.getListTrackingOrder(id: state.order?.id);
-      print('order.finishPay ${order.finishPay}');
       emit(state.copyWith(
         status: const ApiStatus.done(),
         order: order,

@@ -13,6 +13,7 @@ extension MsUserAddressMapper on ReceiverAddressesMS {
         object: this,
         id: districtID,
         name: districtName,
+        cityId: cityID,
       ),
       city: CityEntity(
         object: this,
@@ -23,6 +24,7 @@ extension MsUserAddressMapper on ReceiverAddressesMS {
         object: this,
         id: wardID,
         name: wardName,
+        districtId: districtID,
       ),
     );
   }
