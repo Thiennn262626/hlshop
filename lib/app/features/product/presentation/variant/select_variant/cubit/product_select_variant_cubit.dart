@@ -175,7 +175,11 @@ class ProductSelectVariantCubit extends RequestItemCubit<
     emitState(quantity: quantity);
   }
 
-  void checkAndSetVariant(List<ProductAttributeEntity> i) {
+  Future<void> checkAndSetVariant() async {
+    final i =
+        state.item.filterAsList((item) => item.values?.isNotEmpty ?? false);
+    print('checkAndSetVariant20110 ${i.isEmpty}');
+    print('checkAndSetVariant20111 ${state.variantList.isNotEmpty}');
     if (i.isEmpty && state.variantList.isNotEmpty) {
       emitState(selectedVariant: state.variantList.first);
     }

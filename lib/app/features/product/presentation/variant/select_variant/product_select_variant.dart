@@ -22,49 +22,56 @@ class ProductSelectVariantPopup extends StatelessWidget {
           create: (context) => ProductSelectVariantCubit(
             product: product,
           )..loadData(),
-          child: SingleChildScrollView(
-            child: Stack(
-              alignment: Alignment.topRight,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    const ProductSelectVariantBody(),
-                    const AppDivider.thin(),
-                    BlocBuilder<ProductSelectVariantCubit,
-                        ProductSelectVariantState>(
-                      builder: (context, state) {
-                        final selectVariant = context
-                            .read<ProductSelectVariantCubit>()
-                            .state
-                            .selectedVariant;
-
-                        return SafeArea(
-                          child: AppButton(
-                            label: 'Chọn mua'.tr(),
-                            onPressed: selectVariant == null
-                                ? null
-                                : () {
-                                    addToCart(context, selectVariant);
-                                  },
-                          ).pDefault(),
-                        );
-                      },
-                    ),
-                    SizedBox(
-                      height: _res.keyboardHeight,
-                    ),
-                  ],
-                ),
-                // AppButtonIcon(
-                //   padding: Dimens.edge,
-                //   icon: Icons.close_rounded,
-                //   onPressed: () {
-                //     context.popRoute();
-                //   },
-                // ),
-              ],
+          child: BlocListener<ProductSelectVariantCubit,
+              ProductSelectVariantState>(
+            listener: (context, state) {
+              if (state.status == ItemStatus.success) {
+                context.read<ProductSelectVariantCubit>().checkAndSetVariant();
+              }
+            },
+            child: SingleChildScrollView(
+              child: Stack(
+                alignment: Alignment.topRight,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const ProductSelectVariantBody(),
+                      const AppDivider.thin(),
+                      BlocBuilder<ProductSelectVariantCubit,
+                          ProductSelectVariantState>(
+                        builder: (context, state) {
+                          final selectVariant = context
+                              .read<ProductSelectVariantCubit>()
+                              .state
+                              .selectedVariant;
+                          return SafeArea(
+                            child: AppButton(
+                              label: 'Chọn mua'.tr(),
+                              onPressed: selectVariant == null
+                                  ? null
+                                  : () {
+                                      addToCart(context, selectVariant);
+                                    },
+                            ).pDefault(),
+                          );
+                        },
+                      ),
+                      SizedBox(
+                        height: _res.keyboardHeight,
+                      ),
+                    ],
+                  ),
+                  // AppButtonIcon(
+                  //   padding: Dimens.edge,
+                  //   icon: Icons.close_rounded,
+                  //   onPressed: () {
+                  //     context.popRoute();
+                  //   },
+                  // ),
+                ],
+              ),
             ),
           ),
         ),

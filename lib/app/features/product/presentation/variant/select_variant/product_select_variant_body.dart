@@ -49,9 +49,7 @@ class ProductSelectVariantBody extends StatelessWidget {
             builder: (context, state) {
               final listAttribute = state.item
                   .filterAsList((item) => item.values?.isNotEmpty ?? false);
-              context
-                  .read<ProductSelectVariantCubit>()
-                  .checkAndSetVariant(listAttribute);
+
               return ListView.separated(
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
