@@ -13,7 +13,7 @@ class ProductSearchBar extends StatelessWidget {
       height: 42,
       child: AppTextField(
         onChanged: (value) {
-          context.read<ProductSearchCubit>().setFilterData(ProductFilterData(
+          context.read<ProductSearchCubit>().onSearchChange(ProductFilterData(
                 search: value,
                 type: context.read<ProductSearchCubit>().state.filterData?.type,
               ));

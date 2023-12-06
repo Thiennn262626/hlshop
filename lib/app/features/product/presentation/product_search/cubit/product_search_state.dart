@@ -8,8 +8,8 @@ class ProductSearchState with _$ProductSearchState {
     @Default(ApiStatus.initial()) ApiStatus status,
     @Default(null) ProductFilterData? filterData,
     @Default([]) List<ProductEntity> products,
-    @Default('') String? minAmount,
-    @Default('') String? maxAmount,
+    // @Default('') String? minAmount,
+    // @Default('') String? maxAmount,
   }) = _ProductSearchState;
 }
 

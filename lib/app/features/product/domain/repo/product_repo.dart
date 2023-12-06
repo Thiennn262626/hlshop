@@ -25,6 +25,7 @@ abstract class ProductRepo {
     int? limit,
     int? offset,
     ProductFilterData? filterData,
+    int? sortBy,
   });
 
   Future<List<ProductAttributeEntity>> getProductAttribute({

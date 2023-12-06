@@ -41,15 +41,6 @@ class MsUserOrderRepo extends UserOrderRepo {
   }
 
   @override
-  Future<Map<OrderStatus, int?>> getOrderStatusCount() async {
-    return {
-      OrderStatus.newOrder: 1,
-      OrderStatus.approved: 0,
-      OrderStatus.packing: 2,
-    };
-  }
-
-  @override
   Future<UserOrderCountModel?> getListCountOrder() async {
     return _msOrderApi.getCountListOrder();
   }

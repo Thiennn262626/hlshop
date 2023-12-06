@@ -6,7 +6,7 @@ class UserOrderState with _$UserOrderState {
 
   const factory UserOrderState({
     @Default(ApiStatus.initial()) ApiStatus orderCountStatus,
-    @Default(null) Map<OrderStatus, int?>? orderStatusCountMap,
+    // @Default(null) Map<OrderStatus, int?>? orderStatusCountMap,
     @Default(null) List<int?>? userOrderCountList,
   }) = _UserOrderState;
 }

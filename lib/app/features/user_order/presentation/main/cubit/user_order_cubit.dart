@@ -54,7 +54,6 @@ class UserOrderCubit extends Cubit<UserOrderState> {
       emit(
         state.copyWith(
           orderCountStatus: const ApiStatus.initial(),
-          orderStatusCountMap: {},
           userOrderCountList: [],
         ),
       );
@@ -65,13 +64,13 @@ class UserOrderCubit extends Cubit<UserOrderState> {
     }
     emit(state.copyWith(orderCountStatus: state.orderCountStatus.toPending()));
     try {
-      final rs = await orderRepo.getOrderStatusCount();
+      //final rs = await orderRepo.getOrderStatusCount();
       final count = await orderRepo.getListCountOrder();
       final countItem = addListCount(count);
       emit(
         state.copyWith(
           orderCountStatus: const ApiStatus.done(),
-          orderStatusCountMap: rs,
+          //orderStatusCountMap: rs,
           userOrderCountList: countItem,
         ),
       );

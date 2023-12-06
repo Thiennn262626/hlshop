@@ -16,17 +16,21 @@ class ProductSearchCubit extends Cubit<ProductSearchState> {
         ) {
     form = FormGroup({
       ProductFilterData.categoryKey: FormControl<ProductCategoryEntity>(
-        value: ProductCategoryEntity(id: filterData?.productCategory?.id),
+        value: filterData?.productCategory,
       ),
       ProductFilterData.minKey: FormControl<String>(
-        value: '',
+        value: filterData?.minAmount,
       ),
       ProductFilterData.maxKey: FormControl<String>(
-        value: '',
+        value: filterData?.maxAmount,
       ),
     });
+    controller = AppPagingController<int, ProductEntity>(firstPageKey: 0);
+    controller.addPageRequestListener((pageKey) {
+      fetchProduct(pageKey, 10);
+    });
   }
-
+  late final AppPagingController<int, ProductEntity> controller;
   final String? searchHint;
 
   late FormGroup form;
@@ -43,8 +47,13 @@ class ProductSearchCubit extends Cubit<ProductSearchState> {
     );
   }
 
+  void fetchItemList() {
+    controller.refresh();
+  }
+
   Future<void> fetchProduct(int? offset, int? limit) async {
     try {
+      fetchItemList();
       final listProduct = await getIt<ProductRepo>().getProductListSearch(
         offset: offset,
         limit: limit,
@@ -64,31 +73,46 @@ class ProductSearchCubit extends Cubit<ProductSearchState> {
   }
 
   void setMinMax(String min, String max) {
-    emit(state.copyWith(minAmount: min, maxAmount: max));
-  }
-
-  Future<void> setFilterData(ProductFilterData filterData) async {
-    final totalfilterData = filterData.copyWith(
-      orderByType: state.filterData?.orderByType,
+    final totalfilterData = state.filterData?.copyWith(
+      productCategory: getProductFilterDataValue().productCategory,
+      maxAmount: max,
+      minAmount: min,
     );
     emit(state.copyWith(filterData: totalfilterData));
-    await fetchProduct(0, 10);
+  }
+
+  Future<void> onSearchChange(ProductFilterData filterData) async {
+    final totalfilterData = state.filterData?.copyWith(
+      search: filterData.search,
+    );
+    emit(state.copyWith(filterData: totalfilterData));
+    await fetchProduct(0, 20);
   }
 
   Future<void> onSortChange(ProductFilterData filterData) async {
-    final totalfilterData = filterData.copyWith(
-      search: state.filterData?.search,
+    final totalfilterData = state.filterData?.copyWith(
+      orderByType: filterData.orderByType,
     );
     emit(state.copyWith(filterData: totalfilterData));
-    await fetchProduct(0, 10);
+    await fetchProduct(0, 20);
   }
 
   Future<void> onFilterChange() async {
-    // final totalfilterData = state.filterData?.copyWith(
-    //   search: state.filterData?.search,
-    //   orderByType: state.filterData?.orderByType,
-    // );
-    emit(state.copyWith(filterData: getProductFilterDataValue()));
-    await fetchProduct(0, 10);
+    final totalfilterData = state.filterData?.copyWith(
+      productCategory: getProductFilterDataValue().productCategory,
+    );
+    emit(state.copyWith(filterData: totalfilterData));
+    await fetchProduct(0, 20);
+  }
+
+  Future<void> clearFilter() async {
+    form.reset();
+    emit(state.copyWith(
+        filterData: state.filterData?.copyWith(
+      productCategory: null,
+      maxAmount: null,
+      minAmount: null,
+    )));
+    await fetchProduct(0, 20);
   }
 }

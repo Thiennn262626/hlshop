@@ -16,9 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$UserOrderState {
-  ApiStatus get orderCountStatus => throw _privateConstructorUsedError;
-  Map<OrderStatus, int?>? get orderStatusCountMap =>
-      throw _privateConstructorUsedError;
+  ApiStatus get orderCountStatus =>
+      throw _privateConstructorUsedError; // @Default(null) Map<OrderStatus, int?>? orderStatusCountMap,
   List<int?>? get userOrderCountList => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -32,10 +31,7 @@ abstract class $UserOrderStateCopyWith<$Res> {
           UserOrderState value, $Res Function(UserOrderState) then) =
       _$UserOrderStateCopyWithImpl<$Res, UserOrderState>;
   @useResult
-  $Res call(
-      {ApiStatus orderCountStatus,
-      Map<OrderStatus, int?>? orderStatusCountMap,
-      List<int?>? userOrderCountList});
+  $Res call({ApiStatus orderCountStatus, List<int?>? userOrderCountList});
 
   $ApiStatusCopyWith<$Res> get orderCountStatus;
 }
@@ -54,7 +50,6 @@ class _$UserOrderStateCopyWithImpl<$Res, $Val extends UserOrderState>
   @override
   $Res call({
     Object? orderCountStatus = null,
-    Object? orderStatusCountMap = freezed,
     Object? userOrderCountList = freezed,
   }) {
     return _then(_value.copyWith(
@@ -62,10 +57,6 @@ class _$UserOrderStateCopyWithImpl<$Res, $Val extends UserOrderState>
           ? _value.orderCountStatus
           : orderCountStatus // ignore: cast_nullable_to_non_nullable
               as ApiStatus,
-      orderStatusCountMap: freezed == orderStatusCountMap
-          ? _value.orderStatusCountMap
-          : orderStatusCountMap // ignore: cast_nullable_to_non_nullable
-              as Map<OrderStatus, int?>?,
       userOrderCountList: freezed == userOrderCountList
           ? _value.userOrderCountList
           : userOrderCountList // ignore: cast_nullable_to_non_nullable
@@ -90,10 +81,7 @@ abstract class _$$UserOrderStateImplCopyWith<$Res>
       __$$UserOrderStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {ApiStatus orderCountStatus,
-      Map<OrderStatus, int?>? orderStatusCountMap,
-      List<int?>? userOrderCountList});
+  $Res call({ApiStatus orderCountStatus, List<int?>? userOrderCountList});
 
   @override
   $ApiStatusCopyWith<$Res> get orderCountStatus;
@@ -111,7 +99,6 @@ class __$$UserOrderStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? orderCountStatus = null,
-    Object? orderStatusCountMap = freezed,
     Object? userOrderCountList = freezed,
   }) {
     return _then(_$UserOrderStateImpl(
@@ -119,10 +106,6 @@ class __$$UserOrderStateImplCopyWithImpl<$Res>
           ? _value.orderCountStatus
           : orderCountStatus // ignore: cast_nullable_to_non_nullable
               as ApiStatus,
-      orderStatusCountMap: freezed == orderStatusCountMap
-          ? _value._orderStatusCountMap
-          : orderStatusCountMap // ignore: cast_nullable_to_non_nullable
-              as Map<OrderStatus, int?>?,
       userOrderCountList: freezed == userOrderCountList
           ? _value._userOrderCountList
           : userOrderCountList // ignore: cast_nullable_to_non_nullable
@@ -137,28 +120,16 @@ class _$UserOrderStateImpl extends _UserOrderState
     with DiagnosticableTreeMixin {
   const _$UserOrderStateImpl(
       {this.orderCountStatus = const ApiStatus.initial(),
-      final Map<OrderStatus, int?>? orderStatusCountMap = null,
       final List<int?>? userOrderCountList = null})
-      : _orderStatusCountMap = orderStatusCountMap,
-        _userOrderCountList = userOrderCountList,
+      : _userOrderCountList = userOrderCountList,
         super._();
 
   @override
   @JsonKey()
   final ApiStatus orderCountStatus;
-  final Map<OrderStatus, int?>? _orderStatusCountMap;
-  @override
-  @JsonKey()
-  Map<OrderStatus, int?>? get orderStatusCountMap {
-    final value = _orderStatusCountMap;
-    if (value == null) return null;
-    if (_orderStatusCountMap is EqualUnmodifiableMapView)
-      return _orderStatusCountMap;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
-  }
-
+// @Default(null) Map<OrderStatus, int?>? orderStatusCountMap,
   final List<int?>? _userOrderCountList;
+// @Default(null) Map<OrderStatus, int?>? orderStatusCountMap,
   @override
   @JsonKey()
   List<int?>? get userOrderCountList {
@@ -172,7 +143,7 @@ class _$UserOrderStateImpl extends _UserOrderState
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'UserOrderState(orderCountStatus: $orderCountStatus, orderStatusCountMap: $orderStatusCountMap, userOrderCountList: $userOrderCountList)';
+    return 'UserOrderState(orderCountStatus: $orderCountStatus, userOrderCountList: $userOrderCountList)';
   }
 
   @override
@@ -181,7 +152,6 @@ class _$UserOrderStateImpl extends _UserOrderState
     properties
       ..add(DiagnosticsProperty('type', 'UserOrderState'))
       ..add(DiagnosticsProperty('orderCountStatus', orderCountStatus))
-      ..add(DiagnosticsProperty('orderStatusCountMap', orderStatusCountMap))
       ..add(DiagnosticsProperty('userOrderCountList', userOrderCountList));
   }
 
@@ -193,16 +163,11 @@ class _$UserOrderStateImpl extends _UserOrderState
             (identical(other.orderCountStatus, orderCountStatus) ||
                 other.orderCountStatus == orderCountStatus) &&
             const DeepCollectionEquality()
-                .equals(other._orderStatusCountMap, _orderStatusCountMap) &&
-            const DeepCollectionEquality()
                 .equals(other._userOrderCountList, _userOrderCountList));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      orderCountStatus,
-      const DeepCollectionEquality().hash(_orderStatusCountMap),
+  int get hashCode => Object.hash(runtimeType, orderCountStatus,
       const DeepCollectionEquality().hash(_userOrderCountList));
 
   @JsonKey(ignore: true)
@@ -216,15 +181,12 @@ class _$UserOrderStateImpl extends _UserOrderState
 abstract class _UserOrderState extends UserOrderState {
   const factory _UserOrderState(
       {final ApiStatus orderCountStatus,
-      final Map<OrderStatus, int?>? orderStatusCountMap,
       final List<int?>? userOrderCountList}) = _$UserOrderStateImpl;
   const _UserOrderState._() : super._();
 
   @override
   ApiStatus get orderCountStatus;
-  @override
-  Map<OrderStatus, int?>? get orderStatusCountMap;
-  @override
+  @override // @Default(null) Map<OrderStatus, int?>? orderStatusCountMap,
   List<int?>? get userOrderCountList;
   @override
   @JsonKey(ignore: true)

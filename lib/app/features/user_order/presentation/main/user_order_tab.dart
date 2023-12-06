@@ -14,13 +14,11 @@ class UserOrderTab extends StatelessWidget {
     return PagingList<OrderEntity>(
       pagingController:
           context.read<UserOrderCubit>().controllerMap[orderStatus],
-      fetchListData: (offset, limit) {
-        return getIt<UserOrderRepo>().getOrderList(
-          orderStatus: orderStatus,
-          offset: offset,
-          limit: limit,
-        );
-      },
+      fetchListData: (offset, limit) => getIt<UserOrderRepo>().getOrderList(
+        orderStatus: orderStatus,
+        offset: offset,
+        limit: limit,
+      ),
       itemBuilder: (context, item, index) {
         return UserOrderListGroup(
           order: item,

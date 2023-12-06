@@ -14,6 +14,7 @@ abstract class MsProductApi {
     @Query('offset') int? offset,
     @Query('limit') int? limit,
     @Query('search') String? search,
+    @Query('sortBy') int? sortBy,
   });
 
   @GET('/api/hlshop/product/get-list-best-seller')
@@ -21,6 +22,7 @@ abstract class MsProductApi {
     @Query('offset') int? offset,
     @Query('limit') int? limit,
     @Query('search') String? search,
+    @Query('sortBy') int? sortBy,
   });
 
   @GET('/api/hlshop/product/get-list-good-price-today')
@@ -28,6 +30,7 @@ abstract class MsProductApi {
     @Query('offset') int? offset,
     @Query('limit') int? limit,
     @Query('search') String? search,
+    @Query('sortBy') int? sortBy,
   });
 
   @GET('/api/hlshop/product/get-list-new')
@@ -35,6 +38,7 @@ abstract class MsProductApi {
     @Query('offset') int? offset,
     @Query('limit') int? limit,
     @Query('search') String? search,
+    @Query('sortBy') int? sortBy,
   });
 
   @GET('/api/hlshop/product/get-detail')
@@ -74,5 +78,6 @@ abstract class MsProductApi {
     @Query('offset') int? offset,
     @Query('search') String? search,
     @Query('limit') int? limit,
+    @Query('sortBy') int? sortBy,
   });
 }

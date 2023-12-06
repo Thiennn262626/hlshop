@@ -23,12 +23,14 @@ class _MsProductApi implements MsProductApi {
     int? offset,
     int? limit,
     String? search,
+    int? sortBy,
   }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'offset': offset,
       r'limit': limit,
       r'search': search,
+      r'sortBy': sortBy,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
@@ -60,12 +62,14 @@ class _MsProductApi implements MsProductApi {
     int? offset,
     int? limit,
     String? search,
+    int? sortBy,
   }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'offset': offset,
       r'limit': limit,
       r'search': search,
+      r'sortBy': sortBy,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
@@ -97,12 +101,14 @@ class _MsProductApi implements MsProductApi {
     int? offset,
     int? limit,
     String? search,
+    int? sortBy,
   }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'offset': offset,
       r'limit': limit,
       r'search': search,
+      r'sortBy': sortBy,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
@@ -134,12 +140,14 @@ class _MsProductApi implements MsProductApi {
     int? offset,
     int? limit,
     String? search,
+    int? sortBy,
   }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'offset': offset,
       r'limit': limit,
       r'search': search,
+      r'sortBy': sortBy,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
@@ -329,6 +337,7 @@ class _MsProductApi implements MsProductApi {
     int? offset,
     String? search,
     int? limit,
+    int? sortBy,
   }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
@@ -336,6 +345,7 @@ class _MsProductApi implements MsProductApi {
       r'offset': offset,
       r'search': search,
       r'limit': limit,
+      r'sortBy': sortBy,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};

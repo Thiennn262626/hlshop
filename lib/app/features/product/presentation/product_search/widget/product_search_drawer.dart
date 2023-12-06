@@ -39,14 +39,16 @@ class NavigatorDrawer extends StatelessWidget {
                     Row(
                       children: [
                         AppTextFieldReactive(
-                          hintText: state.minAmount ?? 'TỐI THIỂU'.tr(),
+                          hintText:
+                              state.filterData?.minAmount ?? 'TỐI THIỂU'.tr(),
                           formControlName: ProductFilterData.minKey,
                         ).flex(),
                         const SizedBox(
                           width: 16,
                         ),
                         AppTextFieldReactive(
-                          hintText: state.maxAmount ?? 'TỐI ĐA'.tr(),
+                          hintText:
+                              state.filterData?.maxAmount ?? 'TỐI ĐA'.tr(),
                           formControlName: ProductFilterData.maxKey,
                         ).flex()
                       ],
@@ -83,32 +85,30 @@ class NavigatorDrawer extends StatelessWidget {
                         ).expand(),
                       ].withDivider(Gaps.hGap4),
                     ).py8(),
-                    'Loại danh mục'.tr().text.titleMedium(context).make().py8(),
+                    // 'Loại danh mục'.tr().text.titleMedium(context).make().py8(),
                     Row(
                       children: [
                         AppButton(
-                          style:
-                              AppButtonTheme.color(context, color: Colors.red),
+                          style: AppButtonTheme.ghost(context),
                           label: 'Lọc'.tr(),
                           onPressed: () {
                             context.read<ProductSearchCubit>().onFilterChange();
                           },
                         ).py16().expand(),
-                        //20110263
-                        //     AppRadioReactive<ProductType?>(
-                        //       type: RadioBtnType.rec,
-                        //       formControlName: ProductFilterData.typeListKey,
-                        //       value: ProductType.home,
-                        //       label: ProductType.home.displayValue.tr(),
-                        //     ).expand(),
-                        // Gaps.hGap16,
-                        // AppRadioReactive<ProductType?>(
-                        //   formControlName: ProductFilterData.typeListKey,
-                        //   value: ProductType.office,
-                        //   label: ProductType.office.displayValue.tr(),
-                        // ).expand(),
                       ],
-                    ).py8(),
+                    ).py4(),
+                    Row(
+                      children: [
+                        AppButton(
+                          style:
+                              AppButtonTheme.color(context, color: Colors.red),
+                          label: 'Bỏ lọc'.tr(),
+                          onPressed: () {
+                            context.read<ProductSearchCubit>().clearFilter();
+                          },
+                        ).py16().expand(),
+                      ],
+                    ).py4(),
                   ],
                 ).p16(),
               );
