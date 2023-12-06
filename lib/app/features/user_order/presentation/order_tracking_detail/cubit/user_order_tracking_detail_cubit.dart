@@ -14,9 +14,6 @@ class UserOrderTrackingDetailCubit extends Cubit<UserOrderTrackingDetailState> {
   Future<void> loadData() async {
     emit(state.copyWith(status: state.status.toPending()));
     try {
-      // final List<OrderStatusTrackingEntity> listOrderStatus =
-      //     OrderStatusTrackingEntity.demo();
-
       final listOrderStatus =
           await orderRepo.getListTrackingOrder(id: state.orderId);
       emit(state.copyWith(

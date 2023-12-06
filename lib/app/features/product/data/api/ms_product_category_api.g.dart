@@ -58,12 +58,14 @@ class _MsProductCategoryApi implements MsProductCategoryApi {
     String? productCategoryID,
     int? offset,
     int? limit,
+    String? search,
   }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'productCategoryID': productCategoryID,
       r'offset': offset,
       r'limit': limit,
+      r'search': search,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};

@@ -13,24 +13,28 @@ abstract class MsProductApi {
   Future<MsPagingResult<MsProduct>?> getListHot({
     @Query('offset') int? offset,
     @Query('limit') int? limit,
+    @Query('search') String? search,
   });
 
   @GET('/api/hlshop/product/get-list-best-seller')
   Future<MsPagingResult<MsProduct>?> getListBestSell({
     @Query('offset') int? offset,
     @Query('limit') int? limit,
+    @Query('search') String? search,
   });
 
   @GET('/api/hlshop/product/get-list-good-price-today')
   Future<MsPagingResult<MsProduct>?> getListGoodPrice({
     @Query('offset') int? offset,
     @Query('limit') int? limit,
+    @Query('search') String? search,
   });
 
   @GET('/api/hlshop/product/get-list-new')
   Future<MsPagingResult<MsProduct>?> getListNew({
     @Query('offset') int? offset,
     @Query('limit') int? limit,
+    @Query('search') String? search,
   });
 
   @GET('/api/hlshop/product/get-detail')
@@ -65,8 +69,10 @@ abstract class MsProductApi {
   });
 
   @GET('/api/hlshop/product-category/detail')
-  Future<MsPagingResult<MsProduct>?> getCategoryDetail(
-      {@Query('productCategoryID') String? productCategoryID,
-      @Query('offset') int? offset,
-      @Query('limit') int? limit});
+  Future<MsPagingResult<MsProduct>?> getCategoryDetail({
+    @Query('productCategoryID') String? productCategoryID,
+    @Query('offset') int? offset,
+    @Query('search') String? search,
+    @Query('limit') int? limit,
+  });
 }

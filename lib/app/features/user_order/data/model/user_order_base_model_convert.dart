@@ -74,7 +74,9 @@ extension MsOderGroupDataConvert on MsOderGroupData {
       object: this,
       id: orderID,
       orderCode: orderCode,
+      canFeedback: canFeedback,
       paymentMethod: paymentMethod,
+      orderStatus: orderStatus?.rawValue,
       orderProductList: dataOrderItem?.mapAsList(
             (item) => OrderProductEntity(
               object: this,

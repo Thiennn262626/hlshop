@@ -68,7 +68,6 @@ class UserOrderCubit extends Cubit<UserOrderState> {
       final rs = await orderRepo.getOrderStatusCount();
       final count = await orderRepo.getListCountOrder();
       final countItem = addListCount(count);
-
       emit(
         state.copyWith(
           orderCountStatus: const ApiStatus.done(),

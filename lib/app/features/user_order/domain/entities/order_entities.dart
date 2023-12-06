@@ -61,18 +61,44 @@ class OrderDataEntity {
     this.userAddressEntity,
     this.id,
     this.orderCode,
+    this.orderStatus,
     this.paymentMethod,
     this.orderShippingFee,
     this.finishPay,
+    this.canFeedback,
   });
   final List<OrderProductEntity>? orderProductList;
   final Object? object;
   final UserAddressEntity? userAddressEntity;
   final String? id;
   final String? orderCode;
+  final int? orderStatus;
   final int? paymentMethod;
   final bool? finishPay;
+  final bool? canFeedback;
   final OrderShippingFeeEntity? orderShippingFee;
+  String? get getOrderStatusTracking {
+    switch (orderStatus) {
+      case 0:
+        return 'Đang Chờ duyệt'.tr();
+      case 1:
+        return 'Đang chờ đóng gói'.tr();
+      case 2:
+        return 'Đang đóng gói'.tr();
+      case 3:
+        return 'Đơn hàng đang giao đến bạn'.tr();
+      case 4:
+        return 'Giao hàng thành công'.tr();
+      case 5:
+        return 'Khách hàng đã hủy'.tr();
+      case 6:
+        return 'Người bán đã hủy'.tr();
+      case 7:
+        return 'Đã trả hàng'.tr();
+    }
+    return null;
+  }
+
   PriceUnit get totalPriceItem {
     return orderProductList?.fold(
           PriceUnit.zero,

@@ -15,7 +15,7 @@ class UserFavoriteProductPage extends StatelessWidget {
         getStatus: (state) => state.status,
         child: Scaffold(
           appBar: AppAppBar(
-            title: 'title',
+            title: 'Sản phẩm yêu thích'.tr(),
           ),
           body: UserFavoriteProductBody(),
         ),

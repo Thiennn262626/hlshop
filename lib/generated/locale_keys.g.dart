@@ -35,7 +35,8 @@ abstract class LocaleKeys {
   static const authen_RegisterType_phone = 'authen.RegisterType.phone';
   static const authen_RegisterType = 'authen.RegisterType';
   static const authen_SendAgain = 'authen.SendAgain';
-  static const authen_SendOTPAgainAfterSecond = 'authen.SendOTPAgainAfterSecond';
+  static const authen_SendOTPAgainAfterSecond =
+      'authen.SendOTPAgainAfterSecond';
   static const authen_SignUp = 'authen.SignUp';
   static const authen_SignUpSuccess = 'authen.SignUpSuccess';
   static const authen = 'authen';
@@ -96,7 +97,8 @@ abstract class LocaleKeys {
   static const product_Uses = 'product.Uses';
   static const product = 'product';
   static const productRating_AllRating = 'productRating.AllRating';
-  static const productRating_DistributorReply = 'productRating.DistributorReply';
+  static const productRating_DistributorReply =
+      'productRating.DistributorReply';
   static const productRating_ViewReply = 'productRating.ViewReply';
   static const productRating_WriteReview = 'productRating.WriteReview';
   static const productRating = 'productRating';
@@ -111,11 +113,15 @@ abstract class LocaleKeys {
   static const user_Account = 'user.Account';
   static const user = 'user';
   static const userOrder_NoOrderYet = 'userOrder.NoOrderYet';
-  static const userOrder_OrderStatus_canceled = 'userOrder.OrderStatus.canceled';
-  static const userOrder_OrderStatus_delivered = 'userOrder.OrderStatus.delivered';
+  static const userOrder_OrderStatus_canceled =
+      'userOrder.OrderStatus.canceled';
+  static const userOrder_OrderStatus_delivered =
+      'userOrder.OrderStatus.delivered';
   static const userOrder_OrderStatus_pending = 'userOrder.OrderStatus.pending';
-  static const userOrder_OrderStatus_processing = 'userOrder.OrderStatus.processing';
-  static const userOrder_OrderStatus_shipping = 'userOrder.OrderStatus.shipping';
+  static const userOrder_OrderStatus_processing =
+      'userOrder.OrderStatus.processing';
+  static const userOrder_OrderStatus_shipping =
+      'userOrder.OrderStatus.shipping';
   static const userOrder_OrderStatus = 'userOrder.OrderStatus';
   static const userOrder_Orders = 'userOrder.Orders';
   static const userOrder_TotalPriceNItems = 'userOrder.TotalPriceNItems';

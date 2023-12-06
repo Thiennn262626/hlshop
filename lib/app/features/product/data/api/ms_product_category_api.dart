@@ -18,5 +18,6 @@ abstract class MsProductCategoryApi {
     @Query('productCategoryID') String? productCategoryID,
     @Query('offset') int? offset,
     @Query('limit') int? limit,
+    @Query('search') String? search,
   });
 }

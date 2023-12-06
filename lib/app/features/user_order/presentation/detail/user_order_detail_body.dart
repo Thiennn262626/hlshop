@@ -50,6 +50,47 @@ class UserOrderDetailBody extends StatelessWidget {
                 subtitle: _getPaymentMethodText(item?.paymentMethod ?? 0).tr(),
               ),
               OrderPaymentDetail(order: item).pyDefault(),
+              if (item?.orderStatus == 0 && item?.paymentMethod == 0 ||
+                  (item?.paymentMethod == 1 && item?.finishPay == false))
+                AppButton(
+                  label: 'Hủy đơn hàng'.tr(),
+                  onPressed: () {
+                    //context.read<UserOrderDetailCubit>().cancelOrder();
+                  },
+                ).py16(),
+              if (item?.orderStatus == 3)
+                AppButton(
+                  label: 'Nhận hàng thành công'.tr(),
+                  onPressed: () {
+                    //context.read<UserOrderDetailCubit>().finishOrder();
+                  },
+                ).py16(),
+              if (item?.orderStatus == 4)
+                Row(
+                  children: [
+                    AppButton(
+                      style: AppButtonTheme.color(context,
+                          color: Colors.deepOrangeAccent),
+                      label: 'Đánh giá'.tr(),
+                      onPressed: item?.canFeedback == true
+                          ? () {
+                              // context.pushRoute(ProductRatingRoute(
+                              //   product: item?.product,
+                              //   order: item,
+                              // ));
+                            }
+                          : null,
+                    ).py16().expand(),
+                    const AppDivider().pxDefault(),
+                    AppButton(
+                      style: AppButtonTheme.color(context, color: Colors.red),
+                      label: 'Đổi trả'.tr(),
+                      onPressed: () {
+                        // context.read<UserOrderDetailCubit>().returnOrder();
+                      },
+                    ).py16().expand(),
+                  ],
+                ).pxDefault(),
             ].withDivider(const AppDivider()),
           ),
         );

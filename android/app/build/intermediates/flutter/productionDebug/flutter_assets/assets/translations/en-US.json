@@ -66,7 +66,7 @@
   "dialog": {
    "Cancel": "Cancel",
    "Confirm": "OK",
-   "Delete": "Delêt"
+   "Delete": "Delete"
   }
  },
  "discount": {
@@ -181,6 +181,6 @@
  "MSG0043": "Mã OTP đã hết hạn.",
  "MSG0044": "Email/ Số điện thoại đã tồn tại",
  "MSG0045": "Tài khoản của bạn đã bị khoá. Vui lòng liên hệ với chúng tôi qua <Tên fanpage dạng hyperlink> để biết thêm thông tin",
- "MSG0046": "Tài khoản chưa được xác thực. Vui lòng tiến hành xác thực bằng mã OTP.",
+ "MSG0046": "Tài khoản chưa được xác thực. Vui lòng tiến hành xác thực bằng mã OTP",
  "MSG0047": "Tính năng nhận mã OTP của bạn đã bị khoá. Vui lòng xác thực lại sau <thời gian được cấu hình tại portal> tiếng."
 }

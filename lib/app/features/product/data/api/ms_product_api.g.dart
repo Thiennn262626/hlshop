@@ -22,11 +22,13 @@ class _MsProductApi implements MsProductApi {
   Future<MsPagingResult<MsProduct>?> getListHot({
     int? offset,
     int? limit,
+    String? search,
   }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'offset': offset,
       r'limit': limit,
+      r'search': search,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
@@ -57,11 +59,13 @@ class _MsProductApi implements MsProductApi {
   Future<MsPagingResult<MsProduct>?> getListBestSell({
     int? offset,
     int? limit,
+    String? search,
   }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'offset': offset,
       r'limit': limit,
+      r'search': search,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
@@ -92,11 +96,13 @@ class _MsProductApi implements MsProductApi {
   Future<MsPagingResult<MsProduct>?> getListGoodPrice({
     int? offset,
     int? limit,
+    String? search,
   }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'offset': offset,
       r'limit': limit,
+      r'search': search,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
@@ -127,11 +133,13 @@ class _MsProductApi implements MsProductApi {
   Future<MsPagingResult<MsProduct>?> getListNew({
     int? offset,
     int? limit,
+    String? search,
   }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'offset': offset,
       r'limit': limit,
+      r'search': search,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
@@ -319,12 +327,14 @@ class _MsProductApi implements MsProductApi {
   Future<MsPagingResult<MsProduct>?> getCategoryDetail({
     String? productCategoryID,
     int? offset,
+    String? search,
     int? limit,
   }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'productCategoryID': productCategoryID,
       r'offset': offset,
+      r'search': search,
       r'limit': limit,
     };
     queryParameters.removeWhere((k, v) => v == null);

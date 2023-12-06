@@ -1,4 +1,6 @@
 import 'package:hlshop/all_file/all_file.dart';
+import 'package:hlshop/app/features/product/domain/entity/product_entity.dart';
+import 'package:hlshop/app/features/product/domain/repo/product_repo.dart';
 
 class HomeSearchBar extends StatelessWidget {
   const HomeSearchBar({
@@ -12,8 +14,16 @@ class HomeSearchBar extends StatelessWidget {
       child: GestureDetector(
         onTap: () {
           context.pushRoute(
-            ProductSearchRoute(),
+            ProductSearchRoute(
+              filterData: const ProductFilterData(
+                type: ProductListType.newest,
+                showType: ProductListShowType.homePage,
+              ),
+            ),
           );
+          // context.pushRoute(
+          //   ProductSearchRoute(),
+          // );
         },
         child: AbsorbPointer(
           child: AppTextField(

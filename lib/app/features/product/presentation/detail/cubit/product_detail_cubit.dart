@@ -31,17 +31,17 @@ class ProductDetailCubit extends Cubit<ProductDetailState> {
       emit(state.copyWith(status: ApiStatus.error(e)));
     }
   }
-
-  Future<List<ProductEntity>> fetchSameDistributor(int offset, int limit) {
-    return productRepo.getProductListSearch(
-      limit: limit,
-      offset: offset,
-      filterData: ProductFilterData(
-        relatedProductID: state.product?.id,
-        sellerID: state.product?.distributor?.id,
-      ),
-    );
-  }
+  //
+  // Future<List<ProductEntity>> fetchSameDistributor(int offset, int limit) {
+  //   return productRepo.getProductListSearch(
+  //     limit: limit,
+  //     offset: offset,
+  //     filterData: ProductFilterData(
+  //       relatedProductID: state.product?.id,
+  //       sellerID: state.product?.distributor?.id,
+  //     ),
+  //   );
+  // }
 
   Future<List<ProductEntity>> fetchSameCategory(int offset, int limit) {
     return productRepo.getProductListSearch(

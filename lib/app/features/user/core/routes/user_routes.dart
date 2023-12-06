@@ -29,4 +29,8 @@ final userRoutes = [
     path: '/user-email-info',
     page: UserEmailInfoRoute.page,
   ),
+  AutoRoute(
+    path: '/user-favorite-product',
+    page: UserFavoriteProductRoute.page,
+  ),
 ];

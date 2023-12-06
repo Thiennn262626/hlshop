@@ -25,12 +25,12 @@ class MsProductRepo extends ProductRepo {
   }) async {
     switch (type) {
       case ProductListType.hot:
-        if (showType == ProductListShowType.homePage) {
-          final nextOffset = (offset ?? 0) + (limit ?? 0);
-          if (nextOffset > 10) {
-            limit = (offset ?? 0) + 10;
-          }
-        }
+        // if (showType == ProductListShowType.homePage) {
+        //   final nextOffset = (offset ?? 0) + (limit ?? 0);
+        //   if (nextOffset > 10) {
+        //     limit = (offset ?? 0) + 10;
+        //   }
+        // }
 
         return _api
             .getListHot(

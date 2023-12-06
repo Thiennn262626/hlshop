@@ -103,7 +103,8 @@ class UserOrderGroupItem extends StatelessWidget {
             AppTile(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
               space: 10,
-              title: 'Đang chờ duyệt'
+              title: orderData?.getOrderStatusTracking
+                  .toString()
                   .text
                   .textS
                   .color(context.themeColor.orange)

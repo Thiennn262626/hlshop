@@ -23,12 +23,12 @@ class OrderDetailBottomBar extends StatelessWidget {
         ).expand(),
         BlocBuilder<UserOrderDetailCubit, UserOrderDetailState>(
           builder: (context, state) {
-            final finishPay2 = state.order?.finishPay;
+            final finishPay = state.order?.finishPay;
             return AppButton(
               style: AppButtonTheme.primary(context).big(context),
               label:
-                  finishPay2 ?? true ? 'Đã thanh toán'.tr() : 'Thanh toán'.tr(),
-              onPressed: finishPay2 ?? true
+                  finishPay ?? true ? 'Đã thanh toán'.tr() : 'Thanh toán'.tr(),
+              onPressed: finishPay ?? true
                   ? null
                   : () {
                       context.read<UserOrderDetailCubit>().payOrder();
