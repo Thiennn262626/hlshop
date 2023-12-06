@@ -13,7 +13,7 @@ import 'dart:async' as _i30;
 import 'package:auto_route/auto_route.dart' as _i29;
 import 'package:hlshop/all_file/all_file.dart' as _i31;
 import 'package:hlshop/app/common/presentation/otp_confirm/otp_confirm_page.dart'
-    as _i27;
+    as _i28;
 import 'package:hlshop/app/features/about/presentation/main/about_page.dart'
     as _i20;
 import 'package:hlshop/app/features/auth/presentation/forgot_password/change_password/change_password_page.dart'
@@ -27,12 +27,12 @@ import 'package:hlshop/app/features/auth/presentation/otp_confirm/auth_otp_confi
 import 'package:hlshop/app/features/auth/presentation/sign_up/sign_up_page.dart'
     as _i6;
 import 'package:hlshop/app/features/checkout/presentation/checkout_payment/checkout_payment_page.dart'
-    as _i28;
-import 'package:hlshop/app/features/checkout/presentation/main/checkout_page.dart'
     as _i23;
+import 'package:hlshop/app/features/checkout/presentation/main/checkout_page.dart'
+    as _i24;
 import 'package:hlshop/app/features/home/presentation/main/home_page.dart'
     as _i1;
-import 'package:hlshop/app/features/main/presentation/main_page.dart' as _i25;
+import 'package:hlshop/app/features/main/presentation/main_page.dart' as _i26;
 import 'package:hlshop/app/features/product/domain/entity/product_entity.dart'
     as _i35;
 import 'package:hlshop/app/features/product/presentation/detail/product_detail_page.dart'
@@ -42,9 +42,9 @@ import 'package:hlshop/app/features/product/presentation/product_search/product_
 import 'package:hlshop/app/features/product_rating/presentation/main/product_rating_page.dart'
     as _i2;
 import 'package:hlshop/app/features/search/presentation/main/search_page.dart'
-    as _i24;
+    as _i25;
 import 'package:hlshop/app/features/shopping_cart/presentation/main/shopping_cart_page.dart'
-    as _i26;
+    as _i27;
 import 'package:hlshop/app/features/shopping_cart/seft.dart' as _i36;
 import 'package:hlshop/app/features/user/domain/entity/user_base_entity.dart'
     as _i34;
@@ -268,12 +268,22 @@ abstract class $AppAutoRoute extends _i29.RootStackRouter {
         ),
       );
     },
+    CheckoutPaymentRoute.name: (routeData) {
+      final args = routeData.argsAs<CheckoutPaymentRouteArgs>();
+      return _i29.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: _i23.CheckoutPaymentPage(
+          key: args.key,
+          paymentMethod: args.paymentMethod,
+        ),
+      );
+    },
     CheckoutRoute.name: (routeData) {
       final args = routeData.argsAs<CheckoutRouteArgs>(
           orElse: () => const CheckoutRouteArgs());
       return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i23.CheckoutPage(
+        child: _i24.CheckoutPage(
           key: args.key,
           cartItems: args.cartItems,
           selectedCartItemIds: args.selectedCartItemIds,
@@ -283,26 +293,26 @@ abstract class $AppAutoRoute extends _i29.RootStackRouter {
     SearchRoute.name: (routeData) {
       return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i24.SearchPage(),
+        child: const _i25.SearchPage(),
       );
     },
     MainRoute.name: (routeData) {
       return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i25.MainPage(),
+        child: const _i26.MainPage(),
       );
     },
     ShoppingCartRoute.name: (routeData) {
       return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i26.ShoppingCartPage(),
+        child: const _i27.ShoppingCartPage(),
       );
     },
     OtpConfirmRoute.name: (routeData) {
       final args = routeData.argsAs<OtpConfirmRouteArgs>();
       return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i27.OtpConfirmPage(
+        child: _i28.OtpConfirmPage(
           requestOtpResult: args.requestOtpResult,
           confirmOTPFunc: args.confirmOTPFunc,
           onResendOTP: args.onResendOTP,
@@ -310,16 +320,6 @@ abstract class $AppAutoRoute extends _i29.RootStackRouter {
           otpMessage: args.otpMessage,
           key: args.key,
           successMessage: args.successMessage,
-        ),
-      );
-    },
-    CheckoutPaymentRoute.name: (routeData) {
-      final args = routeData.argsAs<CheckoutPaymentRouteArgs>();
-      return _i29.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: _i28.CheckoutPaymentPage(
-          key: args.key,
-          paymentMethod: args.paymentMethod,
         ),
       );
     },
@@ -948,7 +948,46 @@ class ProductDetailRouteArgs {
 }
 
 /// generated route for
-/// [_i23.CheckoutPage]
+/// [_i23.CheckoutPaymentPage]
+class CheckoutPaymentRoute
+    extends _i29.PageRouteInfo<CheckoutPaymentRouteArgs> {
+  CheckoutPaymentRoute({
+    _i31.Key? key,
+    required int paymentMethod,
+    List<_i29.PageRouteInfo>? children,
+  }) : super(
+          CheckoutPaymentRoute.name,
+          args: CheckoutPaymentRouteArgs(
+            key: key,
+            paymentMethod: paymentMethod,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'CheckoutPaymentRoute';
+
+  static const _i29.PageInfo<CheckoutPaymentRouteArgs> page =
+      _i29.PageInfo<CheckoutPaymentRouteArgs>(name);
+}
+
+class CheckoutPaymentRouteArgs {
+  const CheckoutPaymentRouteArgs({
+    this.key,
+    required this.paymentMethod,
+  });
+
+  final _i31.Key? key;
+
+  final int paymentMethod;
+
+  @override
+  String toString() {
+    return 'CheckoutPaymentRouteArgs{key: $key, paymentMethod: $paymentMethod}';
+  }
+}
+
+/// generated route for
+/// [_i24.CheckoutPage]
 class CheckoutRoute extends _i29.PageRouteInfo<CheckoutRouteArgs> {
   CheckoutRoute({
     _i31.Key? key,
@@ -991,7 +1030,7 @@ class CheckoutRouteArgs {
 }
 
 /// generated route for
-/// [_i24.SearchPage]
+/// [_i25.SearchPage]
 class SearchRoute extends _i29.PageRouteInfo<void> {
   const SearchRoute({List<_i29.PageRouteInfo>? children})
       : super(
@@ -1005,7 +1044,7 @@ class SearchRoute extends _i29.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i25.MainPage]
+/// [_i26.MainPage]
 class MainRoute extends _i29.PageRouteInfo<void> {
   const MainRoute({List<_i29.PageRouteInfo>? children})
       : super(
@@ -1019,7 +1058,7 @@ class MainRoute extends _i29.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i26.ShoppingCartPage]
+/// [_i27.ShoppingCartPage]
 class ShoppingCartRoute extends _i29.PageRouteInfo<void> {
   const ShoppingCartRoute({List<_i29.PageRouteInfo>? children})
       : super(
@@ -1033,7 +1072,7 @@ class ShoppingCartRoute extends _i29.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i27.OtpConfirmPage]
+/// [_i28.OtpConfirmPage]
 class OtpConfirmRoute extends _i29.PageRouteInfo<OtpConfirmRouteArgs> {
   OtpConfirmRoute({
     required Object? requestOtpResult,
@@ -1098,44 +1137,5 @@ class OtpConfirmRouteArgs {
   @override
   String toString() {
     return 'OtpConfirmRouteArgs{requestOtpResult: $requestOtpResult, confirmOTPFunc: $confirmOTPFunc, onResendOTP: $onResendOTP, otpLength: $otpLength, otpMessage: $otpMessage, key: $key, successMessage: $successMessage}';
-  }
-}
-
-/// generated route for
-/// [_i28.CheckoutPaymentPage]
-class CheckoutPaymentRoute
-    extends _i29.PageRouteInfo<CheckoutPaymentRouteArgs> {
-  CheckoutPaymentRoute({
-    _i31.Key? key,
-    required int paymentMethod,
-    List<_i29.PageRouteInfo>? children,
-  }) : super(
-          CheckoutPaymentRoute.name,
-          args: CheckoutPaymentRouteArgs(
-            key: key,
-            paymentMethod: paymentMethod,
-          ),
-          initialChildren: children,
-        );
-
-  static const String name = 'CheckoutPaymentRoute';
-
-  static const _i29.PageInfo<CheckoutPaymentRouteArgs> page =
-      _i29.PageInfo<CheckoutPaymentRouteArgs>(name);
-}
-
-class CheckoutPaymentRouteArgs {
-  const CheckoutPaymentRouteArgs({
-    this.key,
-    required this.paymentMethod,
-  });
-
-  final _i31.Key? key;
-
-  final int paymentMethod;
-
-  @override
-  String toString() {
-    return 'CheckoutPaymentRouteArgs{key: $key, paymentMethod: $paymentMethod}';
   }
 }

@@ -430,3 +430,175 @@ extension $ProductEntityCopyWith on ProductEntity {
     );
   }
 }
+
+abstract class _$ProductFilterDataCWProxy {
+  ProductFilterData relatedProductID(String? relatedProductID);
+
+  ProductFilterData sellerID(String? sellerID);
+
+  ProductFilterData productCategory(ProductCategoryEntity? productCategory);
+
+  ProductFilterData orderByType(OrderByType? orderByType);
+
+  ProductFilterData search(String? search);
+
+  ProductFilterData type(ProductListType? type);
+
+  ProductFilterData showType(ProductListShowType? showType);
+
+  ProductFilterData minAmount(String? minAmount);
+
+  ProductFilterData maxAmount(String? maxAmount);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ProductFilterData(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// ProductFilterData(...).copyWith(id: 12, name: "My name")
+  /// ````
+  ProductFilterData call({
+    String? relatedProductID,
+    String? sellerID,
+    ProductCategoryEntity? productCategory,
+    OrderByType? orderByType,
+    String? search,
+    ProductListType? type,
+    ProductListShowType? showType,
+    String? minAmount,
+    String? maxAmount,
+  });
+}
+
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfProductFilterData.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfProductFilterData.copyWith.fieldName(...)`
+class _$ProductFilterDataCWProxyImpl implements _$ProductFilterDataCWProxy {
+  const _$ProductFilterDataCWProxyImpl(this._value);
+
+  final ProductFilterData _value;
+
+  @override
+  ProductFilterData relatedProductID(String? relatedProductID) =>
+      this(relatedProductID: relatedProductID);
+
+  @override
+  ProductFilterData sellerID(String? sellerID) => this(sellerID: sellerID);
+
+  @override
+  ProductFilterData productCategory(ProductCategoryEntity? productCategory) =>
+      this(productCategory: productCategory);
+
+  @override
+  ProductFilterData orderByType(OrderByType? orderByType) =>
+      this(orderByType: orderByType);
+
+  @override
+  ProductFilterData search(String? search) => this(search: search);
+
+  @override
+  ProductFilterData type(ProductListType? type) => this(type: type);
+
+  @override
+  ProductFilterData showType(ProductListShowType? showType) =>
+      this(showType: showType);
+
+  @override
+  ProductFilterData minAmount(String? minAmount) => this(minAmount: minAmount);
+
+  @override
+  ProductFilterData maxAmount(String? maxAmount) => this(maxAmount: maxAmount);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ProductFilterData(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// ProductFilterData(...).copyWith(id: 12, name: "My name")
+  /// ````
+  ProductFilterData call({
+    Object? relatedProductID = const $CopyWithPlaceholder(),
+    Object? sellerID = const $CopyWithPlaceholder(),
+    Object? productCategory = const $CopyWithPlaceholder(),
+    Object? orderByType = const $CopyWithPlaceholder(),
+    Object? search = const $CopyWithPlaceholder(),
+    Object? type = const $CopyWithPlaceholder(),
+    Object? showType = const $CopyWithPlaceholder(),
+    Object? minAmount = const $CopyWithPlaceholder(),
+    Object? maxAmount = const $CopyWithPlaceholder(),
+  }) {
+    return ProductFilterData(
+      relatedProductID: relatedProductID == const $CopyWithPlaceholder()
+          ? _value.relatedProductID
+          // ignore: cast_nullable_to_non_nullable
+          : relatedProductID as String?,
+      sellerID: sellerID == const $CopyWithPlaceholder()
+          ? _value.sellerID
+          // ignore: cast_nullable_to_non_nullable
+          : sellerID as String?,
+      productCategory: productCategory == const $CopyWithPlaceholder()
+          ? _value.productCategory
+          // ignore: cast_nullable_to_non_nullable
+          : productCategory as ProductCategoryEntity?,
+      orderByType: orderByType == const $CopyWithPlaceholder()
+          ? _value.orderByType
+          // ignore: cast_nullable_to_non_nullable
+          : orderByType as OrderByType?,
+      search: search == const $CopyWithPlaceholder()
+          ? _value.search
+          // ignore: cast_nullable_to_non_nullable
+          : search as String?,
+      type: type == const $CopyWithPlaceholder()
+          ? _value.type
+          // ignore: cast_nullable_to_non_nullable
+          : type as ProductListType?,
+      showType: showType == const $CopyWithPlaceholder()
+          ? _value.showType
+          // ignore: cast_nullable_to_non_nullable
+          : showType as ProductListShowType?,
+      minAmount: minAmount == const $CopyWithPlaceholder()
+          ? _value.minAmount
+          // ignore: cast_nullable_to_non_nullable
+          : minAmount as String?,
+      maxAmount: maxAmount == const $CopyWithPlaceholder()
+          ? _value.maxAmount
+          // ignore: cast_nullable_to_non_nullable
+          : maxAmount as String?,
+    );
+  }
+}
+
+extension $ProductFilterDataCopyWith on ProductFilterData {
+  /// Returns a callable class that can be used as follows: `instanceOfProductFilterData.copyWith(...)` or like so:`instanceOfProductFilterData.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$ProductFilterDataCWProxy get copyWith =>
+      _$ProductFilterDataCWProxyImpl(this);
+
+  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)` or `ProductFilterData(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// ProductFilterData(...).copyWithNull(firstField: true, secondField: true)
+  /// ````
+  ProductFilterData copyWithNull({
+    bool relatedProductID = false,
+    bool sellerID = false,
+    bool productCategory = false,
+    bool orderByType = false,
+    bool search = false,
+    bool type = false,
+    bool showType = false,
+    bool minAmount = false,
+    bool maxAmount = false,
+  }) {
+    return ProductFilterData(
+      relatedProductID: relatedProductID == true ? null : this.relatedProductID,
+      sellerID: sellerID == true ? null : this.sellerID,
+      productCategory: productCategory == true ? null : this.productCategory,
+      orderByType: orderByType == true ? null : this.orderByType,
+      search: search == true ? null : this.search,
+      type: type == true ? null : this.type,
+      showType: showType == true ? null : this.showType,
+      minAmount: minAmount == true ? null : this.minAmount,
+      maxAmount: maxAmount == true ? null : this.maxAmount,
+    );
+  }
+}

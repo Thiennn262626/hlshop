@@ -20,6 +20,7 @@ class MsProductRepo extends ProductRepo {
   Future<List<ProductEntity>> getProductList({
     int? offset,
     int? limit,
+    String? search,
     ProductListType? type,
     ProductListShowType? showType,
   }) async {
@@ -36,6 +37,7 @@ class MsProductRepo extends ProductRepo {
             .getListHot(
               offset: offset,
               limit: limit,
+              search: search,
             )
             .then(_convertListProduct);
       case ProductListType.newest:
@@ -43,6 +45,7 @@ class MsProductRepo extends ProductRepo {
             .getListNew(
               offset: offset,
               limit: limit,
+              search: search,
             )
             .then(_convertListProduct);
       case ProductListType.bestSeller:
@@ -50,6 +53,7 @@ class MsProductRepo extends ProductRepo {
             .getListBestSell(
               offset: offset,
               limit: limit,
+              search: search,
             )
             .then(_convertListProduct);
       case ProductListType.goodPrice:
@@ -57,6 +61,7 @@ class MsProductRepo extends ProductRepo {
             .getListGoodPrice(
               offset: offset,
               limit: limit,
+              search: search,
             )
             .then(_convertListProduct);
       case null:
@@ -117,6 +122,7 @@ class MsProductRepo extends ProductRepo {
             productCategoryID: productCategoryID.id,
             offset: offset,
             limit: limit,
+            search: filterData?.search,
           )
           .then(_convertListProduct);
     }
@@ -124,6 +130,7 @@ class MsProductRepo extends ProductRepo {
     return getProductList(
       limit: limit,
       offset: offset,
+      search: filterData?.search,
       type: filterData?.type,
       showType: filterData?.showType,
     );
@@ -147,7 +154,7 @@ class MsProductRepo extends ProductRepo {
 
   @override
   Future<List<ProductEntity>> getProductListByCategory(
-      {required String? id, int? limit, int? offset}) {
+      {required String? id, int? limit, int? offset, String? search}) {
     // TODO: implement getProductListByCategory
     throw UnimplementedError();
   }

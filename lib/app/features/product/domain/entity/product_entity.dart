@@ -106,6 +106,7 @@ class ProductEntity {
   ProductVariantEntity? get variation => variations?.firstOrNull;
 }
 
+@CopyWith(copyWithNull: true)
 class ProductFilterData {
   const ProductFilterData({
     this.relatedProductID,
@@ -115,6 +116,8 @@ class ProductFilterData {
     this.search,
     this.type,
     this.showType,
+    this.minAmount,
+    this.maxAmount,
   });
 
   final OrderByType? orderByType;
@@ -122,15 +125,17 @@ class ProductFilterData {
   final ProductCategoryEntity? productCategory;
   final String? relatedProductID;
   final String? sellerID;
+  final String? minAmount;
+  final String? maxAmount;
 
   final ProductListType? type;
   final ProductListShowType? showType;
 
   //key form
-  static const String category = 'category';
-  static const String min = 'min';
-  static const String max = 'max';
-  static const String minMax = 'minMax';
+  static const String categoryKey = 'categoryKey';
+  static const String minKey = 'minKey';
+  static const String maxKey = 'maxKey';
+  static const String typeListKey = 'typeListKey';
 }
 
 @JsonEnum(valueField: 'rawValue')

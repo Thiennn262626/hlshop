@@ -1,6 +1,7 @@
 import 'package:hlshop/all_file/all_file.dart';
 import 'package:hlshop/app/common/domain/entity/common_entity.dart';
 import 'package:hlshop/app/common/presentation/widgets/btn/btn_filter.dart';
+import 'package:hlshop/app/features/product/domain/entity/product_entity.dart';
 import 'package:hlshop/app/features/product/presentation/list/product_grid_ver.dart';
 import 'package:hlshop/app/features/product/presentation/product_search/cubit/product_search_cubit.dart';
 import 'package:hlshop/app/features/product/presentation/product_search/widget/product_search_bar.dart';
@@ -26,6 +27,13 @@ class ProductSearchBody extends StatelessWidget {
                   children: [
                     'Xếp theo: '.tr().text.make().pl16(),
                     AppButtonTabBar(
+                      onTap: (index) {
+                        context
+                            .read<ProductSearchCubit>()
+                            .onSortChange(ProductFilterData(
+                              orderByType: OrderByType.values[index],
+                            ));
+                      },
                       tabs: OrderByType.values.mapAsList(
                         (item) => Tab(text: item.displayValue.tr()),
                       ),
@@ -46,9 +54,14 @@ class ProductSearchBody extends StatelessWidget {
               ].withDivider(Gaps.hGap4, showLast: true),
             ),
           ),
-          ProductGridVer(
-            isSliver: true,
-            fetchListData: context.read<ProductSearchCubit>().fetchProduct,
+          BlocBuilder<ProductSearchCubit, ProductSearchState>(
+            builder: (context, state) {
+              print('ProductSearchBody build');
+              return ProductGridVer(
+                isSliver: true,
+                fetchListData: context.read<ProductSearchCubit>().onScrollLoad,
+              );
+            },
           ),
         ],
       ),

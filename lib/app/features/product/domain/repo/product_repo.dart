@@ -5,6 +5,7 @@ abstract class ProductRepo {
   Future<List<ProductEntity>> getProductList({
     int? limit,
     int? offset,
+    String? search,
     ProductListType? type,
     ProductListShowType? showType,
   });
@@ -17,6 +18,7 @@ abstract class ProductRepo {
     required String? id,
     int? limit,
     int? offset,
+    String? search,
   });
 
   Future<List<ProductEntity>> getProductListSearch({
