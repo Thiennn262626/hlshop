@@ -1,8 +1,8 @@
 import 'package:hlshop/all_file/all_file.dart';
 import 'package:hlshop/app/features/user_order/domain/entities/order_entities.dart';
+import 'package:hlshop/app/features/user_order/domain/repo/user_order_repo.dart';
 import 'package:hlshop/app/features/user_order/presentation/group_item/user_order_list_group.dart';
 import 'package:hlshop/app/features/user_order/presentation/main/cubit/user_order_cubit.dart';
-import 'package:hlshop/app/features/user_order/self.dart';
 
 class UserOrderTab extends StatelessWidget {
   const UserOrderTab({super.key, required this.orderStatus});
@@ -14,6 +14,8 @@ class UserOrderTab extends StatelessWidget {
     return PagingList<OrderEntity>(
       pagingController:
           context.read<UserOrderCubit>().controllerMap[orderStatus],
+      // fetchListData: (offset, limit) =>
+      //     context.read<UserOrderCubit>().fetchListData(orderStatus),
       fetchListData: (offset, limit) => getIt<UserOrderRepo>().getOrderList(
         orderStatus: orderStatus,
         offset: offset,

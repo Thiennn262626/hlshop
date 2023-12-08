@@ -112,6 +112,7 @@ class ProductSearchCubit extends Cubit<ProductSearchState> {
       productCategory: null,
       maxAmount: null,
       minAmount: null,
+      type: state.filterData?.type ?? ProductListType.hot,
     )));
     await fetchProduct(0, 20);
   }

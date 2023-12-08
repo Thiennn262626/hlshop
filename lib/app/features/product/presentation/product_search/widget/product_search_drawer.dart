@@ -62,7 +62,7 @@ class NavigatorDrawer extends StatelessWidget {
                           onPressed: () {
                             context
                                 .read<ProductSearchCubit>()
-                                .setMinMax('0', '100.000');
+                                .setMinMax('0', '100000');
                           },
                         ).expand(),
                         AppButton(
@@ -71,7 +71,7 @@ class NavigatorDrawer extends StatelessWidget {
                           onPressed: () {
                             context
                                 .read<ProductSearchCubit>()
-                                .setMinMax('100.000', '200.000');
+                                .setMinMax('100000', '200000');
                           },
                         ).expand(),
                         AppButton(
@@ -80,7 +80,7 @@ class NavigatorDrawer extends StatelessWidget {
                           onPressed: () {
                             context
                                 .read<ProductSearchCubit>()
-                                .setMinMax('200.000', '300.000');
+                                .setMinMax('200000', '300000');
                           },
                         ).expand(),
                       ].withDivider(Gaps.hGap4),

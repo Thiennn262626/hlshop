@@ -10,8 +10,6 @@ abstract class UserOrderRepo {
     int? limit,
   });
 
-  // Future<Map<OrderStatus, int?>> getOrderStatusCount();
-
   Future<UserOrderCountModel?> getListCountOrder();
 
   Future<OrderDataEntity> getUserOrderDetail({

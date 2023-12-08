@@ -23,6 +23,8 @@ class MsProductRepo extends ProductRepo {
     String? search,
     int? sortBy,
     ProductListType? type,
+    String? minAmount,
+    String? maxAmount,
     ProductListShowType? showType,
   }) async {
     switch (type) {
@@ -40,6 +42,8 @@ class MsProductRepo extends ProductRepo {
               limit: limit,
               search: search,
               sortBy: sortBy,
+              minAmount: minAmount,
+              maxAmount: maxAmount,
             )
             .then(_convertListProduct);
       case ProductListType.newest:
@@ -49,6 +53,8 @@ class MsProductRepo extends ProductRepo {
               limit: limit,
               search: search,
               sortBy: sortBy,
+              minAmount: minAmount,
+              maxAmount: maxAmount,
             )
             .then(_convertListProduct);
       case ProductListType.bestSeller:
@@ -58,6 +64,8 @@ class MsProductRepo extends ProductRepo {
               limit: limit,
               search: search,
               sortBy: sortBy,
+              minAmount: minAmount,
+              maxAmount: maxAmount,
             )
             .then(_convertListProduct);
       case ProductListType.goodPrice:
@@ -67,6 +75,8 @@ class MsProductRepo extends ProductRepo {
               limit: limit,
               search: search,
               sortBy: sortBy,
+              minAmount: minAmount,
+              maxAmount: maxAmount,
             )
             .then(_convertListProduct);
       case null:
@@ -95,33 +105,6 @@ class MsProductRepo extends ProductRepo {
     ProductFilterData? filterData,
     int? sortBy,
   }) {
-    final productID = filterData?.relatedProductID;
-    final productCategoryID = filterData?.productCategory;
-
-    final sellerID = filterData?.sellerID;
-    // if (productID != null) {
-    //   if (productCategoryID != null) {
-    //     return _api
-    //         .getProductSameCategory(
-    //           productID: productID,
-    //           productCategoryID: productCategoryID.id,
-    //           limit: limit,
-    //           offset: offset,
-    //         )
-    //         .then(_convertListProduct);
-    //   }
-    //   if (sellerID != null) {
-    //     return _api
-    //         .getProductSameSeller(
-    //           productID: productID,
-    //           sellerID: sellerID,
-    //           limit: limit,
-    //           offset: offset,
-    //         )
-    //         .then(_convertListProduct);
-    //   }
-    // }
-
     if (filterData?.productCategory != null) {
       return _api
           .getCategoryDetail(
@@ -130,6 +113,8 @@ class MsProductRepo extends ProductRepo {
             limit: limit,
             search: filterData?.search,
             sortBy: filterData?.orderByType?.index,
+            minAmount: filterData?.minAmount,
+            maxAmount: filterData?.maxAmount,
           )
           .then(_convertListProduct);
     }
@@ -141,6 +126,8 @@ class MsProductRepo extends ProductRepo {
       sortBy: filterData?.orderByType?.index,
       type: filterData?.type,
       showType: filterData?.showType,
+      minAmount: filterData?.minAmount,
+      maxAmount: filterData?.maxAmount,
     );
   }
 

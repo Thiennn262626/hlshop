@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$UserOrderState {
   ApiStatus get orderCountStatus =>
-      throw _privateConstructorUsedError; // @Default(null) Map<OrderStatus, int?>? orderStatusCountMap,
+      throw _privateConstructorUsedError; // @Default(null) Map<OrderStatus, List<OrderEntity>>? userOrderListMap,
   List<int?>? get userOrderCountList => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -127,9 +127,9 @@ class _$UserOrderStateImpl extends _UserOrderState
   @override
   @JsonKey()
   final ApiStatus orderCountStatus;
-// @Default(null) Map<OrderStatus, int?>? orderStatusCountMap,
+// @Default(null) Map<OrderStatus, List<OrderEntity>>? userOrderListMap,
   final List<int?>? _userOrderCountList;
-// @Default(null) Map<OrderStatus, int?>? orderStatusCountMap,
+// @Default(null) Map<OrderStatus, List<OrderEntity>>? userOrderListMap,
   @override
   @JsonKey()
   List<int?>? get userOrderCountList {
@@ -186,7 +186,7 @@ abstract class _UserOrderState extends UserOrderState {
 
   @override
   ApiStatus get orderCountStatus;
-  @override // @Default(null) Map<OrderStatus, int?>? orderStatusCountMap,
+  @override // @Default(null) Map<OrderStatus, List<OrderEntity>>? userOrderListMap,
   List<int?>? get userOrderCountList;
   @override
   @JsonKey(ignore: true)

@@ -64,13 +64,15 @@ class UserOrderCubit extends Cubit<UserOrderState> {
     }
     emit(state.copyWith(orderCountStatus: state.orderCountStatus.toPending()));
     try {
-      //final rs = await orderRepo.getOrderStatusCount();
       final count = await orderRepo.getListCountOrder();
       final countItem = addListCount(count);
+      fetchListChangeStatus(
+        oldCountItem: state.userOrderCountList ?? [],
+        newCountItem: countItem,
+      );
       emit(
         state.copyWith(
           orderCountStatus: const ApiStatus.done(),
-          //orderStatusCountMap: rs,
           userOrderCountList: countItem,
         ),
       );
@@ -96,5 +98,31 @@ class UserOrderCubit extends Cubit<UserOrderState> {
       ..add(count?.countReturned);
 
     return countItem;
+  }
+
+  Future<List<OrderEntity>> fetchListData(OrderStatus orderStatus) async {
+    try {
+      final rs = await orderRepo.getOrderList(orderStatus: orderStatus);
+      return rs;
+    } catch (e) {
+      return [];
+    }
+  }
+
+  void fetchListChangeStatus(
+      {required List<int?> oldCountItem, required List<int?> newCountItem}) {
+    if (oldCountItem.length != newCountItem.length) {
+      return;
+    }
+    final listChangeStatus = <int>[];
+
+    for (var i = 0; i < oldCountItem.length; i++) {
+      if (oldCountItem[i] != newCountItem[i]) {
+        listChangeStatus.add(i);
+      }
+    }
+    for (final index in listChangeStatus) {
+      controllerMap[OrderStatus.values[index]]!.refresh();
+    }
   }
 }

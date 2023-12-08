@@ -24,6 +24,8 @@ class _MsProductApi implements MsProductApi {
     int? limit,
     String? search,
     int? sortBy,
+    String? minAmount,
+    String? maxAmount,
   }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
@@ -31,6 +33,8 @@ class _MsProductApi implements MsProductApi {
       r'limit': limit,
       r'search': search,
       r'sortBy': sortBy,
+      r'minAmount': minAmount,
+      r'maxAmount': maxAmount,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
@@ -63,6 +67,8 @@ class _MsProductApi implements MsProductApi {
     int? limit,
     String? search,
     int? sortBy,
+    String? minAmount,
+    String? maxAmount,
   }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
@@ -70,6 +76,8 @@ class _MsProductApi implements MsProductApi {
       r'limit': limit,
       r'search': search,
       r'sortBy': sortBy,
+      r'minAmount': minAmount,
+      r'maxAmount': maxAmount,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
@@ -102,6 +110,8 @@ class _MsProductApi implements MsProductApi {
     int? limit,
     String? search,
     int? sortBy,
+    String? minAmount,
+    String? maxAmount,
   }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
@@ -109,6 +119,8 @@ class _MsProductApi implements MsProductApi {
       r'limit': limit,
       r'search': search,
       r'sortBy': sortBy,
+      r'minAmount': minAmount,
+      r'maxAmount': maxAmount,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
@@ -141,6 +153,8 @@ class _MsProductApi implements MsProductApi {
     int? limit,
     String? search,
     int? sortBy,
+    String? minAmount,
+    String? maxAmount,
   }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
@@ -148,6 +162,8 @@ class _MsProductApi implements MsProductApi {
       r'limit': limit,
       r'search': search,
       r'sortBy': sortBy,
+      r'minAmount': minAmount,
+      r'maxAmount': maxAmount,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
@@ -338,6 +354,8 @@ class _MsProductApi implements MsProductApi {
     String? search,
     int? limit,
     int? sortBy,
+    String? minAmount,
+    String? maxAmount,
   }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
@@ -346,6 +364,8 @@ class _MsProductApi implements MsProductApi {
       r'search': search,
       r'limit': limit,
       r'sortBy': sortBy,
+      r'minAmount': minAmount,
+      r'maxAmount': maxAmount,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};

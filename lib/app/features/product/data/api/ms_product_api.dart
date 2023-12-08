@@ -15,6 +15,8 @@ abstract class MsProductApi {
     @Query('limit') int? limit,
     @Query('search') String? search,
     @Query('sortBy') int? sortBy,
+    @Query('minAmount') String? minAmount,
+    @Query('maxAmount') String? maxAmount,
   });
 
   @GET('/api/hlshop/product/get-list-best-seller')
@@ -23,6 +25,8 @@ abstract class MsProductApi {
     @Query('limit') int? limit,
     @Query('search') String? search,
     @Query('sortBy') int? sortBy,
+    @Query('minAmount') String? minAmount,
+    @Query('maxAmount') String? maxAmount,
   });
 
   @GET('/api/hlshop/product/get-list-good-price-today')
@@ -31,6 +35,8 @@ abstract class MsProductApi {
     @Query('limit') int? limit,
     @Query('search') String? search,
     @Query('sortBy') int? sortBy,
+    @Query('minAmount') String? minAmount,
+    @Query('maxAmount') String? maxAmount,
   });
 
   @GET('/api/hlshop/product/get-list-new')
@@ -39,6 +45,8 @@ abstract class MsProductApi {
     @Query('limit') int? limit,
     @Query('search') String? search,
     @Query('sortBy') int? sortBy,
+    @Query('minAmount') String? minAmount,
+    @Query('maxAmount') String? maxAmount,
   });
 
   @GET('/api/hlshop/product/get-detail')
@@ -79,5 +87,7 @@ abstract class MsProductApi {
     @Query('search') String? search,
     @Query('limit') int? limit,
     @Query('sortBy') int? sortBy,
+    @Query('minAmount') String? minAmount,
+    @Query('maxAmount') String? maxAmount,
   });
 }
