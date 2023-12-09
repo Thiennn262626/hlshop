@@ -6,6 +6,7 @@ class UserFavoriteProductState with _$UserFavoriteProductState {
 
   const factory UserFavoriteProductState({
     @Default(ApiStatus.initial()) ApiStatus status,
-    @Default(null) Object? item,
+    @Default([]) List<ProductEntity> products,
+    // @Default(null) Object? item,
   }) = _ProductDetailState;
 }

@@ -3,6 +3,7 @@ import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:hlshop/all_file/all_file.dart';
 import 'package:hlshop/app/features/auth/self.dart';
 import 'package:hlshop/app/features/checkout/self.dart';
+import 'package:hlshop/app/features/product/data/api/ms_subcribe_api.dart';
 import 'package:hlshop/app/features/product/self.dart';
 import 'package:hlshop/app/features/shopping_cart/seft.dart';
 import 'package:hlshop/app/features/user/data/repo/ms_payment_repo.dart';
@@ -81,6 +82,7 @@ void _initDataMSService() {
     ..registerLazySingleton<AddressApiMS>(() => AddressApiMS(dio))
     ..registerLazySingleton<AuthApiMS>(() => AuthApiMS(dio))
     ..registerLazySingleton<MsProductApi>(() => MsProductApi(dio))
+    ..registerLazySingleton<MsSubcribeApi>(() => MsSubcribeApi(dio))
     ..registerLazySingleton<MsProductCategoryApi>(
         () => MsProductCategoryApi(dio))
     ..registerLazySingleton<MsShoppingCartApi>(() => MsShoppingCartApi(dio))

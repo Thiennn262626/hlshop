@@ -1,5 +1,6 @@
 import 'package:hlshop/all_file/all_file.dart';
 import 'package:hlshop/app/features/product/domain/entity/product_entity.dart';
+import 'package:hlshop/app/features/product/domain/entity/subcribe_entity.dart';
 
 abstract class ProductRepo {
   Future<List<ProductEntity>> getProductList({
@@ -39,6 +40,23 @@ abstract class ProductRepo {
   }) {
     throw UnimplementedError();
   }
+
+  Future<List<ProductEntity>> getListSubcribe({
+    int? limit,
+    int? offset,
+  });
+
+  Future<void> subcribe({
+    required String? productID,
+  });
+
+  Future<void> unsubcribe({
+    required String? productID,
+  });
+
+  Future<SubcribeEntity> checkSubcribeByProductID({
+    required String? productID,
+  });
 }
 
 enum ProductListType {

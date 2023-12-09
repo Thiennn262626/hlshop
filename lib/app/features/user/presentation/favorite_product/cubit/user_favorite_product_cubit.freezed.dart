@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$UserFavoriteProductState {
   ApiStatus get status => throw _privateConstructorUsedError;
-  Object? get item => throw _privateConstructorUsedError;
+  List<ProductEntity> get products => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $UserFavoriteProductStateCopyWith<UserFavoriteProductState> get copyWith =>
@@ -30,7 +30,7 @@ abstract class $UserFavoriteProductStateCopyWith<$Res> {
           $Res Function(UserFavoriteProductState) then) =
       _$UserFavoriteProductStateCopyWithImpl<$Res, UserFavoriteProductState>;
   @useResult
-  $Res call({ApiStatus status, Object? item});
+  $Res call({ApiStatus status, List<ProductEntity> products});
 
   $ApiStatusCopyWith<$Res> get status;
 }
@@ -50,14 +50,17 @@ class _$UserFavoriteProductStateCopyWithImpl<$Res,
   @override
   $Res call({
     Object? status = null,
-    Object? item = freezed,
+    Object? products = null,
   }) {
     return _then(_value.copyWith(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as ApiStatus,
-      item: freezed == item ? _value.item : item,
+      products: null == products
+          ? _value.products
+          : products // ignore: cast_nullable_to_non_nullable
+              as List<ProductEntity>,
     ) as $Val);
   }
 
@@ -78,7 +81,7 @@ abstract class _$$ProductDetailStateImplCopyWith<$Res>
       __$$ProductDetailStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ApiStatus status, Object? item});
+  $Res call({ApiStatus status, List<ProductEntity> products});
 
   @override
   $ApiStatusCopyWith<$Res> get status;
@@ -97,14 +100,17 @@ class __$$ProductDetailStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? status = null,
-    Object? item = freezed,
+    Object? products = null,
   }) {
     return _then(_$ProductDetailStateImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as ApiStatus,
-      item: freezed == item ? _value.item : item,
+      products: null == products
+          ? _value._products
+          : products // ignore: cast_nullable_to_non_nullable
+              as List<ProductEntity>,
     ));
   }
 }
@@ -114,19 +120,26 @@ class __$$ProductDetailStateImplCopyWithImpl<$Res>
 class _$ProductDetailStateImpl extends _ProductDetailState
     with DiagnosticableTreeMixin {
   const _$ProductDetailStateImpl(
-      {this.status = const ApiStatus.initial(), this.item = null})
-      : super._();
+      {this.status = const ApiStatus.initial(),
+      final List<ProductEntity> products = const []})
+      : _products = products,
+        super._();
 
   @override
   @JsonKey()
   final ApiStatus status;
+  final List<ProductEntity> _products;
   @override
   @JsonKey()
-  final Object? item;
+  List<ProductEntity> get products {
+    if (_products is EqualUnmodifiableListView) return _products;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_products);
+  }
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'UserFavoriteProductState(status: $status, item: $item)';
+    return 'UserFavoriteProductState(status: $status, products: $products)';
   }
 
   @override
@@ -135,7 +148,7 @@ class _$ProductDetailStateImpl extends _ProductDetailState
     properties
       ..add(DiagnosticsProperty('type', 'UserFavoriteProductState'))
       ..add(DiagnosticsProperty('status', status))
-      ..add(DiagnosticsProperty('item', item));
+      ..add(DiagnosticsProperty('products', products));
   }
 
   @override
@@ -144,12 +157,12 @@ class _$ProductDetailStateImpl extends _ProductDetailState
         (other.runtimeType == runtimeType &&
             other is _$ProductDetailStateImpl &&
             (identical(other.status, status) || other.status == status) &&
-            const DeepCollectionEquality().equals(other.item, item));
+            const DeepCollectionEquality().equals(other._products, _products));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, status, const DeepCollectionEquality().hash(item));
+      runtimeType, status, const DeepCollectionEquality().hash(_products));
 
   @JsonKey(ignore: true)
   @override
@@ -161,13 +174,14 @@ class _$ProductDetailStateImpl extends _ProductDetailState
 
 abstract class _ProductDetailState extends UserFavoriteProductState {
   const factory _ProductDetailState(
-      {final ApiStatus status, final Object? item}) = _$ProductDetailStateImpl;
+      {final ApiStatus status,
+      final List<ProductEntity> products}) = _$ProductDetailStateImpl;
   const _ProductDetailState._() : super._();
 
   @override
   ApiStatus get status;
   @override
-  Object? get item;
+  List<ProductEntity> get products;
   @override
   @JsonKey(ignore: true)
   _$$ProductDetailStateImplCopyWith<_$ProductDetailStateImpl> get copyWith =>

@@ -101,7 +101,11 @@ class UserInfoBody extends StatelessWidget {
                       color: Colors.red,
                     ),
                     title: 'Yêu thích'.tr(),
-                    onPressed: () {},
+                    onPressed: () {
+                      context.pushRoute(
+                        const UserFavoriteProductRoute(),
+                      );
+                    },
                   ),
                   AppTileText(
                     leading: const Icon(

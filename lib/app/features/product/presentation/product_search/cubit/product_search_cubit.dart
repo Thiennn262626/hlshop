@@ -27,7 +27,7 @@ class ProductSearchCubit extends Cubit<ProductSearchState> {
     });
     controller = AppPagingController<int, ProductEntity>(firstPageKey: 0);
     controller.addPageRequestListener((pageKey) {
-      fetchProduct(pageKey, 10);
+      // fetchProduct(pageKey, 10);
     });
   }
   late final AppPagingController<int, ProductEntity> controller;
@@ -47,13 +47,12 @@ class ProductSearchCubit extends Cubit<ProductSearchState> {
     );
   }
 
-  void fetchItemList() {
+  Future<void> fetchItemList() async {
     controller.refresh();
   }
 
   Future<void> fetchProduct(int? offset, int? limit) async {
     try {
-      fetchItemList();
       final listProduct = await getIt<ProductRepo>().getProductListSearch(
         offset: offset,
         limit: limit,
@@ -86,7 +85,7 @@ class ProductSearchCubit extends Cubit<ProductSearchState> {
       search: filterData.search,
     );
     emit(state.copyWith(filterData: totalfilterData));
-    await fetchProduct(0, 20);
+    await fetchItemList();
   }
 
   Future<void> onSortChange(ProductFilterData filterData) async {
@@ -94,7 +93,7 @@ class ProductSearchCubit extends Cubit<ProductSearchState> {
       orderByType: filterData.orderByType,
     );
     emit(state.copyWith(filterData: totalfilterData));
-    await fetchProduct(0, 20);
+    await fetchItemList();
   }
 
   Future<void> onFilterChange() async {
@@ -102,18 +101,21 @@ class ProductSearchCubit extends Cubit<ProductSearchState> {
       productCategory: getProductFilterDataValue().productCategory,
     );
     emit(state.copyWith(filterData: totalfilterData));
-    await fetchProduct(0, 20);
+    await fetchItemList();
   }
 
   Future<void> clearFilter() async {
     form.reset();
-    emit(state.copyWith(
+    emit(
+      state.copyWith(
         filterData: state.filterData?.copyWith(
-      productCategory: null,
-      maxAmount: null,
-      minAmount: null,
-      type: state.filterData?.type ?? ProductListType.hot,
-    )));
-    await fetchProduct(0, 20);
+          productCategory: null,
+          maxAmount: null,
+          minAmount: null,
+          type: state.filterData?.type ?? ProductListType.hot,
+        ),
+      ),
+    );
+    await fetchItemList();
   }
 }

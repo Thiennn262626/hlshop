@@ -2,6 +2,7 @@ import 'package:hlshop/all_file/all_file.dart';
 import 'package:hlshop/app/features/product/domain/entity/product_entity.dart';
 import 'package:hlshop/app/features/product/presentation/item/layout/product_item_layout.dart';
 import 'package:hlshop/app/features/product/presentation/item/layout/product_item_layout_1.dart';
+import 'package:hlshop/app/features/product/presentation/item/layout/product_item_layout_subcribe.dart';
 import 'package:hlshop/app/features/product/presentation/item/layout/product_item_tile_layout_1.dart';
 import 'package:hlshop/app/features/product/presentation/item/layout/product_item_tile_layout_2.dart';
 import 'package:hlshop/app/features/product/presentation/item/layout/product_item_tile_layout_3.dart';
@@ -15,12 +16,14 @@ class ProductItem extends StatelessWidget {
     this.layoutType,
     this.args = const ProductItemArgs(),
     this.createState = false,
+    this.onHeartPressed,
   });
 
   final ProductEntity item;
   final bool createState;
   final ProductItemLayoutType? layoutType;
   final ProductItemArgs args;
+  final VoidCallback? onHeartPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +36,13 @@ class ProductItem extends StatelessWidget {
               args: args,
               onPressed: () => _onItemClick(context),
               onAddToCart: () => _onAddToCart(context),
+            );
+          case ProductItemLayoutType.layoutSubcribe:
+            return ProductItemLayoutSubcribe(
+              product: item,
+              args: args,
+              onPressed: () => _onItemClick(context),
+              onHeartPressed: onHeartPressed,
             );
           case ProductItemLayoutType.layoutTile1:
             return ProductItemTileLayout1(

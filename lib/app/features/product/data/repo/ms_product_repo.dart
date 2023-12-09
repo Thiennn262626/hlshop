@@ -1,13 +1,15 @@
 import 'package:hlshop/all_file/all_file.dart';
 import 'package:hlshop/app/features/product/data/api/ms_product_api.dart';
+import 'package:hlshop/app/features/product/data/api/ms_subcribe_api.dart';
 import 'package:hlshop/app/features/product/data/model/ms_product_attribute.dart';
 import 'package:hlshop/app/features/product/data/model/ms_product_model.dart';
 import 'package:hlshop/app/features/product/domain/entity/product_entity.dart';
+import 'package:hlshop/app/features/product/domain/entity/subcribe_entity.dart';
 import 'package:hlshop/app/features/product/domain/repo/product_repo.dart';
 
 class MsProductRepo extends ProductRepo {
   final MsProductApi _api = getIt();
-
+  final MsSubcribeApi _subcribeApi = getIt();
   ProductEntity _convertProduct(MsProduct product) {
     return product.toEntity();
   }
@@ -152,5 +154,33 @@ class MsProductRepo extends ProductRepo {
       {required String? id, int? limit, int? offset, String? search}) {
     // TODO: implement getProductListByCategory
     throw UnimplementedError();
+  }
+
+  @override
+  Future<SubcribeEntity> checkSubcribeByProductID(
+      {required String? productID}) {
+    return _subcribeApi
+        .checkSubcribeByProductID(productID: productID)
+        .then((value) => value?.toEntity() ?? SubcribeEntity());
+  }
+
+  @override
+  Future<List<ProductEntity>> getListSubcribe({int? limit, int? offset}) {
+    return _subcribeApi
+        .getListSubcribe(
+          offset: offset,
+          limit: limit,
+        )
+        .then(_convertListProduct);
+  }
+
+  @override
+  Future<void> subcribe({required String? productID}) async {
+    await _subcribeApi.subcribe(productID: productID);
+  }
+
+  @override
+  Future<void> unsubcribe({required String? productID}) async {
+    await _subcribeApi.unsubcribe(productID: productID);
   }
 }
