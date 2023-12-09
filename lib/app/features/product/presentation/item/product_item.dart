@@ -8,6 +8,7 @@ import 'package:hlshop/app/features/product/presentation/item/layout/product_ite
 import 'package:hlshop/app/features/product/presentation/item/layout/product_item_tile_layout_3.dart';
 import 'package:hlshop/app/features/product/presentation/item/product_item_args.dart';
 import 'package:hlshop/app/features/product/presentation/variant/select_variant/product_select_variant.dart';
+import 'package:hlshop/app/features/user/presentation/favorite_product/cubit/user_favorite_product_cubit.dart';
 
 class ProductItem extends StatelessWidget {
   const ProductItem({
@@ -41,7 +42,11 @@ class ProductItem extends StatelessWidget {
             return ProductItemLayoutSubcribe(
               product: item,
               args: args,
-              onPressed: () => _onItemClick(context),
+              onAddToCart: () => _onAddToCart(context),
+              onPressed: () async => {
+                await context.pushRoute(ProductDetailRoute(product: item)),
+                context.read<UserFavoriteProductCubit>().fetchItemList(),
+              },
               onHeartPressed: onHeartPressed,
             );
           case ProductItemLayoutType.layoutTile1:

@@ -12,7 +12,7 @@ class UserOrderPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => UserOrderCubit(),
+      create: (context) => UserOrderCubit()..fetchStatus(),
       child: Builder(
         builder: (context) {
           return ApiItemConsumer<UserOrderCubit, UserOrderState>(

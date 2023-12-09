@@ -11,13 +11,12 @@ class UserOrderCubit extends Cubit<UserOrderState> {
   UserOrderCubit() : super(const UserOrderState()) {
     controllerMap = Map.fromEntries(
       OrderStatus.values.map(
-        (e) => MapEntry(
-          e,
+        (orderStatus) => MapEntry(
+          orderStatus,
           AppPagingController<int, OrderEntity>(firstPageKey: 0),
         ),
       ),
     );
-
     controllerMap.forEach((key, value) {
       value.addPageRequestListener((pageKey) {
         fetchStatus();
@@ -62,7 +61,7 @@ class UserOrderCubit extends Cubit<UserOrderState> {
     if (state.orderCountStatus.isPending) {
       return;
     }
-    emit(state.copyWith(orderCountStatus: state.orderCountStatus.toPending()));
+    //emit(state.copyWith(orderCountStatus: state.orderCountStatus.toPending()));
     try {
       final count = await orderRepo.getListCountOrder();
       final countItem = addListCount(count);
@@ -100,22 +99,12 @@ class UserOrderCubit extends Cubit<UserOrderState> {
     return countItem;
   }
 
-  Future<List<OrderEntity>> fetchListData(OrderStatus orderStatus) async {
-    try {
-      final rs = await orderRepo.getOrderList(orderStatus: orderStatus);
-      return rs;
-    } catch (e) {
-      return [];
-    }
-  }
-
   void fetchListChangeStatus(
       {required List<int?> oldCountItem, required List<int?> newCountItem}) {
     if (oldCountItem.length != newCountItem.length) {
       return;
     }
     final listChangeStatus = <int>[];
-
     for (var i = 0; i < oldCountItem.length; i++) {
       if (oldCountItem[i] != newCountItem[i]) {
         listChangeStatus.add(i);

@@ -14,8 +14,6 @@ class UserOrderTab extends StatelessWidget {
     return PagingList<OrderEntity>(
       pagingController:
           context.read<UserOrderCubit>().controllerMap[orderStatus],
-      // fetchListData: (offset, limit) =>
-      //     context.read<UserOrderCubit>().fetchListData(orderStatus),
       fetchListData: (offset, limit) => getIt<UserOrderRepo>().getOrderList(
         orderStatus: orderStatus,
         offset: offset,

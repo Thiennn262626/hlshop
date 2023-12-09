@@ -3,6 +3,7 @@ import 'package:hlshop/app/features/product/data/api/ms_product_api.dart';
 import 'package:hlshop/app/features/product/data/api/ms_subcribe_api.dart';
 import 'package:hlshop/app/features/product/data/model/ms_product_attribute.dart';
 import 'package:hlshop/app/features/product/data/model/ms_product_model.dart';
+import 'package:hlshop/app/features/product/data/model/ms_subcribe_model.dart';
 import 'package:hlshop/app/features/product/domain/entity/product_entity.dart';
 import 'package:hlshop/app/features/product/domain/entity/subcribe_entity.dart';
 import 'package:hlshop/app/features/product/domain/repo/product_repo.dart';
@@ -161,7 +162,7 @@ class MsProductRepo extends ProductRepo {
       {required String? productID}) {
     return _subcribeApi
         .checkSubcribeByProductID(productID: productID)
-        .then((value) => value?.toEntity() ?? SubcribeEntity());
+        .then(_convertSubcribeEntity);
   }
 
   @override
@@ -182,5 +183,9 @@ class MsProductRepo extends ProductRepo {
   @override
   Future<void> unsubcribe({required String? productID}) async {
     await _subcribeApi.unsubcribe(productID: productID);
+  }
+
+  FutureOr<SubcribeEntity> _convertSubcribeEntity(MsSubcribeModel? value) {
+    return value?.toEntity() ?? const SubcribeEntity(isSubscribed: false);
   }
 }

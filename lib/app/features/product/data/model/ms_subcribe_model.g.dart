@@ -8,7 +8,7 @@ part of 'ms_subcribe_model.dart';
 
 MsSubcribeModel _$MsSubcribeModelFromJson(Map<String, dynamic> json) =>
     MsSubcribeModel(
-      status: json['status'] as String?,
+      status: json['status'] as int?,
       isSubscribed: json['isSubscribed'] as bool?,
       message: json['message'] as String?,
     );

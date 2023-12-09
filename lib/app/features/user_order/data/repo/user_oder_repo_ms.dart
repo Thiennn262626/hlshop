@@ -27,7 +27,7 @@ class MsUserOrderRepo extends UserOrderRepo {
     int? limit,
   }) async {
     try {
-      return _msOrderApi
+      return await _msOrderApi
           .getListOrder(orderStatus: orderStatus?.toMsOrderStatus().rawValue)
           .then(
             (listOrder) => listOrder

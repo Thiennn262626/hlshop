@@ -5,7 +5,7 @@ part 'ms_subcribe_model.g.dart';
 
 @JsonSerializable()
 class MsSubcribeModel {
-  final String? status;
+  final int? status;
   final bool? isSubscribed;
   final String? message;
 
