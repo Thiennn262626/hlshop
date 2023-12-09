@@ -31,17 +31,40 @@ class ProductDetailCubit extends Cubit<ProductDetailState> {
       emit(state.copyWith(status: ApiStatus.error(e)));
     }
   }
-  //
-  // Future<List<ProductEntity>> fetchSameDistributor(int offset, int limit) {
-  //   return productRepo.getProductListSearch(
-  //     limit: limit,
-  //     offset: offset,
-  //     filterData: ProductFilterData(
-  //       relatedProductID: state.product?.id,
-  //       sellerID: state.product?.distributor?.id,
-  //     ),
-  //   );
-  // }
+
+  Future<void> checkSubcribe() async {
+    try {
+      final subcriber = await productRepo.checkSubcribeByProductID(
+        productID: state.product?.id,
+      );
+      emit(
+        state.copyWith(
+          status: const ApiStatus.done(),
+          isSubscribed: subcriber?.isSubscribed ?? false,
+        ),
+      );
+    } catch (e) {
+      emit(state.copyWith(status: ApiStatus.error(e)));
+    }
+  }
+
+  Future<void> onUnSubcribeProduct() async {
+    try {
+      await productRepo.unsubcribe(productID: state.product?.id);
+      emit(state.copyWith(isSubscribed: false));
+    } catch (e) {
+      emit(state.copyWith(status: ApiStatus.error(e)));
+    }
+  }
+
+  Future<void> onSubcribeProduct() async {
+    try {
+      await productRepo.subcribe(productID: state.product?.id);
+      emit(state.copyWith(isSubscribed: true));
+    } catch (e) {
+      emit(state.copyWith(status: ApiStatus.error(e)));
+    }
+  }
 
   Future<List<ProductEntity>> fetchSameCategory(int offset, int limit) {
     return productRepo.getProductListSearch(

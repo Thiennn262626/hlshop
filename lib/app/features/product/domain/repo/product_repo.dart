@@ -54,7 +54,7 @@ abstract class ProductRepo {
     required String? productID,
   });
 
-  Future<SubcribeEntity> checkSubcribeByProductID({
+  Future<SubcribeEntity?> checkSubcribeByProductID({
     required String? productID,
   });
 }

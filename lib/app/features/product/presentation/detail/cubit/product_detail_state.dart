@@ -7,5 +7,6 @@ class ProductDetailState with _$ProductDetailState {
   const factory ProductDetailState({
     @Default(ApiStatus.initial()) ApiStatus status,
     @Default(null) ProductEntity? product,
+    @Default(false) bool isSubscribed,
   }) = _ProductDetailState;
 }

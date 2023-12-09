@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$ProductDetailState {
   ApiStatus get status => throw _privateConstructorUsedError;
   ProductEntity? get product => throw _privateConstructorUsedError;
+  bool get isSubscribed => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ProductDetailStateCopyWith<ProductDetailState> get copyWith =>
@@ -30,7 +31,7 @@ abstract class $ProductDetailStateCopyWith<$Res> {
           ProductDetailState value, $Res Function(ProductDetailState) then) =
       _$ProductDetailStateCopyWithImpl<$Res, ProductDetailState>;
   @useResult
-  $Res call({ApiStatus status, ProductEntity? product});
+  $Res call({ApiStatus status, ProductEntity? product, bool isSubscribed});
 
   $ApiStatusCopyWith<$Res> get status;
 }
@@ -50,6 +51,7 @@ class _$ProductDetailStateCopyWithImpl<$Res, $Val extends ProductDetailState>
   $Res call({
     Object? status = null,
     Object? product = freezed,
+    Object? isSubscribed = null,
   }) {
     return _then(_value.copyWith(
       status: null == status
@@ -60,6 +62,10 @@ class _$ProductDetailStateCopyWithImpl<$Res, $Val extends ProductDetailState>
           ? _value.product
           : product // ignore: cast_nullable_to_non_nullable
               as ProductEntity?,
+      isSubscribed: null == isSubscribed
+          ? _value.isSubscribed
+          : isSubscribed // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 
@@ -80,7 +86,7 @@ abstract class _$$ProductDetailStateImplCopyWith<$Res>
       __$$ProductDetailStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ApiStatus status, ProductEntity? product});
+  $Res call({ApiStatus status, ProductEntity? product, bool isSubscribed});
 
   @override
   $ApiStatusCopyWith<$Res> get status;
@@ -99,6 +105,7 @@ class __$$ProductDetailStateImplCopyWithImpl<$Res>
   $Res call({
     Object? status = null,
     Object? product = freezed,
+    Object? isSubscribed = null,
   }) {
     return _then(_$ProductDetailStateImpl(
       status: null == status
@@ -109,6 +116,10 @@ class __$$ProductDetailStateImplCopyWithImpl<$Res>
           ? _value.product
           : product // ignore: cast_nullable_to_non_nullable
               as ProductEntity?,
+      isSubscribed: null == isSubscribed
+          ? _value.isSubscribed
+          : isSubscribed // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -118,7 +129,9 @@ class __$$ProductDetailStateImplCopyWithImpl<$Res>
 class _$ProductDetailStateImpl extends _ProductDetailState
     with DiagnosticableTreeMixin {
   const _$ProductDetailStateImpl(
-      {this.status = const ApiStatus.initial(), this.product = null})
+      {this.status = const ApiStatus.initial(),
+      this.product = null,
+      this.isSubscribed = false})
       : super._();
 
   @override
@@ -127,10 +140,13 @@ class _$ProductDetailStateImpl extends _ProductDetailState
   @override
   @JsonKey()
   final ProductEntity? product;
+  @override
+  @JsonKey()
+  final bool isSubscribed;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ProductDetailState(status: $status, product: $product)';
+    return 'ProductDetailState(status: $status, product: $product, isSubscribed: $isSubscribed)';
   }
 
   @override
@@ -139,7 +155,8 @@ class _$ProductDetailStateImpl extends _ProductDetailState
     properties
       ..add(DiagnosticsProperty('type', 'ProductDetailState'))
       ..add(DiagnosticsProperty('status', status))
-      ..add(DiagnosticsProperty('product', product));
+      ..add(DiagnosticsProperty('product', product))
+      ..add(DiagnosticsProperty('isSubscribed', isSubscribed));
   }
 
   @override
@@ -148,11 +165,13 @@ class _$ProductDetailStateImpl extends _ProductDetailState
         (other.runtimeType == runtimeType &&
             other is _$ProductDetailStateImpl &&
             (identical(other.status, status) || other.status == status) &&
-            (identical(other.product, product) || other.product == product));
+            (identical(other.product, product) || other.product == product) &&
+            (identical(other.isSubscribed, isSubscribed) ||
+                other.isSubscribed == isSubscribed));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status, product);
+  int get hashCode => Object.hash(runtimeType, status, product, isSubscribed);
 
   @JsonKey(ignore: true)
   @override
@@ -165,13 +184,16 @@ class _$ProductDetailStateImpl extends _ProductDetailState
 abstract class _ProductDetailState extends ProductDetailState {
   const factory _ProductDetailState(
       {final ApiStatus status,
-      final ProductEntity? product}) = _$ProductDetailStateImpl;
+      final ProductEntity? product,
+      final bool isSubscribed}) = _$ProductDetailStateImpl;
   const _ProductDetailState._() : super._();
 
   @override
   ApiStatus get status;
   @override
   ProductEntity? get product;
+  @override
+  bool get isSubscribed;
   @override
   @JsonKey(ignore: true)
   _$$ProductDetailStateImplCopyWith<_$ProductDetailStateImpl> get copyWith =>
