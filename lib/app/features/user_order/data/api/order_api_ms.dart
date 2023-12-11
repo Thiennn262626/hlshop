@@ -21,6 +21,12 @@ abstract class MsOrderApi {
     @Query('orderID') String? orderID,
   });
 
+  @POST('/api/hlshop/order/user-update-order-status')
+  Future<void> updateOrderStatus({
+    @Query('orderID') String? orderID,
+    @Query('orderStatus') int? orderStatus,
+  });
+
   @GET('/api/hlshop/order/get-order-status-tracking')
   Future<List<MsOrderTracking>> getListTrackingOrder({
     @Query('orderID') String? orderID,

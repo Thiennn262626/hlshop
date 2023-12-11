@@ -70,4 +70,16 @@ class MsUserOrderRepo extends UserOrderRepo {
     }
     throw Exception('Không tìm thấy don hàng');
   }
+
+  Future<void> updateOrderStatus({
+    required String? id,
+    required OrderStatus? orderStatus,
+  }) async {
+    if (id == null) throw Exception('Không có id don hàng');
+    if (orderStatus == null) throw Exception('Không có trạng thái don hàng');
+    await _msOrderApi.updateOrderStatus(
+      orderID: id,
+      orderStatus: orderStatus.toMsOrderStatus().rawValue,
+    );
+  }
 }

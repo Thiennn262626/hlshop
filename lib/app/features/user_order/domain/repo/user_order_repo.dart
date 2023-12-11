@@ -19,4 +19,9 @@ abstract class UserOrderRepo {
   Future<List<OrderStatusTrackingEntity>> getListTrackingOrder({
     required String? id,
   });
+
+  Future<void> updateOrderStatus({
+    required String? id,
+    required OrderStatus? orderStatus,
+  });
 }

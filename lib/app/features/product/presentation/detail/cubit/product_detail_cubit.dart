@@ -1,4 +1,5 @@
 import 'package:hlshop/all_file/all_file.dart';
+import 'package:hlshop/app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:hlshop/app/features/product/domain/entity/category_entity.dart';
 import 'package:hlshop/app/features/product/domain/entity/product_entity.dart';
 import 'package:hlshop/app/features/product/domain/repo/product_repo.dart';
@@ -16,8 +17,17 @@ class ProductDetailCubit extends Cubit<ProductDetailState> {
 
   Future<void> loadData() async {
     emit(state.copyWith(status: state.status.toPending()));
-
     try {
+      if (getIt<AuthBloc>().isLogin) {
+        final subcriber = await productRepo.checkSubcribeByProductID(
+          productID: state.product?.id,
+        );
+        emit(
+          state.copyWith(
+            isSubscribed: subcriber?.isSubscribed ?? false,
+          ),
+        );
+      }
       final productEntity = await productRepo.getProductDetail(
         id: state.product?.id,
       );
@@ -31,6 +41,7 @@ class ProductDetailCubit extends Cubit<ProductDetailState> {
       emit(state.copyWith(status: ApiStatus.error(e)));
     }
   }
+
   //
   // Future<List<ProductEntity>> fetchSameDistributor(int offset, int limit) {
   //   return productRepo.getProductListSearch(
@@ -42,6 +53,23 @@ class ProductDetailCubit extends Cubit<ProductDetailState> {
   //     ),
   //   );
   // }
+  Future<void> onUnSubcribeProduct() async {
+    try {
+      await productRepo.unsubcribe(productID: state.product?.id);
+      emit(state.copyWith(isSubscribed: false));
+    } catch (e) {
+      emit(state.copyWith(status: ApiStatus.error(e)));
+    }
+  }
+
+  Future<void> onSubcribeProduct() async {
+    try {
+      await productRepo.subcribe(productID: state.product?.id);
+      emit(state.copyWith(isSubscribed: true));
+    } catch (e) {
+      emit(state.copyWith(status: ApiStatus.error(e)));
+    }
+  }
 
   Future<List<ProductEntity>> fetchSameCategory(int offset, int limit) {
     return productRepo.getProductListSearch(

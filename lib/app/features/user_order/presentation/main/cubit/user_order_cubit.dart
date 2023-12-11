@@ -110,6 +110,7 @@ class UserOrderCubit extends Cubit<UserOrderState> {
         listChangeStatus.add(i);
       }
     }
+    print('listChangeStatus $listChangeStatus');
     for (final index in listChangeStatus) {
       controllerMap[OrderStatus.values[index]]!.refresh();
     }

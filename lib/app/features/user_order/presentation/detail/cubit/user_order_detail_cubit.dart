@@ -47,4 +47,49 @@ class UserOrderDetailCubit extends Cubit<UserOrderDetailState> {
       emit(state.copyWith(status: ApiStatus.error(e)));
     }
   }
+
+  Future<void> cancelOrder() async {
+    emit(state.copyWith(status: state.status.toPending()));
+    try {
+      await orderRepo.updateOrderStatus(
+        id: state.order?.id,
+        orderStatus: OrderStatus.customerCancelled,
+      );
+      emit(state.copyWith(
+        status: const ApiStatus.done(),
+      ));
+    } catch (e) {
+      emit(state.copyWith(status: ApiStatus.error(e)));
+    }
+  }
+
+  Future<void> confirmOrderSuccess() async {
+    emit(state.copyWith(status: state.status.toPending()));
+    try {
+      await orderRepo.updateOrderStatus(
+        id: state.order?.id,
+        orderStatus: OrderStatus.deliverySuccess,
+      );
+      emit(state.copyWith(
+        status: const ApiStatus.done(),
+      ));
+    } catch (e) {
+      emit(state.copyWith(status: ApiStatus.error(e)));
+    }
+  }
+
+  Future<void> returnOrder() async {
+    emit(state.copyWith(status: state.status.toPending()));
+    try {
+      await orderRepo.updateOrderStatus(
+        id: state.order?.id,
+        orderStatus: OrderStatus.returned,
+      );
+      emit(state.copyWith(
+        status: const ApiStatus.done(),
+      ));
+    } catch (e) {
+      emit(state.copyWith(status: ApiStatus.error(e)));
+    }
+  }
 }

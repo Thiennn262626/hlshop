@@ -50,21 +50,49 @@ class UserOrderDetailBody extends StatelessWidget {
                 subtitle: _getPaymentMethodText(item?.paymentMethod ?? 0).tr(),
               ),
               OrderPaymentDetail(order: item).pyDefault(),
-              if (item?.orderStatus == 0 && item?.paymentMethod == 0 ||
-                  (item?.paymentMethod == 1 && item?.finishPay == false))
-                AppButton(
-                  label: 'Hủy đơn hàng'.tr(),
-                  onPressed: () {
-                    //context.read<UserOrderDetailCubit>().cancelOrder();
-                  },
-                ).py16(),
+              if (item?.orderStatus == 0 &&
+                  (item?.paymentMethod == 0 ||
+                      (item?.paymentMethod == 1 && item?.finishPay == false)))
+                Row(
+                  children: [
+                    AppButton(
+                      label: 'Hủy đơn hàng'.tr(),
+                      style: AppButtonTheme.color(context,
+                          color: Colors.deepOrangeAccent),
+                      onPressed: () async {
+                        await context
+                            .read<UserOrderDetailCubit>()
+                            .cancelOrder();
+                        await context.popRoute(true);
+                      },
+                    ).py16().expand(),
+                  ],
+                ).pxDefault(),
               if (item?.orderStatus == 3)
-                AppButton(
-                  label: 'Nhận hàng thành công'.tr(),
-                  onPressed: () {
-                    //context.read<UserOrderDetailCubit>().finishOrder();
-                  },
-                ).py16(),
+                Row(
+                  children: [
+                    AppButton(
+                      label: 'Nhận hàng'.tr(),
+                      onPressed: () {
+                        context
+                            .read<UserOrderDetailCubit>()
+                            .confirmOrderSuccess();
+                        context.popRoute(true);
+                      },
+                    ).py16().expand(),
+                    const AppDivider().pxDefault(),
+                    AppButton(
+                      style: AppButtonTheme.color(context, color: Colors.red),
+                      label: 'Trả hàng'.tr(),
+                      onPressed: () async {
+                        await context
+                            .read<UserOrderDetailCubit>()
+                            .returnOrder();
+                        await context.popRoute(true);
+                      },
+                    ).py16().expand(),
+                  ],
+                ).pxDefault(),
               if (item?.orderStatus == 4)
                 Row(
                   children: [
@@ -80,14 +108,6 @@ class UserOrderDetailBody extends StatelessWidget {
                               // ));
                             }
                           : null,
-                    ).py16().expand(),
-                    const AppDivider().pxDefault(),
-                    AppButton(
-                      style: AppButtonTheme.color(context, color: Colors.red),
-                      label: 'Đổi trả'.tr(),
-                      onPressed: () {
-                        // context.read<UserOrderDetailCubit>().returnOrder();
-                      },
                     ).py16().expand(),
                   ],
                 ).pxDefault(),
