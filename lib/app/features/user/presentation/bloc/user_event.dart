@@ -29,4 +29,6 @@ class UserEvent with _$UserEvent {
   const factory UserEvent.deleteEmail({
     required UserEmailEntity email,
   }) = _UserDeleteEmailEvent;
+
+  const factory UserEvent.checkout() = _UserCheckoutEvent;
 }

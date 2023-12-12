@@ -20,6 +20,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     on<_UserClearEvent>(_onClearEvent);
     on<_UserDeletePhoneEvent>(_onUserDeletePhoneEvent);
     on<_UserDeleteEmailEvent>(_onUserDeleteEmailEvent);
+    on<_UserCheckoutEvent>(_onUserCheckoutEvent);
   }
 
   late final UserSecureStorage _userSecureStorage;
@@ -214,4 +215,14 @@ class UserBloc extends Bloc<UserEvent, UserState> {
   }
 
   UserEntity? get user => state.userEntity;
+
+  FutureOr<void> _onUserCheckoutEvent(
+      _UserCheckoutEvent event, Emitter<UserState> emit) {
+    emit(state.copyWith(checkoutStatus: state.checkoutStatus.toPending()));
+    emit(
+      state.copyWith(
+        checkoutStatus: const ApiStatus.done(),
+      ),
+    );
+  }
 }

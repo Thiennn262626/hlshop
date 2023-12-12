@@ -1,6 +1,7 @@
 import 'package:hlshop/all_file/all_file.dart';
 import 'package:hlshop/app/features/checkout/self.dart';
 import 'package:hlshop/app/features/shopping_cart/domain/model/shopping_cart_base_entity.dart';
+import 'package:hlshop/app/features/user/presentation/bloc/user_bloc.dart';
 import 'package:hlshop/app/features/user/self.dart';
 import 'package:hlshop/core/utils/launch_url.dart';
 
@@ -52,6 +53,7 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
         receiverAddressID: state.userAddress?.id ?? '',
         paymentMethod: state.paymentMethod,
       );
+      getIt<UserBloc>().add(const UserEvent.checkout());
       if (state.paymentMethod == 1) {
         final resultMomo = await _checkoutRepo.createOrderMomo(result?.orderID);
         await LaunchUrl.openUrl(Uri.parse(resultMomo?.qrMoMo ?? ''));
