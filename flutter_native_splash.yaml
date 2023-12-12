@@ -1,7 +1,9 @@
 flutter_native_splash:
   color: "#FFFFFF"
   image: assets/icons/app/splash.png
-
+  ios: true
+  android: true
+  web: false
   android_12:
   # The image parameter sets the splash screen icon image.  If this parameter is not specified,
   # the app's launcher icon will be used instead.
@@ -72,7 +74,7 @@ flutter_native_splash:
   # https://developer.apple.com/documentation/uikit/uiview/contentmode): scaleToFill,
   # scaleAspectFit, scaleAspectFill, center, top, bottom, left, right, topLeft, topRight,
   # bottomLeft, or bottomRight.
-  ios_content_mode: scaleAspectFit
+  ios_content_mode: center
   #
   # web_image_mode can be one of the following modes: center, contain, stretch, and cover.
   #web_image_mode: center
