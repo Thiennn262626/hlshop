@@ -29,6 +29,12 @@ abstract class ProductRepo {
     int? sortBy,
   });
 
+  Future<List<ProductEntity>> getProductListSameCategory({
+    int? limit,
+    int? offset,
+    ProductFilterData? filterData,
+  });
+
   Future<List<ProductAttributeEntity>> getProductAttribute({
     required String? productId,
   }) {

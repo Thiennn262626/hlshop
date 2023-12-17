@@ -1,7 +1,6 @@
 import 'package:app_ui_kit/all_file/app_ui_kit_all_file.dart';
 import 'package:hlshop/all_file/all_file.dart';
 import 'package:hlshop/app/features/auth/core/utils/check_id_helper.dart';
-import 'package:hlshop/app/features/auth/presentation/widget/auth_id_input.dart';
 import 'package:hlshop/app/features/auth/self.dart';
 
 part 'sign_up_state.dart';
@@ -38,16 +37,20 @@ class SignUpCubit extends RequestCubit<SignUpState> {
         }
 
         bool loginResult = false;
-
+        print('id2011063: $id');
         final idRs = await CheckIdHelper.checkId(id);
         _idRs = idRs;
+        print('idRs20110630: ${idRs.isPhone}');
+        print('idRs20110631: ${idRs.isEmail}');
         if (idRs.isPhone) {
+          print('idRs201106302: ${idRs.isPhone}');
           loginResult = await _signUpPhone(
             phone: idRs.phone ?? '',
             countryCode: idRs.countryCode ?? '',
             password: password,
           );
         } else if (idRs.isEmail) {
+          print('idRs201106312: ${idRs.isEmail}');
           loginResult = await _signUpEmail(
             email: idRs.email ?? '',
             password: password,
@@ -71,6 +74,7 @@ class SignUpCubit extends RequestCubit<SignUpState> {
     required String countryCode,
     required String password,
   }) async {
+    print('phone2011063: $phone');
     final signUpOTPRs = await _authRepo.signUpPhone(
       phone: phone,
       countryCode: countryCode,
@@ -86,6 +90,7 @@ class SignUpCubit extends RequestCubit<SignUpState> {
     required String email,
     required String password,
   }) async {
+    print('email2011063: $email');
     final signUpOTPRs = await _authRepo.signUpEmail(
       email: email,
       password: password,

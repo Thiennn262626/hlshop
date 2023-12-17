@@ -10,7 +10,7 @@ abstract class AuthApiMS {
   @POST('/api/hlshop/auth/signup-phone')
   Future<AuthSignUpOTPResp?> signUpPhone(@Body() AuthSignUpOTPReq req);
 
-  @POST('/api/hlshop/auth/signup-phone')
+  @POST('/api/hlshop/auth/signup-email')
   Future<AuthSignUpOTPResp?> signUpEmail(@Body() AuthSignUpOTPReq req);
 
   @POST('/api/hlshop/auth/resend-otp-phone')

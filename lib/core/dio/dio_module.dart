@@ -16,8 +16,10 @@ class DioModule {
 
     log('**** Dio create');
     final options = BaseOptions(
-      //baseUrl: 'https://hl-shop.azurewebsites.net/',
-      // baseUrl: 'http://192.168.1.15/',
+      //baseUrl: 'https://hl-shop.azurewebsites.net/',//deploy
+      // baseUrl: 'http://192.168.1.15/',//phongTro
+      // baseUrl: 'http://172.16.30.61/', //fit
+      // baseUrl: 'http://172.20.10.2/', //iphoneThien
       baseUrl: 'http://localhost:80/',
       connectTimeout: const Duration(seconds: 30),
       receiveTimeout: const Duration(seconds: 30),

@@ -72,7 +72,7 @@ class ProductDetailCubit extends Cubit<ProductDetailState> {
   }
 
   Future<List<ProductEntity>> fetchSameCategory(int offset, int limit) {
-    return productRepo.getProductListSearch(
+    return productRepo.getProductListSameCategory(
       limit: limit,
       offset: offset,
       filterData: ProductFilterData(

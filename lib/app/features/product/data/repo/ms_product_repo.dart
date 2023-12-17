@@ -102,6 +102,22 @@ class MsProductRepo extends ProductRepo {
   }
 
   @override
+  Future<List<ProductEntity>> getProductListSameCategory({
+    int? limit,
+    int? offset,
+    ProductFilterData? filterData,
+  }) {
+    return _api
+        .getProductSameCategory(
+          productID: filterData?.relatedProductID,
+          productCategoryID: filterData?.productCategory?.id,
+          offset: offset,
+          limit: limit,
+        )
+        .then(_convertListProduct);
+  }
+
+  @override
   Future<List<ProductEntity>> getProductListSearch({
     int? limit,
     int? offset,

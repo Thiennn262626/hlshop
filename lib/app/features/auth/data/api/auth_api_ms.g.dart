@@ -58,7 +58,7 @@ class _AuthApiMS implements AuthApiMS {
     )
             .compose(
               _dio.options,
-              '/api/hlshop/auth/signup-phone',
+              '/api/hlshop/auth/signup-email',
               queryParameters: queryParameters,
               data: _data,
             )
