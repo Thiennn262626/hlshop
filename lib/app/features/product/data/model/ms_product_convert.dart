@@ -19,6 +19,14 @@ extension MsProductMapper on MsProduct {
       madeIn: productMadeIn,
       productUses: productUses,
       notes: productNotes,
+      ingredient: productIngredient,
+      objectsOfUse: productObjectsOfUse,
+      preserve: productPreserve,
+      instructionsForUse: productInstructionsForUse,
+      height: productHeight,
+      width: productWidth,
+      length: productLength,
+      weight: productWeight,
       distributor: seller?.toEntity(),
     );
   }

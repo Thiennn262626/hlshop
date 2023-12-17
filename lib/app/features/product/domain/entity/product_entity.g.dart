@@ -63,6 +63,22 @@ abstract class _$ProductEntityCWProxy {
 
   ProductEntity quantity(int? quantity);
 
+  ProductEntity ingredient(String? ingredient);
+
+  ProductEntity objectsOfUse(String? objectsOfUse);
+
+  ProductEntity preserve(String? preserve);
+
+  ProductEntity instructionsForUse(String? instructionsForUse);
+
+  ProductEntity height(int? height);
+
+  ProductEntity width(int? width);
+
+  ProductEntity length(int? length);
+
+  ProductEntity weight(int? weight);
+
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ProductEntity(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -98,6 +114,14 @@ abstract class _$ProductEntityCWProxy {
     String? notes,
     DistributorEntity? distributor,
     int? quantity,
+    String? ingredient,
+    String? objectsOfUse,
+    String? preserve,
+    String? instructionsForUse,
+    int? height,
+    int? width,
+    int? length,
+    int? weight,
   });
 }
 
@@ -203,6 +227,32 @@ class _$ProductEntityCWProxyImpl implements _$ProductEntityCWProxy {
   ProductEntity quantity(int? quantity) => this(quantity: quantity);
 
   @override
+  ProductEntity ingredient(String? ingredient) => this(ingredient: ingredient);
+
+  @override
+  ProductEntity objectsOfUse(String? objectsOfUse) =>
+      this(objectsOfUse: objectsOfUse);
+
+  @override
+  ProductEntity preserve(String? preserve) => this(preserve: preserve);
+
+  @override
+  ProductEntity instructionsForUse(String? instructionsForUse) =>
+      this(instructionsForUse: instructionsForUse);
+
+  @override
+  ProductEntity height(int? height) => this(height: height);
+
+  @override
+  ProductEntity width(int? width) => this(width: width);
+
+  @override
+  ProductEntity length(int? length) => this(length: length);
+
+  @override
+  ProductEntity weight(int? weight) => this(weight: weight);
+
+  @override
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ProductEntity(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -239,6 +289,14 @@ class _$ProductEntityCWProxyImpl implements _$ProductEntityCWProxy {
     Object? notes = const $CopyWithPlaceholder(),
     Object? distributor = const $CopyWithPlaceholder(),
     Object? quantity = const $CopyWithPlaceholder(),
+    Object? ingredient = const $CopyWithPlaceholder(),
+    Object? objectsOfUse = const $CopyWithPlaceholder(),
+    Object? preserve = const $CopyWithPlaceholder(),
+    Object? instructionsForUse = const $CopyWithPlaceholder(),
+    Object? height = const $CopyWithPlaceholder(),
+    Object? width = const $CopyWithPlaceholder(),
+    Object? length = const $CopyWithPlaceholder(),
+    Object? weight = const $CopyWithPlaceholder(),
   }) {
     return ProductEntity(
       id: id == const $CopyWithPlaceholder()
@@ -353,6 +411,38 @@ class _$ProductEntityCWProxyImpl implements _$ProductEntityCWProxy {
           ? _value.quantity
           // ignore: cast_nullable_to_non_nullable
           : quantity as int?,
+      ingredient: ingredient == const $CopyWithPlaceholder()
+          ? _value.ingredient
+          // ignore: cast_nullable_to_non_nullable
+          : ingredient as String?,
+      objectsOfUse: objectsOfUse == const $CopyWithPlaceholder()
+          ? _value.objectsOfUse
+          // ignore: cast_nullable_to_non_nullable
+          : objectsOfUse as String?,
+      preserve: preserve == const $CopyWithPlaceholder()
+          ? _value.preserve
+          // ignore: cast_nullable_to_non_nullable
+          : preserve as String?,
+      instructionsForUse: instructionsForUse == const $CopyWithPlaceholder()
+          ? _value.instructionsForUse
+          // ignore: cast_nullable_to_non_nullable
+          : instructionsForUse as String?,
+      height: height == const $CopyWithPlaceholder()
+          ? _value.height
+          // ignore: cast_nullable_to_non_nullable
+          : height as int?,
+      width: width == const $CopyWithPlaceholder()
+          ? _value.width
+          // ignore: cast_nullable_to_non_nullable
+          : width as int?,
+      length: length == const $CopyWithPlaceholder()
+          ? _value.length
+          // ignore: cast_nullable_to_non_nullable
+          : length as int?,
+      weight: weight == const $CopyWithPlaceholder()
+          ? _value.weight
+          // ignore: cast_nullable_to_non_nullable
+          : weight as int?,
     );
   }
 }
@@ -397,6 +487,14 @@ extension $ProductEntityCopyWith on ProductEntity {
     bool notes = false,
     bool distributor = false,
     bool quantity = false,
+    bool ingredient = false,
+    bool objectsOfUse = false,
+    bool preserve = false,
+    bool instructionsForUse = false,
+    bool height = false,
+    bool width = false,
+    bool length = false,
+    bool weight = false,
   }) {
     return ProductEntity(
       id: id == true ? null : this.id,
@@ -427,6 +525,15 @@ extension $ProductEntityCopyWith on ProductEntity {
       notes: notes == true ? null : this.notes,
       distributor: distributor == true ? null : this.distributor,
       quantity: quantity == true ? null : this.quantity,
+      ingredient: ingredient == true ? null : this.ingredient,
+      objectsOfUse: objectsOfUse == true ? null : this.objectsOfUse,
+      preserve: preserve == true ? null : this.preserve,
+      instructionsForUse:
+          instructionsForUse == true ? null : this.instructionsForUse,
+      height: height == true ? null : this.height,
+      width: width == true ? null : this.width,
+      length: length == true ? null : this.length,
+      weight: weight == true ? null : this.weight,
     );
   }
 }

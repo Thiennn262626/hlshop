@@ -13,11 +13,19 @@ class MsProduct {
   final String? productID;
   final String? localizedProductID;
   final String? productName;
-  final String? productDescription;
-  final String? productNotes;
-  final String? productSlogan;
-  final String? productMadeIn;
-  final String? productUses;
+  final String? productDescription; // mô tả
+  final String? productNotes; // ghi chú
+  final String? productSlogan; //ghi chú ngắn
+  final String? productMadeIn; // xuất xứ
+  final String? productUses; // mục đích sử dụng
+  final String? productIngredient; // thành phần
+  final String? productObjectsOfUse; // đối tượng sử dụng
+  final String? productPreserve; // bảo quản
+  final String? productInstructionsForUse; // cách sử dụng
+  final int? productHeight;
+  final int? productWidth;
+  final int? productLength;
+  final int? productWeight;
   final List<MsMedia>? medias;
   final MsProductCategory? productCategory;
   final MsSellerModel? seller;
@@ -33,6 +41,14 @@ class MsProduct {
     this.productSlogan,
     this.productMadeIn,
     this.productUses,
+    this.productIngredient,
+    this.productObjectsOfUse,
+    this.productPreserve,
+    this.productInstructionsForUse,
+    this.productHeight,
+    this.productWidth,
+    this.productLength,
+    this.productWeight,
     this.medias,
     this.productCategory,
     this.seller,

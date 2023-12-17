@@ -7,6 +7,7 @@ import 'package:hlshop/app/features/product/presentation/detail/widget/core_feat
 import 'package:hlshop/app/features/product/presentation/detail/widget/detail_attribute.dart';
 import 'package:hlshop/app/features/product/presentation/detail/widget/detail_description.dart';
 import 'package:hlshop/app/features/product/presentation/detail/widget/detail_note.dart';
+import 'package:hlshop/app/features/product/presentation/detail/widget/detail_size.dart';
 import 'package:hlshop/app/features/product/presentation/detail/widget/title_price_section.dart';
 import 'package:hlshop/app/features/product/presentation/list/product_grid_ver.dart';
 import 'package:hlshop/app/features/product/presentation/variant/list/product_detail_variant_list.dart';
@@ -38,19 +39,23 @@ class ProductDetailBody extends StatelessWidget {
                         product: item,
                         listItem: item.variations ?? [],
                       ).pyDefault(),
-                    DistributorItem(
-                      item: item!.distributor,
-                      layoutType: DistributorItemLayoutType.layoutSimpleInfo1,
-                    ),
-                    DistributorRatingSimple(),
+                    if (item?.distributor?.id?.isNotNullOrEmpty ?? false)
+                      DistributorItem(
+                        item: item?.distributor,
+                        layoutType: DistributorItemLayoutType.layoutSimpleInfo1,
+                      ),
+                    const DistributorRatingSimple(),
                     const ProductHeightLight(),
-                    ProductDetailAttribute(
-                      item: item,
-                    ).pDefault(),
                     ProductDetailDescription(
                       item: item,
                     ).pDefault(),
+                    ProductDetailAttribute(
+                      item: item,
+                    ).pDefault(),
                     ProductDetailNote(
+                      item: item,
+                    ).pDefault(),
+                    ProductDetailSize(
                       item: item,
                     ).pDefault(),
                     if (item?.category?.id?.isNotNullOrEmpty ?? false)

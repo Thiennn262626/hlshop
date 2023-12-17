@@ -38,6 +38,14 @@ class ProductEntity {
     this.notes,
     this.distributor,
     this.quantity,
+    this.ingredient,
+    this.objectsOfUse,
+    this.preserve,
+    this.instructionsForUse,
+    this.height,
+    this.width,
+    this.length,
+    this.weight,
   });
 
   static ProductEntity demo() {
@@ -81,6 +89,15 @@ class ProductEntity {
   final String? madeIn;
   final String? productUses;
   final String? notes;
+
+  final String? ingredient;
+  final String? objectsOfUse;
+  final String? preserve;
+  final String? instructionsForUse;
+  final int? height;
+  final int? width;
+  final int? length;
+  final int? weight;
 
   final String? regularPrice;
   @JsonKey(fromJson: priceUnitFromAny, toJson: priceUnitToJson)

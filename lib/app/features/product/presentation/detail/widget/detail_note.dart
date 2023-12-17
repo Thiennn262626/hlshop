@@ -18,7 +18,7 @@ class ProductDetailNote extends StatelessWidget {
             isMore: showMore,
           );
         },
-        content: item?.notes,
+        content: '✏️ ${item?.notes?.replaceAll('. ', '.\n✏️ ')}',
         maxLines: 5,
         textStyle: context.themeText.body,
       ).objectCenterLeft(),
