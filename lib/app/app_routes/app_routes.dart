@@ -31,5 +31,31 @@ class AppAutoRoute extends $AppAutoRoute {
     ...authRoutes,
     ...userOrderRoutes,
     ...userRoutes,
+    AutoRoute(
+      path: '/otp-confirm',
+      page: OtpConfirmRoute.page,
+    ),
   ];
+}
+
+Route<T> modalSheetBuilder<T>(
+  BuildContext context,
+  Widget child,
+  RouteSettings page,
+) {
+  return ModalBottomSheetRoute(
+    settings: page,
+    builder: (context) => child,
+    clipBehavior: Clip.hardEdge,
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.vertical(
+        top: Radius.circular(20),
+      ),
+    ),
+    elevation: 0,
+    constraints: BoxConstraints(
+      maxHeight: MediaQuery.of(context).size.height * 0.9,
+    ),
+    isScrollControlled: true,
+  );
 }

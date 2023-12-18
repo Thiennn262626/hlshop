@@ -31,12 +31,6 @@ class UserEmailInfoBody extends StatelessWidget {
                     }
                     return UserInfoTile(
                       title: email.emailAddress ?? '',
-                      onEditPressed: () {
-                        _updateEmail(
-                          context: context,
-                          email: email,
-                        );
-                      },
                       onPressedDelete: () {
                         DialogUtils.showMaterialDialog(
                           context: context,
@@ -105,8 +99,8 @@ class UserEmailInfoBody extends StatelessWidget {
     final verifyResult = await getIt<AppAutoRoute>().push(
       OtpConfirmRoute(
         requestOtpResult: requestOtpResult,
-        successMessage: 'Thêm số điện thoại thành công'.tr(),
-        otpMessage: 'Mã OTP đã được gửi đến số điện thoại {}'.tr(
+        successMessage: 'Thêm Email thành công'.tr(),
+        otpMessage: 'Mã OTP đã được gửi đến Email {}'.tr(
           args: [
             emailNumber,
           ],
@@ -132,21 +126,5 @@ class UserEmailInfoBody extends StatelessWidget {
       );
     }
     return Future.value();
-  }
-
-  Future<void> _updateEmail({
-    required BuildContext context,
-    required UserEmailEntity email,
-  }) async {
-    final userBloc = context.read<UserBloc>();
-    // TODO: expect return email entity
-    final emailNumber = await BottomSheetUtils.showMaterial(
-      context: context,
-      isScrollControlled: false,
-      child: UserInfoValueSection(
-        keyboardType: TextInputType.emailAddress,
-        initialValue: email.emailAddress,
-      ),
-    );
   }
 }
