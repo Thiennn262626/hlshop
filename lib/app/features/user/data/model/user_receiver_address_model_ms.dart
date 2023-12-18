@@ -46,23 +46,25 @@ class ReceiverAddressesMS {
     this.receiverContactName,
     this.receiverPhone,
     this.receiverEmail,
+    this.receiverEmailID,
   });
 
-  String? receiverAddressID;
-  String? districtID;
-  String? cityID;
-  String? districtName;
-  String? cityName;
-  String? wardID;
-  String? wardName;
-  AddressType? addressLabel;
-  String? userID;
-  int? isDefault;
-  String? addressString;
-  String? addressDetail;
-  String? receiverContactName;
-  String? receiverPhone;
-  String? receiverEmail;
+  final String? receiverAddressID;
+  final String? districtID;
+  final String? cityID;
+  final String? districtName;
+  final String? cityName;
+  final String? wardID;
+  final String? wardName;
+  final AddressType? addressLabel;
+  final String? userID;
+  final int? isDefault;
+  final String? addressString;
+  final String? addressDetail;
+  final String? receiverContactName;
+  final String? receiverPhone;
+  final String? receiverEmail;
+  final String? receiverEmailID;
 
   factory ReceiverAddressesMS.fromJson(Map<String, dynamic> json) =>
       _$ReceiverAddressesMSFromJson(json);

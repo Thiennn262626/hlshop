@@ -20,7 +20,7 @@ class AddReceiverAddressMS {
   AddReceiverAddressMS({
     this.receiverContactName,
     this.receiverPhone,
-    this.receiverEmail,
+    this.receiverEmailID,
     this.cityName,
     this.cityID,
     this.districtName,
@@ -33,7 +33,7 @@ class AddReceiverAddressMS {
 
   String? receiverContactName;
   String? receiverPhone;
-  String? receiverEmail;
+  String? receiverEmailID;
   String? cityName;
   String? cityID;
   String? districtName;

@@ -38,6 +38,7 @@ ReceiverAddressesMS _$ReceiverAddressesMSFromJson(Map<String, dynamic> json) =>
       receiverContactName: json['receiverContactName'] as String?,
       receiverPhone: json['receiverPhone'] as String?,
       receiverEmail: json['receiverEmail'] as String?,
+      receiverEmailID: json['receiverEmailID'] as String?,
     );
 
 Map<String, dynamic> _$ReceiverAddressesMSToJson(
@@ -58,6 +59,7 @@ Map<String, dynamic> _$ReceiverAddressesMSToJson(
       'receiverContactName': instance.receiverContactName,
       'receiverPhone': instance.receiverPhone,
       'receiverEmail': instance.receiverEmail,
+      'receiverEmailID': instance.receiverEmailID,
     };
 
 const _$AddressTypeEnumMap = {

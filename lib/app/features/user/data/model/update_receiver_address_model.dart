@@ -9,7 +9,7 @@ class UpdateReceiverAddressMS {
     this.receiverAddressID,
     this.receiverContactName,
     this.receiverPhone,
-    this.receiverEmail,
+    this.receiverEmailID,
     this.cityName,
     this.cityID,
     this.districtName,
@@ -26,7 +26,7 @@ class UpdateReceiverAddressMS {
   String? receiverAddressID;
   String? receiverContactName;
   String? receiverPhone;
-  String? receiverEmail;
+  String? receiverEmailID;
   String? cityName;
   String? cityID;
   String? districtName;

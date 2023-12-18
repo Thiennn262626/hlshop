@@ -6,6 +6,10 @@ extension MsUserAddressMapper on ReceiverAddressesMS {
       object: this,
       fullAddress: addressDetail,
       phone: receiverPhone,
+      receiverEmail: UserEmailEntity(
+        id: receiverEmailID,
+        emailAddress: receiverEmail,
+      ),
       addressType: addressLabel,
       fullName: receiverContactName,
       id: receiverAddressID,

@@ -20,6 +20,10 @@ class CrudAddressCubit extends Cubit<CrudAddressState> {
         value: initAddress?.phone,
         validators: [Validators.required],
       ),
+      UserAddressEntity.emailKey: FormControl<UserEmailEntity>(
+        validators: [Validators.required],
+        value: initAddress?.receiverEmail,
+      ),
       UserAddressEntity.fullAddressKey: FormControl<String>(
         value: initAddress?.fullAddress,
         validators: [Validators.required],
@@ -60,6 +64,7 @@ class CrudAddressCubit extends Cubit<CrudAddressState> {
     final fullAddress = form.getValue<String>(UserAddressEntity.fullAddressKey);
     final name = form.getValue<String>(UserAddressEntity.fullNameKey);
     final phone = form.getValue<String>(UserAddressEntity.phoneKey);
+    final email = form.getValue<UserEmailEntity>(UserAddressEntity.emailKey);
     final addressType =
         form.getValue<AddressType>(UserAddressEntity.addressTypeKey);
 
@@ -70,6 +75,7 @@ class CrudAddressCubit extends Cubit<CrudAddressState> {
       fullAddress: fullAddress,
       fullName: name,
       phone: phone,
+      receiverEmail: email,
       addressType: addressType,
     );
   }

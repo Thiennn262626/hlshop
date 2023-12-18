@@ -22,6 +22,20 @@ class CrudAddressBody extends StatelessWidget {
             formControlName: UserAddressEntity.phoneKey,
           ),
           AppTextRequired(
+            child: 'Email nhận hàng'.tr().text.titleMedium(context).make(),
+          ),
+          AddressSelectField<UserEmailEntity>(
+            formControlName: UserAddressEntity.emailKey,
+            title: 'Chọn Email nhận hàng'.tr(),
+            itemToString: (email) => email?.emailAddress ?? '',
+            searchListData: (offset, limit, search) =>
+                getIt<AddressRepo>().getEmailInfo(
+              offset: offset,
+              limit: limit,
+              search: search,
+            ),
+          ),
+          AppTextRequired(
             child: 'Địa chỉ'.tr().text.titleMedium(context).make(),
           ),
           AddressSelectField<CityEntity>(

@@ -97,6 +97,10 @@ UserAddressEntity _$UserAddressEntityFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String?,
       fullName: json['fullName'] as String?,
       phone: json['phone'] as String?,
+      receiverEmail: json['receiverEmail'] == null
+          ? null
+          : UserEmailEntity.fromJson(
+              json['receiverEmail'] as Map<String, dynamic>),
       fullAddress: json['fullAddress'] as String?,
       addressType:
           $enumDecodeNullable(_$AddressTypeEnumMap, json['addressType']),
@@ -116,6 +120,7 @@ Map<String, dynamic> _$UserAddressEntityToJson(UserAddressEntity instance) =>
       'id': instance.id,
       'fullName': instance.fullName,
       'phone': instance.phone,
+      'receiverEmail': instance.receiverEmail,
       'fullAddress': instance.fullAddress,
       'city': instance.city,
       'district': instance.district,

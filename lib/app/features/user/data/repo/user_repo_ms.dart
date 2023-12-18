@@ -58,7 +58,7 @@ class UserRepoMS implements UserRepo {
       AddReceiverAddressMS(
         receiverContactName: address.fullName,
         receiverPhone: address.phone,
-        receiverEmail: '',
+        receiverEmailID: address.receiverEmail?.id,
         cityName: address.city?.name,
         cityID: address.city?.id,
         districtName: address.district?.name,
@@ -84,7 +84,7 @@ class UserRepoMS implements UserRepo {
         receiverAddressID: addressId,
         receiverContactName: address.fullName,
         receiverPhone: address.phone,
-        receiverEmail: '',
+        receiverEmailID: address.receiverEmail?.id,
         cityName: address.city?.name,
         cityID: address.city?.id,
         districtID: address.district?.id,

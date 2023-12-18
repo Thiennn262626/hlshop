@@ -1,15 +1,14 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/user/data/api/address_api_ms.dart';
-import 'package:hlshop/app/features/user/data/model/address_model_ms.dart';
-import 'package:hlshop/app/features/user/domain/entity/address_entity.dart';
-import 'package:hlshop/app/features/user/domain/repo/address_repo.dart';
+import 'package:hlshop/app/features/user/self.dart';
 
 class AddressRepoMs implements AddressRepo {
   AddressRepoMs({AddressApiMS? addressApiMS}) {
     _addressApiMS = addressApiMS ?? getIt<AddressApiMS>();
+    _userApiMS = getIt<UserApiMS>();
   }
 
   late final AddressApiMS _addressApiMS;
+  late final UserApiMS _userApiMS;
 
   CityEntity _convertCity(MsCity city) {
     return city.toEntity();
@@ -79,5 +78,15 @@ class AddressRepoMs implements AddressRepo {
       return _convertListWard(wards);
     }
     throw Exception('không tìm thấy phường');
+  }
+
+  @override
+  Future<List<UserEmailEntity>> getEmailInfo(
+      {String? search, int? offset, int? limit}) async {
+    final rs = await _userApiMS.getUserProfile();
+    if (rs == null) {
+      throw Exception('Không tìm thấy thông tin người dùng'.tr());
+    }
+    return rs.toEntity().emailList ?? [];
   }
 }

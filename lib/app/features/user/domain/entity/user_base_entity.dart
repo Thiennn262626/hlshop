@@ -154,6 +154,7 @@ class UserAddressEntity {
     this.id,
     this.fullName,
     this.phone,
+    this.receiverEmail,
     this.fullAddress,
     this.addressType,
     this.city,
@@ -195,6 +196,7 @@ class UserAddressEntity {
   final String? id;
   final String? fullName;
   final String? phone;
+  final UserEmailEntity? receiverEmail;
   final String? fullAddress;
   final CityEntity? city;
   final DistrictEntity? district;
@@ -206,6 +208,7 @@ class UserAddressEntity {
   // Const key for form
   static const String fullNameKey = 'fullNameKey';
   static const String phoneKey = 'phoneKey';
+  static const String emailKey = 'emailKey';
   static const String cityKey = 'cityKey';
   static const String districtKey = 'districtKey';
   static const String wardKey = 'wardKey';
