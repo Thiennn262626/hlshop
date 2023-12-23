@@ -50,9 +50,10 @@ class UserOrderDetailBody extends StatelessWidget {
                 subtitle: _getPaymentMethodText(item?.paymentMethod ?? 0).tr(),
               ),
               OrderPaymentDetail(order: item).pyDefault(),
-              if (item?.orderStatus == 0 &&
-                  (item?.paymentMethod == 0 ||
-                      (item?.paymentMethod == 1 && item?.finishPay == false)))
+              // if (item?.orderStatus == 0 &&
+              //     (item?.paymentMethod == 0 ||
+              //         (item?.paymentMethod == 1 && item?.finishPay == false)))
+              if (item?.orderStatus == 0 || item?.orderStatus == 1)
                 Row(
                   children: [
                     AppButton(
