@@ -38,10 +38,12 @@ class Carts {
 class GetOrderShippingFeeRq {
   final String? receiverAddressID;
   final String? insuranceValue;
+  final List<Carts>? carts;
 
   const GetOrderShippingFeeRq({
     this.receiverAddressID,
     this.insuranceValue,
+    this.carts,
   });
 
   factory GetOrderShippingFeeRq.fromJson(Map<String, dynamic> json) =>

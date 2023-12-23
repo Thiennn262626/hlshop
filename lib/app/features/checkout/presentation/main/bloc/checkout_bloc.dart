@@ -121,6 +121,7 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
       final feeShip = await _checkoutRepo.getOrderShippingFee(
         receiverAddressID: state.userAddress?.id ?? '',
         insuranceValue: getTotalPriceItem().value.toString(),
+        carts: state.cartItems,
       );
       emit(
         state.copyWith(

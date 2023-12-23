@@ -27,12 +27,16 @@ class MsCheckoutRepo extends CheckoutRepo {
 
   @override
   Future<OrderShippingFeeEntity?> getOrderShippingFee({
+    required List<ShoppingCartItemEntity>? carts,
     required String? receiverAddressID,
     required String? insuranceValue,
   }) async {
     return _api
         .getOrderShippingFee(
           body: GetOrderShippingFeeRq(
+            carts: carts.mapAsList(
+              (item) => item.toEntity(),
+            ),
             receiverAddressID: receiverAddressID,
             insuranceValue: insuranceValue,
           ),

@@ -35,6 +35,9 @@ GetOrderShippingFeeRq _$GetOrderShippingFeeRqFromJson(
     GetOrderShippingFeeRq(
       receiverAddressID: json['receiverAddressID'] as String?,
       insuranceValue: json['insuranceValue'] as String?,
+      carts: (json['carts'] as List<dynamic>?)
+          ?.map((e) => Carts.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$GetOrderShippingFeeRqToJson(
@@ -42,6 +45,7 @@ Map<String, dynamic> _$GetOrderShippingFeeRqToJson(
     <String, dynamic>{
       'receiverAddressID': instance.receiverAddressID,
       'insuranceValue': instance.insuranceValue,
+      'carts': instance.carts,
     };
 
 OrderShippingFee _$OrderShippingFeeFromJson(Map<String, dynamic> json) =>
