@@ -25,7 +25,7 @@ class ProductDetailAttribute extends StatelessWidget {
         'Xuất xứ thương hiệu'.tr(),
         '${item?.madeIn} \n',
         'Thành Phần'.tr(),
-        '\n✍🏻 ${item?.ingredient?.replaceAll('. ', '.\n✍🏻 ')} \n',
+        '\n${item?.ingredient?.replaceAll('. ', '.\n')} \n',
         'Mục Đích Sử Dụng'.tr(),
         '\n🎯 ${item?.productUses?.replaceAll('. ', '.\n🎯 ')} \n',
         'Cách Sử Dụng'.tr(),

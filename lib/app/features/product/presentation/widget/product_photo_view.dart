@@ -44,10 +44,11 @@ class _ProductDetailPhotoViewState extends State<ProductDetailPhotoView> {
             ).p12(),
           ],
         ),
-        // Gaps.vGap12,
-        // AppPhotoViewDot(
-        //   photoController: _controller,
-        // ),
+        Gaps.vGap12,
+        if (widget.imgList.length > 1)
+          AppPhotoViewDot(
+            photoController: _controller,
+          ),
       ],
     );
   }

@@ -135,7 +135,13 @@ class CrudAddressBody extends StatelessWidget {
         color: context.themeColor.error,
       ),
       onPressed: () {
-        context.read<CrudAddressCubit>().deleteAddress();
+        DialogUtils.showMaterialDialog(
+          context: context,
+          content: 'Bạn có chắc chắn muốn xoá địa chỉ này?'.tr(),
+          positive: () {
+            context.read<CrudAddressCubit>().deleteAddress();
+          },
+        );
       },
     ).objectCenter();
   }

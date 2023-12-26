@@ -20,7 +20,7 @@ class UserSimpleInfo extends StatelessWidget {
       child: Row(
         children: [
           AppAvatar(
-            src: user?.avatar ?? user?.avatarImg,
+            src: user?.avatar ?? '',
             border: Border.all(
               color: context.themeColor.greyLighter,
             ),

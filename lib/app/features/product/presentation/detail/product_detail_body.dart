@@ -21,13 +21,15 @@ class ProductDetailBody extends StatelessWidget {
     return BlocBuilder<ProductDetailCubit, ProductDetailState>(
       builder: (context, state) {
         final item = state.product;
-        final imgList = item?.imgSrcList ?? [];
+        final imgList = state.product?.imgSrcList ?? [];
+        print('length20110263: ${imgList.length}');
         return CustomScrollView(
           slivers: [
             SliverToBoxAdapter(
               child: Column(
                 children: [
                   ProductDetailPhotoView(
+                    key: ValueKey(imgList.length),
                     imgList: imgList,
                   ),
                   ...[

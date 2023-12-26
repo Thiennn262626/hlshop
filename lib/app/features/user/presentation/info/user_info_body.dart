@@ -132,9 +132,15 @@ class UserInfoBody extends StatelessWidget {
                 ),
                 'Đăng xuất'.tr().text.colorDark(context).make(),
               ].withDivider(Gaps.hGap8),
-            ),
+            ).py32(),
             onPressed: () {
-              context.read<AuthBloc>().add(const AuthEvent.signOut());
+              DialogUtils.showMaterialDialog(
+                context: context,
+                content: 'Bạn có chắc chắn muốn đăng xuất?'.tr(),
+                positive: () {
+                  context.read<AuthBloc>().add(const AuthEvent.signOut());
+                },
+              );
             },
           ),
         ],
@@ -194,7 +200,7 @@ class UserHeader extends StatelessWidget {
             alignment: Alignment.bottomRight,
             children: [
               AppAvatar(
-                src: user.avatar ?? user.avatarImg,
+                src: user.avatar ?? '',
                 height: avatarSize,
                 background: Colors.white,
                 border: Border.all(

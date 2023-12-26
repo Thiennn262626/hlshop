@@ -26,13 +26,13 @@ class ReceiveDetailAccountBody extends StatelessWidget {
                   );
                 },
               ),
-              AppDetailAccountTile(
-                title: 'Số điện thoại'.tr(),
-                num: user?.phoneList?.length,
-                onPressed: () {
-                  context.pushRoute(const UserPhoneInfoRoute());
-                },
-              ),
+              // AppDetailAccountTile(
+              //   title: 'Số điện thoại'.tr(),
+              //   num: user?.phoneList?.length,
+              //   onPressed: () {
+              //     context.pushRoute(const UserPhoneInfoRoute());
+              //   },
+              // ),
               AppDetailAccountTile(
                 title: 'Email'.tr(),
                 num: user?.emailList?.length,
