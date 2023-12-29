@@ -45,6 +45,16 @@ class ReceiveAddressBody extends StatelessWidget {
           limit: limit,
         );
       },
+      noItemsFoundIndicatorBuilder: (context) {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Assets.icons.common.emptyBox.svg(),
+            Gaps.vGap16,
+            'Không có địa chỉ nhận hàng nào'.tr().text.make(),
+          ],
+        );
+      },
     );
   }
 }

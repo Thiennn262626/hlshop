@@ -74,11 +74,11 @@ class UserOrderDetailBody extends StatelessWidget {
                   children: [
                     AppButton(
                       label: 'Nhận hàng'.tr(),
-                      onPressed: () {
-                        context
+                      onPressed: () async {
+                        await context
                             .read<UserOrderDetailCubit>()
                             .confirmOrderSuccess();
-                        context.popRoute(true);
+                        await context.popRoute(true);
                       },
                     ).py16().expand(),
                     const AppDivider().pxDefault(),

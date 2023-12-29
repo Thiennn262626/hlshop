@@ -13,16 +13,33 @@ class CrudAddressBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          'Người nhận'.tr().text.titleMedium(context).make(),
+          AppTextRequired(
+            child: 'Người nhận'.tr().text.titleMedium(context).make(),
+          ),
           const AppTextFieldReactive(
             formControlName: UserAddressEntity.fullNameKey,
           ),
-          'Số điện thoại'.tr().text.titleMedium(context).make(),
+          AppTextRequired(
+            child: 'Số điện thoại'.tr().text.titleMedium(context).make(),
+          ),
           const AppTextFieldReactive(
             formControlName: UserAddressEntity.phoneKey,
           ),
-          AppTextRequired(
-            child: 'Email nhận hàng'.tr().text.titleMedium(context).make(),
+          Row(
+            children: [
+              AppTextRequired(
+                child: 'Email nhận hàng'.tr().text.titleMedium(context).make(),
+              ),
+              const Spacer(),
+              AppButtonIcon(
+                icon: PhosphorIcons.plus_circle,
+                onPressed: () {
+                  context.pushRoute(
+                    const UserEmailInfoRoute(),
+                  );
+                },
+              ),
+            ],
           ),
           AddressSelectField<UserEmailEntity>(
             formControlName: UserAddressEntity.emailKey,

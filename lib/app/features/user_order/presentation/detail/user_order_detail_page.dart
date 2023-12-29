@@ -26,11 +26,12 @@ class UserOrderDetailPage extends StatelessWidget {
                   title: 'Chi tiết đơn hàng',
                 ),
                 body: const UserOrderDetailBody(),
-                bottomNavigationBar: order?.paymentMethod == 0
-                    ? null
-                    : const AppBottomBar(
-                        child: OrderDetailBottomBar(),
-                      ),
+                bottomNavigationBar:
+                    (order?.paymentMethod == 1 && order?.orderStatus == 0)
+                        ? const AppBottomBar(
+                            child: OrderDetailBottomBar(),
+                          )
+                        : null,
               ),
             ),
           );

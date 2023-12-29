@@ -152,8 +152,8 @@ class OrderProductItem1 extends StatelessWidget {
                   .text
                   .textXS3
                   .colorDark(context)
-                  .make()
-                  .expand(),
+                  .make(),
+            const Spacer(),
             ProductPriceWithType(
               price: orderItem.price,
               priceStyle: context.bodyMedium?.copyWith(
@@ -164,7 +164,8 @@ class OrderProductItem1 extends StatelessWidget {
               typeStyle: context.bodySmall?.copyWith(
                 color: context.themeColor.grey,
               ),
-            ).expand(),
+            ),
+            Gaps.hGap8,
             args.action,
           ].withDivider(Gaps.hGap8),
         ).expand(),
