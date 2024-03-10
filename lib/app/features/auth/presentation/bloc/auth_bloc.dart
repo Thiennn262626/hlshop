@@ -2,7 +2,6 @@ import 'package:hlshop/all_file/all_file.dart';
 import 'package:hlshop/app/features/user/self.dart';
 import 'package:hlshop/services/user_secure_storage_service.dart';
 
-import '../../self.dart';
 
 part 'auth_bloc.freezed.dart';
 part 'auth_event.dart';

@@ -1,7 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/product/presentation/detail/cubit/product_detail_cubit.dart';
-import 'package:hlshop/app/features/product/presentation/widget/product_price_with_type.dart';
-import 'package:hlshop/app/features/product/self.dart';
 import 'package:hlshop/app/features/user/presentation/bloc/user_bloc.dart';
 
 class ProductTitleHeader extends StatelessWidget {

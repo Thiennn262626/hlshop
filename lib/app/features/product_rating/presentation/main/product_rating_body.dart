@@ -23,9 +23,7 @@ class ProductRatingBody extends StatelessWidget {
                   Icons.star,
                   color: context.themeColor.yellow,
                 ),
-                onRatingUpdate: (rating) {
-                  print(rating);
-                },
+                onRatingUpdate: print,
               ),
             ],
           ),

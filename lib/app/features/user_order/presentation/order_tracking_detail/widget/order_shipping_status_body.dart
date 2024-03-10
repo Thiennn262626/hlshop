@@ -1,5 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/user_order/domain/entities/order_status_tracking_entity.dart';
 import 'package:timelines/timelines.dart';
 
 class ShippingTimeLine extends StatelessWidget {

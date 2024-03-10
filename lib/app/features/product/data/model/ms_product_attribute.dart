@@ -1,5 +1,5 @@
-import 'package:json_annotation/json_annotation.dart';
-import 'package:hlshop/app/features/product/self.dart';
+import 'package:hlshop/all_file/all_file.dart';
+
 
 part 'ms_product_attribute.g.dart';
 part 'ms_product_attribute_convert.dart';

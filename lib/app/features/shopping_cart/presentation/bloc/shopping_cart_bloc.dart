@@ -1,8 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:hlshop/app/features/distributor/domain/entity/distributor_entity.dart';
-import 'package:hlshop/app/features/product/domain/entity/product_entity.dart';
-import 'package:hlshop/app/features/shopping_cart/seft.dart';
 
 part 'shopping_cart_bloc.freezed.dart';
 part 'shopping_cart_event.dart';

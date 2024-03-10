@@ -1,6 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/auth/presentation/otp_confirm/auth_otp_confirm_body.dart';
-import 'package:hlshop/app/features/auth/presentation/otp_confirm/cubit/auth_otp_confirm_cubit.dart';
 
 @RoutePage()
 class AuthOtpConfirmPage extends StatelessWidget {

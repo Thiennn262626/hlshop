@@ -1,5 +1,5 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/product/self.dart';
+
 
 class ProductVariantItemTileLayout1 extends StatelessWidget {
   const ProductVariantItemTileLayout1(

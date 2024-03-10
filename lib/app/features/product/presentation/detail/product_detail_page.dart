@@ -1,9 +1,5 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/product/domain/entity/product_entity.dart';
-import 'package:hlshop/app/features/product/presentation/detail/cubit/product_detail_cubit.dart';
-import 'package:hlshop/app/features/product/presentation/detail/product_detail_body.dart';
-import 'package:hlshop/app/features/product/presentation/detail/widget/product_bottom_bar.dart';
-import 'package:hlshop/app/features/shopping_cart/seft.dart';
+
 
 @RoutePage()
 class ProductDetailPage extends StatelessWidget {

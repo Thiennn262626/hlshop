@@ -1,8 +1,5 @@
 import 'package:app_ui_kit/all_file/app_ui_kit_all_file.dart';
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/product/domain/entity/category_entity.dart';
-import 'package:hlshop/app/features/product/domain/entity/product_entity.dart';
-import 'package:hlshop/app/features/product/domain/repo/product_repo.dart';
 
 part 'product_search_cubit.freezed.dart';
 part 'product_search_state.dart';

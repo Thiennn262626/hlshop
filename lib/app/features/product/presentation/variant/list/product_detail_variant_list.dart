@@ -1,6 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/product/presentation/detail/cubit/product_detail_cubit.dart';
-import 'package:hlshop/app/features/product/self.dart';
 
 class ProductDetailVariantList extends StatelessWidget {
   const ProductDetailVariantList({

@@ -1,9 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/home/presentation/feature_gird/home_feature_gird_page.dart';
-import 'package:hlshop/app/features/product/presentation/list/product_grid_hoz.dart';
-import 'package:hlshop/app/features/product/presentation/list/product_list_hoz.dart';
-import 'package:hlshop/app/features/product/self.dart';
-import 'package:hlshop/app/features/search/presentation/widget/home_search_bar.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({super.key});

@@ -1,6 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/distributor/presentation/rating/cubit/distributor_rating_cubit.dart';
-import 'package:hlshop/app/features/distributor/presentation/rating/distributor_rating_body.dart';
 
 class DistributorRatingSimple extends StatelessWidget {
   const DistributorRatingSimple({super.key});

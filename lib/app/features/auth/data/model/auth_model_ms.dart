@@ -1,5 +1,5 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/auth/self.dart';
+
 
 part 'auth_model_ms.g.dart';
 

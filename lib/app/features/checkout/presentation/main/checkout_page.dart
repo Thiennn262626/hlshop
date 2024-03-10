@@ -1,9 +1,5 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/checkout/domain/repo/app_global_event.dart';
-import 'package:hlshop/app/features/checkout/presentation/main/bloc/checkout_bloc.dart';
-import 'package:hlshop/app/features/checkout/presentation/main/checkout_body.dart';
-import 'package:hlshop/app/features/checkout/presentation/main/widget/checkout_bottom_bar.dart';
-import 'package:hlshop/app/features/shopping_cart/seft.dart';
+
 
 @RoutePage()
 class CheckoutPage extends StatelessWidget {

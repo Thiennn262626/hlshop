@@ -1,5 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/shopping_cart/presentation/bloc/shopping_cart_bloc.dart';
 
 class ShoppingCartListener extends StatelessWidget {
   const ShoppingCartListener({super.key, required this.child});

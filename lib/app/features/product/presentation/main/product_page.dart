@@ -1,6 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/product/presentation/main/cubit/product_cubit.dart';
-import 'package:hlshop/app/features/product/presentation/main/product_body.dart';
 
 class ProductPage extends StatelessWidget {
   const ProductPage({super.key});
@@ -12,7 +10,7 @@ class ProductPage extends StatelessWidget {
       child: Builder(builder: (context) {
         return BlocListener<ProductCubit, ProductState>(
           listener: _onStateChanged,
-          child: Scaffold(
+          child: const Scaffold(
             appBar: AppAppBar(
               title: 'title',
             ),

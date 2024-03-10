@@ -1,8 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/product/domain/entity/product_entity.dart';
-import 'package:hlshop/app/features/product/presentation/item/layout/product_item_layout.dart';
-import 'package:hlshop/app/features/product/presentation/item/product_item_args.dart';
-import 'package:hlshop/app/features/product/presentation/widget/product_price_with_type.dart';
 
 class ProductItemTileLayout2 extends StatelessWidget {
   const ProductItemTileLayout2({

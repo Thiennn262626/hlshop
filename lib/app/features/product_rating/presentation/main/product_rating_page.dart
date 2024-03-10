@@ -1,6 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/product_rating/presentation/main/cubit/product_rating_cubit.dart';
-import 'package:hlshop/app/features/product_rating/presentation/main/product_rating_body.dart';
 
 @RoutePage()
 class ProductRatingPage extends StatelessWidget {
@@ -13,11 +11,11 @@ class ProductRatingPage extends StatelessWidget {
       child: Builder(builder: (context) {
         return BlocListener<ProductRatingCubit, ProductRatingState>(
           listener: _onStateChanged,
-          child: Scaffold(
+          child: const Scaffold(
             appBar: AppAppBar(
               title: 'title',
             ),
-            body: const _PageBodyLoading(
+            body: _PageBodyLoading(
               child: ProductRatingBody(),
             ),
           ),

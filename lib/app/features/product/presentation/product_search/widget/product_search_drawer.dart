@@ -1,9 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/product/domain/entity/category_entity.dart';
-import 'package:hlshop/app/features/product/domain/entity/product_entity.dart';
-import 'package:hlshop/app/features/product/domain/repo/product_category_repo.dart';
-import 'package:hlshop/app/features/product/presentation/product_search/cubit/product_search_cubit.dart';
-import 'package:hlshop/app/features/user/presentation/address/widget/address_select_field.dart';
 
 class NavigatorDrawer extends StatelessWidget {
   const NavigatorDrawer({super.key});

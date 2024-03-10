@@ -1,5 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/product/presentation/main/cubit/product_cubit.dart';
 
 class ProductBody extends StatelessWidget {
   const ProductBody({super.key});
@@ -10,9 +9,7 @@ class ProductBody extends StatelessWidget {
       child: BlocBuilder<ProductCubit, ProductState>(
         builder: (context, state) {
           final item = state.item;
-          return Column(
-            children: [],
-          );
+          return const Column();
         },
       ),
     );

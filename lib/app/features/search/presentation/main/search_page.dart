@@ -1,6 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/search/presentation/main/cubit/search_cubit.dart';
-import 'package:hlshop/app/features/search/presentation/main/search_body.dart';
 
 @RoutePage()
 class SearchPage extends StatelessWidget {
@@ -13,7 +11,7 @@ class SearchPage extends StatelessWidget {
       child: Builder(builder: (context) {
         return BlocListener<SearchCubit, SearchState>(
           listener: _onStateChanged,
-          child: Scaffold(
+          child: const Scaffold(
             appBar: AppAppBar(
               title: 'title',
             ),

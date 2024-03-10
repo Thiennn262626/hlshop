@@ -1,7 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/product/presentation/item/product_item_args.dart';
-import 'package:hlshop/app/features/product/presentation/widget/product_price_with_type.dart';
-import 'package:hlshop/app/features/shopping_cart/domain/model/shopping_cart_base_entity.dart';
 
 class CheckoutProductItem extends StatelessWidget {
   const CheckoutProductItem({

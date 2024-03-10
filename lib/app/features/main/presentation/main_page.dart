@@ -1,9 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:hlshop/app/features/checkout/domain/repo/app_global_event.dart';
-import 'package:hlshop/app/features/shopping_cart/presentation/bloc/shopping_cart_bloc.dart';
-import 'package:hlshop/app/features/shopping_cart/presentation/widget/shopping_cart_listener.dart';
-import 'package:hlshop/app/features/user/presentation/bloc/user_bloc.dart';
 
 @RoutePage()
 class MainPage extends StatelessWidget {

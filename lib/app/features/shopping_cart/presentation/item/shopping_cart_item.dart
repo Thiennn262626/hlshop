@@ -1,8 +1,5 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/common/self.dart';
-import 'package:hlshop/app/features/product/presentation/item/product_item_args.dart';
-import 'package:hlshop/app/features/shopping_cart/presentation/item/product_cart_item.dart';
-import 'package:hlshop/app/features/shopping_cart/seft.dart';
+
 
 class ShoppingCartItem extends StatelessWidget {
   const ShoppingCartItem({

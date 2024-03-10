@@ -1,0 +1,1 @@
+export 'about_base_model.dart';
