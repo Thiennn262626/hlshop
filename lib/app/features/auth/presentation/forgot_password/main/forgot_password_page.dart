@@ -31,7 +31,7 @@ class ForgotPasswordPage extends StatelessWidget {
                     elevation: 0,
                     expandWidth: true,
                     child: AppButton(
-                      style: AppButtonTheme.primary(context).big(context),
+                      style: AppButtonTheme.primary(context),
                       isSubmitButton: true,
                       label: LocaleKeys.common_Confirm.tr(),
                       onPressed: () {

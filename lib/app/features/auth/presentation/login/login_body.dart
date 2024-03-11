@@ -31,7 +31,7 @@ class LoginBody extends StatelessWidget {
             ).objectCenterRight(),
             Gaps.vGap24,
             AppButton(
-              style: AppButtonTheme.primary(context).big(context),
+              style: AppButtonTheme.primary(context),
               isSubmitButton: true,
               label: LocaleKeys.authen_Login.tr(),
               onPressed: () {
@@ -43,7 +43,7 @@ class LoginBody extends StatelessWidget {
             Gaps.vGap24,
             LocaleKeys.authen_OrLoginWith.tr().text.center.make(),
             Gaps.vGap24,
-            SocialAuthSection(),
+            const SocialAuthSection(),
           ],
         ),
       ),

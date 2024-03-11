@@ -3,6 +3,7 @@ import 'package:hlshop/app/features/user_order/presentation/detail/cubit/user_or
 
 class OrderDetailBottomBar extends StatelessWidget {
   const OrderDetailBottomBar({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -25,7 +26,7 @@ class OrderDetailBottomBar extends StatelessWidget {
           builder: (context, state) {
             final finishPay = state.order?.finishPay;
             return AppButton(
-              style: AppButtonTheme.primary(context).big(context),
+              style: AppButtonTheme.primary(context),
               label:
                   finishPay ?? true ? 'Đã thanh toán'.tr() : 'Thanh toán'.tr(),
               onPressed: finishPay ?? true
