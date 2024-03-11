@@ -39,7 +39,7 @@ class SignUpPage extends StatelessWidget {
               }
               return false;
             },
-            child: Scaffold(
+            child: const Scaffold(
               appBar: AppAppBar(
                 title: '',
                 args: AppBarArgs(

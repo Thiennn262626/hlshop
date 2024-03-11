@@ -18,7 +18,7 @@ class LoginBody extends StatelessWidget {
                 .semiBold
                 .center
                 .make(),
-            Gaps.vGap32,
+            Gaps.vGap24,
             const AuthIdPasswordInput(
               showPasswordHelper: false,
             ),
@@ -29,7 +29,7 @@ class LoginBody extends StatelessWidget {
                 context.pushRoute(const ForgotPasswordRoute());
               },
             ).objectCenterRight(),
-            Gaps.vGap24,
+            Gaps.vGap20,
             AppButton(
               style: AppButtonTheme.primary(context),
               isSubmitButton: true,
@@ -38,12 +38,13 @@ class LoginBody extends StatelessWidget {
                 context.read<LoginCubit>().loginPassword();
               },
             ),
-            Gaps.vGap32,
+            Gaps.vGap20,
             const LoginNotHaveAccountMsg(),
             Gaps.vGap24,
             LocaleKeys.authen_OrLoginWith.tr().text.center.make(),
             Gaps.vGap24,
             const SocialAuthSection(),
+            Gaps.vGap16,
           ],
         ),
       ),

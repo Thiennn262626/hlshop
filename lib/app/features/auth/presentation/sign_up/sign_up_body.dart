@@ -22,11 +22,11 @@ class SignUpBody extends StatelessWidget {
                 .semiBold
                 .center
                 .make(),
-            Gaps.vGap32,
+            Gaps.vGap20,
             const AuthIdPasswordInput(
               showConfirmPassword: true,
             ),
-            Gaps.vGap32,
+            Gaps.vGap20,
             AppButton(
               style: AppButtonTheme.primary(context),
               isSubmitButton: true,
@@ -35,7 +35,7 @@ class SignUpBody extends StatelessWidget {
                 context.read<SignUpCubit>().signUpOTP();
               },
             ),
-            Gaps.vGap32,
+            Gaps.vGap20,
             Text.rich(
               TextSpan(
                 text: LocaleKeys.authen_AlreadyHaveAccount.tr(),
@@ -55,10 +55,11 @@ class SignUpBody extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-            Gaps.vGap24,
+            Gaps.vGap20,
             LocaleKeys.authen_OrSignUpWith.tr().text.center.make(),
-            Gaps.vGap24,
-            SocialAuthSection(),
+            Gaps.vGap20,
+            const SocialAuthSection(),
+            Gaps.vGap16,
           ],
         ),
       ),

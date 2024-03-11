@@ -69,6 +69,7 @@ class AuthIdInput extends StatelessWidget {
     return AppTextFieldReactive(
       formControlName: idKey,
       enableClearButton: true,
+      decoration: AppTextFieldTheme.greyStyle(context),
       hintText: 'Nhập email hoặc số điện thoại'.tr(),
       validationMessages: {
         ValidationMessage.required: (e) =>
@@ -162,7 +163,7 @@ class AuthPasswordInput extends StatelessWidget {
   TextFieldPasswordEyeBuilder _buildPasswordInput(
       BuildContext context, bool? hasFocus) {
     return TextFieldPasswordEyeBuilder(
-      inputDecoration: AppTextFieldTheme.primary(context),
+      inputDecoration: AppTextFieldTheme.greyStyle(context),
       builder: (context, inputDecoration, isTextVisible) =>
           AppTextFieldReactive(
         formControlName: formControlName ?? passwordKey,
