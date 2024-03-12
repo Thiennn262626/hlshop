@@ -1,10 +1,5 @@
 import 'package:app_ui_kit/all_file/app_ui_kit_all_file.dart';
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/auth/core/utils/check_id_helper.dart';
-import 'package:hlshop/app/features/auth/domain/entity/auth_entity.dart';
-import 'package:hlshop/app/features/auth/domain/repo/auth_repo.dart';
-import 'package:hlshop/app/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:hlshop/app/features/auth/presentation/widget/auth_id_input.dart';
 
 part 'login_state.dart';
 

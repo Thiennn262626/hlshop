@@ -1,6 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/checkout/domain/entity/OrderShippingFeeEntity.dart';
-import 'package:hlshop/app/features/shopping_cart/domain/domain.dart';
 
 abstract class CheckoutRepo {
   Future<CreateOrderResEntity?> createOrder({

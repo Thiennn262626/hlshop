@@ -1,5 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/checkout/domain/entity/OrderShippingFeeEntity.dart';
 
 part 'base_checkout_model.g.dart';
 

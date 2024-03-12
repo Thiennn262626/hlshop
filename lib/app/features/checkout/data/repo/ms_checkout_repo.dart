@@ -1,5 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/shopping_cart/domain/model/shopping_cart_base_entity.dart';
 
 class MsCheckoutRepo extends CheckoutRepo {
   final MsCheckoutApi _api = getIt();

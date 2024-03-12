@@ -1,9 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/common/domain/entity/common_entity.dart';
-import 'package:hlshop/app/features/distributor/data/model/ms_seller_model.dart';
-import 'package:hlshop/app/features/product/data/model/ms_product_category_model.dart';
-import 'package:hlshop/app/features/product/data/model/ms_product_sku_result.dart';
-import 'package:hlshop/app/features/product/domain/entity/product_entity.dart';
 
 part 'ms_product_convert.dart';
 part 'ms_product_model.g.dart';

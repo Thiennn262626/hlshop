@@ -18,9 +18,6 @@ class OrderCodeGroup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (orderCode == null) {
-      return const SizedBox.shrink();
-    }
     return GestureDetector(
       // onTap: () => onOpenDistributorDetail(context),
       child: Row(

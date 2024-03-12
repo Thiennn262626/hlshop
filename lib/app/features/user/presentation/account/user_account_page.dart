@@ -1,7 +1,6 @@
 import 'package:hlshop/all_file/all_file.dart';
 import 'package:hlshop/app/features/user/presentation/account/cubit/user_account_cubit.dart';
 import 'package:hlshop/app/features/user/presentation/account/user_account_body.dart';
-import 'package:hlshop/app/features/user/presentation/widget/user_profile_pull_refresh.dart';
 
 @RoutePage()
 class UserAccountPage extends StatelessWidget {

@@ -1,7 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/shopping_cart/domain/model/shopping_cart_base_entity.dart';
-import 'package:hlshop/app/features/user/presentation/bloc/user_bloc.dart';
-import 'package:hlshop/app/features/user/self.dart';
 import 'package:hlshop/core/utils/launch_url.dart';
 
 part 'checkout_bloc.freezed.dart';

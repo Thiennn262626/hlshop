@@ -1,5 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/user/self.dart';
 
 part 'receive_address_cubit.freezed.dart';
 part 'receive_address_state.dart';

@@ -1,8 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/auth/presentation/sign_up/cubit/sign_up_cubit.dart';
-import 'package:hlshop/app/features/auth/presentation/social_login/socail_auth.dart';
-import 'package:hlshop/app/features/auth/presentation/widget/auth_id_input.dart';
-import 'package:hlshop/app/features/auth/presentation/widget/auth_page_body.dart';
 
 class SignUpBody extends StatelessWidget {
   const SignUpBody({super.key});

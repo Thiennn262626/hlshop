@@ -1,5 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/user/presentation/bloc/user_bloc.dart';
 
 class ProductTitleHeader extends StatelessWidget {
   const ProductTitleHeader({

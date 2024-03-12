@@ -1,6 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/about/presentation/main/about_body.dart';
-import 'package:hlshop/app/features/about/presentation/main/cubit/about_cubit.dart';
 
 @RoutePage()
 class AboutPage extends StatelessWidget {

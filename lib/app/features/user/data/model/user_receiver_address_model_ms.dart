@@ -1,6 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/user/domain/entity/address_entity.dart';
-import 'package:hlshop/app/features/user/domain/entity/user_base_entity.dart';
 
 part 'user_receiver_address_convert.dart';
 part 'user_receiver_address_model_ms.g.dart';

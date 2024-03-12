@@ -1,12 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/checkout/data/model/base_checkout_model.dart';
-import 'package:hlshop/app/features/product/domain/entity/product_entity.dart';
-import 'package:hlshop/app/features/shopping_cart/data/model/base_shopping_cart_model.dart';
-import 'package:hlshop/app/features/user/data/model/user_receiver_address_model_ms.dart';
-import 'package:hlshop/app/features/user/domain/entity/address_entity.dart';
-import 'package:hlshop/app/features/user/domain/entity/user_base_entity.dart';
-import 'package:hlshop/app/features/user_order/domain/entities/order_entities.dart';
-import 'package:hlshop/app/features/user_order/domain/entities/order_status_tracking_entity.dart';
 
 part 'user_order_base_model.g.dart';
 part 'user_order_base_model_convert.dart';

@@ -1,6 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/product/data/model/ms_product_model.dart';
-import 'package:hlshop/app/features/product/data/model/ms_subcribe_model.dart';
 
 part 'ms_subcribe_api.g.dart';
 

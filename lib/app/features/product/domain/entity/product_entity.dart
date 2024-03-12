@@ -1,8 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/common/domain/entity/common_entity.dart';
-import 'package:hlshop/app/features/distributor/domain/entity/distributor_entity.dart';
-import 'package:hlshop/app/features/product/domain/entity/category_entity.dart';
-import 'package:hlshop/app/features/product/domain/repo/product_repo.dart';
 
 part 'product_entity.g.dart';
 part 'product_variation.dart';

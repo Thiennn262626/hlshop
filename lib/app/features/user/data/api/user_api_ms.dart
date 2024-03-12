@@ -1,12 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/user/data/model/add_receiver_address_model.dart';
-import 'package:hlshop/app/features/user/data/model/delete_receiver_address_model.dart';
-import 'package:hlshop/app/features/user/data/model/ms_user_info.dart';
-import 'package:hlshop/app/features/user/data/model/update_contact_name_model.dart';
-import 'package:hlshop/app/features/user/data/model/update_receiver_address_model.dart';
-import 'package:hlshop/app/features/user/data/model/user_model_ms.dart';
-import 'package:hlshop/app/features/user/data/model/user_receiver_address_model_ms.dart';
 
 part 'user_api_ms.g.dart';
 

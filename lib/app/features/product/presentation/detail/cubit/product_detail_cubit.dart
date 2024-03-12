@@ -1,9 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:hlshop/app/features/product/domain/entity/category_entity.dart';
-import 'package:hlshop/app/features/product/domain/entity/product_entity.dart';
-import 'package:hlshop/app/features/product/domain/repo/product_repo.dart';
-import 'package:hlshop/app/features/product/presentation/variant/select_variant/product_select_variant.dart';
 
 part 'product_detail_cubit.freezed.dart';
 part 'product_detail_state.dart';

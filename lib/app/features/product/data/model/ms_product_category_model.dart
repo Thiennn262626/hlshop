@@ -1,6 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/common/domain/entity/common_entity.dart';
-import 'package:hlshop/app/features/product/domain/entity/category_entity.dart';
 
 part 'ms_product_category_convert.dart';
 part 'ms_product_category_model.g.dart';

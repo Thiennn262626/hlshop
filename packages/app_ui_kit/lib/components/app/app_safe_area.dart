@@ -1,5 +1,4 @@
 import 'package:app_ui_kit/all_file/app_ui_kit_all_file.dart';
-import 'package:velocity_x/velocity_x.dart';
 
 class AppSafeArea extends _AppSafeArea {
   const AppSafeArea({

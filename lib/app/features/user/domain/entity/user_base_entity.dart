@@ -1,5 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/user/domain/entity/address_entity.dart';
 
 part 'user_base_entity.g.dart';
 
