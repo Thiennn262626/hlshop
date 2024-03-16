@@ -70,12 +70,12 @@ class ProductItem extends StatelessWidget {
   }
 
   void _onItemClick(BuildContext context) {
-    context.pushRoute(ProductDetailRoute(product: item));
+    // context.pushRoute(ProductDetailRoute(product: item));
   }
 
   void _onAddToCart(BuildContext context) {
-    ProductSelectVariantPopup(
-      product: item,
-    ).show(context: context);
+    // ProductSelectVariantPopup(
+    //   product: item,
+    // ).show(context: context);
   }
 }

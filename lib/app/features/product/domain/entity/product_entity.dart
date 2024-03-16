@@ -1,6 +1,7 @@
 import 'package:hlshop/all_file/all_file.dart';
 
 part 'product_entity.g.dart';
+
 part 'product_variation.dart';
 
 @CopyWith(copyWithNull: true)
@@ -44,18 +45,17 @@ class ProductEntity {
     this.weight,
   });
 
-  static ProductEntity demo() {
+  factory ProductEntity.demo() {
     return ProductEntity(
       id: '1',
-      name: 'LEIFARNE Chair, beige',
+      name: 'Dummy product',
       imgList: [
         const ImageEntity(
-          src:
-              'https://product.hstatic.net/200000311493/product/set_goi_xa_gung_trang_68383b0f8acb45c498206705071e6d2c.jpg',
+          src: '',
         ),
       ],
       description:
-          'The chair is made of solid wood, which is a durable natural material.',
+          'Hi',
       price: '100000'.toPriceUnit,
       type: 'chai',
       listedPrice: '200000'.toPriceUnit,
