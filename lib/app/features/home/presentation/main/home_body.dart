@@ -29,15 +29,11 @@ class HomeBody extends StatelessWidget {
                 },
                 child: ProductListHoz(
                   fetchListData: (offset, limit) =>
-                  //     getIt<ProductRepo>().getProductList(
-                  //   offset: offset,
-                  //   limit: limit,
-                  //   type: ProductListType.hot,
-                  //   showType: ProductListShowType.homePage,
-                  // ),
-
-                  Future.value(
-                    List.generate(10, (index) => ProductEntity.demo()),
+                      getIt<ProductRepo>().getProductList(
+                    offset: offset,
+                    limit: limit,
+                    type: ProductListType.hot,
+                    showType: ProductListShowType.homePage,
                   ),
                 ),
               ),

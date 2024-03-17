@@ -3,6 +3,7 @@ import 'package:hlshop/all_file/all_file.dart';
 class MsProductRepo extends ProductRepo {
   final MsProductApi _api = getIt();
   final MsSubcribeApi _subcribeApi = getIt();
+
   ProductEntity _convertProduct(MsProduct product) {
     return product.toEntity();
   }
@@ -31,16 +32,19 @@ class MsProductRepo extends ProductRepo {
         //   }
         // }
 
-        return _api
-            .getListHot(
-              offset: offset,
-              limit: limit,
-              search: search,
-              sortBy: sortBy,
-              minAmount: minAmount,
-              maxAmount: maxAmount,
-            )
-            .then(_convertListProduct);
+        // return _api
+        //     .getListHot(
+        //       offset: offset,
+        //       limit: limit,
+        //       search: search,
+        //       sortBy: sortBy,
+        //       minAmount: minAmount,
+        //       maxAmount: maxAmount,
+        //     )
+        //     .then(_convertListProduct)
+        return Future.value(
+          List.generate(10, (index) => ProductEntity.demo()),
+        );
       case ProductListType.newest:
         return _api
             .getListNew(
@@ -52,6 +56,9 @@ class MsProductRepo extends ProductRepo {
               maxAmount: maxAmount,
             )
             .then(_convertListProduct);
+        return Future.value(
+          List.generate(10, (index) => ProductEntity.demo()),
+        );
       case ProductListType.bestSeller:
         return _api
             .getListBestSell(
