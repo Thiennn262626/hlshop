@@ -203,7 +203,7 @@ class AuthPasswordInputWithConfirm extends StatelessWidget {
       children: [
         AuthPasswordInput(
           formControlName: passwordKey,
-          hintText: LocaleKeys.authen_InputNewPassword.tr(),
+          hintText: 'Nhập mật khẩu'.tr(),
         ),
         Gaps.vGap16,
         AuthPasswordInput(
