@@ -64,14 +64,11 @@ class HomeBody extends StatelessWidget {
                 title: 'Giá tốt hôm nay'.tr(),
                 child: ProductGridHoz(
                   fetchListData: (offset, limit) =>
-                  //     getIt<ProductRepo>().getProductList(
-                  //   offset: offset,
-                  //   limit: limit,
-                  //   type: ProductListType.goodPrice,
-                  //   showType: ProductListShowType.homePage,
-                  // ),
-                  Future.value(
-                    List.generate(10, (index) => ProductEntity.demo()),
+                      getIt<ProductRepo>().getProductList(
+                    offset: offset,
+                    limit: limit,
+                    type: ProductListType.goodPrice,
+                    showType: ProductListShowType.homePage,
                   ),
                 ),
                 seeAll: () {

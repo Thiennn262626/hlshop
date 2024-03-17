@@ -71,16 +71,19 @@ class MsProductRepo extends ProductRepo {
             )
             .then(_convertListProduct);
       case ProductListType.goodPrice:
-        return _api
-            .getListGoodPrice(
-              offset: offset,
-              limit: limit,
-              search: search,
-              sortBy: sortBy,
-              minAmount: minAmount,
-              maxAmount: maxAmount,
-            )
-            .then(_convertListProduct);
+        // return _api
+        //     .getListGoodPrice(
+        //       offset: offset,
+        //       limit: limit,
+        //       search: search,
+        //       sortBy: sortBy,
+        //       minAmount: minAmount,
+        //       maxAmount: maxAmount,
+        //     )
+        //     .then(_convertListProduct);
+        return Future.value(
+          List.generate(10, (index) => ProductEntity.demo()),
+        );
       case null:
         return [];
     }
