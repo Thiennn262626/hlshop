@@ -46,16 +46,16 @@ class MsProductRepo extends ProductRepo {
           List.generate(10, (index) => ProductEntity.demo()),
         );
       case ProductListType.newest:
-        return _api
-            .getListNew(
-              offset: offset,
-              limit: limit,
-              search: search,
-              sortBy: sortBy,
-              minAmount: minAmount,
-              maxAmount: maxAmount,
-            )
-            .then(_convertListProduct);
+        // return _api
+        //     .getListNew(
+        //       offset: offset,
+        //       limit: limit,
+        //       search: search,
+        //       sortBy: sortBy,
+        //       minAmount: minAmount,
+        //       maxAmount: maxAmount,
+        //     )
+        //     .then(_convertListProduct);
         return Future.value(
           List.generate(10, (index) => ProductEntity.demo()),
         );

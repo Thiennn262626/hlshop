@@ -42,14 +42,11 @@ class HomeBody extends StatelessWidget {
                 child: ProductGridHoz(
                   crossAxisCount: 1,
                   fetchListData: (offset, limit) =>
-                  //     getIt<ProductRepo>().getProductList(
-                  //   offset: offset,
-                  //   limit: limit,
-                  //   type: ProductListType.bestSeller,
-                  //   showType: ProductListShowType.homePage,
-                  // ),
-                  Future.value(
-                    List.generate(10, (index) => ProductEntity.demo()),
+                      getIt<ProductRepo>().getProductList(
+                    offset: offset,
+                    limit: limit,
+                    type: ProductListType.bestSeller,
+                    showType: ProductListShowType.homePage,
                   ),
                 ),
                 seeAll: () {
