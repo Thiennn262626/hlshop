@@ -37,7 +37,7 @@ import 'package:hlshop/app/features/product/presentation/detail/product_detail_p
     as _i12;
 import 'package:hlshop/app/features/product/presentation/product_search/product_search_page.dart'
     as _i13;
-import 'package:hlshop/app/features/product_rating/presentation/main/product_rating_page.dart'
+import 'package:hlshop/app/features/rating/presentation/main/product_rating_page.dart'
     as _i14;
 import 'package:hlshop/app/features/search/presentation/main/search_page.dart'
     as _i15;

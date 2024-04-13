@@ -5,7 +5,7 @@ export 'distributor/index.dart';
 export 'home/index.dart';
 export 'main/index.dart';
 export 'product/index.dart';
-export 'product_rating/index.dart';
+export 'rating/index.dart';
 export 'search/index.dart';
 export 'shopping_cart/index.dart';
 export 'user/index.dart';
