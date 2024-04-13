@@ -1,0 +1,1 @@
+import 'package:hlshop/all_file/all_file.dart';part 'item_rating_reply_entity.freezed.dart';@freezedclass RatingReplyEntity with _$RatingReplyEntity {  const RatingReplyEntity._();  const factory RatingReplyEntity({    String? id,    String? createdTime,    String? userId,    String? comment,  }) = _RatingReplyEntity;}
