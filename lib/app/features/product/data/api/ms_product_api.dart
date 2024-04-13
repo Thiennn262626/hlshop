@@ -1,7 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/product/data/model/ms_product_attribute.dart';
-import 'package:hlshop/app/features/product/data/model/ms_product_model.dart';
-import 'package:hlshop/app/features/product/data/model/ms_product_sku_result.dart';
 
 part 'ms_product_api.g.dart';
 

@@ -1,9 +1,5 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/auth/presentation/login/cubit/login_cubit.dart';
-import 'package:hlshop/app/features/auth/presentation/login/login_body.dart';
-import 'package:hlshop/app/features/auth/presentation/sign_up/cubit/sign_up_cubit.dart';
-import 'package:hlshop/app/features/auth/presentation/widget/auth_id_input.dart';
-import 'package:hlshop/app/features/auth/self.dart';
+
 
 @RoutePage()
 class LoginPage extends StatelessWidget {

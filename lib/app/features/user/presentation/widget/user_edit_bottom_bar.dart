@@ -16,7 +16,7 @@ class UserEditBottomBar extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         AppButton(
-          style: AppButtonTheme.grey(context).big(context),
+          style: AppButtonTheme.grey(context),
           label: 'Hủy'.tr(),
           onPressed: onCancel ??
               () {
@@ -24,9 +24,9 @@ class UserEditBottomBar extends StatelessWidget {
               },
         ).expand(),
         AppButton(
-          style: AppButtonTheme.primary(context).big(context),
+          style: AppButtonTheme.primary(context),
           onPressed: onConfirm,
-          child: 'Lưu thay đổi'.tr().textAuto.center.maxLines(1).make(),
+          child: 'Lưu thay đổi'.tr().text.make(),
         ).expand(),
       ].withDivider(Gaps.hGap10),
     );

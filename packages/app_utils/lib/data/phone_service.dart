@@ -1,4 +1,3 @@
-import 'dart:developer' show log;
 
 import 'package:app_utils/all_file/app_utils_all_file.dart';
 import 'package:country_picker/country_picker.dart';

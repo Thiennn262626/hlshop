@@ -1,8 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/product/presentation/variant/item/layout/product_variant_item_layout_1.dart';
-import 'package:hlshop/app/features/product/presentation/variant/item/layout/product_variant_item_tile_layout_1.dart';
-import 'package:hlshop/app/features/product/presentation/variant/item/layout/product_variant_item_tile_layout_disable.dart';
-import 'package:hlshop/app/features/product/self.dart';
 
 class ProductAttributeValue extends StatelessWidget {
   const ProductAttributeValue({

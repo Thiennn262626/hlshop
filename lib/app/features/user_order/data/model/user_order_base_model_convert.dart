@@ -128,7 +128,7 @@ extension MsOderGroupDataConvert on MsOderGroupData {
 //     this.price,
 //     this.priceBefore,
 //     this.attribute,
-extension MsProductCartExt on MsOrderProduct {
+extension MsProductCartX on MsOrderProduct {
   ProductEntity toProductEntity() {
     return ProductEntity(
       id: productID,

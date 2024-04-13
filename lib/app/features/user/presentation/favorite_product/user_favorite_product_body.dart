@@ -1,10 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/product/domain/entity/product_entity.dart';
-import 'package:hlshop/app/features/product/presentation/item/layout/product_item_layout.dart';
-import 'package:hlshop/app/features/product/presentation/item/product_item.dart';
-import 'package:hlshop/app/features/product/presentation/item/product_item_args.dart';
-import 'package:hlshop/app/features/product/presentation/variant/select_variant/product_select_variant.dart';
-import 'package:hlshop/app/features/user/presentation/favorite_product/cubit/user_favorite_product_cubit.dart';
 
 class UserFavoriteProductBody extends StatelessWidget {
   const UserFavoriteProductBody({super.key});

@@ -1,5 +1,4 @@
-import 'package:hlshop/app/features/distributor/domain/entity/distributor_entity.dart';
-import 'package:hlshop/app/features/product/domain/entity/category_entity.dart';
+import 'package:hlshop/all_file/all_file.dart';
 
 abstract class DistributorRepo {
   Future<List<ProductCategoryEntity>> getDistributerListFilter({

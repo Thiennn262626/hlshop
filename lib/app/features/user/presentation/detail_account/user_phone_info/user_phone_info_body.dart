@@ -1,9 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/user/presentation/bloc/user_bloc.dart';
-import 'package:hlshop/app/features/user/presentation/detail_account/widget/user_info_value_section.dart';
-import 'package:hlshop/app/features/user/presentation/widget/app_add_info_title.dart';
-import 'package:hlshop/app/features/user/presentation/widget/user_info_title.dart';
-import 'package:hlshop/app/features/user/self.dart';
 
 class UserPhoneInfoBody extends StatelessWidget {
   const UserPhoneInfoBody({super.key});

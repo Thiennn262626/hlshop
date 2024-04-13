@@ -1,7 +1,5 @@
 import 'package:hlshop/all_file/all_file.dart';
 
-import '../../../self.dart';
-
 part 'about_state.dart';
 
 class AboutCubit extends RequestCubit<AboutState> {

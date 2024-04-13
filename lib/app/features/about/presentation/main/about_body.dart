@@ -5,10 +5,8 @@ class AboutBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppScrollBody(
-      child: Column(
-        children: [],
-      ),
+    return const AppScrollBody(
+      child: Column(),
     );
   }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/distributor/presentation/rating/cubit/distributor_rating_cubit.dart';
 
 class DistributorRatingSimpleLayout1 extends StatelessWidget {
   const DistributorRatingSimpleLayout1({super.key});

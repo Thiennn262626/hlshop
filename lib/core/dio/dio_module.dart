@@ -1,5 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:hlshop/services/user_secure_storage_service.dart';
 import 'package:network_logger/network_logger.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
@@ -16,12 +15,8 @@ class DioModule {
 
     log('**** Dio create');
     final options = BaseOptions(
-      //baseUrl: 'https://hl-shop.azurewebsites.net/',//deploy
-      // baseUrl: 'http://192.168.1.15/',//phongTro
-      // baseUrl: 'http://172.16.30.61/', //fit
-      baseUrl: 'http://172.20.10.2/', //iphoneThien
-      // baseUrl: 'http://localhost:80/',
-      connectTimeout: const Duration(seconds: 30),
+      baseUrl: 'http://192.168.1.42:80/',  //Qun's ip Address
+       connectTimeout: const Duration(seconds: 30),
       receiveTimeout: const Duration(seconds: 30),
       sendTimeout: const Duration(seconds: 30),
     );

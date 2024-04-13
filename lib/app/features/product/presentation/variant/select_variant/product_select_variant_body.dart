@@ -1,9 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/common/presentation/widgets/app_item_counter/app_item_counter.dart';
-import 'package:hlshop/app/common/presentation/widgets/app_item_counter/app_item_counter_args.dart';
-import 'package:hlshop/app/features/product/presentation/item/product_item.dart';
-import 'package:hlshop/app/features/product/presentation/variant/select_variant/cubit/product_select_variant_cubit.dart';
-import 'package:hlshop/app/features/product/self.dart';
 
 class ProductSelectVariantBody extends StatelessWidget {
   const ProductSelectVariantBody({super.key});

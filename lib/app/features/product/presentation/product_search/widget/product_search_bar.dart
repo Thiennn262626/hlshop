@@ -1,6 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/product/domain/entity/product_entity.dart';
-import 'package:hlshop/app/features/product/presentation/product_search/cubit/product_search_cubit.dart';
 
 class ProductSearchBar extends StatelessWidget {
   const ProductSearchBar({

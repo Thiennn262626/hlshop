@@ -1,16 +1,9 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/product/data/api/ms_product_api.dart';
-import 'package:hlshop/app/features/product/data/api/ms_subcribe_api.dart';
-import 'package:hlshop/app/features/product/data/model/ms_product_attribute.dart';
-import 'package:hlshop/app/features/product/data/model/ms_product_model.dart';
-import 'package:hlshop/app/features/product/data/model/ms_subcribe_model.dart';
-import 'package:hlshop/app/features/product/domain/entity/product_entity.dart';
-import 'package:hlshop/app/features/product/domain/entity/subcribe_entity.dart';
-import 'package:hlshop/app/features/product/domain/repo/product_repo.dart';
 
 class MsProductRepo extends ProductRepo {
   final MsProductApi _api = getIt();
   final MsSubcribeApi _subcribeApi = getIt();
+
   ProductEntity _convertProduct(MsProduct product) {
     return product.toEntity();
   }
@@ -32,12 +25,12 @@ class MsProductRepo extends ProductRepo {
   }) async {
     switch (type) {
       case ProductListType.hot:
-        // if (showType == ProductListShowType.homePage) {
-        //   final nextOffset = (offset ?? 0) + (limit ?? 0);
-        //   if (nextOffset > 10) {
-        //     limit = (offset ?? 0) + 10;
-        //   }
-        // }
+        if (showType == ProductListShowType.homePage) {
+          final nextOffset = (offset ?? 0) + (limit ?? 0);
+          if (nextOffset > 10) {
+            limit = (offset ?? 0) + 10;
+          }
+        }
 
         return _api
             .getListHot(

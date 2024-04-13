@@ -1,5 +1,5 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/product/self.dart';
+
 
 part 'shopping_cart_base_entity.g.dart';
 

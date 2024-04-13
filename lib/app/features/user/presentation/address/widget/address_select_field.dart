@@ -1,6 +1,5 @@
 import 'package:app_ui_kit/all_file/app_ui_kit_all_file.dart';
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/common/presentation/widgets/select_item/select_item_popup/select_item_popup.dart';
 
 class AddressSelectField<T> extends StatelessWidget {
   const AddressSelectField({

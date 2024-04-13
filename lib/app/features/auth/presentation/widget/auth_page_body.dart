@@ -18,11 +18,11 @@ class AuthPageBody extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 SizedBox(
-                  height: constrains.maxHeight * 0.05,
+                  height: constrains.maxHeight * 0.03,
                 ),
                 Assets.icons.app.appLogoNameSvg.svg().objectCenter(),
                 SizedBox(
-                  height: constrains.maxHeight * 0.07,
+                  height: constrains.maxHeight * 0.04,
                 ),
                 child,
               ],

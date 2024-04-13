@@ -1,12 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/common/domain/entity/common_entity.dart';
-import 'package:hlshop/app/common/presentation/widgets/btn/btn_filter.dart';
-import 'package:hlshop/app/features/product/domain/entity/product_entity.dart';
-import 'package:hlshop/app/features/product/presentation/item/layout/product_item_layout.dart';
-import 'package:hlshop/app/features/product/presentation/item/product_item.dart';
-import 'package:hlshop/app/features/product/presentation/product_search/cubit/product_search_cubit.dart';
-import 'package:hlshop/app/features/product/presentation/product_search/widget/product_search_bar.dart';
-import 'package:hlshop/app/features/shopping_cart/presentation/widget/shopping_cart_btn.dart';
 
 class ProductSearchBody extends StatelessWidget {
   const ProductSearchBody({super.key});

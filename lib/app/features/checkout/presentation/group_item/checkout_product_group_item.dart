@@ -1,7 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/checkout/presentation/item/checkout_product_item.dart';
-import 'package:hlshop/app/features/checkout/presentation/main/bloc/checkout_bloc.dart';
-import 'package:hlshop/app/features/shopping_cart/domain/model/shopping_cart_base_entity.dart';
 
 class CheckoutProductGroupItem extends StatelessWidget {
   const CheckoutProductGroupItem({super.key});

@@ -1,5 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/common/core/unit/price_unit.dart';
 
 class ProductPriceWithType extends StatelessWidget {
   const ProductPriceWithType({

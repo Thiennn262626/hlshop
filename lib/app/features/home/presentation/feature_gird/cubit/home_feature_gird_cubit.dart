@@ -1,6 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/product/domain/entity/category_entity.dart';
-import 'package:hlshop/app/features/product/domain/repo/product_category_repo.dart';
 
 part 'home_feature_gird_state.dart';
 

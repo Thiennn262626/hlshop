@@ -1,0 +1,1 @@
+import 'package:hlshop/all_file/all_file.dart';part 'detail_rating_entity.freezed.dart';@freezedclass DetailRating with _$DetailRating {  const DetailRating._();  const factory DetailRating({    int? productQuality,    int? sellerService,    int? deliveryService,    int? driverService,  }) = _DetailRating;}

@@ -1,7 +1,5 @@
 import 'package:app_ui_kit/all_file/app_ui_kit_all_file.dart';
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/common/presentation/widgets/text/app_text_required.dart';
-import 'package:hlshop/app/features/user/self.dart';
 
 class CrudAddressBody extends StatelessWidget {
   const CrudAddressBody({super.key});

@@ -1,9 +1,7 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/user/domain/entity/user_base_entity.dart';
-import 'package:hlshop/app/features/user/presentation/bloc/user_bloc.dart';
-import 'package:hlshop/app/features/user/presentation/detail_account/cubit/detail_account_cubit.dart';
-import 'package:hlshop/app/features/user/presentation/detail_account/user_account%20_info/user_account_info_body.dart';
-import 'package:hlshop/app/features/user/presentation/detail_account/widget/user_edit_bottom_bar.dart';
+
+import '../cubit/detail_account_cubit.dart';
+import 'user_account_info_body.dart';
 
 @RoutePage()
 class UserAccountInfoPage extends StatelessWidget {

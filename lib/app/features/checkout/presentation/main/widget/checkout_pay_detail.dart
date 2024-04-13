@@ -1,5 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/checkout/presentation/main/bloc/checkout_bloc.dart';
 
 class CheckoutPaymentDetail extends StatelessWidget {
   const CheckoutPaymentDetail({

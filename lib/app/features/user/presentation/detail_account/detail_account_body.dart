@@ -1,6 +1,5 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/user/presentation/bloc/user_bloc.dart';
-import 'package:hlshop/app/features/user/presentation/detail_account/widget/app_info_account_tile.dart';
+
 
 class ReceiveDetailAccountBody extends StatelessWidget {
   const ReceiveDetailAccountBody({super.key});

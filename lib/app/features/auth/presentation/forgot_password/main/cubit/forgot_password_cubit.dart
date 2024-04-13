@@ -1,8 +1,6 @@
 import 'package:app_ui_kit/all_file/app_ui_kit_all_file.dart';
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/auth/core/utils/check_id_helper.dart';
-import 'package:hlshop/app/features/auth/presentation/widget/auth_id_input.dart';
-import 'package:hlshop/app/features/auth/self.dart';
+
 
 part 'forgot_password_state.dart';
 

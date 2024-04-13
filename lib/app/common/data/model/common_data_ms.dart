@@ -1,5 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/common/domain/entity/common_entity.dart';
 
 part 'common_data_ms.g.dart';
 part 'common_data_ms_convert.dart';

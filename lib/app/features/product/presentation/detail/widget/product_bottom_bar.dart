@@ -1,5 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/product/presentation/detail/cubit/product_detail_cubit.dart';
 
 class ProductBottomBar extends StatelessWidget {
   const ProductBottomBar({super.key});

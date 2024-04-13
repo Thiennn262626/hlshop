@@ -1,5 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/user/self.dart';
 
 part 'detail_account_cubit.freezed.dart';
 part 'detail_account_state.dart';

@@ -1,5 +1,5 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/distributor/domain/entity/distributor_entity.dart';
+
 
 class DistributorSimpleInfoLayout1 extends StatelessWidget {
   const DistributorSimpleInfoLayout1({

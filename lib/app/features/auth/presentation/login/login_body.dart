@@ -1,8 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/auth/presentation/login/cubit/login_cubit.dart';
-import 'package:hlshop/app/features/auth/presentation/social_login/socail_auth.dart';
-import 'package:hlshop/app/features/auth/presentation/widget/auth_id_input.dart';
-import 'package:hlshop/app/features/auth/presentation/widget/auth_page_body.dart';
 
 class LoginBody extends StatelessWidget {
   const LoginBody({super.key});
@@ -22,7 +18,7 @@ class LoginBody extends StatelessWidget {
                 .semiBold
                 .center
                 .make(),
-            Gaps.vGap32,
+            Gaps.vGap24,
             const AuthIdPasswordInput(
               showPasswordHelper: false,
             ),
@@ -33,21 +29,22 @@ class LoginBody extends StatelessWidget {
                 context.pushRoute(const ForgotPasswordRoute());
               },
             ).objectCenterRight(),
-            Gaps.vGap24,
+            Gaps.vGap20,
             AppButton(
-              style: AppButtonTheme.primary(context).big(context),
+              style: AppButtonTheme.primary(context),
               isSubmitButton: true,
               label: LocaleKeys.authen_Login.tr(),
               onPressed: () {
                 context.read<LoginCubit>().loginPassword();
               },
             ),
-            Gaps.vGap32,
+            Gaps.vGap20,
             const LoginNotHaveAccountMsg(),
             Gaps.vGap24,
             LocaleKeys.authen_OrLoginWith.tr().text.center.make(),
             Gaps.vGap24,
-            SocialAuthSection(),
+            const SocialAuthSection(),
+            Gaps.vGap16,
           ],
         ),
       ),

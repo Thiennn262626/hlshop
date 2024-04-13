@@ -1,6 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/auth/presentation/forgot_password/change_password/cubit/change_password_cubit.dart';
-import 'package:hlshop/app/features/auth/presentation/widget/auth_id_input.dart';
 
 class ChangePasswordBody extends StatelessWidget {
   const ChangePasswordBody({super.key});
@@ -14,7 +12,7 @@ class ChangePasswordBody extends StatelessWidget {
           elevation: 0,
           expandWidth: true,
           child: AppButton(
-            style: AppButtonTheme.primary(context).big(context),
+            style: AppButtonTheme.primary(context),
             isSubmitButton: true,
             label: LocaleKeys.common_Confirm.tr(),
             onPressed: () {
@@ -23,7 +21,7 @@ class ChangePasswordBody extends StatelessWidget {
           ),
         ),
         child: AppScrollBody(
-          child: Column(
+          child: const Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Gaps.vGap24,

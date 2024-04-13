@@ -1,6 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/common/presentation/widgets/status/api_result_consumer.dart';
-import 'package:hlshop/app/features/user/domain/entity/user_base_entity.dart';
 import 'package:hlshop/app/features/user/presentation/address/receive_address/cubit/receive_address_cubit.dart';
 import 'package:hlshop/app/features/user/presentation/address/receive_address/receive_address_body.dart';
 

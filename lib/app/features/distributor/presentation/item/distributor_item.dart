@@ -1,8 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/distributor/domain/entity/distributor_entity.dart';
-import 'package:hlshop/app/features/distributor/presentation/item/layout/distributor_item_layout.dart';
-import 'package:hlshop/app/features/distributor/presentation/item/layout/distributor_item_layout_1.dart';
-import 'package:hlshop/app/features/distributor/presentation/item/layout/distributor_simple_info_layout_1.dart';
 
 class DistributorItem extends StatelessWidget {
   const DistributorItem({

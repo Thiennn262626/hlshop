@@ -1,6 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/product/domain/entity/product_entity.dart';
-import 'package:hlshop/app/features/product/domain/entity/subcribe_entity.dart';
 
 abstract class ProductRepo {
   Future<List<ProductEntity>> getProductList({

@@ -1,8 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/common/presentation/widgets/btn/btn_camera.dart';
-import 'package:hlshop/app/features/auth/self.dart';
-import 'package:hlshop/app/features/user/domain/entity/user_base_entity.dart';
-import 'package:hlshop/app/features/user/presentation/bloc/user_bloc.dart';
 import 'package:hlshop/core/utils/image_utils.dart';
 
 class UserInfoBody extends StatelessWidget {

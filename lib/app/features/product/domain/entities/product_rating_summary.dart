@@ -1,0 +1,1 @@
+import 'package:hlshop/all_file/all_file.dart';part 'product_rating_summary.freezed.dart';@freezedclass ProductRatingSummary with _$ProductRatingSummary {  const ProductRatingSummary._();  const factory ProductRatingSummary({    double? average,    int? total,    List<int>? count,  }) = _ProductRatingSummary;}

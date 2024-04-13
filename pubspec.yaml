@@ -258,18 +258,50 @@ targets:
         generate_for:
           - lib/data/**.dart
       json_serializable:
-        enabled: true
-      #        generate_for:
-      #          - lib/data/**.dart
-      #        exclude:
-      #          - lib/data/**_extend.dart
-      #          - lib/data/**_api.dart
-      #          - lib/data/**_repo.dart
-      freezed|freezed:
-        enabled: true
+        options:
+          explicit_to_json: true
         generate_for:
           include:
-            - lib/**/**_bloc.dart
-            - lib/**/**_cubit.dart
+            - "lib/**/bloc/**.dart"
+            - "lib/**/blocs/**.dart"
+            - "lib/**/entities/**.dart"
+            - "lib/**/misc/**.dart"
+            - "lib/**/models/**.dart"
+            - "lib/**/usecases/**.dart"
+            - "lib/core/errors/**.dart"
+            - "lib/core/pages/**.dart"
+            - "lib/core/services/**.dart"
+            - "lib/core/types/**.dart"
+            - "lib/core/utils/**.dart"
+          exclude:
+            - lib/**.g.dart
+            - lib/**.freezed.dart
+            - lib/**/widgets/**.dart
+            - lib/**/pages/**.dart
+      freezed:
+        generate_for:
+          include:
+            - lib/**/bloc/**.dart
+            - lib/**/blocs/**.dart
+            - lib/**/entities/**.dart
+            - lib/**/models/**.dart
+            - lib/**/usecases/**.dart
+            - lib/core/errors/**.dart
+            - lib/core/pages/**.dart
+            - lib/core/services/**.dart
+            - lib/core/types/**.dart
+            - lib/core/utils/**.dart
+          exclude:
+            - lib/**.g.dart
+            - lib/**.freezed.dart
+            - lib/**/widgets/**.dart
+            - lib/**/pages/**.dart
       mockito:mockBuilder:
         enabled: false
+      auto_route_generator:auto_route_generator:
+        generate_for:
+          - lib/app/features/**/*_page.dart
+          - lib/app/features/**/*_popup.dart
+      auto_route_generator:auto_router_generator: # this for @AutoRouterConfig
+        generate_for:
+          - lib/app/app_routes/app_routes.dart

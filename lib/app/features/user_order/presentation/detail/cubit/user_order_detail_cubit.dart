@@ -1,8 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/checkout/domain/repo/checkout_repo.dart';
-import 'package:hlshop/app/features/user_order/domain/entities/order_entities.dart';
-import 'package:hlshop/app/features/user_order/domain/entities/order_status_tracking_entity.dart';
-import 'package:hlshop/app/features/user_order/domain/repo/user_order_repo.dart';
 import 'package:hlshop/core/utils/launch_url.dart';
 
 part 'user_order_detail_cubit.freezed.dart';

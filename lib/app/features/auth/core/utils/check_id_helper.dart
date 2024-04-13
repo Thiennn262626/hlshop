@@ -1,4 +1,3 @@
-import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:hlshop/all_file/all_file.dart';
 
 part 'check_id_helper.g.dart';

@@ -1,10 +1,6 @@
 import 'package:flutter_keyboard_size/flutter_keyboard_size.dart';
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/product/domain/entity/product_entity.dart';
-import 'package:hlshop/app/features/product/presentation/variant/select_variant/cubit/product_select_variant_cubit.dart';
-import 'package:hlshop/app/features/product/presentation/variant/select_variant/product_select_variant_body.dart';
-import 'package:hlshop/app/features/shopping_cart/seft.dart';
-import 'package:hlshop/app/features/user/presentation/bloc/user_bloc.dart';
+
 
 class ProductSelectVariantPopup extends StatelessWidget {
   const ProductSelectVariantPopup({

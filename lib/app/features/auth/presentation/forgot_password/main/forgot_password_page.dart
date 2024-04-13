@@ -1,7 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/auth/presentation/forgot_password/main/cubit/forgot_password_cubit.dart';
-import 'package:hlshop/app/features/auth/presentation/forgot_password/main/forgot_password_body.dart';
-import 'package:hlshop/app/features/auth/presentation/widget/auth_id_input.dart';
 
 @RoutePage()
 class ForgotPasswordPage extends StatelessWidget {
@@ -31,7 +28,7 @@ class ForgotPasswordPage extends StatelessWidget {
                     elevation: 0,
                     expandWidth: true,
                     child: AppButton(
-                      style: AppButtonTheme.primary(context).big(context),
+                      style: AppButtonTheme.primary(context),
                       isSubmitButton: true,
                       label: LocaleKeys.common_Confirm.tr(),
                       onPressed: () {

@@ -1,5 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/user/domain/entity/address_entity.dart';
 
 part 'address_model_ms.g.dart';
 

@@ -1,7 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/about/self.dart';
-import 'package:hlshop/app/features/user/presentation/bloc/user_bloc.dart';
-import 'package:hlshop/app/features/user/self.dart';
 
 class UserAccountBody extends StatelessWidget {
   const UserAccountBody({super.key});

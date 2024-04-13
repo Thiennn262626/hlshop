@@ -1,6 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/home/presentation/feature_gird/cubit/home_feature_gird_cubit.dart';
-import 'package:hlshop/app/features/home/presentation/feature_gird/home_feature_gird_body.dart';
 
 class HomeFeatureGird extends StatelessWidget {
   const HomeFeatureGird({

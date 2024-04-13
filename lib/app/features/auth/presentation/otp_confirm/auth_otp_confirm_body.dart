@@ -1,8 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/auth/presentation/otp_confirm/cubit/auth_otp_confirm_cubit.dart';
-import 'package:hlshop/app/features/auth/presentation/widget/auth_page_body.dart';
-import 'package:hlshop/app/features/auth/presentation/widget/otp_input.dart';
-import 'package:hlshop/app/features/auth/presentation/widget/resend_count_down_text.dart';
 
 class AuthOtpConfirmBody extends StatelessWidget {
   const AuthOtpConfirmBody({super.key});
@@ -39,11 +35,9 @@ class AuthOtpConfirmBody extends StatelessWidget {
             builder: (context, state) {
               return AppButton(
                 isEnable: (state.otp?.length ?? 0) == otpLength,
-                style: AppButtonTheme.primary(context).big(context),
+                style: AppButtonTheme.primary(context),
                 label: LocaleKeys.common_Confirm.tr(),
-                onPressed: () {
-                  cubit.onConfirmOTP();
-                },
+                onPressed: cubit.onConfirmOTP,
               );
             },
           ),

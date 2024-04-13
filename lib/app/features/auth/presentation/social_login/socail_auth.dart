@@ -26,7 +26,7 @@ class SocialAuthSection extends StatelessWidget {
             color: Color(0xFF226DFF),
           ),
         ),
-      ],
+      ].withDivider(Gaps.hGap16),
     );
   }
 }

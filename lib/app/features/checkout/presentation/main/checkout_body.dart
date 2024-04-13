@@ -1,8 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/checkout/presentation/group_item/checkout_product_group_item.dart';
-import 'package:hlshop/app/features/checkout/presentation/main/bloc/checkout_bloc.dart';
-import 'package:hlshop/app/features/checkout/presentation/main/widget/checkout_pay_detail.dart';
-import 'package:hlshop/app/features/user/self.dart';
 
 class CheckoutBody extends StatelessWidget {
   const CheckoutBody({

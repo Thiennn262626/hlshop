@@ -1,6 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/common/presentation/widgets/container/show_more/more_btn.dart';
-import 'package:hlshop/app/features/product/self.dart';
 
 class ProductDetailDescription extends StatelessWidget {
   const ProductDetailDescription({super.key, this.item});

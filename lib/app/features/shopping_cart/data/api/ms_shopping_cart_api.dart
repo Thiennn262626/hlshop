@@ -1,5 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/shopping_cart/data/model/base_shopping_cart_model.dart';
 
 part 'ms_shopping_cart_api.g.dart';
 

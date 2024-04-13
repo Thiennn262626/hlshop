@@ -1,17 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/auth/core/utils/check_id_helper.dart';
-import 'package:hlshop/app/features/auth/self.dart';
-
-part 'auth_repo.freezed.dart';
-
-@freezed
-class AuthenticationStatus with _$AuthenticationStatus {
-  const factory AuthenticationStatus.notDetermined() = _NotDetermined;
-
-  const factory AuthenticationStatus.authenticated() = _Authenticated;
-
-  const factory AuthenticationStatus.notAuthenticated() = _NotAuthenticated;
-}
 
 abstract class AuthRepo {
   Future<AuthSignUpOTPEntity> signUpPhone({

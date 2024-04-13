@@ -1,6 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/user_order/domain/entities/order_status_tracking_entity.dart';
-import 'package:hlshop/app/features/user_order/domain/repo/user_order_repo.dart';
 
 part 'user_order_tracking_detail_cubit.freezed.dart';
 part 'user_order_tracking_detail_state.dart';

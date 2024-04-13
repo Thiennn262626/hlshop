@@ -1,0 +1,1 @@
+import 'package:hlshop/all_file/all_file.dart';part 'rating_entity.freezed.dart';@freezedclass RatingEntity with _$RatingEntity {  const RatingEntity._();  const factory RatingEntity({    List<RatingItemEntity>? ratingItems,    int? total,    RatingSummary? ratingSummary,  }) = _RatingEntity;}

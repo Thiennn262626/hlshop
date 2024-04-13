@@ -1,0 +1,1 @@
+//GENERATED BARREL FILE export 'rating_api.dart'; 

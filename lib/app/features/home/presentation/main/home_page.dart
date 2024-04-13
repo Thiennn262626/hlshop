@@ -1,7 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/home/presentation/main/cubit/home_cubit.dart';
-import 'package:hlshop/app/features/home/presentation/main/home_body.dart';
-import 'package:hlshop/app/features/shopping_cart/presentation/widget/shopping_cart_btn.dart';
 
 @RoutePage()
 class HomePage extends StatelessWidget {

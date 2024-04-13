@@ -1,5 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/user/domain/entity/user_base_entity.dart';
 
 class UserSimpleInfo extends StatelessWidget {
   const UserSimpleInfo({

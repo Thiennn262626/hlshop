@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/user_order/presentation/detail/cubit/user_order_detail_cubit.dart';
 import 'package:timelines/timelines.dart';
 
 class OrderShippingStatusBody extends StatelessWidget {

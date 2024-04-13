@@ -3,11 +3,7 @@ import 'package:app_ui_kit/components/app/dismiss_keyboard.dart';
 import 'package:app_ui_kit/components/app/scroll_behavior_default.dart';
 import 'package:flutter/services.dart';
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/common/presentation/widgets/exception/app_exception_handler.dart';
-import 'package:hlshop/app/common/presentation/widgets/responsive/app_responsive_config.dart';
-import 'package:hlshop/app/features/auth/self.dart';
-import 'package:hlshop/app/features/shopping_cart/presentation/bloc/shopping_cart_bloc.dart';
-import 'package:hlshop/app/features/user/presentation/bloc/user_bloc.dart';
+
 
 class App extends StatelessWidget {
   const App({super.key});

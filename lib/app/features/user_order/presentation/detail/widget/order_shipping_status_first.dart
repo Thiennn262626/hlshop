@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/user_order/presentation/detail/cubit/user_order_detail_cubit.dart';
 import 'package:timelines/timelines.dart';
 
 class OrderShippingStatusFirst extends StatelessWidget {
@@ -28,7 +27,7 @@ class OrderShippingStatusFirst extends StatelessWidget {
             ),
             title: LocaleKeys.userOrder_ShippingInfo.tr(),
             space: 8,
-            child: const ShippingTimeLine(),
+            child: const _ShippingTimeLine(),
           ).pxDefault().pt16(),
         );
       },
@@ -36,8 +35,8 @@ class OrderShippingStatusFirst extends StatelessWidget {
   }
 }
 
-class ShippingTimeLine extends StatelessWidget {
-  const ShippingTimeLine({super.key});
+class _ShippingTimeLine extends StatelessWidget {
+  const _ShippingTimeLine({super.key});
 
   @override
   Widget build(BuildContext context) {

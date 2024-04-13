@@ -1,0 +1,12 @@
+export 'about/index.dart';
+export 'auth/index.dart';
+export 'checkout/index.dart';
+export 'distributor/index.dart';
+export 'home/index.dart';
+export 'main/index.dart';
+export 'product/index.dart';
+export 'rating/index.dart';
+export 'search/index.dart';
+export 'shopping_cart/index.dart';
+export 'user/index.dart';
+export 'user_order/index.dart';

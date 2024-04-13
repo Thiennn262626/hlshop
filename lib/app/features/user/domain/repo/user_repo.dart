@@ -1,5 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/user/self.dart';
 
 abstract class UserRepo {
   Future<UserEntity> getUserInfo();

@@ -1,10 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/user/self.dart';
-import 'package:hlshop/app/features/user_order/presentation/detail/cubit/user_order_detail_cubit.dart';
-import 'package:hlshop/app/features/user_order/presentation/detail/widget/order_pay_detail.dart';
-import 'package:hlshop/app/features/user_order/presentation/detail/widget/order_shipping_status_first.dart';
-import 'package:hlshop/app/features/user_order/presentation/group_item/user_order_group_item.dart';
-import 'package:hlshop/app/features/user_order/presentation/main/cubit/user_order_cubit.dart';
 
 class UserOrderDetailBody extends StatelessWidget {
   const UserOrderDetailBody({super.key});

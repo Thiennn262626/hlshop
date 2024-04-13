@@ -1,6 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/product/domain/entity/product_entity.dart';
-import 'package:hlshop/app/features/product/domain/repo/product_repo.dart';
 
 part 'product_select_variant_cubit.g.dart';
 part 'product_select_variant_state.dart';

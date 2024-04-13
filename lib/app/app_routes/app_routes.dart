@@ -1,11 +1,5 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/auth/core/routes/auth_routes.dart';
-import 'package:hlshop/app/features/checkout/self.dart';
-import 'package:hlshop/app/features/product/core/routes/product_routes.dart';
-import 'package:hlshop/app/features/product_rating/self.dart';
-import 'package:hlshop/app/features/shopping_cart/core/routes/shopping_cart_routes.dart';
-import 'package:hlshop/app/features/user/core/routes/user_routes.dart';
-import 'package:hlshop/app/features/user_order/self.dart';
+
 
 @AutoRouterConfig(
   replaceInRouteName: 'Page|Dialog,Route',

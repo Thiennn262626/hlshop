@@ -1,5 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/search/presentation/main/cubit/search_cubit.dart';
 
 class SearchBody extends StatelessWidget {
   const SearchBody({super.key});
@@ -10,9 +9,7 @@ class SearchBody extends StatelessWidget {
       child: BlocBuilder<SearchCubit, SearchState>(
         builder: (context, state) {
           final item = state.item;
-          return Column(
-            children: [],
-          );
+          return const Column();
         },
       ),
     );

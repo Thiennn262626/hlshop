@@ -1,7 +1,5 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/auth/presentation/sign_up/cubit/sign_up_cubit.dart';
-import 'package:hlshop/app/features/auth/presentation/sign_up/sign_up_body.dart';
-import 'package:hlshop/app/features/auth/self.dart';
+
 
 @RoutePage()
 class SignUpPage extends StatelessWidget {
@@ -41,7 +39,7 @@ class SignUpPage extends StatelessWidget {
               }
               return false;
             },
-            child: Scaffold(
+            child: const Scaffold(
               appBar: AppAppBar(
                 title: '',
                 args: AppBarArgs(

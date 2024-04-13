@@ -1,7 +1,6 @@
 import 'package:app_ui_kit/all_file/app_ui_kit_all_file.dart';
 import 'package:app_ui_kit/components/button/custom/btn_password_eye.dart';
 import 'package:app_ui_kit/components/button/primary/app_button_icon.dart';
-import 'package:flutter/cupertino.dart';
 
 class TextFieldPasswordEyeBuilder extends StatefulWidget {
   const TextFieldPasswordEyeBuilder({

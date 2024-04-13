@@ -1,7 +1,4 @@
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/app/features/shopping_cart/presentation/widget/shopping_cart_btn.dart';
-import 'package:hlshop/app/features/user/presentation/favorite_product/cubit/user_favorite_product_cubit.dart';
-import 'package:hlshop/app/features/user/presentation/favorite_product/user_favorite_product_body.dart';
 
 @RoutePage()
 class UserFavoriteProductPage extends StatelessWidget {
