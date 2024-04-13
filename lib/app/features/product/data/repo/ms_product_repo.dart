@@ -25,68 +25,56 @@ class MsProductRepo extends ProductRepo {
   }) async {
     switch (type) {
       case ProductListType.hot:
-        // if (showType == ProductListShowType.homePage) {
-        //   final nextOffset = (offset ?? 0) + (limit ?? 0);
-        //   if (nextOffset > 10) {
-        //     limit = (offset ?? 0) + 10;
-        //   }
-        // }
+        if (showType == ProductListShowType.homePage) {
+          final nextOffset = (offset ?? 0) + (limit ?? 0);
+          if (nextOffset > 10) {
+            limit = (offset ?? 0) + 10;
+          }
+        }
 
-        // return _api
-        //     .getListHot(
-        //       offset: offset,
-        //       limit: limit,
-        //       search: search,
-        //       sortBy: sortBy,
-        //       minAmount: minAmount,
-        //       maxAmount: maxAmount,
-        //     )
-        //     .then(_convertListProduct)
-        return Future.value(
-          List.generate(10, (index) => ProductEntity.demo()),
-        );
+        return _api
+            .getListHot(
+              offset: offset,
+              limit: limit,
+              search: search,
+              sortBy: sortBy,
+              minAmount: minAmount,
+              maxAmount: maxAmount,
+            )
+            .then(_convertListProduct);
       case ProductListType.newest:
-        // return _api
-        //     .getListNew(
-        //       offset: offset,
-        //       limit: limit,
-        //       search: search,
-        //       sortBy: sortBy,
-        //       minAmount: minAmount,
-        //       maxAmount: maxAmount,
-        //     )
-        //     .then(_convertListProduct);
-        return Future.value(
-          List.generate(10, (index) => ProductEntity.demo()),
-        );
+        return _api
+            .getListNew(
+              offset: offset,
+              limit: limit,
+              search: search,
+              sortBy: sortBy,
+              minAmount: minAmount,
+              maxAmount: maxAmount,
+            )
+            .then(_convertListProduct);
       case ProductListType.bestSeller:
-        // return _api
-        //     .getListBestSell(
-        //       offset: offset,
-        //       limit: limit,
-        //       search: search,
-        //       sortBy: sortBy,
-        //       minAmount: minAmount,
-        //       maxAmount: maxAmount,
-        //     )
-        //     .then(_convertListProduct);
-        return Future.value(
-          List.generate(10, (index) => ProductEntity.demo()),
-        );
+        return _api
+            .getListBestSell(
+              offset: offset,
+              limit: limit,
+              search: search,
+              sortBy: sortBy,
+              minAmount: minAmount,
+              maxAmount: maxAmount,
+            )
+            .then(_convertListProduct);
       case ProductListType.goodPrice:
-        // return _api
-        //     .getListGoodPrice(
-        //       offset: offset,
-        //       limit: limit,
-        //       search: search,
-        //       sortBy: sortBy,
-        //       minAmount: minAmount,
-        //       maxAmount: maxAmount,
-        //     )
-        //     .then(_convertListProduct);
-        return Future.value(
-          List.generate(10, (index) => ProductEntity.demo()),
-        );
+        return _api
+            .getListGoodPrice(
+              offset: offset,
+              limit: limit,
+              search: search,
+              sortBy: sortBy,
+              minAmount: minAmount,
+              maxAmount: maxAmount,
+            )
+            .then(_convertListProduct);
       case null:
         return [];
     }
