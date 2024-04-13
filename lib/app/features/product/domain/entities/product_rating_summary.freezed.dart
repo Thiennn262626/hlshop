@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ProductRatingSummary {
-  int? get average => throw _privateConstructorUsedError;
+  double? get average => throw _privateConstructorUsedError;
   int? get total => throw _privateConstructorUsedError;
   List<int>? get count => throw _privateConstructorUsedError;
 
@@ -31,7 +31,7 @@ abstract class $ProductRatingSummaryCopyWith<$Res> {
           $Res Function(ProductRatingSummary) then) =
       _$ProductRatingSummaryCopyWithImpl<$Res, ProductRatingSummary>;
   @useResult
-  $Res call({int? average, int? total, List<int>? count});
+  $Res call({double? average, int? total, List<int>? count});
 }
 
 /// @nodoc
@@ -56,7 +56,7 @@ class _$ProductRatingSummaryCopyWithImpl<$Res,
       average: freezed == average
           ? _value.average
           : average // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as double?,
       total: freezed == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
@@ -77,7 +77,7 @@ abstract class _$$ProductRatingSummaryImplCopyWith<$Res>
       __$$ProductRatingSummaryImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? average, int? total, List<int>? count});
+  $Res call({double? average, int? total, List<int>? count});
 }
 
 /// @nodoc
@@ -99,7 +99,7 @@ class __$$ProductRatingSummaryImplCopyWithImpl<$Res>
       average: freezed == average
           ? _value.average
           : average // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as double?,
       total: freezed == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
@@ -122,7 +122,7 @@ class _$ProductRatingSummaryImpl extends _ProductRatingSummary
         super._();
 
   @override
-  final int? average;
+  final double? average;
   @override
   final int? total;
   final List<int>? _count;
@@ -175,13 +175,13 @@ class _$ProductRatingSummaryImpl extends _ProductRatingSummary
 
 abstract class _ProductRatingSummary extends ProductRatingSummary {
   const factory _ProductRatingSummary(
-      {final int? average,
+      {final double? average,
       final int? total,
       final List<int>? count}) = _$ProductRatingSummaryImpl;
   const _ProductRatingSummary._() : super._();
 
   @override
-  int? get average;
+  double? get average;
   @override
   int? get total;
   @override

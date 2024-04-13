@@ -1,4 +1,5 @@
 import 'package:hlshop/all_file/all_file.dart';
+import 'package:hlshop/app/features/product/data/models/product_rating_summary_model.dart';
 
 part 'ms_product_convert.dart';
 part 'ms_product_model.g.dart';
@@ -26,6 +27,8 @@ class MsProduct {
   final MsSellerModel? seller;
   final List<MsProductSku>? productSKU;
   final String? localizedProductVersionID;
+  @JsonKey(name: 'item_rating_summary')
+  final ProductRatingSummaryModel? productRatingSummary;
 
   const MsProduct({
     this.productID,
@@ -49,6 +52,7 @@ class MsProduct {
     this.seller,
     this.productSKU,
     this.localizedProductVersionID,
+    this.productRatingSummary,
   });
 
   factory MsProduct.fromJson(Map<String, dynamic> json) =>
