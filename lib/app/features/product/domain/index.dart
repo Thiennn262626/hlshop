@@ -1,2 +1,2 @@
+export 'entities/index.dart';
 export 'repo/index.dart';
-export 'entity/index.dart';

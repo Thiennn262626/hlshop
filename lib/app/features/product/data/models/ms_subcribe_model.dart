@@ -1,5 +1,4 @@
-import 'package:hlshop/app/features/product/domain/entity/subcribe_entity.dart';
-import 'package:json_annotation/json_annotation.dart';
+import 'package:hlshop/all_file/all_file.dart';
 
 part 'ms_subcribe_model.g.dart';
 
