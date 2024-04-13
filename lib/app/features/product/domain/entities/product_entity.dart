@@ -43,6 +43,7 @@ class ProductEntity {
     this.width,
     this.length,
     this.weight,
+    this.ratingSummary,
   });
 
   factory ProductEntity.demo() {
@@ -108,6 +109,7 @@ class ProductEntity {
   final String? averageRating;
   final int? ratingCount;
   final int? quantity;
+  final ProductRatingSummary? ratingSummary;
 
   String? get img => imgList.firstOrNull?.src;
 

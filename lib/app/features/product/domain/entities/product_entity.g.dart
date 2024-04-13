@@ -79,6 +79,8 @@ abstract class _$ProductEntityCWProxy {
 
   ProductEntity weight(int? weight);
 
+  ProductEntity ratingSummary(ProductRatingSummary? ratingSummary);
+
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ProductEntity(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -122,6 +124,7 @@ abstract class _$ProductEntityCWProxy {
     int? width,
     int? length,
     int? weight,
+    ProductRatingSummary? ratingSummary,
   });
 }
 
@@ -253,6 +256,10 @@ class _$ProductEntityCWProxyImpl implements _$ProductEntityCWProxy {
   ProductEntity weight(int? weight) => this(weight: weight);
 
   @override
+  ProductEntity ratingSummary(ProductRatingSummary? ratingSummary) =>
+      this(ratingSummary: ratingSummary);
+
+  @override
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ProductEntity(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -297,6 +304,7 @@ class _$ProductEntityCWProxyImpl implements _$ProductEntityCWProxy {
     Object? width = const $CopyWithPlaceholder(),
     Object? length = const $CopyWithPlaceholder(),
     Object? weight = const $CopyWithPlaceholder(),
+    Object? ratingSummary = const $CopyWithPlaceholder(),
   }) {
     return ProductEntity(
       id: id == const $CopyWithPlaceholder()
@@ -443,6 +451,10 @@ class _$ProductEntityCWProxyImpl implements _$ProductEntityCWProxy {
           ? _value.weight
           // ignore: cast_nullable_to_non_nullable
           : weight as int?,
+      ratingSummary: ratingSummary == const $CopyWithPlaceholder()
+          ? _value.ratingSummary
+          // ignore: cast_nullable_to_non_nullable
+          : ratingSummary as ProductRatingSummary?,
     );
   }
 }
@@ -495,6 +507,7 @@ extension $ProductEntityCopyWith on ProductEntity {
     bool width = false,
     bool length = false,
     bool weight = false,
+    bool ratingSummary = false,
   }) {
     return ProductEntity(
       id: id == true ? null : this.id,
@@ -534,6 +547,7 @@ extension $ProductEntityCopyWith on ProductEntity {
       width: width == true ? null : this.width,
       length: length == true ? null : this.length,
       weight: weight == true ? null : this.weight,
+      ratingSummary: ratingSummary == true ? null : this.ratingSummary,
     );
   }
 }
