@@ -9,7 +9,6 @@ class ProductDetailBody extends StatelessWidget {
       builder: (context, state) {
         final item = state.product;
         final imgList = state.product?.imgSrcList ?? [];
-        print('length20110263: ${imgList.length}');
         return CustomScrollView(
           slivers: [
             SliverToBoxAdapter(
@@ -33,7 +32,7 @@ class ProductDetailBody extends StatelessWidget {
                         item: item?.distributor,
                         layoutType: DistributorItemLayoutType.layoutSimpleInfo1,
                       ),
-                    const DistributorRatingSimple(),
+                    const ProductRating(),
                     const ProductHeightLight(),
                     ProductDetailDescription(
                       item: item,
