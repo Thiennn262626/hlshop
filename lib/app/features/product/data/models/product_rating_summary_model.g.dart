@@ -12,7 +12,7 @@ ProductRatingSummaryModel _$ProductRatingSummaryModelFromJson(
       ratingAvg: (json['rating_avg'] as num?)?.toDouble(),
       ratingTotal: json['rating_total'] as int?,
       ratingCount: (json['rating_count'] as List<dynamic>?)
-          ?.map((e) => e as int)
+          ?.map((e) => e as int?)
           .toList(),
     );
 

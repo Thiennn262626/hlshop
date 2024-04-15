@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$ProductRatingSummary {
   double? get average => throw _privateConstructorUsedError;
   int? get total => throw _privateConstructorUsedError;
-  List<int>? get count => throw _privateConstructorUsedError;
+  List<int?>? get count => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ProductRatingSummaryCopyWith<ProductRatingSummary> get copyWith =>
@@ -31,7 +31,7 @@ abstract class $ProductRatingSummaryCopyWith<$Res> {
           $Res Function(ProductRatingSummary) then) =
       _$ProductRatingSummaryCopyWithImpl<$Res, ProductRatingSummary>;
   @useResult
-  $Res call({double? average, int? total, List<int>? count});
+  $Res call({double? average, int? total, List<int?>? count});
 }
 
 /// @nodoc
@@ -64,7 +64,7 @@ class _$ProductRatingSummaryCopyWithImpl<$Res,
       count: freezed == count
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+              as List<int?>?,
     ) as $Val);
   }
 }
@@ -77,7 +77,7 @@ abstract class _$$ProductRatingSummaryImplCopyWith<$Res>
       __$$ProductRatingSummaryImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({double? average, int? total, List<int>? count});
+  $Res call({double? average, int? total, List<int?>? count});
 }
 
 /// @nodoc
@@ -107,7 +107,7 @@ class __$$ProductRatingSummaryImplCopyWithImpl<$Res>
       count: freezed == count
           ? _value._count
           : count // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+              as List<int?>?,
     ));
   }
 }
@@ -117,7 +117,7 @@ class __$$ProductRatingSummaryImplCopyWithImpl<$Res>
 class _$ProductRatingSummaryImpl extends _ProductRatingSummary
     with DiagnosticableTreeMixin {
   const _$ProductRatingSummaryImpl(
-      {this.average, this.total, final List<int>? count})
+      {this.average, this.total, final List<int?>? count})
       : _count = count,
         super._();
 
@@ -125,9 +125,9 @@ class _$ProductRatingSummaryImpl extends _ProductRatingSummary
   final double? average;
   @override
   final int? total;
-  final List<int>? _count;
+  final List<int?>? _count;
   @override
-  List<int>? get count {
+  List<int?>? get count {
     final value = _count;
     if (value == null) return null;
     if (_count is EqualUnmodifiableListView) return _count;
@@ -177,7 +177,7 @@ abstract class _ProductRatingSummary extends ProductRatingSummary {
   const factory _ProductRatingSummary(
       {final double? average,
       final int? total,
-      final List<int>? count}) = _$ProductRatingSummaryImpl;
+      final List<int?>? count}) = _$ProductRatingSummaryImpl;
   const _ProductRatingSummary._() : super._();
 
   @override
@@ -185,7 +185,7 @@ abstract class _ProductRatingSummary extends ProductRatingSummary {
   @override
   int? get total;
   @override
-  List<int>? get count;
+  List<int?>? get count;
   @override
   @JsonKey(ignore: true)
   _$$ProductRatingSummaryImplCopyWith<_$ProductRatingSummaryImpl>
