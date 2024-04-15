@@ -15,7 +15,7 @@ class DioModule {
 
     log('**** Dio create');
     final options = BaseOptions(
-      baseUrl: 'http://192.168.1.7:80/',  //Qun's ip Address
+      baseUrl: 'http://192.168.1.4:80/',  //Qun's ip Address
        connectTimeout: const Duration(seconds: 30),
       receiveTimeout: const Duration(seconds: 30),
       sendTimeout: const Duration(seconds: 30),

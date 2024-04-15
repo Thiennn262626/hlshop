@@ -16,8 +16,9 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$RatingSummary {
+  double? get average => throw _privateConstructorUsedError;
   int? get total => throw _privateConstructorUsedError;
-  List<int>? get count => throw _privateConstructorUsedError;
+  List<int?>? get count => throw _privateConstructorUsedError;
   int? get countWithContext => throw _privateConstructorUsedError;
   int? get countWithImage => throw _privateConstructorUsedError;
 
@@ -33,8 +34,9 @@ abstract class $RatingSummaryCopyWith<$Res> {
       _$RatingSummaryCopyWithImpl<$Res, RatingSummary>;
   @useResult
   $Res call(
-      {int? total,
-      List<int>? count,
+      {double? average,
+      int? total,
+      List<int?>? count,
       int? countWithContext,
       int? countWithImage});
 }
@@ -52,12 +54,17 @@ class _$RatingSummaryCopyWithImpl<$Res, $Val extends RatingSummary>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? average = freezed,
     Object? total = freezed,
     Object? count = freezed,
     Object? countWithContext = freezed,
     Object? countWithImage = freezed,
   }) {
     return _then(_value.copyWith(
+      average: freezed == average
+          ? _value.average
+          : average // ignore: cast_nullable_to_non_nullable
+              as double?,
       total: freezed == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
@@ -65,7 +72,7 @@ class _$RatingSummaryCopyWithImpl<$Res, $Val extends RatingSummary>
       count: freezed == count
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+              as List<int?>?,
       countWithContext: freezed == countWithContext
           ? _value.countWithContext
           : countWithContext // ignore: cast_nullable_to_non_nullable
@@ -87,8 +94,9 @@ abstract class _$$RatingSummaryImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int? total,
-      List<int>? count,
+      {double? average,
+      int? total,
+      List<int?>? count,
       int? countWithContext,
       int? countWithImage});
 }
@@ -104,12 +112,17 @@ class __$$RatingSummaryImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? average = freezed,
     Object? total = freezed,
     Object? count = freezed,
     Object? countWithContext = freezed,
     Object? countWithImage = freezed,
   }) {
     return _then(_$RatingSummaryImpl(
+      average: freezed == average
+          ? _value.average
+          : average // ignore: cast_nullable_to_non_nullable
+              as double?,
       total: freezed == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
@@ -117,7 +130,7 @@ class __$$RatingSummaryImplCopyWithImpl<$Res>
       count: freezed == count
           ? _value._count
           : count // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+              as List<int?>?,
       countWithContext: freezed == countWithContext
           ? _value.countWithContext
           : countWithContext // ignore: cast_nullable_to_non_nullable
@@ -134,18 +147,21 @@ class __$$RatingSummaryImplCopyWithImpl<$Res>
 
 class _$RatingSummaryImpl extends _RatingSummary with DiagnosticableTreeMixin {
   const _$RatingSummaryImpl(
-      {this.total,
-      final List<int>? count,
+      {this.average,
+      this.total,
+      final List<int?>? count,
       this.countWithContext,
       this.countWithImage})
       : _count = count,
         super._();
 
   @override
-  final int? total;
-  final List<int>? _count;
+  final double? average;
   @override
-  List<int>? get count {
+  final int? total;
+  final List<int?>? _count;
+  @override
+  List<int?>? get count {
     final value = _count;
     if (value == null) return null;
     if (_count is EqualUnmodifiableListView) return _count;
@@ -160,7 +176,7 @@ class _$RatingSummaryImpl extends _RatingSummary with DiagnosticableTreeMixin {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RatingSummary(total: $total, count: $count, countWithContext: $countWithContext, countWithImage: $countWithImage)';
+    return 'RatingSummary(average: $average, total: $total, count: $count, countWithContext: $countWithContext, countWithImage: $countWithImage)';
   }
 
   @override
@@ -168,6 +184,7 @@ class _$RatingSummaryImpl extends _RatingSummary with DiagnosticableTreeMixin {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'RatingSummary'))
+      ..add(DiagnosticsProperty('average', average))
       ..add(DiagnosticsProperty('total', total))
       ..add(DiagnosticsProperty('count', count))
       ..add(DiagnosticsProperty('countWithContext', countWithContext))
@@ -179,6 +196,7 @@ class _$RatingSummaryImpl extends _RatingSummary with DiagnosticableTreeMixin {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RatingSummaryImpl &&
+            (identical(other.average, average) || other.average == average) &&
             (identical(other.total, total) || other.total == total) &&
             const DeepCollectionEquality().equals(other._count, _count) &&
             (identical(other.countWithContext, countWithContext) ||
@@ -190,6 +208,7 @@ class _$RatingSummaryImpl extends _RatingSummary with DiagnosticableTreeMixin {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      average,
       total,
       const DeepCollectionEquality().hash(_count),
       countWithContext,
@@ -204,16 +223,19 @@ class _$RatingSummaryImpl extends _RatingSummary with DiagnosticableTreeMixin {
 
 abstract class _RatingSummary extends RatingSummary {
   const factory _RatingSummary(
-      {final int? total,
-      final List<int>? count,
+      {final double? average,
+      final int? total,
+      final List<int?>? count,
       final int? countWithContext,
       final int? countWithImage}) = _$RatingSummaryImpl;
   const _RatingSummary._() : super._();
 
   @override
+  double? get average;
+  @override
   int? get total;
   @override
-  List<int>? get count;
+  List<int?>? get count;
   @override
   int? get countWithContext;
   @override

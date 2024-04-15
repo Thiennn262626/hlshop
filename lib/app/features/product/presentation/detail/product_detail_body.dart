@@ -34,7 +34,11 @@ class ProductDetailBody extends StatelessWidget {
                       ),
                     ProductRating(
                       productRatingSummary: item?.ratingSummary,
-                      onPressed: () {},
+                      onPressed: () {
+                        context.router.push(
+                           ProductRatingRoute(productEntity: item),
+                        );
+                      },
                     ),
                     const ProductHeightLight(),
                     ProductDetailDescription(

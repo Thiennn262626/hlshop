@@ -194,9 +194,13 @@ abstract class $AppAutoRoute extends _i29.RootStackRouter {
       );
     },
     ProductRatingRoute.name: (routeData) {
+      final args = routeData.argsAs<ProductRatingRouteArgs>();
       return _i29.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i14.ProductRatingPage(),
+        child: _i14.ProductRatingPage(
+          key: args.key,
+          productEntity: args.productEntity,
+        ),
       );
     },
     SearchRoute.name: (routeData) {
@@ -737,16 +741,40 @@ class ProductSearchRouteArgs {
 
 /// generated route for
 /// [_i14.ProductRatingPage]
-class ProductRatingRoute extends _i29.PageRouteInfo<void> {
-  const ProductRatingRoute({List<_i29.PageRouteInfo>? children})
-      : super(
+class ProductRatingRoute extends _i29.PageRouteInfo<ProductRatingRouteArgs> {
+  ProductRatingRoute({
+    _i31.Key? key,
+    required _i31.ProductEntity? productEntity,
+    List<_i29.PageRouteInfo>? children,
+  }) : super(
           ProductRatingRoute.name,
+          args: ProductRatingRouteArgs(
+            key: key,
+            productEntity: productEntity,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'ProductRatingRoute';
 
-  static const _i29.PageInfo<void> page = _i29.PageInfo<void>(name);
+  static const _i29.PageInfo<ProductRatingRouteArgs> page =
+      _i29.PageInfo<ProductRatingRouteArgs>(name);
+}
+
+class ProductRatingRouteArgs {
+  const ProductRatingRouteArgs({
+    this.key,
+    required this.productEntity,
+  });
+
+  final _i31.Key? key;
+
+  final _i31.ProductEntity? productEntity;
+
+  @override
+  String toString() {
+    return 'ProductRatingRouteArgs{key: $key, productEntity: $productEntity}';
+  }
 }
 
 /// generated route for
