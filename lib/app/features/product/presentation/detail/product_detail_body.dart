@@ -32,7 +32,10 @@ class ProductDetailBody extends StatelessWidget {
                         item: item?.distributor,
                         layoutType: DistributorItemLayoutType.layoutSimpleInfo1,
                       ),
-                    const ProductRating(),
+                    ProductRating(
+                      productRatingSummary: item?.ratingSummary,
+                      onPressed: () {},
+                    ),
                     const ProductHeightLight(),
                     ProductDetailDescription(
                       item: item,
