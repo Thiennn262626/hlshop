@@ -12,7 +12,7 @@ class ProductRatingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ProductRatingCubit()..fetchItem(),
+      create: (context) => ProductRatingCubit(productEntity: productEntity),
       child: Builder(
         builder: (context) {
           return ApiStatusListener<ProductRatingCubit, ProductRatingState>(
@@ -27,7 +27,7 @@ class ProductRatingPage extends StatelessWidget {
                   ].withDivider(Gaps.hGap4, showLast: true),
                 ),
               ),
-              body: ProductRatingBody(),
+              body: const ProductRatingBody(),
             ),
           );
         },
