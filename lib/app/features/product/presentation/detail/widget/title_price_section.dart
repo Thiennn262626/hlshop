@@ -29,38 +29,36 @@ class ProductTitleHeader extends StatelessWidget {
                 ),
                 type: product?.type,
               ).expand(),
-              BlocBuilder<UserBloc, UserState>(
-                builder: (context, state) {
-                  if (state.userEntity != null) {
-                    final favorite =
-                        context.read<ProductDetailCubit>().state.isSubscribed;
-                    return AppButtonIcon(
-                      icon: favorite == true
-                          ? PhosphorIcons.heart_fill
-                          : PhosphorIcons.heart,
-                      iconSize: favorite == true ? 32 : 32,
-                      iconColor:
-                          favorite == true ? const Color(0xffff6b6b) : null,
-                      onPressed: () {
-                        if (favorite == true) {
-                          context
-                              .read<ProductDetailCubit>()
-                              .onUnSubcribeProduct();
-                        } else {
-                          context
-                              .read<ProductDetailCubit>()
-                              .onSubcribeProduct();
-                        }
-                      },
-                    );
-                  }
+              Builder(
+                builder: (context) {
+                  final favorite =
+                      context.read<ProductDetailCubit>().state.isSubscribed;
                   return AppButtonIcon(
-                    icon: PhosphorIcons.heart,
-                    iconSize: 32,
-                    onPressed: () {},
-                  );
+                    icon: favorite == true
+                        ? PhosphorIcons.heart_fill
+                        : PhosphorIcons.heart,
+                    iconSize: favorite == true ? 32 : 32,
+                    iconColor:
+                        favorite == true ? const Color(0xffff6b6b) : null,
+                    onPressed: () {
+                      context.read<UserBloc>().checkLoginAction(
+                        context,
+                        onLogin: (user) {
+                          if (favorite == true) {
+                            context
+                                .read<ProductDetailCubit>()
+                                .onUnSubcribeProduct();
+                          } else {
+                            context
+                                .read<ProductDetailCubit>()
+                                .onSubcribeProduct();
+                          }
+                        },
+                      );
+                    },
+                  ).pxDefault();
                 },
-              ).pxDefault(),
+              ),
               AppButtonIcon(
                 icon: AppIcon.share,
                 onPressed: () {},
