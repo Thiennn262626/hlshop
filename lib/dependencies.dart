@@ -72,8 +72,10 @@ void _initDataMSService() {
     ..registerLazySingleton<AuthApiMS>(() => AuthApiMS(dio))
     ..registerLazySingleton<MsProductApi>(() => MsProductApi(dio))
     ..registerLazySingleton<MsSubcribeApi>(() => MsSubcribeApi(dio))
+    ..registerLazySingleton<RatingApi>(() => RatingApi(dio))
     ..registerLazySingleton<MsProductCategoryApi>(
-        () => MsProductCategoryApi(dio))
+      () => MsProductCategoryApi(dio),
+    )
     ..registerLazySingleton<MsShoppingCartApi>(() => MsShoppingCartApi(dio))
     ..registerLazySingleton<MsOrderApi>(() => MsOrderApi(dio))
     ..registerLazySingleton<MsCheckoutApi>(() => MsCheckoutApi(dio))
