@@ -1,1 +1,1 @@
-export 'main/index.dart';
+export 'main/index.dart';export 'star_pickup/star_pickup.dart';
