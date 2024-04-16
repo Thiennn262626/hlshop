@@ -9,19 +9,84 @@ class ProductRatingBody extends StatelessWidget {
     final cubit = context.read<ProductRatingCubit>();
     return CustomScrollView(
       slivers: [
-        SliverToBoxAdapter(child: const RatingFilterSection().p8()),
+        SliverToBoxAdapter(child: const RatingFilterSection().py8().pl8()),
         PagingList<RatingItemEntity>(
           pagingController: cubit.pagingController,
           isSliver: true,
-          noItemsFoundIndicatorBuilder: (context) =>
-              'Không có đánh giá'.tr().text.bodyMedium(context).make().centered(),
+          noItemsFoundIndicatorBuilder: (context) => 'Không có đánh giá'
+              .tr()
+              .text
+              .bodyMedium(context)
+              .make()
+              .centered(),
           itemBuilder: (context, ratingItemEntity, index) {
             return Container(
-              height: 50,
-              width: 50,
-              color: Colors.red,
-              child: index.toString().text.make(),
-            ).pb8();
+              padding: Dimens.edge,
+              decoration: AppDecor.cardBoxShadow(context),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      AppAvatar(
+                        height: Dimens.ic,
+                        src: ratingItemEntity.authorPortrait,
+                      ),
+                      Gaps.hGap8,
+                      ratingItemEntity.authorUserName?.text
+                              .bodyMedium(context)
+                              .make() ??
+                          const SizedBox.shrink(),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      ...List.generate(
+                        ratingItemEntity.ratingStar ?? 0,
+                        (index) => const Icon(
+                          PhosphorIcons.star_fill,
+                          size: Dimens.pad_S,
+                          color: Colors.orangeAccent,
+                        ),
+                      ),
+                    ],
+                  ),
+                  ratingItemEntity.comment?.text.bodyMedium(context).make(),
+                  LayoutBuilder(
+                    builder: (
+                      BuildContext context,
+                      BoxConstraints constraints,
+                    ) {
+                      final width = constraints.maxWidth * 0.47;
+                      return Wrap(
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        spacing: Dimens.gap_dp8,
+                        runSpacing: Dimens.gap_dp8,
+                        children: [
+                          ...?ratingItemEntity.images?.map(
+                            (e) => SizedBox(
+                              height: 150,
+                              width: width,
+                              child: AppImg(
+                                e,
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                          ),
+                        ],
+                      );
+                    },
+                  ),
+                  ratingItemEntity.createdTime
+                          ?.toSimpleDateLocale()
+                          ?.text.bodyMedium(context).colorHint(context).size(FontSizeService().text_XS2)
+                          .make() ??
+                      const SizedBox.shrink(),
+                ].withDivider(
+                  Gaps.vGap8,
+                ),
+              ),
+            ).p8();
           },
           fetchListData: cubit.fetchItem,
         ),
@@ -41,7 +106,7 @@ class RatingFilterSection extends StatelessWidget {
       builder: (BuildContext context, BoxConstraints constraints) {
         final width = constraints.maxWidth * 0.4;
         return SizedBox(
-          height: 60,
+          height: 50,
           child: BlocSelector<ProductRatingCubit, ProductRatingState,
               RatingFilterType>(
             selector: (state) => state.ratingType,
