@@ -6,29 +6,11 @@ class ProductRatingBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
-        SliverToBoxAdapter(
-          child: Column(
-            children: [
-              '4.2'.text.titleLarge(context).make(),
-              RatingBar.builder(
-                initialRating: 4,
-                itemSize: 20,
-                minRating: 1,
-                allowHalfRating: true,
-                ignoreGestures: true,
-                unratedColor: context.themeColor.greyLighter,
-                itemBuilder: (context, _) => Icon(
-                  Icons.star,
-                  color: context.themeColor.yellow,
-                ),
-                onRatingUpdate: print,
-              ),
-            ],
-          ),
-        )
+    return AppScrollBody(
+        child: Column(
+      children: [
+
       ],
-    );
+    ));
   }
 }

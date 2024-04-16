@@ -88,5 +88,6 @@ void _initDataMSService() {
     ..registerLazySingleton<ProductRepo>(MsProductRepo.new)
     ..registerLazySingleton<ProductCategoryRepo>(MsProductCategoryRepo.new)
     ..registerLazySingleton<UserOrderRepo>(MsUserOrderRepo.new)
+    ..registerLazySingleton<RatingRepo>(RatingRepoIml.new)
     ..registerLazySingleton<AppNavigationEventRepo>(AppNavigationEventRepo.new);
 }
