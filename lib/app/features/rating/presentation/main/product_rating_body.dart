@@ -1,4 +1,3 @@
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:hlshop/all_file/all_file.dart';
 
 class ProductRatingBody extends StatelessWidget {
@@ -69,7 +68,7 @@ class ProductRatingBody extends StatelessWidget {
                               width: width,
                               child: AppImg(
                                 e,
-                                fit: BoxFit.fill,
+                                fit: BoxFit.cover,
                               ),
                             ),
                           ),
@@ -79,7 +78,10 @@ class ProductRatingBody extends StatelessWidget {
                   ),
                   ratingItemEntity.createdTime
                           ?.toSimpleDateLocale()
-                          ?.text.bodyMedium(context).colorHint(context).size(FontSizeService().text_XS2)
+                          ?.text
+                          .bodyMedium(context)
+                          .colorHint(context)
+                          .size(FontSizeService().text_XS2)
                           .make() ??
                       const SizedBox.shrink(),
                 ].withDivider(
@@ -104,7 +106,7 @@ class RatingFilterSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
-        final width = constraints.maxWidth * 0.4;
+        final width = constraints.maxWidth * 0.23;
         return SizedBox(
           height: 50,
           child: BlocSelector<ProductRatingCubit, ProductRatingState,
@@ -189,7 +191,7 @@ class RatingFilterItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             _buildTitleWidget() ?? const SizedBox.shrink(),
-            amount
+            '(${amount})'
                 .toString()
                 .text
                 .bodyMedium(context)
