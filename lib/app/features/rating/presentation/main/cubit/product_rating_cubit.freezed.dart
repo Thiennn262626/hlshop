@@ -17,7 +17,9 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$ProductRatingState {
   ApiStatus get status => throw _privateConstructorUsedError;
+  RatingFilterType get ratingType => throw _privateConstructorUsedError;
   RatingEntity? get ratingEntity => throw _privateConstructorUsedError;
+  int? get star => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ProductRatingStateCopyWith<ProductRatingState> get copyWith =>
@@ -30,7 +32,11 @@ abstract class $ProductRatingStateCopyWith<$Res> {
           ProductRatingState value, $Res Function(ProductRatingState) then) =
       _$ProductRatingStateCopyWithImpl<$Res, ProductRatingState>;
   @useResult
-  $Res call({ApiStatus status, RatingEntity? ratingEntity});
+  $Res call(
+      {ApiStatus status,
+      RatingFilterType ratingType,
+      RatingEntity? ratingEntity,
+      int? star});
 
   $ApiStatusCopyWith<$Res> get status;
   $RatingEntityCopyWith<$Res>? get ratingEntity;
@@ -50,17 +56,27 @@ class _$ProductRatingStateCopyWithImpl<$Res, $Val extends ProductRatingState>
   @override
   $Res call({
     Object? status = null,
+    Object? ratingType = null,
     Object? ratingEntity = freezed,
+    Object? star = freezed,
   }) {
     return _then(_value.copyWith(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as ApiStatus,
+      ratingType: null == ratingType
+          ? _value.ratingType
+          : ratingType // ignore: cast_nullable_to_non_nullable
+              as RatingFilterType,
       ratingEntity: freezed == ratingEntity
           ? _value.ratingEntity
           : ratingEntity // ignore: cast_nullable_to_non_nullable
               as RatingEntity?,
+      star: freezed == star
+          ? _value.star
+          : star // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 
@@ -93,7 +109,11 @@ abstract class _$$ProductRatingStateImplCopyWith<$Res>
       __$$ProductRatingStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ApiStatus status, RatingEntity? ratingEntity});
+  $Res call(
+      {ApiStatus status,
+      RatingFilterType ratingType,
+      RatingEntity? ratingEntity,
+      int? star});
 
   @override
   $ApiStatusCopyWith<$Res> get status;
@@ -113,17 +133,27 @@ class __$$ProductRatingStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? status = null,
+    Object? ratingType = null,
     Object? ratingEntity = freezed,
+    Object? star = freezed,
   }) {
     return _then(_$ProductRatingStateImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as ApiStatus,
+      ratingType: null == ratingType
+          ? _value.ratingType
+          : ratingType // ignore: cast_nullable_to_non_nullable
+              as RatingFilterType,
       ratingEntity: freezed == ratingEntity
           ? _value.ratingEntity
           : ratingEntity // ignore: cast_nullable_to_non_nullable
               as RatingEntity?,
+      star: freezed == star
+          ? _value.star
+          : star // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -133,18 +163,26 @@ class __$$ProductRatingStateImplCopyWithImpl<$Res>
 class _$ProductRatingStateImpl extends _ProductRatingState
     with DiagnosticableTreeMixin {
   const _$ProductRatingStateImpl(
-      {this.status = const ApiStatus.initial(), this.ratingEntity})
+      {this.status = const ApiStatus.initial(),
+      this.ratingType = RatingFilterType.all,
+      this.ratingEntity,
+      this.star})
       : super._();
 
   @override
   @JsonKey()
   final ApiStatus status;
   @override
+  @JsonKey()
+  final RatingFilterType ratingType;
+  @override
   final RatingEntity? ratingEntity;
+  @override
+  final int? star;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ProductRatingState(status: $status, ratingEntity: $ratingEntity)';
+    return 'ProductRatingState(status: $status, ratingType: $ratingType, ratingEntity: $ratingEntity, star: $star)';
   }
 
   @override
@@ -153,7 +191,9 @@ class _$ProductRatingStateImpl extends _ProductRatingState
     properties
       ..add(DiagnosticsProperty('type', 'ProductRatingState'))
       ..add(DiagnosticsProperty('status', status))
-      ..add(DiagnosticsProperty('ratingEntity', ratingEntity));
+      ..add(DiagnosticsProperty('ratingType', ratingType))
+      ..add(DiagnosticsProperty('ratingEntity', ratingEntity))
+      ..add(DiagnosticsProperty('star', star));
   }
 
   @override
@@ -162,12 +202,16 @@ class _$ProductRatingStateImpl extends _ProductRatingState
         (other.runtimeType == runtimeType &&
             other is _$ProductRatingStateImpl &&
             (identical(other.status, status) || other.status == status) &&
+            (identical(other.ratingType, ratingType) ||
+                other.ratingType == ratingType) &&
             (identical(other.ratingEntity, ratingEntity) ||
-                other.ratingEntity == ratingEntity));
+                other.ratingEntity == ratingEntity) &&
+            (identical(other.star, star) || other.star == star));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status, ratingEntity);
+  int get hashCode =>
+      Object.hash(runtimeType, status, ratingType, ratingEntity, star);
 
   @JsonKey(ignore: true)
   @override
@@ -180,13 +224,19 @@ class _$ProductRatingStateImpl extends _ProductRatingState
 abstract class _ProductRatingState extends ProductRatingState {
   const factory _ProductRatingState(
       {final ApiStatus status,
-      final RatingEntity? ratingEntity}) = _$ProductRatingStateImpl;
+      final RatingFilterType ratingType,
+      final RatingEntity? ratingEntity,
+      final int? star}) = _$ProductRatingStateImpl;
   const _ProductRatingState._() : super._();
 
   @override
   ApiStatus get status;
   @override
+  RatingFilterType get ratingType;
+  @override
   RatingEntity? get ratingEntity;
+  @override
+  int? get star;
   @override
   @JsonKey(ignore: true)
   _$$ProductRatingStateImplCopyWith<_$ProductRatingStateImpl> get copyWith =>

@@ -6,6 +6,8 @@ class ProductRatingState with _$ProductRatingState {
 
   const factory ProductRatingState({
     @Default(ApiStatus.initial()) ApiStatus status,
+    @Default(RatingFilterType.all) RatingFilterType ratingType,
     RatingEntity? ratingEntity,
+    int? star,
   }) = _ProductRatingState;
 }
