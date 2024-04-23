@@ -3,8 +3,7 @@ import 'package:hlshop/all_file/all_file.dart';
 part 'distributor_item_state.dart';
 
 class DistributorItemCubit extends Cubit<DistributorItemState> {
-  DistributorItemCubit({dynamic? item})
-      : super(DistributorItemState(item: item));
+  DistributorItemCubit({dynamic? item}) : super(DistributorItemState(item: item));
 
   FutureOr<void> fetchItem() async {
     emit(state.copyWith(status: ItemStatus.loading));

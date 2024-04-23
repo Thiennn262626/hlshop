@@ -1,4 +1,4 @@
-import 'package:hlshop/app/common/domain/entity/common_entity.dart';
+import 'package:hlshop/all_file/all_file.dart';
 
 class DistributorEntity {
   const DistributorEntity({
@@ -13,7 +13,7 @@ class DistributorEntity {
     return DistributorEntity(
       id: '1',
       img: ImageEntity.demo(),
-      name: 'Distributor 1',
+      name: 'Nhà cung cấp',
       type: 'Distributor',
     );
   }

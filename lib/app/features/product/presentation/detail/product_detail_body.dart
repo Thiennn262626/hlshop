@@ -31,6 +31,11 @@ class ProductDetailBody extends StatelessWidget {
                       DistributorItem(
                         item: item?.distributor,
                         layoutType: DistributorItemLayoutType.layoutSimpleInfo1,
+                        onPressed: (){
+                          context.router.push(
+                            const DistributePage() as PageRouteInfo,
+                          );
+                        },
                       ),
                     ProductRating(
                       productRatingSummary: item?.ratingSummary,

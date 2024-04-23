@@ -1,0 +1,1 @@
+//GENERATED BARREL FILE export 'ms_seller_model.dart';

@@ -48,18 +48,15 @@ class ProductSearchCubit extends Cubit<ProductSearchState> {
     controller.refresh();
   }
 
-  Future<void> fetchProduct(int? offset, int? limit) async {
+  Future<List<ProductEntity>> fetchProduct(int? offset, int? limit) async {
     try {
-      final listProduct = await getIt<ProductRepo>().getProductListSearch(
+      return await getIt<ProductRepo>().getProductListSearch(
         offset: offset,
         limit: limit,
         filterData: state.filterData,
       );
-      emit(
-        state.copyWith(status: const ApiStatus.done(), products: listProduct),
-      );
     } catch (e) {
-      emit(state.copyWith(status: ApiStatus.error(e)));
+      return [];
     }
   }
 

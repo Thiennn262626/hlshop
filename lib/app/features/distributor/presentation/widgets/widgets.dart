@@ -1,0 +1,1 @@
+//GENERATED BARREL FILE export 'assess_item.dart'; export 'distribute_information.dart'; export 'distributer_name.dart'; export 'distributer_search_bar.dart'; export 'distributor_product.dart'; export 'distributor_store.dart'; export 'distributor_tabbar.dart'; export 'distributortab.dart'; export 'expanded_widget.dart'; 

@@ -81,6 +81,8 @@ void _initDataMSService() {
     ..registerLazySingleton<MsCheckoutApi>(() => MsCheckoutApi(dio))
     ..registerLazySingleton<ShoppingCartRepo>(MsShoppingCartRepo.new)
     ..registerLazySingleton<UserRepo>(UserRepoMS.new)
+    ..registerLazySingleton<DirectoryRepo>(MSDirectoryRepo.new)
+    ..registerLazySingleton<AssessRepo>(MSAssessRepo.new)
     ..registerLazySingleton<AddressRepo>(
       AddressRepoMs.new,
     )

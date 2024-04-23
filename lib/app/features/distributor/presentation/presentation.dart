@@ -1,0 +1,1 @@
+//GENERATED BARREL FILE export './assess/assess.dart'; export './directory/directory.dart'; export './item/item.dart'; export './list/list.dart'; export './rating/rating.dart'; export './widgets/widgets.dart'; export 'distribute_page.dart'; 
