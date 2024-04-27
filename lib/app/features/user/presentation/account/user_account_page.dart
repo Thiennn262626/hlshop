@@ -14,7 +14,7 @@ class UserAccountPage extends StatelessWidget {
         getStatus: (state) => state.status,
         child: Scaffold(
           appBar: AppAppBar(
-            title: 'Tài khoản'.tr(),
+            title: 'Tài khoản'.tr().text.titleLarge(context).make(),
           ),
           body: const UserProfilePullRefresh(child: UserAccountBody()),
         ),

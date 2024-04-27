@@ -10,7 +10,7 @@ class UserInfoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppAppBar(
-        title: 'Tài khoản'.tr(),
+        title: 'Tài khoản'.tr().text.titleLarge(context).make(),
       ),
       body: AuthConsumer(
         onUnAuthenticated: () {

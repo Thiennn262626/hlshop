@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
               headerSliverBuilder: (context, innerBoxIsScrolled) {
                 return [
                   AppAppBarSliver(
-                    title: 'Trang chủ'.tr(),
+                    title: 'Trang chủ'.tr().text.titleLarge(context).make(),
                     args: AppBarArgs(
                       actions: [
                         const ShoppingCartBtn(),

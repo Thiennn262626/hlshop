@@ -8,7 +8,7 @@ class HomeBody extends StatelessWidget {
     return AppScrollBody.withSpacing(
       child: Column(
         children: [
-          const HomeSearchBar().pxDefault(),
+          // const HomeSearchBar().pxDefault(),
           Gaps.vGap16,
           Column(
             children: [
@@ -19,11 +19,9 @@ class HomeBody extends StatelessWidget {
                 title: '${'Sản phẩm HOT'.tr()} 🔥🔥🔥',
                 seeAll: () {
                   context.pushRoute(
-                    ProductSearchRoute(
-                      filterData: const ProductFilterData(
-                        type: ProductListType.hot,
-                        showType: ProductListShowType.homePage,
-                      ),
+                    AllProductsRoute(
+                      title: '${'Sản phẩm HOT'.tr()} 🔥🔥🔥',
+                      productListType: ProductListType.hot,
                     ),
                   );
                 },
@@ -51,11 +49,9 @@ class HomeBody extends StatelessWidget {
                 ),
                 seeAll: () {
                   context.pushRoute(
-                    ProductSearchRoute(
-                      filterData: const ProductFilterData(
-                        type: ProductListType.bestSeller,
-                        showType: ProductListShowType.homePage,
-                      ),
+                    AllProductsRoute(
+                      title: '${'Sản phẩm bán chạy'.tr()} 🌟🌟🌟',
+                      productListType: ProductListType.bestSeller,
                     ),
                   );
                 },
@@ -73,11 +69,9 @@ class HomeBody extends StatelessWidget {
                 ),
                 seeAll: () {
                   context.pushRoute(
-                    ProductSearchRoute(
-                      filterData: const ProductFilterData(
-                        type: ProductListType.goodPrice,
-                        showType: ProductListShowType.homePage,
-                      ),
+                    AllProductsRoute(
+                      title: 'Giá tốt hôm nay'.tr(),
+                      productListType: ProductListType.goodPrice,
                     ),
                   );
                 },
@@ -95,11 +89,9 @@ class HomeBody extends StatelessWidget {
                 ),
                 seeAll: () {
                   context.pushRoute(
-                    ProductSearchRoute(
-                      filterData: const ProductFilterData(
-                        type: ProductListType.newest,
-                        showType: ProductListShowType.homePage,
-                      ),
+                    AllProductsRoute(
+                      title: 'Sản phẩm mới'.tr(),
+                      productListType: ProductListType.newest,
                     ),
                   );
                 },

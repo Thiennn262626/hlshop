@@ -5,6 +5,7 @@ class Dimens {
   static const EdgeInsets bottomMinimum_L = EdgeInsets.symmetric(vertical: pad_L);
   static const EdgeInsets bottomMinimum_XL = EdgeInsets.symmetric(vertical: pad_XL3);
 
+  static const double minRowHeight_XS2 = 40.0;
   static const double minRowHeight_XS = 44.0;
   static const double minRowHeight_S = 48.0;
   static const double minRowHeight = 52.0;

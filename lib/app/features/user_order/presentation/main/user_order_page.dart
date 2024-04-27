@@ -16,7 +16,7 @@ class UserOrderPage extends StatelessWidget {
             onError: (error) => true,
             child: Scaffold(
               appBar: AppAppBar(
-                title: 'Đơn hàng'.tr(),
+                title: 'Đơn hàng'.tr().text.titleLarge(context).make(),
                 args: AppBarArgs(
                   centerTitle: false,
                   elevation: 0,
