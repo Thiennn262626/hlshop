@@ -1,5 +1,6 @@
 import 'package:hlshop/all_file/all_file.dart';
 import 'package:hlshop/app/features/user/presentation/address/crud_address/crud_address_page.dart';
+import 'package:hlshop/app/features/user/presentation/address/receive_address/cubit/receive_address_cubit.dart';
 
 class UserReceiveAddressSection extends StatelessWidget {
   const UserReceiveAddressSection({
@@ -165,12 +166,15 @@ class _UserAddressItemState extends State<UserAddressItem> {
                 children: [
                   AppButtonText(
                     onPressed: () async {
-                      await context.pushRoute(
+                      final rs = await context.pushRoute(
                         CrudAddressRoute(
                           type: CrudAddressType.edit,
                           initialAddress: widget.address,
                         ),
                       );
+                      if (rs == true && context.mounted) {
+                        context.read<ReceiveAddressCubit>().loadData();
+                      }
                     },
                     child: 'Sửa'.text.make(),
                   ),
@@ -179,16 +183,6 @@ class _UserAddressItemState extends State<UserAddressItem> {
           ],
         ),
       ],
-    );
-  }
-
-  void _showSuccessDialog(BuildContext context) {
-    DialogUtils.showSuccessDialog(
-      context: context,
-      content: 'Đổi địa chỉ mặc định thành công',
-      onAutoDismiss: () {
-        context.router.pop(true);
-      },
     );
   }
 }
