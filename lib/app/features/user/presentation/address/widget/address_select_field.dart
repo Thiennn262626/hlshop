@@ -10,6 +10,7 @@ class AddressSelectField<T> extends StatelessWidget {
     required this.itemToString,
     required this.formControlName,
     this.isDisable = false,
+    this.showSearchBar,
   });
 
   final String? title;
@@ -22,6 +23,7 @@ class AddressSelectField<T> extends StatelessWidget {
     String search,
   )? searchListData;
   final bool isDisable;
+  final bool? showSearchBar;
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +38,7 @@ class AddressSelectField<T> extends StatelessWidget {
                 ),
                 context: context,
                 child: SelectItemPopup<T>(
+                  showSearchBar: showSearchBar,
                   title: title ?? 'Chọn'.tr(),
                   searchListData: searchListData,
                   itemToString: itemToString,
