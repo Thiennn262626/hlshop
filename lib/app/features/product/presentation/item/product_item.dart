@@ -8,6 +8,7 @@ class ProductItem extends StatelessWidget {
     this.args = const ProductItemArgs(),
     this.createState = false,
     this.onHeartPressed,
+    this.itemSize,
   });
 
   final ProductEntity item;
@@ -15,6 +16,7 @@ class ProductItem extends StatelessWidget {
   final ProductItemLayoutType? layoutType;
   final ProductItemArgs args;
   final VoidCallback? onHeartPressed;
+  final Size? itemSize;
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +25,7 @@ class ProductItem extends StatelessWidget {
         switch (layoutType) {
           case ProductItemLayoutType.layout1:
             return ProductItemLayout1(
+              itemSize: itemSize,
               product: item,
               args: args,
               onPressed: () => _onItemClick(context),

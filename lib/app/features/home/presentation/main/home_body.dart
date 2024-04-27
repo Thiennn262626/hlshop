@@ -5,6 +5,8 @@ class HomeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final productWidthFraction = screenWidth < 600 ? 0.46 : null;
     return AppScrollBody.withSpacing(
       child: Column(
         children: [
@@ -26,6 +28,7 @@ class HomeBody extends StatelessWidget {
                   );
                 },
                 child: ProductListHoz(
+                  parentWidthFraction: productWidthFraction,
                   fetchListData: (offset, limit) =>
                       getIt<ProductRepo>().getProductList(
                     offset: offset,
