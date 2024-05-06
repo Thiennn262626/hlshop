@@ -17,7 +17,7 @@ class ProductDetailDescription extends StatelessWidget {
           );
         },
         content:
-            '${item?.shortDescription?.replaceAll('. ', '.\n+ ')}\n+ ${item?.description?.replaceAll('. ', '.\n+ ')} ',
+            '${item?.shortDescription?.replaceAll('. ', '\n')}\n+ ${item?.description?.replaceAll('. ', '\n')} ',
         maxLines: 4,
         textStyle: context.themeText.body.copyWith(
           fontWeight: FontWeight.w400,

@@ -18,6 +18,7 @@ class DioModule {
       // baseUrl: 'http://192.168.1.7:3000/', //Qun's ip Address
       baseUrl: 'https://hl-backend-a6uq.onrender.com/', //Vercel BE
       // baseUrl: 'http://localhost:80/', //localhost BE
+      // baseUrl: 'https://hl-backend.vercel.app/',
       connectTimeout: const Duration(seconds: 30),
       receiveTimeout: const Duration(seconds: 30),
       sendTimeout: const Duration(seconds: 30),
