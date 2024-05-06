@@ -10,42 +10,24 @@ class ProductSearchBody extends StatelessWidget {
       child: CustomScrollView(
         keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
         slivers: [
-          AppAppBarSliver(
-            title: const ProductSearchBar(),
-            args: AppBarArgs(
-              floating: true,
-              bottom: PreferredSize(
-                preferredSize: const Size.fromHeight(64),
-                child: Row(
-                  children: [
-                    'Xếp theo: '.tr().text.make().pl16(),
-                    AppButtonTabBar(
-                      onTap: (index) {
-                        context
-                            .read<ProductSearchCubit>()
-                            .onSortChange(ProductFilterData(
-                              orderByType: OrderByType.values[index],
-                            ));
-                      },
-                      tabs: OrderByType.values.mapAsList(
-                        (item) => Tab(text: item.displayValue.tr()),
-                      ),
-                    ).expand(),
-                  ],
-                ).pb12(),
-              ),
-              titleSpacing: 0,
-              actions: [
-                Gaps.hGap8,
-                BtnFilter(
-                  onPressed: () {
-                    Scaffold.of(context).openEndDrawer();
+          SliverToBoxAdapter(
+              child: Row(
+              children: [
+                'Xếp theo: '.tr().text.make().pl16(),
+                AppButtonTabBar(
+                  onTap: (index) {
+                    context
+                        .read<ProductSearchCubit>()
+                        .onSortChange(ProductFilterData(
+                          orderByType: OrderByType.values[index],
+                        ));
                   },
-                ),
-                const ShoppingCartBtn(),
-                Gaps.hGap4,
-              ].withDivider(Gaps.hGap4, showLast: true),
-            ),
+                  tabs: OrderByType.values.mapAsList(
+                    (item) => Tab(text: item.displayValue.tr()),
+                  ),
+                ).expand(),
+              ],
+            ).pt16(),
           ),
           BlocBuilder<ProductSearchCubit, ProductSearchState>(
             builder: (context, state) {

@@ -18,7 +18,19 @@ class ProductSearchPage extends StatelessWidget {
         filterData: filterData,
         searchHint: searchHint,
       ),
-      child: const Scaffold(
+      child:  Scaffold(
+        appBar: AppAppBar(
+          title:filterData?.productCategory?.name?.text.titleMedium(context).make(),
+          args: AppBarArgs(
+            centerTitle: false,
+            floating: true,
+            titleSpacing: 0,
+            actions: [
+              const ShoppingCartBtn(),
+              Gaps.hGap4,
+            ].withDivider(Gaps.hGap4, showLast: true),
+          ),
+        ),
         body: ProductSearchBody(),
         endDrawer: NavigatorDrawer(),
       ).pt8(),

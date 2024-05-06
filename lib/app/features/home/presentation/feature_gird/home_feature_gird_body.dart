@@ -51,7 +51,10 @@ class HomeFeatureItem extends StatelessWidget {
         context.router.push(
           ProductSearchRoute(
             filterData: ProductFilterData(
-              productCategory: ProductCategoryEntity(id: item?.id),
+              productCategory: ProductCategoryEntity(
+                id: item?.id,
+                name: item?.name,
+              ),
             ),
             searchHint: item?.name,
           ),
