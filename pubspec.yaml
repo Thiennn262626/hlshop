@@ -116,7 +116,7 @@ dependencies:
   hive_flutter: ^1.1.0
   cached_network_image: ^3.2.3
   timeago: ^3.2.2
-  url_launcher: ^6.1.10
+  url_launcher: ^6.2.6
   email_validator: ^2.0.1
   flutter_multi_formatter: ^2.6.2
 
