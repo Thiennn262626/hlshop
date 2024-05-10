@@ -45,7 +45,7 @@ class _RatingApi implements RatingApi {
     )
             .compose(
               _dio.options,
-              '/api/hlshop/rating/get_ratings_by_product',
+              '/api/hlshop/rating/get-ratings-by-product',
               queryParameters: queryParameters,
               data: _data,
             )
