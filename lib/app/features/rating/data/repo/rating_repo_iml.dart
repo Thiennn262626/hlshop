@@ -31,4 +31,15 @@ class RatingRepoIml extends RatingRepo {
     // TODO: implement getRatingByUser
     throw UnimplementedError();
   }
+
+  @override
+  Future<ImageEntity> uploadImage({
+    required File file,
+  }) {
+    try {
+      return _api.uploadImage(file: file).then((value) => value?.toEntity() ?? const ImageEntity());
+    } catch (e) {
+      return Future.error(e);
+    }
+  }
 }
