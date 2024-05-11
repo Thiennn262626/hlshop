@@ -21,6 +21,7 @@ class HomeBody extends StatelessWidget {
                   ),
                   if (state.userEntity != null)
                     SectionContainer(
+                      key: const Key('home_for_you_section'),
                       title: '${'Dành cho bạn'.tr()} 🎁🎁🎁',
                       seeAll: () {
                         context.pushRoute(
@@ -42,6 +43,7 @@ class HomeBody extends StatelessWidget {
                       ),
                     ),
                   SectionContainer(
+                    key: const Key('home_hot_section'),
                     title: '${'Sản phẩm HOT'.tr()} 🔥🔥🔥',
                     seeAll: () {
                       context.pushRoute(
@@ -63,6 +65,7 @@ class HomeBody extends StatelessWidget {
                     ),
                   ),
                   SectionContainer(
+                    key: const Key('home_best_seller_section'),
                     title: '${'Sản phẩm bán chạy'.tr()} 🌟🌟🌟',
                     child: ProductGridHoz(
                       crossAxisCount: 1,
@@ -84,6 +87,7 @@ class HomeBody extends StatelessWidget {
                     },
                   ),
                   SectionContainer(
+                    key: const Key('home_good_price_section'),
                     title: 'Giá tốt hôm nay'.tr(),
                     child: ProductGridHoz(
                       fetchListData: (offset, limit) =>
@@ -104,6 +108,7 @@ class HomeBody extends StatelessWidget {
                     },
                   ),
                   SectionContainer(
+                    key: const Key('home_newest_section'),
                     title: 'Sản phẩm mới'.tr(),
                     child: ProductGridHoz(
                       fetchListData: (offset, limit) =>
