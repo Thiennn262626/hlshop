@@ -1,0 +1,1 @@
+part of 'rating_cubit.dart';@freezedclass RatingState with _$RatingState {  const RatingState._();  const factory RatingState({    @Default(ApiStatus.initial()) ApiStatus status,    @Default(ApiStatus.initial()) ApiStatus uploadImageStatus,  }) = _ProductDetailState;}

@@ -12,6 +12,10 @@ extension FormGroupExtend on FormGroup {
     return controls[controlName] as FormControl<T>?;
   }
 
+  FormArray<T>? getArray<T>(String controlName) {
+    return controls[controlName] as FormArray<T>?;
+  }
+
   T? getValue<T>(String controlName) {
     return controls[controlName]?.value as T?;
   }
