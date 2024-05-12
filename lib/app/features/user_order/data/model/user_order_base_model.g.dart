@@ -34,7 +34,7 @@ MsOderGroupData _$MsOderGroupDataFromJson(Map<String, dynamic> json) =>
           : OrderShippingFee.fromJson(
               json['orderShippingFee'] as Map<String, dynamic>),
       json['finishPay'] as bool?,
-      json['canFeedback'] as bool?,
+      json['canRating'] as bool?,
     );
 
 Map<String, dynamic> _$MsOderGroupDataToJson(MsOderGroupData instance) =>
@@ -45,7 +45,7 @@ Map<String, dynamic> _$MsOderGroupDataToJson(MsOderGroupData instance) =>
       'paymentMethod': instance.paymentMethod,
       'orderStatus': _$MsOrderStatusEnumMap[instance.orderStatus],
       'finishPay': instance.finishPay,
-      'canFeedback': instance.canFeedback,
+      'canRating': instance.canRating,
       'receiverAddresse': instance.receiverAddresse,
       'orderShippingFee': instance.orderShippingFee,
     };
