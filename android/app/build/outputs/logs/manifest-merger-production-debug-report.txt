@@ -1,10 +1,10 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:1:1-51:12
-INJECTED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:1:1-51:12
-INJECTED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:1:1-51:12
-INJECTED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:1:1-51:12
-MERGED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:1:1-51:12
+ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:1:1-55:12
+INJECTED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:1:1-55:12
+INJECTED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:1:1-55:12
+INJECTED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:1:1-55:12
+MERGED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:1:1-55:12
 MERGED from [:flutter_sim_country_code] D:\graduation_project\hlshop\build\flutter_sim_country_code\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:firebase_messaging] D:\graduation_project\hlshop\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-50:12
 MERGED from [:firebase_crashlytics] D:\graduation_project\hlshop\build\firebase_crashlytics\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
@@ -111,16 +111,16 @@ INJECTED from D:\graduation_project\hlshop\android\app\src\debug\AndroidManifest
 		INJECTED from D:\graduation_project\hlshop\android\app\src\debug\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:1:1-51:12
+		ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:1:1-55:12
 		INJECTED from D:\graduation_project\hlshop\android\app\src\debug\AndroidManifest.xml
 	android:versionCode
 		INJECTED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:1:1-51:12
+		ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:1:1-55:12
 		INJECTED from D:\graduation_project\hlshop\android\app\src\debug\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:1:11-69
 application
-ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:3:5-32:19
+ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:3:5-36:19
 MERGED from [:firebase_messaging] D:\graduation_project\hlshop\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:15:5-48:19
 MERGED from [:firebase_messaging] D:\graduation_project\hlshop\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:15:5-48:19
 MERGED from [:firebase_crashlytics] D:\graduation_project\hlshop\build\firebase_crashlytics\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
@@ -223,36 +223,44 @@ category#android.intent.category.LAUNCHER
 ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:24:17-76
 	android:name
 		ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:24:27-74
-meta-data#flutterEmbedding
-ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:29:9-31:36
-	android:value
-		ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:31:17-34
+activity#com.yalantis.ucrop.UCropActivity
+ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:27:9-30:75
+	android:screenOrientation
+		ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:29:17-53
+	android:theme
+		ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:30:17-73
 	android:name
-		ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:30:17-48
+		ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:28:17-64
+meta-data#flutterEmbedding
+ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:33:9-35:36
+	android:value
+		ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:35:17-34
+	android:name
+		ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:34:17-48
 queries
-ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:35:5-50:15
+ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:39:5-54:15
 MERGED from [:file_picker] D:\graduation_project\hlshop\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:11:5-17:15
 MERGED from [:file_picker] D:\graduation_project\hlshop\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:11:5-17:15
 MERGED from [:map_launcher] D:\graduation_project\hlshop\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-25:15
 MERGED from [:map_launcher] D:\graduation_project\hlshop\build\map_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-25:15
 intent#action:name:android.intent.action.VIEW+data:scheme:sms
-ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:37:9-40:18
+ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:41:9-44:18
 action#android.intent.action.VIEW
-ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:38:13-65
+ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:42:13-65
 	android:name
-		ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:38:21-62
+		ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:42:21-62
 data
-ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:39:13-42
+ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:43:13-42
 	android:scheme
-		ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:39:19-39
+		ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:43:19-39
 intent#action:name:android.intent.action.VIEW+data:scheme:tel
-ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:42:9-45:18
+ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:46:9-49:18
 intent#action:name:android.support.customtabs.action.CustomTabsService
-ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:47:9-49:18
+ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:51:9-53:18
 action#android.support.customtabs.action.CustomTabsService
-ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:48:13-90
+ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:52:13-90
 	android:name
-		ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:48:21-87
+		ADDED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml:52:21-87
 uses-sdk
 INJECTED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\graduation_project\hlshop\android\app\src\main\AndroidManifest.xml
