@@ -14,6 +14,7 @@ class AppTheme {
     final textExtensionTheme = AppTextThemeExtension.form(isDark);
     final appColor = AppColorExtension.form(isDark);
     return ThemeData(
+      useMaterial3: false,
       colorScheme: colorScheme,
       fontFamily: fontFamily,
       cupertinoOverrideTheme: CupertinoThemeData(
