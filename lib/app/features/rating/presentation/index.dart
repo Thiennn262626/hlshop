@@ -1,1 +1,1 @@
-export 'main/index.dart';export 'star_pickup/star_pickup.dart';
+export 'main/index.dart';export 'rating/rating.dart';export 'rating_view/rating_view.dart';export 'star_pickup/star_pickup.dart';export 'update_rating/update_rating.dart';export 'widgets/widgets.dart';
