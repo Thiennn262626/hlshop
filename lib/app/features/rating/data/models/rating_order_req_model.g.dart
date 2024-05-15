@@ -29,9 +29,8 @@ OrderItemModel _$OrderItemModelFromJson(Map<String, dynamic> json) =>
           ? null
           : DetailedRatingModel.fromJson(
               json['detailed_rating'] as Map<String, dynamic>),
-      imagesId: (json['images_id'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
+      images:
+          (json['images'] as List<dynamic>?)?.map((e) => e as String).toList(),
     );
 
 Map<String, dynamic> _$OrderItemModelToJson(OrderItemModel instance) =>
@@ -39,7 +38,7 @@ Map<String, dynamic> _$OrderItemModelToJson(OrderItemModel instance) =>
       'order_item_id': instance.orderItemId,
       'comment': instance.comment,
       'detailed_rating': instance.detailedRating,
-      'images_id': instance.imagesId,
+      'images': instance.images,
     };
 
 DetailedRatingModel _$DetailedRatingModelFromJson(Map<String, dynamic> json) =>

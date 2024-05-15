@@ -11,3 +11,4 @@ GeneratedPluginRegistrant.java
 key.properties
 **/*.keystore
 **/*.jks
+app/build/outputs/apk/production/debug/app-production-debug.apk

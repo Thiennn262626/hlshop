@@ -37,7 +37,22 @@ class RatingRepoIml extends RatingRepo {
     required File file,
   }) {
     try {
-      return _api.uploadImage(file: file).then((value) => value?.toEntity() ?? const ImageEntity());
+      return _api.uploadImage(file: file).then(
+            (value) => value?.toEntity() ?? const ImageEntity(),
+          );
+    } catch (e) {
+      return Future.error(e);
+    }
+  }
+
+  @override
+  Future<bool> create(
+      {required RatingOrderReqEntity ratingOrderReqEntity}) async {
+    try {
+      await _api.create(
+        req: ratingOrderReqEntity.toModel(),
+      );
+      return true;
     } catch (e) {
       return Future.error(e);
     }

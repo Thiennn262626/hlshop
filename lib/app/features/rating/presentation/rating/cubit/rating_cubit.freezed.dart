@@ -18,6 +18,9 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$RatingState {
   ApiStatus get status => throw _privateConstructorUsedError;
   ApiStatus get uploadImageStatus => throw _privateConstructorUsedError;
+  double get providerServiceRating => throw _privateConstructorUsedError;
+  double get deliveryServiceRating => throw _privateConstructorUsedError;
+  double get shipperServiceRating => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $RatingStateCopyWith<RatingState> get copyWith =>
@@ -30,7 +33,12 @@ abstract class $RatingStateCopyWith<$Res> {
           RatingState value, $Res Function(RatingState) then) =
       _$RatingStateCopyWithImpl<$Res, RatingState>;
   @useResult
-  $Res call({ApiStatus status, ApiStatus uploadImageStatus});
+  $Res call(
+      {ApiStatus status,
+      ApiStatus uploadImageStatus,
+      double providerServiceRating,
+      double deliveryServiceRating,
+      double shipperServiceRating});
 
   $ApiStatusCopyWith<$Res> get status;
   $ApiStatusCopyWith<$Res> get uploadImageStatus;
@@ -51,6 +59,9 @@ class _$RatingStateCopyWithImpl<$Res, $Val extends RatingState>
   $Res call({
     Object? status = null,
     Object? uploadImageStatus = null,
+    Object? providerServiceRating = null,
+    Object? deliveryServiceRating = null,
+    Object? shipperServiceRating = null,
   }) {
     return _then(_value.copyWith(
       status: null == status
@@ -61,6 +72,18 @@ class _$RatingStateCopyWithImpl<$Res, $Val extends RatingState>
           ? _value.uploadImageStatus
           : uploadImageStatus // ignore: cast_nullable_to_non_nullable
               as ApiStatus,
+      providerServiceRating: null == providerServiceRating
+          ? _value.providerServiceRating
+          : providerServiceRating // ignore: cast_nullable_to_non_nullable
+              as double,
+      deliveryServiceRating: null == deliveryServiceRating
+          ? _value.deliveryServiceRating
+          : deliveryServiceRating // ignore: cast_nullable_to_non_nullable
+              as double,
+      shipperServiceRating: null == shipperServiceRating
+          ? _value.shipperServiceRating
+          : shipperServiceRating // ignore: cast_nullable_to_non_nullable
+              as double,
     ) as $Val);
   }
 
@@ -89,7 +112,12 @@ abstract class _$$ProductDetailStateImplCopyWith<$Res>
       __$$ProductDetailStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ApiStatus status, ApiStatus uploadImageStatus});
+  $Res call(
+      {ApiStatus status,
+      ApiStatus uploadImageStatus,
+      double providerServiceRating,
+      double deliveryServiceRating,
+      double shipperServiceRating});
 
   @override
   $ApiStatusCopyWith<$Res> get status;
@@ -110,6 +138,9 @@ class __$$ProductDetailStateImplCopyWithImpl<$Res>
   $Res call({
     Object? status = null,
     Object? uploadImageStatus = null,
+    Object? providerServiceRating = null,
+    Object? deliveryServiceRating = null,
+    Object? shipperServiceRating = null,
   }) {
     return _then(_$ProductDetailStateImpl(
       status: null == status
@@ -120,6 +151,18 @@ class __$$ProductDetailStateImplCopyWithImpl<$Res>
           ? _value.uploadImageStatus
           : uploadImageStatus // ignore: cast_nullable_to_non_nullable
               as ApiStatus,
+      providerServiceRating: null == providerServiceRating
+          ? _value.providerServiceRating
+          : providerServiceRating // ignore: cast_nullable_to_non_nullable
+              as double,
+      deliveryServiceRating: null == deliveryServiceRating
+          ? _value.deliveryServiceRating
+          : deliveryServiceRating // ignore: cast_nullable_to_non_nullable
+              as double,
+      shipperServiceRating: null == shipperServiceRating
+          ? _value.shipperServiceRating
+          : shipperServiceRating // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -130,7 +173,10 @@ class _$ProductDetailStateImpl extends _ProductDetailState
     with DiagnosticableTreeMixin {
   const _$ProductDetailStateImpl(
       {this.status = const ApiStatus.initial(),
-      this.uploadImageStatus = const ApiStatus.initial()})
+      this.uploadImageStatus = const ApiStatus.initial(),
+      this.providerServiceRating = 5,
+      this.deliveryServiceRating = 5,
+      this.shipperServiceRating = 5})
       : super._();
 
   @override
@@ -139,10 +185,19 @@ class _$ProductDetailStateImpl extends _ProductDetailState
   @override
   @JsonKey()
   final ApiStatus uploadImageStatus;
+  @override
+  @JsonKey()
+  final double providerServiceRating;
+  @override
+  @JsonKey()
+  final double deliveryServiceRating;
+  @override
+  @JsonKey()
+  final double shipperServiceRating;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RatingState(status: $status, uploadImageStatus: $uploadImageStatus)';
+    return 'RatingState(status: $status, uploadImageStatus: $uploadImageStatus, providerServiceRating: $providerServiceRating, deliveryServiceRating: $deliveryServiceRating, shipperServiceRating: $shipperServiceRating)';
   }
 
   @override
@@ -151,7 +206,10 @@ class _$ProductDetailStateImpl extends _ProductDetailState
     properties
       ..add(DiagnosticsProperty('type', 'RatingState'))
       ..add(DiagnosticsProperty('status', status))
-      ..add(DiagnosticsProperty('uploadImageStatus', uploadImageStatus));
+      ..add(DiagnosticsProperty('uploadImageStatus', uploadImageStatus))
+      ..add(DiagnosticsProperty('providerServiceRating', providerServiceRating))
+      ..add(DiagnosticsProperty('deliveryServiceRating', deliveryServiceRating))
+      ..add(DiagnosticsProperty('shipperServiceRating', shipperServiceRating));
   }
 
   @override
@@ -161,11 +219,18 @@ class _$ProductDetailStateImpl extends _ProductDetailState
             other is _$ProductDetailStateImpl &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.uploadImageStatus, uploadImageStatus) ||
-                other.uploadImageStatus == uploadImageStatus));
+                other.uploadImageStatus == uploadImageStatus) &&
+            (identical(other.providerServiceRating, providerServiceRating) ||
+                other.providerServiceRating == providerServiceRating) &&
+            (identical(other.deliveryServiceRating, deliveryServiceRating) ||
+                other.deliveryServiceRating == deliveryServiceRating) &&
+            (identical(other.shipperServiceRating, shipperServiceRating) ||
+                other.shipperServiceRating == shipperServiceRating));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status, uploadImageStatus);
+  int get hashCode => Object.hash(runtimeType, status, uploadImageStatus,
+      providerServiceRating, deliveryServiceRating, shipperServiceRating);
 
   @JsonKey(ignore: true)
   @override
@@ -178,13 +243,22 @@ class _$ProductDetailStateImpl extends _ProductDetailState
 abstract class _ProductDetailState extends RatingState {
   const factory _ProductDetailState(
       {final ApiStatus status,
-      final ApiStatus uploadImageStatus}) = _$ProductDetailStateImpl;
+      final ApiStatus uploadImageStatus,
+      final double providerServiceRating,
+      final double deliveryServiceRating,
+      final double shipperServiceRating}) = _$ProductDetailStateImpl;
   const _ProductDetailState._() : super._();
 
   @override
   ApiStatus get status;
   @override
   ApiStatus get uploadImageStatus;
+  @override
+  double get providerServiceRating;
+  @override
+  double get deliveryServiceRating;
+  @override
+  double get shipperServiceRating;
   @override
   @JsonKey(ignore: true)
   _$$ProductDetailStateImplCopyWith<_$ProductDetailStateImpl> get copyWith =>
