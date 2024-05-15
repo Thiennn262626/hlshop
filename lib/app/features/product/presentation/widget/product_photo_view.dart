@@ -36,8 +36,18 @@ class _ProductDetailPhotoViewState extends State<ProductDetailPhotoView> {
         Stack(
           alignment: Alignment.bottomRight,
           children: [
-            AppPhotoView<String>(
-              photoController: _controller,
+            CardCupertinoEffect(
+              onPressed: () {
+                context.pushRoute(
+                  ProductPhotosRoute(
+                    imgList: widget.imgList,
+                    currentIndex: _controller.controller.page?.toInt() ?? 0,
+                  ),
+                );
+              },
+              child: AppPhotoView<String>(
+                photoController: _controller,
+              ),
             ),
             AppPhotoViewCounter(
               controller: _controller,
