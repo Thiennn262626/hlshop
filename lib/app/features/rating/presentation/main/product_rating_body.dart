@@ -8,7 +8,13 @@ class ProductRatingBody extends StatelessWidget {
     final cubit = context.read<ProductRatingCubit>();
     return CustomScrollView(
       slivers: [
-        SliverToBoxAdapter(child: const RatingFilterSection().py8().pl8()),
+        SliverToBoxAdapter(
+            child: const RatingFilterSection().pOnly(
+          top: Dimens.gap_dp16,
+          bottom: Dimens.gap_dp8,
+          left: Dimens.gap_dp16,
+          right: Dimens.gap_dp16,
+        )),
         PagingList<RatingItemEntity>(
           pagingController: cubit.pagingController,
           isSliver: true,
@@ -21,7 +27,10 @@ class ProductRatingBody extends StatelessWidget {
           itemBuilder: (context, ratingItemEntity, index) {
             return Container(
               padding: Dimens.edge,
-              decoration: AppDecor.cardBoxShadow(context),
+              decoration: AppDecor.cardBoxShadow(
+                context,
+                color: context.themeColor.dividerThick,
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -50,33 +59,36 @@ class ProductRatingBody extends StatelessWidget {
                       ),
                     ],
                   ),
-                  ratingItemEntity.comment?.text.bodyMedium(context).make(),
-                  LayoutBuilder(
-                    builder: (
-                      BuildContext context,
-                      BoxConstraints constraints,
-                    ) {
-                      final width = constraints.maxWidth * 0.47;
-                      return Wrap(
-                        crossAxisAlignment: WrapCrossAlignment.center,
-                        spacing: Dimens.gap_dp8,
-                        runSpacing: Dimens.gap_dp8,
-                        children: [
-                          ...?ratingItemEntity.images?.map(
-                            (e) => SizedBox(
-                              height: 150,
-                              width: width,
-                              child: AppImg(
-                                e,
-                                fit: BoxFit.cover,
+                  if (ratingItemEntity.comment.isNotNullOrEmpty)
+                    ratingItemEntity.comment?.text.bodyMedium(context).make(),
+                  if (ratingItemEntity.images.isNotNullOrEmpty)
+                    LayoutBuilder(
+                      builder: (
+                        BuildContext context,
+                        BoxConstraints constraints,
+                      ) {
+                        final width = constraints.maxWidth * 0.47;
+                        return Wrap(
+                          crossAxisAlignment: WrapCrossAlignment.center,
+                          spacing: Dimens.gap_dp8,
+                          runSpacing: Dimens.gap_dp8,
+                          children: [
+                            ...?ratingItemEntity.images?.map(
+                              (e) => SizedBox(
+                                height: 150,
+                                width: width,
+                                child: AppImg(
+                                  e,
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
-                          ),
-                        ],
-                      );
-                    },
-                  ),
-                  ratingItemEntity.createdTime
+                          ],
+                        );
+                      },
+                    ),
+                  (ratingItemEntity.editableDate ??
+                              ratingItemEntity.createdTime)
                           ?.toSimpleDateLocale()
                           ?.text
                           .bodyMedium(context)
@@ -88,7 +100,7 @@ class ProductRatingBody extends StatelessWidget {
                   Gaps.vGap8,
                 ),
               ),
-            ).p8();
+            ).pSymmetric(v: Dimens.gap_dp8, h: Dimens.gap_dp16);
           },
           fetchListData: cubit.fetchItem,
         ),
@@ -107,37 +119,37 @@ class RatingFilterSection extends StatelessWidget {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
         final width = constraints.maxWidth * 0.23;
-        return SizedBox(
-          height: 50,
-          child: BlocSelector<ProductRatingCubit, ProductRatingState,
-              RatingFilterType>(
-            selector: (state) => state.ratingType,
-            builder: (context, ratingType) {
-              return ListView(
-                scrollDirection: Axis.horizontal,
-                children: RatingFilterType.values
-                    .mapAsList(
-                      (ratingFilterType) => RatingFilterItem(
-                        title: ratingFilterType.titleWidget(context),
-                        amount: ratingFilterType.amount(context
+        return BlocSelector<ProductRatingCubit, ProductRatingState,
+            RatingFilterType>(
+          selector: (state) => state.ratingType,
+          builder: (context, ratingType) {
+            return Row(
+              children: RatingFilterType.values
+                  .mapAsList(
+                    (ratingFilterType) => RatingFilterItem(
+                      title: ratingFilterType.titleWidget(context , ratingType == ratingFilterType),
+                      amount: ratingFilterType.amount(
+                        context
                             .watch<ProductRatingCubit>()
                             .state
                             .ratingEntity
-                            ?.ratingSummary),
-                        width: width,
-                        onPressed: () {
-                          context.read<ProductRatingCubit>().toggleRatingType(
-                                ratingFilterType,
-                                context,
-                              );
-                        },
-                        isSelected: ratingType == ratingFilterType,
+                            ?.ratingSummary,
                       ),
-                    )
-                    .withDivider(Gaps.hGap8),
-              );
-            },
-          ),
+                      width: width,
+                      onPressed: () {
+                        context.read<ProductRatingCubit>().toggleRatingType(
+                              ratingFilterType,
+                              context,
+                            );
+                      },
+                      isSelected: ratingType == ratingFilterType,
+                    ),
+                  )
+                  .withDivider(Gaps.hGap8),
+            ).fittedBox(
+              fit: BoxFit.fill,
+            );
+          },
         );
       },
     );
@@ -167,8 +179,8 @@ class RatingFilterItem extends StatelessWidget {
         return title
             .toString()
             .text
-            .bodyMedium(context)
-            .color(isSelected ? Colors.redAccent.withOpacity(0.6) : Colors.grey)
+            .bodySmall(context)
+            .color(isSelected ? context.themeColor.primary : Colors.grey)
             .make();
       } else if (title is Widget) {
         return title as Widget;
@@ -180,11 +192,11 @@ class RatingFilterItem extends StatelessWidget {
       onPressed: onPressed,
       child: Container(
         width: width,
+        padding: const EdgeInsets.symmetric(vertical: Dimens.gap_dp4),
         decoration: AppDecor.cardBorder(
           context,
-          colorBorder: isSelected
-              ? Colors.redAccent.withOpacity(0.6)
-              : Colors.transparent,
+          colorBorder:
+              isSelected ? context.themeColor.primary : Colors.transparent,
           color: isSelected ? Colors.white : context.themeColor.greyLighter,
         ),
         child: Column(
@@ -195,9 +207,9 @@ class RatingFilterItem extends StatelessWidget {
                 .toString()
                 .text
                 .bodyMedium(context)
-                .color(isSelected
-                    ? Colors.redAccent.withOpacity(0.6)
-                    : Colors.grey)
+                .color(
+                  isSelected ? context.themeColor.primary : Colors.grey,
+                )
                 .make(),
           ],
         ),

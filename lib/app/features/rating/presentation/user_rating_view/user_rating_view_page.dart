@@ -1,0 +1,1 @@
+import 'package:hlshop/all_file/all_file.dart';@RoutePage()class UserRatingViewPage extends StatelessWidget {  const UserRatingViewPage({super.key});  @override  Widget build(BuildContext context) {    return Scaffold(      appBar: AppAppBar(        title: 'Đánh giá của bạn'.tr(),      ),      body: const UserRatingViewBody(),    );  }}

@@ -27,9 +27,22 @@ class RatingRepoIml extends RatingRepo {
   }
 
   @override
-  Future<RatingEntity> getRatingByUser() {
-    // TODO: implement getRatingByUser
-    throw UnimplementedError();
+  Future<List<RatingItemEntity>> getRatingByUser(
+    int? offset,
+    int? limit,
+  ) async {
+    try {
+      return _api
+          .getRatingByUser(
+            offset: offset,
+            limit: limit,
+          )
+          .then(
+            (value) => value?.toEntity().ratingItems ?? [],
+          );
+    } catch (e) {
+      return Future.error(e);
+    }
   }
 
   @override
@@ -53,6 +66,48 @@ class RatingRepoIml extends RatingRepo {
         req: ratingOrderReqEntity.toModel(),
       );
       return true;
+    } catch (e) {
+      return Future.error(e);
+    }
+  }
+
+  @override
+  Future<List<RatingItemEntity>> getRatingByOrder({
+    required String orderId,
+    int? offset,
+    int? limit,
+  }) async {
+    try {
+      return _api
+          .getRatingByOrder(
+            orderId: orderId,
+            offset: offset,
+            limit: limit,
+          )
+          .then((value) => value?.toEntity().ratingItems ?? []);
+    } catch (e) {
+      return Future.error(e);
+    }
+  }
+
+  @override
+  Future<bool> update({required OrderItemEntity orderItemEntity}) {
+    try {
+      return _api
+          .update(
+            req: RatingItemModel(
+              ratingId: orderItemEntity.id,
+              comment: orderItemEntity.comment,
+              detailedRating: DetailRatingModel(
+                productQuality: orderItemEntity.detailRating?.productQuality,
+                sellerService: orderItemEntity.detailRating?.sellerService,
+                driverService: orderItemEntity.detailRating?.driverService,
+                deliveryService: orderItemEntity.detailRating?.deliveryService,
+              ),
+              images: orderItemEntity.images?.mapAsList((e) => e.src ?? ''),
+            ),
+          )
+          .then((value) => true);
     } catch (e) {
       return Future.error(e);
     }

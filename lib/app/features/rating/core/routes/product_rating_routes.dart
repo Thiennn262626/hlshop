@@ -14,6 +14,10 @@ final productRatingRoutes = [
     path: '/rating-view',
     page: RatingViewRoute.page,
   ),
+  AutoRoute(
+    path: '/user-rating-view',
+    page: UserRatingViewRoute.page,
+  ),
   CustomRoute(
     path: '/star-pickup',
     page: StarPickupRoute.page,

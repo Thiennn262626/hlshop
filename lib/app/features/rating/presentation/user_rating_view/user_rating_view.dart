@@ -1,0 +1,1 @@
+//GENERATED BARREL FILE export 'user_rating_view_body.dart'; export 'user_rating_view_page.dart'; 

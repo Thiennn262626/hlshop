@@ -108,8 +108,12 @@ class UserInfoBody extends StatelessWidget {
                       PhosphorIcons.star_fill,
                       color: Color(0xFFF9B83B),
                     ),
-                    title: 'Đánh giá, bình luận'.tr(),
-                    onPressed: () {},
+                    title: 'Đánh giá của bạn'.tr(),
+                    onPressed: () {
+                      context.pushRoute(
+                        const UserRatingViewRoute(),
+                      );
+                    },
                   ),
                 ]
                     .mapAsList((item) => item.minHeight(52))
