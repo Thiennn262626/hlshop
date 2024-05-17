@@ -23,6 +23,7 @@ class SelectItemPopup<T> extends StatefulWidget {
     required this.title,
     this.itemBuilder,
     this.padding,
+    this.showSearchBar,
   });
 
   final Future<List<T>> Function(
@@ -34,6 +35,7 @@ class SelectItemPopup<T> extends StatefulWidget {
   final Object title;
   final ItemWidgetBuilder<T>? itemBuilder;
   final EdgeInsets? padding;
+  final bool? showSearchBar;
 
   @override
   State<SelectItemPopup<T>> createState() => _SelectItemPopupState<T>();
@@ -52,6 +54,7 @@ class _SelectItemPopupState<T> extends State<SelectItemPopup<T>> {
       ),
       body: Column(
         children: [
+         if(widget.showSearchBar ?? true)
           AppSearchBar(
             controller: _controller,
             onChanged: (value) => _appPagingController.refresh(),
@@ -72,11 +75,21 @@ class _SelectItemPopupState<T> extends State<SelectItemPopup<T>> {
             ),
             itemBuilder: widget.itemBuilder ??
                 (context, item, index) {
-                  return AppTileText(
-                    title: widget.itemToString(item),
+                  return AppTile(
+                    title: widget
+                        .itemToString(item)
+                        ?.text
+                        .titleMedium(context)
+                        .fontWeight(FontWeight.w400)
+                        .heightLoose
+                        .maxLines(2)
+                        .ellipsis
+                        .make()
+                        .minHeight(20),
                     onPressed: () {
                       Navigator.pop(context, item);
                     },
+                    trailing: const SizedBox.shrink(),
                   );
                 },
           ).expand(),

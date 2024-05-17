@@ -109,7 +109,7 @@ class ProductEntity {
   final String? averageRating;
   final int? ratingCount;
   final int? quantity;
-  final ProductRatingSummary? ratingSummary;
+  final RatingSummary? ratingSummary;
 
   String? get img => imgList.firstOrNull?.src;
 

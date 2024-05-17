@@ -41,6 +41,7 @@ class CrudAddressBody extends StatelessWidget {
           ),
           AddressSelectField<UserEmailEntity>(
             formControlName: UserAddressEntity.emailKey,
+            showSearchBar: false,
             title: 'Chọn Email nhận hàng'.tr(),
             itemToString: (email) => email?.emailAddress ?? '',
             searchListData: (offset, limit, search) =>

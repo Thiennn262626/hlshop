@@ -1,7 +1,6 @@
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+// import 'package:firebase_core/firebase_core.dart';
+// import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:hlshop/all_file/all_file.dart';
-import 'package:hlshop/firebase_options.dart';
 import 'package:hlshop/services/app_config/app_config_service.dart';
 import 'package:hlshop/services/user_secure_storage_service.dart';
 
@@ -24,19 +23,19 @@ Future<void> _appService() async {
 
   // Firebase
 
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-
-  // FlutterError.onError = Crashlytics.instance.recordFlutterError;
-  // Call crash test
-  // FirebaseCrashlytics.instance.crash();
-  if (kDebugMode) {
-    await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(false);
-  } else {
-    await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(true);
-    await FirebaseCrashlytics.instance.sendUnsentReports();
-  }
+  // await Firebase.initializeApp(
+  //   options: DefaultFirebaseOptions.currentPlatform,
+  // );
+  //
+  // // FlutterError.onError = Crashlytics.instance.recordFlutterError;
+  // // Call crash test
+  // // FirebaseCrashlytics.instance.crash();
+  // if (kDebugMode) {
+  //   await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(false);
+  // } else {
+  //   await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(true);
+  //   await FirebaseCrashlytics.instance.sendUnsentReports();
+  // }
 }
 
 Future<void> _appDataProvider() async {
@@ -72,13 +71,17 @@ void _initDataMSService() {
     ..registerLazySingleton<AuthApiMS>(() => AuthApiMS(dio))
     ..registerLazySingleton<MsProductApi>(() => MsProductApi(dio))
     ..registerLazySingleton<MsSubcribeApi>(() => MsSubcribeApi(dio))
+    ..registerLazySingleton<RatingApi>(() => RatingApi(dio))
     ..registerLazySingleton<MsProductCategoryApi>(
-        () => MsProductCategoryApi(dio))
+      () => MsProductCategoryApi(dio),
+    )
     ..registerLazySingleton<MsShoppingCartApi>(() => MsShoppingCartApi(dio))
     ..registerLazySingleton<MsOrderApi>(() => MsOrderApi(dio))
     ..registerLazySingleton<MsCheckoutApi>(() => MsCheckoutApi(dio))
     ..registerLazySingleton<ShoppingCartRepo>(MsShoppingCartRepo.new)
     ..registerLazySingleton<UserRepo>(UserRepoMS.new)
+    ..registerLazySingleton<DirectoryRepo>(MSDirectoryRepo.new)
+    ..registerLazySingleton<AssessRepo>(MSAssessRepo.new)
     ..registerLazySingleton<AddressRepo>(
       AddressRepoMs.new,
     )
@@ -88,5 +91,6 @@ void _initDataMSService() {
     ..registerLazySingleton<ProductRepo>(MsProductRepo.new)
     ..registerLazySingleton<ProductCategoryRepo>(MsProductCategoryRepo.new)
     ..registerLazySingleton<UserOrderRepo>(MsUserOrderRepo.new)
+    ..registerLazySingleton<RatingRepo>(RatingRepoIml.new)
     ..registerLazySingleton<AppNavigationEventRepo>(AppNavigationEventRepo.new);
 }

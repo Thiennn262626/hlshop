@@ -72,6 +72,7 @@ class CrudAddressPage extends StatelessWidget {
         context.router.pop(true);
       },
     );
+
   }
 
   String _getTitle() {

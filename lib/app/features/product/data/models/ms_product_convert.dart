@@ -28,7 +28,7 @@ extension MsProductMapper on MsProduct {
       length: productLength,
       weight: productWeight,
       distributor: seller?.toEntity(),
-      ratingSummary: productRatingSummary?.toEntity(),
+      ratingSummary: ratingSummary?.toEntity(),
     );
   }
 }

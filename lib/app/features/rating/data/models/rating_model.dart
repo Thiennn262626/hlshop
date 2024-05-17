@@ -20,3 +20,13 @@ class RatingModel {
 
   Map<String, dynamic> toJson() => _$RatingModelToJson(this);
 }
+
+extension RatingModelConverter on RatingModel {
+  RatingEntity toEntity() {
+    return RatingEntity(
+      ratingItems: ratings.mapAsList((item) => item.toEntity()),
+      total: total,
+      ratingSummary: ratingSummary?.toEntity(),
+    );
+  }
+}

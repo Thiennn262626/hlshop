@@ -10,7 +10,7 @@ class DistributorRatingSimple extends StatelessWidget {
       child: Builder(builder: (context) {
         return BlocListener<DistributorRatingCubit, DistributorRatingState>(
           listener: _onStateChanged,
-          child: DistributorRatingSimpleLayout1(),
+          child: const DistributorRatingSimpleLayout1(),
         );
       }),
     );

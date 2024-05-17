@@ -5,28 +5,32 @@ class SocialAuthSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        AppButton(
-          style: AppButtonTheme.circleGreyIcon(context),
-          onPressed: () {},
-          child: Assets.icons.common.google.svg(),
-        ),
-        AppButton(
-          style: AppButtonTheme.circleGreyIcon(context),
-          onPressed: () {},
-          child: Assets.icons.common.apple.svg(),
-        ),
-        AppButton(
-          style: AppButtonTheme.circleGreyIcon(context),
-          onPressed: () {},
-          child: const Icon(
-            FontAwesomeIcons.facebookF,
-            color: Color(0xFF226DFF),
+    return SizedBox(
+      height: Dimens.minRowHeight_XS2,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          AppButton(
+            style: AppButtonTheme.circleGreyIcon(context),
+            onPressed: () {},
+            child: Assets.icons.common.google.svg(),
           ),
-        ),
-      ].withDivider(Gaps.hGap16),
+          AppButton(
+            style: AppButtonTheme.circleGreyIcon(context),
+            onPressed: () {},
+            child: Assets.icons.common.apple.svg(),
+          ),
+          AppButton(
+            style: AppButtonTheme.circleGreyIcon(context),
+            onPressed: () {},
+            child: const Icon(
+              FontAwesomeIcons.facebookF,
+              color: Color(0xFF226DFF),
+            ),
+          ),
+        ].withDivider(Gaps.hGap16),
+      ),
     );
   }
 }

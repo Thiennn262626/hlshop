@@ -19,9 +19,6 @@ class HomeSearchBar extends StatelessWidget {
               ),
             ),
           );
-          // context.pushRoute(
-          //   ProductSearchRoute(),
-          // );
         },
         child: AbsorbPointer(
           child: AppTextField(

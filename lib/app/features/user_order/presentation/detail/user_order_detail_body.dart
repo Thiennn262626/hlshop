@@ -93,16 +93,32 @@ class UserOrderDetailBody extends StatelessWidget {
                   children: [
                     AppButton(
                       style: AppButtonTheme.color(context,
-                          color: Colors.deepOrangeAccent),
-                      label: 'Đánh giá'.tr(),
-                      onPressed: item?.canFeedback == true
-                          ? () {
-                              // context.pushRoute(ProductRatingRoute(
-                              //   product: item?.product,
-                              //   order: item,
-                              // ));
+                          color: context.themeColor.primary),
+                      label: item?.canFeedback ?? false
+                          ? 'Đánh giá'.tr()
+                          : 'Xem đánh giá'.tr(),
+                      onPressed: item?.canFeedback ?? false
+                          ? () async {
+                              if (item is OrderDataEntity) {
+                                final rs = await context.pushRoute(
+                                  RatingRoute(
+                                    orderDataEntity: item,
+                                  ),
+                                );
+                                if (rs == true) {
+                                  await context
+                                      .read<UserOrderDetailCubit>()
+                                      .loadData();
+                                }
+                              }
                             }
-                          : null,
+                          : () {
+                              context.pushRoute(
+                                RatingViewRoute(
+                                  orderId: item?.id ?? '',
+                                ),
+                              );
+                            },
                     ).py16().expand(),
                   ],
                 ).pxDefault(),

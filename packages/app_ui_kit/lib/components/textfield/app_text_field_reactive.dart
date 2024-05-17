@@ -21,6 +21,7 @@ class AppTextFieldReactive extends StatefulWidget {
     this.onLostFocus,
     this.enableClearButton = false,
     this.validationMessages,
+    this.showErrors,
   }) : assert(
             (formControlName != null && formControl == null) ||
                 (formControlName == null && formControl != null),
@@ -47,6 +48,7 @@ class AppTextFieldReactive extends StatefulWidget {
   final TextInputType? keyboardType;
   final TextInputAction? textInputAction;
   final TextAlign textAlign;
+  final bool Function(FormControl<String>)? showErrors;
 
   @override
   State<AppTextFieldReactive> createState() => _AppTextFieldState();
@@ -100,6 +102,7 @@ class _AppTextFieldState extends State<AppTextFieldReactive> {
         hintText: widget.hintText,
       ),
       builder: (context, inputDecoration) => ReactiveTextField<String>(
+        showErrors: widget.showErrors,
         style: Theme.of(context).textTheme.bodyMedium,
         formControlName: widget.formControlName,
         formControl: widget.formControl,

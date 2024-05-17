@@ -1,0 +1,1 @@
+//GENERATED BARREL FILE export './core/routes/distributor_routes.dart'; export './data/ms/ms.dart'; export './domain/domain.dart'; export './presentation/presentation.dart'; 

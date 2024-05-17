@@ -1,6 +1,7 @@
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:hlshop/all_file/all_file.dart';
 
+
 class DistributorRatingSimpleLayout1 extends StatelessWidget {
   const DistributorRatingSimpleLayout1({super.key});
 
@@ -12,17 +13,12 @@ class DistributorRatingSimpleLayout1 extends StatelessWidget {
         return Column(
           children: [
             AppTile(
-              title: 'Đánh giá sản phẩm'
-                  .tr()
-                  .text
-                  .titleMedium(context)
-                  .bold
-                  .make(),
+              title: LocaleKeys.distributor_Rating.tr().text.titleMedium(context).bold.make(),
               padding: Dimens.edge,
               subtitle: Row(
                 children: [
                   RatingBar.builder(
-                    initialRating: 4.9,
+                    initialRating: 4,
                     itemSize: 20,
                     minRating: 1,
                     allowHalfRating: true,
@@ -36,7 +32,7 @@ class DistributorRatingSimpleLayout1 extends StatelessWidget {
                       print(rating);
                     },
                   ),
-                  '4.9'.text.colorDark(context).make(),
+                  '4.0/3,1k'.text.colorDark(context).make(),
                 ].withDivider(Gaps.hGap8),
               ).pt2(),
               onPressed: () {},

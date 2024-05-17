@@ -9,7 +9,6 @@ class ProductDetailBody extends StatelessWidget {
       builder: (context, state) {
         final item = state.product;
         final imgList = state.product?.imgSrcList ?? [];
-        print('length20110263: ${imgList.length}');
         return CustomScrollView(
           slivers: [
             SliverToBoxAdapter(
@@ -32,36 +31,61 @@ class ProductDetailBody extends StatelessWidget {
                       DistributorItem(
                         item: item?.distributor,
                         layoutType: DistributorItemLayoutType.layoutSimpleInfo1,
+                        onPressed: () {
+                          context.router.push(
+                            const DistributePage() as PageRouteInfo,
+                          );
+                        },
                       ),
-                    const DistributorRatingSimple(),
+                    ProductRating(
+                      productRatingSummary: item?.ratingSummary,
+                      onPressed: () {
+                        context.router.push(
+                          ProductRatingRoute(productEntity: item),
+                        );
+                      },
+                    ),
                     const ProductHeightLight(),
                     ProductDetailDescription(
                       item: item,
                     ).pDefault(),
-                    ProductDetailAttribute(
-                      item: item,
-                    ).pDefault(),
-                    ProductDetailNote(
-                      item: item,
-                    ).pDefault(),
+                    // ProductDetailAttribute(
+                    //   item: item,
+                    // ).pDefault(),
+                    // ProductDetailNote(
+                    //   item: item,
+                    // ).pDefault(),
                     ProductDetailSize(
                       item: item,
                     ).pDefault(),
                     if (item?.category?.id?.isNotNullOrEmpty ?? false)
-                      SectionTitle(
-                        title: 'Sản phẩm tương tự'.tr(),
-                        padding: Dimens.edge,
+                      Column(
+                        children: [
+                          SectionContainer(
+                            title: 'Sản phẩm tương tự'.tr(),
+                            child: ProductGridHoz(
+                              fetchListData: context
+                                  .read<ProductDetailCubit>()
+                                  .fetchSameCategory,
+                            ),
+                            seeAll: () {
+                              context.pushRoute(
+                                AllProductsRoute(
+                                  fetchListData: context
+                                      .read<ProductDetailCubit>()
+                                      .fetchSameCategory,
+                                  title: 'Sản phẩm tương tự'.tr(),
+                                ),
+                              );
+                            },
+                          ),
+                          Gaps.vGap16,
+                        ],
                       ),
                   ].withDivider(const AppDivider()),
                 ],
               ),
             ),
-            if (item?.category?.id?.isNotNullOrEmpty ?? false)
-              ProductGridVer(
-                isSliver: true,
-                fetchListData:
-                    context.read<ProductDetailCubit>().fetchSameCategory,
-              )
           ],
         );
       },

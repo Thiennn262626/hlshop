@@ -6,6 +6,7 @@ class ProductItemLayout1 extends StatelessWidget {
     required this.product,
     this.onAddToCart,
     this.onPressed,
+    this.itemSize,
     this.args = const ProductItemArgs(),
   });
 
@@ -14,14 +15,15 @@ class ProductItemLayout1 extends StatelessWidget {
   final VoidCallback? onPressed;
 
   final ProductItemArgs args;
+  final Size? itemSize;
 
   @override
   Widget build(BuildContext context) {
     return CardCupertinoEffect(
       onPressed: onPressed,
       child: Container(
-        width: ProductItemLayoutType.layout1.size.width,
-        height: ProductItemLayoutType.layout1.size.height,
+        width: itemSize?.width,
+        height: itemSize?.height,
         decoration: AppDecor.grayBorder(
           context,
         ),

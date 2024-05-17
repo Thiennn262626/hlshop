@@ -79,7 +79,7 @@ abstract class _$ProductEntityCWProxy {
 
   ProductEntity weight(int? weight);
 
-  ProductEntity ratingSummary(ProductRatingSummary? ratingSummary);
+  ProductEntity ratingSummary(RatingSummary? ratingSummary);
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ProductEntity(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -124,7 +124,7 @@ abstract class _$ProductEntityCWProxy {
     int? width,
     int? length,
     int? weight,
-    ProductRatingSummary? ratingSummary,
+    RatingSummary? ratingSummary,
   });
 }
 
@@ -256,7 +256,7 @@ class _$ProductEntityCWProxyImpl implements _$ProductEntityCWProxy {
   ProductEntity weight(int? weight) => this(weight: weight);
 
   @override
-  ProductEntity ratingSummary(ProductRatingSummary? ratingSummary) =>
+  ProductEntity ratingSummary(RatingSummary? ratingSummary) =>
       this(ratingSummary: ratingSummary);
 
   @override
@@ -454,7 +454,7 @@ class _$ProductEntityCWProxyImpl implements _$ProductEntityCWProxy {
       ratingSummary: ratingSummary == const $CopyWithPlaceholder()
           ? _value.ratingSummary
           // ignore: cast_nullable_to_non_nullable
-          : ratingSummary as ProductRatingSummary?,
+          : ratingSummary as RatingSummary?,
     );
   }
 }

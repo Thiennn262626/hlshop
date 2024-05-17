@@ -8,9 +8,10 @@ part of 'rating_summary_model.dart';
 
 RatingSummaryModel _$RatingSummaryModelFromJson(Map<String, dynamic> json) =>
     RatingSummaryModel(
+      ratingAvg: (json['rating_avg'] as num?)?.toDouble(),
       ratingTotal: json['rating_total'] as int?,
       ratingCount: (json['rating_count'] as List<dynamic>?)
-          ?.map((e) => e as int)
+          ?.map((e) => e as int?)
           .toList(),
       ratingCountWithContext: json['rcount_with_context'] as int?,
       ratingCountWithImage: json['rcount_with_image'] as int?,
@@ -18,6 +19,7 @@ RatingSummaryModel _$RatingSummaryModelFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$RatingSummaryModelToJson(RatingSummaryModel instance) =>
     <String, dynamic>{
+      'rating_avg': instance.ratingAvg,
       'rating_total': instance.ratingTotal,
       'rating_count': instance.ratingCount,
       'rcount_with_context': instance.ratingCountWithContext,

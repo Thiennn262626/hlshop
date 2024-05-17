@@ -1,7 +1,7 @@
 export 'about/index.dart';
 export 'auth/index.dart';
 export 'checkout/index.dart';
-export 'distributor/index.dart';
+export 'distributor/distributor.dart';
 export 'home/index.dart';
 export 'main/index.dart';
 export 'product/index.dart';

@@ -1,0 +1,1 @@
+//GENERATED BARREL FILE export './model/model.dart'; export './repo/repo.dart';

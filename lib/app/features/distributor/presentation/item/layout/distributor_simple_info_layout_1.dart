@@ -1,6 +1,5 @@
 import 'package:hlshop/all_file/all_file.dart';
 
-
 class DistributorSimpleInfoLayout1 extends StatelessWidget {
   const DistributorSimpleInfoLayout1({
     super.key,
@@ -26,7 +25,6 @@ class DistributorSimpleInfoLayout1 extends StatelessWidget {
       ),
       title: item?.name,
       subtitle: item?.type,
-      onPressed: onPressed ?? () {},
     );
   }
 }

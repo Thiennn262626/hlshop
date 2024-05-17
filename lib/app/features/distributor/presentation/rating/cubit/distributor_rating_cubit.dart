@@ -3,8 +3,7 @@ import 'package:hlshop/all_file/all_file.dart';
 part 'distributor_rating_state.dart';
 
 class DistributorRatingCubit extends Cubit<DistributorRatingState> {
-  DistributorRatingCubit({dynamic? item})
-      : super(DistributorRatingState(item: item));
+  DistributorRatingCubit({dynamic? item}) : super(DistributorRatingState(item: item));
 
   FutureOr<void> fetchItem() async {
     emit(state.copyWith(status: ItemStatus.loading));

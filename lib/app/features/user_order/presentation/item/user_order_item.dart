@@ -57,8 +57,10 @@ class OrderProductItem extends StatelessWidget {
     required this.orderItem,
     this.quantity,
   });
+
   final OrderProductEntity orderItem;
   final int? quantity;
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -116,7 +118,7 @@ class OrderProductItem1 extends StatelessWidget {
               ),
             ).aspectRatio(1),
             Gaps.hGap12,
-            _buildContent(context).py8().expand(),
+            _buildContent(context).expand(),
           ],
         ),
       ),
@@ -136,21 +138,21 @@ class OrderProductItem1 extends StatelessWidget {
             .maxLines(2)
             .ellipsis
             .make()
-            .pb2()
             .minHeight(22),
-        const Spacer(),
+        if (orderItem.variant!.variantValueName.isNotNullOrBlank)
+          'Phân loại: {}'
+              .tr(
+                args: [orderItem.variant!.variantValueName!],
+              )
+              .text
+              .textXS3
+              .colorDark(context)
+              .maxLines(2)
+              .ellipsis
+              .make(),
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            if (orderItem.variant!.variantValueName.isNotNullOrBlank)
-              'Phân loại: {}'
-                  .tr(
-                    args: [orderItem.variant!.variantValueName!],
-                  )
-                  .text
-                  .textXS3
-                  .colorDark(context)
-                  .make(),
-            const Spacer(),
             ProductPriceWithType(
               price: orderItem.price,
               priceStyle: context.bodyMedium?.copyWith(
@@ -162,11 +164,11 @@ class OrderProductItem1 extends StatelessWidget {
                 color: context.themeColor.grey,
               ),
             ),
-            Gaps.hGap8,
-            args.action,
-          ].withDivider(Gaps.hGap8),
-        ).expand(),
-      ].filterNotNullList(),
+
+            args.action ?? const SizedBox.shrink(),
+          ],
+        ),
+      ].withDivider(Gaps.vGap8),
     );
   }
 }

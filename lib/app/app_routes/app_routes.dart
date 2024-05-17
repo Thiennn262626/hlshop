@@ -25,6 +25,7 @@ class AppAutoRoute extends $AppAutoRoute {
     ...authRoutes,
     ...userOrderRoutes,
     ...userRoutes,
+    ...distributeRoutes,
     AutoRoute(
       path: '/otp-confirm',
       page: OtpConfirmRoute.page,

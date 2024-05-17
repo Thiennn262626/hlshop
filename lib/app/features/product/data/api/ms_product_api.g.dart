@@ -191,6 +191,49 @@ class _MsProductApi implements MsProductApi {
   }
 
   @override
+  Future<MsPagingResult<MsProduct>?> getListForYou({
+    int? offset,
+    int? limit,
+    String? search,
+    int? sortBy,
+    String? minAmount,
+    String? maxAmount,
+  }) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'offset': offset,
+      r'limit': limit,
+      r'search': search,
+      r'sortBy': sortBy,
+      r'minAmount': minAmount,
+      r'maxAmount': maxAmount,
+    };
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio.fetch<Map<String, dynamic>?>(
+        _setStreamType<MsPagingResult<MsProduct>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/api/hlshop/product/get-list-recommend-by-user',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = _result.data == null
+        ? null
+        : MsPagingResult<MsProduct>.fromJson(
+            _result.data!,
+            (json) => MsProduct.fromJson(json as Map<String, dynamic>),
+          );
+    return value;
+  }
+
+  @override
   Future<MsProduct?> getProductDetail({String? productID}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'ProductID': productID};

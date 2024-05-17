@@ -46,6 +46,16 @@ abstract class MsProductApi {
     @Query('maxAmount') String? maxAmount,
   });
 
+  @GET('/api/hlshop/product/get-list-recommend-by-user')
+  Future<MsPagingResult<MsProduct>?> getListForYou({
+    @Query('offset') int? offset,
+    @Query('limit') int? limit,
+    @Query('search') String? search,
+    @Query('sortBy') int? sortBy,
+    @Query('minAmount') String? minAmount,
+    @Query('maxAmount') String? maxAmount,
+  });
+
   @GET('/api/hlshop/product/get-detail')
   Future<MsProduct?> getProductDetail({
     @Query('ProductID') String? productID,
