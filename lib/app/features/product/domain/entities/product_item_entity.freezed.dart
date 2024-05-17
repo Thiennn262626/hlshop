@@ -20,6 +20,8 @@ mixin _$ProductItemEntity {
   String? get name => throw _privateConstructorUsedError;
   String? get modelID => throw _privateConstructorUsedError;
   String? get modelName => throw _privateConstructorUsedError;
+  ImageEntity? get modelImage => throw _privateConstructorUsedError;
+  PriceUnit? get modelPrice => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ProductItemEntityCopyWith<ProductItemEntity> get copyWith =>
@@ -32,7 +34,13 @@ abstract class $ProductItemEntityCopyWith<$Res> {
           ProductItemEntity value, $Res Function(ProductItemEntity) then) =
       _$ProductItemEntityCopyWithImpl<$Res, ProductItemEntity>;
   @useResult
-  $Res call({String? id, String? name, String? modelID, String? modelName});
+  $Res call(
+      {String? id,
+      String? name,
+      String? modelID,
+      String? modelName,
+      ImageEntity? modelImage,
+      PriceUnit? modelPrice});
 }
 
 /// @nodoc
@@ -52,6 +60,8 @@ class _$ProductItemEntityCopyWithImpl<$Res, $Val extends ProductItemEntity>
     Object? name = freezed,
     Object? modelID = freezed,
     Object? modelName = freezed,
+    Object? modelImage = freezed,
+    Object? modelPrice = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -70,6 +80,14 @@ class _$ProductItemEntityCopyWithImpl<$Res, $Val extends ProductItemEntity>
           ? _value.modelName
           : modelName // ignore: cast_nullable_to_non_nullable
               as String?,
+      modelImage: freezed == modelImage
+          ? _value.modelImage
+          : modelImage // ignore: cast_nullable_to_non_nullable
+              as ImageEntity?,
+      modelPrice: freezed == modelPrice
+          ? _value.modelPrice
+          : modelPrice // ignore: cast_nullable_to_non_nullable
+              as PriceUnit?,
     ) as $Val);
   }
 }
@@ -82,7 +100,13 @@ abstract class _$$ProductItemEntityImplCopyWith<$Res>
       __$$ProductItemEntityImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? id, String? name, String? modelID, String? modelName});
+  $Res call(
+      {String? id,
+      String? name,
+      String? modelID,
+      String? modelName,
+      ImageEntity? modelImage,
+      PriceUnit? modelPrice});
 }
 
 /// @nodoc
@@ -100,6 +124,8 @@ class __$$ProductItemEntityImplCopyWithImpl<$Res>
     Object? name = freezed,
     Object? modelID = freezed,
     Object? modelName = freezed,
+    Object? modelImage = freezed,
+    Object? modelPrice = freezed,
   }) {
     return _then(_$ProductItemEntityImpl(
       id: freezed == id
@@ -118,6 +144,14 @@ class __$$ProductItemEntityImplCopyWithImpl<$Res>
           ? _value.modelName
           : modelName // ignore: cast_nullable_to_non_nullable
               as String?,
+      modelImage: freezed == modelImage
+          ? _value.modelImage
+          : modelImage // ignore: cast_nullable_to_non_nullable
+              as ImageEntity?,
+      modelPrice: freezed == modelPrice
+          ? _value.modelPrice
+          : modelPrice // ignore: cast_nullable_to_non_nullable
+              as PriceUnit?,
     ));
   }
 }
@@ -127,7 +161,12 @@ class __$$ProductItemEntityImplCopyWithImpl<$Res>
 class _$ProductItemEntityImpl extends _ProductItemEntity
     with DiagnosticableTreeMixin {
   const _$ProductItemEntityImpl(
-      {this.id, this.name, this.modelID, this.modelName})
+      {this.id,
+      this.name,
+      this.modelID,
+      this.modelName,
+      this.modelImage,
+      this.modelPrice})
       : super._();
 
   @override
@@ -138,10 +177,14 @@ class _$ProductItemEntityImpl extends _ProductItemEntity
   final String? modelID;
   @override
   final String? modelName;
+  @override
+  final ImageEntity? modelImage;
+  @override
+  final PriceUnit? modelPrice;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ProductItemEntity(id: $id, name: $name, modelID: $modelID, modelName: $modelName)';
+    return 'ProductItemEntity(id: $id, name: $name, modelID: $modelID, modelName: $modelName, modelImage: $modelImage, modelPrice: $modelPrice)';
   }
 
   @override
@@ -152,7 +195,9 @@ class _$ProductItemEntityImpl extends _ProductItemEntity
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('name', name))
       ..add(DiagnosticsProperty('modelID', modelID))
-      ..add(DiagnosticsProperty('modelName', modelName));
+      ..add(DiagnosticsProperty('modelName', modelName))
+      ..add(DiagnosticsProperty('modelImage', modelImage))
+      ..add(DiagnosticsProperty('modelPrice', modelPrice));
   }
 
   @override
@@ -164,11 +209,16 @@ class _$ProductItemEntityImpl extends _ProductItemEntity
             (identical(other.name, name) || other.name == name) &&
             (identical(other.modelID, modelID) || other.modelID == modelID) &&
             (identical(other.modelName, modelName) ||
-                other.modelName == modelName));
+                other.modelName == modelName) &&
+            (identical(other.modelImage, modelImage) ||
+                other.modelImage == modelImage) &&
+            (identical(other.modelPrice, modelPrice) ||
+                other.modelPrice == modelPrice));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, modelID, modelName);
+  int get hashCode => Object.hash(
+      runtimeType, id, name, modelID, modelName, modelImage, modelPrice);
 
   @JsonKey(ignore: true)
   @override
@@ -183,7 +233,9 @@ abstract class _ProductItemEntity extends ProductItemEntity {
       {final String? id,
       final String? name,
       final String? modelID,
-      final String? modelName}) = _$ProductItemEntityImpl;
+      final String? modelName,
+      final ImageEntity? modelImage,
+      final PriceUnit? modelPrice}) = _$ProductItemEntityImpl;
   const _ProductItemEntity._() : super._();
 
   @override
@@ -194,6 +246,10 @@ abstract class _ProductItemEntity extends ProductItemEntity {
   String? get modelID;
   @override
   String? get modelName;
+  @override
+  ImageEntity? get modelImage;
+  @override
+  PriceUnit? get modelPrice;
   @override
   @JsonKey(ignore: true)
   _$$ProductItemEntityImplCopyWith<_$ProductItemEntityImpl> get copyWith =>

@@ -102,6 +102,17 @@ class RatingViewBody extends StatelessWidget {
                       .size(FontSizeService().text_XS2)
                       .make() ??
                   const SizedBox.shrink(),
+              ProductRatingItem(
+                margin: EdgeInsets.zero,
+                product: ProductEntity(
+                  price: ratingItemEntity.productItems.firstOrNull?.modelPrice,
+                  name: ratingItemEntity.productItems.firstOrNull?.modelName,
+                  imgList: [
+                    ratingItemEntity.productItems.firstOrNull?.modelImage ??
+                        const ImageEntity(),
+                  ],
+                ),
+              ),
             ].withDivider(
               Gaps.vGap8,
             ),

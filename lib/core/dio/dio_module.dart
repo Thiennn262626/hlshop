@@ -31,7 +31,7 @@ class DioModule {
         PrettyDioLogger(
           request: true,
           requestBody: true,
-          responseBody: true,
+          responseBody: false,
         ),
       );
       dio.interceptors.add(DioNetworkLogger());
