@@ -261,7 +261,7 @@
     },
     {
       "name": "collection",
-      "rootUri": "file:///Users/nguyendinhthien/.pub-cache/hosted/pub.dev/collection-1.17.1",
+      "rootUri": "file:///Users/nguyendinhthien/.pub-cache/hosted/pub.dev/collection-1.18.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
@@ -297,9 +297,9 @@
     },
     {
       "name": "coverage",
-      "rootUri": "file:///Users/nguyendinhthien/.pub-cache/hosted/pub.dev/coverage-1.6.4",
+      "rootUri": "file:///Users/nguyendinhthien/.pub-cache/hosted/pub.dev/coverage-1.8.0",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.0"
     },
     {
       "name": "cross_file",
@@ -537,9 +537,9 @@
     },
     {
       "name": "flutter",
-      "rootUri": "file:///Users/nguyendinhthien/fvm/versions/3.10.6/packages/flutter",
+      "rootUri": "file:///Users/nguyendinhthien/fvm/versions/3.19.0/packages/flutter",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.2"
     },
     {
       "name": "flutter_bloc",
@@ -657,9 +657,9 @@
     },
     {
       "name": "flutter_localizations",
-      "rootUri": "file:///Users/nguyendinhthien/fvm/versions/3.10.6/packages/flutter_localizations",
+      "rootUri": "file:///Users/nguyendinhthien/fvm/versions/3.19.0/packages/flutter_localizations",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.2"
     },
     {
       "name": "flutter_math_fork",
@@ -735,15 +735,15 @@
     },
     {
       "name": "flutter_test",
-      "rootUri": "file:///Users/nguyendinhthien/fvm/versions/3.10.6/packages/flutter_test",
+      "rootUri": "file:///Users/nguyendinhthien/fvm/versions/3.19.0/packages/flutter_test",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.2"
     },
     {
       "name": "flutter_web_plugins",
-      "rootUri": "file:///Users/nguyendinhthien/fvm/versions/3.10.6/packages/flutter_web_plugins",
+      "rootUri": "file:///Users/nguyendinhthien/fvm/versions/3.19.0/packages/flutter_web_plugins",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.2"
     },
     {
       "name": "fluttertoast",
@@ -1022,6 +1022,24 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "leak_tracker",
+      "rootUri": "file:///Users/nguyendinhthien/.pub-cache/hosted/pub.dev/leak_tracker-10.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.1"
+    },
+    {
+      "name": "leak_tracker_flutter_testing",
+      "rootUri": "file:///Users/nguyendinhthien/.pub-cache/hosted/pub.dev/leak_tracker_flutter_testing-2.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.1"
+    },
+    {
+      "name": "leak_tracker_testing",
+      "rootUri": "file:///Users/nguyendinhthien/.pub-cache/hosted/pub.dev/leak_tracker_testing-2.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.1"
+    },
+    {
       "name": "like_button",
       "rootUri": "file:///Users/nguyendinhthien/.pub-cache/hosted/pub.dev/like_button-2.0.5",
       "packageUri": "lib/",
@@ -1095,19 +1113,19 @@
     },
     {
       "name": "matcher",
-      "rootUri": "file:///Users/nguyendinhthien/.pub-cache/hosted/pub.dev/matcher-0.12.15",
+      "rootUri": "file:///Users/nguyendinhthien/.pub-cache/hosted/pub.dev/matcher-0.12.16+1",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.0"
     },
     {
       "name": "material_color_utilities",
-      "rootUri": "file:///Users/nguyendinhthien/.pub-cache/hosted/pub.dev/material_color_utilities-0.2.0",
+      "rootUri": "file:///Users/nguyendinhthien/.pub-cache/hosted/pub.dev/material_color_utilities-0.8.0",
       "packageUri": "lib/",
-      "languageVersion": "2.13"
+      "languageVersion": "2.17"
     },
     {
       "name": "meta",
-      "rootUri": "file:///Users/nguyendinhthien/.pub-cache/hosted/pub.dev/meta-1.9.1",
+      "rootUri": "file:///Users/nguyendinhthien/.pub-cache/hosted/pub.dev/meta-1.11.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -1185,9 +1203,9 @@
     },
     {
       "name": "path",
-      "rootUri": "file:///Users/nguyendinhthien/.pub-cache/hosted/pub.dev/path-1.8.3",
+      "rootUri": "file:///Users/nguyendinhthien/.pub-cache/hosted/pub.dev/path-1.9.0",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "3.0"
     },
     {
       "name": "path_drawing",
@@ -1515,9 +1533,9 @@
     },
     {
       "name": "sky_engine",
-      "rootUri": "file:///Users/nguyendinhthien/fvm/versions/3.10.6/bin/cache/pkg/sky_engine",
+      "rootUri": "file:///Users/nguyendinhthien/fvm/versions/3.19.0/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.2"
     },
     {
       "name": "sliver_tools",
@@ -1575,9 +1593,9 @@
     },
     {
       "name": "source_span",
-      "rootUri": "file:///Users/nguyendinhthien/.pub-cache/hosted/pub.dev/source_span-1.9.1",
+      "rootUri": "file:///Users/nguyendinhthien/.pub-cache/hosted/pub.dev/source_span-1.10.0",
       "packageUri": "lib/",
-      "languageVersion": "2.14"
+      "languageVersion": "2.18"
     },
     {
       "name": "sprintf",
@@ -1599,7 +1617,7 @@
     },
     {
       "name": "stack_trace",
-      "rootUri": "file:///Users/nguyendinhthien/.pub-cache/hosted/pub.dev/stack_trace-1.11.0",
+      "rootUri": "file:///Users/nguyendinhthien/.pub-cache/hosted/pub.dev/stack_trace-1.11.1",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
@@ -1611,9 +1629,9 @@
     },
     {
       "name": "stream_channel",
-      "rootUri": "file:///Users/nguyendinhthien/.pub-cache/hosted/pub.dev/stream_channel-2.1.1",
+      "rootUri": "file:///Users/nguyendinhthien/.pub-cache/hosted/pub.dev/stream_channel-2.1.2",
       "packageUri": "lib/",
-      "languageVersion": "2.14"
+      "languageVersion": "2.19"
     },
     {
       "name": "stream_transform",
@@ -1647,21 +1665,21 @@
     },
     {
       "name": "test",
-      "rootUri": "file:///Users/nguyendinhthien/.pub-cache/hosted/pub.dev/test-1.24.1",
+      "rootUri": "file:///Users/nguyendinhthien/.pub-cache/hosted/pub.dev/test-1.24.9",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.0"
     },
     {
       "name": "test_api",
-      "rootUri": "file:///Users/nguyendinhthien/.pub-cache/hosted/pub.dev/test_api-0.5.1",
+      "rootUri": "file:///Users/nguyendinhthien/.pub-cache/hosted/pub.dev/test_api-0.6.1",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.0"
     },
     {
       "name": "test_core",
-      "rootUri": "file:///Users/nguyendinhthien/.pub-cache/hosted/pub.dev/test_core-0.5.1",
+      "rootUri": "file:///Users/nguyendinhthien/.pub-cache/hosted/pub.dev/test_core-0.5.9",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.0"
     },
     {
       "name": "time",
@@ -1815,9 +1833,9 @@
     },
     {
       "name": "vm_service",
-      "rootUri": "file:///Users/nguyendinhthien/.pub-cache/hosted/pub.dev/vm_service-11.10.0",
+      "rootUri": "file:///Users/nguyendinhthien/.pub-cache/hosted/pub.dev/vm_service-13.0.0",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.0"
     },
     {
       "name": "vxstate",
@@ -1874,7 +1892,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2024-04-15T07:19:04.147581Z",
+  "generated": "2024-05-17T17:48:53.685658Z",
   "generator": "pub",
-  "generatorVersion": "3.0.6"
+  "generatorVersion": "3.3.0"
 }

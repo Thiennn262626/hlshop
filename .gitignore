@@ -1,7 +1,7 @@
 .fvm/flutter_sdk
 # Pakcage Import
 /external_packages/**
-
+.DS_Store
 *.p8
 
 **/linux
