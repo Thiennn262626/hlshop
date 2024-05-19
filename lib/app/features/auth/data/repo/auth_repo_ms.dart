@@ -1,5 +1,6 @@
 import 'package:app_utils/view/app_info_utils.dart';
 import 'package:hlshop/all_file/all_file.dart';
+import 'package:hlshop/services/firebase_notification_service.dart';
 
 const _deviceType = 'MOBILEAPP';
 
@@ -113,14 +114,14 @@ class AuthRepoMS extends AuthRepo {
     final object = requestData?.object;
     if (object is AuthSignUpOTPResp) {
       final deviceID = await AppInfoUtils.getDeviceID();
-      // final fcmToken = await FirebaseNotificationService.instance.getFCMToken();
+      final fcmToken = await FirebaseNotificationService.instance.getFCMToken();
       final rs = await _authApi.verifyOTP(
         AuthVerifyOTPReq(
           userID: userID,
           uuid: uuid,
           otp: otp,
           deviceID: deviceID,
-          // deviceToken: fcmToken,
+          deviceToken: fcmToken,
           type: _deviceType,
         ),
       );
@@ -142,7 +143,7 @@ class AuthRepoMS extends AuthRepo {
   }) async {
     try {
       final deviceID = await AppInfoUtils.getDeviceID();
-      // final fcmToken = await FirebaseNotificationService.instance.getFCMToken();
+      final fcmToken = await FirebaseNotificationService.instance.getFCMToken();
 
       final rs = await _authApi.loginPhone(
         AuthLoginPasswordReq(
@@ -150,7 +151,7 @@ class AuthRepoMS extends AuthRepo {
           countryCode: countryCode,
           password: password,
           deviceID: deviceID,
-          // deviceToken: fcmToken,
+          deviceToken: fcmToken,
           type: _deviceType,
         ),
       );
@@ -172,14 +173,14 @@ class AuthRepoMS extends AuthRepo {
   }) async {
     try {
       final deviceID = await AppInfoUtils.getDeviceID();
-      // final fcmToken = await FirebaseNotificationService.instance.getFCMToken();
+      final fcmToken = await FirebaseNotificationService.instance.getFCMToken();
 
       final rs = await _authApi.loginEmail(
         AuthLoginPasswordReq(
           userLogin: email,
           password: password,
           deviceID: deviceID,
-          // deviceToken: fcmToken,
+          deviceToken: fcmToken,
           type: _deviceType,
         ),
       );

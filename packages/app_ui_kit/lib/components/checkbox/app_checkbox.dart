@@ -89,13 +89,6 @@ class _AppCheckBoxState extends State<AppCheckBox> {
         opacity: widget.enabled == false ? 0.5 : 1,
         child: Checkbox(
           key: widget.key,
-          fillColor: MaterialStateProperty.resolveWith<Color>(
-                  (Set<MaterialState> states) {
-                if (states.contains(MaterialState.selected)) {
-                  return context.themeColor.primary;
-                }
-                return Colors.transparent;
-              }),
           value: isChecked,
           visualDensity: widget.visualDensity,
           tristate: widget.tristate,

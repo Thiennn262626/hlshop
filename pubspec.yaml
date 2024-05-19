@@ -140,12 +140,12 @@ dependencies:
   flutter_phosphor_icons: ^0.0.1+6
 
   #####  Firebase
-#  firebase_core: ^2.17.0
-#  firebase_messaging: ^14.6.9
+  firebase_core: ^2.17.0
+  firebase_messaging: ^14.6.9
   #  firebase_auth: ^4.3.0
   #  google_sign_in: ^6.0.2
   #  flutter_facebook_auth: ^5.0.8
-#  firebase_crashlytics: ^3.3.7
+  firebase_crashlytics: ^3.3.7
   crypto: ^3.0.2
   #  sign_in_with_apple: ^4.3.0
   #  firebase_dynamic_links: ^5.1.0
