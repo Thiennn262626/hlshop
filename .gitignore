@@ -65,6 +65,8 @@ unlinked.ds
 unlinked_spec.ds
 .fvm/
 .fvmrc
+.dart_tool/
+.idea/
 
 # Android related
 **/android/**/gradle-wrapper.jar
