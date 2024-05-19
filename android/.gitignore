@@ -11,5 +11,3 @@ GeneratedPluginRegistrant.java
 key.properties
 **/*.keystore
 **/*.jks
-app/build/outputs/apk/production/debug/app-production-debug.apk
-android/app/build/intermediates/flutter/productionDebug/flutter_build.d

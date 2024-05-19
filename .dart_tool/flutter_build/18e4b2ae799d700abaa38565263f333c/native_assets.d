@@ -1,1 +1,0 @@
- D:\\graduation_project\\hlshop\\.dart_tool\\flutter_build\\18e4b2ae799d700abaa38565263f333c\\native_assets.yaml: 
