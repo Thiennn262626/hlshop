@@ -59,28 +59,25 @@ class ProductDetailBody extends StatelessWidget {
                       item: item,
                     ).pDefault(),
                     if (item?.category?.id?.isNotNullOrEmpty ?? false)
-                      Column(
-                        children: [
-                          SectionContainer(
-                            title: 'Sản phẩm tương tự'.tr(),
-                            child: ProductGridHoz(
+                      SectionContainer(
+                        title: 'Sản phẩm tương tự'.tr(),
+                        child: ProductGridHoz(
+                          fetchListData: context
+                              .read<ProductDetailCubit>()
+                              .fetchSameCategory,
+                        ),
+                        seeAll: () {
+                          context.pushRoute(
+                            AllProductsRoute(
                               fetchListData: context
                                   .read<ProductDetailCubit>()
                                   .fetchSameCategory,
+                              title: 'Sản phẩm tương tự'.tr(),
                             ),
-                            seeAll: () {
-                              context.pushRoute(
-                                AllProductsRoute(
-                                  fetchListData: context
-                                      .read<ProductDetailCubit>()
-                                      .fetchSameCategory,
-                                  title: 'Sản phẩm tương tự'.tr(),
-                                ),
-                              );
-                            },
-                          ),
-                          Gaps.vGap16,
-                        ],
+                          );
+                        },
+                      ).pSymmetric(
+                        v: Dimens.gap_dp16,
                       ),
                   ].withDivider(const AppDivider()),
                 ],
