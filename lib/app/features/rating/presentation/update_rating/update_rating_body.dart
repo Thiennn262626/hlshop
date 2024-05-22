@@ -20,6 +20,8 @@ class UpdateRatingBody extends StatelessWidget {
             BlocBuilder<UpdateRatingCubit, UpdateRatingState>(
               builder: (context, state) {
                 return DisplayImagesAttachment(
+                  isEnoughMedias:
+                      context.watch<UpdateRatingCubit>().isEnoughMedias,
                   uploadImage: () {
                     cubit.uploadImage(
                       context: context,
