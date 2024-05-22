@@ -134,4 +134,6 @@ class UpdateRatingCubit extends Cubit<UpdateRatingState> {
   FutureOr<void> updateShipperRating(double rating) {
     emit(state.copyWith(shipperServiceRating: rating));
   }
+
+  bool get isEnoughMedias => state.images.length == 5;
 }
