@@ -57,7 +57,7 @@ class ProductSelectVariantBody extends StatelessWidget {
               );
             },
           ),
-        ),
+        ).pb16(),
         const AppDivider.thin(),
         Row(
           children: [
@@ -73,7 +73,7 @@ class ProductSelectVariantBody extends StatelessWidget {
               ),
             ),
           ],
-        ).pxDefault().py12(),
+        ).pxDefault().py8(),
       ],
     );
   }

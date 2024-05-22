@@ -1,7 +1,6 @@
 import 'package:flutter_keyboard_size/flutter_keyboard_size.dart';
 import 'package:hlshop/all_file/all_file.dart';
 
-
 class ProductSelectVariantPopup extends StatelessWidget {
   const ProductSelectVariantPopup({
     super.key,
@@ -42,16 +41,19 @@ class ProductSelectVariantPopup extends StatelessWidget {
                               .read<ProductSelectVariantCubit>()
                               .state
                               .selectedVariant;
-                          return SafeArea(
-                            child: AppButton(
-                              label: 'Chọn mua'.tr(),
-                              onPressed: selectVariant == null
-                                  ? null
-                                  : () {
-                                      addToCart(context, selectVariant);
-                                    },
-                            ).pDefault(),
-                          );
+                          return AppButton(
+                            label: 'Chọn mua'.tr(),
+                            onPressed: selectVariant == null
+                                ? null
+                                : () {
+                                    context.read<UserBloc>().checkLoginAction(
+                                      context,
+                                      onLogin: (user) {
+                                        addToCart(context, selectVariant);
+                                      },
+                                    );
+                                  },
+                          ).pDefault();
                         },
                       ),
                       SizedBox(
@@ -90,12 +92,9 @@ extension ProductSelectVariantPopupExt on ProductSelectVariantPopup {
   FutureOr<void> show({
     required BuildContext context,
   }) {
-    return context.read<UserBloc>().checkLoginAction(
-          context,
-          onLogin: (user) => BottomSheetUtils.showMaterial(
-            context: context,
-            child: this,
-          ),
-        );
+    return BottomSheetUtils.showMaterial(
+      context: context,
+      child: this,
+    );
   }
 }
