@@ -31,8 +31,8 @@ class ProductSearchPage extends StatelessWidget {
             ].withDivider(Gaps.hGap4, showLast: true),
           ),
         ),
-        body: ProductSearchBody(),
-        endDrawer: NavigatorDrawer(),
+        body:  ProductSearchBody(filterData: filterData ?? const ProductFilterData(),),
+        endDrawer: const NavigatorDrawer(),
       ).pt8(),
     );
   }
