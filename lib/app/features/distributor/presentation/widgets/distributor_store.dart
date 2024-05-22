@@ -8,21 +8,6 @@ class DistributorStore extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          SizedBox(
-            height: 75,
-            child: ListView.separated(
-              shrinkWrap: true,
-              padding: const EdgeInsets.symmetric(
-                horizontal: Dimens.pad,
-              ),
-              scrollDirection: Axis.horizontal,
-              itemCount: DistributorStatus.demoValue.length,
-              itemBuilder: (context, index) {
-                return const PromotionSimple();
-              },
-              separatorBuilder: (context, index) => Gaps.hGap16,
-            ),
-          ),
           SectionContainer(
             title: '${'Sản phẩm bán chạy'.tr()} 🌟🌟🌟',
             child: ProductGridHoz(
