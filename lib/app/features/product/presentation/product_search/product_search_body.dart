@@ -11,23 +11,20 @@ class ProductSearchBody extends StatelessWidget {
       length: OrderByType.values.length,
       child: Column(
         children: [
-          Row(
-            children: [
-              'Xếp theo: '.tr().text.make().pl16(),
-              AppButtonTabBar(
-                onTap: (index) {
-                  context.read<ProductSearchCubit>().onSortChange(
-                        ProductFilterData(
-                          orderByType: OrderByType.values[index],
-                        ),
-                      );
-                },
-                tabs: OrderByType.values.mapAsList(
-                  (item) => Tab(text: item.displayValue.tr()),
-                ),
-              ).expand(),
-            ],
-          ).pt16(),
+          AppButtonTabBar(
+            onTap: (index) {
+              context.read<ProductSearchCubit>().onSortChange(
+                    ProductFilterData(
+                      orderByType: OrderByType.values[index],
+                    ),
+                  );
+            },
+            tabs: OrderByType.values.mapAsList(
+              (item) => Tab(text: item.displayValue.tr()),
+            ),
+          ).pSymmetric(
+            v: Dimens.gap_dp16,
+          ),
           TabBarView(
             children: OrderByType.values.mapAsList(
               (type) => ProductGridVer(
