@@ -13,8 +13,6 @@ class UserOrderBody extends StatelessWidget {
             children: [
               TabBarWrapperUnderLine(
                 child: AppTabBar(
-                  onTap: (p0) {},
-                  padding: Dimens.edge_x,
                   tabs: OrderStatus.values.mapAsList(
                     (item) {
                       return Tab(

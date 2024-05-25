@@ -72,10 +72,9 @@ class AppTabBarTheme {
       tabBarTheme: TabBarTheme(
         indicator: UnderlineTabIndicator(
           borderSide: BorderSide(
-            width: 3.0,
+            width: 3,
             color: Theme.of(context).primaryColor,
           ),
-          insets: EdgeInsets.symmetric(horizontal: 0.0),
         ),
         labelColor: Theme.of(context).primaryColor,
         labelStyle: labelStyle ?? Theme.of(context).textTheme.bodyMedium,

@@ -5,45 +5,21 @@ class ProductBottomBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 46,
+    return AppButton(
+      style: AppButtonTheme.primary(context),
+      onPressed: () {
+        context.read<ProductDetailCubit>().selectProduct(
+              context: context,
+            );
+      },
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(
-            width: 70,
-            child: AppButton(
-              style: AppButtonTheme.ghost(context),
-              onPressed: () {},
-              child: const Icon(PhosphorIcons.phone),
-            ),
-          ),
-          SizedBox(
-            width: 70,
-            child: AppButton(
-              style: AppButtonTheme.ghost(context),
-              onPressed: () {},
-              child: const Icon(PhosphorIcons.chat_circle_text),
-            ),
-          ),
-          AppButton(
-            style: AppButtonTheme.primary(context),
-            onPressed: () {
-              context.read<ProductDetailCubit>().selectProduct(
-                    context: context,
-                  );
-            },
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Icon(PhosphorIcons.shopping_cart),
-                Gaps.hGap8,
-                'Chọn mua'.tr().text.semiBold.make(),
-              ],
-            ),
-          ).expand(),
-        ].withDivider(Gaps.hGap8),
+          const Icon(PhosphorIcons.shopping_cart),
+          Gaps.hGap8,
+          'Thêm vào giỏ'.tr().text.semiBold.make(),
+        ],
       ),
-    );
+    ).expand();
   }
 }

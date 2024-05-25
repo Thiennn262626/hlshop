@@ -42,7 +42,7 @@ class ProductSelectVariantPopup extends StatelessWidget {
                               .state
                               .selectedVariant;
                           return AppButton(
-                            label: 'Chọn mua'.tr(),
+                            label: 'Thêm vào giỏ'.tr(),
                             onPressed: selectVariant == null
                                 ? null
                                 : () {

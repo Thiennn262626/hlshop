@@ -63,7 +63,7 @@ class ProductItemLayout1 extends StatelessWidget {
                 ),
                 Gaps.vGap6,
                 AppButton(
-                  label: LocaleKeys.product_Buy.tr(),
+                  label: 'Mua'.tr(),
                   onPressed: onAddToCart ?? () {},
                 ),
               ].filterNotNullList(),
