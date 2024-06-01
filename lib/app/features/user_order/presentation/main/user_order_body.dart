@@ -13,6 +13,10 @@ class UserOrderBody extends StatelessWidget {
             children: [
               TabBarWrapperUnderLine(
                 child: AppTabBar(
+                  controller: context.read<UserOrderCubit>().tabController,
+                  onTap: (index) {
+                    context.read<UserOrderCubit>().tabController.animateTo(index);
+                  },
                   tabs: OrderStatus.values.mapAsList(
                     (item) {
                       return Tab(
@@ -33,6 +37,7 @@ class UserOrderBody extends StatelessWidget {
                 ),
               ),
               TabBarView(
+                controller: context.read<UserOrderCubit>().tabController,
                 children: OrderStatus.values.mapAsList(
                   (orderStatus) => UserOrderTab(orderStatus: orderStatus),
                 ),

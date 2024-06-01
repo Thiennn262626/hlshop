@@ -9,6 +9,7 @@ class UserOrderState with _$UserOrderState {
     @Default(ApiStatus.initial()) ApiStatus orderListStatus,
     // @Default(null) Map<OrderStatus, List<OrderEntity>>? userOrderListMap,
     @Default([]) List<OrderEntity> userOrderList,
+    @Default(null) OrderStatus? orderStatus,
     @Default(null) List<int?>? userOrderCountList,
   }) = _UserOrderState;
 }

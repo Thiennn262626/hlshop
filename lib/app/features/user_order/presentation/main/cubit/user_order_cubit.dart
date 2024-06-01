@@ -1,11 +1,13 @@
 import 'package:hlshop/all_file/all_file.dart';
 
-
 part 'user_order_cubit.freezed.dart';
+
 part 'user_order_state.dart';
 
 class UserOrderCubit extends Cubit<UserOrderState> {
-  UserOrderCubit() : super(const UserOrderState()) {
+  UserOrderCubit({
+    required this.tabController,
+  }) : super(const UserOrderState()) {
     controllerMap = Map.fromEntries(
       OrderStatus.values.map(
         (orderStatus) => MapEntry(
@@ -19,23 +21,44 @@ class UserOrderCubit extends Cubit<UserOrderState> {
         fetchStatus();
       });
     });
+
+    tabController.addListener(_tabAnimationListener);
   }
 
   final orderRepo = getIt<UserOrderRepo>();
   late final Map<OrderStatus, AppPagingController<int, OrderEntity>>
       controllerMap;
+  final TabController tabController;
 
   @override
   Future<void> close() async {
     controllerMap.forEach((key, value) {
       value.dispose();
     });
+    tabController.dispose();
     await super.close();
   }
 
   void clearController() {
     controllerMap.forEach((key, value) {
       value.refresh();
+    });
+  }
+
+  void _tabAnimationListener() {
+    getStatus(orderStatus: OrderStatus.values[tabController.index]);
+  }
+
+  FutureOr<void> getStatus({
+    required OrderStatus orderStatus,
+  }) {
+    emit(state.copyWith(orderStatus: orderStatus));
+  }
+
+  void refreshSilent() {
+    Future.delayed(300.milliseconds, () {
+      controllerMap[state.orderStatus]?.refreshSilent(limit: 20);
+      fetchStatus();
     });
   }
 

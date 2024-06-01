@@ -1,4 +1,5 @@
 import 'package:hlshop/all_file/all_file.dart';
+import 'package:visibility_detector/visibility_detector.dart';
 
 class UserOrderTab extends StatefulWidget {
   const UserOrderTab({super.key, required this.orderStatus});
@@ -25,30 +26,39 @@ class _UserOrderTabState extends State<UserOrderTab>
               .refresh();
         }
       },
-      child: PagingList<OrderEntity>(
-        pagingController:
-            context.read<UserOrderCubit>().controllerMap[widget.orderStatus],
-        fetchListData: (offset, limit) => getIt<UserOrderRepo>().getOrderList(
-          orderStatus: widget.orderStatus,
-          offset: offset,
-          limit: limit,
+      child: VisibilityDetector(
+        key: Key('UserOrderTab_${widget.orderStatus}'),
+        onVisibilityChanged: (VisibilityInfo info) {
+          if (info.visibleFraction == 1) {
+            log('UserOrderTab ${widget.orderStatus} visible') ;
+            context.read<UserOrderCubit>().refreshSilent();
+          }
+        },
+        child: PagingList<OrderEntity>(
+          pagingController:
+              context.read<UserOrderCubit>().controllerMap[widget.orderStatus],
+          fetchListData: (offset, limit) => getIt<UserOrderRepo>().getOrderList(
+            orderStatus: widget.orderStatus,
+            offset: offset,
+            limit: limit,
+          ),
+          itemBuilder: (context, item, index) {
+            return UserOrderListGroup(
+              order: item,
+            );
+          },
+          separatorBuilder: (context, index) => const AppDivider(),
+          noItemsFoundIndicatorBuilder: (context) {
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Assets.icons.common.emptyBox.svg(),
+                Gaps.vGap16,
+                LocaleKeys.userOrder_NoOrderYet.tr().text.make(),
+              ],
+            );
+          },
         ),
-        itemBuilder: (context, item, index) {
-          return UserOrderListGroup(
-            order: item,
-          );
-        },
-        separatorBuilder: (context, index) => const AppDivider(),
-        noItemsFoundIndicatorBuilder: (context) {
-          return Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Assets.icons.common.emptyBox.svg(),
-              Gaps.vGap16,
-              LocaleKeys.userOrder_NoOrderYet.tr().text.make(),
-            ],
-          );
-        },
       ),
     );
   }

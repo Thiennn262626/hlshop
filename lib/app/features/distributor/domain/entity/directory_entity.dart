@@ -16,7 +16,7 @@ class DirectoryEntity {
       id: '1',
       name: 'Thực phẩm chức năng',
       amount: '1203',
-      img: Assets.icons.app.logoMedicine.path,
+      // img: Assets.icons.app.logoMedicine.path,
     );
   }
 

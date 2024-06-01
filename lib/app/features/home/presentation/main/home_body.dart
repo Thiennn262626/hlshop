@@ -19,29 +19,29 @@ class HomeBody extends StatelessWidget {
                   const HomeFeatureGird(
                     padding: Dimens.edge_x_XS,
                   ),
-                  if (state.userEntity != null)
-                    SectionContainer(
-                      key: const Key('home_for_you_section'),
-                      title: '${'Dành cho bạn'.tr()} 🎁🎁🎁',
-                      seeAll: () {
-                        context.pushRoute(
-                          AllProductsRoute(
-                            title: '${'Dành cho bạn'.tr()} 🎁🎁🎁',
-                            productListType: ProductListType.foryou,
-                          ),
-                        );
-                      },
-                      child: ProductListHoz(
-                        parentWidthFraction: productWidthFraction,
-                        fetchListData: (offset, limit) =>
-                            getIt<ProductRepo>().getProductList(
-                          offset: offset,
-                          limit: limit,
-                          type: ProductListType.foryou,
-                          showType: ProductListShowType.homePage,
-                        ),
-                      ),
-                    ),
+                  // if (state.userEntity != null)
+                  //   SectionContainer(
+                  //     key: const Key('home_for_you_section'),
+                  //     title: '${'Dành cho bạn'.tr()} 🎁🎁🎁',
+                  //     seeAll: () {
+                  //       context.pushRoute(
+                  //         AllProductsRoute(
+                  //           title: '${'Dành cho bạn'.tr()} 🎁🎁🎁',
+                  //           productListType: ProductListType.foryou,
+                  //         ),
+                  //       );
+                  //     },
+                  //     child: ProductListHoz(
+                  //       parentWidthFraction: productWidthFraction,
+                  //       fetchListData: (offset, limit) =>
+                  //           getIt<ProductRepo>().getProductList(
+                  //         offset: offset,
+                  //         limit: limit,
+                  //         type: ProductListType.foryou,
+                  //         showType: ProductListShowType.homePage,
+                  //       ),
+                  //     ),
+                  //   ),
                   SectionContainer(
                     key: const Key('home_hot_section'),
                     title: '${'Sản phẩm HOT'.tr()} 🔥🔥🔥',

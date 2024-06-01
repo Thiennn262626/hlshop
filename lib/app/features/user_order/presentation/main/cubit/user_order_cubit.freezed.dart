@@ -20,6 +20,7 @@ mixin _$UserOrderState {
   ApiStatus get orderListStatus =>
       throw _privateConstructorUsedError; // @Default(null) Map<OrderStatus, List<OrderEntity>>? userOrderListMap,
   List<OrderEntity> get userOrderList => throw _privateConstructorUsedError;
+  OrderStatus? get orderStatus => throw _privateConstructorUsedError;
   List<int?>? get userOrderCountList => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -37,6 +38,7 @@ abstract class $UserOrderStateCopyWith<$Res> {
       {ApiStatus orderCountStatus,
       ApiStatus orderListStatus,
       List<OrderEntity> userOrderList,
+      OrderStatus? orderStatus,
       List<int?>? userOrderCountList});
 
   $ApiStatusCopyWith<$Res> get orderCountStatus;
@@ -59,6 +61,7 @@ class _$UserOrderStateCopyWithImpl<$Res, $Val extends UserOrderState>
     Object? orderCountStatus = null,
     Object? orderListStatus = null,
     Object? userOrderList = null,
+    Object? orderStatus = freezed,
     Object? userOrderCountList = freezed,
   }) {
     return _then(_value.copyWith(
@@ -74,6 +77,10 @@ class _$UserOrderStateCopyWithImpl<$Res, $Val extends UserOrderState>
           ? _value.userOrderList
           : userOrderList // ignore: cast_nullable_to_non_nullable
               as List<OrderEntity>,
+      orderStatus: freezed == orderStatus
+          ? _value.orderStatus
+          : orderStatus // ignore: cast_nullable_to_non_nullable
+              as OrderStatus?,
       userOrderCountList: freezed == userOrderCountList
           ? _value.userOrderCountList
           : userOrderCountList // ignore: cast_nullable_to_non_nullable
@@ -110,6 +117,7 @@ abstract class _$$UserOrderStateImplCopyWith<$Res>
       {ApiStatus orderCountStatus,
       ApiStatus orderListStatus,
       List<OrderEntity> userOrderList,
+      OrderStatus? orderStatus,
       List<int?>? userOrderCountList});
 
   @override
@@ -132,6 +140,7 @@ class __$$UserOrderStateImplCopyWithImpl<$Res>
     Object? orderCountStatus = null,
     Object? orderListStatus = null,
     Object? userOrderList = null,
+    Object? orderStatus = freezed,
     Object? userOrderCountList = freezed,
   }) {
     return _then(_$UserOrderStateImpl(
@@ -147,6 +156,10 @@ class __$$UserOrderStateImplCopyWithImpl<$Res>
           ? _value._userOrderList
           : userOrderList // ignore: cast_nullable_to_non_nullable
               as List<OrderEntity>,
+      orderStatus: freezed == orderStatus
+          ? _value.orderStatus
+          : orderStatus // ignore: cast_nullable_to_non_nullable
+              as OrderStatus?,
       userOrderCountList: freezed == userOrderCountList
           ? _value._userOrderCountList
           : userOrderCountList // ignore: cast_nullable_to_non_nullable
@@ -163,6 +176,7 @@ class _$UserOrderStateImpl extends _UserOrderState
       {this.orderCountStatus = const ApiStatus.initial(),
       this.orderListStatus = const ApiStatus.initial(),
       final List<OrderEntity> userOrderList = const [],
+      this.orderStatus = null,
       final List<int?>? userOrderCountList = null})
       : _userOrderList = userOrderList,
         _userOrderCountList = userOrderCountList,
@@ -185,6 +199,9 @@ class _$UserOrderStateImpl extends _UserOrderState
     return EqualUnmodifiableListView(_userOrderList);
   }
 
+  @override
+  @JsonKey()
+  final OrderStatus? orderStatus;
   final List<int?>? _userOrderCountList;
   @override
   @JsonKey()
@@ -199,7 +216,7 @@ class _$UserOrderStateImpl extends _UserOrderState
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'UserOrderState(orderCountStatus: $orderCountStatus, orderListStatus: $orderListStatus, userOrderList: $userOrderList, userOrderCountList: $userOrderCountList)';
+    return 'UserOrderState(orderCountStatus: $orderCountStatus, orderListStatus: $orderListStatus, userOrderList: $userOrderList, orderStatus: $orderStatus, userOrderCountList: $userOrderCountList)';
   }
 
   @override
@@ -210,6 +227,7 @@ class _$UserOrderStateImpl extends _UserOrderState
       ..add(DiagnosticsProperty('orderCountStatus', orderCountStatus))
       ..add(DiagnosticsProperty('orderListStatus', orderListStatus))
       ..add(DiagnosticsProperty('userOrderList', userOrderList))
+      ..add(DiagnosticsProperty('orderStatus', orderStatus))
       ..add(DiagnosticsProperty('userOrderCountList', userOrderCountList));
   }
 
@@ -224,6 +242,8 @@ class _$UserOrderStateImpl extends _UserOrderState
                 other.orderListStatus == orderListStatus) &&
             const DeepCollectionEquality()
                 .equals(other._userOrderList, _userOrderList) &&
+            (identical(other.orderStatus, orderStatus) ||
+                other.orderStatus == orderStatus) &&
             const DeepCollectionEquality()
                 .equals(other._userOrderCountList, _userOrderCountList));
   }
@@ -234,6 +254,7 @@ class _$UserOrderStateImpl extends _UserOrderState
       orderCountStatus,
       orderListStatus,
       const DeepCollectionEquality().hash(_userOrderList),
+      orderStatus,
       const DeepCollectionEquality().hash(_userOrderCountList));
 
   @JsonKey(ignore: true)
@@ -249,6 +270,7 @@ abstract class _UserOrderState extends UserOrderState {
       {final ApiStatus orderCountStatus,
       final ApiStatus orderListStatus,
       final List<OrderEntity> userOrderList,
+      final OrderStatus? orderStatus,
       final List<int?>? userOrderCountList}) = _$UserOrderStateImpl;
   const _UserOrderState._() : super._();
 
@@ -258,6 +280,8 @@ abstract class _UserOrderState extends UserOrderState {
   ApiStatus get orderListStatus;
   @override // @Default(null) Map<OrderStatus, List<OrderEntity>>? userOrderListMap,
   List<OrderEntity> get userOrderList;
+  @override
+  OrderStatus? get orderStatus;
   @override
   List<int?>? get userOrderCountList;
   @override

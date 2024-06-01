@@ -1,13 +1,24 @@
 import 'package:hlshop/all_file/all_file.dart';
 
 @RoutePage()
-class UserOrderPage extends StatelessWidget {
+class UserOrderPage extends StatefulWidget {
   const UserOrderPage({super.key});
 
   @override
+  State<UserOrderPage> createState() => _UserOrderPageState();
+}
+
+class _UserOrderPageState extends State<UserOrderPage>
+    with SingleTickerProviderStateMixin {
+  @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => UserOrderCubit()..fetchStatus(),
+      create: (context) => UserOrderCubit(
+        tabController: TabController(
+          length: OrderStatus.values.length,
+          vsync: this,
+        ),
+      ),
       child: Builder(
         builder: (context) {
           return ApiItemConsumer<UserOrderCubit, UserOrderState>(

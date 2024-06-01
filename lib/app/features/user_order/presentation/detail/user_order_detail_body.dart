@@ -30,13 +30,10 @@ class UserOrderDetailBody extends StatelessWidget {
                 ],
               ),
               const OrderShippingStatusFirst(),
-              BlocProvider<UserOrderCubit>(
-                create: (context) => UserOrderCubit()..fetchItemList(),
-                child: UserOrderGroupItem(
-                  showStatus: false,
-                  orderData: item,
-                  isDetail: true,
-                ),
+              UserOrderGroupItem(
+                showStatus: false,
+                orderData: item,
+                isDetail: true,
               ),
               AppTileText.semiBold(
                 padding: Dimens.edge,

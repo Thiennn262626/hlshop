@@ -54,35 +54,35 @@ import 'package:hlshop/app/features/rating/presentation/star_pickup/star_pickup_
 import 'package:hlshop/app/features/rating/presentation/update_rating/update_rating_page.dart'
     as _i21;
 import 'package:hlshop/app/features/rating/presentation/user_rating_view/user_rating_view_page.dart'
-    as _i36;
-import 'package:hlshop/app/features/search/presentation/main/search_page.dart'
     as _i22;
-import 'package:hlshop/app/features/shopping_cart/presentation/main/shopping_cart_page.dart'
+import 'package:hlshop/app/features/search/presentation/main/search_page.dart'
     as _i23;
-import 'package:hlshop/app/features/user/presentation/account/user_account_page.dart'
+import 'package:hlshop/app/features/shopping_cart/presentation/main/shopping_cart_page.dart'
     as _i24;
-import 'package:hlshop/app/features/user/presentation/address/crud_address/crud_address_page.dart'
+import 'package:hlshop/app/features/user/presentation/account/user_account_page.dart'
     as _i25;
-import 'package:hlshop/app/features/user/presentation/address/receive_address/receive_address_page.dart'
+import 'package:hlshop/app/features/user/presentation/address/crud_address/crud_address_page.dart'
     as _i26;
-import 'package:hlshop/app/features/user/presentation/detail_account/detail_account_page.dart'
+import 'package:hlshop/app/features/user/presentation/address/receive_address/receive_address_page.dart'
     as _i27;
-import 'package:hlshop/app/features/user/presentation/detail_account/user_account%20_info/user_account%20_info_page.dart'
+import 'package:hlshop/app/features/user/presentation/detail_account/detail_account_page.dart'
     as _i28;
-import 'package:hlshop/app/features/user/presentation/detail_account/user_email_info/user_email_info_page.dart'
+import 'package:hlshop/app/features/user/presentation/detail_account/user_account%20_info/user_account%20_info_page.dart'
     as _i29;
-import 'package:hlshop/app/features/user/presentation/detail_account/user_phone_info/user_phone_info_page.dart'
+import 'package:hlshop/app/features/user/presentation/detail_account/user_email_info/user_email_info_page.dart'
     as _i30;
-import 'package:hlshop/app/features/user/presentation/favorite_product/user_favorite_product_page.dart'
+import 'package:hlshop/app/features/user/presentation/detail_account/user_phone_info/user_phone_info_page.dart'
     as _i31;
-import 'package:hlshop/app/features/user/presentation/info/user_info_page.dart'
+import 'package:hlshop/app/features/user/presentation/favorite_product/user_favorite_product_page.dart'
     as _i32;
-import 'package:hlshop/app/features/user_order/presentation/detail/user_order_detail_page.dart'
+import 'package:hlshop/app/features/user/presentation/info/user_info_page.dart'
     as _i33;
-import 'package:hlshop/app/features/user_order/presentation/main/user_order_page.dart'
+import 'package:hlshop/app/features/user_order/presentation/detail/user_order_detail_page.dart'
     as _i34;
-import 'package:hlshop/app/features/user_order/presentation/order_tracking_detail/user_order_tracking_detail_page.dart'
+import 'package:hlshop/app/features/user_order/presentation/main/user_order_page.dart'
     as _i35;
+import 'package:hlshop/app/features/user_order/presentation/order_tracking_detail/user_order_tracking_detail_page.dart'
+    as _i36;
 
 abstract class $AppAutoRoute extends _i37.RootStackRouter {
   $AppAutoRoute({super.navigatorKey});
@@ -290,22 +290,28 @@ abstract class $AppAutoRoute extends _i37.RootStackRouter {
         ),
       );
     },
+    UserRatingViewRoute.name: (routeData) {
+      return _i37.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i22.UserRatingViewPage(),
+      );
+    },
     SearchRoute.name: (routeData) {
       return _i37.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i22.SearchPage(),
+        child: const _i23.SearchPage(),
       );
     },
     ShoppingCartRoute.name: (routeData) {
       return _i37.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i23.ShoppingCartPage(),
+        child: const _i24.ShoppingCartPage(),
       );
     },
     UserAccountRoute.name: (routeData) {
       return _i37.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i24.UserAccountPage(),
+        child: const _i25.UserAccountPage(),
       );
     },
     CrudAddressRoute.name: (routeData) {
@@ -313,7 +319,7 @@ abstract class $AppAutoRoute extends _i37.RootStackRouter {
           orElse: () => const CrudAddressRouteArgs());
       return _i37.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i25.CrudAddressPage(
+        child: _i26.CrudAddressPage(
           key: args.key,
           initialAddress: args.initialAddress,
           type: args.type,
@@ -324,7 +330,7 @@ abstract class $AppAutoRoute extends _i37.RootStackRouter {
       final args = routeData.argsAs<ReceiveAddressRouteArgs>();
       return _i37.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i26.ReceiveAddressPage(
+        child: _i27.ReceiveAddressPage(
           key: args.key,
           user: args.user,
           canSelectPrimary: args.canSelectPrimary,
@@ -336,7 +342,7 @@ abstract class $AppAutoRoute extends _i37.RootStackRouter {
       final args = routeData.argsAs<ReceiveDetailAccountRouteArgs>();
       return _i37.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i27.ReceiveDetailAccountPage(
+        child: _i28.ReceiveDetailAccountPage(
           key: args.key,
           user: args.user,
         ),
@@ -346,7 +352,7 @@ abstract class $AppAutoRoute extends _i37.RootStackRouter {
       final args = routeData.argsAs<UserAccountInfoRouteArgs>();
       return _i37.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i28.UserAccountInfoPage(
+        child: _i29.UserAccountInfoPage(
           key: args.key,
           user: args.user,
         ),
@@ -355,26 +361,26 @@ abstract class $AppAutoRoute extends _i37.RootStackRouter {
     UserEmailInfoRoute.name: (routeData) {
       return _i37.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i29.UserEmailInfoPage(),
+        child: const _i30.UserEmailInfoPage(),
       );
     },
     UserPhoneInfoRoute.name: (routeData) {
       return _i37.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i30.UserPhoneInfoPage(),
+        child: const _i31.UserPhoneInfoPage(),
       );
     },
     UserFavoriteProductRoute.name: (routeData) {
       return _i37.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i31.UserFavoriteProductPage(),
+        child: const _i32.UserFavoriteProductPage(),
       );
     },
     UserInfoRoute.name: (routeData) {
       final args = routeData.argsAs<UserInfoRouteArgs>();
       return _i37.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i32.UserInfoPage(
+        child: _i33.UserInfoPage(
           key: args.key,
           user: args.user,
         ),
@@ -384,7 +390,7 @@ abstract class $AppAutoRoute extends _i37.RootStackRouter {
       final args = routeData.argsAs<UserOrderDetailRouteArgs>();
       return _i37.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i33.UserOrderDetailPage(
+        child: _i34.UserOrderDetailPage(
           key: args.key,
           order: args.order,
         ),
@@ -393,23 +399,17 @@ abstract class $AppAutoRoute extends _i37.RootStackRouter {
     UserOrderRoute.name: (routeData) {
       return _i37.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i34.UserOrderPage(),
+        child: const _i35.UserOrderPage(),
       );
     },
     UserOrderTrackingDetailRoute.name: (routeData) {
       final args = routeData.argsAs<UserOrderTrackingDetailRouteArgs>();
       return _i37.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i35.UserOrderTrackingDetailPage(
+        child: _i36.UserOrderTrackingDetailPage(
           key: args.key,
           order: args.order,
         ),
-      );
-    },
-    UserRatingViewRoute.name: (routeData) {
-      return _i37.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i36.UserRatingViewPage(),
       );
     },
   };
@@ -1139,7 +1139,21 @@ class UpdateRatingRouteArgs {
 }
 
 /// generated route for
-/// [_i22.SearchPage]
+/// [_i22.UserRatingViewPage]
+class UserRatingViewRoute extends _i37.PageRouteInfo<void> {
+  const UserRatingViewRoute({List<_i37.PageRouteInfo>? children})
+      : super(
+          UserRatingViewRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'UserRatingViewRoute';
+
+  static const _i37.PageInfo<void> page = _i37.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i23.SearchPage]
 class SearchRoute extends _i37.PageRouteInfo<void> {
   const SearchRoute({List<_i37.PageRouteInfo>? children})
       : super(
@@ -1153,7 +1167,7 @@ class SearchRoute extends _i37.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i23.ShoppingCartPage]
+/// [_i24.ShoppingCartPage]
 class ShoppingCartRoute extends _i37.PageRouteInfo<void> {
   const ShoppingCartRoute({List<_i37.PageRouteInfo>? children})
       : super(
@@ -1167,7 +1181,7 @@ class ShoppingCartRoute extends _i37.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i24.UserAccountPage]
+/// [_i25.UserAccountPage]
 class UserAccountRoute extends _i37.PageRouteInfo<void> {
   const UserAccountRoute({List<_i37.PageRouteInfo>? children})
       : super(
@@ -1181,12 +1195,12 @@ class UserAccountRoute extends _i37.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i25.CrudAddressPage]
+/// [_i26.CrudAddressPage]
 class CrudAddressRoute extends _i37.PageRouteInfo<CrudAddressRouteArgs> {
   CrudAddressRoute({
     _i39.Key? key,
     _i39.UserAddressEntity? initialAddress,
-    _i25.CrudAddressType type = _i25.CrudAddressType.add,
+    _i26.CrudAddressType type = _i26.CrudAddressType.add,
     List<_i37.PageRouteInfo>? children,
   }) : super(
           CrudAddressRoute.name,
@@ -1208,14 +1222,14 @@ class CrudAddressRouteArgs {
   const CrudAddressRouteArgs({
     this.key,
     this.initialAddress,
-    this.type = _i25.CrudAddressType.add,
+    this.type = _i26.CrudAddressType.add,
   });
 
   final _i39.Key? key;
 
   final _i39.UserAddressEntity? initialAddress;
 
-  final _i25.CrudAddressType type;
+  final _i26.CrudAddressType type;
 
   @override
   String toString() {
@@ -1224,7 +1238,7 @@ class CrudAddressRouteArgs {
 }
 
 /// generated route for
-/// [_i26.ReceiveAddressPage]
+/// [_i27.ReceiveAddressPage]
 class ReceiveAddressRoute extends _i37.PageRouteInfo<ReceiveAddressRouteArgs> {
   ReceiveAddressRoute({
     _i39.Key? key,
@@ -1272,7 +1286,7 @@ class ReceiveAddressRouteArgs {
 }
 
 /// generated route for
-/// [_i27.ReceiveDetailAccountPage]
+/// [_i28.ReceiveDetailAccountPage]
 class ReceiveDetailAccountRoute
     extends _i37.PageRouteInfo<ReceiveDetailAccountRouteArgs> {
   ReceiveDetailAccountRoute({
@@ -1311,7 +1325,7 @@ class ReceiveDetailAccountRouteArgs {
 }
 
 /// generated route for
-/// [_i28.UserAccountInfoPage]
+/// [_i29.UserAccountInfoPage]
 class UserAccountInfoRoute
     extends _i37.PageRouteInfo<UserAccountInfoRouteArgs> {
   UserAccountInfoRoute({
@@ -1350,7 +1364,7 @@ class UserAccountInfoRouteArgs {
 }
 
 /// generated route for
-/// [_i29.UserEmailInfoPage]
+/// [_i30.UserEmailInfoPage]
 class UserEmailInfoRoute extends _i37.PageRouteInfo<void> {
   const UserEmailInfoRoute({List<_i37.PageRouteInfo>? children})
       : super(
@@ -1364,7 +1378,7 @@ class UserEmailInfoRoute extends _i37.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i30.UserPhoneInfoPage]
+/// [_i31.UserPhoneInfoPage]
 class UserPhoneInfoRoute extends _i37.PageRouteInfo<void> {
   const UserPhoneInfoRoute({List<_i37.PageRouteInfo>? children})
       : super(
@@ -1378,7 +1392,7 @@ class UserPhoneInfoRoute extends _i37.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i31.UserFavoriteProductPage]
+/// [_i32.UserFavoriteProductPage]
 class UserFavoriteProductRoute extends _i37.PageRouteInfo<void> {
   const UserFavoriteProductRoute({List<_i37.PageRouteInfo>? children})
       : super(
@@ -1392,7 +1406,7 @@ class UserFavoriteProductRoute extends _i37.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i32.UserInfoPage]
+/// [_i33.UserInfoPage]
 class UserInfoRoute extends _i37.PageRouteInfo<UserInfoRouteArgs> {
   UserInfoRoute({
     _i39.Key? key,
@@ -1430,7 +1444,7 @@ class UserInfoRouteArgs {
 }
 
 /// generated route for
-/// [_i33.UserOrderDetailPage]
+/// [_i34.UserOrderDetailPage]
 class UserOrderDetailRoute
     extends _i37.PageRouteInfo<UserOrderDetailRouteArgs> {
   UserOrderDetailRoute({
@@ -1469,7 +1483,7 @@ class UserOrderDetailRouteArgs {
 }
 
 /// generated route for
-/// [_i34.UserOrderPage]
+/// [_i35.UserOrderPage]
 class UserOrderRoute extends _i37.PageRouteInfo<void> {
   const UserOrderRoute({List<_i37.PageRouteInfo>? children})
       : super(
@@ -1483,7 +1497,7 @@ class UserOrderRoute extends _i37.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i35.UserOrderTrackingDetailPage]
+/// [_i36.UserOrderTrackingDetailPage]
 class UserOrderTrackingDetailRoute
     extends _i37.PageRouteInfo<UserOrderTrackingDetailRouteArgs> {
   UserOrderTrackingDetailRoute({
@@ -1519,18 +1533,4 @@ class UserOrderTrackingDetailRouteArgs {
   String toString() {
     return 'UserOrderTrackingDetailRouteArgs{key: $key, order: $order}';
   }
-}
-
-/// generated route for
-/// [_i36.UserRatingViewPage]
-class UserRatingViewRoute extends _i37.PageRouteInfo<void> {
-  const UserRatingViewRoute({List<_i37.PageRouteInfo>? children})
-      : super(
-          UserRatingViewRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'UserRatingViewRoute';
-
-  static const _i37.PageInfo<void> page = _i37.PageInfo<void>(name);
 }

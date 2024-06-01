@@ -20,6 +20,6 @@ class ProductBottomBar extends StatelessWidget {
           'Thêm vào giỏ'.tr().text.semiBold.make(),
         ],
       ),
-    ).expand();
+    );
   }
 }

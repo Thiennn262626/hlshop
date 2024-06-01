@@ -47,27 +47,12 @@ class $AssetsIconsAppGen {
   SvgGenImage get appLogoNameSvg =>
       const SvgGenImage('assets/icons/app/app_logo_name.svg');
 
-  /// File path: assets/icons/app/logo_medicine.jpg
-  AssetGenImage get logoMedicine =>
-      const AssetGenImage('assets/icons/app/logo_medicine.jpg');
-
-  /// File path: assets/icons/app/person_follow.svg
-  SvgGenImage get personFollow =>
-      const SvgGenImage('assets/icons/app/person_follow.svg');
-
   /// File path: assets/icons/app/splash.png
   AssetGenImage get splash =>
       const AssetGenImage('assets/icons/app/splash.png');
 
   /// List of all assets
-  List<dynamic> get values => [
-        appLogo,
-        appLogoNamePng,
-        appLogoNameSvg,
-        logoMedicine,
-        personFollow,
-        splash
-      ];
+  List<dynamic> get values => [appLogo, appLogoNamePng, appLogoNameSvg, splash];
 }
 
 class $AssetsIconsCommonGen {
