@@ -31,6 +31,53 @@ class DialogUtils {
     );
   }
 
+  static Future<dynamic> showConfirmDialog({
+    required BuildContext context,
+    Object? error,
+    String? title,
+    String? cancelLabel,
+    String? confirmLabel,
+    String? content,
+    VoidCallback? onConfirm,
+    bool? useRootNavigator,
+    bool barrierDismissible = true,
+    Duration autoDismissDelay = const Duration(seconds: 3),
+    VoidCallback? onAutoDismiss,
+  }) {
+    BuildContext? dialogContext;
+    final rs = showDialog<dynamic>(
+      context: context,
+      useRootNavigator: useRootNavigator ?? true,
+      barrierDismissible: barrierDismissible,
+      builder: (BuildContext context) {
+        dialogContext = context;
+
+        return context.dialogConfigData.confirmDialogBuilder(
+          context,
+          title,
+          cancelLabel,
+          confirmLabel,
+          content,
+          onConfirm,
+          onAutoDismiss,
+        );
+      },
+    );
+
+    if (onAutoDismiss != null) {
+      WidgetsBinding.instance.addPostFrameCallback((_) async {
+        Future.delayed(autoDismissDelay, () {
+          if (dialogContext?.mounted ?? false) {
+            Navigator.of(dialogContext!, rootNavigator: true).pop();
+            onAutoDismiss.call();
+          }
+        });
+      });
+    }
+
+    return rs;
+  }
+
   static Future<dynamic> showSuccessDialog({
     required BuildContext context,
     String? title,

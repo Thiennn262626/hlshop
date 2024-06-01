@@ -38,6 +38,71 @@ class SuccessDialogLayout extends StatelessWidget {
   }
 }
 
+class ConfirmDialogLayout extends StatelessWidget {
+  const ConfirmDialogLayout({
+    super.key,
+    this.icon,
+    this.title,
+    this.content,
+    this.child,
+    this.onConfirm,
+    this.onAutoDismiss,
+    this.cancelLabel,
+    this.confirmLabel,
+  });
+
+  final Widget? icon;
+
+  final String? title;
+  final String? cancelLabel;
+  final String? confirmLabel;
+  final String? content;
+  final Widget? child;
+  final VoidCallback? onConfirm;
+  final VoidCallback? onAutoDismiss;
+
+  @override
+  Widget build(BuildContext context) {
+    return AppDialogLayout(
+      icon: Lottie.asset(
+        'assets/lottie/ic_error.json',
+        package: 'app_ui_kit',
+        width: 70,
+        height: 70,
+        repeat: false,
+      ),
+      title: title,
+      content: content,
+      buttonStyle: AppButtonTheme.error(context),
+      child: SizedBox(
+        height: Dimens.minRowHeight_XS4,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            AppButton(
+              label: cancelLabel ?? context.dialogConfigData.cancelLabel,
+              style: AppButtonTheme.grey(context),
+              onPressed: () {
+                Navigator.of(context, rootNavigator: true).pop();
+              },
+            ).expand(),
+            Gaps.hGap24,
+            AppButton(
+              label: confirmLabel ?? context.dialogConfigData.confirmLabel,
+              style: AppButtonTheme.error(context),
+              onPressed: () {
+                Navigator.of(context, rootNavigator: true).pop();
+                onConfirm?.call();
+              },
+            ).expand(),
+          ],
+        ),
+      ).pt16(),
+    );
+  }
+}
+
 class ErrorDialogLayout extends StatelessWidget {
   const ErrorDialogLayout({
     super.key,

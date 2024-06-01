@@ -12,6 +12,16 @@ typedef DialogAlertBuilder = Widget Function(
   VoidCallback? onAutoDismiss,
 );
 
+typedef DialogAlertBuilderV2 = Widget Function(
+    BuildContext context,
+    String? title,
+    String? cancelLabel,
+    String? confirmLabel,
+    String? content,
+    VoidCallback? onConfirm,
+    VoidCallback? onAutoDismiss,
+    );
+
 extension DialogConfigDataExtension on BuildContext {
   DialogConfigData get dialogConfigData => DialogConfiguration.of(this);
 }
@@ -24,6 +34,7 @@ class DialogConfigData {
     EdgeInsets? defaultPadding,
     DialogAlertBuilder? successDialogBuilder,
     DialogAlertBuilder? errorDialogBuilder,
+    DialogAlertBuilderV2? confirmDialogBuilder,
   }) {
     this.defaultPadding = defaultPadding ??
         const EdgeInsets.symmetric(
@@ -51,6 +62,16 @@ class DialogConfigData {
             onAutoDismiss: onAutoDismiss,
           );
         };
+    this.confirmDialogBuilder = confirmDialogBuilder ?? (context, title, cancelLabel, confirmLabel, content, onConfirm, onAutoDismiss) {
+      return ConfirmDialogLayout(
+        title: title,
+        cancelLabel: cancelLabel,
+        confirmLabel: confirmLabel,
+        content: content,
+        onConfirm: onConfirm,
+        onAutoDismiss: onAutoDismiss,
+      );
+    };
   }
 
   late final EdgeInsets defaultPadding;
@@ -61,6 +82,7 @@ class DialogConfigData {
 
   late final DialogAlertBuilder successDialogBuilder;
   late final DialogAlertBuilder errorDialogBuilder;
+  late final DialogAlertBuilderV2 confirmDialogBuilder;
 }
 
 class DialogConfiguration extends InheritedWidget {
