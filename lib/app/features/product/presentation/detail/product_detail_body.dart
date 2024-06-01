@@ -27,16 +27,16 @@ class ProductDetailBody extends StatelessWidget {
                         product: item,
                         listItem: item.variations ?? [],
                       ).pyDefault(),
-                    if (item?.distributor?.id?.isNotNullOrEmpty ?? false)
-                      DistributorItem(
-                        item: item?.distributor,
-                        layoutType: DistributorItemLayoutType.layoutSimpleInfo1,
-                        onPressed: () {
-                          context.router.push(
-                            const DistributePage() as PageRouteInfo,
-                          );
-                        },
-                      ),
+                    // if (item?.distributor?.id?.isNotNullOrEmpty ?? false)
+                    //   DistributorItem(
+                    //     item: item?.distributor,
+                    //     layoutType: DistributorItemLayoutType.layoutSimpleInfo1,
+                    //     onPressed: () {
+                    //       context.router.push(
+                    //         const DistributePage() as PageRouteInfo,
+                    //       );
+                    //     },
+                    //   ),
                     ProductRating(
                       productRatingSummary: item?.ratingSummary,
                       onPressed: () {

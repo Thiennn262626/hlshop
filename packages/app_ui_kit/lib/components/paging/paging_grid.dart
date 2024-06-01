@@ -1,4 +1,5 @@
 import 'package:app_ui_kit/all_file/app_ui_kit_all_file.dart';
+import 'package:app_ui_kit/components/list/refresh_noti/check_page_refresh_event.dart';
 import 'package:app_ui_kit/components/paging/app_paging_controller.dart';
 import 'package:app_ui_kit/components/paging/paging_config.dart';
 import 'package:app_ui_kit/components/paging/paging_list.dart';
@@ -148,19 +149,22 @@ class _PagingGridState<V> extends State<PagingGrid<V>> {
       return pagedListView;
     }
 
-    return AppPullDownRefresh(
-      indicatorAlignment: widget.scrollDirection == Axis.vertical
-          ? Alignment.topCenter
-          : Alignment.centerLeft,
-      enable: widget.enablePullDown,
-      refresh: () {
-        if (widget.onPullDown != null) {
-          widget.onPullDown?.call(_pagingController);
-        } else {
-          _pagingController.refresh();
-        }
-      },
-      child: pagedListView,
+    return CheckPageRefreshEvent(
+      controller: _pagingController,
+      child: AppPullDownRefresh(
+        indicatorAlignment: widget.scrollDirection == Axis.vertical
+            ? Alignment.topCenter
+            : Alignment.centerLeft,
+        enable: widget.enablePullDown,
+        refresh: () {
+          if (widget.onPullDown != null) {
+            widget.onPullDown?.call(_pagingController);
+          } else {
+            _pagingController.refresh();
+          }
+        },
+        child: pagedListView,
+      ),
     );
   }
 
