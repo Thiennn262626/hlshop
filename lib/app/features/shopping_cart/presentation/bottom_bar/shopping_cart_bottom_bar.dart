@@ -97,7 +97,7 @@ class _TotalPriceSection extends StatelessWidget {
                       );
                     },
               child: 'Mua hàng'.tr().text.white.make(),
-            );
+            ).minWidth(200);
           },
         ),
       ],
