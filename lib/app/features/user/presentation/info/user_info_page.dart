@@ -12,11 +12,19 @@ class UserInfoPage extends StatelessWidget {
       appBar: AppAppBar(
         title: 'Tài khoản'.tr().text.titleLarge(context).make(),
       ),
-      body: AuthConsumer(
-        onUnAuthenticated: () {
-          context.popRoute();
+      body: BlocConsumer<AuthBloc, AuthState>(
+        listener: (context, state) {
+          state.status.maybeWhen(
+            notAuthenticated: () {
+              context.router.popForced();
+            },
+            orElse: () => null,
+          );
         },
-        child: const UserProfilePullRefresh(child: UserInfoBody()),
+        builder: (BuildContext context, AuthState state) =>
+            const UserProfilePullRefresh(
+          child: UserInfoBody(),
+        ),
       ),
     );
   }

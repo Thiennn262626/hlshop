@@ -134,10 +134,12 @@ class UserInfoBody extends StatelessWidget {
               ].withDivider(Gaps.hGap8),
             ).py32(),
             onPressed: () {
-              DialogUtils.showMaterialDialog(
+              DialogUtils.showConfirmDialog(
                 context: context,
-                content: 'Bạn có chắc chắn muốn đăng xuất?'.tr(),
-                positive: () {
+                cancelLabel: 'Đóng'.tr(),
+                confirmLabel: 'Đăng xuất'.tr(),
+                content: 'Bạn có chắc chắn muốn đăng xuất'.tr(),
+                onConfirm: () {
                   context.read<AuthBloc>().add(const AuthEvent.signOut());
                 },
               );
