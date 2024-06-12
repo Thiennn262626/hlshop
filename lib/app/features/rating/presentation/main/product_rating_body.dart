@@ -67,7 +67,7 @@ class ProductRatingBody extends StatelessWidget {
                         BuildContext context,
                         BoxConstraints constraints,
                       ) {
-                        final width = constraints.maxWidth * 0.47;
+                        final width = constraints.maxWidth * 0.31;
                         return Wrap(
                           crossAxisAlignment: WrapCrossAlignment.center,
                           spacing: Dimens.gap_dp8,
@@ -75,7 +75,7 @@ class ProductRatingBody extends StatelessWidget {
                           children: [
                             ...?ratingItemEntity.images?.map(
                               (e) => SizedBox(
-                                height: 150,
+                                height: 100,
                                 width: width,
                                 child: AppImg(
                                   e,
@@ -127,7 +127,8 @@ class RatingFilterSection extends StatelessWidget {
               children: RatingFilterType.values
                   .mapAsList(
                     (ratingFilterType) => RatingFilterItem(
-                      title: ratingFilterType.titleWidget(context , ratingType == ratingFilterType),
+                      title: ratingFilterType.titleWidget(
+                          context, ratingType == ratingFilterType),
                       amount: ratingFilterType.amount(
                         context
                             .watch<ProductRatingCubit>()

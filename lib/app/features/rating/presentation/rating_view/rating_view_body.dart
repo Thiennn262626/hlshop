@@ -74,7 +74,7 @@ class RatingViewBody extends StatelessWidget {
                     BuildContext context,
                     BoxConstraints constraints,
                   ) {
-                    final width = constraints.maxWidth * 0.23;
+                    final width = constraints.maxWidth * 0.31;
                     return Wrap(
                       crossAxisAlignment: WrapCrossAlignment.center,
                       spacing: Dimens.gap_dp8,
@@ -82,7 +82,7 @@ class RatingViewBody extends StatelessWidget {
                       children: [
                         ...?ratingItemEntity.images?.map(
                           (e) => SizedBox(
-                            height: 150,
+                            height: 100,
                             width: width,
                             child: AppImg(
                               e,
