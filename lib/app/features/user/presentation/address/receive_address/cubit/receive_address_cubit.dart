@@ -13,7 +13,7 @@ class ReceiveAddressCubit extends Cubit<ReceiveAddressState> {
       AppPagingController(firstPageKey: 0);
 
   FutureOr<void> loadData() async {
-    pagingController.refreshSilent();
+    pagingController.refresh();
   }
 
   FutureOr<void> addDefault(String id) async {

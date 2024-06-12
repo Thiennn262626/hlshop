@@ -40,7 +40,7 @@ class CheckoutBottomBar extends StatelessWidget {
                       content: 'Vui lòng chọn địa chỉ nhận hàng'.tr());
                 }
               },
-            );
+            ).minWidth(200);
           },
         ),
       ],

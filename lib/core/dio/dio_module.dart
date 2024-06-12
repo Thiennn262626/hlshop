@@ -16,7 +16,7 @@ class DioModule {
     log('**** Dio create');
     final options = BaseOptions(
       // baseUrl: 'http://192.168.1.7:3000/', //Qun's ip Address
-      baseUrl: 'https://hl-backend-a6uq.onrender.com/', //Vercel BE
+      baseUrl: 'https://hlshop.azurewebsites.net/', //Vercel BE
       // baseUrl: 'http://localhost:80/', //localhost BE
       // baseUrl: 'https://hl-backend.vercel.app/',
       connectTimeout: const Duration(seconds: 30),

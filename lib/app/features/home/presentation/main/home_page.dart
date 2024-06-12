@@ -1,3 +1,5 @@
+import 'package:app_ui_kit/components/list/refresh_noti/page_refresh_cubit.dart';
+import 'package:app_ui_kit/components/refresh/app_pull_down_refresh.dart';
 import 'package:hlshop/all_file/all_file.dart';
 
 @RoutePage()
@@ -6,8 +8,15 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => HomeCubit()..fetchItem(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => PageRefreshCubit(),
+        ),
+        BlocProvider(
+          create: (context) => HomeCubit()..fetchItem(),
+        ),
+      ],
       child: Builder(
         builder: (context) {
           return BlocListener<HomeCubit, HomeState>(
@@ -26,7 +35,12 @@ class HomePage extends StatelessWidget {
                   ),
                 ];
               },
-              body: const HomeBody(),
+              body: AppPullDownRefresh(
+                refresh: () {
+                  context.read<PageRefreshCubit>().refresh();
+                },
+                child: const HomeBody(),
+              ),
             ),
           );
         },

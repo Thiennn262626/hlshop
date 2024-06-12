@@ -72,7 +72,7 @@ class UserOrderDetailBody extends StatelessWidget {
                         await context.popRoute(true);
                       },
                     ).py16().expand(),
-                    const AppDivider().pxDefault(),
+                    Gaps.hGap8,
                     AppButton(
                       style: AppButtonTheme.color(context, color: Colors.red),
                       label: 'Trả hàng'.tr(),
