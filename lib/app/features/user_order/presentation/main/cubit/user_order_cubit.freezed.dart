@@ -176,7 +176,7 @@ class _$UserOrderStateImpl extends _UserOrderState
       {this.orderCountStatus = const ApiStatus.initial(),
       this.orderListStatus = const ApiStatus.initial(),
       final List<OrderEntity> userOrderList = const [],
-      this.orderStatus = null,
+      this.orderStatus = OrderStatus.newOrder,
       final List<int?>? userOrderCountList = null})
       : _userOrderList = userOrderList,
         _userOrderCountList = userOrderCountList,

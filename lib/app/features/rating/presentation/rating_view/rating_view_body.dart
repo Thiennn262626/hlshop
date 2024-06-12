@@ -74,7 +74,7 @@ class RatingViewBody extends StatelessWidget {
                     BuildContext context,
                     BoxConstraints constraints,
                   ) {
-                    final width = constraints.maxWidth * 0.47;
+                    final width = constraints.maxWidth * 0.23;
                     return Wrap(
                       crossAxisAlignment: WrapCrossAlignment.center,
                       spacing: Dimens.gap_dp8,
