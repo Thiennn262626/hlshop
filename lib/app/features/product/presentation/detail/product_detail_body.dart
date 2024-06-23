@@ -45,7 +45,7 @@ class ProductDetailBody extends StatelessWidget {
                         );
                       },
                     ),
-                    const ProductHeightLight(),
+                    // const ProductHeightLight(),
                     ProductDetailDescription(
                       item: item,
                     ).pDefault(),
@@ -55,9 +55,9 @@ class ProductDetailBody extends StatelessWidget {
                     // ProductDetailNote(
                     //   item: item,
                     // ).pDefault(),
-                    ProductDetailSize(
-                      item: item,
-                    ).pDefault(),
+                    // ProductDetailSize(
+                    //   item: item,
+                    // ).pDefault(),
                     if (item?.category?.id?.isNotNullOrEmpty ?? false)
                       SectionContainer(
                         title: 'Sản phẩm tương tự'.tr(),

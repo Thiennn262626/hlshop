@@ -67,7 +67,7 @@ class _TotalPriceSection extends StatelessWidget {
             BlocBuilder<ShoppingCartBloc, ShoppingCartState>(
               builder: (context, state) {
                 return AppPrice(
-                  price: context.read<ShoppingCartBloc>().getTotalPrice(),
+                  price: context.watch<ShoppingCartBloc>().getTotalPrice(),
                 );
               },
             ),
