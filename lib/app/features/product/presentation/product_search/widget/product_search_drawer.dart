@@ -21,7 +21,7 @@ class NavigatorDrawer extends StatelessWidget {
                     'Theo danh mục'.tr().text.titleMedium(context).make().py8(),
                     AddressSelectField<ProductCategoryEntity?>(
                       formControlName: ProductFilterData.categoryKey,
-                      // ProductFilterData.category,
+                      showSearchBar: false,
                       title: 'Chọn theo danh mục'.tr(),
                       itemToString: (id) => id?.name ?? '',
                       searchListData: (offset, limit, search) =>
@@ -30,62 +30,62 @@ class NavigatorDrawer extends StatelessWidget {
                         offset: offset,
                       ),
                     ),
-                    'Khoảng giá'.tr().text.titleMedium(context).make().py8(),
-                    Row(
-                      children: [
-                        AppTextFieldReactive(
-                          hintText:
-                              state.filterData?.minAmount ?? 'TỐI THIỂU'.tr(),
-                          formControlName: ProductFilterData.minKey,
-                        ).flex(),
-                        const SizedBox(
-                          width: 16,
-                        ),
-                        AppTextFieldReactive(
-                          hintText:
-                              state.filterData?.maxAmount ?? 'TỐI ĐA'.tr(),
-                          formControlName: ProductFilterData.maxKey,
-                        ).flex()
-                      ],
-                    ).minHeight(0),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        AppButton(
-                          style: counterButtonStyle,
-                          child: '0-100k'.tr().text.make().p4(),
-                          onPressed: () {
-                            context
-                                .read<ProductSearchCubit>()
-                                .setMinMax('0', '100000');
-                          },
-                        ).expand(),
-                        AppButton(
-                          style: counterButtonStyle,
-                          child: '100-200k'.tr().text.make().p4(),
-                          onPressed: () {
-                            context
-                                .read<ProductSearchCubit>()
-                                .setMinMax('100000', '200000');
-                          },
-                        ).expand(),
-                        AppButton(
-                          style: counterButtonStyle,
-                          child: '200-300k'.tr().text.make().p4(),
-                          onPressed: () {
-                            context
-                                .read<ProductSearchCubit>()
-                                .setMinMax('200000', '300000');
-                          },
-                        ).expand(),
-                      ].withDivider(Gaps.hGap4),
-                    ).py8(),
+                    // 'Khoảng giá'.tr().text.titleMedium(context).make().py8(),
+                    // Row(
+                    //   children: [
+                    //     AppTextFieldReactive(
+                    //       hintText:
+                    //           state.filterData?.minAmount ?? 'TỐI THIỂU'.tr(),
+                    //       formControlName: ProductFilterData.minKey,
+                    //     ).flex(),
+                    //     const SizedBox(
+                    //       width: 16,
+                    //     ),
+                    //     AppTextFieldReactive(
+                    //       hintText:
+                    //           state.filterData?.maxAmount ?? 'TỐI ĐA'.tr(),
+                    //       formControlName: ProductFilterData.maxKey,
+                    //     ).flex()
+                    //   ],
+                    // ).minHeight(0),
+                    // Row(
+                    //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    //   children: [
+                    //     AppButton(
+                    //       style: counterButtonStyle,
+                    //       child: '0-100k'.tr().text.make().p4(),
+                    //       onPressed: () {
+                    //         context
+                    //             .read<ProductSearchCubit>()
+                    //             .setMinMax('0', '100000');
+                    //       },
+                    //     ).expand(),
+                    //     AppButton(
+                    //       style: counterButtonStyle,
+                    //       child: '100-200k'.tr().text.make().p4(),
+                    //       onPressed: () {
+                    //         context
+                    //             .read<ProductSearchCubit>()
+                    //             .setMinMax('100000', '200000');
+                    //       },
+                    //     ).expand(),
+                    //     AppButton(
+                    //       style: counterButtonStyle,
+                    //       child: '200-300k'.tr().text.make().p4(),
+                    //       onPressed: () {
+                    //         context
+                    //             .read<ProductSearchCubit>()
+                    //             .setMinMax('200000', '300000');
+                    //       },
+                    //     ).expand(),
+                    //   ].withDivider(Gaps.hGap4),
+                    // ).py8(),
                     // 'Loại danh mục'.tr().text.titleMedium(context).make().py8(),
                     Row(
                       children: [
                         AppButton(
                           style: AppButtonTheme.ghost(context),
-                          label: 'Lọc'.tr(),
+                          label: 'Áp dụng'.tr(),
                           onPressed: () {
                             context.read<ProductSearchCubit>().onFilterChange();
                           },
@@ -97,7 +97,7 @@ class NavigatorDrawer extends StatelessWidget {
                         AppButton(
                           style:
                               AppButtonTheme.color(context, color: Colors.red),
-                          label: 'Bỏ lọc'.tr(),
+                          label: 'Hủy'.tr(),
                           onPressed: () {
                             context.read<ProductSearchCubit>().clearFilter();
                           },

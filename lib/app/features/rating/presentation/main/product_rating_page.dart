@@ -18,6 +18,7 @@ class ProductRatingPage extends StatelessWidget {
           return ApiStatusListener<ProductRatingCubit, ProductRatingState>(
             getStatus: (ProductRatingState state) => state.status,
             child: Scaffold(
+              backgroundColor: context.themeColor.dividerThick,
               appBar: AppAppBar(
                 title: 'Đánh giá'.tr(),
                 args: AppBarArgs(

@@ -29,7 +29,7 @@ class ProductRatingBody extends StatelessWidget {
               padding: Dimens.edge,
               decoration: AppDecor.cardBoxShadow(
                 context,
-                color: context.themeColor.dividerThick,
+                // color: context.themeColor.dividerThick,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

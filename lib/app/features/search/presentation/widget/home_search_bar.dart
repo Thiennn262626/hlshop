@@ -14,7 +14,7 @@ class HomeSearchBar extends StatelessWidget {
           context.pushRoute(
             ProductSearchRoute(
               filterData: const ProductFilterData(
-                type: ProductListType.newest,
+                type: ProductListType.foryou,
                 showType: ProductListShowType.homePage,
               ),
             ),

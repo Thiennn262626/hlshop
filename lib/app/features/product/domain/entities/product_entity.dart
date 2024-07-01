@@ -1,7 +1,6 @@
 import 'package:hlshop/all_file/all_file.dart';
 
 part 'product_entity.g.dart';
-
 part 'product_variation.dart';
 
 @CopyWith(copyWithNull: true)
@@ -55,8 +54,7 @@ class ProductEntity {
           src: '',
         ),
       ],
-      description:
-          'Hi',
+      description: 'Hi',
       price: '100000'.toPriceUnit,
       type: 'chai',
       listedPrice: '200000'.toPriceUnit,
