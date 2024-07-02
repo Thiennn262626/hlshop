@@ -3,6 +3,7 @@
 /external_packages/**
 .DS_Store
 .flutter-plugins-dependencies
+
 *.p8
 
 **/linux
