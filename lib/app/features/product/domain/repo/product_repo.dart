@@ -69,6 +69,7 @@ enum ProductListType {
   bestSeller,
   goodPrice,
   foryou,
+  search,
 }
 
 enum ProductListShowType {

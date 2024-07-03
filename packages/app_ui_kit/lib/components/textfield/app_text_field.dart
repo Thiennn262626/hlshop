@@ -40,6 +40,7 @@ class AppTextField extends StatefulWidget {
 class _AppTextFieldState extends State<AppTextField> {
   FocusNode? _focusNode;
   late TextEditingController _controller;
+  Timer? _debounce;
 
   @override
   void initState() {
@@ -70,11 +71,15 @@ class _AppTextFieldState extends State<AppTextField> {
     if (widget.controller == null) {
       _controller.dispose();
     }
+    _debounce?.cancel();
     super.dispose();
   }
 
   void _onTextChange() {
-    widget.onChanged?.call(_controller.text);
+    if (_debounce?.isActive ?? false) _debounce?.cancel();
+    _debounce = Timer(const Duration(seconds: 1), () {
+      widget.onChanged?.call(_controller.text);
+    });
   }
 
   @override

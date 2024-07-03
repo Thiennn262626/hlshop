@@ -18,21 +18,10 @@ class ProductSearchPage extends StatelessWidget {
         filterData: filterData,
         searchHint: searchHint,
       ),
-      child: Scaffold(
-        appBar: AppAppBar(
-          title: const ProductSearchBar(),
-          args: AppBarArgs(
-            actions: [
-              const ShoppingCartBtn(),
-              Gaps.hGap4,
-            ].withDivider(Gaps.hGap4, showLast: true),
-          ),
-        ),
-        body: ProductSearchBody(
-          filterData: filterData ?? const ProductFilterData(),
-        ),
-        // endDrawer: const NavigatorDrawer(),
-      ).pt8(),
+      child: const Scaffold(
+        body: ProductSearchBody(),
+        // endDrawer: NavigatorDrawer(),
+      ),
     );
   }
 }

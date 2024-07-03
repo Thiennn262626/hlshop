@@ -35,11 +35,12 @@ class DistributorProduct extends StatelessWidget {
             ),
             child: BlocBuilder<ProductSearchCubit, ProductSearchState>(
               builder: (context, state) {
-                return ProductGridVer(
-                  isSliver: true,
-                  fetchListData:
-                      context.read<ProductSearchCubit>().fetchProduct,
-                );
+                return ProductGridVer.demo();
+                // return ProductGridVer(
+                //   isSliver: true,
+                //   fetchListData:
+                //       context.read<ProductSearchCubit>().fetchProduct,
+                // );
               },
             ),
           ).expand()

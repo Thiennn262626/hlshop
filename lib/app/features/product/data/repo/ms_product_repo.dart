@@ -86,6 +86,16 @@ class MsProductRepo extends ProductRepo {
               maxAmount: maxAmount,
             )
             .then(_convertListProduct);
+      case ProductListType.search:
+        return _api
+            .getCategoryDetail(
+                offset: offset,
+                limit: limit,
+                search: search,
+                sortBy: sortBy,
+                minAmount: minAmount,
+                maxAmount: maxAmount)
+            .then(_convertListProduct);
       case null:
         return [];
     }

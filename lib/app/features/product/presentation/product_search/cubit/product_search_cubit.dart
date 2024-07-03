@@ -4,6 +4,11 @@ import 'package:hlshop/all_file/all_file.dart';
 part 'product_search_cubit.freezed.dart';
 part 'product_search_state.dart';
 
+//        filterData: filterData?.type == ProductListType.foryou
+//             ? filterData?.copyWith(
+//                 type: ProductListType.hot,
+//               )
+//             : filterData,
 class ProductSearchCubit extends Cubit<ProductSearchState> {
   ProductSearchCubit({ProductFilterData? filterData, this.searchHint})
       : super(
@@ -48,15 +53,30 @@ class ProductSearchCubit extends Cubit<ProductSearchState> {
     controller.refresh();
   }
 
-  Future<List<ProductEntity>> fetchProduct(int? offset, int? limit) async {
+  // Future<List<ProductEntity>> fetchProduct(int? offset, int? limit) async {
+  //   try {
+  //     return await getIt<ProductRepo>().getProductListSearch(
+  //       offset: offset,
+  //       limit: limit,
+  //       filterData: state.filterData,
+  //     );
+  //   } catch (e) {
+  //     return [];
+  //   }
+  // }
+
+  Future<void> fetchProduct(int? offset, int? limit) async {
     try {
-      return await getIt<ProductRepo>().getProductListSearch(
+      final listProduct = await getIt<ProductRepo>().getProductListSearch(
         offset: offset,
         limit: limit,
         filterData: state.filterData,
       );
+      emit(
+        state.copyWith(status: const ApiStatus.done(), products: listProduct),
+      );
     } catch (e) {
-      return [];
+      emit(state.copyWith(status: ApiStatus.error(e)));
     }
   }
 
@@ -75,6 +95,15 @@ class ProductSearchCubit extends Cubit<ProductSearchState> {
   }
 
   Future<void> onSearchChange(ProductFilterData filterData) async {
+    // if(filterData.search!.isEmpty){
+    //   return;
+    // } else{
+    //   final totalfilterData = state.filterData?.copyWith(
+    //     search: filterData.search,
+    //   );
+    //   emit(state.copyWith(filterData: totalfilterData));
+    //   await fetchItemList();
+    // }
     final totalfilterData = state.filterData?.copyWith(
       search: filterData.search,
     );
