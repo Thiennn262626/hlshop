@@ -61,6 +61,11 @@ abstract class MsProductApi {
     @Query('ProductID') String? productID,
   });
 
+  @POST('/api/hlshop/attention/attention-product')
+  Future<MsProduct?> attention({
+    @Query('ProductID') String? productID,
+  });
+
   @GET('/api/hlshop/product/get-list-same-category')
   Future<MsPagingResult<MsProduct>?> getProductSameCategory({
     @Query('productID') String? productID,
@@ -75,6 +80,14 @@ abstract class MsProductApi {
     @Query('sellerID') String? sellerID,
     @Query('offset') int? offset,
     @Query('limit') int? limit,
+  });
+
+  @GET('/api/hlshop/product/get-list-search')
+  Future<MsPagingResult<MsProduct>?> getProductSearch({
+    @Query('offset') int? offset,
+    @Query('limit') int? limit,
+    @Query('search') String? search,
+    @Query('sortBy') int? sortBy,
   });
 
   @GET('/api/hlshop/product/get-product-attribute')

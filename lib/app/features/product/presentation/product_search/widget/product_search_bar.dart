@@ -13,7 +13,7 @@ class ProductSearchBar extends StatelessWidget {
         onChanged: (value) {
           context.read<ProductSearchCubit>().onSearchChange(ProductFilterData(
                 search: value,
-                type: context.read<ProductSearchCubit>().state.filterData?.type,
+                // type: context.read<ProductSearchCubit>().state.filterData?.type,
               ));
         },
         textInputAction: TextInputAction.search,

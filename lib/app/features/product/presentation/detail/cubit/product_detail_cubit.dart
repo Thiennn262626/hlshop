@@ -13,16 +13,6 @@ class ProductDetailCubit extends Cubit<ProductDetailState> {
   Future<void> loadData() async {
     emit(state.copyWith(status: state.status.toPending()));
     try {
-      if (getIt<AuthBloc>().isLogin) {
-        final subcriber = await productRepo.checkSubcribeByProductID(
-          productID: state.product?.id,
-        );
-        emit(
-          state.copyWith(
-            isSubscribed: subcriber?.isSubscribed ?? false,
-          ),
-        );
-      }
       final productEntity = await productRepo.getProductDetail(
         id: state.product?.id,
       );
@@ -32,6 +22,20 @@ class ProductDetailCubit extends Cubit<ProductDetailState> {
           product: productEntity,
         ),
       );
+      if (getIt<AuthBloc>().isLogin) {
+        final subcriber = await productRepo.checkSubcribeByProductID(
+          productID: state.product?.id,
+        );
+
+        emit(
+          state.copyWith(
+            isSubscribed: subcriber?.isSubscribed ?? false,
+          ),
+        );
+        final productEntity = await productRepo.attention(
+          id: state.product?.id,
+        );
+      }
     } catch (e) {
       emit(state.copyWith(status: ApiStatus.error(e)));
     }

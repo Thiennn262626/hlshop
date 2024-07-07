@@ -4,11 +4,6 @@ import 'package:hlshop/all_file/all_file.dart';
 part 'product_search_cubit.freezed.dart';
 part 'product_search_state.dart';
 
-//        filterData: filterData?.type == ProductListType.foryou
-//             ? filterData?.copyWith(
-//                 type: ProductListType.hot,
-//               )
-//             : filterData,
 class ProductSearchCubit extends Cubit<ProductSearchState> {
   ProductSearchCubit({ProductFilterData? filterData, this.searchHint})
       : super(
@@ -31,10 +26,18 @@ class ProductSearchCubit extends Cubit<ProductSearchState> {
     controller.addPageRequestListener((pageKey) {
       // fetchProduct(pageKey, 10);
     });
+
+    // Kiểm tra trạng thái đăng nhập khi khởi tạo
+    if (isUserLoggedIn() && (filterData?.search?.isEmpty ?? true)) {
+      emit(state.copyWith(
+        filterData: filterData?.copyWith(type: ProductListType.foryou),
+      ));
+      fetchItemList();
+    }
   }
+
   late final AppPagingController<int, ProductEntity> controller;
   final String? searchHint;
-
   late FormGroup form;
 
   ProductFilterData getProductFilterDataValue() {
@@ -52,18 +55,6 @@ class ProductSearchCubit extends Cubit<ProductSearchState> {
   Future<void> fetchItemList() async {
     controller.refresh();
   }
-
-  // Future<List<ProductEntity>> fetchProduct(int? offset, int? limit) async {
-  //   try {
-  //     return await getIt<ProductRepo>().getProductListSearch(
-  //       offset: offset,
-  //       limit: limit,
-  //       filterData: state.filterData,
-  //     );
-  //   } catch (e) {
-  //     return [];
-  //   }
-  // }
 
   Future<void> fetchProduct(int? offset, int? limit) async {
     try {
@@ -94,19 +85,23 @@ class ProductSearchCubit extends Cubit<ProductSearchState> {
     emit(state.copyWith(filterData: totalfilterData));
   }
 
+  bool isUserLoggedIn() {
+    return getIt<AuthBloc>().isLogin;
+  }
+
   Future<void> onSearchChange(ProductFilterData filterData) async {
-    // if(filterData.search!.isEmpty){
-    //   return;
-    // } else{
-    //   final totalfilterData = state.filterData?.copyWith(
-    //     search: filterData.search,
-    //   );
-    //   emit(state.copyWith(filterData: totalfilterData));
-    //   await fetchItemList();
-    // }
+    ProductListType newType;
+    if (filterData.search?.isEmpty ?? true) {
+      newType =
+          isUserLoggedIn() ? ProductListType.foryou : ProductListType.search;
+    } else {
+      newType = ProductListType.search;
+    }
     final totalfilterData = state.filterData?.copyWith(
       search: filterData.search,
+      type: newType,
     );
+
     emit(state.copyWith(filterData: totalfilterData));
     await fetchItemList();
   }
@@ -135,7 +130,7 @@ class ProductSearchCubit extends Cubit<ProductSearchState> {
           productCategory: null,
           maxAmount: null,
           minAmount: null,
-          type: state.filterData?.type ?? ProductListType.hot,
+          type: state.filterData?.type ?? ProductListType.search,
         ),
       ),
     );

@@ -88,13 +88,12 @@ class MsProductRepo extends ProductRepo {
             .then(_convertListProduct);
       case ProductListType.search:
         return _api
-            .getCategoryDetail(
-                offset: offset,
-                limit: limit,
-                search: search,
-                sortBy: sortBy,
-                minAmount: minAmount,
-                maxAmount: maxAmount)
+            .getProductSearch(
+              offset: offset,
+              limit: limit,
+              search: search,
+              sortBy: sortBy,
+            )
             .then(_convertListProduct);
       case null:
         return [];
@@ -213,6 +212,20 @@ class MsProductRepo extends ProductRepo {
   @override
   Future<void> unsubcribe({required String? productID}) async {
     await _subcribeApi.unsubcribe(productID: productID);
+  }
+
+  @override
+  Future<ProductEntity> attention({
+    required String? id,
+  }) async {
+    if (id == null) throw Exception('Không có id sản phẩm');
+    final product = await _api.attention(
+      productID: id,
+    );
+    if (product != null) {
+      return _convertProduct(product);
+    }
+    throw Exception('Không tìm thấy sản phẩm');
   }
 
   FutureOr<SubcribeEntity> _convertSubcribeEntity(MsSubcribeModel? value) {

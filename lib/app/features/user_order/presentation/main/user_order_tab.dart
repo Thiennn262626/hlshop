@@ -20,6 +20,7 @@ class _UserOrderTabState extends State<UserOrderTab>
     return BlocListener<UserBloc, UserState>(
       listener: (context, state) {
         if (state.checkoutStatus == const ApiStatus.done()) {
+          print('UserOrderTab checkoutStatus done');
           context
               .read<UserOrderCubit>()
               .controllerMap[OrderStatus.newOrder]!
@@ -30,7 +31,7 @@ class _UserOrderTabState extends State<UserOrderTab>
         key: Key('UserOrderTab_${widget.orderStatus}'),
         onVisibilityChanged: (VisibilityInfo info) {
           if (info.visibleFraction == 1) {
-            log('UserOrderTab ${widget.orderStatus} visible') ;
+            log('UserOrderTab ${widget.orderStatus} visible');
             context.read<UserOrderCubit>().refreshSilent();
           }
         },

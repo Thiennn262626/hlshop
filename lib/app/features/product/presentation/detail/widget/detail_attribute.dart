@@ -22,16 +22,22 @@ class ProductDetailAttribute extends StatelessWidget {
         '${item?.category?.name}',
         'Xuất xứ thương hiệu'.tr(),
         '${item?.madeIn} \n',
-        'Thành Phần'.tr(),
-        '\n${item?.ingredient?.replaceAll('. ', '.\n')} \n',
-        'Mục Đích Sử Dụng'.tr(),
-        '\n🎯 ${item?.productUses?.replaceAll('. ', '.\n🎯 ')} \n',
-        'Cách Sử Dụng'.tr(),
-        '\n👉🏻 ${item?.instructionsForUse?.replaceAll('. ', '.\n👉🏻 ')} \n',
-        'Đối Tượng Sử Dụng'.tr(),
-        '${item?.objectsOfUse} \n',
-        'Bảo Quản'.tr(),
-        item?.preserve,
+        if (item?.ingredient != 'productIngredient'.tr()) 'Thành Phần'.tr(),
+        if (item?.ingredient != 'productIngredient'.tr())
+          '\n${item?.ingredient?.replaceAll('. ', '.\n')} \n',
+        if (item?.productUses != 'productUses'.tr()) 'Mục Đích Sử Dụng'.tr(),
+        if (item?.productUses != 'productUses'.tr())
+          '\n🎯 ${item?.productUses?.replaceAll('. ', '.\n🎯 ')} \n',
+        if (item?.instructionsForUse != 'productInstructionsForUse'.tr())
+          'Cách Sử Dụng'.tr(),
+        if (item?.instructionsForUse != 'productInstructionsForUse'.tr())
+          '\n👉🏻 ${item?.instructionsForUse?.replaceAll('. ', '.\n👉🏻 ')} \n',
+        if (item?.objectsOfUse != 'productObjectsOfUse'.tr())
+          'Đối Tượng Sử Dụng'.tr(),
+        if (item?.objectsOfUse != 'productObjectsOfUse'.tr())
+          '${item?.objectsOfUse} \n',
+        if (item?.preserve != 'productPreserve'.tr()) 'Bảo Quản'.tr(),
+        if (item?.preserve != 'productPreserve'.tr()) item?.preserve,
       ],
       maxVisiblePair: 3,
       maxVisibleTotalLine: 6,

@@ -77,7 +77,7 @@ class _AppTextFieldState extends State<AppTextField> {
 
   void _onTextChange() {
     if (_debounce?.isActive ?? false) _debounce?.cancel();
-    _debounce = Timer(const Duration(seconds: 1), () {
+    _debounce = Timer(const Duration(milliseconds: 650), () {
       widget.onChanged?.call(_controller.text);
     });
   }

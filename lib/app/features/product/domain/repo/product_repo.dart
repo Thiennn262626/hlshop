@@ -13,6 +13,10 @@ abstract class ProductRepo {
     required String? id,
   });
 
+  Future<ProductEntity?> attention({
+    required String? id,
+  });
+
   Future<List<ProductEntity>> getProductListByCategory({
     required String? id,
     int? limit,

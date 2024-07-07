@@ -20,7 +20,7 @@ class ProductSearchPage extends StatelessWidget {
       ),
       child: const Scaffold(
         body: ProductSearchBody(),
-        // endDrawer: NavigatorDrawer(),
+        endDrawer: NavigatorDrawer(),
       ),
     );
   }

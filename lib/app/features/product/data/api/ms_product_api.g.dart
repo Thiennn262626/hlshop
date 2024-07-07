@@ -259,6 +259,31 @@ class _MsProductApi implements MsProductApi {
   }
 
   @override
+  Future<MsProduct?> attention({String? productID}) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'ProductID': productID};
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>?>(_setStreamType<MsProduct>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/api/hlshop/attention/attention-product',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value =
+        _result.data == null ? null : MsProduct.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
   Future<MsPagingResult<MsProduct>?> getProductSameCategory({
     String? productID,
     String? productCategoryID,
@@ -323,6 +348,45 @@ class _MsProductApi implements MsProductApi {
             .compose(
               _dio.options,
               '/api/hlshop/product/get-list-same-seller',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = _result.data == null
+        ? null
+        : MsPagingResult<MsProduct>.fromJson(
+            _result.data!,
+            (json) => MsProduct.fromJson(json as Map<String, dynamic>),
+          );
+    return value;
+  }
+
+  @override
+  Future<MsPagingResult<MsProduct>?> getProductSearch({
+    int? offset,
+    int? limit,
+    String? search,
+    int? sortBy,
+  }) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'offset': offset,
+      r'limit': limit,
+      r'search': search,
+      r'sortBy': sortBy,
+    };
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio.fetch<Map<String, dynamic>?>(
+        _setStreamType<MsPagingResult<MsProduct>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/api/hlshop/product/get-list-search',
               queryParameters: queryParameters,
               data: _data,
             )

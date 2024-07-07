@@ -49,15 +49,16 @@ class ProductDetailBody extends StatelessWidget {
                     ProductDetailDescription(
                       item: item,
                     ).pDefault(),
-                    // ProductDetailAttribute(
-                    //   item: item,
-                    // ).pDefault(),
-                    // ProductDetailNote(
-                    //   item: item,
-                    // ).pDefault(),
-                    // ProductDetailSize(
-                    //   item: item,
-                    // ).pDefault(),
+                    ProductDetailAttribute(
+                      item: item,
+                    ).pDefault(),
+                    if (item?.notes != "productNotes".tr())
+                      ProductDetailNote(
+                        item: item,
+                      ).pDefault(),
+                    ProductDetailSize(
+                      item: item,
+                    ).pDefault(),
                     if (item?.category?.id?.isNotNullOrEmpty ?? false)
                       SectionContainer(
                         title: 'Sản phẩm tương tự'.tr(),
