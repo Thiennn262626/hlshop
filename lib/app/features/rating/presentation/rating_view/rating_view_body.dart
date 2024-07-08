@@ -105,6 +105,7 @@ class RatingViewBody extends StatelessWidget {
               ProductRatingItem(
                 margin: EdgeInsets.zero,
                 product: ProductEntity(
+                  id: ratingItemEntity.productItems.firstOrNull?.id,
                   price: ratingItemEntity.productItems.firstOrNull?.modelPrice,
                   name: ratingItemEntity.productItems.firstOrNull?.modelName,
                   imgList: [

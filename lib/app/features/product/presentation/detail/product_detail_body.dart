@@ -49,6 +49,7 @@ class ProductDetailBody extends StatelessWidget {
                     ProductDetailDescription(
                       item: item,
                     ).pDefault(),
+                    // if (item?.category?.id?.isNotNullOrEmpty ?? false)
                     ProductDetailAttribute(
                       item: item,
                     ).pDefault(),

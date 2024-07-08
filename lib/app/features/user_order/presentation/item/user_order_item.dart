@@ -66,6 +66,13 @@ class OrderProductItem extends StatelessWidget {
     return Row(
       children: [
         OrderProductItem1(
+          onPressed: () {
+            context.pushRoute(
+              ProductDetailRoute(
+                product: orderItem.productEntity!,
+              ),
+            );
+          },
           orderItem: orderItem,
           args: ProductItemArgs(
             action: Row(
@@ -164,7 +171,6 @@ class OrderProductItem1 extends StatelessWidget {
                 color: context.themeColor.grey,
               ),
             ),
-
             args.action ?? const SizedBox.shrink(),
           ],
         ),

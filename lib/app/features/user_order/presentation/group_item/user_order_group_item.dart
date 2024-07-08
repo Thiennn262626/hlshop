@@ -20,7 +20,6 @@ class UserOrderGroupItem extends StatelessWidget {
     if (limitItemShow != null) {
       final isfetchStatus =
           await context.pushRoute(UserOrderDetailRoute(order: orderData));
-      print('isfetchStatus $isfetchStatus');
       if (isfetchStatus == true) {
         context.read<UserOrderCubit>().fetchStatus();
       }
