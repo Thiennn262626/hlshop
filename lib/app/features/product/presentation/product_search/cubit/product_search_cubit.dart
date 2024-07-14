@@ -28,12 +28,12 @@ class ProductSearchCubit extends Cubit<ProductSearchState> {
     });
 
     // Kiểm tra trạng thái đăng nhập khi khởi tạo
-    if (isUserLoggedIn() && (filterData?.search?.isEmpty ?? true)) {
-      emit(state.copyWith(
-        filterData: filterData?.copyWith(type: ProductListType.foryou),
-      ));
-      fetchItemList();
-    }
+    // if (isUserLoggedIn() && (filterData?.search?.isEmpty ?? true)) {
+    //   emit(state.copyWith(
+    //     filterData: filterData?.copyWith(type: ProductListType.foryou),
+    //   ));
+    //   fetchItemList();
+    // }
   }
 
   late final AppPagingController<int, ProductEntity> controller;
@@ -90,16 +90,15 @@ class ProductSearchCubit extends Cubit<ProductSearchState> {
   }
 
   Future<void> onSearchChange(ProductFilterData filterData) async {
-    ProductListType newType;
-    if (filterData.search?.isEmpty ?? true) {
-      newType =
-          isUserLoggedIn() ? ProductListType.foryou : ProductListType.search;
-    } else {
-      newType = ProductListType.search;
-    }
+    // ProductListType newType;
+    // if (filterData.search?.isEmpty ?? true) {
+    //   newType =
+    //       isUserLoggedIn() ? ProductListType.foryou : ProductListType.search;
+    // } else {
+    //   newType = ProductListType.search;
+    // }
     final totalfilterData = state.filterData?.copyWith(
       search: filterData.search,
-      type: newType,
     );
 
     emit(state.copyWith(filterData: totalfilterData));

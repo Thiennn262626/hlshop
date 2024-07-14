@@ -32,9 +32,6 @@ class ProductDetailCubit extends Cubit<ProductDetailState> {
             isSubscribed: subcriber?.isSubscribed ?? false,
           ),
         );
-        final productEntity = await productRepo.attention(
-          id: state.product?.id,
-        );
       }
     } catch (e) {
       emit(state.copyWith(status: ApiStatus.error(e)));
@@ -88,5 +85,13 @@ class ProductDetailCubit extends Cubit<ProductDetailState> {
     ProductSelectVariantPopup(
       product: product,
     ).show(context: context);
+  }
+
+  Future<void> productAttention() async {
+    if (getIt<AuthBloc>().isLogin) {
+      await productRepo.attention(
+        id: state.product?.id,
+      );
+    }
   }
 }

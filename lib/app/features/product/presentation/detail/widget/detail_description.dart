@@ -1,9 +1,14 @@
 import 'package:hlshop/all_file/all_file.dart';
 
 class ProductDetailDescription extends StatelessWidget {
-  const ProductDetailDescription({super.key, this.item});
+  const ProductDetailDescription({
+    super.key,
+    this.item,
+    required this.onShowMorePressed,
+  });
 
   final ProductEntity? item;
+  final VoidCallback onShowMorePressed;
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +17,12 @@ class ProductDetailDescription extends StatelessWidget {
       child: ShowMoreText(
         moreBtnBuilder: (showMore, onTap) {
           return AppMoreBtn(
-            onPressed: onTap,
+            onPressed: () {
+              onTap();
+              if (!showMore) {
+                onShowMorePressed();
+              }
+            },
             isMore: showMore,
           );
         },

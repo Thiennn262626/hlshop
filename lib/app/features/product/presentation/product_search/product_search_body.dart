@@ -36,12 +36,12 @@ class ProductSearchBody extends StatelessWidget {
               ),
               titleSpacing: 0,
               actions: [
-                Gaps.hGap8,
-                BtnFilter(
-                  onPressed: () {
-                    Scaffold.of(context).openEndDrawer();
-                  },
-                ),
+                // Gaps.hGap8,
+                // BtnFilter(
+                //   onPressed: () {
+                //     Scaffold.of(context).openEndDrawer();
+                //   },
+                // ),
                 const ShoppingCartBtn(),
                 Gaps.hGap4,
               ].withDivider(Gaps.hGap4, showLast: true),

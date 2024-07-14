@@ -39,8 +39,11 @@ class ProductDetailBody extends StatelessWidget {
                     //   ),
                     ProductRating(
                       productRatingSummary: item?.ratingSummary,
-                      onPressed: () {
-                        context.router.push(
+                      onPressed: () async {
+                        await context
+                            .read<ProductDetailCubit>()
+                            .productAttention();
+                        await context.router.push(
                           ProductRatingRoute(productEntity: item),
                         );
                       },
@@ -48,8 +51,12 @@ class ProductDetailBody extends StatelessWidget {
                     // const ProductHeightLight(),
                     ProductDetailDescription(
                       item: item,
+                      onShowMorePressed: () async {
+                        await context
+                            .read<ProductDetailCubit>()
+                            .productAttention();
+                      },
                     ).pDefault(),
-                    // if (item?.category?.id?.isNotNullOrEmpty ?? false)
                     ProductDetailAttribute(
                       item: item,
                     ).pDefault(),

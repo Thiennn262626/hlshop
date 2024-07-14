@@ -37,8 +37,8 @@ enum OrderByType {
   defaultSort,
   priceLowToHigh,
   priceHighToLow,
-  newest,
-  oldest,
+  // newest,
+  // oldest,
   // common,
   // selling,
   ;
@@ -49,8 +49,8 @@ enum OrderByType {
         OrderByType.defaultSort => 'Mặc định'.tr(),
         OrderByType.priceLowToHigh => 'Giá thấp đến cao'.tr(),
         OrderByType.priceHighToLow => 'Giá cao đến thấp'.tr(),
-        OrderByType.newest => 'Mới nhất'.tr(),
-        OrderByType.oldest => 'Cũ nhất'.tr(),
+        // OrderByType.newest => 'Mới nhất'.tr(),
+        // OrderByType.oldest => 'Cũ nhất'.tr(),
         // OrderByType.common => 'Phổ biến'.tr(),
         // OrderByType.selling => 'Bán chạy'.tr(),
       };
