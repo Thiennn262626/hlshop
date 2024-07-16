@@ -73,6 +73,7 @@ enum ProductListType {
   bestSeller,
   goodPrice,
   foryou,
+  user_care,
   search,
 }
 

@@ -31,4 +31,8 @@ class UserEvent with _$UserEvent {
   }) = _UserDeleteEmailEvent;
 
   const factory UserEvent.checkout() = _UserCheckoutEvent;
+
+  const factory UserEvent.rating() = _UserRatingEvent;
+
+  const factory UserEvent.care() = _UserCareEvent;
 }

@@ -55,6 +55,15 @@ abstract class MsProductApi {
     @Query('minAmount') String? minAmount,
     @Query('maxAmount') String? maxAmount,
   });
+  @GET('/api/hlshop/product/get-list-user-care')
+  Future<MsPagingResult<MsProduct>?> getListUserCare({
+    @Query('offset') int? offset,
+    @Query('limit') int? limit,
+    @Query('search') String? search,
+    @Query('sortBy') int? sortBy,
+    @Query('minAmount') String? minAmount,
+    @Query('maxAmount') String? maxAmount,
+  });
 
   @GET('/api/hlshop/product/get-detail')
   Future<MsProduct?> getProductDetail({

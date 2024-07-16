@@ -20,6 +20,52 @@ class HomeBody extends StatelessWidget {
                     padding: Dimens.edge_x_XS,
                   ),
                   if (state.userEntity != null)
+                    // FutureBuilder<List<ProductEntity>>(
+                    //   future: getIt<ProductRepo>().getProductList(
+                    //     offset: 0,
+                    //     limit: 1, // Số lượng sản phẩm bạn muốn kiểm tra
+                    //     type: ProductListType.user_care,
+                    //     showType: ProductListShowType.homePage,
+                    //   ),
+                    //   builder: (context, snapshot) {
+                    //     if (snapshot.hasData && snapshot.data!.isNotEmpty) {
+                    //       return
+                    SectionContainer(
+                      key: const Key('home_user_care_section'),
+                      title: 'Sản phẩm Quan tâm'.tr(),
+                      child: ProductGridHoz(
+                        fetchListData: (offset, limit) =>
+                            getIt<ProductRepo>().getProductList(
+                          offset: offset,
+                          limit: limit,
+                          type: ProductListType.user_care,
+                          showType: ProductListShowType.homePage,
+                        ),
+                      ),
+                      seeAll: () {
+                        context.pushRoute(
+                          AllProductsRoute(
+                            title: 'Sản phẩm Quan tâm'.tr(),
+                            productListType: ProductListType.user_care,
+                          ),
+                        );
+                      },
+                      //     );
+                      //   }
+                      //   return const SizedBox();
+                      // },
+                    ),
+                  if (state.userEntity != null)
+                    // FutureBuilder<List<ProductEntity>>(
+                    //   future: getIt<ProductRepo>().getProductList(
+                    //     offset: 0,
+                    //     limit: 1, // Số lượng sản phẩm bạn muốn kiểm tra
+                    //     type: ProductListType.foryou,
+                    //     showType: ProductListShowType.homePage,
+                    //   ),
+                    //   builder: (context, snapshot) {
+                    //     if (snapshot.hasData && snapshot.data!.isNotEmpty) {
+                    //       return
                     SectionContainer(
                       key: const Key('home_for_you_section'),
                       title: '${'Dành cho bạn'.tr()} 🎁🎁🎁',
@@ -31,8 +77,8 @@ class HomeBody extends StatelessWidget {
                           ),
                         );
                       },
-                      child: ProductListHoz(
-                        parentWidthFraction: productWidthFraction,
+                      child: ProductGridHoz(
+                        crossAxisCount: 1,
                         fetchListData: (offset, limit) =>
                             getIt<ProductRepo>().getProductList(
                           offset: offset,
@@ -41,6 +87,10 @@ class HomeBody extends StatelessWidget {
                           showType: ProductListShowType.homePage,
                         ),
                       ),
+                      //     );
+                      //   }
+                      //   return const SizedBox();
+                      // },
                     ),
                   SectionContainer(
                     key: const Key('home_hot_section'),

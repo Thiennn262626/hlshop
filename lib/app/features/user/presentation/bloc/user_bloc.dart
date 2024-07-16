@@ -19,6 +19,8 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     on<_UserDeletePhoneEvent>(_onUserDeletePhoneEvent);
     on<_UserDeleteEmailEvent>(_onUserDeleteEmailEvent);
     on<_UserCheckoutEvent>(_onUserCheckoutEvent);
+    on<_UserRatingEvent>(_onUserRatingEvent);
+    on<_UserCareEvent>(_onUserCareEvent);
   }
 
   late final UserSecureStorage _userSecureStorage;
@@ -216,6 +218,26 @@ class UserBloc extends Bloc<UserEvent, UserState> {
 
   FutureOr<void> _onUserCheckoutEvent(
       _UserCheckoutEvent event, Emitter<UserState> emit) {
+    emit(state.copyWith(checkoutStatus: state.checkoutStatus.toPending()));
+    emit(
+      state.copyWith(
+        checkoutStatus: const ApiStatus.done(),
+      ),
+    );
+  }
+
+  FutureOr<void> _onUserRatingEvent(
+      _UserRatingEvent event, Emitter<UserState> emit) {
+    emit(state.copyWith(checkoutStatus: state.checkoutStatus.toPending()));
+    emit(
+      state.copyWith(
+        checkoutStatus: const ApiStatus.done(),
+      ),
+    );
+  }
+
+  FutureOr<void> _onUserCareEvent(
+      _UserCareEvent event, Emitter<UserState> emit) {
     emit(state.copyWith(checkoutStatus: state.checkoutStatus.toPending()));
     emit(
       state.copyWith(

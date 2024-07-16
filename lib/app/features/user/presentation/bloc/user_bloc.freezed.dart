@@ -27,6 +27,8 @@ mixin _$UserEvent {
     required TResult Function(UserPhoneEntity phone) deletePhone,
     required TResult Function(UserEmailEntity email) deleteEmail,
     required TResult Function() checkout,
+    required TResult Function() rating,
+    required TResult Function() care,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -40,6 +42,8 @@ mixin _$UserEvent {
     TResult? Function(UserPhoneEntity phone)? deletePhone,
     TResult? Function(UserEmailEntity email)? deleteEmail,
     TResult? Function()? checkout,
+    TResult? Function()? rating,
+    TResult? Function()? care,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -53,6 +57,8 @@ mixin _$UserEvent {
     TResult Function(UserPhoneEntity phone)? deletePhone,
     TResult Function(UserEmailEntity email)? deleteEmail,
     TResult Function()? checkout,
+    TResult Function()? rating,
+    TResult Function()? care,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -67,6 +73,8 @@ mixin _$UserEvent {
     required TResult Function(_UserDeletePhoneEvent value) deletePhone,
     required TResult Function(_UserDeleteEmailEvent value) deleteEmail,
     required TResult Function(_UserCheckoutEvent value) checkout,
+    required TResult Function(_UserRatingEvent value) rating,
+    required TResult Function(_UserCareEvent value) care,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -80,6 +88,8 @@ mixin _$UserEvent {
     TResult? Function(_UserDeletePhoneEvent value)? deletePhone,
     TResult? Function(_UserDeleteEmailEvent value)? deleteEmail,
     TResult? Function(_UserCheckoutEvent value)? checkout,
+    TResult? Function(_UserRatingEvent value)? rating,
+    TResult? Function(_UserCareEvent value)? care,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -93,6 +103,8 @@ mixin _$UserEvent {
     TResult Function(_UserDeletePhoneEvent value)? deletePhone,
     TResult Function(_UserDeleteEmailEvent value)? deleteEmail,
     TResult Function(_UserCheckoutEvent value)? checkout,
+    TResult Function(_UserRatingEvent value)? rating,
+    TResult Function(_UserCareEvent value)? care,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -169,6 +181,8 @@ class _$UserInitialEventImpl extends _UserInitialEvent
     required TResult Function(UserPhoneEntity phone) deletePhone,
     required TResult Function(UserEmailEntity email) deleteEmail,
     required TResult Function() checkout,
+    required TResult Function() rating,
+    required TResult Function() care,
   }) {
     return initial();
   }
@@ -185,6 +199,8 @@ class _$UserInitialEventImpl extends _UserInitialEvent
     TResult? Function(UserPhoneEntity phone)? deletePhone,
     TResult? Function(UserEmailEntity email)? deleteEmail,
     TResult? Function()? checkout,
+    TResult? Function()? rating,
+    TResult? Function()? care,
   }) {
     return initial?.call();
   }
@@ -201,6 +217,8 @@ class _$UserInitialEventImpl extends _UserInitialEvent
     TResult Function(UserPhoneEntity phone)? deletePhone,
     TResult Function(UserEmailEntity email)? deleteEmail,
     TResult Function()? checkout,
+    TResult Function()? rating,
+    TResult Function()? care,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -221,6 +239,8 @@ class _$UserInitialEventImpl extends _UserInitialEvent
     required TResult Function(_UserDeletePhoneEvent value) deletePhone,
     required TResult Function(_UserDeleteEmailEvent value) deleteEmail,
     required TResult Function(_UserCheckoutEvent value) checkout,
+    required TResult Function(_UserRatingEvent value) rating,
+    required TResult Function(_UserCareEvent value) care,
   }) {
     return initial(this);
   }
@@ -237,6 +257,8 @@ class _$UserInitialEventImpl extends _UserInitialEvent
     TResult? Function(_UserDeletePhoneEvent value)? deletePhone,
     TResult? Function(_UserDeleteEmailEvent value)? deleteEmail,
     TResult? Function(_UserCheckoutEvent value)? checkout,
+    TResult? Function(_UserRatingEvent value)? rating,
+    TResult? Function(_UserCareEvent value)? care,
   }) {
     return initial?.call(this);
   }
@@ -253,6 +275,8 @@ class _$UserInitialEventImpl extends _UserInitialEvent
     TResult Function(_UserDeletePhoneEvent value)? deletePhone,
     TResult Function(_UserDeleteEmailEvent value)? deleteEmail,
     TResult Function(_UserCheckoutEvent value)? checkout,
+    TResult Function(_UserRatingEvent value)? rating,
+    TResult Function(_UserCareEvent value)? care,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -321,6 +345,8 @@ class _$UserFetchEventImpl extends _UserFetchEvent
     required TResult Function(UserPhoneEntity phone) deletePhone,
     required TResult Function(UserEmailEntity email) deleteEmail,
     required TResult Function() checkout,
+    required TResult Function() rating,
+    required TResult Function() care,
   }) {
     return fetch();
   }
@@ -337,6 +363,8 @@ class _$UserFetchEventImpl extends _UserFetchEvent
     TResult? Function(UserPhoneEntity phone)? deletePhone,
     TResult? Function(UserEmailEntity email)? deleteEmail,
     TResult? Function()? checkout,
+    TResult? Function()? rating,
+    TResult? Function()? care,
   }) {
     return fetch?.call();
   }
@@ -353,6 +381,8 @@ class _$UserFetchEventImpl extends _UserFetchEvent
     TResult Function(UserPhoneEntity phone)? deletePhone,
     TResult Function(UserEmailEntity email)? deleteEmail,
     TResult Function()? checkout,
+    TResult Function()? rating,
+    TResult Function()? care,
     required TResult orElse(),
   }) {
     if (fetch != null) {
@@ -373,6 +403,8 @@ class _$UserFetchEventImpl extends _UserFetchEvent
     required TResult Function(_UserDeletePhoneEvent value) deletePhone,
     required TResult Function(_UserDeleteEmailEvent value) deleteEmail,
     required TResult Function(_UserCheckoutEvent value) checkout,
+    required TResult Function(_UserRatingEvent value) rating,
+    required TResult Function(_UserCareEvent value) care,
   }) {
     return fetch(this);
   }
@@ -389,6 +421,8 @@ class _$UserFetchEventImpl extends _UserFetchEvent
     TResult? Function(_UserDeletePhoneEvent value)? deletePhone,
     TResult? Function(_UserDeleteEmailEvent value)? deleteEmail,
     TResult? Function(_UserCheckoutEvent value)? checkout,
+    TResult? Function(_UserRatingEvent value)? rating,
+    TResult? Function(_UserCareEvent value)? care,
   }) {
     return fetch?.call(this);
   }
@@ -405,6 +439,8 @@ class _$UserFetchEventImpl extends _UserFetchEvent
     TResult Function(_UserDeletePhoneEvent value)? deletePhone,
     TResult Function(_UserDeleteEmailEvent value)? deleteEmail,
     TResult Function(_UserCheckoutEvent value)? checkout,
+    TResult Function(_UserRatingEvent value)? rating,
+    TResult Function(_UserCareEvent value)? care,
     required TResult orElse(),
   }) {
     if (fetch != null) {
@@ -473,6 +509,8 @@ class _$UserClearEventImpl extends _UserClearEvent
     required TResult Function(UserPhoneEntity phone) deletePhone,
     required TResult Function(UserEmailEntity email) deleteEmail,
     required TResult Function() checkout,
+    required TResult Function() rating,
+    required TResult Function() care,
   }) {
     return clear();
   }
@@ -489,6 +527,8 @@ class _$UserClearEventImpl extends _UserClearEvent
     TResult? Function(UserPhoneEntity phone)? deletePhone,
     TResult? Function(UserEmailEntity email)? deleteEmail,
     TResult? Function()? checkout,
+    TResult? Function()? rating,
+    TResult? Function()? care,
   }) {
     return clear?.call();
   }
@@ -505,6 +545,8 @@ class _$UserClearEventImpl extends _UserClearEvent
     TResult Function(UserPhoneEntity phone)? deletePhone,
     TResult Function(UserEmailEntity email)? deleteEmail,
     TResult Function()? checkout,
+    TResult Function()? rating,
+    TResult Function()? care,
     required TResult orElse(),
   }) {
     if (clear != null) {
@@ -525,6 +567,8 @@ class _$UserClearEventImpl extends _UserClearEvent
     required TResult Function(_UserDeletePhoneEvent value) deletePhone,
     required TResult Function(_UserDeleteEmailEvent value) deleteEmail,
     required TResult Function(_UserCheckoutEvent value) checkout,
+    required TResult Function(_UserRatingEvent value) rating,
+    required TResult Function(_UserCareEvent value) care,
   }) {
     return clear(this);
   }
@@ -541,6 +585,8 @@ class _$UserClearEventImpl extends _UserClearEvent
     TResult? Function(_UserDeletePhoneEvent value)? deletePhone,
     TResult? Function(_UserDeleteEmailEvent value)? deleteEmail,
     TResult? Function(_UserCheckoutEvent value)? checkout,
+    TResult? Function(_UserRatingEvent value)? rating,
+    TResult? Function(_UserCareEvent value)? care,
   }) {
     return clear?.call(this);
   }
@@ -557,6 +603,8 @@ class _$UserClearEventImpl extends _UserClearEvent
     TResult Function(_UserDeletePhoneEvent value)? deletePhone,
     TResult Function(_UserDeleteEmailEvent value)? deleteEmail,
     TResult Function(_UserCheckoutEvent value)? checkout,
+    TResult Function(_UserRatingEvent value)? rating,
+    TResult Function(_UserCareEvent value)? care,
     required TResult orElse(),
   }) {
     if (clear != null) {
@@ -657,6 +705,8 @@ class _$UserUpdateUserNameEventImpl extends _UserUpdateUserNameEvent
     required TResult Function(UserPhoneEntity phone) deletePhone,
     required TResult Function(UserEmailEntity email) deleteEmail,
     required TResult Function() checkout,
+    required TResult Function() rating,
+    required TResult Function() care,
   }) {
     return updateUserName(userName);
   }
@@ -673,6 +723,8 @@ class _$UserUpdateUserNameEventImpl extends _UserUpdateUserNameEvent
     TResult? Function(UserPhoneEntity phone)? deletePhone,
     TResult? Function(UserEmailEntity email)? deleteEmail,
     TResult? Function()? checkout,
+    TResult? Function()? rating,
+    TResult? Function()? care,
   }) {
     return updateUserName?.call(userName);
   }
@@ -689,6 +741,8 @@ class _$UserUpdateUserNameEventImpl extends _UserUpdateUserNameEvent
     TResult Function(UserPhoneEntity phone)? deletePhone,
     TResult Function(UserEmailEntity email)? deleteEmail,
     TResult Function()? checkout,
+    TResult Function()? rating,
+    TResult Function()? care,
     required TResult orElse(),
   }) {
     if (updateUserName != null) {
@@ -709,6 +763,8 @@ class _$UserUpdateUserNameEventImpl extends _UserUpdateUserNameEvent
     required TResult Function(_UserDeletePhoneEvent value) deletePhone,
     required TResult Function(_UserDeleteEmailEvent value) deleteEmail,
     required TResult Function(_UserCheckoutEvent value) checkout,
+    required TResult Function(_UserRatingEvent value) rating,
+    required TResult Function(_UserCareEvent value) care,
   }) {
     return updateUserName(this);
   }
@@ -725,6 +781,8 @@ class _$UserUpdateUserNameEventImpl extends _UserUpdateUserNameEvent
     TResult? Function(_UserDeletePhoneEvent value)? deletePhone,
     TResult? Function(_UserDeleteEmailEvent value)? deleteEmail,
     TResult? Function(_UserCheckoutEvent value)? checkout,
+    TResult? Function(_UserRatingEvent value)? rating,
+    TResult? Function(_UserCareEvent value)? care,
   }) {
     return updateUserName?.call(this);
   }
@@ -741,6 +799,8 @@ class _$UserUpdateUserNameEventImpl extends _UserUpdateUserNameEvent
     TResult Function(_UserDeletePhoneEvent value)? deletePhone,
     TResult Function(_UserDeleteEmailEvent value)? deleteEmail,
     TResult Function(_UserCheckoutEvent value)? checkout,
+    TResult Function(_UserRatingEvent value)? rating,
+    TResult Function(_UserCareEvent value)? care,
     required TResult orElse(),
   }) {
     if (updateUserName != null) {
@@ -845,6 +905,8 @@ class _$UserUpdateCoverEventImpl extends _UserUpdateCoverEvent
     required TResult Function(UserPhoneEntity phone) deletePhone,
     required TResult Function(UserEmailEntity email) deleteEmail,
     required TResult Function() checkout,
+    required TResult Function() rating,
+    required TResult Function() care,
   }) {
     return updateCover(file);
   }
@@ -861,6 +923,8 @@ class _$UserUpdateCoverEventImpl extends _UserUpdateCoverEvent
     TResult? Function(UserPhoneEntity phone)? deletePhone,
     TResult? Function(UserEmailEntity email)? deleteEmail,
     TResult? Function()? checkout,
+    TResult? Function()? rating,
+    TResult? Function()? care,
   }) {
     return updateCover?.call(file);
   }
@@ -877,6 +941,8 @@ class _$UserUpdateCoverEventImpl extends _UserUpdateCoverEvent
     TResult Function(UserPhoneEntity phone)? deletePhone,
     TResult Function(UserEmailEntity email)? deleteEmail,
     TResult Function()? checkout,
+    TResult Function()? rating,
+    TResult Function()? care,
     required TResult orElse(),
   }) {
     if (updateCover != null) {
@@ -897,6 +963,8 @@ class _$UserUpdateCoverEventImpl extends _UserUpdateCoverEvent
     required TResult Function(_UserDeletePhoneEvent value) deletePhone,
     required TResult Function(_UserDeleteEmailEvent value) deleteEmail,
     required TResult Function(_UserCheckoutEvent value) checkout,
+    required TResult Function(_UserRatingEvent value) rating,
+    required TResult Function(_UserCareEvent value) care,
   }) {
     return updateCover(this);
   }
@@ -913,6 +981,8 @@ class _$UserUpdateCoverEventImpl extends _UserUpdateCoverEvent
     TResult? Function(_UserDeletePhoneEvent value)? deletePhone,
     TResult? Function(_UserDeleteEmailEvent value)? deleteEmail,
     TResult? Function(_UserCheckoutEvent value)? checkout,
+    TResult? Function(_UserRatingEvent value)? rating,
+    TResult? Function(_UserCareEvent value)? care,
   }) {
     return updateCover?.call(this);
   }
@@ -929,6 +999,8 @@ class _$UserUpdateCoverEventImpl extends _UserUpdateCoverEvent
     TResult Function(_UserDeletePhoneEvent value)? deletePhone,
     TResult Function(_UserDeleteEmailEvent value)? deleteEmail,
     TResult Function(_UserCheckoutEvent value)? checkout,
+    TResult Function(_UserRatingEvent value)? rating,
+    TResult Function(_UserCareEvent value)? care,
     required TResult orElse(),
   }) {
     if (updateCover != null) {
@@ -1033,6 +1105,8 @@ class _$UserUpdateAvatarEventImpl extends _UserUpdateAvatarEvent
     required TResult Function(UserPhoneEntity phone) deletePhone,
     required TResult Function(UserEmailEntity email) deleteEmail,
     required TResult Function() checkout,
+    required TResult Function() rating,
+    required TResult Function() care,
   }) {
     return updateAvatar(file);
   }
@@ -1049,6 +1123,8 @@ class _$UserUpdateAvatarEventImpl extends _UserUpdateAvatarEvent
     TResult? Function(UserPhoneEntity phone)? deletePhone,
     TResult? Function(UserEmailEntity email)? deleteEmail,
     TResult? Function()? checkout,
+    TResult? Function()? rating,
+    TResult? Function()? care,
   }) {
     return updateAvatar?.call(file);
   }
@@ -1065,6 +1141,8 @@ class _$UserUpdateAvatarEventImpl extends _UserUpdateAvatarEvent
     TResult Function(UserPhoneEntity phone)? deletePhone,
     TResult Function(UserEmailEntity email)? deleteEmail,
     TResult Function()? checkout,
+    TResult Function()? rating,
+    TResult Function()? care,
     required TResult orElse(),
   }) {
     if (updateAvatar != null) {
@@ -1085,6 +1163,8 @@ class _$UserUpdateAvatarEventImpl extends _UserUpdateAvatarEvent
     required TResult Function(_UserDeletePhoneEvent value) deletePhone,
     required TResult Function(_UserDeleteEmailEvent value) deleteEmail,
     required TResult Function(_UserCheckoutEvent value) checkout,
+    required TResult Function(_UserRatingEvent value) rating,
+    required TResult Function(_UserCareEvent value) care,
   }) {
     return updateAvatar(this);
   }
@@ -1101,6 +1181,8 @@ class _$UserUpdateAvatarEventImpl extends _UserUpdateAvatarEvent
     TResult? Function(_UserDeletePhoneEvent value)? deletePhone,
     TResult? Function(_UserDeleteEmailEvent value)? deleteEmail,
     TResult? Function(_UserCheckoutEvent value)? checkout,
+    TResult? Function(_UserRatingEvent value)? rating,
+    TResult? Function(_UserCareEvent value)? care,
   }) {
     return updateAvatar?.call(this);
   }
@@ -1117,6 +1199,8 @@ class _$UserUpdateAvatarEventImpl extends _UserUpdateAvatarEvent
     TResult Function(_UserDeletePhoneEvent value)? deletePhone,
     TResult Function(_UserDeleteEmailEvent value)? deleteEmail,
     TResult Function(_UserCheckoutEvent value)? checkout,
+    TResult Function(_UserRatingEvent value)? rating,
+    TResult Function(_UserCareEvent value)? care,
     required TResult orElse(),
   }) {
     if (updateAvatar != null) {
@@ -1221,6 +1305,8 @@ class _$UserDeletePhoneEventImpl extends _UserDeletePhoneEvent
     required TResult Function(UserPhoneEntity phone) deletePhone,
     required TResult Function(UserEmailEntity email) deleteEmail,
     required TResult Function() checkout,
+    required TResult Function() rating,
+    required TResult Function() care,
   }) {
     return deletePhone(phone);
   }
@@ -1237,6 +1323,8 @@ class _$UserDeletePhoneEventImpl extends _UserDeletePhoneEvent
     TResult? Function(UserPhoneEntity phone)? deletePhone,
     TResult? Function(UserEmailEntity email)? deleteEmail,
     TResult? Function()? checkout,
+    TResult? Function()? rating,
+    TResult? Function()? care,
   }) {
     return deletePhone?.call(phone);
   }
@@ -1253,6 +1341,8 @@ class _$UserDeletePhoneEventImpl extends _UserDeletePhoneEvent
     TResult Function(UserPhoneEntity phone)? deletePhone,
     TResult Function(UserEmailEntity email)? deleteEmail,
     TResult Function()? checkout,
+    TResult Function()? rating,
+    TResult Function()? care,
     required TResult orElse(),
   }) {
     if (deletePhone != null) {
@@ -1273,6 +1363,8 @@ class _$UserDeletePhoneEventImpl extends _UserDeletePhoneEvent
     required TResult Function(_UserDeletePhoneEvent value) deletePhone,
     required TResult Function(_UserDeleteEmailEvent value) deleteEmail,
     required TResult Function(_UserCheckoutEvent value) checkout,
+    required TResult Function(_UserRatingEvent value) rating,
+    required TResult Function(_UserCareEvent value) care,
   }) {
     return deletePhone(this);
   }
@@ -1289,6 +1381,8 @@ class _$UserDeletePhoneEventImpl extends _UserDeletePhoneEvent
     TResult? Function(_UserDeletePhoneEvent value)? deletePhone,
     TResult? Function(_UserDeleteEmailEvent value)? deleteEmail,
     TResult? Function(_UserCheckoutEvent value)? checkout,
+    TResult? Function(_UserRatingEvent value)? rating,
+    TResult? Function(_UserCareEvent value)? care,
   }) {
     return deletePhone?.call(this);
   }
@@ -1305,6 +1399,8 @@ class _$UserDeletePhoneEventImpl extends _UserDeletePhoneEvent
     TResult Function(_UserDeletePhoneEvent value)? deletePhone,
     TResult Function(_UserDeleteEmailEvent value)? deleteEmail,
     TResult Function(_UserCheckoutEvent value)? checkout,
+    TResult Function(_UserRatingEvent value)? rating,
+    TResult Function(_UserCareEvent value)? care,
     required TResult orElse(),
   }) {
     if (deletePhone != null) {
@@ -1409,6 +1505,8 @@ class _$UserDeleteEmailEventImpl extends _UserDeleteEmailEvent
     required TResult Function(UserPhoneEntity phone) deletePhone,
     required TResult Function(UserEmailEntity email) deleteEmail,
     required TResult Function() checkout,
+    required TResult Function() rating,
+    required TResult Function() care,
   }) {
     return deleteEmail(email);
   }
@@ -1425,6 +1523,8 @@ class _$UserDeleteEmailEventImpl extends _UserDeleteEmailEvent
     TResult? Function(UserPhoneEntity phone)? deletePhone,
     TResult? Function(UserEmailEntity email)? deleteEmail,
     TResult? Function()? checkout,
+    TResult? Function()? rating,
+    TResult? Function()? care,
   }) {
     return deleteEmail?.call(email);
   }
@@ -1441,6 +1541,8 @@ class _$UserDeleteEmailEventImpl extends _UserDeleteEmailEvent
     TResult Function(UserPhoneEntity phone)? deletePhone,
     TResult Function(UserEmailEntity email)? deleteEmail,
     TResult Function()? checkout,
+    TResult Function()? rating,
+    TResult Function()? care,
     required TResult orElse(),
   }) {
     if (deleteEmail != null) {
@@ -1461,6 +1563,8 @@ class _$UserDeleteEmailEventImpl extends _UserDeleteEmailEvent
     required TResult Function(_UserDeletePhoneEvent value) deletePhone,
     required TResult Function(_UserDeleteEmailEvent value) deleteEmail,
     required TResult Function(_UserCheckoutEvent value) checkout,
+    required TResult Function(_UserRatingEvent value) rating,
+    required TResult Function(_UserCareEvent value) care,
   }) {
     return deleteEmail(this);
   }
@@ -1477,6 +1581,8 @@ class _$UserDeleteEmailEventImpl extends _UserDeleteEmailEvent
     TResult? Function(_UserDeletePhoneEvent value)? deletePhone,
     TResult? Function(_UserDeleteEmailEvent value)? deleteEmail,
     TResult? Function(_UserCheckoutEvent value)? checkout,
+    TResult? Function(_UserRatingEvent value)? rating,
+    TResult? Function(_UserCareEvent value)? care,
   }) {
     return deleteEmail?.call(this);
   }
@@ -1493,6 +1599,8 @@ class _$UserDeleteEmailEventImpl extends _UserDeleteEmailEvent
     TResult Function(_UserDeletePhoneEvent value)? deletePhone,
     TResult Function(_UserDeleteEmailEvent value)? deleteEmail,
     TResult Function(_UserCheckoutEvent value)? checkout,
+    TResult Function(_UserRatingEvent value)? rating,
+    TResult Function(_UserCareEvent value)? care,
     required TResult orElse(),
   }) {
     if (deleteEmail != null) {
@@ -1567,6 +1675,8 @@ class _$UserCheckoutEventImpl extends _UserCheckoutEvent
     required TResult Function(UserPhoneEntity phone) deletePhone,
     required TResult Function(UserEmailEntity email) deleteEmail,
     required TResult Function() checkout,
+    required TResult Function() rating,
+    required TResult Function() care,
   }) {
     return checkout();
   }
@@ -1583,6 +1693,8 @@ class _$UserCheckoutEventImpl extends _UserCheckoutEvent
     TResult? Function(UserPhoneEntity phone)? deletePhone,
     TResult? Function(UserEmailEntity email)? deleteEmail,
     TResult? Function()? checkout,
+    TResult? Function()? rating,
+    TResult? Function()? care,
   }) {
     return checkout?.call();
   }
@@ -1599,6 +1711,8 @@ class _$UserCheckoutEventImpl extends _UserCheckoutEvent
     TResult Function(UserPhoneEntity phone)? deletePhone,
     TResult Function(UserEmailEntity email)? deleteEmail,
     TResult Function()? checkout,
+    TResult Function()? rating,
+    TResult Function()? care,
     required TResult orElse(),
   }) {
     if (checkout != null) {
@@ -1619,6 +1733,8 @@ class _$UserCheckoutEventImpl extends _UserCheckoutEvent
     required TResult Function(_UserDeletePhoneEvent value) deletePhone,
     required TResult Function(_UserDeleteEmailEvent value) deleteEmail,
     required TResult Function(_UserCheckoutEvent value) checkout,
+    required TResult Function(_UserRatingEvent value) rating,
+    required TResult Function(_UserCareEvent value) care,
   }) {
     return checkout(this);
   }
@@ -1635,6 +1751,8 @@ class _$UserCheckoutEventImpl extends _UserCheckoutEvent
     TResult? Function(_UserDeletePhoneEvent value)? deletePhone,
     TResult? Function(_UserDeleteEmailEvent value)? deleteEmail,
     TResult? Function(_UserCheckoutEvent value)? checkout,
+    TResult? Function(_UserRatingEvent value)? rating,
+    TResult? Function(_UserCareEvent value)? care,
   }) {
     return checkout?.call(this);
   }
@@ -1651,6 +1769,8 @@ class _$UserCheckoutEventImpl extends _UserCheckoutEvent
     TResult Function(_UserDeletePhoneEvent value)? deletePhone,
     TResult Function(_UserDeleteEmailEvent value)? deleteEmail,
     TResult Function(_UserCheckoutEvent value)? checkout,
+    TResult Function(_UserRatingEvent value)? rating,
+    TResult Function(_UserCareEvent value)? care,
     required TResult orElse(),
   }) {
     if (checkout != null) {
@@ -1663,6 +1783,333 @@ class _$UserCheckoutEventImpl extends _UserCheckoutEvent
 abstract class _UserCheckoutEvent extends UserEvent {
   const factory _UserCheckoutEvent() = _$UserCheckoutEventImpl;
   const _UserCheckoutEvent._() : super._();
+}
+
+/// @nodoc
+abstract class _$$UserRatingEventImplCopyWith<$Res> {
+  factory _$$UserRatingEventImplCopyWith(_$UserRatingEventImpl value,
+          $Res Function(_$UserRatingEventImpl) then) =
+      __$$UserRatingEventImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UserRatingEventImplCopyWithImpl<$Res>
+    extends _$UserEventCopyWithImpl<$Res, _$UserRatingEventImpl>
+    implements _$$UserRatingEventImplCopyWith<$Res> {
+  __$$UserRatingEventImplCopyWithImpl(
+      _$UserRatingEventImpl _value, $Res Function(_$UserRatingEventImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UserRatingEventImpl extends _UserRatingEvent
+    with DiagnosticableTreeMixin {
+  const _$UserRatingEventImpl() : super._();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'UserEvent.rating()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'UserEvent.rating'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$UserRatingEventImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() fetch,
+    required TResult Function() clear,
+    required TResult Function(String userName) updateUserName,
+    required TResult Function(File file) updateCover,
+    required TResult Function(File file) updateAvatar,
+    required TResult Function(UserPhoneEntity phone) deletePhone,
+    required TResult Function(UserEmailEntity email) deleteEmail,
+    required TResult Function() checkout,
+    required TResult Function() rating,
+    required TResult Function() care,
+  }) {
+    return rating();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? fetch,
+    TResult? Function()? clear,
+    TResult? Function(String userName)? updateUserName,
+    TResult? Function(File file)? updateCover,
+    TResult? Function(File file)? updateAvatar,
+    TResult? Function(UserPhoneEntity phone)? deletePhone,
+    TResult? Function(UserEmailEntity email)? deleteEmail,
+    TResult? Function()? checkout,
+    TResult? Function()? rating,
+    TResult? Function()? care,
+  }) {
+    return rating?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? fetch,
+    TResult Function()? clear,
+    TResult Function(String userName)? updateUserName,
+    TResult Function(File file)? updateCover,
+    TResult Function(File file)? updateAvatar,
+    TResult Function(UserPhoneEntity phone)? deletePhone,
+    TResult Function(UserEmailEntity email)? deleteEmail,
+    TResult Function()? checkout,
+    TResult Function()? rating,
+    TResult Function()? care,
+    required TResult orElse(),
+  }) {
+    if (rating != null) {
+      return rating();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UserInitialEvent value) initial,
+    required TResult Function(_UserFetchEvent value) fetch,
+    required TResult Function(_UserClearEvent value) clear,
+    required TResult Function(_UserUpdateUserNameEvent value) updateUserName,
+    required TResult Function(_UserUpdateCoverEvent value) updateCover,
+    required TResult Function(_UserUpdateAvatarEvent value) updateAvatar,
+    required TResult Function(_UserDeletePhoneEvent value) deletePhone,
+    required TResult Function(_UserDeleteEmailEvent value) deleteEmail,
+    required TResult Function(_UserCheckoutEvent value) checkout,
+    required TResult Function(_UserRatingEvent value) rating,
+    required TResult Function(_UserCareEvent value) care,
+  }) {
+    return rating(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UserInitialEvent value)? initial,
+    TResult? Function(_UserFetchEvent value)? fetch,
+    TResult? Function(_UserClearEvent value)? clear,
+    TResult? Function(_UserUpdateUserNameEvent value)? updateUserName,
+    TResult? Function(_UserUpdateCoverEvent value)? updateCover,
+    TResult? Function(_UserUpdateAvatarEvent value)? updateAvatar,
+    TResult? Function(_UserDeletePhoneEvent value)? deletePhone,
+    TResult? Function(_UserDeleteEmailEvent value)? deleteEmail,
+    TResult? Function(_UserCheckoutEvent value)? checkout,
+    TResult? Function(_UserRatingEvent value)? rating,
+    TResult? Function(_UserCareEvent value)? care,
+  }) {
+    return rating?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UserInitialEvent value)? initial,
+    TResult Function(_UserFetchEvent value)? fetch,
+    TResult Function(_UserClearEvent value)? clear,
+    TResult Function(_UserUpdateUserNameEvent value)? updateUserName,
+    TResult Function(_UserUpdateCoverEvent value)? updateCover,
+    TResult Function(_UserUpdateAvatarEvent value)? updateAvatar,
+    TResult Function(_UserDeletePhoneEvent value)? deletePhone,
+    TResult Function(_UserDeleteEmailEvent value)? deleteEmail,
+    TResult Function(_UserCheckoutEvent value)? checkout,
+    TResult Function(_UserRatingEvent value)? rating,
+    TResult Function(_UserCareEvent value)? care,
+    required TResult orElse(),
+  }) {
+    if (rating != null) {
+      return rating(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UserRatingEvent extends UserEvent {
+  const factory _UserRatingEvent() = _$UserRatingEventImpl;
+  const _UserRatingEvent._() : super._();
+}
+
+/// @nodoc
+abstract class _$$UserCareEventImplCopyWith<$Res> {
+  factory _$$UserCareEventImplCopyWith(
+          _$UserCareEventImpl value, $Res Function(_$UserCareEventImpl) then) =
+      __$$UserCareEventImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UserCareEventImplCopyWithImpl<$Res>
+    extends _$UserEventCopyWithImpl<$Res, _$UserCareEventImpl>
+    implements _$$UserCareEventImplCopyWith<$Res> {
+  __$$UserCareEventImplCopyWithImpl(
+      _$UserCareEventImpl _value, $Res Function(_$UserCareEventImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UserCareEventImpl extends _UserCareEvent with DiagnosticableTreeMixin {
+  const _$UserCareEventImpl() : super._();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'UserEvent.care()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'UserEvent.care'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$UserCareEventImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() fetch,
+    required TResult Function() clear,
+    required TResult Function(String userName) updateUserName,
+    required TResult Function(File file) updateCover,
+    required TResult Function(File file) updateAvatar,
+    required TResult Function(UserPhoneEntity phone) deletePhone,
+    required TResult Function(UserEmailEntity email) deleteEmail,
+    required TResult Function() checkout,
+    required TResult Function() rating,
+    required TResult Function() care,
+  }) {
+    return care();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? fetch,
+    TResult? Function()? clear,
+    TResult? Function(String userName)? updateUserName,
+    TResult? Function(File file)? updateCover,
+    TResult? Function(File file)? updateAvatar,
+    TResult? Function(UserPhoneEntity phone)? deletePhone,
+    TResult? Function(UserEmailEntity email)? deleteEmail,
+    TResult? Function()? checkout,
+    TResult? Function()? rating,
+    TResult? Function()? care,
+  }) {
+    return care?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? fetch,
+    TResult Function()? clear,
+    TResult Function(String userName)? updateUserName,
+    TResult Function(File file)? updateCover,
+    TResult Function(File file)? updateAvatar,
+    TResult Function(UserPhoneEntity phone)? deletePhone,
+    TResult Function(UserEmailEntity email)? deleteEmail,
+    TResult Function()? checkout,
+    TResult Function()? rating,
+    TResult Function()? care,
+    required TResult orElse(),
+  }) {
+    if (care != null) {
+      return care();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UserInitialEvent value) initial,
+    required TResult Function(_UserFetchEvent value) fetch,
+    required TResult Function(_UserClearEvent value) clear,
+    required TResult Function(_UserUpdateUserNameEvent value) updateUserName,
+    required TResult Function(_UserUpdateCoverEvent value) updateCover,
+    required TResult Function(_UserUpdateAvatarEvent value) updateAvatar,
+    required TResult Function(_UserDeletePhoneEvent value) deletePhone,
+    required TResult Function(_UserDeleteEmailEvent value) deleteEmail,
+    required TResult Function(_UserCheckoutEvent value) checkout,
+    required TResult Function(_UserRatingEvent value) rating,
+    required TResult Function(_UserCareEvent value) care,
+  }) {
+    return care(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UserInitialEvent value)? initial,
+    TResult? Function(_UserFetchEvent value)? fetch,
+    TResult? Function(_UserClearEvent value)? clear,
+    TResult? Function(_UserUpdateUserNameEvent value)? updateUserName,
+    TResult? Function(_UserUpdateCoverEvent value)? updateCover,
+    TResult? Function(_UserUpdateAvatarEvent value)? updateAvatar,
+    TResult? Function(_UserDeletePhoneEvent value)? deletePhone,
+    TResult? Function(_UserDeleteEmailEvent value)? deleteEmail,
+    TResult? Function(_UserCheckoutEvent value)? checkout,
+    TResult? Function(_UserRatingEvent value)? rating,
+    TResult? Function(_UserCareEvent value)? care,
+  }) {
+    return care?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UserInitialEvent value)? initial,
+    TResult Function(_UserFetchEvent value)? fetch,
+    TResult Function(_UserClearEvent value)? clear,
+    TResult Function(_UserUpdateUserNameEvent value)? updateUserName,
+    TResult Function(_UserUpdateCoverEvent value)? updateCover,
+    TResult Function(_UserUpdateAvatarEvent value)? updateAvatar,
+    TResult Function(_UserDeletePhoneEvent value)? deletePhone,
+    TResult Function(_UserDeleteEmailEvent value)? deleteEmail,
+    TResult Function(_UserCheckoutEvent value)? checkout,
+    TResult Function(_UserRatingEvent value)? rating,
+    TResult Function(_UserCareEvent value)? care,
+    required TResult orElse(),
+  }) {
+    if (care != null) {
+      return care(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UserCareEvent extends UserEvent {
+  const factory _UserCareEvent() = _$UserCareEventImpl;
+  const _UserCareEvent._() : super._();
 }
 
 /// @nodoc

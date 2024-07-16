@@ -23,6 +23,7 @@ class ProductDetailCubit extends Cubit<ProductDetailState> {
         ),
       );
       if (getIt<AuthBloc>().isLogin) {
+        getIt<UserBloc>().add(const UserEvent.care());
         final subcriber = await productRepo.checkSubcribeByProductID(
           productID: state.product?.id,
         );
@@ -89,6 +90,7 @@ class ProductDetailCubit extends Cubit<ProductDetailState> {
 
   Future<void> productAttention() async {
     if (getIt<AuthBloc>().isLogin) {
+      getIt<UserBloc>().add(const UserEvent.care());
       await productRepo.attention(
         id: state.product?.id,
       );

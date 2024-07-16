@@ -17,6 +17,7 @@ class DioModule {
     final options = BaseOptions(
       // baseUrl: 'https://hlshop.azurewebsites.net/', //Vercel BE
       baseUrl: 'http://localhost:3001/', //localhost BE
+      // baseUrl: 'http://172.20.10.3:3001/', //localhost BE
       connectTimeout: const Duration(seconds: 30),
       receiveTimeout: const Duration(seconds: 30),
       sendTimeout: const Duration(seconds: 30),
